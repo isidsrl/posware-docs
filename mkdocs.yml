@@ -1,0 +1,71 @@
+site_name: Documentazione Ufficiale Posware
+site_url: https://posware.io/             # quando non useremo le Github Pages useremo questo link per il sito della documentazione
+copyright: Copyright 2024&copy; ISiD
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/images/favicon.ico
+  favicon: assets/images/favicon.ico
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.suggest
+
+extra:
+  generator: false
+  social:
+    - icon: ISiD
+      link: https://isid.it/
+  version:
+    provider: mike
+    default: latest
+
+plugins:
+  - search
+  - tags
+  - offline
+
+nav:
+  - Home: index.md
+  - Vecchia documentazione:
+    - .NET 4.x Runtime Notes: old-docs/posware-net4.md
+    - Gestione prodotto check-out: old-docs/posware-gestione-prodotto-check-out.md
+    - Cashmatic Plug-In per Posware: old-docs/cashmatic-plug-in-per-posware.md
+    - Lotteria degli scontrini: old-docs/lotteria-degli-scontrini.md
+    - PlugIn Fast4Cash: old-docs/plugin-fast4cash.md
+    - PlugIn GiftCard EpayEuronet: old-docs/plugin-giftcard-epayeuronet.md
+    - Posware 4.1:
+      - Adapter Self-CheckOut Diebold: old-docs/posware41/posware41-adapter-self-checkout-diebold.md
+      - Adapter Self-CheckOut NCR: old-docs/posware41/posware41-adapter-self-checkout-ncr.md
+    - Posware 4.2:
+      - General Overview: old-docs/posware42/posware42-general-overview.md
+      - Adapter Self-CheckOut Diebold: old-docs/posware42/posware42-adapter-self-checkout-diebold.md
+      - Adapter Self-CheckOut NCR: old-docs/posware42/posware42-adapter-self-checkout-ncr.md
+      - Adapter NCR SelfServ™ Checkout: old-docs/posware42/posware42-funzionalita-adapter-ncr-selfserv-checkout.md
+      - Pin Dispatching: old-docs/posware42/posware42-funzionalita-pin-dispatching.md
+      - RT 2.0: old-docs/posware42/posware42-funzionalita-rt-20.md
+  - Changelog:
+    - changelog/release-notes.md
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
