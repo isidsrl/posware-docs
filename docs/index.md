@@ -1,7 +1,5 @@
-# Benvenuti in Posware :favicon:
+# Benvenuti in Posware 4.3 :favicon:
 
-Questo sito raccoglie tutta la documentazione delle versioni di Posware precedenti alla 4.3, l'ultima release che verrà rilasciata a breve.
+Questo sito raccoglierà tutta la documentazione della versione 4.3 di Posware, l'ultima release che verrà rilasciata a breve.
 
-Per poterla consultare cliccate la tab in alto `Vecchia Documentazione`, dove troverete i vari file della documentazione divisi in base alla versione considerata.
-
-Cliccando la tab `Changelog`, sempre in alto, potrete , invece, consultare le note di rilascio delle varie versioni di Posware uscite in passato, fino ad arrivare all'ultima disponibile.
+Attualmente abbiamo solo un esempio da mostrare di quel che verrà rilasciato con questa nuova versione di Posware, ma rimanete sintonizzati per ulteriori notizie!!! 
