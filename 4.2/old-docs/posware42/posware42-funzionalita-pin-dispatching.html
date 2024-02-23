@@ -1,0 +1,1877 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://posware.io/4.2/old-docs/posware42/posware42-funzionalita-pin-dispatching.html">
+      
+      
+        <link rel="prev" href="posware42-funzionalita-adapter-ncr-selfserv-checkout.html">
+      
+      
+        <link rel="next" href="posware42-funzionalita-rt-20.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
+    
+    
+      
+        <title>Pin Dispatching - Documentazione Ufficiale Posware</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#posware-42-funzionalita-pin-dispatching" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+Non stai visualizzando l'ultima versione della documentazione.
+<a href="../../..">
+    <strong>Clicca qui per andare all'ultima versione.</strong>
+</a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Documentazione Ufficiale Posware" class="md-header__button md-logo" aria-label="Documentazione Ufficiale Posware" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentazione Ufficiale Posware
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pin Dispatching
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../posware-net4.html" class="md-tabs__link">
+          
+  
+    
+  
+  Vecchia documentazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../changelog/release-notes.html" class="md-tabs__link">
+          
+  
+    
+  
+  Changelog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Documentazione Ufficiale Posware" class="md-nav__button md-logo" aria-label="Documentazione Ufficiale Posware" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    Documentazione Ufficiale Posware
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Vecchia documentazione
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Vecchia documentazione
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-net4.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    .NET 4.x Runtime Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-gestione-prodotto-check-out.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestione prodotto check-out
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cashmatic-plug-in-per-posware.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cashmatic Plug-In per Posware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lotteria-degli-scontrini.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lotteria degli scontrini
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin-fast4cash.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PlugIn Fast4Cash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin-giftcard-epayeuronet.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PlugIn GiftCard EpayEuronet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Posware 4.1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Posware 4.1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware41/posware41-adapter-self-checkout-diebold.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adapter Self-CheckOut Diebold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware41/posware41-adapter-self-checkout-ncr.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adapter Self-CheckOut NCR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Posware 4.2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Posware 4.2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="posware42-general-overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="posware42-adapter-self-checkout-diebold.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adapter Self-CheckOut Diebold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="posware42-adapter-self-checkout-ncr.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adapter Self-CheckOut NCR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="posware42-funzionalita-adapter-ncr-selfserv-checkout.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adapter NCR SelfServ™ Checkout
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Pin Dispatching
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="posware42-funzionalita-pin-dispatching.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Pin Dispatching
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#manuale-di-attivazione-ed-utilizzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manuale di attivazione ed utilizzo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manuale di attivazione ed utilizzo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ultima-revisione-documento-24112021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ultima revisione documento: 24/11/2021
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioni-software-di-riferimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioni software di riferimento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cenni-preliminari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cenni preliminari
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cenni preliminari">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#posware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Posware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provider-supportati" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provider supportati
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazione
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compilazione-anagrafica-dei-prodotti-pin-dispatching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compilazione anagrafica dei prodotti pin-dispatching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compilazione anagrafica dei prodotti pin-dispatching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campi-da-compilare-nella-tabella-articoli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Campi da compilare nella tabella articoli
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campi-da-compilare-nella-tabella-codiciricarica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Campi da compilare nella tabella codiciricarica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campi-da-compilare-nella-tabella-tipi_ean" class="md-nav__link">
+    <span class="md-ellipsis">
+      Campi da compilare nella tabella tipi_ean
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurazione-di-posware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazione di Posware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurazione di Posware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impostazioni-per-provider-argentea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impostazioni per provider Argentea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impostazioni-per-provider-euronet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impostazioni per provider Euronet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inserimento-del-pulsante-ristampa-ricevuta-in-grafica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inserimento del pulsante Ristampa ricevuta in grafica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedura-di-installazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedura di installazione
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funzionalita" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funzionalità
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funzionalità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attivazione-di-un-servizio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attivazione di un servizio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ristampa-pin-di-un-servizio-attivato" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ristampa Pin di un servizio attivato
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabella-di-compatibilita-delle-funzionalita" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabella di compatibilità delle funzionalità
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabella di compatibilità delle funzionalità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addendum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addendum
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="posware42-funzionalita-rt-20.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RT 2.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Changelog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/release-notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Posware - Release Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#manuale-di-attivazione-ed-utilizzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manuale di attivazione ed utilizzo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manuale di attivazione ed utilizzo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ultima-revisione-documento-24112021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ultima revisione documento: 24/11/2021
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioni-software-di-riferimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioni software di riferimento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cenni-preliminari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cenni preliminari
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cenni preliminari">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#posware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Posware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provider-supportati" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provider supportati
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazione
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compilazione-anagrafica-dei-prodotti-pin-dispatching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compilazione anagrafica dei prodotti pin-dispatching
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compilazione anagrafica dei prodotti pin-dispatching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campi-da-compilare-nella-tabella-articoli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Campi da compilare nella tabella articoli
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campi-da-compilare-nella-tabella-codiciricarica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Campi da compilare nella tabella codiciricarica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campi-da-compilare-nella-tabella-tipi_ean" class="md-nav__link">
+    <span class="md-ellipsis">
+      Campi da compilare nella tabella tipi_ean
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurazione-di-posware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazione di Posware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurazione di Posware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impostazioni-per-provider-argentea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impostazioni per provider Argentea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impostazioni-per-provider-euronet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impostazioni per provider Euronet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inserimento-del-pulsante-ristampa-ricevuta-in-grafica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inserimento del pulsante Ristampa ricevuta in grafica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedura-di-installazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedura di installazione
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funzionalita" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funzionalità
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funzionalità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attivazione-di-un-servizio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attivazione di un servizio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ristampa-pin-di-un-servizio-attivato" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ristampa Pin di un servizio attivato
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabella-di-compatibilita-delle-funzionalita" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabella di compatibilità delle funzionalità
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabella di compatibilità delle funzionalità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addendum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addendum
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="posware-42-funzionalita-pin-dispatching">Posware 4.2 - Funzionalità Pin Dispatching</h1>
+<h4 id="manuale-di-attivazione-ed-utilizzo">Manuale di attivazione ed utilizzo</h4>
+<p>Il presente documento descrive i requisiti minimi e le procedure necessarie all'attivazione della funzionalità Pin Dispatching presente in Posware.</p>
+<h5 id="ultima-revisione-documento-24112021">Ultima revisione documento: 24/11/2021</h5>
+<hr />
+<blockquote>
+<h2 id="versioni-software-di-riferimento">Versioni software di riferimento</h2>
+<ul>
+<li>Posware <strong>4.2.0.0</strong> o superiore</li>
+</ul>
+</blockquote>
+<h2 id="cenni-preliminari">Cenni preliminari</h2>
+<h3 id="posware">Posware</h3>
+<p>La versione minima di Posware richiesta è la <code>v4.2.0</code>. <br>
+Alcune funzionalità presenti in questo documento potrebbero non essere supportate dal provider. Vedi <a href="#tabella-di-compatibilita-delle-funzionalita">Tabella di compatibilità delle funzionalità</a>.</p>
+<h3 id="provider-supportati">Provider supportati</h3>
+<p>A far data <strong>24/11/2021</strong> i provider supportati sono:</p>
+<ul>
+<li>Euronet</li>
+<li>Euronet tramite <mark>Argentea</mark></li>
+<li>Epipoli/TSP tramite <mark>Argentea</mark></li>
+</ul>
+<blockquote>
+<p>Per conoscere le funzionalità supportate dal singolo provider consultare la <a href="#tabella-di-compatibilita-delle-funzionalita">tabella di compatibilità delle funzionalità</a>.</p>
+</blockquote>
+<h2 id="configurazione">Configurazione</h2>
+<p>La configurazione del plugin è suddivisa in tre operazioni:</p>
+<ol>
+<li>Compilazione dell'anagrafica dei prodotti pin-dispatching</li>
+<li>Configurazione di Posware</li>
+<li>Configurazione del provider</li>
+<li>Inserimento del pulsante <em>Ristampa ricevuta</em> in grafica (opzionale)</li>
+</ol>
+<h4 id="compilazione-anagrafica-dei-prodotti-pin-dispatching">Compilazione anagrafica dei prodotti pin-dispatching</h4>
+<p>Per la compilazione dell'anagrafica dei prodotti, sono previsti due scenari:</p>
+<ol>
+<li>Il prodotto da attivare è riconosciuto <strong>esclusivamente tramite Barcode</strong> (tipicamente EAN). I dati del prodotto vengono inseriti <strong>solo nella tabella <code>articoli</code></strong>.</li>
+<li>Il prodotto da attivare è riconosciuto tramite Barcode ed un <strong><em>Codice ricarica</em></strong>. Il Codice ricarica potrebbe essere legato ad un <em>codice operatore</em>. I dati del prodotto devono essere inseriti sia nella tabella <code>articoli</code> che nella tabella <code>codiciricarica</code>. Il <em>Codice ricarica</em>, assieme ad altri dati, viene collegato tramite Barcode alla tabella <code>articoli</code>.</li>
+</ol>
+<h5 id="campi-da-compilare-nella-tabella-articoli">Campi da compilare nella tabella articoli</h5>
+<p>Sono obbligatori i campi presenti nella tabella di esempio. Qualora si volesse, il campo <code>NonScontabile</code> può essere impostato anche a <code>0</code>.</p>
+<table>
+<thead>
+<tr>
+<th>CodiceEAN</th>
+<th>Descrizione</th>
+<th>UM</th>
+<th>bpeso</th>
+<th>Prezzo</th>
+<th>IVA</th>
+<th>NonScontabile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8032325292640</td>
+<td>RICARICA WIND TRE 20 EURO</td>
+<td>PZ</td>
+<td>false</td>
+<td>20,00</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h5 id="campi-da-compilare-nella-tabella-codiciricarica">Campi da compilare nella tabella codiciricarica</h5>
+<p>Sono possibili 3 modalità di codifica differente:</p>
+<ol>
+<li>Il provider utilizza Barcode che differiscono dai Codici ricarica.</li>
+<li>Il provider utilizza Barcode che differiscono dai Codici ricarica ed è richiesto anche il Codice operatore.</li>
+<li>Il provider utilizza Barcode e Codici ricarica identici ma è richiesto il Codice operatore.</li>
+</ol>
+<p>Nella tabella a seguire sono stati codificati 4 prodotti (ricariche telefoniche) per dimostrare i 3 scenari indicati.</p>
+<table>
+<thead>
+<tr>
+<th>CodOperatore</th>
+<th>CodTaglio</th>
+<th>CodRicarica</th>
+<th>CodiceEAN</th>
+<th>importoeurocent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td><code>5060069483461</code></td>
+<td><code>8032325292640</code></td>
+<td>2000</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td><code>5060069483461</code></td>
+<td><code>8032325292640</code></td>
+<td>3000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td><code>5060069488503</code></td>
+<td><code>5060069488503</code></td>
+<td>5000</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td><code>8032325056389</code></td>
+<td><code>5060069484413</code></td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<p>La <strong>modalità 1</strong> si realizza seguendo la codifica del primo record: si può notare l'aggancio del <em>Codice ricarica</em> (campo <strong>CodRicarica</strong>) con il Barcode (campo <strong>CodiceEAN</strong>).</p>
+<p>La <strong>modalità 2</strong> si realizza seguendo la codifica del secondo record: si può notare che il <em>Codice ricarica</em> differisce dal Barcode (<strong>CodiceEAN</strong>) ed è stato indicato anche un <em>Codice operatore</em> (<strong>CodOperatore</strong>).</p>
+<p>La <strong>modalità 3</strong> si realizza seguendo il terzo record: si può notare che il <em>Codice ricarica</em> corrisponde anche al Barcode (<strong>CodiceEAN</strong>). In questo caso particolare l'aggancio verrà utilizzato solo per legare un <em>Codice operatore</em> (<strong>CodOperatore</strong>) al prodotto. </p>
+<p>Per evitare sovrapposizione nelle codifiche, è possibile avere per un determinato Codice operatore solo un particolare Codice Taglio (legame 1:1). <br>
+<strong>In tutti gli scenari cui sopra, il campo <code>CodTaglio</code> viene usato solo come progressivo per identificare univocamente un record rispetto ad un Codice operatore. Non è coinvolto in altre logiche.</strong> <br>
+È possibile notare ciò nel <strong>quarto record di esempio</strong>.</p>
+<blockquote>
+<p><strong>In breve:</strong> <br>
+Qualora per il provider in uso non fosse un requisito necessario <strong>specificare Codice operatore</strong>, è possibile impostare il campo <code>CodOperatore</code> sempre a <code>0</code> ed usare un progressivo numerico libero per il campo <code>CodTaglio</code>. <strong>In questo modo si utilizzerà la tabella solo per specificare un Codice ricarica differente dal Barcode</strong>.</p>
+</blockquote>
+<h5 id="campi-da-compilare-nella-tabella-tipi_ean">Campi da compilare nella tabella tipi_ean</h5>
+<p>È necessario inserire un record di tipo <code>R</code> nella tabella <code>tipi_ean</code> per ogni barcode (o parte di esso) che è necessario identificare come barcode di un servizio con attivazione tramite pin dispatching.</p>
+<p>Per la codifica sono necessari solo 3 campi: <strong>ean, descrizione, tipo</strong>. I restanti possono essere lasciati come da valore di default.</p>
+<table>
+<thead>
+<tr>
+<th>ean</th>
+<th>descrizione</th>
+<th>tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8032325292640</td>
+<td>RICARICA TIM 20€</td>
+<td><code>R</code></td>
+</tr>
+<tr>
+<td>803232528</td>
+<td>RICARICHE AMAZON</td>
+<td><code>R</code></td>
+</tr>
+</tbody>
+</table>
+<p>In tabella vengono riportati due esempi di codifica: il primo permette di assegnare per ogni singolo ean il riconoscimento come <strong>servizio da attivare via pin dispatching</strong>, il secondo contrassegna invece tutti gli EAN che iniziano con <strong><em>803232528</em></strong> come <strong>servizi da attivare via pin dispatching</strong>.</p>
+<h4 id="configurazione-di-posware">Configurazione di Posware</h4>
+<p><strong>Per abilitare il plugin in Posware è per prima cosa necessario impostare il valore del parametro <code>PROTRICARICHE</code> del modulo <code>EPPLIB</code> nella tabella <code>tabparametriextra</code>.</strong></p>
+<p>È inoltre possibile specificare se effettuare le operazioni di ricarica pin dispatching - richiesta ed attivazione - a chiusura scontrino. <br>
+Per fare ciò impostare il campo <code>ricariche_alla_chiusura</code> della tabella <code>config_cassa</code> al valore <code>true</code>. <br>
+Si consiglia di lasciare il valore impostato a <code>false</code> per avvantaggiarsi delle funzioni di validazione durante la vendita.</p>
+<p>A seguire le impostazioni della tabella <code>tabparametriextra</code> per i singoli provider supportati.</p>
+<h5 id="impostazioni-per-provider-argentea">Impostazioni per provider Argentea</h5>
+<p>È necessario specificare il solo protocollo ricariche. Tutte le altre configurazioni dovranno essere effettuate direttamente sui software Argentea.</p>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametro</th>
+<th>Valore</th>
+<th>Valore di default</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EPPLIB</code></td>
+<td><code>PROTRICARICHE</code></td>
+<td><code>AR</code></td>
+<td></td>
+<td>AR = Argentea</td>
+</tr>
+</tbody>
+</table>
+<h5 id="impostazioni-per-provider-euronet">Impostazioni per provider Euronet</h5>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametro</th>
+<th>Valore</th>
+<th>Valore di default</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EPPLIB</code></td>
+<td><code>PROTRICARICHE</code></td>
+<td><code>EN</code></td>
+<td></td>
+<td>EN = Euronet</td>
+</tr>
+<tr>
+<td><code>EPPLIB</code></td>
+<td><code>EPAYMODE</code></td>
+<td><code>RESERVE</code></td>
+<td></td>
+<td>Lasciare inalterato il valore</td>
+</tr>
+<tr>
+<td><code>EPPLIB</code></td>
+<td><code>EPAYUSER</code></td>
+<td></td>
+<td></td>
+<td>Nome utente</td>
+</tr>
+<tr>
+<td><code>EPPLIB</code></td>
+<td><code>EPAYPASSWORD</code></td>
+<td></td>
+<td></td>
+<td>Password</td>
+</tr>
+<tr>
+<td><code>EPPLIB</code></td>
+<td><code>EPAYTERMINALID</code></td>
+<td></td>
+<td></td>
+<td>Id Terminale Euronet</td>
+</tr>
+<tr>
+<td><code>EPPLIB</code></td>
+<td><code>EPAYTIMEOUT</code></td>
+<td></td>
+<td><code>10000</code></td>
+<td>Timeout di comunicazione in ms</td>
+</tr>
+<tr>
+<td><code>EPPLIB</code></td>
+<td><code>EPAYURL</code></td>
+<td></td>
+<td></td>
+<td>Indirizzo del gateway di comunicazione Euronet</td>
+</tr>
+<tr>
+<td><code>EPPLIB</code></td>
+<td><code>EPAYSTAMPAINT</code></td>
+<td><code>0/1</code></td>
+<td><code>0</code></td>
+<td>1 = Stampa sulle ricevute l'intestazione del punto vendita comunicata ad Euronet.</td>
+</tr>
+<tr>
+<td><code>EPPLIB</code></td>
+<td><code>EPAYSCADFILTER</code></td>
+<td><code>802109601,8056735</code></td>
+<td><code>802109601,8056735</code></td>
+<td>Lasciare inalterato il valore</td>
+</tr>
+</tbody>
+</table>
+<h4 id="inserimento-del-pulsante-ristampa-ricevuta-in-grafica">Inserimento del pulsante <strong><em>Ristampa ricevuta</em></strong> in grafica</h4>
+<p>Per poter utilizzare la funzionalità di ristampa della ricevuta di attivazione, è necessario inserire un pulsante in grafica associandogli la funzione <code>RISTAMPA_RICARICA</code>.</p>
+<h2 id="procedura-di-installazione">Procedura di installazione</h2>
+<p>Nella versione <code>4.2.x</code> il plugin è direttamente integrato in Posware.</p>
+<ol>
+<li>Aggiornare Posware tramite l'applicativo di aggiornamento <code>PosUpdate</code> al minimo alla versione <code>4.2.x</code>.</li>
+<li>Configurare Posware</li>
+<li>Inviare l'anagrafica dei prodotti (<em>articoli</em>, <em>codici ricarica</em>, <em>tipi ean</em>)</li>
+</ol>
+<h2 id="funzionalita">Funzionalità</h2>
+<h3 id="attivazione-di-un-servizio">Attivazione di un servizio</h3>
+<p>Per attivare un servizio è necessario effettuare la vendita del prodotto tramite barcode. <br>
+Il barcode viene riconosciuto come <strong><em>ricarica</em></strong>. Viene effettuata sia la vendita del prodotto in se che l'<strong><em>autorizzazione di attivazione al provider</em></strong>. <br>
+Al termine della richiesta viene visualizzato il <strong><em>numero autorizzazione</em></strong> sullo scontrino digitale (Auth. 123456).</p>
+<blockquote>
+<p>Qualora l'autorizzazione non dovesse andare a buon fine, verrà mostrato l'errore con il motivo ed il prodotto stornato.</p>
+</blockquote>
+<p>È ora possibile pagare e chiudere la transazione. <br>
+Al pagamento, il servizio viene definitivamente attivato e la transazione si conclude: oltre allo scontrino della transazione viene <strong>stampata la ricevuta di attivazione con le istruzioni per usufruire del servizio acquistato</strong>.</p>
+<blockquote>
+<p>Qualora la richiesta di attivazione finale non dovesse andare a buon fine, verrà mostrato l'errore con il motivo ed il prodotto stornato. <br>
+<strong>La transazione non verrà chiusa e sarà possibile riprovare.</strong></p>
+</blockquote>
+<h3 id="ristampa-pin-di-un-servizio-attivato">Ristampa Pin di un servizio attivato</h3>
+<p>Per ristampare la ricevuta con le istruzioni per usufruire del servizio acquistato, <strong>è necessario avere lo scontrino oppure i riferimenti della transazione originale.</strong> <br>
+È richiesto inoltre l'inserimento di un pulsante con associata la funzione <code>RISTAMPA_RICARICA</code>.</p>
+<p>Il workflow è il seguente:</p>
+<ol>
+<li>Pressione del pulsante <strong>Ristampa servizio PinDispatching</strong></li>
+<li>Si inserisce il numero transazione originale, il numero della cassa che lo ha emesso e la data</li>
+<li>La ricevuta viene ristampata. <strong>Non viene ristampato lo scontrino originale, solo la ricevuta relativa al servizio di pin dispatching</strong></li>
+</ol>
+<blockquote>
+<p>Non tutti i provider supportano la ristampa della ricevuta.</p>
+</blockquote>
+<h2 id="tabella-di-compatibilita-delle-funzionalita">Tabella di compatibilità delle funzionalità</h2>
+<p>Il supporto è da considerarsi a partire dalla versione <code>4.2.0</code> se non specificato diversamente nelle note.</p>
+<table>
+<thead>
+<tr>
+<th>Funzionalità</th>
+<th>Provider Euronet</th>
+<th>Provider Epipoli/Tsp via Argentea</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attivazione del servizio</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td></td>
+</tr>
+<tr>
+<td>Ristampa della ricevuta</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td>Necessario il riferimento allo scontrino originale</td>
+</tr>
+<tr>
+<td>Annullo (reso) di una ricarica avvenuta</td>
+<td>Supportato</td>
+<td>Non supportato</td>
+<td>Annullo possibile solo se non si è usufruito del servizio in maniera completa o parziale</td>
+</tr>
+</tbody>
+</table>
+<h3 id="addendum">Addendum</h3>
+<ul>
+<li>Non sono presenti ulteriori note</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2024&copy; ISiD
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://isid.it/" target="_blank" rel="noopener" title="isid.it" class="md-social__link">
+      <?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1510.000000pt" height="518.000000pt" viewBox="0 0 1510.000000 518.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)"
+fill="#FFFFFF" stroke="none">
+<path d="M69 5157 c-19 -12 -42 -38 -51 -57 -17 -33 -18 -174 -18 -2510 0
+-2336 1 -2477 18 -2510 9 -19 32 -45 51 -57 l34 -23 466 0 c521 0 514 -1 553
+71 17 32 18 131 18 2519 0 2391 -1 2487 -18 2520 -37 71 -32 70 -553 70 l-466
+0 -34 -23z"/>
+<path d="M2580 5169 c-305 -35 -562 -148 -726 -320 -149 -157 -241 -337 -291
+-572 -16 -72 -18 -141 -18 -582 0 -550 4 -597 66 -787 127 -392 402 -626 846
+-720 l108 -23 1570 -5 1570 -5 60 -23 c32 -12 75 -35 95 -50 44 -36 95 -119
+110 -181 17 -67 25 -451 11 -539 -26 -169 -92 -261 -217 -304 l-69 -23 -2030
+-5 c-1919 -5 -2032 -6 -2058 -23 -63 -41 -62 -30 -62 -487 0 -453 0 -451 58
+-494 l28 -21 2177 -3 c1891 -2 2192 0 2293 13 385 50 650 197 824 460 94 141
+143 264 182 460 16 80 18 147 18 580 0 416 -3 504 -17 585 -51 285 -151 492
+-315 651 -169 164 -367 257 -655 305 -94 16 -242 18 -1658 23 l-1555 6 -56 28
+c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
+103 161 207 197 48 16 190 17 2091 22 1928 5 2041 6 2066 23 53 36 54 41 57
+469 2 250 -1 412 -7 436 -6 21 -25 51 -41 67 l-31 30 -2197 1 c-1208 1 -2231
+-2 -2272 -7z"/>
+<path d="M7631 5162 c-71 -38 -71 -38 -71 -501 0 -403 1 -415 21 -448 40 -64
+34 -63 501 -63 l424 0 302 -282 302 -282 0 -386 c0 -380 0 -386 23 -430 42
+-82 28 -80 550 -80 502 0 489 -1 541 60 l26 32 0 422 0 423 -23 34 c-46 69
+-44 69 -512 69 l-420 1 -297 277 -297 277 0 390 c-1 435 -1 436 -70 482 l-34
+23 -466 0 c-433 0 -469 -1 -500 -18z"/>
+<path d="M9255 5167 c-47 -18 -71 -39 -97 -82 l-23 -40 -3 -452 -3 -453 1993
+-3 c1802 -3 2001 -5 2071 -20 422 -88 609 -249 697 -601 50 -201 55 -279 55
+-926 0 -647 -5 -725 -55 -926 -80 -318 -256 -491 -582 -574 -216 -54 -240 -55
+-1653 -55 -715 0 -1313 4 -1328 8 -57 16 -57 20 -57 657 l0 580 -570 0 -570 0
+2 -1072 3 -1073 27 -46 c17 -29 41 -53 65 -65 37 -18 101 -19 1918 -22 1332
+-2 1927 0 2040 8 503 36 891 149 1191 346 113 74 311 270 383 379 189 287 292
+647 321 1120 13 220 13 1250 0 1470 -29 473 -133 837 -322 1120 -68 103 -219
+259 -328 341 -109 82 -343 200 -491 248 -213 68 -463 114 -738 136 -200 15
+-3906 12 -3946 -3z"/>
+<path d="M7560 1918 c0 -1706 1 -1815 18 -1847 9 -19 33 -43 52 -53 33 -17 64
+-18 512 -16 l476 3 27 25 c58 53 55 -64 55 1895 l0 1805 -570 0 -570 0 0
+-1812z"/>
+</g>
+</svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>

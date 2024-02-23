@@ -1,0 +1,1593 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://posware.io/4.2/old-docs/posware42/posware42-adapter-self-checkout-ncr.html">
+      
+      
+        <link rel="prev" href="posware42-adapter-self-checkout-diebold.html">
+      
+      
+        <link rel="next" href="posware42-funzionalita-adapter-ncr-selfserv-checkout.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
+    
+    
+      
+        <title>Adapter Self-CheckOut NCR - Documentazione Ufficiale Posware</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#posware-42-adapter-self-checkout-ncr" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+Non stai visualizzando l'ultima versione della documentazione.
+<a href="../../..">
+    <strong>Clicca qui per andare all'ultima versione.</strong>
+</a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Documentazione Ufficiale Posware" class="md-header__button md-logo" aria-label="Documentazione Ufficiale Posware" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentazione Ufficiale Posware
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Adapter Self-CheckOut NCR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../posware-net4.html" class="md-tabs__link">
+          
+  
+    
+  
+  Vecchia documentazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../changelog/release-notes.html" class="md-tabs__link">
+          
+  
+    
+  
+  Changelog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Documentazione Ufficiale Posware" class="md-nav__button md-logo" aria-label="Documentazione Ufficiale Posware" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    Documentazione Ufficiale Posware
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Vecchia documentazione
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Vecchia documentazione
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-net4.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    .NET 4.x Runtime Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-gestione-prodotto-check-out.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestione prodotto check-out
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cashmatic-plug-in-per-posware.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cashmatic Plug-In per Posware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lotteria-degli-scontrini.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lotteria degli scontrini
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin-fast4cash.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PlugIn Fast4Cash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin-giftcard-epayeuronet.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PlugIn GiftCard EpayEuronet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Posware 4.1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Posware 4.1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware41/posware41-adapter-self-checkout-diebold.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adapter Self-CheckOut Diebold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware41/posware41-adapter-self-checkout-ncr.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adapter Self-CheckOut NCR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Posware 4.2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Posware 4.2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="posware42-general-overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="posware42-adapter-self-checkout-diebold.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adapter Self-CheckOut Diebold
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Adapter Self-CheckOut NCR
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="posware42-adapter-self-checkout-ncr.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Adapter Self-CheckOut NCR
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#note-di-attivazione-ed-utilizzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note di attivazione ed utilizzo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioni-software-di-riferimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioni software di riferimento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cenni-preliminari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cenni preliminari
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cenni preliminari">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#posware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Posware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registratori-telematici" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registratori telematici
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenari-di-upgrade-supportati" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenari di upgrade supportati
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking Changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuove-funzionalita" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nuove funzionalità
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nuove funzionalità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compatibilita-con-la-versione-42x-di-posware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compatibilità con la versione 4.2.x di Posware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrotondamento-dei-pagamenti-contanti-dal-registratore-telematico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrotondamento dei pagamenti contanti dal registratore telematico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendita-prodotti-come-servizi-e-gestione-multi-ateco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vendita prodotti come servizi e gestione multi-ateco
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funzionalita-riportate-dalla-versione-2x" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funzionalità riportate dalla versione 2.x
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funzionalità riportate dalla versione 2.x">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lotteria-degli-scontrini" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lotteria degli scontrini
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestione-del-periodo-di-inattivita-rt-auto-end-of-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestione del periodo di inattività RT - Auto end of day
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestione-dei-prodotti-con-restrizioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestione dei prodotti con restrizioni
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestione dei prodotti con restrizioni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-partire-dalla-versione-20015" class="md-nav__link">
+    <span class="md-ellipsis">
+      A partire dalla versione 2.0.0.15
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedura-di-installazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedura di installazione
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="posware42-funzionalita-adapter-ncr-selfserv-checkout.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adapter NCR SelfServ™ Checkout
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="posware42-funzionalita-pin-dispatching.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pin Dispatching
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="posware42-funzionalita-rt-20.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RT 2.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Changelog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/release-notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Posware - Release Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#note-di-attivazione-ed-utilizzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note di attivazione ed utilizzo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioni-software-di-riferimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioni software di riferimento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cenni-preliminari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cenni preliminari
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cenni preliminari">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#posware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Posware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registratori-telematici" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registratori telematici
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenari-di-upgrade-supportati" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenari di upgrade supportati
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking Changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuove-funzionalita" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nuove funzionalità
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nuove funzionalità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compatibilita-con-la-versione-42x-di-posware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compatibilità con la versione 4.2.x di Posware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrotondamento-dei-pagamenti-contanti-dal-registratore-telematico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrotondamento dei pagamenti contanti dal registratore telematico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendita-prodotti-come-servizi-e-gestione-multi-ateco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vendita prodotti come servizi e gestione multi-ateco
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funzionalita-riportate-dalla-versione-2x" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funzionalità riportate dalla versione 2.x
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funzionalità riportate dalla versione 2.x">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lotteria-degli-scontrini" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lotteria degli scontrini
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestione-del-periodo-di-inattivita-rt-auto-end-of-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestione del periodo di inattività RT - Auto end of day
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestione-dei-prodotti-con-restrizioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestione dei prodotti con restrizioni
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestione dei prodotti con restrizioni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-partire-dalla-versione-20015" class="md-nav__link">
+    <span class="md-ellipsis">
+      A partire dalla versione 2.0.0.15
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedura-di-installazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedura di installazione
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="posware-42-adapter-self-checkout-ncr">Posware 4.2 - Adapter Self-CheckOut NCR</h1>
+<h4 id="note-di-attivazione-ed-utilizzo">Note di attivazione ed utilizzo</h4>
+<p>Data aggiornamento documento: <strong>11/11/2021</strong> <br>
+Ultima versione rilasciata: <code>4.2.0.0</code></p>
+<hr />
+<blockquote>
+<h2 id="versioni-software-di-riferimento">Versioni software di riferimento</h2>
+<ul>
+<li>Posware <strong>4.2.0.0</strong> richiesto dall'adattatore <strong>4.2.0.0</strong></li>
+</ul>
+</blockquote>
+<h2 id="cenni-preliminari">Cenni preliminari</h2>
+<p>È disponibile l'elenco esaustivo delle funzionalità supportate dall'adattatore. Fare riferimento al documento <code>Posware 4.2 - Funzionalità Adapter NCR SelfServ™ Checkout</code>. </p>
+<h3 id="posware">Posware</h3>
+<p>La versione minima di posware richiesta è la <strong>4.2.0.0</strong>. E' richiesta l'installazione del <strong>.net Framework 4.0</strong></p>
+<p>A far data <strong>05/01/2021</strong>, l'ambiente SCO NCR <strong>non è compatibile con il .net Framework 4.8</strong>. Pertanto sarà necessario installare Posware per Windows XP tramite il setup <code>PosUpdateNET40</code>. </p>
+<blockquote>
+<p>ATTENZIONE: Non installare il .net Framework 4.8 sull'ambiente SCO NCR, il software SCO smette di funzionare.</p>
+</blockquote>
+<p>Il setup permetterà l'installazione della versione .net 4.0 rilevando l'ambiente NCR SCO.</p>
+<h3 id="registratori-telematici">Registratori telematici</h3>
+<p>A far data <strong>05/01/2021</strong> i registratori telematici certificati con la SCO NCR sono:</p>
+<ul>
+<li>Epson - tutti i modelli</li>
+</ul>
+<p>A far data <strong>11/11/2021</strong> i registratori telematici compatibili, ma non certificati / supportati, sono:</p>
+<ul>
+<li>NCR modello 130A</li>
+</ul>
+<h3 id="scenari-di-upgrade-supportati">Scenari di upgrade supportati</h3>
+<p>È possibile aggiornare alla versione <code>4.2.x</code> dell'adattatore a partire dalla versione <code>2.0.0.14</code>. <br>
+Qualora l'adattatore non fosse già aggiornato almeno alla versione <code>2.0.0.14</code>, fare riferimento al documento <a href="../posware41/posware41-adapter-self-checkout-ncr.html"><code>Posware 4.1 - Adapter Self-CheckOut NCR</code></a> per dettagli su come aggiornare.</p>
+<h3 id="breaking-changes">Breaking Changes</h3>
+<p>Non sono presenti breaking changes.</p>
+<h2 id="nuove-funzionalita">Nuove funzionalità</h2>
+<h3 id="compatibilita-con-la-versione-42x-di-posware">Compatibilità con la versione 4.2.x di Posware</h3>
+<p>L'adattatore è compatibile con la versione <code>4.2.x</code> di Posware</p>
+<h3 id="arrotondamento-dei-pagamenti-contanti-dal-registratore-telematico">Arrotondamento dei pagamenti contanti dal registratore telematico</h3>
+<p>L'adattatore supporta la feature di arrotondamento contanti da parte del registratore telematico. <br>
+Fare riferimento al documento  <a href="posware42-funzionalita-rt-20.html"><code>Posware 4.2 - Funzionalità RT 2.0</code></a> per la configurazione della feature.</p>
+<h3 id="vendita-prodotti-come-servizi-e-gestione-multi-ateco">Vendita prodotti come servizi e gestione multi-ateco</h3>
+<p>L'adattatore supporta le feature di vendita prodotti come servizi e la gestione multi-ateco. <br>
+Fare riferimento al documento <a href="posware42-funzionalita-rt-20.html"><code>Posware 4.2 - Funzionalità RT 2.0</code></a> per la configurazione della feature.</p>
+<h2 id="funzionalita-riportate-dalla-versione-2x">Funzionalità riportate dalla versione <code>2.x</code></h2>
+<h3 id="lotteria-degli-scontrini">Lotteria degli scontrini</h3>
+<p>Dalla versione <strong>2.0.0.14</strong> è possibile inserire il codice lotteria tramite SCO. E' abilitato l'inserimento sia manuale che tramite scanner. <br>
+Il pulsante <code>Codice Lotteria</code> appare nella schermata dei pagamenti (in base alla configurazione del cliente potrebbe essere altrove).</p>
+<ul>
+<li>Una volta accettato il codice lotteria, viene confermata l'operazione tramite messaggio popup.</li>
+<li>E' possibile sovrascrivere il codice lotteria con un'altro ripetendo l'operazione. L'ultimo codice inserito sarà quello inviato all'Ade.</li>
+<li>Una volta inserito il codice lotteria non è previsto poterlo rimuovere</li>
+<li>Se il cliente digita un codice lotteria <strong>vuoto</strong>, viene rifiutato e segnalato con un messaggio</li>
+<li>Se il cliente digita un codice lotteria inesistente, viene comunque accettato e seguirà le regole previste dall'AdE (non parteciperà alla lotteria)</li>
+</ul>
+<blockquote>
+<p>E' necessario un adeguamento del software SCO per poter utilizzare la feature. Contattare NCR per gli adeguamenti necessari.</p>
+</blockquote>
+<h3 id="gestione-del-periodo-di-inattivita-rt-auto-end-of-day">Gestione del periodo di inattività RT - Auto end of day</h3>
+<p>Dalla versione <strong>2.0.0.12</strong> è possibile abilitare l'end of day (fine giornata) automatico di posware. Per farlo abilitare i seguenti parametri nella tabella <code>tabparametriextra</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th style="text-align: center;">Parametro</th>
+<th>Valore</th>
+<th>Environment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>posware.posdevice</code></td>
+<td style="text-align: center;"><code>isSelfCheckOutEnvironment</code></td>
+<td><code>true</code></td>
+<td><code>production</code></td>
+</tr>
+<tr>
+<td><code>posware.fiscalprinter</code></td>
+<td style="text-align: center;"><code>enableRTEODAfterInactivePeriod</code></td>
+<td><code>true</code></td>
+<td><code>production</code></td>
+</tr>
+</tbody>
+</table>
+<p>Posware effettuerà o meno l'end of day previsto da normativa RT se superato il tempo massimo consentito.</p>
+<blockquote>
+<p>Per poter effettuare con successo l'operazione, all'avvio dell'adattatore la stampante deve essere rilevata ed inizializzata con successo. Qualora in fase di avvio l'inizializzazione delle perifiche dovesse presentare errori, lo stato di "end of day richiesto" non potrà essere rilevato. Di conseguenza non la chiusura automatica non verrà lanciata.</p>
+</blockquote>
+<h3 id="gestione-dei-prodotti-con-restrizioni">Gestione dei prodotti con restrizioni</h3>
+<p>Se non previsto dal software integrato della SCO, dalla versione <strong>2.0.0.13</strong> è possibile indicare nella tabella articoli di posware i flag per la vendita di articoli soggetti a restrizioni.</p>
+<blockquote>
+<p>Le due gestioni sono mutuamente esclusive. Se il software SCO gestisce autonomamente la vendita con restrizioni, i flag su posware non vanno impostati.</p>
+</blockquote>
+<p>I campi previsti della tabella articoli sono:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th style="text-align: center;">Valore</th>
+<th>Descrizione</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sco_Prod_Leggero</td>
+<td style="text-align: center;">0 non attivo / 1 attivo</td>
+<td>Il prodotto è troppo leggero e non deve essere pesato dalla bilancia della SCO</td>
+<td></td>
+</tr>
+<tr>
+<td>Sco_Prod_NonPesare</td>
+<td style="text-align: center;">0 non attivo / 1 attivo</td>
+<td>Il prodotto non deve essere pesato dalla bilancia della SCO</td>
+<td></td>
+</tr>
+<tr>
+<td>Sco_Prod_Ingombrante</td>
+<td style="text-align: center;">0 non attivo / 1 attivo</td>
+<td>Il prodotto non deve essere pesato dalla bilancia della SCO e non deve essere rilevato dal contenuto sacchetto</td>
+<td></td>
+</tr>
+<tr>
+<td>Sco_Prod_AltoRischio</td>
+<td style="text-align: center;">0 non attivo / 1 attivo (verifica età)</td>
+<td>Il prodotto per essere venduto richiede una verifica dell'età oppure l'approvazione da parte del personale</td>
+<td>A partire dalla versione <strong>2.0.0.15</strong></td>
+</tr>
+<tr>
+<td>Sco_Prod_AltoRischio</td>
+<td style="text-align: center;">0 non attivo / 2 attivo (approvazione visiva)</td>
+<td>Il prodotto per essere venduto richiede una verifica visiva ed approvazione da parte del personale</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="a-partire-dalla-versione-20015">A partire dalla versione <code>2.0.0.15</code></h5>
+<p>La gestione del prodotto ad alto rischio, quando impostata ad <code>1</code>, supporta la lettura della data di nascita dalla SCO. Se l'utente inserisce la data di nascita durante la richiesta di approvazione, l'adattatore mostra sulla SCO i prodotti che devono essere rimossi dalla spesa per il mancato raggiungimento dell'età. La successiva rimozione dovrà, eventualmente, essere eseguita <strong>manualmente</strong> dal cliente o dal personale del negozio. Non sono previste forzature in merito nel workflow della SCO.</p>
+<h2 id="procedura-di-installazione">Procedura di installazione</h2>
+<blockquote>
+<p>Prima di procedere con l'upgrade, assicurarsi di avere installata almeno la versione <code>2.0.0.14</code>.</p>
+</blockquote>
+<ol>
+<li>Aggiornare Posware in versione <strong>.net 4.0</strong> , tramite il setup <code>PosUpdateNET40</code>. <strong>Non installare</strong> la versione .net <strong>4.8</strong> ne tantomeno il runtime .net 4.8</li>
+<li>Sovrascrivere l'eseguibile dell'adattatore <code>Posware_NCRSco.exe</code> con la versione aggiornata fornita.</li>
+</ol>
+<p><strong>Per il supporto alla lotteria degli scontrini, se l'ultimo aggiornamento del software a bordo NCR SCO è antecedente al 10/01/2021, sarà necessario contattare NCR per le istruzioni sull'adeguamento.</strong> </p>
+<blockquote>
+<p>Senza adeguare il software sarà comunque possibile utilizzare la versione <strong>2.0.0.13</strong>. Saranno disponibili tutte le funzionalità tranne che il supporto <strong>alla lotteria degli scontrini</strong>.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2024&copy; ISiD
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://isid.it/" target="_blank" rel="noopener" title="isid.it" class="md-social__link">
+      <?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1510.000000pt" height="518.000000pt" viewBox="0 0 1510.000000 518.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)"
+fill="#FFFFFF" stroke="none">
+<path d="M69 5157 c-19 -12 -42 -38 -51 -57 -17 -33 -18 -174 -18 -2510 0
+-2336 1 -2477 18 -2510 9 -19 32 -45 51 -57 l34 -23 466 0 c521 0 514 -1 553
+71 17 32 18 131 18 2519 0 2391 -1 2487 -18 2520 -37 71 -32 70 -553 70 l-466
+0 -34 -23z"/>
+<path d="M2580 5169 c-305 -35 -562 -148 -726 -320 -149 -157 -241 -337 -291
+-572 -16 -72 -18 -141 -18 -582 0 -550 4 -597 66 -787 127 -392 402 -626 846
+-720 l108 -23 1570 -5 1570 -5 60 -23 c32 -12 75 -35 95 -50 44 -36 95 -119
+110 -181 17 -67 25 -451 11 -539 -26 -169 -92 -261 -217 -304 l-69 -23 -2030
+-5 c-1919 -5 -2032 -6 -2058 -23 -63 -41 -62 -30 -62 -487 0 -453 0 -451 58
+-494 l28 -21 2177 -3 c1891 -2 2192 0 2293 13 385 50 650 197 824 460 94 141
+143 264 182 460 16 80 18 147 18 580 0 416 -3 504 -17 585 -51 285 -151 492
+-315 651 -169 164 -367 257 -655 305 -94 16 -242 18 -1658 23 l-1555 6 -56 28
+c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
+103 161 207 197 48 16 190 17 2091 22 1928 5 2041 6 2066 23 53 36 54 41 57
+469 2 250 -1 412 -7 436 -6 21 -25 51 -41 67 l-31 30 -2197 1 c-1208 1 -2231
+-2 -2272 -7z"/>
+<path d="M7631 5162 c-71 -38 -71 -38 -71 -501 0 -403 1 -415 21 -448 40 -64
+34 -63 501 -63 l424 0 302 -282 302 -282 0 -386 c0 -380 0 -386 23 -430 42
+-82 28 -80 550 -80 502 0 489 -1 541 60 l26 32 0 422 0 423 -23 34 c-46 69
+-44 69 -512 69 l-420 1 -297 277 -297 277 0 390 c-1 435 -1 436 -70 482 l-34
+23 -466 0 c-433 0 -469 -1 -500 -18z"/>
+<path d="M9255 5167 c-47 -18 -71 -39 -97 -82 l-23 -40 -3 -452 -3 -453 1993
+-3 c1802 -3 2001 -5 2071 -20 422 -88 609 -249 697 -601 50 -201 55 -279 55
+-926 0 -647 -5 -725 -55 -926 -80 -318 -256 -491 -582 -574 -216 -54 -240 -55
+-1653 -55 -715 0 -1313 4 -1328 8 -57 16 -57 20 -57 657 l0 580 -570 0 -570 0
+2 -1072 3 -1073 27 -46 c17 -29 41 -53 65 -65 37 -18 101 -19 1918 -22 1332
+-2 1927 0 2040 8 503 36 891 149 1191 346 113 74 311 270 383 379 189 287 292
+647 321 1120 13 220 13 1250 0 1470 -29 473 -133 837 -322 1120 -68 103 -219
+259 -328 341 -109 82 -343 200 -491 248 -213 68 -463 114 -738 136 -200 15
+-3906 12 -3946 -3z"/>
+<path d="M7560 1918 c0 -1706 1 -1815 18 -1847 9 -19 33 -43 52 -53 33 -17 64
+-18 512 -16 l476 3 27 25 c58 53 55 -64 55 1895 l0 1805 -570 0 -570 0 0
+-1812z"/>
+</g>
+</svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>
