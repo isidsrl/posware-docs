@@ -1,0 +1,1867 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://posware.io/4.3/old-docs/posware42/posware42-funzionalita-rt-20.html">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
+    
+    
+      
+        <title>Posware 4.2 - Funzionalità RT 2.0 (XML 7) - Documentazione Ufficiale Posware</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#posware-42-funzionalita-rt-20-xml-7" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+Non stai visualizzando l'ultima versione della documentazione.
+<a href="../../..">
+    <strong>Clicca qui per andare all'ultima versione.</strong>
+</a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Documentazione Ufficiale Posware" class="md-header__button md-logo" aria-label="Documentazione Ufficiale Posware" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentazione Ufficiale Posware
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Posware 4.2 - Funzionalità RT 2.0 (XML 7)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../posware-module/statistiche-dettagliate.html" class="md-tabs__link">
+          
+  
+    
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Documentazione Ufficiale Posware" class="md-nav__button md-logo" aria-label="Documentazione Ufficiale Posware" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    Documentazione Ufficiale Posware
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Moduli
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Moduli
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Posware Module
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Posware Module
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../posware-module/statistiche-dettagliate.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistiche dettagliate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#manuale-di-attivazione-ed-utilizzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manuale di attivazione ed utilizzo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manuale di attivazione ed utilizzo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ultima-revisione-documento-06122021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ultima revisione documento: 06/12/2021
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioni-software-di-riferimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioni software di riferimento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cenni-preliminari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cenni preliminari
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cenni preliminari">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#posware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Posware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stampanti" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stampanti
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-rt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server RT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Server RT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#firmware-stampanti" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firmware stampanti
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-stampanti" class="md-nav__link">
+    <span class="md-ellipsis">
+      Driver stampanti
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Driver stampanti">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diebold-rt-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diebold RT-One
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epson" class="md-nav__link">
+    <span class="md-ellipsis">
+      EPSON
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ncr" class="md-nav__link">
+    <span class="md-ellipsis">
+      NCR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedura-di-installazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedura di installazione
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funzionalita" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funzionalità
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funzionalità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nuove-forme-di-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nuove forme di pagamento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nuove forme di pagamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sconto-a-pagare" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sconto a pagare
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-riscosso-segue-fattura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non riscosso segue fattura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazione
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addendum-per-registratore-telematico-rt-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addendum per Registratore Telematico RT-One
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ticket-numerati-manuali" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ticket numerati manuali
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ticket numerati manuali">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurazione_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazione
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-di-utilizzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow di utilizzo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ticket-numerati-su-pagamento-elettronico-e-dematerializzato" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ticket numerati su pagamento elettronico e dematerializzato
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ticket numerati su pagamento elettronico e dematerializzato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurazione_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazione
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-di-utilizzo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow di utilizzo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ulteriori-note-sul-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ulteriori note sul workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ulteriori note sul workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esempio-1-transazione-di-25-con-massimo-pagabile-calcolato-di-20-e-cifra-da-pagare-digitata-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio 1: transazione di 25€ con massimo pagabile calcolato di 20€ e cifra da pagare digitata 15€
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-2-transazione-di-25-con-massimo-pagabile-calcolato-di-20-e-nessuna-cifra-manuale-da-pagare-digitata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio 2: transazione di 25€ con massimo pagabile calcolato di 20€ e nessuna cifra manuale da pagare digitata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-3-transazione-di-25-con-massimo-pagabile-calcolato-di-20-e-credito-massimo-disponibile-sui-buoni-di-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio 3: transazione di 25€ con massimo pagabile calcolato di 20€ e credito massimo disponibile sui buoni di 16€
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provider-supportati" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provider supportati
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nota-di-credito" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nota di credito
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nota di credito">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurazione_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazione
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-di-utilizzo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow di utilizzo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrotondamento-tramite-registratore-telematico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrotondamento tramite Registratore Telematico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrotondamento tramite Registratore Telematico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurazione_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazione
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistema-di-verifica-della-configurazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistema di verifica della configurazione
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-di-utilizzo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow di utilizzo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitazioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitazioni
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informazioni-registrate-nel-log-di-transazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Informazioni registrate nel log di transazione
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Informazioni registrate nel log di transazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transazione-avente-ammontare-scontrino-102-il-consumatore-paga-effettivamente-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transazione avente ammontare scontrino 1.02 €, il consumatore paga effettivamente 1.00 €
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transazione-avente-ammontare-scontrino-108-il-consumatore-paga-effettivamente-110" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transazione avente ammontare scontrino 1.08 €, il consumatore paga effettivamente 1.10 €
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transazione-avente-ammontare-scontrino-107-il-consumatore-paga-effettivamente-105" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transazione avente ammontare scontrino 1.07 €, il consumatore paga effettivamente 1.05 €
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transazione-avente-ammontare-scontrino-108-il-consumatore-paga-2-con-resto-di-090-il-valore-effettivamente-pagato-sara-comunque-di-110" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transazione avente ammontare scontrino 1.08 €, il consumatore paga 2 € con resto di 0.90 €. Il valore effettivamente pagato sarà comunque di 1.10€
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eccezioni-alla-regola-e-funzionalita-di-arrotondamento-ibrido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eccezioni alla regola e funzionalità di arrotondamento ibrido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrotondamento-ibrido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrotondamento ibrido
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrotondamento ibrido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#considerazioni-e-disclaimer-riguardo-larrotondamento-ibrido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerazioni e disclaimer riguardo l'arrotondamento ibrido
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendita-di-servizi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vendita di servizi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vendita di servizi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurazione_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazione
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestione-multi-ateco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestione multi-ateco
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestione multi-ateco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurazione_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazione
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistema-di-verifica-della-configurazione_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistema di verifica della configurazione
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitazioni_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitazioni
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabella-di-compatibilita-delle-funzionalita" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabella di compatibilità delle funzionalità
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabella di compatibilità delle funzionalità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addendum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addendum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurazione-server-rt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazione Server RT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurazione Server RT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cenni-preliminari_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cenni preliminari
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurazioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurazioni
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitazioni-e-vincoli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitazioni e vincoli
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="posware-42-funzionalita-rt-20-xml-7">Posware 4.2 - Funzionalità RT 2.0 (XML 7)</h1>
+<h4 id="manuale-di-attivazione-ed-utilizzo">Manuale di attivazione ed utilizzo</h4>
+<p>Il presente documento descrive i requisiti minimi e le procedure necessarie all'attivazione delle funzionalità previste dalle specifiche del Registratore Telematico 2.0, inclusa la compatibilità con la versione 7.0 dei tracciati XML.</p>
+<h5 id="ultima-revisione-documento-06122021">Ultima revisione documento: 06/12/2021</h5>
+<hr />
+<blockquote>
+<h2 id="versioni-software-di-riferimento">Versioni software di riferimento</h2>
+<ul>
+<li>Posware <strong>4.2.0.0</strong> o superiore</li>
+</ul>
+</blockquote>
+<h2 id="cenni-preliminari">Cenni preliminari</h2>
+<h3 id="posware">Posware</h3>
+<p>La versione minima di posware richiesta è la <code>v4.2.0</code>. <br>
+Per il Server RT Epson è la <code>v4.2.49</code>. <br>
+Vedi <a href="#tabella-di-compatibilita-delle-funzionalita">Tabella di compatibilità delle funzionalità</a>.</p>
+<h3 id="stampanti">Stampanti</h3>
+<p>A far data <strong>23/09/2021</strong> le stampanti RT 2.0 supportate sono:</p>
+<ul>
+<li>Epson - tutti i modelli</li>
+<li>RT-ONE</li>
+<li>NCR modello 130A</li>
+</ul>
+<blockquote>
+<p>Non tutte le funzionalità RT 2.0 riportate in questo documento sono supportate dai registratori telematici. <br>
+Consultare la <a href="#tabella-di-compatibilita-delle-funzionalita">tabella di compatibilità delle funzionalità</a> per verificare se il vostro modello di stampante RT supporta una specifica funzionalità in Posware 4.2.</p>
+</blockquote>
+<h3 id="server-rt">Server RT</h3>
+<p>A far data <strong>23/09/2021</strong> è stato aggiunto il supporto RT 2.0 ed XML7 al Server RT Epson e la versione minima del firmware supportata è la <code>4.01.0</code> del <strong>01/04/2021</strong>, consultare la <a href="#tabella-di-compatibilita-delle-funzionalita">tabella di compatibilità delle funzionalità</a> per verificare le funzioni supportate. <br>
+Per configurare le singole funzioni, non vi sono differenze tra le normali stampanti RT ed il server, ad eccezione della nuova funzione di trasmissione Iva/Reparti (seguire le indicazioni alla sezione <a href="#configurazione-server-rt">Configurazione Server RT</a> ). <br>
+Continuare la lettura dei successivi paragrafi di questo documento.</p>
+<h4 id="firmware-stampanti">Firmware stampanti</h4>
+<p>Di seguito l'elenco dei firmware/stampanti certificati:</p>
+<ul>
+<li>Epson - tutti i modelli: <code>11.02 build 255</code> oppure <code>7.02 build 255</code></li>
+<li>RT-ONE: <code>8.0.7</code></li>
+<li>NCR modello 130A: <code>8.00.76</code></li>
+</ul>
+<p><strong>Qualora venga utilizzata una versione di firmware diversa da quelle riportate in elenco, il funzionamento ed il supporto non è garantito. Possono verificarsi problemi quali errori imprevisti ed annulli della transazione.</strong></p>
+<h4 id="driver-stampanti">Driver stampanti</h4>
+<p>L'aggiornamento del firmware della stampante deve avvenire contestualmente all'aggiornamento dei driver OPOS qualora fossero obsoleti. Di seguito le versioni minime supportate:</p>
+<blockquote>
+<p>Qualora si ometta di aggiornare il driver, la stampante restituirà in maniera random degli errori <strong>OPOS 207</strong> durante varie fasi di emissione dello scontrino ed annulli imprevisti.</p>
+</blockquote>
+<h5 id="diebold-rt-one">Diebold RT-One</h5>
+<p>Driver <strong>OPOS</strong> Diebold, versione minima <code>1.4.3</code></p>
+<h5 id="epson">EPSON</h5>
+<p>Driver <strong>OPOS</strong> Epson, versione minima <code>V22</code>. </p>
+<h5 id="ncr">NCR</h5>
+<p>Driver <strong>OPOS</strong> NCR, versione minima <code>2.0.20.0</code></p>
+<p><em>Rivolgersi ai produttori per il download dei driver aggiornati.</em></p>
+<h3 id="procedura-di-installazione">Procedura di installazione</h3>
+<ol>
+<li>Aggiornare il firmware della stampante se necessario</li>
+<li>Aggiornare il driver OPOS della stampante se necessario</li>
+<li>Aggiornare Posware tramite l'applicativo di aggiornamento <code>PosUpdate</code>.</li>
+</ol>
+<blockquote>
+<p>Dopo aver effettuato l'aggiornamento dalla versione 4.1.x alla versione 4.2.0, al primo avvio di Posware, <strong>verrà effettuata una chiusura fiscale e riscritta la tabella reparti / iva del registratore telematico</strong>. <br>
+È importante tenere conto di questo requisito qualora si vogliano minimizzare le chiusure fiscali oppure effettuare l'aggiornamento durante il periodo di vendita. <br>
+Non è possibile evitare questo passaggio. La chiusura verrà eseguita una volta soltanto a seguito dell'upgrade.</p>
+</blockquote>
+<h2 id="funzionalita">Funzionalità</h2>
+<h3 id="nuove-forme-di-pagamento">Nuove forme di pagamento</h3>
+<p>Il Registratore Telematico 2.0 supporta due nuove forme di pagamento: <code>Non riscosso fattura</code> e <code>Sconto a pagare</code>. Entrambe sono supportante in Posware.</p>
+<h6 id="sconto-a-pagare">Sconto a pagare</h6>
+<p>La forma di pagamento <code>Sconto a pagare</code> può essere utilizzata in Posware solo tramite il meccanismo dei <strong>Coupon pagamento</strong>. <br>
+Non è possibile far imputare pagamenti di questo tipo in modo arbitrario all'operatore. La tracciatura avviene tramite gli assodati meccanismi dei coupon pagamento.</p>
+<h6 id="non-riscosso-segue-fattura">Non riscosso segue fattura</h6>
+<p>Non ci sono particolari vincoli su questo tipo di pagamento. Possono essere creati molteplici pagamenti in base alla necessità ( non riscosso carta, non riscosso contanti, ecc... ) <br>
+I campi riportati in tabella devono rispettare questi valori dovrà essere configurato sulla base del valore in tabella:</p>
+<h5 id="configurazione">Configurazione</h5>
+<p>Per abilitare l’uso dei pagamenti <code>Non riscosso segue fattura</code> e <code>Sconto a pagare</code>, configurare un nuovo pagamento tramite la tabella <code>tipi_pagamenti</code>. <br>
+Nella tabella a seguire sono riportati solo i campi il cui valore deve essere impostato come da tabella per il corretto funzionamento.</p>
+<table>
+<thead>
+<tr>
+<th>Pagamento RT</th>
+<th>Valore campo <code>TipoPagRT</code></th>
+<th>Valore campo <code>TipoPag</code></th>
+<th>Valore campo <code>resto</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sconto a pagare</td>
+<td><code>6</code></td>
+<td><code>2</code></td>
+<td><code>0</code> se il coupon pagamento viene bruciato totalmente, <code>1</code> se deve essere emesso un coupon pagamento della differenza</td>
+</tr>
+<tr>
+<td>Non riscosso segue fattura</td>
+<td><code>7</code></td>
+<td>Non sono presenti vincoli particolari</td>
+<td><code>0</code>: il pagamento RT non permette di avere resto</td>
+</tr>
+</tbody>
+</table>
+<p>Assegnando un pulsante al pagamento, sarà possibile utilizzarlo nel comune workflow di Posware. <br>
+Nel pagamento RT <code>Sconto a pagare</code> dovranno essere eseguite anche tutte le configurazioni relative all'emissione e bruciatura dei coupon pagamento.</p>
+<h6 id="addendum-per-registratore-telematico-rt-one">Addendum per Registratore Telematico RT-One</h6>
+<p>Abilitando in <code>tabparametriextra</code> la funzione <code>sendPayment</code> a <code>true</code> (vedi tabella), Posware invierà alla stampante la programmazione dei pagamenti secondo la propria tabella.</p>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametro</th>
+<th>Valore</th>
+<th>Valore di default</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>posware.fiscalprinter.rtone</code></td>
+<td><code>sendPayment</code></td>
+<td>true/false</td>
+<td><code>false</code></td>
+<td>Impostandolo a <code>true</code>, Posware invierà al registratore telamtico, oltre alla configurazione IVA, anche la configurazione dei pagamenti in base alla sua tabella interna. Impostare a <code>false</code> per programmare manualmente la tabella sul R.T.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Se il parametro <code>sendPayment</code> sarà impostato a <code>false</code>, i pagamenti in stampante andranno manualmente configurati tenendo sempre conto delle indicazioni dei valori precedentemente riportati come valori accettati del campo <code>TipoPagRt</code></strong>.</p>
+<h3 id="ticket-numerati-manuali">Ticket numerati manuali</h3>
+<h5 id="configurazione_1">Configurazione</h5>
+<ol>
+<li>Aggiungere un nuovo record alla tabella <code>tipi_pagamenti</code></li>
+<li>Impostare il campo <code>tipoPagRT</code> al valore <strong>4</strong></li>
+<li>Impostare il campo <code>ticket</code> al valore <strong>SI</strong></li>
+<li>Impostare il campo <code>obbligatorio</code> al valore <strong>true</strong></li>
+<li>Aggiungere il pulsante alla grafica ed agganciare il pagamento</li>
+</ol>
+<h5 id="workflow-di-utilizzo">Workflow di utilizzo</h5>
+<ol>
+<li>Dopo aver premuto subtotale, premere il tasto assegnato al pagamento Ticket numerati</li>
+<li>Alla richiesta <strong>Inserire taglio</strong> imputare il taglio dei Ticket e premere il tasto INVIO</li>
+<li>Verrà visualizzato a Display Operatore/Schermo, il numero massimo dei ticket utilizzabili per la transazione in corso in base al taglio imputato</li>
+<li>Il numero massimo dei ticket utilizzabili viene inserito nella casella di input. E' possibile confermare con <strong>INVIO</strong> oppure imputare un numero di ticket diverso. Premere <strong>INVIO</strong> per confermare.</li>
+</ol>
+<blockquote>
+<p>Se viene erroneamente imputato un numero di Ticket da usare maggiore del massimo utilizzabile, viene mostrato il messaggio MAX PAG. <em>"NOME PAGAMENTO"</em> XX €, riportando il valore massimo pagabile. A questo punto è possibile ripetere la procedura dal punto 1.</p>
+</blockquote>
+<h3 id="ticket-numerati-su-pagamento-elettronico-e-dematerializzato">Ticket numerati su pagamento elettronico e dematerializzato</h3>
+<h5 id="configurazione_2">Configurazione</h5>
+<p>Alla configurazione già prevista per il pagamento, è unicamente necessario impostare il campo <code>tipoPagRT</code> al valore <strong>4</strong></p>
+<h5 id="workflow-di-utilizzo_1">Workflow di utilizzo</h5>
+<p>Il riconoscimento del numero dei ticket avviene automaticamente senza alcuna variazione al workflow esistente.</p>
+<h5 id="ulteriori-note-sul-workflow">Ulteriori note sul workflow</h5>
+<p>Si ribadisce che in caso di pagamento buono pasto <strong>elettronico</strong>, è possibile pagare soltanto in una unica operazione il <em>massimo importo pagabile</em>. <br>
+Questo importo viene calcolato automaticamente dal front-end in base alle configurazioni impostate (esclusione reparti/promo ecc...). <br>
+<strong>Non è possibile specificare manualmente quanto si desidera pagare.</strong></p>
+<p>Se durante l'operazione di pagamento il provider dei buoni pasto restituirà un importo minore al massimo pagabile (per insufficienza di credito o numero massimo dei buoni utilizzati), questo verrà usato come importo di riferimento ed avverrà un pagamento parziale della transazione (Esempio 3).</p>
+<h6 id="esempio-1-transazione-di-25-con-massimo-pagabile-calcolato-di-20-e-cifra-da-pagare-digitata-15">Esempio 1: transazione di 25€ con massimo pagabile calcolato di 20€ e cifra da pagare digitata 15€</h6>
+<ol>
+<li>Viene digitato il pagamento buono pasto elettronico con i 15€ desiderati</li>
+<li>Al provider viene inoltrata una richiesta di pagamento di 20€ - non 15.</li>
+<li>Il provider conferma l'avvenuto pagamento ed i 20€ conteggiati.</li>
+<li>Per chiudere la transazione è necessario saldare il rimanente con altro metodo di pagamento o contanti</li>
+</ol>
+<h6 id="esempio-2-transazione-di-25-con-massimo-pagabile-calcolato-di-20-e-nessuna-cifra-manuale-da-pagare-digitata">Esempio 2: transazione di 25€ con massimo pagabile calcolato di 20€ e nessuna cifra manuale da pagare digitata</h6>
+<ol>
+<li>Viene digitato il pagamento buono pasto elettronico</li>
+<li>Al provider viene inoltrata una richiesta di pagamento di 20€</li>
+<li>Il provider conferma l'avvenuto pagamento ed i 20€ conteggiati</li>
+<li>Per chiudere la transazione è necessario saldare il rimanente con altro metodo di pagamento o contanti</li>
+</ol>
+<h6 id="esempio-3-transazione-di-25-con-massimo-pagabile-calcolato-di-20-e-credito-massimo-disponibile-sui-buoni-di-16">Esempio 3: transazione di 25€ con massimo pagabile calcolato di 20€ e credito massimo disponibile sui buoni di 16€</h6>
+<ol>
+<li>Viene digitato il pagamento buono pasto elettronico (anche digitando deliberatamente una cifra da incassare verrebbe ignorata)</li>
+<li>Al provider viene inoltrata una richiesta di pagamento di 20€</li>
+<li>Il provider conferma l'avvenuto pagamento di soli 16€</li>
+<li>Il pagamento parziale di 16€ viene conteggiato e per chiudere la transazione sarà necessario saldare i restanti 9€ con altro metodo di pagamento o contanti</li>
+</ol>
+<h5 id="provider-supportati">Provider supportati</h5>
+<p>Al momento, tutti i provider di buoni pasto dematerializzati ed elettronici previsti in posware, supportano anche la funzione di ticket numerato. <br>
+Si riporta l'elenco per completezza:</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Funzionalità</th>
+<th>Supporto Ticket numerati</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Argentea</td>
+<td>Buoni Pasto Elettronici</td>
+<td>SI</td>
+<td></td>
+</tr>
+<tr>
+<td>Argentea</td>
+<td>Buoni Pasto Dematerializzati</td>
+<td>SI</td>
+<td></td>
+</tr>
+<tr>
+<td>Diebold Buono Chiaro</td>
+<td>Buoni Pasto Dematerializzati</td>
+<td>SI</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="nota-di-credito">Nota di credito</h3>
+<h5 id="configurazione_3">Configurazione</h5>
+<p>Non sono necessarie configurazioni</p>
+<h5 id="workflow-di-utilizzo_2">Workflow di utilizzo</h5>
+<blockquote>
+<p>I workflow della procedura di nota credito <strong>Totale e Parziale rimangono invariati</strong>. I cambiamenti impattano solo la procedura <strong>Manuale</strong>.</p>
+</blockquote>
+<ol>
+<li>Premere il tasto assegnato alla funzione Nota di Credito</li>
+<li>Alla richiesta Tipo Nota Credito, selezionare <strong>Manuale</strong> e premere il tasto OK</li>
+<li>Alla richiesta Causale, selezionare la causale desiderata e continuare. Se configurate, vengono visualizzate le richieste di Info aggiuntive, imputarle e continuare.</li>
+<li>
+<p>Verrà richiesta la <strong>Tipologia Documento</strong> come previsto da normativa su XML7. Le scelte possibili sono:</p>
+<ol>
+<li><strong>Matricola</strong>: da utilizzare nel caso in cui il documento originale sia stato emesso da un registratore telematico diverso da quello che sta emettendo attualmente la nota di credito</li>
+<li><strong>POS</strong>: da utilizzare quando è necessario emettere un documento di reso utilizzando altri elementi probanti l’acquisto Come previsto dalla Circolare 3/E del 21-feb-20. In questo caso l'elemento è una ricevuta POS</li>
+<li><strong>ND</strong>: da utilizzare quando è necessario emettere un documento di reso utilizzando altri elementi probanti l’acquisto Come previsto dalla Circolare 3/E del 21-feb-20. In questo caso l'elemento è una ricevuta da misuratore fiscale (MF), ricevuta WEB o di altra origine.</li>
+</ol>
+<p>In base alla <strong>tipologia documento</strong> scelta, verranno formulate altre richieste. <br>
+Per la tipologia documento <strong>Matricola</strong> dovranno essere forniti:</p>
+<ul>
+<li>la data del documento commerciale di origine cui si fa riferimento;</li>
+<li>l’identificativo del documento commerciale a cui si fa riferimento. Vengono fatte due richieste, una per il numero documento ed una per il numero della chiusura fiscale. Queste informazioni sono riportate nello scontrino nel formato "Documento N. XXXX-YYYY" dove XXXX è il numero della chiusura fiscale ed YYYY è il numero del documento;</li>
+<li>la matricola del dispositivo originario che ha generato il documento di riferimento;</li>
+</ul>
+<p>Per la tipologia documento <strong>POS</strong> o <strong>ND</strong> dovranno essere forniti:</p>
+<ul>
+<li>la data del documento commerciale di origine a cui si fa riferimento;</li>
+</ul>
+</li>
+<li>
+<p>E' ora possibile aggiungere gli articoli alla transazione e completare come previsto da normale procedura</p>
+</li>
+<li>Se è necessario digitare il codice lotteria, è possibile digitarlo <strong>solo prima del Subtotale</strong> (a seguito di tutti gli articoli e prima di entrare nella fase di scelta del pagamento). Si entra nella fase di scelta del pagamento alla pressione del tasto <strong>Subtotale</strong>.</li>
+</ol>
+<h3 id="arrotondamento-tramite-registratore-telematico">Arrotondamento tramite Registratore Telematico</h3>
+<h5 id="configurazione_4">Configurazione</h5>
+<p>Per abilitare l'arrotondamento automatico previsto dal DL N.50/2017, effettuato direttamente dal Registratore Telematico, è necessario:</p>
+<ol>
+<li>Abilitare sulla stampante la funzionalità di arrotondamento tramite programmazione/tool ufficiali (<em>Posware non invia la programmazione alla stampante</em>). È supportata solo la configurazione di <strong>arrotondamento completo (sia in eccesso che in difetto)</strong>.</li>
+<li>Impostare nella tabella di configurazione <code>tabparametriextra</code> il parametro <code>isRTCashPaymentRoundingSupportEnabled</code> del modulo <code>posware.fiscalprinter</code> al valore <code>True</code></li>
+<li>Impostare nella tabella <code>tipi_pagamenti</code>, per il pagamento di tipo <strong>contanti</strong> che si vuole arrotondare, il campo <code>tipoPagRT</code> al valore <code>0</code> (<em>contante</em>) ed il campo <code>Arrotondamento</code> al valore <code>0,05</code></li>
+<li>Se sono state impostate delle formule di arrotondamento personalizzate, <strong>è necessario rimuoverle</strong> per non creare conflitti. <mark>Le due feature non sono compatibili tra loro.</mark></li>
+</ol>
+<h5 id="sistema-di-verifica-della-configurazione">Sistema di verifica della configurazione</h5>
+<p>All'avvio di Posware, verrà verificata la configurazione dell'arrotondamento del Frontend rispetto a quella programmata nella stampante. In caso venisse rilevata una configurazione errata, verrà mostrato un messaggio popup con l'errore:</p>
+<pre><code>La configurazione sulla stampante dell'arrotondamento DL N.50/2017 non è corretta. Per funzionare correttamente è necessario abilitare l'arrotondamento standard (codice 1). Se non si vuole attivare l'arrotondamento sulla stampante, disabilitare anche in Posware l'opzione - IsRTCashPaymentRoundingSupportEnabled - in tabparametriextra. Verificare la programmazione.
+</code></pre>
+<p>oppure:</p>
+<pre><code>Nella stampante è abilitato l'arrotondamento DL N.50/2017. Abilitare la funzionalità di Posware - IsRTCashPaymentRoundingSupportEnabled - in tabparametriextra oppure disabilitare l'opzione nella stampante. Verificare la programmazione.
+</code></pre>
+<p><strong>Anche in caso di Server Rt Epson, Posware controlla lo stato di attivazione della funzione.</strong> <br>
+<strong>È mandatorio allineare le impostazioni di arrotondamento tra Posware e Registratore Telematico. In caso contrario Posware si chiuderà automaticamente alla chiusura del messaggio di avviso.</strong></p>
+<h5 id="workflow-di-utilizzo_3">Workflow di utilizzo</h5>
+<p>Non sono previsti variazioni rispetto al workflow di arrotondamento esistente in Posware.</p>
+<h5 id="limitazioni">Limitazioni</h5>
+<p>Il Registratore Telematico effettua l'arrotondamento solo su transazioni <strong>integralmente pagate in contanti</strong>.  In caso di pagamenti misti di qualsiasi tipo, l'arrotondamento non viene effettuato.</p>
+<h5 id="informazioni-registrate-nel-log-di-transazione">Informazioni registrate nel log di transazione</h5>
+<p>Una transazione con arrotondamento da registratore telematico, prevede che il totale della transazione - corrispettivo - sia pari al totale effettivo dello scontrino al lordo degli arrotondamenti: una transazione avente ammontare scontrino <strong>1.02 €</strong>, aumenterà il <strong>totale gran fiscale</strong> del registratore telematico di <strong>1.02 €</strong>, nonostante il consumatore, in caso di pagamento integralmente in contante, paghi effettivamente soltanto <strong>1.00 €</strong></p>
+<p>È possibile riscontrare tale condizione anche nei tipi record 00/04 di inizio/fine transazione, nei campi <code>Totale transazione</code> e <code>Corrispettivo Fiscale a Fine transazione</code>.</p>
+<p>Al fine di riconoscere il valore degli arrotondamenti da R.T. e poter eseguire eventuali quadrature, nel log cassa viene inserita una informazione aggiuntiva (record 14) con codice informazione <code>RTRA</code> (RT Rounding Amount). <br>
+<em>Questo record 14 si aggiunge ad altri eventuali record di informazione aggiuntiva.</em></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Inizio</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Valore esempio</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Codice del punto vendita, Fisso per PdV</td>
+<td>1</td>
+<td>4</td>
+<td>N</td>
+<td><code>0001</code></td>
+<td>Codice punto vendita di esempio</td>
+</tr>
+<tr>
+<td>Numero terminale cassa (001-999)</td>
+<td>5</td>
+<td>3</td>
+<td>N</td>
+<td><code>001</code></td>
+<td>Numero terminale di esempio</td>
+</tr>
+<tr>
+<td>Progressivo record</td>
+<td>8</td>
+<td>5</td>
+<td>N</td>
+<td><code>12345</code></td>
+<td>Progressivo di esempio</td>
+</tr>
+<tr>
+<td>Tipo Record (fisso "14")</td>
+<td>13</td>
+<td>2</td>
+<td>N</td>
+<td><code>14</code></td>
+<td>Tipo record <em>Informazione aggiuntiva</em></td>
+</tr>
+<tr>
+<td>Tipo Informazione</td>
+<td>15</td>
+<td>1</td>
+<td>C</td>
+<td><code>S</code></td>
+<td>Informazione aggiuntiva di livello <em>Scontrino</em></td>
+</tr>
+<tr>
+<td>Codice Informazione</td>
+<td>16</td>
+<td>5</td>
+<td>C</td>
+<td><code>RTRA</code></td>
+<td>RT Rounding Amount</td>
+</tr>
+<tr>
+<td>Codice a barre (in caso Tipo Informazione=A)</td>
+<td>21</td>
+<td>20</td>
+<td>C</td>
+<td></td>
+<td>Non applicabile</td>
+</tr>
+<tr>
+<td>Informazione</td>
+<td>41</td>
+<td>100</td>
+<td>C</td>
+<td><code>-2</code></td>
+<td>Ammontare <strong>positivo o negativo</strong> del valore di arrotondamento RT applicato alla transazione. Se positivo viene memorizzato <strong>senza segno</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>In caso di transazione pagata integralmente in <em>Contanti</em>, <strong>intesa come tipo pagamento <em>Contanti</em> a livello di registratore telematico</strong>, potranno essere presenti uno o più record <strong>03 - Pagamento</strong>. </p>
+<p>Il campo <code>Importo pagamento</code> (posizione 17 lungo 9, tipo numerico 7,2) di tale record, rappresenta l'effettivo valore pagato dal consumatore <strong>inclusi gli arrotondamenti RT siano essi in eccesso o in difetto</strong>. In presenza di record multipli, l'ammontare effettivamente pagato dal consumatore sarà la somma dei valori del campo <code>Importo pagamento</code>.</p>
+<p>Per ottenere la quadratura con il totale della transazione, è necessario sommare <strong>l'opposto</strong> del valore degli arrotondamenti, al totale effettivamente pagato dal consumatore, sottraendo infine l'eventuale resto. <br>
+Il calcolo può essere riassunto nella formula: <br>
+<code>Totale valore dei pagamenti</code> + <strong>[</strong><code>Valore Info Aggiuntiva</code> <strong>*(-1)]</strong> - <code>Resto</code> = <code>Totale corrispettivo scontrino</code></p>
+<p>A seguire alcuni esempi riassunti in tabella per facilitare la consultazione:</p>
+<h6 id="transazione-avente-ammontare-scontrino-102-il-consumatore-paga-effettivamente-100">Transazione avente ammontare scontrino <strong>1.02 €</strong>, il consumatore paga effettivamente <strong>1.00 €</strong></h6>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Corrispettivo fiscale transazione</th>
+<th>Valore record 03</th>
+<th>Valore Info Aggiuntiva RTRA</th>
+<th>Resto</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.02</td>
+<td>1.00</td>
+<td>-2</td>
+<td>0</td>
+<td>Quadratura: 1.00 + (+2) - 0 = 1.02</td>
+</tr>
+</tbody>
+</table>
+<h6 id="transazione-avente-ammontare-scontrino-108-il-consumatore-paga-effettivamente-110">Transazione avente ammontare scontrino <strong>1.08 €</strong>, il consumatore paga effettivamente <strong>1.10 €</strong></h6>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Corrispettivo fiscale transazione</th>
+<th>Valore record 03</th>
+<th>Valore Info Aggiuntiva RTRA</th>
+<th>Resto</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.08</td>
+<td>1.10</td>
+<td>2</td>
+<td>0</td>
+<td>Quadratura: 1.10 + (-2) - 0 = 1.08</td>
+</tr>
+</tbody>
+</table>
+<h6 id="transazione-avente-ammontare-scontrino-107-il-consumatore-paga-effettivamente-105">Transazione avente ammontare scontrino <strong>1.07 €</strong>, il consumatore paga effettivamente <strong>1.05 €</strong></h6>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Corrispettivo fiscale transazione</th>
+<th>Valore record 03</th>
+<th>Valore Info Aggiuntiva RTRA</th>
+<th>Resto</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.07</td>
+<td>1.05</td>
+<td>-2</td>
+<td>0</td>
+<td>Quadratura: 1.05 + (+2) - 0 = 1.07</td>
+</tr>
+</tbody>
+</table>
+<h6 id="transazione-avente-ammontare-scontrino-108-il-consumatore-paga-2-con-resto-di-090-il-valore-effettivamente-pagato-sara-comunque-di-110">Transazione avente ammontare scontrino <strong>1.08 €</strong>, il consumatore paga <strong>2 €</strong> <mark>con resto di <strong>0.90 €</strong></mark>. Il valore effettivamente pagato sarà comunque di <strong>1.10€</strong></h6>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Corrispettivo fiscale transazione</th>
+<th>Valore record 03</th>
+<th>Valore Info Aggiuntiva RTRA</th>
+<th>Resto</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.08</td>
+<td>2</td>
+<td>2</td>
+<td>0.90</td>
+<td>Quadratura: 2 + (-2) - 0.9 = 1.08</td>
+</tr>
+</tbody>
+</table>
+<h5 id="eccezioni-alla-regola-e-funzionalita-di-arrotondamento-ibrido">Eccezioni alla regola e funzionalità di arrotondamento ibrido</h5>
+<p>In caso di transazione pagata con buoni pasto (manuali o elettronici), il workflow tipico prevede prima il pagamento con i buoni pasto e solo successivamente il pagamento della differenza in contanti (o altro metodo di pagamento).<br>
+Con la combinazione di pagamenti buono pasto + contanti, trattandosi di <em>pagamento misto</em>, il Registratore Telematico <strong><mark>non</mark> effettua l'arrotondamento del contante</strong>. Alla data del 24-09-2021 l'AdE non ha previsto questa casistica.</p>
+<p>Per ovviare alla problematica, è stata prevista in Posware la funzionalità di <strong>arrotondamento ibrido</strong> approfondita nel prossimo paragrafo.</p>
+<h4 id="arrotondamento-ibrido">Arrotondamento ibrido</h4>
+<p>Solo nel caso in cui una transazione venisse pagata con la combinazione di pagamenti <strong>buoni pasto + contanti</strong> (di conseguenza verrebbe meno l'arrotondamento del RT), Posware effettuerà l'arrotondamento come previsto dalla procedura esistente previa introduzione del RT 2.0. <br>
+La feature è di default <strong>disabilitata</strong>. Per abilitarla, impostare nella tabella di configurazione <code>tabparametriextra</code> il parametro <code>allowHybridRoundingWithRTCashRoundingEnabled</code> del modulo <code>posware.cart.payments</code> al valore <code>True</code>. <br>
+Le configurazioni normalmente previste per l'arrotondamento da parte di Posware devono rimanere configurate (valore arrotondamento, codice articolo per la maggiorazione e codice pagamento per la detrazione). <br>
+<strong>La feature è supportata unicamente da Posware Frontend. Gli adattatori SCO non prevedono tale funzionalità.</strong></p>
+<h5 id="considerazioni-e-disclaimer-riguardo-larrotondamento-ibrido">Considerazioni e disclaimer riguardo l'arrotondamento ibrido</h5>
+<p>Utilizzando l'arrotondamento ibrido, le minusvalenze e le plusvalenze generate dagli arrotondamenti <strong>vengono conteggiate nei corrispettivi.</strong> <br>
+Utilizzando l'arrotondamento nativo del Registratore Telematico no. <br>
+La feature è stata introdotta <mark>unicamente al fine di non creare disservizi rispetto ai workflow di pagamento buoni pasto consolidati da tempo.</mark> <br>
+La feature è di default <strong>disabilitata</strong>. <br>
+<strong>Prima di abilitare questa feature è necessario verificare insieme al consulente la compabilità con gli adempimenti fiscali del cliente.</strong></p>
+<h3 id="vendita-di-servizi">Vendita di servizi</h3>
+<p>La vendita di un <em>servizio</em> con il Registratore Telematico, consiste nel vendere un comune prodotto <strong>contrassegnato come servizio</strong>. <br>
+Lo scenario è supportato da Posware sia con il Registratore Telematico in configurazione mono-ateco che multi-ateco. <br>
+In caso di Server Rt <strong>è necessario</strong> inviare la configurazione Iva/Reparti come da indicazioni alla sezione <a href="#configurazione-server-rt">Configurazione Server RT</a></p>
+<h5 id="configurazione_5">Configurazione</h5>
+<p>Per vendere un prodotto come servizio, impostare nella tabella <code>Articoli</code> il campo <code>TipoCodice</code>, del prodotto che si vuole vendere come servizio, al valore <code>S</code> . <br>
+Non sono richieste ulteriori configurazioni particolari.</p>
+<blockquote>
+<p>Se il firmware del Registratore Telematico è appena stato aggiornato oppure la versione di Posware è appena stata installata, la vendita come servizio sarà possibile solo dopo la prima chiusura fiscale (necessaria al fine di inviare la tabella IVA aggiornata con i reparti dedicati ai servizi)</p>
+</blockquote>
+<h3 id="gestione-multi-ateco">Gestione multi-ateco</h3>
+<p>Posware supporta la gestione multi-ateco del Registratore Telematico. In base al Registratore Telematico in uso, sono presenti limitazioni dettate dall'hardware. <br>
+In caso di Server Rt <strong>è necessario</strong> inviare la configurazione Iva/Reparti come da indicazioni alla sezione <a href="#configurazione-server-rt">Configurazione Server RT</a></p>
+<h5 id="configurazione_6">Configurazione</h5>
+<ol>
+<li>Se per variare le impostazioni ateco del Registratore Telematico è richiesta la chiusura fiscale, effettuarla da Posware oppure tramite il tool del Registratore Telematico.</li>
+<li>Se Posware è aperto, chiudere Posware.</li>
+<li>Abilitare la funzionalità sul Registratore Telematico e programmare i codici Ateco. </li>
+<li>Inserire nella tabella <code>reparti</code>, il codice Ateco (oppure l'indice assegnato dal Registratore Telematico) nel campo <code>RTAtecoIndex</code> del reparto che si vuole assegnare ad un determinato codice ateco.</li>
+<li>Abilitare la feature impostando nella tabella di configurazione <code>tabparametriextra</code> il parametro <code>isRTMultiATECOCodeSupportEnabled</code> del modulo <code>posware.fiscalprinter</code> al valore <code>True</code>.  </li>
+<li>Avviare Posware. Qualora si dovesse ricevere un errore di configurazione, effettuare una chiusura fiscale e riavviare Posware.</li>
+<li>Qualora si dovesse continuare a ricevere un errore di configurazione, è necessario verificare la programmazione.</li>
+</ol>
+<h5 id="sistema-di-verifica-della-configurazione_1">Sistema di verifica della configurazione</h5>
+<p>All'avvio di Posware, verrà verificata la configurazione dei codici ateco del Frontend rispetto a quella programmata nella stampante. In caso venisse rilevata una configurazione errata, verrà mostrato un messaggio popup con uno di questi possibili messaggi di errore:</p>
+<pre><code>Sono presenti XX reparti con indice ateco 0. Se il supporto a codici ateco multipli è attivo, per ogni reparto cassa è obbligatorio specificare un indice codice ateco che sia diverso da 0.
+</code></pre>
+<p>oppure:</p>
+<pre><code>Il numero degli indici ateco configurati nei reparti di Posware (XX) supera quelli programmati nella stampante (YY). Verificare la programmazione.
+</code></pre>
+<p>oppure:</p>
+<pre><code>Nella stampante sono stati configurati dei codici ateco. Abilitare la funzionalità multi ateco di Posware in tabparametriextra oppure rimuovere gli indici programmati nella stampante. Verificare la programmazione.
+</code></pre>
+<p>Tutti gli errori sono auto-esplicativi. <br>
+<strong>Anche in caso di Server Rt Epson, Posware controlla lo stato di attivazione della funzione.</strong> <br>
+<strong>È mandatorio allineare le impostazioni multi-ateco tra Posware e Registratore Telematico. In caso contrario Posware si chiuderà automaticamente alla chiusura del messaggio di avviso.</strong></p>
+<h5 id="limitazioni_1">Limitazioni</h5>
+<ul>
+<li>Il Registratore Telematico non permette di mischiare in una unica transazione, prodotti appartenenti a diversi codici ateco. <br>
+In tal caso la transazione verrà annullata causando errore opos <code>207</code> oppure errore opos generico.</li>
+<li>Per effettuare cambiamenti ai codici ateco o abilitare/disabilitare il supporto multi ateco, è quasi sempre necessario effettuare una chiusura fiscale.</li>
+<li>La programmazione dei codici ateco non viene effettuata dal Posware. È necessario utilizzare i tool specifici del Registratore Telematico</li>
+<li>Non è possibile in nessun caso assegnare un prodotto ad uno specifico codice ateco. Solo i reparti possono essere assegnati, di conseguenza tutti i prodotti di quel determinato reparto verranno venduti su quello specifico codice ateco.</li>
+</ul>
+<h2 id="tabella-di-compatibilita-delle-funzionalita">Tabella di compatibilità delle funzionalità</h2>
+<p>Il supporto è da considerarsi a partire dalla versione <code>4.2.0</code> se non specificato diversamente nelle note.</p>
+<table>
+<thead>
+<tr>
+<th>Funzionalità</th>
+<th>EPSON</th>
+<th>RT-ONE</th>
+<th>NCR 130-A</th>
+<th>Server RT EPSON</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nuove forme di pagamento</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td></td>
+</tr>
+<tr>
+<td>Ticket numerati manuali</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td></td>
+</tr>
+<tr>
+<td>Ticket numerati su pagamento elettronico e dematerializzato</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td></td>
+</tr>
+<tr>
+<td>Nota di credito</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td></td>
+</tr>
+<tr>
+<td>Arrotondamento tramite Registratore Telematico</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td>Supportato</td>
+<td></td>
+</tr>
+<tr>
+<td>Vendita di servizi</td>
+<td>Supportato</td>
+<td><strong>Non supportato da Posware</strong></td>
+<td>Al momento non supportato. Il supporto verrà aggiunto</td>
+<td>Supportato</td>
+<td></td>
+</tr>
+<tr>
+<td>Gestione multi-ateco</td>
+<td>Supportato</td>
+<td><strong>Non supportato da Posware</strong></td>
+<td><strong>Il registratore non supporta tale funzionalità</strong></td>
+<td>Supportato</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="addendum">Addendum</h3>
+<ul>
+<li>Nel caso di nota di credito manuale e tipologia documento <strong>Matricola</strong>, è possibile inserire il codice lotteria durante la transazione qualora presente nel documento commerciale di origine. Come da normativa, non è possibile imputare il codice lotteria in caso di tipologia documento <strong>ND</strong> o <strong>POS</strong>. In tal caso verrà segnalata operazione non valida ed il codice verrà ignorato.</li>
+<li>Il codice lotteria in fase di nota credito può essere imputato solo dopo aver inserito tutti gli articoli nella transazione e prima della scelta del pagamento. In tutte le altre fasi guidate, sarà segnalata una operazione non consentita.</li>
+<li>In caso di presenza nella transazione di un <strong>codice fiscale</strong>, il codice lotteria <em>rimuove</em> il codice fiscale. Porre attenzione a quale dei due codici erano presenti sul documento di origine. I due codici sono sempre mutuamente esclusivi.</li>
+</ul>
+<h3 id="configurazione-server-rt">Configurazione Server RT</h3>
+<h4 id="cenni-preliminari_1">Cenni preliminari</h4>
+<p>Per poter utilizzare le funzioni di vendita a servizi, vendita con codici in esenzione e/o multiateco è <strong>necessario</strong> effettuare la trasmissione Iva/Reparti su ServerR.</p>
+<h4 id="configurazioni">Configurazioni</h4>
+<p>E' stata introdotta una funzione di trasmissione Iva/Reparti su ServerRt che permette la corretta gestione della programmazione in Posware. Questa funzione è richiamabile manualmente, predisponendo un terminale specializzato, ed incrociando il codice <code>TX_PROG_SERVER_RT</code> presente nella tabella <code>Config_Tast</code> (inserirlo se mancante) in grafica ad un opportuno pulsante. <br>
+Al fine di configurare opportunamente la tabella delle Ive occorre tener presente che i codici di esenzione dovranno seguire quanto specificato nella seguente tabella:</p>
+<table>
+<thead>
+<tr>
+<th>IndiceVatTable</th>
+<th>Simb.Stampa</th>
+<th>Descrizione</th>
+<th>Natura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>ES</td>
+<td>Esente</td>
+<td>N4</td>
+</tr>
+<tr>
+<td>10</td>
+<td>EE</td>
+<td>Esclusa</td>
+<td>N1</td>
+</tr>
+<tr>
+<td>11</td>
+<td>NS</td>
+<td>Non Soggetta</td>
+<td>N2</td>
+</tr>
+<tr>
+<td>12</td>
+<td>NI</td>
+<td>Non Imponibile</td>
+<td>N3</td>
+</tr>
+<tr>
+<td>13</td>
+<td>RM</td>
+<td>Regime del margine</td>
+<td>N5</td>
+</tr>
+<tr>
+<td>14</td>
+<td>AL</td>
+<td>Operazione non IVA</td>
+<td>N6</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>La tabella sopra riportata segue quanto indicato dal manuale Epson per il Server Rt, per variazioni o tabelle aggiornate fare sempre riferimenti alla documentazione ufficiale </p>
+</blockquote>
+<h4 id="limitazioni-e-vincoli">Limitazioni e vincoli</h4>
+<ul>
+<li>Questa programmazione sarà consentita solo a <strong>giornata chiusa</strong></li>
+<li>Lo stato di <strong>giornata chiusa</strong> nei server Rt si ottiene dopo aver eseguito la chiusura fiscale di tutti i tills e la chiusura del Server stesso</li>
+<li>Se la <strong>giornata è aperta</strong> sarà mostrato un messaggio che informa che lo stato del Server non è congruente.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2024&copy; ISiD
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://isid.it/" target="_blank" rel="noopener" title="isid.it" class="md-social__link">
+      <?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1510.000000pt" height="518.000000pt" viewBox="0 0 1510.000000 518.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)"
+fill="#FFFFFF" stroke="none">
+<path d="M69 5157 c-19 -12 -42 -38 -51 -57 -17 -33 -18 -174 -18 -2510 0
+-2336 1 -2477 18 -2510 9 -19 32 -45 51 -57 l34 -23 466 0 c521 0 514 -1 553
+71 17 32 18 131 18 2519 0 2391 -1 2487 -18 2520 -37 71 -32 70 -553 70 l-466
+0 -34 -23z"/>
+<path d="M2580 5169 c-305 -35 -562 -148 -726 -320 -149 -157 -241 -337 -291
+-572 -16 -72 -18 -141 -18 -582 0 -550 4 -597 66 -787 127 -392 402 -626 846
+-720 l108 -23 1570 -5 1570 -5 60 -23 c32 -12 75 -35 95 -50 44 -36 95 -119
+110 -181 17 -67 25 -451 11 -539 -26 -169 -92 -261 -217 -304 l-69 -23 -2030
+-5 c-1919 -5 -2032 -6 -2058 -23 -63 -41 -62 -30 -62 -487 0 -453 0 -451 58
+-494 l28 -21 2177 -3 c1891 -2 2192 0 2293 13 385 50 650 197 824 460 94 141
+143 264 182 460 16 80 18 147 18 580 0 416 -3 504 -17 585 -51 285 -151 492
+-315 651 -169 164 -367 257 -655 305 -94 16 -242 18 -1658 23 l-1555 6 -56 28
+c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
+103 161 207 197 48 16 190 17 2091 22 1928 5 2041 6 2066 23 53 36 54 41 57
+469 2 250 -1 412 -7 436 -6 21 -25 51 -41 67 l-31 30 -2197 1 c-1208 1 -2231
+-2 -2272 -7z"/>
+<path d="M7631 5162 c-71 -38 -71 -38 -71 -501 0 -403 1 -415 21 -448 40 -64
+34 -63 501 -63 l424 0 302 -282 302 -282 0 -386 c0 -380 0 -386 23 -430 42
+-82 28 -80 550 -80 502 0 489 -1 541 60 l26 32 0 422 0 423 -23 34 c-46 69
+-44 69 -512 69 l-420 1 -297 277 -297 277 0 390 c-1 435 -1 436 -70 482 l-34
+23 -466 0 c-433 0 -469 -1 -500 -18z"/>
+<path d="M9255 5167 c-47 -18 -71 -39 -97 -82 l-23 -40 -3 -452 -3 -453 1993
+-3 c1802 -3 2001 -5 2071 -20 422 -88 609 -249 697 -601 50 -201 55 -279 55
+-926 0 -647 -5 -725 -55 -926 -80 -318 -256 -491 -582 -574 -216 -54 -240 -55
+-1653 -55 -715 0 -1313 4 -1328 8 -57 16 -57 20 -57 657 l0 580 -570 0 -570 0
+2 -1072 3 -1073 27 -46 c17 -29 41 -53 65 -65 37 -18 101 -19 1918 -22 1332
+-2 1927 0 2040 8 503 36 891 149 1191 346 113 74 311 270 383 379 189 287 292
+647 321 1120 13 220 13 1250 0 1470 -29 473 -133 837 -322 1120 -68 103 -219
+259 -328 341 -109 82 -343 200 -491 248 -213 68 -463 114 -738 136 -200 15
+-3906 12 -3946 -3z"/>
+<path d="M7560 1918 c0 -1706 1 -1815 18 -1847 9 -19 33 -43 52 -53 33 -17 64
+-18 512 -16 l476 3 27 25 c58 53 55 -64 55 1895 l0 1805 -570 0 -570 0 0
+-1812z"/>
+</g>
+</svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>
