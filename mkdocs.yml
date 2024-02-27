@@ -5,6 +5,7 @@ copyright: Copyright 2024&copy; ISiD
 theme:
   name: material
   custom_dir: overrides
+  language: it
   logo: assets/images/favicon.ico
   favicon: assets/images/favicon.ico
   palette:
@@ -42,7 +43,7 @@ plugins:
 nav:
   - Home: index.md
   - Moduli:
-    - Posware Module:
+    - Modulo di base:
       - Statistiche dettagliate: posware-module/statistiche-dettagliate.md
 
 markdown_extensions:
