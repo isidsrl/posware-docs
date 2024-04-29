@@ -2,87 +2,107 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://posware.io/4.3/index.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/changelog/release-notes.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/cashmatic-plug-in-per-posware.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/lotteria-degli-scontrini.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/plugin-fast4cash.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/plugin-giftcard-epayeuronet.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/posware-gestione-prodotto-check-out.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/posware-net4.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/posware41/posware41-adapter-self-checkout-diebold.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/posware41/posware41-adapter-self-checkout-ncr.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/posware42/posware42-adapter-self-checkout-diebold.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/posware42/posware42-adapter-self-checkout-ncr.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/posware42/posware42-funzionalita-adapter-ncr-selfserv-checkout.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/posware42/posware42-funzionalita-pin-dispatching.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/posware42/posware42-funzionalita-rt-20.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/old-docs/posware42/posware42-general-overview.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://posware.io/4.3/posware-frontend/fatturazione-immediata.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://posware.io/4.3/posware-frontend/nota-di-credito.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://posware.io/4.3/posware-module/fatturazione-elettronica.html</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://posware.io/4.3/posware-module/posware-price-checker.html</loc>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://posware.io/4.3/posware-module/statistiche-dettagliate.html</loc>
-         <lastmod>2024-04-24</lastmod>
+         <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
