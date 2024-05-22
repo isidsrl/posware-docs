@@ -5,8 +5,8 @@ tags:
 
 # Posware Module - Fatturazione elettronica
  
-##### Data di creazione del documento: 18/07/2023
-##### Ultima revisione documento: 24/04/2024
+**Prima revisione documento: 18 luglio 2023** <br>
+**Ultima revisione documento: {{ git_revision_date_localized }}**
 ---
 ## Glossario
 - **WebApp:** applicazione web che offre la possibilità di gestire in modo centralizzato le funzionalità disponibili nel StoreServer;

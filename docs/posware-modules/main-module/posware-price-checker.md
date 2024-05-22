@@ -5,8 +5,8 @@ tags:
 
 # Posware Price Checker (PPC)
 
-##### Data di creazione del documento: 04/11/2022
-##### Ultima revisione documento: 22/04/2024
+**Prima revisione documento: 4 novembre 2022** <br>
+**Ultima revisione documento: {{ git_revision_date_localized }}**
 
 ---
 

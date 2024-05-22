@@ -39,17 +39,26 @@ plugins:
   - search
   - tags
   - offline
+  - git-revision-date-localized:
+      enabled: true
+      type: date
+      locale: it
 
 nav:
   - Home: index.md
+  - Getting started:
+    - Installazione StoreServer:
+      - Overview generale: getting-started/installazione-storeserver/overview-generale.md
+      - Procedure comuni: getting-started/installazione-storeserver/installazione-procedure-comuni.md
+      - Scenario migrazione: getting-started/installazione-storeserver/installazione-scenario-migrazione.md
   - Moduli:
     - Modulo di base:
-      - Statistiche dettagliate: posware-module/statistiche-dettagliate.md
-      - Posware Price Checker: posware-module/posware-price-checker.md
-      - Fatturazione elettronica: posware-module/fatturazione-elettronica.md
+      - Statistiche dettagliate: posware-modules/main-module/statistiche-dettagliate.md
+      - Posware Price Checker: posware-modules/main-module/posware-price-checker.md
+      - Fatturazione elettronica: posware-modules/main-module/fatturazione-elettronica.md
     - Funzionalità di cassa:
-      - Fatturazione immediata: posware-frontend/fatturazione-immediata.md
-      - Nota di credito: posware-frontend/nota-di-credito.md
+      - Fatturazione immediata: posware-modules/posware-frontend/fatturazione-immediata.md
+      - Nota di credito: posware-modules/posware-frontend/nota-di-credito.md
 
 markdown_extensions:
   - attr_list

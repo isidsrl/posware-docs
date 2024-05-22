@@ -5,8 +5,8 @@ tags:
 
 # Posware Frontend - Fatturazione immediata
 
-##### Data di creazione del documento: 26/04/2024
-##### Ultima revisione documento: 26/04/2024
+**Prima revisione documento: 26 aprile 2024** <br>
+**Ultima revisione documento: {{ git_revision_date_localized }}**
 ---
 ## Glossario
 - **WebApp:** applicazione web che offre la possibilità di gestire in modo centralizzato le funzionalità disponibili nel StoreServer;
