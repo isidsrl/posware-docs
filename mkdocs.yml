@@ -50,6 +50,7 @@ nav:
     - Installazione StoreServer:
       - Overview generale: getting-started/installazione-storeserver/overview-generale.md
       - Procedure comuni: getting-started/installazione-storeserver/installazione-procedure-comuni.md
+      - Scenario ex novo: getting-started/installazione-storeserver/installazione-scenario-ex-novo.md
       - Scenario migrazione: getting-started/installazione-storeserver/installazione-scenario-migrazione.md
   - Moduli:
     - Modulo di base:
