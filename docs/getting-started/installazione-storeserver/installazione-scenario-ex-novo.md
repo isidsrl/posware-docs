@@ -9,7 +9,9 @@ tags:
 **Prima revisione documento: 18 luglio 2024** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**
 ---
+
 ## Glossario
+- **InstanceConfigurationId:** anche detto **Store Id**, rappresenta il codice del punto vendita su cui si sta installando lo *StoreServer*;
 - **WebApp:** applicazione web che offre la possibilità di gestire in modo centralizzato le funzionalità disponibili nello *StoreServer*;
 
 ## Cenni preliminari
@@ -42,9 +44,9 @@ Al fine di installare lo *StoreServer* di Posware `4.3` sarà necessario eseguir
 
 ## Installazione
 ### Installazione StoreServer tramite Winget
-Per installare lo *StoreServer* nello scenario di installazione ex novo è necessario usare **Winget**, quindi assicurarsi nuovamente di avere almeno la versione minima supportata (v. `1.5` o superiore) per l'installazione dello *StoreServer*. 
+Per installare lo *StoreServer* nello scenario di installazione ex novo è necessario usare **Winget**, quindi assicurarsi nuovamente di avere almeno la versione minima supportata per l'installazione dello *StoreServer*, consultabile nell'[overview generale](./overview-generale.md). 
 
-Fatto ciò, per prima cosa, inserire la source di ISiD in **Winget** da terminale, aperto con i diritti da amministratore, usando la seguente sintassi:
+Fatto ciò, per prima cosa, inserire la source di ISiD in **Winget** da terminale, **aperto con i diritti da amministratore**, usando la seguente sintassi:
 
 > winget source add posware https://winget.isid.it/posware/api -t "Microsoft.Rest"
 
@@ -52,7 +54,7 @@ Fatto ciò, per prima cosa, inserire la source di ISiD in **Winget** da terminal
 
 > **NOTA BENE: Questo comando va usato solo ed esclusivamente la prima volta se la source di ISiD non è mai stata inserita sul computer.**
 
-Per avviare l'installazione effettiva dello *StoreServer* lanciare sempre da terminale, aperto con i diritti da amministratore, il seguente comando:
+Per avviare l'installazione effettiva dello *StoreServer* lanciare sempre da terminale il seguente comando:
 
 > winget install --id isid.storeserver --source posware --verbose
 
@@ -62,7 +64,7 @@ Questo è il comando standard per l'installazione dello *StoreServer* che proced
 - **Connection string in caso il database provider sia MySQL:** server=localhost;user id=root;password=Vbhg4132!;database=posware;
 - **Connection string in caso il database provider sia SQL Server:** Data Source=.\sqlexpress;Initial Catalog=posware;User ID=sa;Password=Vbhg4132!;Encrypt=false;Trust Server Certificate=true;
 
-In caso si volesse specificare una *Connection string* o un **InstanceConfigurationId** (che rappresenta l'id del punto vendita su cui si sta installando lo *StoreServer*) diversi è necessario passare il parametro *--custom* seguito dai valori della *Connection string* o dell'**InstanceConfigurationId** desiderati.
+In caso si volesse specificare una *Connection string* o un **InstanceConfigurationId** diversi è necessario passare il parametro *--custom* seguito dai valori della *Connection string* o dell'**InstanceConfigurationId** desiderati.
 
 In particolare, per passare una *Connection string* diversa da quelle impostate in maniera predefinita, usare la sintassi:
 
@@ -74,7 +76,7 @@ Ovviamente, se la *Connection string* contiene keyword con spazi deve essere rac
 
 Invece, per specificare un **InstanceConfigurationId** diverso dal valore di default usare la seguente sintassi:
 
-> --custom "/storeid=valore dell'id del punto vendita diverso da quello di default"
+> --custom "/STOREID=valore del codice del punto vendita diverso da quello di default"
 
 Infine, se si desidera aprire la cartella dei log alla fine dell'installazione dello *StoreServer* è necessario aggiungere al comando di **Winget** il seguente parametro: 
 
@@ -82,7 +84,7 @@ Infine, se si desidera aprire la cartella dei log alla fine dell'installazione d
 
 A fini esplicativi, viene lasciato di seguito un esempio completo del comando custom di installazione dello *StoreServer* con **Winget**:
 
-> winget install --id isid.storeserver --source posware --verbose --logs --custom "/CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307"" /storeid=69 "
+> winget install --id isid.storeserver --source posware --verbose --logs --custom "/CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307"" /STOREID=69 "
 
 Se dovessero servire ulteriori comandi di **Winget**, consultare la guida ufficiale di **Microsoft**.
 
@@ -91,28 +93,34 @@ Per qualsiasi problema possa sorgere con l'installazione dello *StoreServer* tra
 
 Viene comunque riportata di seguito la lista completa dei possibili errori gestiti dalla logica dell'installer e che quindi potrebbero verificarsi durante l'installazione dello *StoreServer* tramite **Winget**:
 
-|Errore|Messaggio|
-|------|---------|
-|**AspNetNotInstalled**|*Versione di ASP.NET Core richiesta* non è installato.|
+|Messaggio|Probabile causa/Strategia di risoluzione|
+|---------|----------------------------------------|
+|*Versione di ASP.NET Core richiesta* non è installato.|Controllare la versione minima richiesta di ASP.NET Core, scaricarla e riprovare l'installazione.|
 |||
-|**UnknownCompanionFunctionSelected**|È stata selezionata una funzione sconosciuta.|
-|**InvalidParameters**|Sono stati forniti parametri non validi.|
-|**AbortedCompanionFunction**|L'utente ha interrotto l'operazione di preparazione.|
+|È stata selezionata una funzione sconosciuta.|Notificare l'errore al team di sviluppo.|
+|Sono stati forniti parametri non validi.|Notificare l'errore al team di sviluppo.|
+|L'utente ha interrotto l'operazione di preparazione. (**AbortedCompanionFunction**)|L'operazione di preparazione è stata interrotta dall'utente forzatamente.|
 |||
-|**UnknownConnectionError**|Si è verificato un errore sconosciuto durante il tentativo di connessione al database server.|
-|**FailedConnection**|Connessione al database fallita. Verificare che il database sia installato e accessibile. Se necessario, specificare una stringa di connessione personalizzata.|
-|**UnsupportedProviderVersion**|La versione del database server non è supportata.|
-|**DbAlreadyCreated**|Risulta già presente un database con il nome indicato.|
-|**WritingTempFileError**|Si è verificato un errore durante il salvataggio delle configurazioni.|
+|Si è verificato un errore sconosciuto durante il tentativo di connessione al database server.|Verificare la connessione al database e soprattutto se il database sia accessibile. Se necessario, specificare una *Connection string* personalizzata con il parametro *--custom*.|
+|Connessione al database fallita. Verificare che il database sia installato e accessibile. Se necessario, specificare una stringa di connessione personalizzata.|Il messaggio è autoesplicativo.|
+|La versione del database server non è supportata.|Controllare la versione richiesta del database in utilizzo, MySQL o SQL Server, nei requisiti minimi dell'[overview generale](./overview-generale.md#requisiti-minimi). Procedere poi a installarla e configurarla prima di riprovare l'installazione dello *StoreServer*.|
+|Risulta già presente un database installato. In una nuova installazione non è possibile usare database già presenti.|Si è provato ad eseguire un'installazione ex novo con un database già esistente. Per installare usando un database migrato devi specificare da linea di comando dei parametri */STOREID* e */CONNECTIONSTRING* validi.|
+|Si è verificato un errore durante il salvataggio delle configurazioni. (**WritingTempFileError**)||
 |||
-|**UnknownSavingConnectionStringError**|Si è verificato un errore durante il salvataggio della stringa di connessione.|
-|**UnknownErrorInstallingMigrations**|Si è verificato un errore durante l'installazione delle migrazioni.|
-|**UnknownErrorRegisteringStoreServerService**|Si è verificato un errore durante la registrazione dello StoreServer come servizio di Windows.|
-|**UnknownErrorStartingStoreServerService**|Si è verificato un errore durante l'avvio dello StoreServer come servizio di Windows.|
-|**CannotStopService**|Non è stato possibile interrompere il servizio StoreServer.|
+|Si è verificato un errore durante il salvataggio della stringa di connessione. (**UnknownSavingConnectionStringError**)||
+|Si è verificato un errore durante l'installazione delle migrazioni. (**UnknownErrorInstallingMigrations**)||
+|Si è verificato un errore durante la registrazione dello StoreServer come servizio di Windows. (**UnknownErrorRegisteringStoreServerService**)||
+|Si è verificato un errore durante l'avvio dello StoreServer come servizio di Windows. (**UnknownErrorStartingStoreServerService**)||
+|Non è stato possibile interrompere il servizio StoreServer. (**CannotStopService**)||
+|||
+|Sono necessari i diritti di amministratore per eseguire una nuova installazione.|Si è provato ad effettuare l'installazione senza aver aperto il terminale con i diritti di amministratore. Riavviare il terminale come amministratore e riprovare l'installazione.|
+|Impossibile installare/aggiornare l'applicazione. Non ho trovato nessun file di impostazioni esistente appsettings.Production.json nella directory di installazione.|Non viene rivelato o non è stato trovato il file *appsettings.Production.json* con tutte le impostazioni dell'applicativo. Controllare all'interno della cartella dello *StoreServer* se è presente o meno e in caso di mancata presenza contattare il team di sviluppo.|
+|Impossibile installare/aggiornare l'applicazione. La directory di installazione non è vuota. Per aggiornare il programma usare winget upgrade. Per reinstallare il programma o installare usando un database migrato, consulta la documentazione.|È già presente la cartella dello *StoreServer* e quindi è già stata effettuata l'installazione in precedenza. Per aggiornare lo *StoreServer*, consultare la relativa [sezione]() della documentazione.|
+|||
+|Collegamento al database non riuscito. Impossibile procedere con l'installazione o l'upgrade.|Connessione al database fallita. Verificare che il database sia installato e accessibile. Se necessario, specificare una *Connection string* personalizzata.|
 
 ### Antivirus e firewall
-Dopo l'installazione, è necessario inserire l'intera directory dello *StoreServer* nella lista delle esclusioni sia dell'antivirus che del firewall di sistema, se presenti, prima di provare ad associare le casse.
+Dopo l'installazione, è necessario inserire l'intera directory dello *StoreServer* (*C:\Users\Utente\AppData\Local\isid\StoreServer*) nella lista delle esclusioni sia dell'antivirus che del firewall di sistema, se presenti, prima di provare ad avviarlo e ad associare le casse.
 
 ### Avvio dello StoreServer
 **Winget** nella procedura di installazione dello *StoreServer* crea anche il relativo servizio, che partirà automaticamente all'avvio del computer, quindi per poter avviare la relativa WepApp basta semplicemente collegarsi in rete sulla porta **6851** (*http://[::]:6851*).
@@ -230,7 +238,7 @@ Al fine di eseguire la procedura di rollback dello *StoreServer*, se sono stati 
 
 1. Disinstallare lo *StoreServer*, tramite **Winget** o Windows, e ripristinare eventuali backup a database e directory non direttamente collegate a **Posware**, che però sono state influenzate dall'installazione dello *StoreServer* o di una o più dipendenze/procedure usate dalla nuova versione.
 2. Reinstallare la versione precedente tramite **Winget** specificando con il parametro *--version* la versione voluta e tutti i parametri custom necessari, visti già in precedenza nella [sezione relativa all'installazione](#installazione-storeserver-tramite-winget) con **Winget** di questa guida. Questo step va effettuato solo se non si è nel caso di rollback della prima installazione dello *StoreServer*, ma si era passati da una versione precedente a una nuova dell'applicativo con un upgrade.
-3. Ripristinare i vari servizi legacy alla versione precedente all'aggiornamento eseguito per renderli compatibili con il nuovo *StoreServer*. In caso di rollback della prima installazione dello *StoreServer* procedere, invece, proprio ad eliminare totalmente sia i relativi servizi che i vari servizi legacy.
+3. Eliminare totalmente i vari servizi legacy installati da zero e i relativi servizi Windows.
 4. Sovrascrivere il database creato da **Winget** con il backup del database precedente all'installazione dello *StoreServer*. Inoltre, se il provider del database, MySQL o SQL Server, era stato installato momentaneamente su una porta differente per non entrare in conflitto con quello precedente, procedere a disabilitarlo mettendolo offline. Infine, concludere la procedura di rollback riattivando il precedente provider se era stato disabilitato.
 
 

@@ -31,7 +31,7 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
 - Posware Frontend v. `4.3.x`
 - Windows 10 **x64** (**64bit**) v. `1809` o superiore
 - Windows 11
-- Winget v. `1.5` o superiore
+- Winget v. `1.8.1911`
 - SQL Server 2016, 2017, 2019 o 2022
 - MySQL v. `8.4`
 - .NET SDK v. `8.x`
@@ -69,9 +69,9 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
 ## Installazione e configurazione
 Sono previsti questi scenari di installazione:
 
-- [Installazione ex novo]()
+- [Installazione ex novo](./installazione-scenario-ex-novo.md)
 - [Migrazione da Posware 4.2.x](./installazione-scenario-migrazione.md)
 
-Prima di proseguire con lo scenario di installazione desiderato, completare prima le [procedure di installazione comuni](./installazione-procedure-comuni.md).
+Prima di proseguire con lo scenario di installazione desiderato, completare le [procedure di installazione comuni](./installazione-procedure-comuni.md).
 
 I dettagli specifici di ogni scenario e delle procedure comuni sono consultabili nelle rispettive sezioni.

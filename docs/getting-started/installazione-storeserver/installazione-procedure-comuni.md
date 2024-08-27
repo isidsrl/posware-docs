@@ -10,7 +10,6 @@ tags:
 **Prima revisione documento: 13 maggio 2024** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**
 ---
-## Glossario
 
 ## Cenni preliminari
 Il presente documento, come introdotto nell'overview generale, descrive nel dettaglio la procedure comuni ad entrambi gli scenari di installazione dello *StoreServer* dando particolare enfasi ai vari passaggi necessari per portare a compimento queste operazioni.
