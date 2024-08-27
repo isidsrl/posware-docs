@@ -1,0 +1,1589 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://posware.io/4.3/getting-started/installazione-posware-frontend/setup-posware.html">
+      
+      
+        <link rel="prev" href="dipendenze-aggiornamenti-necessari.html">
+      
+      
+        <link rel="next" href="pos-update.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>SetupPosware - Documentazione Ufficiale Posware</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setupposware" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+Non stai visualizzando l'ultima versione della documentazione.
+<a href="../../..">
+    <strong>Clicca qui per andare all'ultima versione.</strong>
+</a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../../index.html" title="Documentazione Ufficiale Posware" class="md-header__button md-logo" aria-label="Documentazione Ufficiale Posware" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentazione Ufficiale Posware
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SetupPosware
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../installazione-storeserver/overview-generale.html" class="md-tabs__link">
+          
+  
+    
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../posware-modules/main-module/statistiche-dettagliate.html" class="md-tabs__link">
+          
+  
+    
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Documentazione Ufficiale Posware" class="md-nav__button md-logo" aria-label="Documentazione Ufficiale Posware" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    Documentazione Ufficiale Posware
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Installazione StoreServer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Installazione StoreServer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installazione-storeserver/overview-generale.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview generale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installazione-storeserver/installazione-procedure-comuni.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procedure comuni
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installazione-storeserver/installazione-scenario-ex-novo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scenario ex novo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installazione-storeserver/installazione-scenario-migrazione.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scenario migrazione
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Installazione e aggiornamenti Posware Frontend
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Installazione e aggiornamenti Posware Frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="overview-generale.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview generale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dipendenze-aggiornamenti-necessari.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dipendenze di terze parti e aggiornamenti necessari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SetupPosware
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="setup-posware.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    SetupPosware
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cenni-preliminari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cenni preliminari
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisiti" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisiti
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenari-duso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenari d'uso
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenari d'uso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installazione-ex-novo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installazione ex novo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installazione ex novo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usare-un-database-di-una-versione-42x-di-posware-in-una-installazione-ex-novo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usare un database di una versione 4.2.x di Posware in una installazione ex novo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migrazione-dalla-versione-42-alla-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migrazione dalla versione 4.2 alla 4.3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-per-i-tecnici" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting per i tecnici
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting per i tecnici">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eventuali-errori-e-problemi-nella-migrazione-dalla-versione-42-alla-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventuali errori e problemi nella migrazione dalla versione 4.2 alla 4.3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggiornamento-dei-file-di-configurazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggiornamento dei file di configurazione
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pos-update.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PosUpdate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Moduli
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Moduli
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modulo di base
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Modulo di base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../posware-modules/main-module/statistiche-dettagliate.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistiche dettagliate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../posware-modules/main-module/posware-price-checker.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Posware Price Checker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../posware-modules/main-module/fatturazione-elettronica.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fatturazione elettronica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Funzionalità di cassa
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Funzionalità di cassa
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../posware-modules/posware-frontend/fatturazione-immediata.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fatturazione immediata
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../posware-modules/posware-frontend/nota-di-credito.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nota di credito
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cenni-preliminari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cenni preliminari
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisiti" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisiti
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenari-duso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenari d'uso
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenari d'uso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installazione-ex-novo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installazione ex novo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installazione ex novo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usare-un-database-di-una-versione-42x-di-posware-in-una-installazione-ex-novo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usare un database di una versione 4.2.x di Posware in una installazione ex novo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migrazione-dalla-versione-42-alla-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migrazione dalla versione 4.2 alla 4.3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-per-i-tecnici" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting per i tecnici
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting per i tecnici">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eventuali-errori-e-problemi-nella-migrazione-dalla-versione-42-alla-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventuali errori e problemi nella migrazione dalla versione 4.2 alla 4.3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggiornamento-dei-file-di-configurazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggiornamento dei file di configurazione
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">Posware</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">Posware Frontend</span>
+    
+  
+</nav>
+
+
+
+<h1 id="setupposware">SetupPosware</h1>
+<p><strong>Prima revisione documento: 27 agosto 2024</strong> <br>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">27 agosto 2024</span></strong></p>
+<hr />
+<h2 id="cenni-preliminari">Cenni preliminari</h2>
+<p>Posware non aveva più un setup da ormai molto tempo, motivo per il quale se si vuole installare <em>Posware Frontend</em> da zero, su una macchina Windows che non ha precedenti versioni di Posware <code>4.x</code> installate, non era di fatto possibile procedere. L'unico setup esistente, infatti, risale alla versione <code>2.x</code> ed è ormai obsoleto e deprecato. Per questo motivo, a partire dalla versione <code>4.3</code>, si ha un nuovo setup riprogettato per poter installare <em>Posware Frontend</em> da zero.</p>
+<p>Il presente documento, come introdotto nell'overview generale, descrive dettagliatamente il funzionamento di questo nuovo setup di <em>Posware Frontend</em>, il <em>SetupPosware</em>, analizzando in particolare le differenze presenti nel suo utilizzo e nei passaggi preliminari da eseguire tra lo scenario di installazione ex novo e lo scenario di migrazione dalla versione <code>4.2</code> alla <code>4.3</code> di Posware. Inoltre, vengono illustrate una serie di informazioni utili riguardanti l'aggiornamento dei file di configurazione di Posware a seguito dell'esecuzione con successo del setup.</p>
+<h2 id="prerequisiti">Prerequisiti</h2>
+<p>Prima di procedere con l'utilizzo del <em>SetupPosware</em> assicurarsi di avere le <a href="overview-generale.html#hardware">risorse hardware minime indispensabili indicate nell'overview generale</a> e di aver installato almeno le <a href="dipendenze-aggiornamenti-necessari.html#dipendenze-con-installazione-manuale">dipendenze necessarie con installazione manuale</a>.</p>
+<h2 id="scenari-duso">Scenari d'uso</h2>
+<p>Il pacchetto di installazione <em>SetupPosware</em> copre unicamente questi due scenari:</p>
+<ul>
+<li>Installazione ex novo</li>
+<li>Migrazione dalla versione <code>4.2</code> alla <code>4.3</code></li>
+</ul>
+<p>Per quanto riguarda invece gli aggiornamenti della <strong>Build</strong> version, quindi da una versione precedente della <code>4.3</code> all'ultima <code>4.3</code> aggiornata, questi rimangono sempre in carico al <a href="pos-update.html"><em>PosUpdate</em></a>.</p>
+<p>In entrambi gli scenari l'utente può lanciare il setup facendo ordinario doppio click sull'applicativo. In questo caso nessun parametro particolare viene passato al <em>SetupPosware</em> e verrà mostrata l'interfaccia principale da cui l'utente potrà procedere con l'installazione seguendo il wizard.</p>
+<p><img alt="SetupPosware's Main interface" src="data:image/jpeg;base64,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AUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAHl/jf/kRtc/68Zv8A0E15ka9N8b/8iNrn/XjN/wCgmvM6+myraXy/U+ZzT4ojaSnUleueYJRRRQB6VigDmnYpRXi3LItN/wCRvh/7Bdz/AOj7Wu+0D/l4/wCA/wBa4LTv+Rvh/wCwXc/+j7Wu90H/AJeP+A/1rysTvL5fkj6TL/4MPn+bNmiiiuE9IKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA8v8b/8AIja5/wBeM3/oJrzOvTPG/wDyI2uf9eMv/oJrzSvpsq2l8v1Pmc1+KIlJS0leueWJRS0UAemYpcUtGK8M1IdP/wCRvg/7Bdz/AOj7Wu80H/l4/wCA/wBa4SwH/FXwf9gu5/8AR9rXd6D/AMvH/Af615mJ3l8vyR9HgP4UPn+bNmiiiuE9IKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA8v8bf8AIja5/wBeMv8A6Ca81r0rxv8A8iNrn/XjL/6Ca81xX02VbS+X6nzOa/FESkp2KSvXPKEopcUUAenYpcUuKMc14VzoK9j/AMjhb/8AYLuv/R9pXdaD/wAvH/Af61w1l/yN9v8A9gu6/wDR9pXc6D/y8f8AAf615mI3l/XY+iwH8KHz/NmzRRRXEeiFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAeX+Nv+RG1z/rxl/8AQTXm9ekeNv8AkRtc/wCvGb/0E15xX02VbS+X6nzOa/HEaaSnU2vXPKEopaKAPUqSnUYrwDoKtn/yN9v/ANgu6/8AR9pXcaD/AMvH/Af61xNsMeL7X/sF3X/o+0rttB/5eP8AgP8AWvOxG8v67H0WB/hQ+f5s2aKKK4j0QooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDy/xt/yI2uf9eMv/AKCa84r0fxv/AMiNrn/XjN/6Ca85r6bKtpfL9T5nNfiiNopaK9c8kbRTsUUDPUaci9zSgcgetTBMsFAznivnmzsjG5nxDHjC199Luv8A0faV2mg/8vH/AAH+tcgEWPxfaLnJ/su7yf8AtvaV1+g/8vH/AAH+tefXd+b+ux9Bg1anBev5s2aKKK4zvCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAPL/ABt/yI2uf9eMv/oJrzqvRfG//Ija5/14zf8AoJrzuvpsp2n8v1PmM2+KI2ilNJXrnlCUUUUwPWkTHJ/CpgAi5J+btTwNgyR9Kru5JJPWvmdz09IIz42z4xtc/wDQLuv/AEfaV2eg/wDLx/wH+tcVB/yOFr/2C7r/ANH2ldroP/Lx/wAB/rXHX+1/XY9nBO9OHz/NmzRRRXGegFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAeX+N/8AkRtc/wCvGX/0E153Xonjf/kRtc/68Zv/AEE153X0+U7T+X6nzGbfFEQ0lLSV655IlFFFAHr0j5PtUBNPY5qOvm0rHfOVylb/API32v8A2C7r/wBH2ldroP8Ay8f8B/rXFwf8jha/9gu6/wDR9pXaaD/y8f8AAf61w1/tf12PdwP8KHz/ADZs0UUVxnohRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAHl/jf/kRtc/68Zf8A0E153Xonjf8A5EbXP+vGX/0E155X0+U7S+X6nzGbfFEbSUppK9c8kSiiinYD1g0lPptfNo7SjD/yONr/ANgu6/8AR9pXaaD/AMvH/Af61xkX/I4Wv/YKuv8A0faV2eg/8vH/AAH+tcFf7X9dj38D/Ch8/wA2bNFFFcZ6IUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB5f43/5EbXP+vGX/ANBNed16J43/AORG1z/rxl/9BNed9q+nynafy/U+Xzb44iUmCelPCE9eB6mglV+7kn1r2Lnkjdhoo3tRRqB6z2php9Ia+aO9lCL/AJHC1/7BV1/6PtK7PQf+Xj/gP9a4yLjxha/9gu6/9H2ldnoP/Lx/wH+tcNf7X9dj3sD/AAofP82bNFFFcZ6IUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB5f43/wCRF1z/AK8Zf/QTXn+FTnq3pXoHjf8A5EbXP+vGX/0E154a+nynafy/U+Xzb44gzk+1MpaK9g8gSiiigZ63TTT6aelfNHeygn/I42v/AGCrr/0faV2Wg/8ALx/wH+tccn/I42v/AGCrr/0faV2Og/8ALx/wH+tcNf7X9dj38D/Ch8/zZs0UUVxnoBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAHl/jf8A5EbXP+vGX/0E155Xofjb/kRtc/68Zf8A0E155X0+U7T+X6ny+b/HESkpaSvZPIEopaKBnrZpD0p5ppr5hHoMz1/5HG1/7BV1/wCj7Sux0D/l4/4D/WuOT/kb7X/sF3f/AKPtK7HQP+Xj/gP9a4q/2v67HvYH+FD5/mzZooorjPQCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAPL/G3/Ija5/14zf8AoJrzw16H42/5EbXP+vGX/wBBNeeV9PlG0/l+p8vm/wAcRtFLRXsnkDaKWigD1400080018wj0mZq/wDI4Wv/AGC7r/0faV2Og/8ALx/wH+tceP8AkcbX/sFXX/o+0rsNB/5eP+A/1rir/a/rse7gv4cPn+bNmiiiuM9AKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA8v8AG3/Ija5/14y/+gmvPa9C8bf8iNrn/XjL/wCgmvPK+nyjafy/U+Xzf44iUUtJXsnkCUUtFAHrpzTadTa+YR6TM4c+MbX/ALBV1/6PtK7HQf8Al4/4D/WuPHHjG1/7BV1/6PtK7DQf+Xj/AID/AFrir/a/rse7gf4UPn+bNmiiiuM9AKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA8v8bf8AIja5/wBeMv8A6Ca89r0Lxt/yI2uf9eM3/oJrz2vqMo2n8v1Pl83+OIlJS0V7B44lFFFAHr1NNSBGPbA9TR8i9Tk+1fL3PVs7GV18YWh/6hd1/wCj7Suw0H/l4/4D/WuQ3k+MLQYAA0u7x/3/ALSuv0H/AJeP+A/1rjrfa/rse5gv4cPn+bNmiiiuM7wooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDy/wAbf8iNrn/XjN/6Ca89r0Lxt/yI2uf9eM3/AKCa89r6jKNp/L9T5bN/jiJSUtJXsnkBRRRQB7AzlutRmnU018sj1GzOH/I42n/YKuv/AEfaV2Gg/wDLx/wH+tceP+RxtP8AsFXX/o+0rsNB/wCXj/gP9a46/wBr+ux7mC/hw+f5s2aKKK4z0AooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDy/xt/yI2uf9eM3/oJrz3tXoXjb/kRtc/68Zv8A0E157X1GUbT+X6ny+b/HESilpteyeOFFFFAHrpNNNKaQ18uj0mZ4/wCRxtf+wVdf+j7S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" /></p>
+<p>Oltre al classico doppio click, è possibile avviare l'applicativo anche tramite terminale passandogli alcuni dei parametri standard previsti da <strong>Inno Setup</strong>:</p>
+<ul>
+<li><em>/SILENT</em>, <em>/VERYSILENT</em></li>
+<li><em>/LOG</em></li>
+<li><em>/LOG="filename"</em></li>
+<li><em>/NOCANCEL</em></li>
+</ul>
+<p>Per la lista completa dei parametri standard previsti da <strong>Inno Setup</strong>, così come per sapere cosa fanno quelli soprastanti, consultare la guida ufficiale di <strong>Inno Setup</strong>.   </p>
+<p>Oltre a quelli standard, inoltre, è stato introdotto anche un parametro custom esclusivo per il <em>SetupPosware</em>: </p>
+<ul>
+<li><em>/SKIPOPOS</em></li>
+</ul>
+<p>Questo parametro indica di non scaricare ed installare l'ultima versione dei Monroes OPOS Common Control Objects (v. <code>1.14.001</code>). Questo parametro è utile in caso di incompatibilità dei driver OPOS in uso su <strong>RT-ONE</strong> o <strong>NCR</strong>. Per quanto riguarda, invece, <strong>EPSON è da noi certificato il funzionamento</strong>.</p>
+<h3 id="installazione-ex-novo">Installazione ex novo</h3>
+<p>Prima di poter lanciare il <em>SetupPosware</em> e procedere con l'installazione ex novo di <em>Posware Frontend</em> è necessario assicurarsi ancora nuovamente di aver installato almeno le dipendenze di terze parti che necessitano di installazione manuale. In particolare:</p>
+<ol>
+<li>Verificare il sistema operativo:<ul>
+<li>Se si utilizza Windows 7 <strong>SP1</strong> appena installato e mai aggiornato, consulta il seguente <a href="dipendenze-aggiornamenti-necessari.html#ulteriori-dipendenze-possibili-in-windows-7-mai-aggiornati">paragrafo</a>.</li>
+<li>Se si utilizza una versione obsoleta di Windows 10, il setup darà un errore specifico. La versione minima utilizzabile è riportata nei <a href="overview-generale.html#requisiti-minimi">requisiti minimi dell'overview generale</a>. Esegui l'aggiornamento di Windows 10 e riprova.</li>
+<li>Se si utilizza Windows 11 non ci sono particolari accorgimenti di cui tenere conto a livello di sistema operativo.</li>
+</ul>
+</li>
+<li>Assicurarsi di aver installato .NET Framework v. <code>4.8</code>, altrimenti il <em>SetupPosware</em> darà errore.</li>
+<li>Accertarsi di aver installato MySQL v. <code>5.6</code> e che sia <strong>accessibile con le nuove credenziali complesse</strong>, altrimenti il setup darà un errore specifico e non farà continuare l'installazione.</li>
+</ol>
+<blockquote>
+<p><strong>NOTA BENE:</strong> Si ricorda che nelle nuove installazioni di <em>Posware Frontend</em> <strong>NON</strong> è più possibile utilizzare MySQL v. <code>4.1</code></p>
+</blockquote>
+<p>Se tutte le condizioni di cui sopra sono soddisfatte, il <em>SetupPosware</em> si avvierà e procederà con l'installazione del nuovo <em>Posware Frontend</em>. </p>
+<p>In questo scenario, verrà installato un <strong>nuovo database standard</strong> pronto all'uso che potrà poi essere personalizzato e in cui andrà inviata tutta l'anagrafica del punto vendita.</p>
+<blockquote>
+<p><strong>NOTA BENE: Una volta conclusa l'installazione, il database NON potrà assolutamente essere sostituito con uno esistente di una versione <code>4.2.x</code> di Posware, perché incompatibili. Se è necessario effettuare un'installazione pulita usando però un database precedente come base, consultare il paragrafo successivo.</strong></p>
+</blockquote>
+<h4 id="usare-un-database-di-una-versione-42x-di-posware-in-una-installazione-ex-novo">Usare un database di una versione <code>4.2.x</code> di Posware in una installazione ex novo</h4>
+<p>È possibile utilizzare un database <strong>cassa</strong> esistente in una installazione ex novo a patto che provenga da una versione di Posware <code>4.2.306</code> o superiore. Il database dovrà essere dumpato e ripristinato su MySQL v. <code>5.6</code> per usarlo come base di installazione per Posware <code>4.3</code>. È possibile usare <strong>Navicat</strong> per questa operazione, ma vista la possibilità di errori di migrazione, è preferibile usare il tool ufficiale <strong>mysqldump</strong>.</p>
+<p>L'operazione di dump e ripristino deve essere effettuata assolutamente <strong>PRIMA</strong> di lanciare il setup. Il nome del database deve essere sempre <strong>cassa</strong> e le credenziali MySQL v. <code>5.6</code> devono essere le <strong>nuove credenziali complesse</strong>.</p>
+<p>Il setup verificherà se il database è <strong>compatibile</strong>. In caso positivo procederà con il suo aggiornamento e poi con l'installazione. In caso negativo verrà notificato un errore specifico.</p>
+<h3 id="migrazione-dalla-versione-42-alla-43">Migrazione dalla versione <code>4.2</code> alla <code>4.3</code></h3>
+<p>Prima di poter lanciare il <em>SetupPosware</em> e procedere con la migrazione dalla versione <code>4.2</code> alla <code>4.3</code> di <em>Posware Frontend</em> è necessario completare tutti i seguenti controlli e le operazioni di backup, da usare in caso di malfunzionamenti e per l'eventuale procedura di rollback. In particolare:</p>
+<ol>
+<li>
+<p>Effettuare il backup sia del database <strong>cassa</strong> che di tutta la cartella di Posware.</p>
+<blockquote>
+<p><strong>NOTA BENE: IL PROCESSO DI INSTALLAZIONE/AGGIORNAMENTO NON È REVERSIBILE ED IL DATABASE cassa UNA VOLTA AGGIORNATO ALLO SCHEMA <code>4.3</code> NON È PIÙ COMPATIBILE CON POSWARE v. <code>4.2</code></strong></p>
+</blockquote>
+</li>
+<li>
+<p>Assicurarsi di avere una versione di Posware installata e funzionante non inferiore alla v. <code>4.2.306</code>.</p>
+</li>
+<li>Verificare il sistema operativo:<ul>
+<li>Se si utilizza Windows 7 <strong>SP1</strong> appena installato e mai aggiornato, consulta il seguente <a href="dipendenze-aggiornamenti-necessari.html#ulteriori-dipendenze-possibili-in-windows-7-mai-aggiornati">paragrafo</a>.</li>
+<li>Se si utilizza una versione obsoleta di Windows 10, il setup darà un errore specifico. La versione minima utilizzabile è riportata nei <a href="overview-generale.html#requisiti-minimi">requisiti minimi dell'overview generale</a>. Esegui l'aggiornamento di Windows 10 e riprova.</li>
+<li>Se si utilizza Windows 11 non ci sono particolari accorgimenti di cui tenere conto a livello di sistema operativo.</li>
+</ul>
+</li>
+<li>Accertarsi che la versione installata di MySQL (MySQL v. <code>4.1</code> o v. <code>5.6</code>) sia <strong>avviata ed accessibile</strong> e con il database <strong>cassa</strong> presente al suo interno, altrimenti il setup darà un errore specifico e non farà continuare l'installazione.</li>
+</ol>
+<p>Se tutte le condizioni di cui sopra sono soddisfatte, il <em>SetupPosware</em> si avvierà e procederà con l'installazione del nuovo <em>Posware Frontend</em>. Innanzitutto, all'avvio il <em>SetupPosware</em> verificherà i prerequisiti di migrazione dalla versione precedente di Posware. Qualora l'installazione precedente fosse corrotta o con dati mancanti, si riceverà un errore e non sarà possibile continuare.</p>
+<p>Al contrario dello scenario di installazione ex novo, il <em>SetupPosware</em> <strong>non bloccherà l'installazione se rileva una versione di MySQL v. <code>4.1</code></strong> nella macchina. Questo per evitare di far migrare senza vantaggi concreti la maggior parte delle installazioni di Posware v. <code>4.2</code> che usano MySQL v. <code>4.1</code> come database.</p>
+<p>Una volta terminata l'installazione, come anticipato, il database sarà migrato alla versione <code>4.3</code> con gli schemi aggiornati e <strong>non sarà più compatibile con la versione <code>4.2</code></strong> di Posware. Quindi è bene <strong>effettuare un backup</strong> prima di eseguire qualsiasi operazione di migrazione.</p>
+<p>La migrazione alla v. <code>4.3</code> effettua anche la migrazione e l'aggiornamento di file esistenti, quali i file di configurazione di Posware, delle <em>Connection strings</em> e delle impostazioni utente. Per ulteriori dettagli consultare il relativo <a href="#aggiornamento-dei-file-di-configurazione">paragrafo</a>.</p>
+<p>Infine, dopo aver completato con successo l'intero processo, potrebbe essere necessario <strong>riavviare il computer</strong> per iniziare ad usare Posware v. <code>4.3</code>. In questo caso, <strong>NON usare assolutamente il software prima di aver riavviato il sistema</strong>.</p>
+<h3 id="troubleshooting-per-i-tecnici">Troubleshooting per i tecnici</h3>
+<p>Per qualunque problema possa sorgere con il <em>SetupPosware</em>, la soluzione primaria è sempre quella di esaminare i rispettivi log, che possono essere consultati avviando l'applicativo tramite terminale passandogli uno dei due parametri standard di <strong>Inno Setup</strong> tra <em>/LOG</em> e <em>/LOG="filename"</em>.</p>
+<p>Viene comunque riportata di seguito la lista completa dei possibili errori gestiti dalla logica del <em>SetupPosware</em> e che quindi potrebbero verificarsi durante l'installazione o la migrazione di <em>Posware Frontend</em>:</p>
+<table>
+<thead>
+<tr>
+<th>Messaggio</th>
+<th>Probabile causa/Strategia di risoluzione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Non è stato possibile avviare le migrazioni del database. Verificare il log per maggiori dettagli. L'installazione viene annullata.</td>
+<td>Si sono verificati dei problemi che hanno impedito l'avvio delle migrazioni del database. Riprovare a lanciare il setup e in caso il problema persista, consultare il team di sviluppo.</td>
+</tr>
+<tr>
+<td>Si è verificato un errore durante l'applicazione delle migrazione del database: <em>nome del database</em> Verificare il log per maggiori dettagli. L'installazione viene annullata.</td>
+<td>Si sono verificati dei problemi che hanno impedito l'applicazione delle migrazioni del database. Riprovare a lanciare il setup e in caso il problema persista, consultare il team di sviluppo.</td>
+</tr>
+<tr>
+<td>Non è stato possibile migrare le Connessioni database e le impostazioni utente dal file 'Posware.exe.config'. Non è stata trovata la sezione Posware.MySettings sotto il nodo applicationSettings. Il file potrebbe essere corrotto. Verificare il log per maggiori dettagli. L'installazione viene annullata.</td>
+<td>Il messaggio è autoesplicativo.</td>
+</tr>
+<tr>
+<td>Non è possibile installare la versione aggiornata. Nella tabella logcassa vi sono dei record ancora da inviare al server. Prima di aggiornare la cassa, è necessario inviare tutto il log del venduto di cassa. L'installazione viene annullata.</td>
+<td>Il messaggio è autoesplicativo.</td>
+</tr>
+<tr>
+<td>Installazione fallita. Per diagnosticare il problema, consulta i log di installazione: <em>file di log</em> Se l'errore è avvenuto durante la migrazione del database o delle impostazioni, consulta l'ultimo log contenuto nella cartella <em>nome della cartella</em></td>
+<td>Il messaggio è autoesplicativo.</td>
+</tr>
+<tr>
+<td>Impossibile accedere al server database MySql. Verificare che MySql sia avviato, accessibile e che la connection string sia corretta.</td>
+<td>Il messaggio è autoesplicativo.</td>
+</tr>
+<tr>
+<td>Il database cassa non è aggiornato o accessibile. Verificare che il database sia esistente e che la versione di Posware da cui si sta aggiornando sia la minima richiesta (v4.2.306.0 o superiore).</td>
+<td>Il messaggio è autoesplicativo.</td>
+</tr>
+<tr>
+<td>Impossibile trovare il file cassa_blueprint.dump necessario ad installare il database iniziale.</td>
+<td>Il <em>SetupPosware</em> non ha rilevato il dump per installare il database iniziale standard. Riprovare a lanciare il setup e in caso il problema persista, consultare il team di sviluppo.</td>
+</tr>
+<tr>
+<td>Impossibile trovare mysql.exe . Non è possibile installare il database iniziale</td>
+<td>Verificare che sia installato MySQL e che sia installata una versione supportata dal <em>SetupPosware</em>. Consultare la sezione soprastante per le versioni minime richieste di MySQL nei due diversi scenari di installazione. Se i vari requisiti sono rispettati e il problema persiste, contattare il team di sviluppo.</td>
+</tr>
+<tr>
+<td>Impossibile eseguire via mysql il restore del file cassa_blueprint.dump per installare il database iniziale.</td>
+<td>Il ripristino del dump del database iniziale standard in MySQL è fallito. Riprovare a lanciare il setup e in caso il problema persista, consultare il team di sviluppo.</td>
+</tr>
+<tr>
+<td>Non è stato possibile avviare le verifiche preliminari del database. Verificare il log per maggiori dettagli. L'installazione viene annullata.</td>
+<td>Il messaggio è autoesplicativo.</td>
+</tr>
+<tr>
+<td>Non è stato possibile installare il file Posware.exe.config o il file ConnectionStrings.config nella directory di installazione. Verificare i permessi. L'installazione viene annullata.</td>
+<td>Il <em>SetupPosware</em> ha fallito l'installazione di uno o più file di configurazione per una questione di permessi. Una volta verificati i permessi della cartella di Posware, riprovare a lanciare il setup e in caso il problema persista, consultare il team di sviluppo.</td>
+</tr>
+<tr>
+<td>Non è stato possibile installare il database di partenza nella directory di installazione. Verificare i permessi. L'installazione viene annullata.</td>
+<td>Il <em>SetupPosware</em> ha fallito l'installazione del database iniziale standard per una questione di permessi. Una volta verificati i permessi della cartella di MySQL, riprovare a lanciare il setup e in caso il problema persista, consultare il team di sviluppo.</td>
+</tr>
+<tr>
+<td>Non è stato possibile copiare i file di log nella directory di installazione. Verificare i permessi. Per consultare i log, PRIMA DI CHIUDERE QUESTO MESSAGGIO, apri il file <em>nome del del file da consultare</em> Alla chiusura del Setup tutti i file temporanei vengono eliminati.</td>
+<td>Il messaggio è autoesplicativo.</td>
+</tr>
+<tr>
+<td>Il server MySql installato non è supportato. È necessario usare la versione 5.6.x di MySql per effettuare una installazione ex-novo.</td>
+<td>Controllare che versione di MySQL è installata. Se è presente una versione diversa dalla <code>5.6.x</code> procedere quindi a installarla e configurarla, prima di riprovare a lanciare il setup.</td>
+</tr>
+<tr>
+<td>Versione di Windows 10 non supportata ( <em>versione di Windows 10 installata non supportata</em> ). È richiesta almeno la versione 1809 (Redstone 5, October 2018 Update, Windows v10.0.17763). Prima di installare Posware, aggiorna Windows via Windows Update.</td>
+<td>Il messaggio è autoesplicativo.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="eventuali-errori-e-problemi-nella-migrazione-dalla-versione-42-alla-43">Eventuali errori e problemi nella migrazione dalla versione <code>4.2</code> alla <code>4.3</code></h4>
+<p>I principali problemi di una mancata migrazione sono:</p>
+<ol>
+<li>Impossibilità di leggere <em>Posware.exe.config</em> oppure reperire da esso la <em>Connection string</em> da usare per accedere al database <strong>cassa</strong> già presente.</li>
+<li>La versione <code>4.2</code> di Posware è corrotta e all'interno di "<em>Installazione applicazioni</em>" di Windows non è presente una voce per Posware.</li>
+</ol>
+<p>Nei prerequisiti di migrazione, tramite il tool <strong>PosUpdateCompanion</strong>, si verifica l'accesso al database <strong>cassa</strong> già esistente e la sua struttura per determinare se Posware può essere migrato alla v. <code>4.3</code>, infatti il tool si aspetta che il database sia presente ed accessibile. Per verificare MySQL ed accedere al database <strong>cassa</strong>, i dati di accesso verranno presi dalla <em>Connection string</em> all'interno di <em>Posware.exe.config</em> (parametro <strong>Connessione</strong> negli <em>applicationSettings</em>). Se la <em>Connection string</em> non è corretta, il <em>SetupPosware</em> non procederà con l'installazione.</p>
+<p>Inoltre, il tool <strong>PosUpdateCompanion</strong> verifica anche che ci sia una versione di Posware non inferiore alla <code>4.2.306</code>, la versione minima supportata per la migrazione alla v. <code>4.3</code> dell'applicativo. Se questa condizione non dovesse essere soddisfatta, il <em>SetupPosware</em> mostrerà un errore specifico e per risolvere il problema sarà <strong>necessario installare una versione di Posware <code>4.2</code></strong> pari o superiore alla <code>4.2.306</code> prima di poter riprovare ad eseguire la migrazione.</p>
+<h2 id="aggiornamento-dei-file-di-configurazione">Aggiornamento dei file di configurazione</h2>
+<p>A partire dalla versione <code>4.3</code>, i file di configurazione di Posware, delle <em>Connection strings</em> e delle impostazioni utente sono stati riportati allo standard .NET rimuovendo l'approccio custom. </p>
+<p><em>SetupPosware</em> provvederà ad installare (o migrare in caso di migrazione dalla v. <code>4.2</code>) automaticamente i seguenti file di configurazione:</p>
+<ul>
+<li><em>Posware.exe.config</em></li>
+<li><em>ConnectionStrings.config</em></li>
+<li><em>Posware.User.config</em></li>
+</ul>
+<p>I punti cruciali di questo processo sono:</p>
+<ol>
+<li>Le <em>Connection strings</em> sono state spostate nel file dedicato <em>ConnectionStrings.config</em> e non sono più presenti all'interno di <em>Posware.exe.config</em></li>
+<li><em>Posware.exe.config</em> se necessario può essere sovrascritto da <em>PosUpdate</em> durante un aggiornamento. Tutte le impostazioni di runtime .NET che richiedono un valore all'interno di <em>Posware.exe.config</em>, dovranno essere inserite nel nuovo file <em>Posware.User.config</em> che il runtime .NET caricherà automaticamente</li>
+<li>Tutte le impostazioni che prima erano sotto le voci <em>Posware.MySettings</em> (<em>applicationSettings</em>) sono ora state spostate nel database di <strong>posware</strong> in <strong>tabparametriextra</strong>.</li>
+</ol>
+<p>Alcune di queste impostazioni che sono state spostate in <strong>tabparametriextra</strong> sono:</p>
+<ul>
+<li>campiRicArticolo</li>
+<li>campiFiltroRicArticoli</li>
+<li>messaggiServerGiacenza</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ultimo aggiornamento">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">27 agosto 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2024&copy; ISiD
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://isid.it/" target="_blank" rel="noopener" title="isid.it" class="md-social__link">
+      <?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1510.000000pt" height="518.000000pt" viewBox="0 0 1510.000000 518.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)"
+fill="#FFFFFF" stroke="none">
+<path d="M69 5157 c-19 -12 -42 -38 -51 -57 -17 -33 -18 -174 -18 -2510 0
+-2336 1 -2477 18 -2510 9 -19 32 -45 51 -57 l34 -23 466 0 c521 0 514 -1 553
+71 17 32 18 131 18 2519 0 2391 -1 2487 -18 2520 -37 71 -32 70 -553 70 l-466
+0 -34 -23z"/>
+<path d="M2580 5169 c-305 -35 -562 -148 -726 -320 -149 -157 -241 -337 -291
+-572 -16 -72 -18 -141 -18 -582 0 -550 4 -597 66 -787 127 -392 402 -626 846
+-720 l108 -23 1570 -5 1570 -5 60 -23 c32 -12 75 -35 95 -50 44 -36 95 -119
+110 -181 17 -67 25 -451 11 -539 -26 -169 -92 -261 -217 -304 l-69 -23 -2030
+-5 c-1919 -5 -2032 -6 -2058 -23 -63 -41 -62 -30 -62 -487 0 -453 0 -451 58
+-494 l28 -21 2177 -3 c1891 -2 2192 0 2293 13 385 50 650 197 824 460 94 141
+143 264 182 460 16 80 18 147 18 580 0 416 -3 504 -17 585 -51 285 -151 492
+-315 651 -169 164 -367 257 -655 305 -94 16 -242 18 -1658 23 l-1555 6 -56 28
+c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
+103 161 207 197 48 16 190 17 2091 22 1928 5 2041 6 2066 23 53 36 54 41 57
+469 2 250 -1 412 -7 436 -6 21 -25 51 -41 67 l-31 30 -2197 1 c-1208 1 -2231
+-2 -2272 -7z"/>
+<path d="M7631 5162 c-71 -38 -71 -38 -71 -501 0 -403 1 -415 21 -448 40 -64
+34 -63 501 -63 l424 0 302 -282 302 -282 0 -386 c0 -380 0 -386 23 -430 42
+-82 28 -80 550 -80 502 0 489 -1 541 60 l26 32 0 422 0 423 -23 34 c-46 69
+-44 69 -512 69 l-420 1 -297 277 -297 277 0 390 c-1 435 -1 436 -70 482 l-34
+23 -466 0 c-433 0 -469 -1 -500 -18z"/>
+<path d="M9255 5167 c-47 -18 -71 -39 -97 -82 l-23 -40 -3 -452 -3 -453 1993
+-3 c1802 -3 2001 -5 2071 -20 422 -88 609 -249 697 -601 50 -201 55 -279 55
+-926 0 -647 -5 -725 -55 -926 -80 -318 -256 -491 -582 -574 -216 -54 -240 -55
+-1653 -55 -715 0 -1313 4 -1328 8 -57 16 -57 20 -57 657 l0 580 -570 0 -570 0
+2 -1072 3 -1073 27 -46 c17 -29 41 -53 65 -65 37 -18 101 -19 1918 -22 1332
+-2 1927 0 2040 8 503 36 891 149 1191 346 113 74 311 270 383 379 189 287 292
+647 321 1120 13 220 13 1250 0 1470 -29 473 -133 837 -322 1120 -68 103 -219
+259 -328 341 -109 82 -343 200 -491 248 -213 68 -463 114 -738 136 -200 15
+-3906 12 -3946 -3z"/>
+<path d="M7560 1918 c0 -1706 1 -1815 18 -1847 9 -19 33 -43 52 -53 33 -17 64
+-18 512 -16 l476 3 27 25 c58 53 55 -64 55 1895 l0 1805 -570 0 -570 0 0
+-1812z"/>
+</g>
+</svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+    
+  </body>
+</html>

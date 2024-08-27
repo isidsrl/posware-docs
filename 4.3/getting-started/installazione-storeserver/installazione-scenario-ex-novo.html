@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
     
     
       
@@ -360,6 +360,8 @@ Non stai visualizzando l'ultima versione della documentazione.
   
     
     
+      
+        
       
         
       
@@ -755,6 +757,151 @@ Non stai visualizzando l'ultima versione della documentazione.
   
   <span class="md-ellipsis">
     Scenario migrazione
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Installazione e aggiornamenti Posware Frontend
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Installazione e aggiornamenti Posware Frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installazione-posware-frontend/overview-generale.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview generale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dipendenze di terze parti e aggiornamenti necessari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installazione-posware-frontend/setup-posware.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SetupPosware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installazione-posware-frontend/pos-update.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PosUpdate
   </span>
   
 
@@ -1293,10 +1440,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
 <h1 id="scenario-di-installazione-ex-novo">Scenario di installazione ex novo</h1>
 <p><strong>Prima revisione documento: 18 luglio 2024</strong> <br>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">24 luglio 2024</span></strong></p>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">27 agosto 2024</span></strong></p>
 <hr />
 <h2 id="glossario">Glossario</h2>
 <ul>
+<li><strong>InstanceConfigurationId:</strong> anche detto <strong>Store Id</strong>, rappresenta il codice del punto vendita su cui si sta installando lo <em>StoreServer</em>;</li>
 <li><strong>WebApp:</strong> applicazione web che offre la possibilità di gestire in modo centralizzato le funzionalità disponibili nello <em>StoreServer</em>;</li>
 </ul>
 <h2 id="cenni-preliminari">Cenni preliminari</h2>
@@ -1326,8 +1474,8 @@ Non stai visualizzando l'ultima versione della documentazione.
 </ol>
 <h2 id="installazione">Installazione</h2>
 <h3 id="installazione-storeserver-tramite-winget">Installazione StoreServer tramite Winget</h3>
-<p>Per installare lo <em>StoreServer</em> nello scenario di installazione ex novo è necessario usare <strong>Winget</strong>, quindi assicurarsi nuovamente di avere almeno la versione minima supportata (v. <code>1.5</code> o superiore) per l'installazione dello <em>StoreServer</em>. </p>
-<p>Fatto ciò, per prima cosa, inserire la source di ISiD in <strong>Winget</strong> da terminale, aperto con i diritti da amministratore, usando la seguente sintassi:</p>
+<p>Per installare lo <em>StoreServer</em> nello scenario di installazione ex novo è necessario usare <strong>Winget</strong>, quindi assicurarsi nuovamente di avere almeno la versione minima supportata per l'installazione dello <em>StoreServer</em>, consultabile nell'<a href="overview-generale.html">overview generale</a>. </p>
+<p>Fatto ciò, per prima cosa, inserire la source di ISiD in <strong>Winget</strong> da terminale, <strong>aperto con i diritti da amministratore</strong>, usando la seguente sintassi:</p>
 <blockquote>
 <p>winget source add posware https://winget.isid.it/posware/api -t "Microsoft.Rest"</p>
 </blockquote>
@@ -1336,7 +1484,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 <blockquote>
 <p><strong>NOTA BENE: Questo comando va usato solo ed esclusivamente la prima volta se la source di ISiD non è mai stata inserita sul computer.</strong></p>
 </blockquote>
-<p>Per avviare l'installazione effettiva dello <em>StoreServer</em> lanciare sempre da terminale, aperto con i diritti da amministratore, il seguente comando:</p>
+<p>Per avviare l'installazione effettiva dello <em>StoreServer</em> lanciare sempre da terminale il seguente comando:</p>
 <blockquote>
 <p>winget install --id isid.storeserver --source posware --verbose</p>
 </blockquote>
@@ -1346,7 +1494,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 <li><strong>Connection string in caso il database provider sia MySQL:</strong> server=localhost;user id=root;password=Vbhg4132!;database=posware;</li>
 <li><strong>Connection string in caso il database provider sia SQL Server:</strong> Data Source=.\sqlexpress;Initial Catalog=posware;User ID=sa;Password=Vbhg4132!;Encrypt=false;Trust Server Certificate=true;</li>
 </ul>
-<p>In caso si volesse specificare una <em>Connection string</em> o un <strong>InstanceConfigurationId</strong> (che rappresenta l'id del punto vendita su cui si sta installando lo <em>StoreServer</em>) diversi è necessario passare il parametro <em>--custom</em> seguito dai valori della <em>Connection string</em> o dell'<strong>InstanceConfigurationId</strong> desiderati.</p>
+<p>In caso si volesse specificare una <em>Connection string</em> o un <strong>InstanceConfigurationId</strong> diversi è necessario passare il parametro <em>--custom</em> seguito dai valori della <em>Connection string</em> o dell'<strong>InstanceConfigurationId</strong> desiderati.</p>
 <p>In particolare, per passare una <em>Connection string</em> diversa da quelle impostate in maniera predefinita, usare la sintassi:</p>
 <blockquote>
 <p>--custom "/CONNECTIONSTRING=connection string diversa da quelle di default"</p>
@@ -1357,7 +1505,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </blockquote>
 <p>Invece, per specificare un <strong>InstanceConfigurationId</strong> diverso dal valore di default usare la seguente sintassi:</p>
 <blockquote>
-<p>--custom "/storeid=valore dell'id del punto vendita diverso da quello di default"</p>
+<p>--custom "/STOREID=valore del codice del punto vendita diverso da quello di default"</p>
 </blockquote>
 <p>Infine, se si desidera aprire la cartella dei log alla fine dell'installazione dello <em>StoreServer</em> è necessario aggiungere al comando di <strong>Winget</strong> il seguente parametro: </p>
 <blockquote>
@@ -1365,7 +1513,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </blockquote>
 <p>A fini esplicativi, viene lasciato di seguito un esempio completo del comando custom di installazione dello <em>StoreServer</em> con <strong>Winget</strong>:</p>
 <blockquote>
-<p>winget install --id isid.storeserver --source posware --verbose --logs --custom "/CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307"" /storeid=69 "</p>
+<p>winget install --id isid.storeserver --source posware --verbose --logs --custom "/CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307"" /STOREID=69 "</p>
 </blockquote>
 <p>Se dovessero servire ulteriori comandi di <strong>Winget</strong>, consultare la guida ufficiale di <strong>Microsoft</strong>.</p>
 <h4 id="troubleshooting-per-i-tecnici">Troubleshooting per i tecnici</h4>
@@ -1374,83 +1522,107 @@ Non stai visualizzando l'ultima versione della documentazione.
 <table>
 <thead>
 <tr>
-<th>Errore</th>
 <th>Messaggio</th>
+<th>Probabile causa/Strategia di risoluzione</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>AspNetNotInstalled</strong></td>
 <td><em>Versione di ASP.NET Core richiesta</em> non è installato.</td>
+<td>Controllare la versione minima richiesta di ASP.NET Core, scaricarla e riprovare l'installazione.</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>UnknownCompanionFunctionSelected</strong></td>
 <td>È stata selezionata una funzione sconosciuta.</td>
+<td>Notificare l'errore al team di sviluppo.</td>
 </tr>
 <tr>
-<td><strong>InvalidParameters</strong></td>
 <td>Sono stati forniti parametri non validi.</td>
+<td>Notificare l'errore al team di sviluppo.</td>
 </tr>
 <tr>
-<td><strong>AbortedCompanionFunction</strong></td>
-<td>L'utente ha interrotto l'operazione di preparazione.</td>
+<td>L'utente ha interrotto l'operazione di preparazione. (<strong>AbortedCompanionFunction</strong>)</td>
+<td>L'operazione di preparazione è stata interrotta dall'utente forzatamente.</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>UnknownConnectionError</strong></td>
 <td>Si è verificato un errore sconosciuto durante il tentativo di connessione al database server.</td>
+<td>Verificare la connessione al database e soprattutto se il database sia accessibile. Se necessario, specificare una <em>Connection string</em> personalizzata con il parametro <em>--custom</em>.</td>
 </tr>
 <tr>
-<td><strong>FailedConnection</strong></td>
 <td>Connessione al database fallita. Verificare che il database sia installato e accessibile. Se necessario, specificare una stringa di connessione personalizzata.</td>
+<td>Il messaggio è autoesplicativo.</td>
 </tr>
 <tr>
-<td><strong>UnsupportedProviderVersion</strong></td>
 <td>La versione del database server non è supportata.</td>
+<td>Controllare la versione richiesta del database in utilizzo, MySQL o SQL Server, nei requisiti minimi dell'<a href="overview-generale.html#requisiti-minimi">overview generale</a>. Procedere poi a installarla e configurarla prima di riprovare l'installazione dello <em>StoreServer</em>.</td>
 </tr>
 <tr>
-<td><strong>DbAlreadyCreated</strong></td>
-<td>Risulta già presente un database con il nome indicato.</td>
+<td>Risulta già presente un database installato. In una nuova installazione non è possibile usare database già presenti.</td>
+<td>Si è provato ad eseguire un'installazione ex novo con un database già esistente. Per installare usando un database migrato devi specificare da linea di comando dei parametri <em>/STOREID</em> e <em>/CONNECTIONSTRING</em> validi.</td>
 </tr>
 <tr>
-<td><strong>WritingTempFileError</strong></td>
-<td>Si è verificato un errore durante il salvataggio delle configurazioni.</td>
+<td>Si è verificato un errore durante il salvataggio delle configurazioni. (<strong>WritingTempFileError</strong>)</td>
+<td></td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>UnknownSavingConnectionStringError</strong></td>
-<td>Si è verificato un errore durante il salvataggio della stringa di connessione.</td>
+<td>Si è verificato un errore durante il salvataggio della stringa di connessione. (<strong>UnknownSavingConnectionStringError</strong>)</td>
+<td></td>
 </tr>
 <tr>
-<td><strong>UnknownErrorInstallingMigrations</strong></td>
-<td>Si è verificato un errore durante l'installazione delle migrazioni.</td>
+<td>Si è verificato un errore durante l'installazione delle migrazioni. (<strong>UnknownErrorInstallingMigrations</strong>)</td>
+<td></td>
 </tr>
 <tr>
-<td><strong>UnknownErrorRegisteringStoreServerService</strong></td>
-<td>Si è verificato un errore durante la registrazione dello StoreServer come servizio di Windows.</td>
+<td>Si è verificato un errore durante la registrazione dello StoreServer come servizio di Windows. (<strong>UnknownErrorRegisteringStoreServerService</strong>)</td>
+<td></td>
 </tr>
 <tr>
-<td><strong>UnknownErrorStartingStoreServerService</strong></td>
-<td>Si è verificato un errore durante l'avvio dello StoreServer come servizio di Windows.</td>
+<td>Si è verificato un errore durante l'avvio dello StoreServer come servizio di Windows. (<strong>UnknownErrorStartingStoreServerService</strong>)</td>
+<td></td>
 </tr>
 <tr>
-<td><strong>CannotStopService</strong></td>
-<td>Non è stato possibile interrompere il servizio StoreServer.</td>
+<td>Non è stato possibile interrompere il servizio StoreServer. (<strong>CannotStopService</strong>)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sono necessari i diritti di amministratore per eseguire una nuova installazione.</td>
+<td>Si è provato ad effettuare l'installazione senza aver aperto il terminale con i diritti di amministratore. Riavviare il terminale come amministratore e riprovare l'installazione.</td>
+</tr>
+<tr>
+<td>Impossibile installare/aggiornare l'applicazione. Non ho trovato nessun file di impostazioni esistente appsettings.Production.json nella directory di installazione.</td>
+<td>Non viene rivelato o non è stato trovato il file <em>appsettings.Production.json</em> con tutte le impostazioni dell'applicativo. Controllare all'interno della cartella dello <em>StoreServer</em> se è presente o meno e in caso di mancata presenza contattare il team di sviluppo.</td>
+</tr>
+<tr>
+<td>Impossibile installare/aggiornare l'applicazione. La directory di installazione non è vuota. Per aggiornare il programma usare winget upgrade. Per reinstallare il programma o installare usando un database migrato, consulta la documentazione.</td>
+<td>È già presente la cartella dello <em>StoreServer</em> e quindi è già stata effettuata l'installazione in precedenza. Per aggiornare lo <em>StoreServer</em>, consultare la relativa <a href="">sezione</a> della documentazione.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Collegamento al database non riuscito. Impossibile procedere con l'installazione o l'upgrade.</td>
+<td>Connessione al database fallita. Verificare che il database sia installato e accessibile. Se necessario, specificare una <em>Connection string</em> personalizzata.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="antivirus-e-firewall">Antivirus e firewall</h3>
-<p>Dopo l'installazione, è necessario inserire l'intera directory dello <em>StoreServer</em> nella lista delle esclusioni sia dell'antivirus che del firewall di sistema, se presenti, prima di provare ad associare le casse.</p>
+<p>Dopo l'installazione, è necessario inserire l'intera directory dello <em>StoreServer</em> (<em>C:\Users\Utente\AppData\Local\isid\StoreServer</em>) nella lista delle esclusioni sia dell'antivirus che del firewall di sistema, se presenti, prima di provare ad avviarlo e ad associare le casse.</p>
 <h3 id="avvio-dello-storeserver">Avvio dello StoreServer</h3>
 <p><strong>Winget</strong> nella procedura di installazione dello <em>StoreServer</em> crea anche il relativo servizio, che partirà automaticamente all'avvio del computer, quindi per poter avviare la relativa WepApp basta semplicemente collegarsi in rete sulla porta <strong>6851</strong> (<em>http://[::]:6851</em>).</p>
 <p>Una volta collegatosi allo <em>StoreServer</em>, ci si ritroverà nella Dashboard generale, che rappresenta la home page della WebApp, in cui sono presenti alcuni componenti che dopo aver associato le casse all'applicazione mostreranno alcune informazioni generali, come l'incasso giornaliero e quello settimanale o lo stato delle casse collegate.</p>
@@ -1539,7 +1711,7 @@ In caso negativo, assicurarsi che sia il provider sia la <em>Connection string</
 <ol>
 <li>Disinstallare lo <em>StoreServer</em>, tramite <strong>Winget</strong> o Windows, e ripristinare eventuali backup a database e directory non direttamente collegate a <strong>Posware</strong>, che però sono state influenzate dall'installazione dello <em>StoreServer</em> o di una o più dipendenze/procedure usate dalla nuova versione.</li>
 <li>Reinstallare la versione precedente tramite <strong>Winget</strong> specificando con il parametro <em>--version</em> la versione voluta e tutti i parametri custom necessari, visti già in precedenza nella <a href="#installazione-storeserver-tramite-winget">sezione relativa all'installazione</a> con <strong>Winget</strong> di questa guida. Questo step va effettuato solo se non si è nel caso di rollback della prima installazione dello <em>StoreServer</em>, ma si era passati da una versione precedente a una nuova dell'applicativo con un upgrade.</li>
-<li>Ripristinare i vari servizi legacy alla versione precedente all'aggiornamento eseguito per renderli compatibili con il nuovo <em>StoreServer</em>. In caso di rollback della prima installazione dello <em>StoreServer</em> procedere, invece, proprio ad eliminare totalmente sia i relativi servizi che i vari servizi legacy.</li>
+<li>Eliminare totalmente i vari servizi legacy installati da zero e i relativi servizi Windows.</li>
 <li>Sovrascrivere il database creato da <strong>Winget</strong> con il backup del database precedente all'installazione dello <em>StoreServer</em>. Inoltre, se il provider del database, MySQL o SQL Server, era stato installato momentaneamente su una porta differente per non entrare in conflitto con quello precedente, procedere a disabilitarlo mettendolo offline. Infine, concludere la procedura di rollback riattivando il precedente provider se era stato disabilitato.</li>
 </ol>
 
@@ -1562,7 +1734,7 @@ In caso negativo, assicurarsi che sia il provider sia la <em>Connection string</
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">24 luglio 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">27 agosto 2024</span>
   </span>
 
     
@@ -1675,7 +1847,7 @@ c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
       
     
   </body>
