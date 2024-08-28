@@ -16,14 +16,8 @@ tags:
 - **PosUpdate:** è l'applicativo che viene usato esclusivamente per aggiornare *Posware Frontend* sui terminali casse alla loro ultima **Build** version, in linea con la **Major** e **Minor** version installata. 
 
 ## Cenni preliminari
-Il presente documento, come introdotto nell'overview generale, illustra nel dettaglio le note varie sulle dipendenze di terze parti e gli aggiornamenti necessari che rappresentano parte dei requisiti minimi software per l'installazione o la migrazione del nuovo *Posware Frontend*.
+Il presente documento illustra nel dettaglio le note sulle dipendenze di terze parti e gli aggiornamenti necessari che sono parte dei requisiti minimi software per l'installazione o la migrazione al nuovo *Posware Frontend* v4.3.
 
-## Gestione delle dipendenze di terze parti e degli aggiornamenti necessari
-Per quanto riguarda l'installazione delle dipendenze di terze parti e degli aggiornamenti necessari al funzionamento del nuovo *Posware Frontend*, ci sono tre diverse strategie applicabili a seconda della dipendenza considerata. Queste strategie sono le seguenti:
-
-- Installazione manuale 
-- Installazione automatica da parte del *SetupPosware*, con dipendenza inclusa già nel setup
-- Installazione automatica da parte del *SetupPosware*, con dipendenza prelevata via CDN
 
 ### Dipendenze con installazione manuale
 Le seguenti dipendenze e aggiornamenti devono essere installati manualmente prima di lanciare il *SetupPosware*:
@@ -32,39 +26,34 @@ Le seguenti dipendenze e aggiornamenti devono essere installati manualmente prim
 - Aggiornamenti di Windows 10 in caso di una versione inferiore a quella dei requisiti minimi
 - .NET Framework v. `4.8`
 - MySQL v. `5.6` in caso di installazione ex novo
-- Runtime di Argentea
 
-#### Ulteriori dipendenze possibili in Windows 7 mai aggiornati
-In sistemi Windows 7 **SP1** appena installati e mai aggiornati, sarà necessario installare .NET framework v. `4.8` come da specifiche.
+Gli aggiornamenti di Windows possono essere effettuati dall'ordinaria procedura di Windows Update.
+
+#### Installazione degli aggiornamenti in Windows 7 SP1 mai aggiornati o appena installati
+In sistemi Windows 7 **SP1** appena installati e mai aggiornati, sarà necessario installare .NET Framework v. `4.8` come da specifiche.
 
 Tuttavia, quest'ultimo si porta come dipendenze due aggiornamenti minimi da fare:
 
 - `KB3033929`
 - Aggiornamento dei certificati **MicrosoftRootCertificateAuthority2011**
 
-Il certificato aggiornato può essere scaricato dal seguente [link](https://www.microsoft.com/pkiops/Docs/Repository.htm). Senza di esso nessun pacchetto di installazione viene validato con i certificati obsoleti di Windows 7 **SP1** senza aggiornamenti.
+Il certificato aggiornato può essere scaricato dal seguente [link](https://www.microsoft.com/pkiops/Docs/Repository.htm). 
 
-Inoltre, solo in caso di sistemi Windows 7 **SP1** mai aggiornati dalla data di installazione (non sono presenti quindi gli update **ServiceStack 2018** che sono requisito minimo in Windows 7 per il funzionamento del nuovo *Posware Frontend*) sono necessarie anche le dipendenze sottostanti:
+Senza di esso nessun pacchetto di installazione viene validato con i certificati obsoleti di Windows 7 **SP1** senza aggiornamenti.
+
+Inoltre, non essendo presenti gli update **Servicing Stack 2018** che sono requisito minimo in Windows 7 per il funzionamento del nuovo *Posware Frontend*, sono necessarie anche gli aggiornamenti a seguire:
 
 - `KB4457144`
 - `KB5011649` con tutti i suoi aggiornamenti prerequisiti (maggiori dettagli nella sua [pagina](https://support.microsoft.com/en-us/topic/kb5011649-servicing-stack-update-for-windows-7-sp1-and-server-2008-r2-sp1-march-8-2022-eb009485-ed35-43c3-ba49-8107f822fe30))
 
 Trattandosi di sistemi molto obsoleti e, dato il peso del pacchetto di aggiornamento che supera i 200 Mb, si preferisce lasciarlo come unica eccezione all'installazione automatizzata per evitare di perdere molto tempo a scaricare un pacchetto che è raro che non sia già presente nel sistema.
 
-#### Runtime di Argentea (?) [vedere con Alberto al suo ritorno]
 
-### Dipendenze con installazione automatica da parte del SetupPosware incluse già nel setup
-Le dipendenze **sempre incluse nel pacchetto di Inno Setup** su cui si basa il *SetupPosware* sono due aggiornamenti di Windows 7 **SP1** necessari per installare successivamente il .NET v. `6` Hosting Bundle. Questi aggiornamenti sono elencati di seguito:
+## Gestione delle dipendenze di terze parti
+È possibile gestire l'installazione delle dipendenze di terze parti in due modalità:
 
-- `KB2999226`
-- `KB3063858`
-
-Si è deciso di includere sempre all'interno del SetupPosware tali aggiornamenti per due motivi:
-
-1. Si tratta di update molto piccoli che non impattano sulla dimensione del setup in modo tale da valerne la pena farli scaricare ogni volta da Internet.
-2. La loro presenza nel sistema è rilevabile solo avviandoli (infatti un update se già installato esce senza riapplicarsi) oppure con procedure di consultazione del registro di Windows non sempre chiarissime
-
-Alla luce dei due punti precedenti, dovendo comunque lanciare l'update per verificarne l'effettiva presenza, evitiamo di reperirlo sempre esternamente ad ogni lancio del setup e si è deciso di optare per l'inclusione diretta.
+- Installazione manuale da parte dell'utente prima di avviare il Setup
+- Installazione automatica da parte del *SetupPosware* (con dipendenza inclusa già nel setup o prelevata via CDN)
 
 ### Dipendenze con installazione automatica da parte del SetupPosware prelevate via CDN
 Le seguenti dipendenze vengono installate automaticamente da parte del *SetupPosware* prelevandole via CDN, quindi è necessaria una connessione ad Internet stabile per installarle:
@@ -76,8 +65,24 @@ Le seguenti dipendenze vengono installate automaticamente da parte del *SetupPos
 - VC++ Redistributable 2015-2019
 - Monroes OPOS Common Control Objects v. `1.14.001`
 
+!!! tip "Installazione manuale possibile"
+    Qualora si volesse procedere all'installazione manuale dei pacchetti elencati, è necessario farlo prima di avviare il Setup.
+    
+    Tutti i pacchetti già installati, verranno rilevati e se la versione è corretta, non verranno ne ri-scaricati ne reinstallati.
+    
+    Nel caso in cui un pacchetto fosse installato ma la versione fosse più vecchia, verrà scaricata ed installata la versione aggiornata.
+    
+!!! danger "Tutti i pacchetti sono obbligatori"
+    Non è possibile procedere all'installazione del Setup senza che le dipendenze sia rilevate ed installate.
+    
+    in caso contrario o di interruzione da parte dell'utente, il Setup si interromperà automaticamente senza installare il software.
+    
+    
+
 ## Meccanismi di rilevazione delle dipendenze già installate
-Tutte le dipendenze non incluse nel setup, se vengono rilevate già presenti nel sistema attraverso gli opportuni meccanismi di rilevazione, **non vengono né scaricate né installate nuovamente**. Vengono ancora una volta elencate in via definitiva tutte le dipendenze con installazione automatica che vengono rilavate tramite degli opportuni meccanismi di rilevazione:
+Tutte le dipendenze non incluse nel setup, se vengono rilevate già presenti nel sistema attraverso gli opportuni meccanismi di rilevazione, **non vengono né scaricate né installate nuovamente**. 
+
+Vengono ancora una volta elencate in via definitiva tutte le dipendenze con installazione automatica che vengono rilavate tramite degli opportuni meccanismi di rilevazione:
 
 - WebView2 Edge Runtime v. `109.0.1518.140`
 - Aggiornamenti di Windows 7 SP1 necessari per installare .NET v. 6 Hosting Bundle:
@@ -88,16 +93,21 @@ Tutte le dipendenze non incluse nel setup, se vengono rilevate già presenti nel
 - VC++ Redistributable 2015-2019
 - Monroes OPOS Common Control Objects v. `1.14.001`
 
-## Dipendenze di terze parti e riavvio della macchina
-Come abbiamo illustrato finora, le dipendenze esterne che necessitano di ulteriori setup complessi o di grandi dimensioni, vengono rilevate dal *SetupPosware* ed installate solo se necessario, recuperando i rispettivi setup da CND tramite la connessione Internet.
+## Riavvio del sistema operativo necessario
+!!! danger "Non ignorare la richiesta di riavvio"
+    Le dipendenze esterne che necessitano di ulteriori setup complessi richiedono quasi sempre un riavvio post installazione.
 
-Un riavvio del sistema post installazione potrebbe essere necessario se vengono installati componenti di terze parti, dipendenze di framework o aggiornamenti di Windows. In tal caso verrà richiesto all'utente di riavviare la macchina alla fine della procedura di installazione del *SetupPosware*.
+    Questa condizione viene rilevata automaticamente da Setup che lo richiederà se strettamente necessario. 
+    
+    **Riavvia il sistema operativo e non ignorare per alcun motivo la richiesta.**
+    
+    Se non è possibile riavviare il sistema per motivi esterni all'installazione, non avviare Posware prima del riavvio.
+    
+    
 
 ![SetupPosware final screen (restart case)][image_ref_nugc16k5]
 
 La necessità di riavvio o meno imposta automaticamente anche la GUI del setup nella schermata finale come è possibile vedere nell'immagine soprastante.
-
-Con il *PosUpdate*, non facendo nessuna delle operazioni cui sopra, **by design** non è mai richiesto di dover riavviare la cassa post aggiornamento.
 
 
 
