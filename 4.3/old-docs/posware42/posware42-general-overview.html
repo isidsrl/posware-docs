@@ -29,6 +29,12 @@
       
       
 
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5m0 3.5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m0-3.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5m0 3.5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m0-11A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 14c-2.63 0-5-1.57-6-4a6.505 6.505 0 0 1 8.5-3.5A6.52 6.52 0 0 1 18 12c-1 2.43-3.37 4-6 4m0-6.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5m0 3.5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1Z"/></svg>');}</style>
+
 
     
     
@@ -1259,15 +1265,15 @@ Si raccomanda di leggere le note allegate.</p>
 <p><mark>Posware <code>4.2</code> non supporta alcun driver PosForNet</mark>. Sono gestiti solo i driver OPOS dei registratori telematici e delle stampanti termiche supportate.</p>
 <h3 id="adeguamenti-per-il-driver-opos-diebold-nixdorf-con-rt-one">Adeguamenti per il driver OPOS Diebold-Nixdorf con RT-One</h3>
 <p>Se la stampante collegata a Posware è la Diebold RT-One, è necessario impostare nel file <code>Posware.exe.config</code> l'attributo <code>useLegacyV2RuntimeActivationPolicy</code> dell'elemento <code>startup</code> a <strong>true</strong>. <em>L'attributo è lo stesso utilizzato per abilitare la compatibilità con Crystal Report.</em></p>
-<p>Esempio:</p>
-<pre><code>  &lt;startup useLegacyV2RuntimeActivationPolicy=&quot;true&quot;&gt;
-    &lt;supportedRuntime version=&quot;v4.0&quot; sku=&quot;.NETFramework,Version=v4.8&quot; /&gt;
-  &lt;/startup&gt;
-</code></pre>
+<p>Esempio:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  &lt;startup useLegacyV2RuntimeActivationPolicy=&quot;true&quot;&gt;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    &lt;supportedRuntime version=&quot;v4.0&quot; sku=&quot;.NETFramework,Version=v4.8&quot; /&gt;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  &lt;/startup&gt;
+</code></pre></div></p>
 <p>Qualora si stesse effettuando una migrazione dal driver PosForNet ISID al driver OPOS Diebold-Nixdorf, è possibile rimuovere dal file <code>Posware.exe.config</code> l'elemento</p>
-<pre><code>&lt;NetFx40_LegacySecurityPolicy enabled=&quot;true&quot; /&gt;
-</code></pre>
-<p>In caso di errore di tipo <code>System.AccessViolationException</code>, ripristinare l'elemento.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;NetFx40_LegacySecurityPolicy enabled=&quot;true&quot; /&gt;
+</code></pre></div>
+In caso di errore di tipo <code>System.AccessViolationException</code>, ripristinare l'elemento.</p>
 <blockquote>
 <p>A partire dalla versione 4.1.370, rilasciata con gli adeguamenti alla normativa RT XML7, il driver PosForNet è stato sostituito con il driver OPOS ufficiale Diebold. Consultare il documento <strong>Adeguamenti RT XML 7</strong> per ulteriori approfondimenti</p>
 </blockquote>
@@ -1399,7 +1405,7 @@ Dopo: <br>
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">27 agosto 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">28 agosto 2024</span>
   </span>
 
     
@@ -1509,7 +1515,7 @@ c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>

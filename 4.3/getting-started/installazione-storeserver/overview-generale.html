@@ -33,6 +33,12 @@
       
       
 
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5m0 3.5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m0-3.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5m0 3.5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m0-11A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 14c-2.63 0-5-1.57-6-4a6.505 6.505 0 0 1 8.5-3.5A6.52 6.52 0 0 1 18 12c-1 2.43-3.37 4-6 4m0-6.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5m0 3.5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1Z"/></svg>');}</style>
+
 
     
     
@@ -1188,14 +1194,19 @@ Non stai visualizzando l'ultima versione della documentazione.
 
 <h1 id="overview-generale">Overview generale</h1>
 <p><strong>Prima revisione documento: 24 aprile 2024</strong> <br>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">27 agosto 2024</span></strong></p>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">28 agosto 2024</span></strong></p>
 <hr />
 <h2 id="cenni-preliminari">Cenni preliminari</h2>
 <p>Il presente documento descrive i nuovi requisiti minimi e le procedure necessarie all'installazione e alla configurazione dello <em>StoreServer</em>, il nuovo sistema centralizzato per la gestione e l'analisi del punto vendita introdotto da Posware 4.3 e superiori.</p>
 <h2 id="requisiti-minimi">Requisiti minimi</h2>
 <h3 id="hardware">Hardware</h3>
+<div class="admonition warning">
+<p class="admonition-title">CONSIDERAZIONI IMPORTANTI</p>
+<p>Tali requisiti sono richiesti da un sistema usato <strong>esclusivamente per lo <em>StoreServer</em> </strong>. <br> Qualora il software dovesse condividere le risorse hardware con altri software di terze parti, rimane a carico del tecnico installatore adeguare tali risorse in base alle richieste hardware di quest'ultimi aumentando le risorse di quanto necessario. </p>
+<p>Si raccomanda di acquistare un disco rigido SSD (tipo SATA o NVE) ad uso esclusivo per lo <em>StoreServer</em>.</p>
+</div>
 <ul>
-<li>Un processore compatibile con la versione Windows 10 <strong>x64</strong> (<strong>64bit</strong>) v. <code>1809</code> o superiore oppure compatibile con Windows 11</li>
+<li>Un processore compatibile con la versione Windows 10 <strong>x64</strong> (<strong>64bit</strong>) v. <code>1809</code> (Redstone 5) o superiore oppure compatibile con Windows 11</li>
 <li>8 Gb di RAM per installazioni fino a 4 casse</li>
 <li>12 Gb di RAM per installazioni da 5 a 10 casse</li>
 <li>16 Gb di RAM per installazioni da 11 a 16 casse</li>
@@ -1203,19 +1214,23 @@ Non stai visualizzando l'ultima versione della documentazione.
 <li>Disco rigido SSD (tipo SATA o NVE) da almeno 256 Gb fino a 10 casse</li>
 <li>Disco rigido SSD (tipo SATA o NVE) da almeno 512 Gb per più di 10 casse</li>
 </ul>
-<blockquote>
-<p>Le informazioni relative alla capacità dei dischi rigidi sono da considerarsi linee guida e possono variare in base al fatturato prodotto dal punto vendita. <br> Qualora ci fossero dei dubbi sullo spazio necessario, considerare una contingenza dal 25% fino al 50%.</p>
-</blockquote>
-<p><strong>Tali requisiti sono richiesti da un sistema usato esclusivamente per lo <em>StoreServer</em>. <br> Qualora il software dovesse condividere le risorse hardware con altri software di terze parti, rimane a carico del tecnico installatore adeguare tali risorse in base alle richieste hardware di quest'ultimi aggiungendo quanto necessario. In tal caso, si raccomanda di acquistare un disco rigido SSD (tipo SATA o NVE) esclusivo solo per lo <em>StoreServer</em>.</strong></p>
+<div class="admonition info">
+<p class="admonition-title">Linee guida</p>
+<p>Le informazioni relative alla capacità dei dischi rigidi sono da considerarsi linee guida e possono variare in base al fatturato prodotto dal punto vendita. <br> Qualora ci fossero dei dubbi sullo spazio necessario, considerare una contingenza dal <strong>25% fino al 50%</strong> .</p>
+</div>
 <h3 id="software">Software</h3>
+<div class="admonition failure">
+<p class="admonition-title">Sistemi a 32 bit non supportati</p>
+<p>Non sono supportate versioni a 32bit di Windows 10.</p>
+</div>
 <ul>
-<li>Posware Frontend v. <code>4.3.x</code></li>
-<li>Windows 10 <strong>x64</strong> (<strong>64bit</strong>) v. <code>1809</code> o superiore</li>
-<li>Windows 11</li>
+<li>Posware Frontend v. <code>4.3.96</code> o superiore</li>
+<li>Windows <code>10</code> <strong>x64</strong> (<strong>64bit</strong>) v. <code>1809</code> (Redstone 5) o superiore, oppure</li>
+<li>Windows <code>11</code></li>
 <li>Winget v. <code>1.8.1911</code></li>
-<li>SQL Server 2016, 2017, 2019 o 2022</li>
+<li>SQL Server <code>2016</code>, <code>2017</code>, <code>2019</code> o <code>2022</code></li>
 <li>MySQL v. <code>8.4</code></li>
-<li>.NET SDK v. <code>8.x</code></li>
+<li>.NET Hosting Bundle v. <code>8.x</code></li>
 <li>
 <p>Servizi legacy:</p>
 <ul>
@@ -1245,15 +1260,17 @@ Non stai visualizzando l'ultima versione della documentazione.
 </ul>
 </li>
 </ul>
-<p><strong>Non sono supportate le versioni 32bit di Windows 10</strong></p>
 <h2 id="breaking-changes">Breaking changes (?)</h2>
 <h2 id="installazione-e-configurazione">Installazione e configurazione</h2>
-<p>Sono previsti questi scenari di installazione:</p>
+<div class="admonition abstract">
+<p class="admonition-title">Prima di iniziare</p>
+<p>Prima di proseguire con lo scenario di installazione desiderato, completare le <strong><a href="installazione-procedure-comuni.html">procedure di installazione comuni</a></strong>.</p>
+</div>
+<p>Scenari di installazione previsti:</p>
 <ul>
-<li><a href="installazione-scenario-ex-novo.html">Installazione ex novo</a></li>
-<li><a href="installazione-scenario-migrazione.html">Migrazione da Posware 4.2.x</a></li>
+<li><a href="installazione-scenario-ex-novo.html">Installazione di un nuovo sistema</a></li>
+<li><a href="installazione-scenario-migrazione.html">Migrazione da servizi legacy</a></li>
 </ul>
-<p>Prima di proseguire con lo scenario di installazione desiderato, completare le <a href="installazione-procedure-comuni.html">procedure di installazione comuni</a>.</p>
 <p>I dettagli specifici di ogni scenario e delle procedure comuni sono consultabili nelle rispettive sezioni.</p>
 
 
@@ -1275,7 +1292,7 @@ Non stai visualizzando l'ultima versione della documentazione.
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">27 agosto 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">28 agosto 2024</span>
   </span>
 
     
@@ -1385,7 +1402,7 @@ c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>

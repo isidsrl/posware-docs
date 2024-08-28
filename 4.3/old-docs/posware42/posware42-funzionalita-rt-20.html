@@ -29,6 +29,12 @@
       
       
 
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5m0 3.5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m0-3.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5m0 3.5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m0-11A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 14c-2.63 0-5-1.57-6-4a6.505 6.505 0 0 1 8.5-3.5A6.52 6.52 0 0 1 18 12c-1 2.43-3.37 4-6 4m0-6.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5m0 3.5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1Z"/></svg>');}</style>
+
 
     
     
@@ -1492,12 +1498,12 @@ Per la tipologia documento <strong>Matricola</strong> dovranno essere forniti:</
 </ol>
 <h5 id="sistema-di-verifica-della-configurazione">Sistema di verifica della configurazione</h5>
 <p>All'avvio di Posware, verrà verificata la configurazione dell'arrotondamento del Frontend rispetto a quella programmata nella stampante. In caso venisse rilevata una configurazione errata, verrà mostrato un messaggio popup con l'errore:</p>
-<pre><code>La configurazione sulla stampante dell'arrotondamento DL N.50/2017 non è corretta. Per funzionare correttamente è necessario abilitare l'arrotondamento standard (codice 1). Se non si vuole attivare l'arrotondamento sulla stampante, disabilitare anche in Posware l'opzione - IsRTCashPaymentRoundingSupportEnabled - in tabparametriextra. Verificare la programmazione.
-</code></pre>
-<p>oppure:</p>
-<pre><code>Nella stampante è abilitato l'arrotondamento DL N.50/2017. Abilitare la funzionalità di Posware - IsRTCashPaymentRoundingSupportEnabled - in tabparametriextra oppure disabilitare l'opzione nella stampante. Verificare la programmazione.
-</code></pre>
-<p><strong>Anche in caso di Server Rt Epson, Posware controlla lo stato di attivazione della funzione.</strong> <br>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>La configurazione sulla stampante dell&#39;arrotondamento DL N.50/2017 non è corretta. Per funzionare correttamente è necessario abilitare l&#39;arrotondamento standard (codice 1). Se non si vuole attivare l&#39;arrotondamento sulla stampante, disabilitare anche in Posware l&#39;opzione - IsRTCashPaymentRoundingSupportEnabled - in tabparametriextra. Verificare la programmazione.
+</code></pre></div>
+oppure:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Nella stampante è abilitato l&#39;arrotondamento DL N.50/2017. Abilitare la funzionalità di Posware - IsRTCashPaymentRoundingSupportEnabled - in tabparametriextra oppure disabilitare l&#39;opzione nella stampante. Verificare la programmazione.
+</code></pre></div>
+<strong>Anche in caso di Server Rt Epson, Posware controlla lo stato di attivazione della funzione.</strong> <br>
 <strong>È mandatorio allineare le impostazioni di arrotondamento tra Posware e Registratore Telematico. In caso contrario Posware si chiuderà automaticamente alla chiusura del messaggio di avviso.</strong></p>
 <h5 id="workflow-di-utilizzo_3">Workflow di utilizzo</h5>
 <p>Non sono previsti variazioni rispetto al workflow di arrotondamento esistente in Posware.</p>
@@ -1720,15 +1726,15 @@ In caso di Server Rt <strong>è necessario</strong> inviare la configurazione Iv
 </ol>
 <h5 id="sistema-di-verifica-della-configurazione_1">Sistema di verifica della configurazione</h5>
 <p>All'avvio di Posware, verrà verificata la configurazione dei codici ateco del Frontend rispetto a quella programmata nella stampante. In caso venisse rilevata una configurazione errata, verrà mostrato un messaggio popup con uno di questi possibili messaggi di errore:</p>
-<pre><code>Sono presenti XX reparti con indice ateco 0. Se il supporto a codici ateco multipli è attivo, per ogni reparto cassa è obbligatorio specificare un indice codice ateco che sia diverso da 0.
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Sono presenti XX reparti con indice ateco 0. Se il supporto a codici ateco multipli è attivo, per ogni reparto cassa è obbligatorio specificare un indice codice ateco che sia diverso da 0.
+</code></pre></div>
+oppure:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Il numero degli indici ateco configurati nei reparti di Posware (XX) supera quelli programmati nella stampante (YY). Verificare la programmazione.
+</code></pre></div>
 <p>oppure:</p>
-<pre><code>Il numero degli indici ateco configurati nei reparti di Posware (XX) supera quelli programmati nella stampante (YY). Verificare la programmazione.
-</code></pre>
-<p>oppure:</p>
-<pre><code>Nella stampante sono stati configurati dei codici ateco. Abilitare la funzionalità multi ateco di Posware in tabparametriextra oppure rimuovere gli indici programmati nella stampante. Verificare la programmazione.
-</code></pre>
-<p>Tutti gli errori sono auto-esplicativi. <br>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Nella stampante sono stati configurati dei codici ateco. Abilitare la funzionalità multi ateco di Posware in tabparametriextra oppure rimuovere gli indici programmati nella stampante. Verificare la programmazione.
+</code></pre></div>
+Tutti gli errori sono auto-esplicativi. <br>
 <strong>Anche in caso di Server Rt Epson, Posware controlla lo stato di attivazione della funzione.</strong> <br>
 <strong>È mandatorio allineare le impostazioni multi-ateco tra Posware e Registratore Telematico. In caso contrario Posware si chiuderà automaticamente alla chiusura del messaggio di avviso.</strong></p>
 <h5 id="limitazioni_1">Limitazioni</h5>
@@ -1900,7 +1906,7 @@ Al fine di configurare opportunamente la tabella delle Ive occorre tener present
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">27 agosto 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">28 agosto 2024</span>
   </span>
 
     
@@ -2010,7 +2016,7 @@ c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>

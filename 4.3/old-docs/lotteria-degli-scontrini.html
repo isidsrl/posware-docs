@@ -29,6 +29,12 @@
       
       
 
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5m0 3.5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m0-3.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5m0 3.5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m0-11A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 14c-2.63 0-5-1.57-6-4a6.505 6.505 0 0 1 8.5-3.5A6.52 6.52 0 0 1 18 12c-1 2.43-3.37 4-6 4m0-6.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5m0 3.5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1Z"/></svg>');}</style>
+
 
     
     
@@ -1278,15 +1284,15 @@ In caso di valore imputato fuori dal range permesso, vengono utilizzati i valori
 <ol>
 <li>Premere il tasto configurato come lotteria degli scontrini.</li>
 <li>Alla richiesta, digitare il codice lotteria</li>
-<li>Il front-end trasmetterà al registratore telematico il codice. Se accettato uscirà un messaggio di accettazione, altrimenti un errore. In caso di errore il codice non verrà applicato alla transazione. </li>
-</ol>
-<pre><code>  Diversi registratori telematici potrebbero accettare in modo silente anche un codice formalmente sbagliato.
-  In questo caso il codice errato verrà generalmente inviato all'AdE ma, per ovvi motivi, non permetterà di partecipare alla
-  lotteria degli scontrini.
-</code></pre>
-<blockquote>
+<li>Il front-end trasmetterà al registratore telematico il codice. Se accettato uscirà un messaggio di accettazione, altrimenti un errore. In caso di errore il codice non verrà applicato alla transazione. 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  Diversi registratori telematici potrebbero accettare in modo silente anche un codice formalmente sbagliato.
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  In questo caso il codice errato verrà generalmente inviato all&#39;AdE ma, per ovvi motivi, non permetterà di partecipare alla
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  lotteria degli scontrini.
+</code></pre></div><blockquote>
 <p>A partire da posware <code>4.1.404</code></p>
 </blockquote>
+</li>
+</ol>
 <p>Il codice lotteria inserito verrà anche mostrato sul display cliente con un messaggio "Codice Lotteria accettato: XXXXXX". Per disabilitare questo messaggio vedere le note in <a href="#addendum">Addendum</a> o consultare la tabella delle configurazioni <a href="#configurazioni">Configurazioni</a></p>
 <h5 id="nota-di-credito">Nota di credito</h5>
 <p>Il codice lotteria viene automaticamente inserito da Posware, non è necessario aggiungerlo manualmente alla transazione. Se si tenterà di modificare il codice inserendone un altro, verrà mostrato un messaggio di <em>OPERAZIONE NON CONSENTITA</em>. Come previsto dalla normativa, in una nota credito non sono permesse operazioni manuali sul codice lotteria.</p>
@@ -1317,7 +1323,7 @@ In caso di valore imputato fuori dal range permesso, vengono utilizzati i valori
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">27 agosto 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">28 agosto 2024</span>
   </span>
 
     
@@ -1427,7 +1433,7 @@ c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
