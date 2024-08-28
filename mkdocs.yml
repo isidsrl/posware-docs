@@ -8,6 +8,8 @@ theme:
   language: it
   logo: assets/images/favicon.ico
   favicon: assets/images/favicon.ico
+  icon:
+    annotation: material/eye-circle
   palette:
     - scheme: default
       toggle:
@@ -25,6 +27,9 @@ theme:
     - navigation.top
     - search.highlight
     - search.suggest
+    - content.code.copy
+    - content.code.select
+    - content.tooltips
 
 extra:
   generator: false
@@ -67,6 +72,20 @@ nav:
       - Nota di credito: posware-modules/posware-frontend/nota-di-credito.md
 
 markdown_extensions:
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - abbr
+  - admonition
+  - def_list
+  - footnotes
+  - tables
   - attr_list
   - toc:
       toc_depth: 4
