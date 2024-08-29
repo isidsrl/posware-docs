@@ -1265,6 +1265,12 @@ Non stai visualizzando l'ultima versione della documentazione.
 <li>Per il motivo appena elencato, l'impostazione <strong>Barcode No Food</strong> nella tabella <code>config_cassa</code> viene meno. (come se fosse sempre impostata ad <strong>1</strong> ).</li>
 <li>A partire dalla versione <code>4.3</code>, i file di configurazione di Posware, delle <em>Connection strings</em> e delle impostazioni utente sono stati riportati allo standard .NET rimuovendo l'approccio custom. Per maggiori informazioni consultare la relativa <a href="setup-posware.html#aggiornamento-dei-file-di-configurazione">sezione</a> del <em>SetupPosware</em>.</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Credenziali di default variate nelle nuove installazioni</p>
+<p>A partire dalla versione <code>4.3</code>, le nuove installazioni che <strong>non migrano</strong> dalla <code>v4.2</code>, dovranno usare <strong>MySql 5.6</strong>. 
+<br>Le credenziali di default vengono cambiate per essere compatibili con i nuovi criteri di complessità.<br>La nuova password di default è <strong>Vbhg4132!</strong>.</p>
+<p><strong>Nei sistemi esistenti e quelli che vengono migrati dalla <code>v4.2</code>, non sono previsti cambiamenti ne alle credenziali ne alla versione di MySql già installata.</strong></p>
+</div>
 <h2 id="feature-rimosse-in-posware-43">Feature rimosse in Posware <code>4.3</code></h2>
 <p>Nell'elenco sottostante vengono illustrate tutte le <strong>feature di <em>Posware Frontend</em> che sono state rimosse</strong> a partire dalla versione <code>4.3</code> dell'applicativo:</p>
 <ul>
