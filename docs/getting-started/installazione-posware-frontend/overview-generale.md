@@ -41,6 +41,13 @@ Vengono elencati di seguito i diversi **breaking changes** introdotti in *Poswar
 - Per il motivo appena elencato, l'impostazione **Barcode No Food** nella tabella `config_cassa` viene meno. (come se fosse sempre impostata ad **1** ).
 - A partire dalla versione `4.3`, i file di configurazione di Posware, delle *Connection strings* e delle impostazioni utente sono stati riportati allo standard .NET rimuovendo l'approccio custom. Per maggiori informazioni consultare la relativa [sezione](./setup-posware.md#aggiornamento-dei-file-di-configurazione) del *SetupPosware*.
 
+!!! warning "Credenziali di default variate nelle nuove installazioni"
+    A partire dalla versione `4.3`, le nuove installazioni che **non migrano** dalla `v4.2`, dovranno usare **MySql 5.6**. 
+    <br>Le credenziali di default vengono cambiate per essere compatibili con i nuovi criteri di complessità.<br>La nuova password di default è **Vbhg4132!**.
+    
+    **Nei sistemi esistenti e quelli che vengono migrati dalla `v4.2`, non sono previsti cambiamenti ne alle credenziali ne alla versione di MySql già installata.**
+
+
 ## Feature rimosse in Posware `4.3`
 Nell'elenco sottostante vengono illustrate tutte le **feature di *Posware Frontend* che sono state rimosse** a partire dalla versione `4.3` dell'applicativo:
 

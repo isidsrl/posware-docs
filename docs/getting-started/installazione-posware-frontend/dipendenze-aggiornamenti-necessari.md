@@ -22,12 +22,12 @@ Il presente documento illustra nel dettaglio le note sulle dipendenze di terze p
 ### Dipendenze con installazione manuale
 Le seguenti dipendenze e aggiornamenti devono essere installati manualmente prima di lanciare il *SetupPosware*:
 
-- Aggiornamenti di Windows 7 in caso di una versione inferiore a quella dei requisiti minimi
-- Aggiornamenti di Windows 10 in caso di una versione inferiore a quella dei requisiti minimi
-- .NET Framework v. `4.8`
-- MySQL v. `5.6` in caso di installazione ex novo
+- Aggiornamenti di Windows 7 in caso di una versione inferiore a quella dei [requisiti minimi](overview-generale.html#software). 
+- Aggiornamenti di Windows 10 in caso di una versione inferiore a quella dei [requisiti minimi](overview-generale.html#software). 
+- .NET Framework v. `4.8` - [link](https://dotnet.microsoft.com/it-it/download/dotnet-framework/net48)
+- MySQL v. `5.6` in caso di installazione ex novo - [link](https://github.com/isidsrl/posware-docs/raw/main/vendors/mysql-installer-community-5.6.20.0.msi?download=)
 
-Gli aggiornamenti di Windows possono essere effettuati dall'ordinaria procedura di Windows Update.
+**Gli aggiornamenti di Windows possono essere effettuati dall'ordinaria procedura di Windows Update.**
 
 #### Installazione degli aggiornamenti in Windows 7 SP1 mai aggiornati o appena installati
 In sistemi Windows 7 **SP1** appena installati e mai aggiornati, sarà necessario installare .NET Framework v. `4.8` come da specifiche.
