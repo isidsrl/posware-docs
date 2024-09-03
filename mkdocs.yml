@@ -55,11 +55,12 @@ nav:
     - Installazione StoreServer:
       - Overview generale: getting-started/installazione-storeserver/overview-generale.md
       - Procedure comuni: getting-started/installazione-storeserver/installazione-procedure-comuni.md
-      - Scenario ex novo: getting-started/installazione-storeserver/installazione-scenario-ex-novo.md
-      - Scenario migrazione: getting-started/installazione-storeserver/installazione-scenario-migrazione.md
+      - Nuova installazione: getting-started/installazione-storeserver/installazione-nuovo-storeserver.md
+      - Migrazione: getting-started/installazione-storeserver/migrazione-servizi-legacy.md
+      - Servizi legacy: getting-started/installazione-storeserver/servizi-legacy.md
     - Installazione e aggiornamenti Posware Frontend:
       - Overview generale: getting-started/installazione-posware-frontend/overview-generale.md
-      - Dipendenze di terze parti e aggiornamenti necessari: getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.md
+      - Dipendenze e aggiornamenti: getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.md
       - SetupPosware: getting-started/installazione-posware-frontend/setup-posware.md
       - PosUpdate: getting-started/installazione-posware-frontend/pos-update.md
   - Moduli:

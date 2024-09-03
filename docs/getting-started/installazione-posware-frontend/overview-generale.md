@@ -11,11 +11,12 @@ tags:
 ---
 
 ## Cenni preliminari
-Il presente documento descrive i nuovi requisiti minimi e le procedure necessarie all'installazione o all'aggiornamento di *Posware Frontend* alla versione 4.3 dell'applicativo, così da poter associare le casse con lo *StoreServer*, il nuovo sistema centralizzato per la gestione e l'analisi del punto vendita.
+Il presente documento descrive i nuovi requisiti minimi e le procedure necessarie all'installazione o all'aggiornamento di *Posware Frontend* alla versione :material-tag:`4.3` dell'applicativo, così da poter associare le casse con lo *StoreServer*, il nuovo sistema centralizzato per la gestione e l'analisi del punto vendita.
 
 ## Requisiti minimi
+
 ### Hardware
-- Un processore a 64bit compatibile con il sistema operativo installato sulla cassa
+- Un processore a **64bit** compatibile con il sistema operativo installato sulla cassa
 - 8 Gb di RAM
     - 4 Gb di RAM sono utilizzabili solo se il Sistema Operativo è Windows 7
 - Disco rigido SSD (tipo SATA o NVE) da almeno 128 Gb
@@ -23,47 +24,50 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
 
 ### Software
 - Windows 7 **SP1** con update **Servicing Stack 2018** o superiore, oppure
-- Windows 10 v. `1809` **Redstone 5 Build 17763** o superiore, oppure
+- Windows 10 :material-tag:`1809` **Redstone 5 Build 17763** o superiore, oppure
 - Windows 11
-- .NET Framework v. `4.8`
-- WebView2 Edge Runtime v. `109.0.1518.140`
-- .NET v. `6` Hosting Bundle
-- Monroes OPOS Common Control Objects v. `1.14.001`
-- MySQL v. `4.1` o v. `5.6` in caso di migrazione da *Posware Frontend* v. `4.2`, oppure
-- MySQL v. `5.6` in caso di installazione ex novo
+- .NET Framework :material-tag:`4.8`
+- WebView2 Edge Runtime :material-tag:`109.0.1518.140`
+- .NET :material-tag:`6` Hosting Bundle
+- Monroes OPOS Common Control Objects :material-tag:`1.14.001`
+- MySQL :material-tag:`4.1` o :material-tag:`5.6` in caso di migrazione da *Posware Frontend* :material-tag:`4.2`, oppure
+- MySQL :material-tag:`5.6` in caso di nuova installazione da zero
+
+!!! abstract "Obbligo di tutte le dipendenze in Posware :material-tag:`4.3`"
+    Le dipendenze soprastanti sono da considerarsi **TUTTE** obbligatorie per poter utilizzare Posware :material-tag:`4.3`.
 
 Si prega di consultare attentamente le note varie sulle dipendenze di terze parti e gli aggiornamenti necessari nella relativa [sezione](./dipendenze-aggiornamenti-necessari.md) prima di procedere con l'installazione o l'aggiornamento di *Posware Frontend*. 
 
 ## Breaking changes
-Vengono elencati di seguito i diversi **breaking changes** introdotti in *Posware Frontend* a partire dalla versione `4.3` dell'applicativo:
+Vengono elencati di seguito i diversi **breaking changes** introdotti in *Posware Frontend* a partire dalla versione :material-tag:`4.3` dell'applicativo:
 
-- Nel record **01** , il barcode di un prodotto viene ora riportato unicamente con gli spazi vuoti (formato denominato **Barcode No Food** nella v4.2). Non è più possibile usare il formato numerico. **Barcode No Food** è da considerarsi nuovo standard.
-- Per il motivo appena elencato, l'impostazione **Barcode No Food** nella tabella `config_cassa` viene meno. (come se fosse sempre impostata ad **1** ).
-- A partire dalla versione `4.3`, i file di configurazione di Posware, delle *Connection strings* e delle impostazioni utente sono stati riportati allo standard .NET rimuovendo l'approccio custom. Per maggiori informazioni consultare la relativa [sezione](./setup-posware.md#aggiornamento-dei-file-di-configurazione) del *SetupPosware*.
+- Nel record **01** , il barcode di un prodotto viene ora riportato unicamente con gli spazi vuoti (formato denominato **Barcode No Food** nella :material-tag:`4.2`). Non è più possibile usare il formato numerico. **Barcode No Food** è da considerarsi nuovo standard.
+- Per il motivo appena elencato, l'impostazione **Barcode No Food** nella tabella `config_cassa` viene meno (come se fosse sempre impostata ad **1**).
+- A partire dalla versione :material-tag:`4.3`, i file di configurazione di Posware, delle *Connection strings* e delle impostazioni utente sono stati riportati allo standard .NET rimuovendo l'approccio custom. Per maggiori informazioni consultare la relativa [sezione](./setup-posware.md#aggiornamento-dei-file-di-configurazione) del *SetupPosware*.
 
 !!! warning "Credenziali di default variate nelle nuove installazioni"
-    A partire dalla versione `4.3`, le nuove installazioni che **non migrano** dalla `v4.2`, dovranno usare **MySql 5.6**. 
+    A partire dalla versione :material-tag:`4.3`, le nuove installazioni che **non migrano** dalla :material-tag:`4.2`, dovranno usare **MySQL** :material-tag:**`5.6`**. 
     <br>Le credenziali di default vengono cambiate per essere compatibili con i nuovi criteri di complessità.<br>La nuova password di default è **Vbhg4132!**.
     
-    **Nei sistemi esistenti e quelli che vengono migrati dalla `v4.2`, non sono previsti cambiamenti ne alle credenziali ne alla versione di MySql già installata.**
+    **Nei sistemi esistenti e quelli che vengono migrati dalla :material-tag:`4.2`, non sono previsti cambiamenti ne alle credenziali ne alla versione di MySQL già installata.**
 
 
-## Feature rimosse in Posware `4.3`
-Nell'elenco sottostante vengono illustrate tutte le **feature di *Posware Frontend* che sono state rimosse** a partire dalla versione `4.3` dell'applicativo:
+## Feature rimosse in Posware :material-tag:`4.3`
+Nell'elenco sottostante vengono illustrate tutte le **feature di *Posware Frontend* che sono state rimosse** a partire dalla versione :material-tag:`4.3` dell'applicativo:
 
 - Supporto alle stampanti IBM (RFImbopos e le sue dipendenze)
 - Supporto alle stampanti NCR vecchie MF FASY, RealPrint e RealPOS
 - Supporto alle stampanti Wincor TH230 e vecchie Wincor MF
-- Supporto ai Controlli OCX e sue dipendenze che venivano usate per mostrare la telecamera. Tali tecnologie risalenti a Windows XP non sono più supporte a partire da Windows Vista.
-- Il vecchio interfacciamento WinEPTS 2.x è stato rimosso e sostituito con un nuovo interfacciamento.
+- Supporto ai Controlli OCX e sue dipendenze che venivano usate per mostrare la telecamera. Tali tecnologie risalenti a Windows XP non sono più supportate a partire da Windows Vista.
+- Il vecchio interfacciamento WinEPTS :material-tag:`2.x` è stato rimosso e sostituito con un nuovo interfacciamento.
 
-## Feature deprecate che verranno rimosse in Posware `4.4`
-Le seguenti **feature di *Posware Frontend* sono deprecate** a partire dalla versione `4.3` dell'applicativo e verranno quindi poi rimosse in Posware v. `4.4`:
+## Feature deprecate che verranno rimosse in Posware :material-tag:`4.4`
+Le seguenti **feature di *Posware Frontend* sono deprecate** a partire dalla versione :material-tag:`4.3` dell'applicativo e verranno quindi poi rimosse in Posware :material-tag:`4.4`:
 
 - Gestione commissione di vendita
 - Supporto alla reportistica legacy (Crystal Report, Microsoft Report)
-- Nota di credito di Posware v. `4.2` e relative customizzazioni.
-- Integrazione Satispay Wally (v. `4.2`), sostituita dalla nuova integrazione nativa REST
+- Nota di credito di Posware :material-tag:`4.2` e relative customizzazioni
+- Integrazione Satispay Wally (:material-tag:`4.2`), sostituita dalla nuova integrazione nativa REST
 - Integrazione di GetYourBill
 
 ## Installazione e aggiornamenti
@@ -72,12 +76,13 @@ Sono previsti questi due applicativi per le procedure di installazione e di aggi
 - [SetupPosware](./setup-posware.md)
 - [PosUpdate](./pos-update.md)
 
-In particolare, il *SetupPosware* è il nuovo setup riprogettato per l'uscita di Posware v. `4.3` .
+In particolare, *SetupPosware* è il nuovo setup riprogettato per l'uscita di Posware :material-tag:`4.3` .
 
 Esso può essere usato esclusivamente per le casistiche di:
-- Nuova installazione di *Posware Frontend* sui terminali casse
-- Migrazione da Posware v. `4.2.x`
 
-Il *PosUpdate* è invece l'applicativo da usare esclusivamente per aggiornare *Posware Frontend* sui terminali casse alla loro ultima **Build** version, in linea con la **Major** e **Minor** version installata. (es.: 4.3.96 a 4.3.154)
+- Nuova installazione di *Posware Frontend* sui terminali casse
+- Migrazione da Posware :material-tag:`4.2.x`
+
+*PosUpdate* è invece l'applicativo da usare esclusivamente per aggiornare *Posware Frontend* sui terminali casse alla loro ultima **Build** version, in linea con la **Major** e **Minor** version installata (Es.: da :material-tag:`4.3.96` a :material-tag:`4.3.154`).
 
 I dettagli specifici sul funzionamento dei due applicativi sono consultabili nelle rispettive sezioni.

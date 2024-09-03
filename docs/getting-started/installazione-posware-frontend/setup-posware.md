@@ -12,21 +12,21 @@ tags:
 
 ## Cenni preliminari 
 Il presente documento descrive il funzionamento di *SetupPosware*, installativo di *Posware Frontend*.
-Vengono illustrati gli scenari d'uso supportati ed una serie di novità sui file di configurazione di Posware v4.3.
+Vengono illustrati gli scenari d'uso supportati ed una serie di novità sui file di configurazione di Posware :material-tag:`4.3`.
 
 ## Prerequisiti
-Prima di procedere con l'utilizzo del *SetupPosware* assicurarsi di avere le [risorse hardware minime indispensabili indicate nell'overview generale](./overview-generale.md#hardware) e di aver installato le [dipendenze necessarie con installazione manuale](./dipendenze-aggiornamenti-necessari.md#dipendenze-con-installazione-manuale).
+Prima di procedere con l'utilizzo di *SetupPosware* assicurarsi di avere le [risorse hardware minime indispensabili indicate nell'overview generale](./overview-generale.md#hardware) e di aver installato le [dipendenze necessarie con installazione manuale](./dipendenze-aggiornamenti-necessari.md#dipendenze-con-installazione-manuale).
 
 ## Scenari d'uso
 Il pacchetto di installazione *SetupPosware* supporta unicamente questi due scenari:
 
-- Installazione ex novo
-- Migrazione dalla versione `4.2.306` alla `4.3`
+- Nuova installazione di *Posware Frontend* sui terminali casse
+- Migrazione dalla versione :material-tag:`4.2.306` alla :material-tag:`4.3`
 
 !!! tip "Aggiornamento all'ultima versione"
-    Se hai già installato la versione **`4.3`** e devi aggiornarla all'ultima disponibile, usa il pacchetto [*PosUpdate*](./pos-update.md).
+    Se hai già installato la versione :material-tag:**`4.3`** e devi aggiornarla all'ultima disponibile, usa il pacchetto [*PosUpdate*](./pos-update.md).
 
-    Gli aggiornamenti tra **Build** version, quindi da una versione precedente della `4.3.x` all'ultima `4.3.x` aggiornata rilasciata, rimangono sempre in carico al [*PosUpdate*](./pos-update.md).
+    Gli aggiornamenti tra **Build** version, quindi da una versione precedente della :material-tag:`4.3.x` all'ultima :material-tag:`4.3.x` aggiornata rilasciata, rimangono sempre in carico al [*PosUpdate*](./pos-update.md).
     
 
 In entrambi gli scenari l'utente può lanciare il setup facendo ordinario doppio click sull'applicativo. Così facendo nessun parametro particolare viene passato al *SetupPosware* e verrà mostrato il wizard da cui l'utente potrà procedere con l'installazione.
@@ -35,98 +35,98 @@ In entrambi gli scenari l'utente può lanciare il setup facendo ordinario doppio
 
 È inoltre possibile avviare l'applicativo tramite shell fornendo alcuni dei parametri standard previsti da **Inno Setup**:
 
-- */SILENT*, */VERYSILENT*
-- */LOG*
-- */LOG="filename"*
-- */NOCANCEL*
+- `/SILENT`, `/VERYSILENT`
+- `/LOG`
+- `/LOG="filename"`
+- `/NOCANCEL`
 
 Per la lista completa dei parametri standard previsti da **Inno Setup**, così come per sapere cosa fanno quelli soprastanti, consultare la guida ufficiale di **Inno Setup**.
 
 Oltre ai parametri standard, è stato introdotto il parametro custom:
 
-- */SKIPOPOS*
+- `/SKIPOPOS`
 
-Questo parametro indica al Setup di non scaricare ed installare l'ultima versione dei Monroes OPOS Common Control Objects (v. `1.14.001`).
+Questo parametro indica al setup di non scaricare ed installare l'ultima versione dei Monroes OPOS Common Control Objects (:material-tag:`1.14.001`).
 
 !!! warning "Compatibilità del driver OPOS"
     Questo parametro è utile in caso di incompatibilità dei driver OPOS in uso su stampanti **NCR/CUSTOM**. La compatibilità su **EPSON e DIEBOLD RT-ONE è garantita**.
 
-    Se stai installando un terminale con stampante **CUSTOM**, ti raccomandiamo di usare **/SKIPOPOS**.
+    Se stai installando un terminale con stampante **CUSTOM**, ti raccomandiamo di usare **`/SKIPOPOS`**.
 
-### Installazione ex novo
-Prima di poter lanciare il *SetupPosware* e procedere con l'installazione ex novo di *Posware Frontend* è necessario assicurarsi ancora nuovamente di aver installato almeno le dipendenze di terze parti che necessitano di installazione manuale. In particolare:
+### Nuova installazione
+Prima di poter avviare *SetupPosware* e procedere con la nuova installazione da zero di *Posware Frontend* è necessario assicurarsi ancora nuovamente di aver installato almeno le dipendenze di terze parti che necessitano di installazione manuale. In particolare:
 
-1. Verificare i prerequisiti ed il sistema operativo (vedi link)
-2. Assicurarsi di aver installato .NET Framework v. `4.8`, altrimenti il *SetupPosware* darà errore.
-3. Accertarsi di aver installato MySQL v. `5.6` e che sia **accessibile con le nuove credenziali complesse**, altrimenti il setup darà un errore specifico e non farà continuare l'installazione.
+1. Verificare [i prerequisiti ed il sistema operativo](./overview-generale.md#software).
+2. Assicurarsi di aver installato .NET Framework :material-tag:`4.8`, altrimenti *SetupPosware* darà errore.
+3. Accertarsi di aver installato MySQL :material-tag:`5.6` e che sia **accessibile con le nuove credenziali complesse**, altrimenti il setup darà un errore specifico e non farà continuare l'installazione.
 
-!!! danger "MySql 4.1 non è più utilizzabile su nuove installazioni"
-    Si ricorda che nelle nuove installazioni di *Posware Frontend* **NON** è più possibile utilizzare MySQL v. `4.1`.
-    <br>Installare MySql 5.6 come riportato nei requisiti minimi di installazione.
+!!! danger "MySQL :material-tag:`4.1` non è più utilizzabile su nuove installazioni"
+    Si ricorda che nelle nuove installazioni di *Posware Frontend* **NON** è più possibile utilizzare MySQL :material-tag:`4.1`.
+    <br>Installare MySQL :material-tag:`5.6` come riportato nei requisiti minimi di installazione.
 
-Se tutte le condizioni di cui sopra sono soddisfatte, il *SetupPosware* si avvierà e procederà con l'installazione. 
+Se tutte le condizioni di cui sopra sono soddisfatte, *SetupPosware* si avvierà e procederà con l'installazione. 
 
-In questo scenario, verrà installato un **nuovo database standard** pronto all'uso che potrà poi essere personalizzato e su cui andrà inviata tutta l'anagrafica del punto vendita.
+In questo scenario, verrà installato un **nuovo database standard** pronto all'uso che potrà poi essere personalizzato e su cui andrà inviata tutta l'anagrafica del punto vendita.<br>In caso di errore **durante l'installazione o il ripristino del nuovo database standard**, consultare i file *mysql-error* e *mysql-output* nella cartella *C:\Program Files (x86)\Posware* per scoprire che problema si è verificato con MySQL.
 
 !!! info "Il database installato non ha dati anagrafici"
     Il database di nuova installazione contiene esclusivamente le configurazioni minime per garantire un funzionamento base e non è pensato per la produzione.
-    <br>Non sono presenti dati quali prodotti, listini, barcode, promozioni ecc...
+    <br>Non sono presenti dati quali prodotti, listini, barcode, promozioni, ecc...
 
 
-!!! danger "Database incompatibili tra v4.2 e v4.3"
-    **Una volta conclusa l'installazione, NON SOSTITUIRE il database con uno esistente di una versione `4.2.x` di Posware, in quanto INCOMPATIBILI TRA LORO.
+!!! danger "Database incompatibili tra :material-tag:`4.2` e :material-tag:`4.3`"
+    **Una volta conclusa l'installazione, NON SOSTITUIRE il database con uno esistente di una versione :material-tag:`4.2.x` di Posware, in quanto INCOMPATIBILI TRA LORO.
     <br>La sostituzione comporterebbe la corruzione definitiva del database.**
     
-    Allo stesso modo NON COPIARE tabelle tra questi due database per migrare dati, anagrafica ecc...
+    Allo stesso modo **NON COPIARE** tabelle tra questi due database per migrare dati, anagrafica, ecc...
 
-    Se è necessario effettuare una nuova installazione usando un **database precedente** come base, consultare il paragrafo successivo.
+    Se è necessario effettuare una nuova installazione, usando un **database precedente** come base, consultare il paragrafo successivo.
 
-#### Usare un database di una versione `4.2.x` di Posware in una installazione ex novo
-È possibile utilizzare un database **cassa** esistente in una installazione ex novo a patto che provenga da una versione di Posware `4.2.306` o superiore. 
+#### Usare un database di una versione :material-tag:`4.2.x` di Posware in una nuova installazione
+È possibile utilizzare un database `cassa` esistente in una nuova installazione da zero a patto che provenga da una versione di Posware :material-tag:`4.2.306` o superiore. 
 
-**Il database dovrà essere dumpato e ripristinato su MySQL v. `5.6` per usarlo come base di installazione per Posware `4.3`.** 
+**Il database dovrà essere dumpato e ripristinato su MySQL :material-tag:`5.6` per usarlo come base di installazione per Posware :material-tag:`4.3`.** 
 <br>È possibile usare **Navicat** per questa operazione, ma vista la possibilità di errori di migrazione, è preferibile usare il tool ufficiale **mysqldump**.
 
-L'operazione di dump e ripristino deve essere effettuata **PRIMA** di lanciare il setup. Il nome del database deve essere sempre **cassa** e le credenziali MySQL v`5.6` devono essere le **[nuove credenziali complesse](./overview-generale.md#breaking-changes)**.
+L'operazione di dump e ripristino deve essere effettuata **PRIMA** di lanciare il setup. Il nome del database deve essere sempre `cassa` e le credenziali di MySQL :material-tag:`5.6` devono essere le **[nuove credenziali complesse](./overview-generale.md#breaking-changes)**.
 
 Il setup verificherà se il database è **compatibile**.
 <br>In caso positivo procederà con il suo aggiornamento e poi con l'installazione.
 <br>In caso negativo verrà notificato un errore specifico.
 
-### Migrazione dalla versione `4.2` alla `4.3`
-Prima di poter lanciare il *SetupPosware* e procedere con la migrazione dalla versione `4.2` alla `4.3` di *Posware Frontend* è necessario completare tutti i seguenti controlli e le operazioni di backup, da usare in caso di malfunzionamenti e per l'eventuale procedura di rollback.<br>In particolare:
+### Migrazione dalla versione :material-tag:`4.2` alla :material-tag:`4.3`
+Prima di poter eseguire *SetupPosware* e procedere con la migrazione dalla versione :material-tag:`4.2` alla :material-tag:`4.3` di *Posware Frontend* è necessario completare tutti i seguenti controlli e le operazioni di backup, da usare in caso di malfunzionamenti e per l'eventuale procedura di rollback.<br>In particolare:
 
-1. Effettuare il backup sia del database **cassa** che di tutta la cartella di Posware.
+1. Effettuare il backup sia del database **`cassa`** che di tutta la cartella di Posware.
 
     !!! danger "Il processo di installazione/aggiornamento non è reversibile"
-        **Il database UNA VOLTA AGGIORNATO ALLO SCHEMA `4.3` NON È PIÙ COMPATIBILE CON POSWARE v. `4.2`**
-        <br>È estremamente importante il backup per poter tornare alla versione 4.2
+        **Il database una volta AGGIORNATO ALLO SCHEMA :material-tag:`4.3` NON È PIÙ COMPATIBILE CON POSWARE :material-tag:`4.2`**
+        <br>È estremamente importante il backup per poter tornare alla versione :material-tag:`4.2`
     
-2. Assicurarsi di avere una versione di Posware installata e funzionante non inferiore alla v. `4.2.306`.
-3. Assicurarsi che tutti i record della tabella logcassa siano stati inviati al server. **In caso contrario il setup darà un errore e non procederà con l'installazione.**
+2. Assicurarsi di avere una versione di Posware installata e funzionante non inferiore alla :material-tag:`4.2.306`.
+3. Assicurarsi che tutti i record della tabella `logcassa` siano stati inviati al server. **In caso contrario il setup darà un errore e non procederà con l'installazione.**
 
     !!! warning "Migrazione non possibile con dati pendenti"
-        Se nella tabella logcassa vi sono dei dati non inviati tra la cassa ed il server di barriera, non è possibile migrare il database.
+        Se nella tabella `logcassa` vi sono dei dati non inviati tra la cassa ed il server di barriera, non è possibile migrare il database.
 
         Riaprire Posware ed attendere la trasmissione completa dei dati. Per verificare il progresso di invio è possibile vedere il campo `LastRecord` nella tabella `config_log`.
 
         **Non sostituire manualmente quel valore per forzare l'operazione. TUTTI I DATI LOG NON INVIATI VERRANNO IRRIMEDIABILMENTE PERSI CON LA MIGRAZIONE.**
 
-4. Verificare i prerequisiti ed il sistema operativo (vedi link):
-5. Accertarsi che la versione installata di MySQL (MySQL v. `4.1` o v. `5.6`) sia **avviata ed accessibile** e con il database **cassa** presente al suo interno, altrimenti il setup darà un errore specifico e non farà continuare l'installazione.
+4. Verificare [i prerequisiti ed il sistema operativo](./overview-generale.md#software).
+5. Accertarsi che la versione installata di MySQL (MySQL :material-tag:`4.1` o :material-tag:`5.6`) sia **avviata ed accessibile** e con il database **`cassa`** presente al suo interno, altrimenti il setup darà un errore specifico e non farà continuare l'installazione.
 
-Se tutte le condizioni di cui sopra sono soddisfatte, il *SetupPosware* si avvierà e procederà con l'installazione del nuovo *Posware Frontend*.
-<br>All'avvio il *SetupPosware* verificherà i prerequisiti di migrazione dalla versione precedente di Posware. Qualora l'installazione precedente fosse corrotta o con dati mancanti, si riceverà un errore e non sarà possibile continuare.
+Se tutte le condizioni di cui sopra sono soddisfatte, *SetupPosware* si avvierà e procederà con l'installazione del nuovo *Posware Frontend*.
+<br>All'avvio *SetupPosware* verificherà i prerequisiti di migrazione dalla versione precedente di Posware. Qualora l'installazione precedente fosse corrotta o con dati mancanti, si riceverà un errore e non sarà possibile continuare.
 
-Nello scenario di migrazione, *SetupPosware* **non bloccherà l'installazione se rileva una versione di MySQL v. `4.1`** nella macchina.
+Nello scenario di migrazione, *SetupPosware* **non bloccherà l'installazione se rileva una versione di MySQL :material-tag:`4.1`** nella macchina.
 
 !!! tip "File di configurazione aggiornati"
-    La migrazione alla v. `4.3` effettua anche la migrazione e l'aggiornamento di alcuni file esistenti, quali i file di configurazione di Posware, delle *Connection strings* e delle impostazioni utente.<br>Per ulteriori dettagli consultare il relativo [paragrafo](#aggiornamento-dei-file-di-configurazione).
+    La migrazione alla :material-tag:`4.3` effettua anche la migrazione e l'aggiornamento di alcuni file esistenti, quali i file di configurazione di Posware, delle *Connection strings* e delle impostazioni utente.<br>Per ulteriori dettagli consultare il relativo [paragrafo](#aggiornamento-dei-file-di-configurazione).
 
 ### Riavvio del sistema operativo necessario
 !!! danger "Non ignorare la richiesta di riavvio"
-    A fine installazione potrebbe essere necessario **riavviare il computer** per iniziare ad usare Posware v. `4.3`.
-    <br>Questa condizione viene rilevata automaticamente da Setup che lo richiederà se strettamente necessario.
+    A fine installazione potrebbe essere necessario **riavviare il computer** per iniziare ad usare Posware :material-tag:`4.3`.
+    <br>Questa condizione viene rilevata automaticamente da *SetupPosware* che lo richiederà se strettamente necessario.
     
     **Riavvia il sistema operativo e non ignorare per alcun motivo la richiesta.**
     
@@ -134,46 +134,49 @@ Nello scenario di migrazione, *SetupPosware* **non bloccherà l'installazione se
 
 
 ### Troubleshooting per i tecnici
-Per qualunque problema possa sorgere con il *SetupPosware*, la soluzione primaria è sempre quella di esaminare i rispettivi log, che possono essere consultati avviando l'applicativo tramite terminale passandogli uno dei due parametri standard di **Inno Setup** tra */LOG* e */LOG="filename"*.
+Il primo step da eseguire al sorgere di un problema con *SetupPosware* è consultare i log.
 
-Viene comunque riportata di seguito la lista completa dei possibili errori gestiti dalla logica del *SetupPosware* e che quindi potrebbero verificarsi durante l'installazione o la migrazione di *Posware Frontend*:
+Per esaminarli più agevolmente è possibile avviare l'applicativo tramite terminale passandogli uno dei due parametri standard di **Inno Setup** tra `/LOG` e `/LOG="filename"`.
+
+
+Di seguito una lista esaustiva dei possibili errori che possono verificarsi durante l'installazione o la migrazione di *Posware Frontend* tramite *SetupPosware*:
 
 |Messaggio|Probabile causa/Strategia di risoluzione|
 |---------|----------------------------------------|
-|Non è stato possibile avviare le migrazioni del database. Verificare il log per maggiori dettagli. L'installazione viene annullata.|Si sono verificati dei problemi che hanno impedito l'avvio delle migrazioni del database. Riprovare a lanciare il setup e in caso il problema persista, consultare il team di sviluppo.|
-|Si è verificato un errore durante l'applicazione delle migrazione del database: *nome del database* Verificare il log per maggiori dettagli. L'installazione viene annullata.|Si sono verificati dei problemi che hanno impedito l'applicazione delle migrazioni del database. Riprovare a lanciare il setup e in caso il problema persista, consultare il team di sviluppo.|
+|Non è stato possibile avviare le migrazioni del database. Verificare il log per maggiori dettagli. L'installazione viene annullata.|Il database ha avuto un problema durante l'avvio degli aggiornamenti dei dati e/o strutture. Dopo aver controllato il log, verificare l'accesso ai database, verificare il corretto funzionamento del database, verificare che non ci sia corruzione su disco.|
+|Si è verificato un errore durante l'applicazione delle migrazione del database: *nome del database* Verificare il log per maggiori dettagli. L'installazione viene annullata.|Il database ha avuto un problema durante gli aggiornamenti dei dati e/o strutture. Dopo aver controllato il log, verificare l'accesso ai database, verificare il corretto funzionamento del database, verificare che non ci sia corruzione su disco.|
 |Non è stato possibile migrare le Connessioni database e le impostazioni utente dal file 'Posware.exe.config'. Non è stata trovata la sezione Posware.MySettings sotto il nodo applicationSettings. Il file potrebbe essere corrotto. Verificare il log per maggiori dettagli. L'installazione viene annullata.|Il messaggio è autoesplicativo.|
 |Non è possibile installare la versione aggiornata. Nella tabella logcassa vi sono dei record ancora da inviare al server. Prima di aggiornare la cassa, è necessario inviare tutto il log del venduto di cassa. L'installazione viene annullata.|Il messaggio è autoesplicativo.|
 |Installazione fallita. Per diagnosticare il problema, consulta i log di installazione: *file di log* Se l'errore è avvenuto durante la migrazione del database o delle impostazioni, consulta l'ultimo log contenuto nella cartella *nome della cartella*|Il messaggio è autoesplicativo.|
 |Impossibile accedere al server database MySql. Verificare che MySql sia avviato, accessibile e che la connection string sia corretta.|Il messaggio è autoesplicativo.|
 |Il database cassa non è aggiornato o accessibile. Verificare che il database sia esistente e che la versione di Posware da cui si sta aggiornando sia la minima richiesta (v4.2.306.0 o superiore).|Il messaggio è autoesplicativo.|
-|Impossibile trovare il file cassa_blueprint.dump necessario ad installare il database iniziale.|Il *SetupPosware* non ha rilevato il dump per installare il database iniziale standard. Riprovare a lanciare il setup e in caso il problema persista, consultare il team di sviluppo.|
-|Impossibile trovare mysql.exe . Non è possibile installare il database iniziale|Verificare che sia installato MySQL e che sia installata una versione supportata dal *SetupPosware*. Consultare la sezione soprastante per le versioni minime richieste di MySQL nei due diversi scenari di installazione. Se i vari requisiti sono rispettati e il problema persiste, contattare il team di sviluppo.|
-|Impossibile eseguire via mysql il restore del file cassa_blueprint.dump per installare il database iniziale.|Il ripristino del dump del database iniziale standard in MySQL è fallito. Riprovare a lanciare il setup e in caso il problema persista, consultare il team di sviluppo.|
+|Impossibile trovare il file cassa_blueprint.dump necessario ad installare il database iniziale.|*SetupPosware* non ha rilevato il dump per installare il database iniziale standard. Consultare i file *mysql-error* e *mysql-output* nella cartella *C:\Program Files (x86)\Posware* per scoprire che problema si è verificato con MySQL.|
+|Impossibile trovare mysql.exe . Non è possibile installare il database iniziale|Verificare che sia installato MySQL e che sia installata una versione supportata da *SetupPosware*. Consultare la sezione soprastante per le versioni minime richieste di MySQL nei due diversi scenari di installazione.|
+|Impossibile eseguire via mysql il restore del file cassa_blueprint.dump per installare il database iniziale.|Il ripristino del dump del database iniziale standard in MySQL è fallito. Consultare i file *mysql-error* e *mysql-output* nella cartella *C:\Program Files (x86)\Posware* per scoprire che problema si è verificato con MySQL.|
 |Non è stato possibile avviare le verifiche preliminari del database. Verificare il log per maggiori dettagli. L'installazione viene annullata.|Il messaggio è autoesplicativo.|
-|Non è stato possibile installare il file Posware.exe.config o il file ConnectionStrings.config nella directory di installazione. Verificare i permessi. L'installazione viene annullata.|Il *SetupPosware* ha fallito l'installazione di uno o più file di configurazione per una questione di permessi. Una volta verificati i permessi della cartella di Posware, riprovare a lanciare il setup e in caso il problema persista, consultare il team di sviluppo.|
-|Non è stato possibile installare il database di partenza nella directory di installazione. Verificare i permessi. L'installazione viene annullata.|Il *SetupPosware* ha fallito l'installazione del database iniziale standard per una questione di permessi. Una volta verificati i permessi della cartella di MySQL, riprovare a lanciare il setup e in caso il problema persista, consultare il team di sviluppo.|
+|Non è stato possibile installare il file Posware.exe.config o il file ConnectionStrings.config nella directory di installazione. Verificare i permessi. L'installazione viene annullata.|*SetupPosware* ha fallito l'installazione di uno o più file di configurazione per una questione di permessi. Una volta verificati i permessi della cartella di Posware, riprovare a lanciare il setup.|
+|Non è stato possibile installare il database di partenza nella directory di installazione. Verificare i permessi. L'installazione viene annullata.|*SetupPosware* ha fallito l'installazione del database iniziale standard per una questione di permessi. Una volta verificati i permessi della cartella di MySQL, riprovare a lanciare il setup.|
 |Non è stato possibile copiare i file di log nella directory di installazione. Verificare i permessi. Per consultare i log, PRIMA DI CHIUDERE QUESTO MESSAGGIO, apri il file *nome del del file da consultare* Alla chiusura del Setup tutti i file temporanei vengono eliminati.|Il messaggio è autoesplicativo.|
-|Il server MySql installato non è supportato. È necessario usare la versione 5.6.x di MySql per effettuare una installazione ex-novo.|Controllare che versione di MySQL è installata. Se è presente una versione diversa dalla `5.6.x` procedere quindi a installarla e configurarla, prima di riprovare a lanciare il setup.|
+|Il server MySql installato non è supportato. È necessario usare la versione 5.6.x di MySql per effettuare una installazione ex-novo.|Controllare che versione di MySQL è installata. Se è presente una versione diversa dalla :material-tag:`5.6.x` procedere quindi a installarla e configurarla, prima di riprovare a lanciare il setup.|
 |Versione di Windows 10 non supportata ( *versione di Windows 10 installata non supportata* ). È richiesta almeno la versione 1809 (Redstone 5, October 2018 Update, Windows v10.0.17763). Prima di installare Posware, aggiorna Windows via Windows Update.|Il messaggio è autoesplicativo.|
 
-#### Eventuali errori e problemi nella migrazione dalla versione `4.2` alla `4.3`
+#### Eventuali errori e problemi nella migrazione dalla versione :material-tag:`4.2` alla :material-tag:`4.3`
 I principali problemi di una mancata migrazione sono:
 
-1. Impossibilità di leggere *Posware.exe.config* oppure reperire da esso la *Connection string* da usare per accedere al database **cassa** già presente.
-2. La versione `4.2` di Posware è corrotta e all'interno di "*Installazione applicazioni*" di Windows non è presente una voce per Posware.
+1. Impossibilità di leggere *Posware.exe.config* oppure reperire da esso la *Connection string* da usare per accedere al database `cassa` già presente.
+2. La versione :material-tag:`4.2` di Posware è corrotta e all'interno di "*Installazione applicazioni*" di Windows non è presente una voce per Posware.
 
-Nei prerequisiti di migrazione, si verifica l'accesso al database **cassa** già esistente e la sua struttura per determinare se Posware può essere migrato alla v. `4.3`.<br>Il Setup **richiede che il database sia presente ed accessibile**.
-<br>Per verificare MySQL ed accedere al database **cassa**, i dati di accesso vengono ottenuti dalla *Connection string* all'interno di *Posware.exe.config* (parametro **Connessione** negli *applicationSettings*).
+Nei prerequisiti di migrazione, si verifica l'accesso al database `cassa` già esistente e la sua struttura per determinare se Posware può essere migrato alla :material-tag:`4.3`.<br>Il Setup **richiede che il database sia presente ed accessibile**.
+<br>Per verificare MySQL ed accedere al database `cassa`, i dati di accesso vengono ottenuti dalla *Connection string* all'interno di *Posware.exe.config* (parametro **Connessione** negli *applicationSettings*).
 
 **Se la *Connection string* non è corretta, *SetupPosware* non procederà con l'installazione.**
 
-Inoltre, il Setup verifica anche che ci sia una versione di Posware non inferiore alla `4.2.306`, la versione minima supportata per la migrazione alla v. `4.3` dell'applicativo.<br>Se questa condizione non dovesse essere soddisfatta, *SetupPosware* mostrerà un errore specifico e per risolvere il problema sarà **necessario installare una versione di Posware `4.2`** pari o superiore alla `4.2.306` prima di poter riprovare ad eseguire la migrazione.
+Inoltre, il setup verifica anche che ci sia una versione di Posware non inferiore alla :material-tag:`4.2.306`, la versione minima supportata per la migrazione alla :material-tag:`4.3` dell'applicativo.<br>Se questa condizione non dovesse essere soddisfatta, *SetupPosware* mostrerà un errore specifico e per risolvere il problema sarà **necessario installare una versione di Posware :material-tag:`4.2`** pari o superiore alla :material-tag:`4.2.306` prima di poter riprovare ad eseguire la migrazione.
 
 ## Aggiornamento dei file di configurazione
-A partire dalla versione `4.3`, i file di configurazione di Posware, delle *Connection strings* e delle impostazioni utente sono stati riportati allo standard .NET rimuovendo l'approccio custom.
+A partire dalla versione :material-tag:`4.3`, i file di configurazione di Posware, delle *Connection strings* e delle impostazioni utente sono stati riportati allo standard .NET rimuovendo l'approccio custom.
 
-*SetupPosware* provvederà ad installare (o migrare in caso di migrazione dalla v. `4.2`) automaticamente i seguenti file di configurazione:
+*SetupPosware* provvederà ad installare (o migrare in caso di migrazione dalla :material-tag:`4.2`) automaticamente i seguenti file di configurazione:
 
 - *Posware.exe.config*
 - *ConnectionStrings.config*
@@ -183,27 +186,27 @@ I punti cruciali di questo processo sono:
 
 1. Le *Connection strings* sono state spostate nel file dedicato *ConnectionStrings.config* e non sono più presenti all'interno di *Posware.exe.config*
 
-    !!! info
-        Le stringhe di connessione, una volta migrate, non vengono più modificate ed è possibile da parte dell'utente effettuare le proprie modifiche.
+    !!! info "Connection strings"
+        Le *Connection strings*, una volta migrate, non vengono più modificate ed è possibile da parte dell'utente effettuare le proprie modifiche.
 
         **Rimane inteso che NON è possibile cambiare il nome della connessione ma solo il suo valore**.
-        <br>Per *ConnessioneServer* è anche possibile cambiare il provider da MySql a SqlServer (vedere nel file la connessione di esempio commentata)
+        <br>Per **ConnessioneServer** è anche possibile cambiare il provider da MySQL a SQL Server (vedere nel file la connessione di esempio commentata)
 
-        **PosUpdate non sovrascriverà ne modificherà mai quel file durante gli aggiornamenti futuri.**
+        ***PosUpdate* non sovrascriverà né modificherà mai quel file durante gli aggiornamenti futuri.**
 
 2. *Posware.exe.config*, se necessario, viene sovrascritto da *PosUpdate* durante un aggiornamento.
 
     !!! warning "Posware.exe.config"
-        A partire da Posware `v4.3` non è più possibile modificare il file di configurazione per inserire impostazioni custom o modifiche al runtime.
+        A partire da Posware :material-tag:`4.3` non è più possibile modificare il file di configurazione per inserire impostazioni custom o modifiche al runtime.
 
 3. Le configurazioni di runtime .NET Framework vengono gestite nel file **Posware.User.config**
 
-    !!! warning "Impostazioni di runtime dovranno essere inserite in Posware.User.config"
-        Tutte le impostazioni di runtime .NET che nella v4.2 richiedevano un valore all'interno di *Posware.exe.config*, a partire dalla `v4.3` dovranno essere inserite nel nuovo file *Posware.User.config* che il runtime .NET caricherà automaticamente.
+    !!! warning "Impostazioni di runtime in Posware.User.config"
+        Tutte le impostazioni di runtime .NET che nella :material-tag:`4.2` richiedevano un valore all'interno di *Posware.exe.config*, a partire dalla :material-tag:`4.3` dovranno essere inserite nel nuovo file *Posware.User.config* che il runtime .NET caricherà automaticamente.
 
-        **Posware non fa uso di tali impostazioni e non è prevista un attività di migrazione per esse.<br>Se hai delle impostazioni per esigenze custom, dovrai migrarle manualmente e verificarne il funzionamento.**
+        **Posware non fa uso di tali impostazioni e non è prevista un'attività di migrazione per esse.<br>Se hai delle impostazioni per esigenze custom, dovrai migrarle manualmente e verificarne il funzionamento.**
 
-4. Tutte le impostazioni che prima erano sotto le voci *Posware.MySettings* (*applicationSettings*) sono ora state spostate nel database di **posware** in **tabparametriextra**:
+4. Tutte le impostazioni che prima erano sotto le voci *Posware.MySettings* (*applicationSettings*) sono ora state spostate nel database di **`posware`** in **`tabparametriextra`**:
 
     - campiRicArticolo
     - campiFiltroRicArticoli

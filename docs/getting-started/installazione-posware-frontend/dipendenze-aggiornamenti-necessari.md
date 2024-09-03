@@ -11,71 +11,73 @@ tags:
 ---
 
 ## Glossario
-- **SetupPosware:** è il nuovo setup riprogettato per l'uscita di Posware v. `4.3` per poter installare *Posware Frontend* sui terminali casse, sia nel caso di migrazione da Posware v. `4.2.x`, sia nel caso di installazione ex novo dell'applicativo;
+- **SetupPosware:** è il nuovo setup riprogettato per l'uscita di Posware :material-tag:`4.3` per poter installare *Posware Frontend* sui terminali casse, sia nel caso di migrazione da Posware :material-tag:`4.2.x`, sia nel caso di nuova installazione da zero dell'applicativo;
 - **CDN:** acronimo di Content Delivery Network;
 - **PosUpdate:** è l'applicativo che viene usato esclusivamente per aggiornare *Posware Frontend* sui terminali casse alla loro ultima **Build** version, in linea con la **Major** e **Minor** version installata. 
 
 ## Cenni preliminari
-Il presente documento illustra nel dettaglio le note sulle dipendenze di terze parti e gli aggiornamenti necessari che sono parte dei requisiti minimi software per l'installazione o la migrazione al nuovo *Posware Frontend* v4.3.
+Il presente documento illustra nel dettaglio le note sulle dipendenze di terze parti e gli aggiornamenti necessari, che sono parte dei requisiti minimi software per l'installazione o la migrazione al nuovo *Posware Frontend* :material-tag:`4.3`.
 
+## Gestione delle dipendenze di terze parti
+È possibile gestire l'installazione delle dipendenze di terze parti in due modalità:
+
+- Installazione manuale da parte dell'utente prima di avviare il setup
+- Installazione automatica da parte di *SetupPosware* (con dipendenza inclusa già nel setup o prelevata via CDN)
 
 ### Dipendenze con installazione manuale
-Le seguenti dipendenze e aggiornamenti devono essere installati manualmente prima di lanciare il *SetupPosware*:
+Le seguenti dipendenze e aggiornamenti devono essere installati manualmente prima di lanciare *SetupPosware*:
 
 - Aggiornamenti di Windows 7 in caso di una versione inferiore a quella dei [requisiti minimi](overview-generale.html#software). 
 - Aggiornamenti di Windows 10 in caso di una versione inferiore a quella dei [requisiti minimi](overview-generale.html#software). 
-- .NET Framework v. `4.8` - [link](https://dotnet.microsoft.com/it-it/download/dotnet-framework/net48)
-- MySQL v. `5.6` in caso di installazione ex novo - [link](https://github.com/isidsrl/posware-docs/raw/main/vendors/mysql-installer-community-5.6.20.0.msi?download=)
+- .NET Framework :material-tag:`4.8` - [link](https://dotnet.microsoft.com/it-it/download/dotnet-framework/net48){:target="_blank"}
+- MySQL :material-tag:`5.6` in caso di nuova installazione - [link](https://github.com/isidsrl/posware-docs/raw/main/vendors/mysql-installer-community-5.6.20.0.msi?download=){:target="_blank"}
 
 **Gli aggiornamenti di Windows possono essere effettuati dall'ordinaria procedura di Windows Update.**
 
 #### Installazione degli aggiornamenti in Windows 7 SP1 mai aggiornati o appena installati
-In sistemi Windows 7 **SP1** appena installati e mai aggiornati, sarà necessario installare .NET Framework v. `4.8` come da specifiche.
+In sistemi Windows 7 **SP1** appena installati e mai aggiornati, sarà necessario installare .NET Framework :material-tag:`4.8` come da specifiche.
 
 Tuttavia, quest'ultimo si porta come dipendenze due aggiornamenti minimi da fare:
 
 - `KB3033929`
 - Aggiornamento dei certificati **MicrosoftRootCertificateAuthority2011**
 
-Il certificato aggiornato può essere scaricato dal seguente [link](https://www.microsoft.com/pkiops/Docs/Repository.htm). 
+Il certificato aggiornato può essere scaricato dal seguente [link](https://www.microsoft.com/pkiops/Docs/Repository.htm){:target="_blank"}. 
 
 Senza di esso nessun pacchetto di installazione viene validato con i certificati obsoleti di Windows 7 **SP1** senza aggiornamenti.
 
-Inoltre, non essendo presenti gli update **Servicing Stack 2018** che sono requisito minimo in Windows 7 per il funzionamento del nuovo *Posware Frontend*, sono necessarie anche gli aggiornamenti a seguire:
+Inoltre, non essendo presenti gli update **Servicing Stack 2018** che sono requisito minimo in Windows 7 per il funzionamento del nuovo *Posware Frontend*, sono necessari anche gli aggiornamenti a seguire:
 
 - `KB4457144`
-- `KB5011649` con tutti i suoi aggiornamenti prerequisiti (maggiori dettagli nella sua [pagina](https://support.microsoft.com/en-us/topic/kb5011649-servicing-stack-update-for-windows-7-sp1-and-server-2008-r2-sp1-march-8-2022-eb009485-ed35-43c3-ba49-8107f822fe30))
+- `KB5011649` con tutti i suoi aggiornamenti prerequisiti (maggiori dettagli nella sua [pagina](https://support.microsoft.com/en-us/topic/kb5011649-servicing-stack-update-for-windows-7-sp1-and-server-2008-r2-sp1-march-8-2022-eb009485-ed35-43c3-ba49-8107f822fe30){:target="_blank"})
 
 Trattandosi di sistemi molto obsoleti e, dato il peso del pacchetto di aggiornamento che supera i 200 Mb, si preferisce lasciarlo come unica eccezione all'installazione automatizzata per evitare di perdere molto tempo a scaricare un pacchetto che è raro che non sia già presente nel sistema.
 
-
-## Gestione delle dipendenze di terze parti
-È possibile gestire l'installazione delle dipendenze di terze parti in due modalità:
-
-- Installazione manuale da parte dell'utente prima di avviare il Setup
-- Installazione automatica da parte del *SetupPosware* (con dipendenza inclusa già nel setup o prelevata via CDN)
+!!! note "Installazione Servicing Stack 2018"
+    È facile verificare se gli aggiornamenti **Servicing Stack 2018** sono stati installati correttamente. <br>
+    Infatti Windows Update dopo la loro installazione riprenderà a funzionare e procederà con l'installazione di tutti gli altri aggiornamenti.
 
 ### Dipendenze con installazione automatica da parte del SetupPosware prelevate via CDN
 Le seguenti dipendenze vengono installate automaticamente da parte del *SetupPosware* prelevandole via CDN, quindi è necessaria una connessione ad Internet stabile per installarle:
 
-- WebView2 Edge Runtime v. `109.0.1518.140`
-- Aggiornamento di Windows 7 **SP1** necessario per installare .NET v. `6` Hosting Bundle:
-    - `KB3191566` (Windows Management Framework v. `5.1`)
-- .NET v. `6` Hosting Bundle
+- WebView2 Edge Runtime :material-tag:`109.0.1518.140`
+- Aggiornamento di Windows 7 **SP1** necessario per installare .NET :material-tag:`6` Hosting Bundle:
+    - `KB3191566` (Windows Management Framework :material-tag:`5.1`)
+- .NET :material-tag:`6` Hosting Bundle
 - VC++ Redistributable 2015-2019
-- Monroes OPOS Common Control Objects v. `1.14.001`
+- Monroes OPOS Common Control Objects :material-tag:`1.14.001`
 
 !!! tip "Installazione manuale possibile"
-    Qualora si volesse procedere all'installazione manuale dei pacchetti elencati, è necessario farlo prima di avviare il Setup.
+    Qualora si volesse procedere all'installazione manuale dei pacchetti elencati, è necessario farlo prima di avviare il setup.
     
-    Tutti i pacchetti già installati, verranno rilevati e se la versione è corretta, non verranno ne ri-scaricati ne reinstallati.
+    Tutti i pacchetti già installati verranno rilevati e, se la versione è corretta, non verranno né riscaricati né reinstallati.
     
-    Nel caso in cui un pacchetto fosse installato ma la versione fosse più vecchia, verrà scaricata ed installata la versione aggiornata.
+    Nel caso in cui un pacchetto fosse installato, ma la versione fosse più vecchia, verrà scaricata ed installata la versione aggiornata.
     
 !!! danger "Tutti i pacchetti sono obbligatori"
-    Non è possibile procedere all'installazione del Setup senza che le dipendenze sia rilevate ed installate.
+    Non è possibile procedere all'installazione del setup senza che le dipendenze siano rilevate ed installate.
     
-    in caso contrario o di interruzione da parte dell'utente, il Setup si interromperà automaticamente senza installare il software.
+    In caso contrario o in caso di interruzione da parte dell'utente, *SetupPosware* si interromperà automaticamente senza installare il software.
     
     
 
@@ -84,27 +86,25 @@ Tutte le dipendenze non incluse nel setup, se vengono rilevate già presenti nel
 
 Vengono ancora una volta elencate in via definitiva tutte le dipendenze con installazione automatica che vengono rilavate tramite degli opportuni meccanismi di rilevazione:
 
-- WebView2 Edge Runtime v. `109.0.1518.140`
-- Aggiornamenti di Windows 7 SP1 necessari per installare .NET v. 6 Hosting Bundle:
+- WebView2 Edge Runtime :material-tag:`109.0.1518.140`
+- Aggiornamenti di Windows 7 **SP1** necessari per installare .NET :material-tag:6 Hosting Bundle:
     - `KB2999226`
     - `KB3063858`
-    - `KB3191566` (Windows Management Framework v. `5.1`)
-- .NET v. `6` Hosting Bundle
+    - `KB3191566` (Windows Management Framework :material-tag:`5.1`)
+- .NET :material-tag:`6` Hosting Bundle
 - VC++ Redistributable 2015-2019
-- Monroes OPOS Common Control Objects v. `1.14.001`
+- Monroes OPOS Common Control Objects :material-tag:`1.14.001`
 
 ## Riavvio del sistema operativo necessario
 !!! danger "Non ignorare la richiesta di riavvio"
     Le dipendenze esterne che necessitano di ulteriori setup complessi richiedono quasi sempre un riavvio post installazione.
 
-    Questa condizione viene rilevata automaticamente da Setup che lo richiederà se strettamente necessario. 
+    Questa condizione viene rilevata automaticamente da *SetupPosware* che lo richiederà se strettamente necessario. 
     
     **Riavvia il sistema operativo e non ignorare per alcun motivo la richiesta.**
     
     Se non è possibile riavviare il sistema per motivi esterni all'installazione, non avviare Posware prima del riavvio.
     
-    
-
 ![SetupPosware final screen (restart case)][image_ref_nugc16k5]
 
 La necessità di riavvio o meno imposta automaticamente anche la GUI del setup nella schermata finale come è possibile vedere nell'immagine soprastante.

@@ -4,7 +4,7 @@ tags:
     - StoreServer
 ---
 
-# Scenario di migrazione
+# Migrazione da servizi legacy
 <!--StoreServer - Installazione - Scenario di migrazione [formula in itinere]-->
 
 **Prima revisione documento: 24 aprile 2024** <br>
@@ -156,6 +156,7 @@ Viene comunque riportata di seguito la lista completa dei possibili errori gesti
 |Sono necessari i diritti di amministratore per eseguire una nuova installazione.|Si è provato ad effettuare l'installazione senza aver aperto il terminale con i diritti di amministratore. Riavviare il terminale come amministratore e riprovare l'installazione.|
 |Impossibile installare/aggiornare l'applicazione. Non ho trovato nessun file di impostazioni esistente appsettings.Production.json nella directory di installazione.|Non viene rivelato o non è stato trovato il file *appsettings.Production.json* con tutte le impostazioni dell'applicativo. Controllare all'interno della cartella dello *StoreServer* se è presente o meno e in caso di mancata presenza contattare il team di sviluppo.|
 |Impossibile installare/aggiornare l'applicazione. La directory di installazione non è vuota. Per aggiornare il programma usare winget upgrade. Per reinstallare il programma o installare usando un database migrato, consulta la documentazione.|È già presente la cartella dello *StoreServer* e quindi è già stata effettuata l'installazione in precedenza. Per aggiornare lo *StoreServer*, consultare la relativa [sezione]() della documentazione.|
+|Per usare un database migrato è necessario eseguire una installazione da zero. Non è possibile reinstallare o aggiornare l'applicazione indicando un database migrato.|È già presente un'installazione precedente dello *StoreServer*. Il parametro custom `/MIGRATED` lo si può utilizzare solo per le installazioni da zero. Evitare quindi di utilizzarlo quando si effettuano reinstallazioni o aggiornamenti dell'applicativo.|
 |Per installare usando un database migrato devi specificare da linea di comando dei parametri /STOREID e /CONNECTIONSTRING validi. Consulta la documentazione per dettagli.|Si è provato ad fare un'installazione con migrazione senza l'utilizzo dei parametri custom obbligatori. Consultare la documentazione soprastante per vedere come specificare tali parametri.|
 |||
 |Collegamento al database non riuscito. Impossibile procedere con l'installazione o l'upgrade.|Connessione al database fallita. Verificare che il database sia installato e accessibile. Se necessario, specificare una *Connection string* personalizzata.|

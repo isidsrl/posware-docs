@@ -11,7 +11,7 @@ tags:
 ---
 
 ## Glossario
-- **InstanceConfigurationId:** anche detto **Store Id**, rappresenta il codice del punto vendita su cui si sta installando lo *StoreServer*;
+- **StoreId:** anche detto **InstanceConfigurationId**, rappresenta il codice del punto vendita su cui si sta installando lo *StoreServer*;
 - **WebApp:** applicazione web che offre la possibilità di gestire in modo centralizzato le funzionalità disponibili nello *StoreServer*;
 - **Package manager**: software di gestione pacchetti di installazione integrato nel sistema operativo.
 - **Winget**: vedi Package manager.
@@ -26,12 +26,12 @@ Per eventuali problematiche occorse durante le procedure, è possibile consultar
 
 ## Prerequisiti
 <!--Qui rifare un reminder delle operazioni comuni come ad esempio l'installazione del database, SQL Server o MySQL. Oltre alle operazioni comuni inserire anche che va fatto il backup-->
-Prima di procedere con le diverse operazioni per installare lo *StoreServer* in caso di installazione ex novo di Posware `4.3`, è assolutamente necessario aver installato i vari applicativi indicati nei [requisiti minimi dell'overview generale](./overview-generale.md#requisiti-minimi) ed essersi assicurati di avere le risorse hardware minime indispensabili.
+Prima di procedere con le diverse operazioni per installare lo *StoreServer* in caso di una nuova installazione da zero di Posware :material-tag:`4.3`, è assolutamente necessario aver installato i vari applicativi indicati nei [requisiti minimi dell'overview generale](./overview-generale.md#requisiti-minimi) ed essersi assicurati di avere le risorse hardware minime indispensabili.
 
 Inoltre, è fondamentale aver eseguito quelle [procedure comuni ai due scenari di installazione](./installazione-procedure-comuni.md) che vanno completate prima di procedere con l'installazione effettiva. In particolare, controllare ancora una volta di:
 
 - avere dei backup integri della situazione precedente all'installazione dello *StoreServer*;
-- aver installato e configurato adeguatamente il provider del database del server centrale. A tal proposito si ricorda ancora una volta che per MySQL la versione compatibile con lo *StoreServer* è necessariamente la `8.4`, mentre per SQL Server è possibile scegliere tra SQL Server 2016, 2017, 2019 o 2022.
+- aver installato e configurato adeguatamente il provider del database del server centrale. A tal proposito si ricorda ancora una volta che per MySQL la versione compatibile con lo *StoreServer* è necessariamente la :material-tag:`8.4`, mentre per SQL Server è possibile scegliere tra SQL Server 2016, 2017, 2019 o 2022.
 
 ## Warning
 !!! danger "Invio dell'intera anagrafica dati necessario"
@@ -40,7 +40,7 @@ Inoltre, è fondamentale aver eseguito quelle [procedure comuni ai due scenari d
     Prima di iniziare, assicurarsi di poter effettuare questa operazione con il punto vendita senza causare effetti collaterali indesiderati.
 
 ## Operazioni necessarie
-Al fine di installare lo *StoreServer* di Posware `4.3` sarà necessario eseguire tutti questi step:
+Al fine di installare lo *StoreServer* di Posware :material-tag:`4.3` sarà necessario eseguire tutti questi step:
 
 1. Installare lo *StoreServer* usando il tool di gestione pacchetti *Winget*
 2. Inserire la directory dello *StoreServer* nella lista delle esclusioni di Sofware Antivirus e Firewall presenti nel sistema
@@ -55,15 +55,15 @@ Al fine di installare lo *StoreServer* di Posware `4.3` sarà necessario eseguir
 Per installare lo *StoreServer* è necessario usare il package manager **Winget**.
 
 !!! warning "Versione minima necessaria"
-    Assicurarsi di avere installazione la versione minima supportata per l'installazione dello *StoreServer*, consultabile nell'[overview generale](./overview-generale.md). 
+    Assicurarsi di avere installata la versione minima supportata per l'installazione dello *StoreServer*, consultabile nell'[overview generale](./overview-generale.md). 
     
     In caso di dubbi, procedere in ogni caso all'aggiornamento di **Winget** usando il Microsoft Store.
 
 ### Aggiunta del repository Posware
 !!! tip "Prima esecuzione"
-    Le istruzioni di questo paragrafo vanno eseguite una sola volta solo su sistemi che non hanno mai aggiunto la source di ISiD sul computer.
+    Le istruzioni di questo paragrafo vanno eseguite una sola volta, solo su sistemi che non hanno mai aggiunto la source di ISiD sul computer.
     
-1. Avviare un nuovo terminale **con i diritti di amministratore** ( cmd.exe ).
+1. Avviare un nuovo terminale **con i diritti di amministratore** (*cmd.exe*).
 2. Inserire la source di ISiD in **Winget** da terminale, usando il comando:
 ``` bat title="Comando"
 winget source add posware https://winget.isid.it/posware/api -t "Microsoft.Rest"
@@ -89,13 +89,27 @@ Le impostazioni standard sono le seguenti:
 - **Connection string in caso il database provider sia SQL Server:** Data Source=.\sqlexpress;Initial Catalog=posware;User ID=sa;Password=Vbhg4132!;Encrypt=false;Trust Server Certificate=true;
 
 !!! warning "Le credenziali standard dei database sono cambiate"
-    Ai fini di compatibilità con le nuove restrizioni dei criteri password complesse delle recenti versioni di Mysql e SqlServer, la nuova password di default è stata variata in **Vbhg4132!**
+    Ai fini di compatibilità con le nuove restrizioni dei criteri password complesse delle recenti versioni di MySQL e SQL Server, la nuova password di default è stata variata in **Vbhg4132!**
 
     **Si consiglia di cambiare la password in tutti i sistemi di produzione.**  
 
 #### Logica di rilevamento automatico del database provider 
+1. Viene rilevata la versione installata di MySQL e SQL Server. Si ricorda che le versioni richieste sono MySQL :material-tag:`8.4` per MySQL e SQL Server `2016`, `2017`, `2019` o `2022` per SQL Server.
+2. Se viene rilevata una versione richiesta per uno o entrambi i database provider, **Winget** prova ad accedere al database con le *Connection strings* di default:
 
-// todo 
+    - **Connection string in caso il database provider sia MySQL:** server=localhost;user id=root;password=Vbhg4132!;database=posware;
+    - **Connection string in caso il database provider sia SQL Server:** Data Source=.\sqlexpress;Initial Catalog=posware;User ID=sa;Password=Vbhg4132!;Encrypt=false;Trust Server Certificate=true;
+
+3. Se con le *Connection strings* di default non si riesce ad accedere, viene verificato se è presente una *connection string* custom fornita nel comando da terminale e si prova ad accedere con quella. **Se Winget non riesce ad accedere neanche con la Connection string custom, allora il setup darà un errore e non procederà con l'installazione.**
+4. Una volta eseguito l'accesso con una qualsiasi *connection string*, **Winget verifica che il database a cui si collega NON sia già esistente**, altrimenti il setup darà un errore e non procederà con l'installazione.
+5. **Se Winget riesce ad accedere e il database non esiste già**, allora l'installazione potrà procedere con gli step successivi.
+
+!!! warning "Utilizzo di una connection string custom in presenza sia di MySQL che di SQL Server"
+    Se sono installati sulla macchina sia MySQL :material-tag:`8.4` che SQL Server (`2016`, `2017`, `2019` oppure `2022`) ed entrambi i database utilizzano le relative *Connection strings* di default, **Winget imposterà come database provider dello *StoreServer* MySQL :material-tag:`8.4`**.
+    
+    **Winget**, infatti, controlla prima la *Connection string* di default di MySQL e poi quella di SQL Server e **rilevando per prima quella di MySQL** lo imposta come database provider dello *StoreServer*.
+
+    **Si raccomanda vivamente di specificare una *connection string* custom in questa situazione per non rischiare di incappare in comportamenti non desiderati.**
 
 #### Uso dei parametri di installazione personalizzati
 
@@ -105,10 +119,10 @@ Le impostazioni standard sono le seguenti:
     **Possono essere usati sia singolarmente che combinati.**
 
 ##### Usare una connection string specifica
-È necessario specificare una connection string se:
+È necessario specificare una *connection string* se:
 
-- Sulla stessa macchina vi sono installati sia MySql che SqlServer
-- Il nome del database che vuoi usare per lo StoreServer **non** è `posware`
+- Sulla stessa macchina vi sono installati sia MySQL che SQL Server
+- Il nome del database che vuoi usare per lo *StoreServer* **non** è `posware`
 - Le credenziali da usare per l'accesso al database sono diverse da quelle prefedefinite
 - Altri casi non direttamenti supportati che tuttavia necessitano di parametri ulteriori nella stringa di connessione al database
 
@@ -121,7 +135,7 @@ winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRIN
     
     **Esempio:** /CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307""
  
-Di seguito un esempio completo di connection string custom, con parametri con spazi, che usa credenziali di accesso non di default ed un porta di comunicazione al database MySql non standard:
+Di seguito un esempio completo di *connection string* custom, con parametri con spazi, che usa credenziali di accesso non di default ed un porta di comunicazione al database MySQL non standard:
 
 ``` bat title="Installazione con connection string con spazi e credeziali custom"
 winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=isid;password=1r{1]@ZJ^7/f;database=posware;port=3307"" " --verbose
@@ -130,11 +144,11 @@ winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRIN
 !!! danger "Attenzione al carattere di escape"
     **Il carattere/modo di escape delle stringhe** dipende dalla shell terminale che si usa.
 
-    In tutti gli esempi riportati viene usata la shell cmd.exe di Windows (**Command Prompt**). 
+    In tutti gli esempi riportati viene usata la shell *cmd.exe* di Windows (**Command Prompt**). 
 
     Per evitare problemi si raccomanda vivamente di seguire gli esempi e **NON** usare **Windows PowerShell**.
 
-##### Usare una codice punto vendita specifico
+##### Usare un codice punto vendita specifico
 
 Per specificare un codice punto vendita diverso da 1 (default), è possibile usare il parametro `/STOREID`. Esempio:
 
@@ -142,10 +156,10 @@ Per specificare un codice punto vendita diverso da 1 (default), è possibile usa
 winget install --id isid.storeserver --source posware --custom "/STOREID=valore del codice del punto vendita diverso da quello di default " --verbose
 ``` 
 
-!!! warning "Codice punto vendita numero"
+!!! warning "Codice punto vendita come numero"
     Il codice del punto vendita è **sempre** un numero intero positivo tra 1 e 9999 (inclusi).
 
-    Lo StoreServer non supporta codici alfa numerici. 
+    Lo *StoreServer* non supporta codici alfa numerici. 
     
     **Eventuali numeri riportati con zeri davanti saranno considerati senza zeri.**
 
@@ -158,11 +172,11 @@ winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRIN
 
 #### Parametri proprietari di Winget
     
-Winget mette a disposizione ulteriori parametri la cui trattazione esula da questa documentazione. 
+**Winget** mette a disposizione ulteriori parametri la cui trattazione esula da questa documentazione. 
 
 Il parametro più utile allo scopo è `--open-logs`: apre automaticamente la cartella dei log a fine installazione. 
 
-Per farlo aggiungere il parametro ai comandi già riportati negli esempi precedenti. 
+Per farlo, aggiungere il parametro ai comandi già riportati negli esempi precedenti. 
 
 ``` bat title="Installazione con codice punto vendita 5 e connection string custom"
 winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307"" /STOREID=5 " --verbose --open-logs
@@ -171,7 +185,7 @@ winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRIN
 
 Se dovessero servire ulteriori comandi di **Winget**, consultare la guida ufficiale di **Microsoft**.
 
-#### Troubleshooting per i tecnici
+### Troubleshooting per i tecnici
 Il primo step da eseguire al sorgere di un problema con l'installazione dello *StoreServer*, è consultare i log.
 
 Per esaminarli più agevolmente è possibile inserire nel comando di **Winget** il parametro *--open-logs* così da avere la cartella aperta automaticamente a fine installazione.
@@ -191,29 +205,29 @@ Di seguito una lista esaustiva dei possibili errori che possono verificarsi dura
 |Si è verificato un errore sconosciuto durante il tentativo di connessione al database server.|Verificare la connessione al database e soprattutto se il database sia accessibile. Se necessario, specificare una *Connection string* personalizzata con il parametro *--custom*.|
 |Connessione al database fallita. Verificare che il database sia installato e accessibile. Se necessario, specificare una stringa di connessione personalizzata.|Il messaggio è autoesplicativo.|
 |La versione del database server non è supportata.|Controllare la versione richiesta del database in utilizzo, MySQL o SQL Server, nei requisiti minimi dell'[overview generale](./overview-generale.md#requisiti-minimi). Procedere poi a installarla e configurarla prima di riprovare l'installazione dello *StoreServer*.|
-|Risulta già presente un database installato. In una nuova installazione non è possibile usare database già presenti.|Si è provato ad eseguire un'installazione ex novo con un database già esistente. Per installare usando un database migrato, consulta la documentazione Scenario di migrazione.(Specificare da linea di comando i parametri */MIGRATED*, */STOREID*, */CONNECTIONSTRING* validi.)|
+|Risulta già presente un database installato. In una nuova installazione non è possibile usare database già presenti.|Si è provato ad eseguire una nuova installazione con un database già esistente. Per installare usando un database migrato, consulta la documentazione [Migrazione da servizi legacy](./migrazione-servizi-legacy.md).(Specificare da linea di comando i parametri `/MIGRATED`, `/STOREID`, `/CONNECTIONSTRING` validi.)|
 |Si è verificato un errore durante il salvataggio delle configurazioni. |Rappresenta un problema di scrittura grave. Verificare il funzionamento corretto dell'hardware e ritentare l'installazione ripartendo da capo.|
 |||
 |Si è verificato un errore durante il salvataggio della stringa di connessione.|Rappresenta un problema di scrittura grave. Verificare il funzionamento corretto dell'hardware e ritentare l'installazione ripartendo da capo.|
-|Si è verificato un errore durante l'installazione delle migrazioni. |Il database ha avuto un problema durante gli aggiornamenti dei dati e/o strutture. Verificare l'accesso al database, verificare il corretto funzionamento del database, verificare che non ci sia corruzzione su disco|
-|Si è verificato un errore durante la registrazione dello StoreServer come servizio di Windows.|È un problema di sistema operativo. Verificare i permessi dell'utente e dell'installer, verificare che non sia già presente un servizio StoreServer installato (se si, eliminarlo manualmente e rilanciare il setup). Verificare l'integrità dei file di sistema di Windows. |
-|Si è verificato un errore durante l'avvio dello StoreServer come servizio di Windows. |Problema di permessi utente e/o configurazione sistema operativo, integrità dei file di sistema|
-|Non è stato possibile interrompere il servizio StoreServer. |È un problema di sistema operativo. Verificare i permessi dell'utente e dell'installer. Verificare l'integrità dei file di sistema di Windows. |
+|Si è verificato un errore durante l'installazione delle migrazioni.|Il database ha avuto un problema durante gli aggiornamenti dei dati e/o strutture. Verificare l'accesso al database, verificare il corretto funzionamento del database, verificare che non ci sia corruzzione su disco.|
+|Si è verificato un errore durante la registrazione dello StoreServer come servizio di Windows.|È un problema di sistema operativo. Verificare i permessi dell'utente e dell'installer, verificare che non sia già presente un servizio StoreServer installato (se si, eliminarlo manualmente e rilanciare il setup). Verificare l'integrità dei file di sistema di Windows.|
+|Si è verificato un errore durante l'avvio dello StoreServer come servizio di Windows.|Problema di permessi utente e/o configurazione sistema operativo, integrità dei file di sistema.|
+|Non è stato possibile interrompere il servizio StoreServer.|È un problema di sistema operativo. Verificare i permessi dell'utente e dell'installer. Verificare l'integrità dei file di sistema di Windows.|
 |||
 |Sono necessari i diritti di amministratore per eseguire una nuova installazione.|Si è provato ad effettuare l'installazione senza aver aperto il terminale con i diritti di amministratore. Riavviare il terminale come amministratore e riprovare l'installazione.|
-|Impossibile installare/aggiornare l'applicazione. Non ho trovato nessun file di impostazioni esistente appsettings.Production.json nella directory di installazione.|Non viene rivelato o non è stato trovato il file *appsettings.Production.json* con tutte le impostazioni dell'applicativo. Controllare all'interno della cartella dello *StoreServer* se è presente o meno e in caso di mancata presenza contattare il team di sviluppo.|
+|Impossibile installare/aggiornare l'applicazione. Non ho trovato nessun file di impostazioni esistente appsettings.Production.json nella directory di installazione.|Non viene rivelato o non è stato trovato il file *appsettings.Production.json* con tutte le impostazioni dell'applicativo. Controllare all'interno della cartella dello *StoreServer* se è presente o meno e in caso di mancata presenza notificare l'errore al team di sviluppo.|
 |Impossibile installare/aggiornare l'applicazione. La directory di installazione non è vuota. Per aggiornare il programma usare winget upgrade. Per reinstallare il programma o installare usando un database migrato, consulta la documentazione.|È già presente la cartella dello *StoreServer* e quindi è già stata effettuata l'installazione in precedenza. Per aggiornare lo *StoreServer*, consultare la relativa [sezione]() della documentazione.|
 |||
-|Collegamento al database non riuscito. Impossibile procedere con l'installazione o l'upgrade.|Connessione al database fallita. Verificare che il database sia installato e accessibile. Se necessario, specificare una *Connection string* personalizzata.|
+|Collegamento al database non riuscito. Impossibile procedere con l'installazione o l'upgrade.|Connessione al database fallita. Verificare che il database sia installato e accessibile. Se necessario, specificare una *connection string* personalizzata.|
 
 ## Antivirus e firewall
 Dopo l'installazione, è necessario inserire la directory dello *StoreServer* (*C:\Users\\==XXX==\AppData\Local\isid\StoreServer* , dove ==XXX== è il nome dell'account utente in uso) nella lista delle esclusioni sia dell'antivirus che del firewall di sistema prima di provare ad avviarlo e ad associare le casse.
 
-## Accedere allo StoreServer
+## Accesso allo StoreServer
 1. Al termine della procedura di installazione, lo *StoreServer* sarà avviato automaticamente.
-- Il servizio è configurato per partire automaticamente all'avvio del computer.
-- Per poter accedere alla WepApp, è possibile collegarsi via browser all'indirizzo [localhost](http://localhost:6851/ "http://localhost:6851/"){:target="_blank"} .
-- Una volta collegati allo *StoreServer*, apparirà la Dashboard generale.
+2. Il servizio è configurato per partire automaticamente all'avvio del computer.
+3. Per poter accedere alla WebApp, è possibile collegarsi via browser all'indirizzo [localhost](http://localhost:6851/ "http://localhost:6851/"){:target="_blank"}.
+4. Una volta collegati allo *StoreServer*, apparirà la Dashboard generale.
 
 Dopo aver associato le casse all'applicazione, i componenti della Dashboard mostreranno alcune informazioni generali, come l'incasso giornaliero e quello settimanale o lo stato delle casse collegate.
 
@@ -229,7 +243,7 @@ Per qualsiasi problema possa sorgere con lo *StoreServer*, la soluzione primaria
 Vengono riportati di seguito alcune delle problematiche che potrebbero emergere durante il primo avvio dello *StoreServer*.
 
 ##### No connection string found in appsettings.json
-Questo errore si verifica quando non è stata impostata nessuna *Connection string* al database nei file *appsettings.json* e *appsettings.Production.json*. Quindi assicurarsi che il relativo campo sia compilato e procedere nuovamente a lanciare lo *StoreServer*.
+Questo errore si verifica quando non è stata impostata nessuna *connection string* al database nel file *appsettings.Production.json*. Quindi assicurarsi che il relativo campo sia compilato e procedere nuovamente a lanciare lo *StoreServer*.
 
 ##### Errore generico nella Dashboard generale della WebApp
 In caso si verifichino degli errori una volta collegatosi allo *StoreServer* comparirà nella Dashboard generale della WebApp un messaggio a schermo generico di errore che indica l'impossibilità di ricevere i dati, con al di sotto di esso un pulsante per provare a ricaricare la schermata.
@@ -262,7 +276,7 @@ Per individuare eventuali messaggi di errore, si possono provare due approcci di
 Arrivati a questo step, è necessario installare da zero e verificare il comportamento corretto dei [servizi legacy](). I dettagli specifici sono consultabili nella rispettiva sezione.
 
 ## Associazione delle casse allo StoreServer
-!!! note "Solo casse :material-tag:4.3.x associabili"
+!!! note "Solo casse :material-tag:`4.3.x` associabili"
     Lo StoreServer supporta unicamente l'associazione di casse installate con Posware :material-tag:**`4.3.x`**. 
     
     Non è possibile in alcun caso associare una cassa che usa Posware :material-tag:**`4.2.x`**.
@@ -283,8 +297,8 @@ Si aprirà una finestra pop-up in cui inserire l'indirizzo IP della cassa che si
 Se la cassa:
 
 - è attualmente raggiungibile sull'indirizzo IP inserito e,
-- posware è avviato e,
-- posware è in stand-by sulla schermata di login
+- *Posware Frontend* è avviato e,
+- *Posware Frontend* è in stand-by sulla schermata di login
 
 allorà la finestra pop-up si chiuderà; uscirà un messaggio in alto a destra di conferma sull'avvenuta associazione e la cassa comparirà nell'elenco.
 
@@ -295,7 +309,7 @@ Se durante l'associazione della cassa allo *StoreServer* dovesse uscire l'errore
 
 ![Assign the counters - Connection Counter Error][image_ref_46c28dc8]
 
-In ogni caso la soluzione primaria rimane sempre quella di consultare i log dello *StoreServer* per maggiori dettagli ogni qual volta si dovesse incappare in qualche errore durante il suo utilizzo.
+In ogni caso, il primo step da eseguire al sorgere di un qualsiasi errore durante l'utilizzo dello *StoreServer* rimane sempre quello di consultare i suoi log.
 
 ## Ricezione dei log e dei dati delle statistiche dettagliate
 Dopo aver associato le casse, bisogna verificare la trasmissione dei venduti allo *StoreServer*. 
@@ -305,12 +319,12 @@ Verificare che i nuovi dati siano stati memorizzati nella tabella `log` del data
 In presenza di dati ricevuti, è possibile consultare le varie tabelle delle statistiche dettagliate della WebApp. Per consultare le statistiche dettagliate fare riferimento alla seguente [guida](../../posware-modules/main-module/statistiche-dettagliate.md).
 
 !!! info "Note sul progresso di trasmissione verso lo StoreServer"
-    Se i record da trasmettere nella tabella `log` sono numerosi, potrebbe volerci un po' di tempo prima che tutti i dati vengano trasmessi dalle casse allo *StoreServer*. <br> Se si hanno dei dubbi sul fatto che i dati stiano venendo effettivamente trasmessi, controllare nella cassa in cui è stato installato il nuovo Posware `4.3` l'avanzamento del campo `LastRecord` della tabella `config_log`, che mostrerà l'ultimo record inviato da tale cassa allo *StoreServer*.
+    Se i record da trasmettere nella tabella `log` sono numerosi, potrebbe volerci un po' di tempo prima che tutti i dati vengano trasmessi dalle casse allo *StoreServer*. <br> Se si hanno dei dubbi sul fatto che i dati stiano venendo effettivamente trasmessi, controllare nella cassa in cui è stato installato il nuovo Posware :material-tag:`4.3` l'avanzamento del campo `LastRecord` della tabella `config_log`, che mostrerà l'ultimo record inviato da tale cassa allo *StoreServer*.
 
 ## Licenze per gli eventuali moduli aggiuntivi
 In presenza di moduli aggiuntivi acquistati, sarà necessario attivarli attraverso i codici di licenza d'uso. Per ottenerli è necessario comunicare il codice di attivazione a livello di singolo modulo.
 
-Per consultare tutti i codici di attivazione, inserire le licenze ed altro, usare il Widget **Moduli installati** raggiungibile cliccando sull'icona in basso  *Stato servizi* nella side bar della WebApp.
+Per consultare tutti i codici di attivazione, inserire le licenze ed altro, usare il widget **Moduli installati** raggiungibile cliccando sull'icona in basso  *Stato servizi* nella side bar della WebApp.
 
 !!! info "Acquisto nuove licenze"
     Contattare il vostro account di riferimento o l'amministrazione ISiD per ottenere le licenze necessarie.
@@ -321,7 +335,7 @@ I codici di attivazione possono essere copiati facilmente cliccando l'icona rela
  
 ![Setting up licenses - Installed modules list][image_ref_m9hfxn3f]
  
-Se la licenza inserita è valida, allora il relativo modulo verrà attivato e le relative funzionalità saranno raggiungibili tramite la side bar sinistra della WebApp. Inoltre, compariranno nella lista dei moduli installati la data di scadenza della licenza del modulo e il codice licenza inserito nei rispettivi campi.
+Se la licenza inserita è valida, allora il relativo modulo verrà attivato e le relative funzionalità saranno raggiungibili tramite la side bar sinistra della WebApp. Inoltre, compariranno nella lista dei moduli installati la data di scadenza della licenza del modulo e il codice licenza inserito, nei rispettivi campi.
 
 ![Setting up licenses - Additional modules activated][image_ref_bke2bk4a]
 
@@ -342,9 +356,9 @@ Se invece la licenza inserita fosse errata, allora nella lista dei moduli instal
     Lo *StoreServer* usa esclusivamente il database **POSWARE**.
 
 
-    Tutte le strutture presenti nel vecchio database **cassamaster** sono state integrate nel database **posware**. Il vecchio database **cassamaster** non viene più usato da nessuna procedura interna Isid.
+    Tutte le strutture presenti nel vecchio database **`cassamaster`** sono state integrate nel database **`posware`**. Il vecchio database **`cassamaster`** non viene più usato da nessuna procedura interna ISiD.
 
-Per popolare le tabelle del database installato dello StoreServer (anagrafica articoli ed altre) è necessario inviare l'intera anagrafica. Per eseguire questa operazione fare riferimento alla documentazione del **software di backoffice** in uso dal punto vendita.
+Per popolare le tabelle del database installato dello *StoreServer* (anagrafica, articoli ed altre) è necessario inviare l'intera anagrafica. Per eseguire questa operazione fare riferimento alla documentazione del **software di backoffice** in uso dal punto vendita.
 
 Nell'eseguire le operazioni necessarie con il software di backoffice, assicurarsi che siano rispettate le seguenti raccomandazioni:
 
@@ -352,7 +366,7 @@ Nell'eseguire le operazioni necessarie con il software di backoffice, assicurars
 - Se non si ritiene necessario, evitare di inviare variazioni massive alle casse, alle bilance e ad eventuali etichette elettroniche installate. La procedura di invio massivo delle variazioni, infatti, ha il solo scopo di **popolare il database del server centrale**.
 
 !!! danger "Non copiare dati e/o strutture da CASSAMASTER!"
-    Al fine di popolare il database dello *StoreServer*, **NON copiare dati e/o strutture delle tabelle del database cassamaster** o dai database delle **casse**, in quanto differenti e non compatibili tra loro!
+    Al fine di popolare il database dello *StoreServer*, **NON copiare dati e/o strutture delle tabelle del database `cassamaster`** o dai database delle **casse**, in quanto differenti e non compatibili tra loro!
     
     **Operazioni di questo tipo NON sono assolutamente supportate e comportano l'immediata CORRUZIONE IRRIMEDIABILE del database del server centrale!**
 
