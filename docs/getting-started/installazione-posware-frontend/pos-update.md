@@ -18,50 +18,57 @@ Vengono illustrati gli scenari d'uso supportati ed una serie di dettagli sulle d
 Prima di procedere con l'utilizzo di *PosUpdate* assicurarsi di avere una versione :material-tag:`4.3.x` perfettamente funzionante di *Posware Frontend*.
 
 ## Scenari d'uso
-Il pacchetto *PosUpdate* deve essere **usato solo ed esclusivamente per aggiornare** *Posware Frontend* ed eventuali altre sue dipendenze (servizio manutenzioni, adattatori SCO, ecc...) alla loro ultima **Build** version, in linea con la **Major** e **Minor** version installata.
+Il pacchetto *PosUpdate* deve essere **usato solo ed esclusivamente per aggiornare** *Posware Frontend* (ed eventuali altre sue dipendenze come servizio manutenzioni, adattatori SCO, ecc...) alla loro **ultima versione disponibile**, in linea con la **Major** e **Minor** version installata.<br>A seguire alcuni esempi:
 
-!!! tip "Nuova installazione e migrazione"
-    *PosUpdate* **non supporta** scenari di **nuova installazione e migrazione** da versioni **Major** e **Minor** di *Posware Frontend*. Questi scenari sono coperti da [***SetupPosware***](./setup-posware.md).
-    
 !!! example "Esempi di scenari d'aggiornamento supportati e non supportati"
     A scanso di equivoci vengono riportati di seguito tre esempi di aggiornamenti supportati e non supportati da *PosUpdate*:
         
     - **Aggiornamento da *Posware Frontend* :material-tag:`4.2` a :material-tag:`4.3`: NON SUPPORTATO.** Per il cambio di **Minor** version usare *SetupPosware*.
     - **Aggiornamento da *Posware Frontend* :material-tag:`4.3` a :material-tag:`4.4` oppure alla versione :material-tag:`5.0`: NON SUPPORTATO.** Per il cambio di **Major** version usare *SetupPosware*.
     - **Aggiornamento da *Posware Frontend* :material-tag:`4.3.171` a :material-tag:`4.3.304`: SUPPORTATO.** È lo scenario di riferimento che viene coperto da *PosUpdate*.
+
+!!! tip "Nuova installazione e migrazione"
+    *PosUpdate* **non è pensato per supportare** scenari di **nuova installazione né migrazione** da versioni precedenti di *Posware Frontend*.<br>Questi scenari sono supportati da [***SetupPosware***](./setup-posware.md).
     
 Le stesse regole **valgono per altri software della suite Posware che possono rappresentare una dipendenza per *Posware Frontend*** (servizio manutenzioni, adattatori SCO, ecc...).
 
 ## Modalità di installazione
-*PosUpdate* supporta unicamente queste due modalità di installazione per gli aggiornamenti:
+*PosUpdate* supporta unicamente le seguenti modalità di installazione:
 
 - **Manuale:** può essere lanciato dall'utente con doppio click o da shell di Windows
 - **AutoUpdate:** viene lanciato automaticamente da *Posware.exe*
 
 ### Modalità di installazione manuale
-Nell'aggiornamento manuale, **qualunque versione di *PosUpdate* venga lanciata, anche una versione precedente a quella installata,** verrà eseguita ed i file sovrascritti. Le migrazioni del database non verranno invece né ripetute né rollbackate.
+Nell'aggiornamento manuale, l'utente può lanciare l'aggiornamento facendo ordinario doppio click sull'applicativo.<br>Così facendo nessun parametro particolare viene passato al *PosUpdate* e verrà mostrato il wizard da cui l'utente potrà procedere con l'installazione degli aggiornamenti.
 
-L'utente può lanciare l'aggiornamento facendo ordinario doppio click sull'applicativo. Così facendo nessun parametro particolare viene passato al *PosUpdate* e verrà mostrato il wizard da cui l'utente potrà procedere con l'installazione degli aggiornamenti.
+!!! danger "Verifica attentamente l'aggiornamento che avvii"
+    Nella modalità di installazione manuale, qualunque versione di *PosUpdate* venga lanciata, **anche una versione precedente a quella installata, verrà eseguita ed i file sovrascritti.**
+    
+    Le migrazioni del database non verranno invece **né ripetute né rollbackate**.
+
+
 
 ![SetupPosware's Main interface][image_ref_pif4yegg]
 
 È inoltre possibile avviare l'applicativo tramite shell fornendo alcuni dei parametri standard previsti da **Inno Setup**:
 
 - `/SILENT`, `/VERYSILENT`
-- `/LOG`
 - `/LOG="filename"`
 - `/NOCANCEL`
 
 Per la lista completa dei parametri standard previsti da **Inno Setup**, così come per sapere cosa fanno quelli soprastanti, consultare la guida ufficiale di **Inno Setup**.
 
 ### Modalità di installazione automatica
-Se l'eseguibile di *PosUpdate* viene inserito nella cartella aggiornamenti definita nella tabella `config_cassa` (campo **PercorsoAgg**) del database `cassa` e la sua versione viene rilevata superiore a quella in uso, *Posware Frontend* lo lancerà automaticamente al suo avvio.
+Se l'eseguibile di *PosUpdate* viene inserito nella cartella aggiornamenti definita nella tabella `config_cassa` (campo **PercorsoAgg**) del database `cassa` **e la sua versione viene rilevata superiore a quella in uso**, *Posware Frontend* lo lancerà automaticamente al suo avvio.
 
 !!! info "Rilevamento automatico degli aggiornamenti"
     Il rilevamento avviene nella primissima fase di avvio di *Posware Frontend*, **subito dopo il rilevamento delle periferiche**. 
     Se *Posware Frontend* **è già in uso o è nella schermata di login**, è necessario **riavviare il programma** per fare in modo che l'aggiornamento venga rilevato e avviato.
     
     Questo comportamento è in linea con quanto accadeva già con il *PosUpdate* in formato **.msi**.
+
+!!! note "Percorso di default degli aggiornamenti"
+    Per impostazione di default, la cartella degli aggiornamenti è impostata al valore "*C:\PosAgg*".<br>È possibile cambiare questo valore nella tabella `config_cassa` (campo **PercorsoAgg**) del database `cassa`.
     
 !!! warning "Riconoscimento della versione dell'aggiornamento"
     **La versione dell'aggiornamento viene riconosciuta in base al nome del file.**
@@ -79,12 +86,16 @@ Così facendo Posware riconoscerà e lancerà **sia i nuovi aggiornamenti che se
 
 !!! example "Esempio di pacchetto di aggiornamento personalizzato"
     Inserendo la stringa **CLIENTE** nella tabella `tabparametriextra`, il nome dell'eseguibile di *PosUpdate* dovrà seguire il formato ***PosUpdateCLIENTE_VERSIONE.exe*** oppure il formato standard ***PosUpdate_VERSIONE.exe***.
-    
-È anche possibile limitare l'esecuzione degli aggiornamenti automatici **solo ed esclusivamente** a quelli con il tag riportato. Per farlo è necessario impostare a ***True*** il valore di **isApplicationUpdateTagRestricted** del modulo `posware.instance` nella tabella `tabparametriextra` del database.
 
-In questa modalità non verranno più ricercati gli aggiornamenti del formato standard, ma solo quelli personalizzati con il tag inserito in `tabparametriextra`. 
+##### Limitare l'esecuzione degli aggiornamenti automatici ai plug-in
+È anche possibile **circoscrivere** l'esecuzione degli aggiornamenti automatici **solo ed esclusivamente** a quelli con il tag riportato.<br>Per farlo è necessario impostare a ***True*** il valore di **isApplicationUpdateTagRestricted** del modulo `posware.instance` nella tabella `tabparametriextra` del database.
 
-Sfruttando questo meccanismo, Posware lancerà *PosUpdate* solo per una ipotetica versione con un plug-in integrato ed eviterà di sovrascrivere l'installazione corrente con i file di un aggiornamento generico.
+In questa modalità non verranno più ricercati gli aggiornamenti nel formato standard, ma solo quelli personalizzati con il tag specificato in `tabparametriextra`. 
+
+Sfruttando questo meccanismo, Posware lancerà *PosUpdate* solo per una ipotetica versione con un plug-in integrato (o altre verticalizzazioni realizzate ad hoc) ed eviterà di sovrascrivere l'installazione corrente con i file di un aggiornamento generico.
+
+!!! tip "Disponibilità di pacchetti *PosUpdate* verticalizzati"
+    Pacchetti *PosUpdate* verticalizzati vengono resi disponibili con progetti su misura a richiesta.<br>Per un'analisi e quotazione del progetto, contattare il Vs commerciale di riferimento.
 
 !!! danger "Installazione manuale e versioni con plug-in"
     **L'uso del tag NON impedisce ad una installazione eseguita manualmente da Windows o da shell di sovrascrivere i file dell'installazione in uso.** 
@@ -94,9 +105,14 @@ Sfruttando questo meccanismo, Posware lancerà *PosUpdate* solo per una ipotetic
 ## Troubleshooting per i tecnici
 Il primo step da eseguire al sorgere di un problema con *PosUpdate* è consultare i log.
 
-Per esaminarli più agevolmente è possibile avviare l'applicativo tramite terminale passandogli uno dei due parametri standard di **Inno Setup** tra `/LOG` e `/LOG="filename"`.
+Per esaminarli più agevolmente è possibile avviare l'applicativo tramite terminale passandogli il parametro standard di **Inno Setup** `/LOG="filename"`.
 
-La lista esaustiva dei possibili errori che possono verificarsi durante l'applicazione degli aggiornamenti di *Posware Frontend* tramite *PosUpdate* è la stessa di [*SetupPosware*](./setup-posware.md#troubleshooting-per-i-tecnici).<br>Oltre a quelli ce n'è uno esclusivo di *PosUpdate*, riportato di seguito:
+!!! info "Percorso dei file di log di InnoSetup"
+    Se *PosUpdate* non viene avviato con `/LOG="filename"`, come da [documentazione **Inno Setup**](https://jrsoftware.org/ishelp/index.php?topic=isxfunc_makependingfilerenameoperationschecksum){:target="_blank"}, il file di log viene generato con nome dinamico nella cartella "*%TEMP%*". **Per questo motivo individuarlo potrebbe risultare complicato.**
+
+    Passandogli il parametro `/LOG="filename"`, dove `filename` è il nome che si vuole assegnare al file, risulta molto più immediato consultare il file di log.<br>Il nome del file è relativo al percorso dove è presente il file *.exe* del *PosUpdate*. È anche possibile specificare il percorso assoluto del file.
+
+La lista esaustiva dei possibili errori che possono verificarsi durante l'applicazione degli aggiornamenti di *Posware Frontend* tramite *PosUpdate* è la medesima di [*SetupPosware*](./setup-posware.md#troubleshooting-per-i-tecnici).<br>In aggiunta è possibile riscontrare anche l'errore riportato di seguito:
 
 |Messaggio|Probabile causa/Strategia di risoluzione|
 |---------|----------------------------------------|

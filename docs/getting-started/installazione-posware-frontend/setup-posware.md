@@ -36,7 +36,6 @@ In entrambi gli scenari l'utente può lanciare il setup facendo ordinario doppio
 È inoltre possibile avviare l'applicativo tramite shell fornendo alcuni dei parametri standard previsti da **Inno Setup**:
 
 - `/SILENT`, `/VERYSILENT`
-- `/LOG`
 - `/LOG="filename"`
 - `/NOCANCEL`
 
@@ -58,7 +57,7 @@ Prima di poter avviare *SetupPosware* e procedere con la nuova installazione da 
 
 1. Verificare [i prerequisiti ed il sistema operativo](./overview-generale.md#software).
 2. Assicurarsi di aver installato .NET Framework :material-tag:`4.8`, altrimenti *SetupPosware* darà errore.
-3. Accertarsi di aver installato MySQL :material-tag:`5.6` e che sia **accessibile con le nuove credenziali complesse**, altrimenti il setup darà un errore specifico e non farà continuare l'installazione.
+3. Accertarsi di aver installato MySQL :material-tag:`5.6`, altrimenti il setup darà un errore specifico e non farà continuare l'installazione.
 
 !!! danger "MySQL :material-tag:`4.1` non è più utilizzabile su nuove installazioni"
     Si ricorda che nelle nuove installazioni di *Posware Frontend* **NON** è più possibile utilizzare MySQL :material-tag:`4.1`.
@@ -87,7 +86,7 @@ In questo scenario, verrà installato un **nuovo database standard** pronto all'
 **Il database dovrà essere dumpato e ripristinato su MySQL :material-tag:`5.6` per usarlo come base di installazione per Posware :material-tag:`4.3`.** 
 <br>È possibile usare **Navicat** per questa operazione, ma vista la possibilità di errori di migrazione, è preferibile usare il tool ufficiale **mysqldump**.
 
-L'operazione di dump e ripristino deve essere effettuata **PRIMA** di lanciare il setup. Il nome del database deve essere sempre `cassa` e le credenziali di MySQL :material-tag:`5.6` devono essere le **[nuove credenziali complesse](./overview-generale.md#breaking-changes)**.
+L'operazione di dump e ripristino deve essere effettuata **PRIMA** di lanciare il setup. Il nome del database deve essere sempre `cassa`.
 
 Il setup verificherà se il database è **compatibile**.
 <br>In caso positivo procederà con il suo aggiornamento e poi con l'installazione.
@@ -136,7 +135,12 @@ Nello scenario di migrazione, *SetupPosware* **non bloccherà l'installazione se
 ### Troubleshooting per i tecnici
 Il primo step da eseguire al sorgere di un problema con *SetupPosware* è consultare i log.
 
-Per esaminarli più agevolmente è possibile avviare l'applicativo tramite terminale passandogli uno dei due parametri standard di **Inno Setup** tra `/LOG` e `/LOG="filename"`.
+Per esaminarli più agevolmente è possibile avviare l'applicativo tramite terminale passandogli il parametro standard di **Inno Setup** `/LOG="filename"`.
+
+!!! info "Percorso dei file di log di InnoSetup"
+    Se *SetupPosware* non viene avviato con `/LOG="filename"`, come da [documentazione **Inno Setup**](https://jrsoftware.org/ishelp/index.php?topic=isxfunc_makependingfilerenameoperationschecksum){:target="_blank"}, il file di log viene generato con nome dinamico nella cartella "*%TEMP%*". **Per questo motivo individuarlo potrebbe risultare complicato.**
+
+    Passandogli il parametro `/LOG="filename"`, dove `filename` è il nome che si vuole assegnare al file, risulta molto più immediato consultare il file di log.<br>Il nome del file è relativo al percorso dove è presente il file *.exe* del *SetupPosware*. È anche possibile specificare il percorso assoluto del file.
 
 
 Di seguito una lista esaustiva dei possibili errori che possono verificarsi durante l'installazione o la migrazione di *Posware Frontend* tramite *SetupPosware*:

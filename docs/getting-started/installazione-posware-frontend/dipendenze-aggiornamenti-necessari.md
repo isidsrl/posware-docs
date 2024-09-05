@@ -18,13 +18,7 @@ tags:
 ## Cenni preliminari
 Il presente documento illustra nel dettaglio le note sulle dipendenze di terze parti e gli aggiornamenti necessari, che sono parte dei requisiti minimi software per l'installazione o la migrazione al nuovo *Posware Frontend* :material-tag:`4.3`.
 
-## Gestione delle dipendenze di terze parti
-È possibile gestire l'installazione delle dipendenze di terze parti in due modalità:
-
-- Installazione manuale da parte dell'utente prima di avviare il setup
-- Installazione automatica da parte di *SetupPosware* (con dipendenza inclusa già nel setup o prelevata via CDN)
-
-### Dipendenze con installazione manuale
+## Prerequisiti software necessari
 Le seguenti dipendenze e aggiornamenti devono essere installati manualmente prima di lanciare *SetupPosware*:
 
 - Aggiornamenti di Windows 7 in caso di una versione inferiore a quella dei [requisiti minimi](overview-generale.html#software). 
@@ -34,7 +28,7 @@ Le seguenti dipendenze e aggiornamenti devono essere installati manualmente prim
 
 **Gli aggiornamenti di Windows possono essere effettuati dall'ordinaria procedura di Windows Update.**
 
-#### Installazione degli aggiornamenti in Windows 7 SP1 mai aggiornati o appena installati
+### Installazione degli aggiornamenti in Windows 7 SP1 mai aggiornati o appena installati
 In sistemi Windows 7 **SP1** appena installati e mai aggiornati, sarà necessario installare .NET Framework :material-tag:`4.8` come da specifiche.
 
 Tuttavia, quest'ultimo si porta come dipendenze due aggiornamenti minimi da fare:
@@ -57,8 +51,14 @@ Trattandosi di sistemi molto obsoleti e, dato il peso del pacchetto di aggiornam
     È facile verificare se gli aggiornamenti **Servicing Stack 2018** sono stati installati correttamente. <br>
     Infatti Windows Update dopo la loro installazione riprenderà a funzionare e procederà con l'installazione di tutti gli altri aggiornamenti.
 
-### Dipendenze con installazione automatica da parte del SetupPosware prelevate via CDN
-Le seguenti dipendenze vengono installate automaticamente da parte del *SetupPosware* prelevandole via CDN, quindi è necessaria una connessione ad Internet stabile per installarle:
+
+## Dipendenze con installazione automatica da parte del SetupPosware prelevate via CDN
+È possibile gestire l'installazione delle dipendenze di terze parti in due modalità:
+
+- Installazione manuale da parte dell'utente prima di avviare il setup
+- Installazione automatica da parte di *SetupPosware* (con dipendenza inclusa già nel setup o prelevata via CDN)
+
+**Qualora le dipendenze vengano fatte installare automaticamente da *SetupPosware*, verranno prelevate via CDN.  Una connessione ad Internet stabile sarà quindi necessaria.**
 
 - WebView2 Edge Runtime :material-tag:`109.0.1518.140`
 - Aggiornamento di Windows 7 **SP1** necessario per installare .NET :material-tag:`6` Hosting Bundle:
@@ -72,7 +72,7 @@ Le seguenti dipendenze vengono installate automaticamente da parte del *SetupPos
     
     Tutti i pacchetti già installati verranno rilevati e, se la versione è corretta, non verranno né riscaricati né reinstallati.
     
-    Nel caso in cui un pacchetto fosse installato, ma la versione fosse più vecchia, verrà scaricata ed installata la versione aggiornata.
+    Nel caso in cui un pacchetto fosse installato, ma la versione risultasse obsoleta, verrà scaricata ed installata la versione aggiornata.
     
 !!! danger "Tutti i pacchetti sono obbligatori"
     Non è possibile procedere all'installazione del setup senza che le dipendenze siano rilevate ed installate.

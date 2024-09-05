@@ -6,7 +6,7 @@ tags:
 
 # Front Office - Aggiornamento [DRAFT DA COMPLETARE]
 
-**Prima revisione documento: 2 settembre 2024** <br>
+**Prima revisione documento: 3 settembre 2024** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**
 ---
 ## Cenni preliminari

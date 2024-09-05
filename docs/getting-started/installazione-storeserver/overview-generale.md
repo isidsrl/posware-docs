@@ -35,6 +35,9 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
 ### Software
 !!! failure "Sistemi a 32 bit non supportati"
     Non sono supportate versioni a 32bit di Windows 10.
+
+!!! warning "Obbligo di tutte le dipendenze in Posware :material-tag:`4.3`"
+    Le dipendenze soprastanti sono da considerarsi **TUTTE** obbligatorie per poter utilizzare Posware :material-tag:`4.3`.
     
 - Posware Frontend :material-tag:`4.3.96` o superiore
 - Windows 10 **x64** (**64bit**) :material-tag:**`1809`** (**Redstone 5**) o superiore, oppure
@@ -69,18 +72,20 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
     - Pos_CtrCas :material-tag:`1.1.0`
     - Pos_Library
 
-!!! abstract "Obbligo di tutte le dipendenze in Posware :material-tag:`4.3`"
-    Le dipendenze soprastanti sono da considerarsi **TUTTE** obbligatorie per poter utilizzare Posware :material-tag:`4.3`.
-
 ## Breaking changes - DRAFT DA COMPLETARE
 Vengono elencati in questa sezione i diversi **breaking changes** introdotti a partire dalla versione :material-tag:`4.3` di Posware.
 
 Lo *StoreServer* è un nuovo applicativo introdotto per la prima volta con Posware :material-tag:`4.3`, quindi non ha esso stesso dei **breaking changes**. Questi saranno, quindi, tutti relativi alle **operazioni che ora non sono più possibili** con il passaggio alla versione :material-tag:`4.3` di Posware e l'introduzione dello *StoreServer*.
 
-!!! warning "Le credenziali standard dei database sono cambiate"
+!!! warning "Le credenziali standard del database centralizzato sono cambiate"
     Ai fini di compatibilità con le nuove restrizioni dei criteri password complesse delle recenti versioni di MySQL e SQL Server, la nuova password di default è stata variata in **Vbhg4132!**
 
-    **Si consiglia di cambiare la password in tutti i sistemi di produzione.**  
+    **Si consiglia di cambiare la password in tutti i sistemi di produzione.** 
+
+!!! danger "Obsolescenza di versioni di Navicat precedenti alla :material-tag:`12.0.28`"
+    **A partire da MySQL :material-tag:`8.4`, in uso dallo *StoreServer*, NON sono assolutamente più supportate versioni di Navicat precedenti alla :material-tag:`12.0.28`.**
+
+    **Usare versioni obsolete di Navicat comporta la CORRUZIONE IRRIMEDIABILE del database del server centrale!**
 
 !!! warning "Obbligo di utilizzo di mysqldump per importare/esportare i dump dei database in MySQL"
     Da Posware :material-tag:`4.3` in avanti **è obbligatorio** usare il tool **mysqldump** di MySQL per eseguire l'esportazione e l'importazione dei dump dei database in MySQL. 

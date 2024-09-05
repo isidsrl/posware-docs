@@ -93,23 +93,11 @@ Le impostazioni standard sono le seguenti:
 
     **Si consiglia di cambiare la password in tutti i sistemi di produzione.**  
 
-#### Logica di rilevamento automatico del database provider 
-1. Viene rilevata la versione installata di MySQL e SQL Server. Si ricorda che le versioni richieste sono MySQL :material-tag:`8.4` per MySQL e SQL Server `2016`, `2017`, `2019` o `2022` per SQL Server.
-2. Se viene rilevata una versione richiesta per uno o entrambi i database provider, **Winget** prova ad accedere al database con le *Connection strings* di default:
+L'installazione rileverà automaticamente il database da utilizzare tra MySQL e SQL Server, utilizzando le impostazioni standard cui sopra.
 
-    - **Connection string in caso il database provider sia MySQL:** server=localhost;user id=root;password=Vbhg4132!;database=posware;
-    - **Connection string in caso il database provider sia SQL Server:** Data Source=.\sqlexpress;Initial Catalog=posware;User ID=sa;Password=Vbhg4132!;Encrypt=false;Trust Server Certificate=true;
+Per approfondimenti sulla logica di rilevamento automatico consulta il [paragrafo dedicato](#logica-di-rilevamento-automatico-del-database-provider).
 
-3. Se con le *Connection strings* di default non si riesce ad accedere, viene verificato se è presente una *connection string* custom fornita nel comando da terminale e si prova ad accedere con quella. **Se Winget non riesce ad accedere neanche con la Connection string custom, allora il setup darà un errore e non procederà con l'installazione.**
-4. Una volta eseguito l'accesso con una qualsiasi *connection string*, **Winget verifica che il database a cui si collega NON sia già esistente**, altrimenti il setup darà un errore e non procederà con l'installazione.
-5. **Se Winget riesce ad accedere e il database non esiste già**, allora l'installazione potrà procedere con gli step successivi.
-
-!!! warning "Utilizzo di una connection string custom in presenza sia di MySQL che di SQL Server"
-    Se sono installati sulla macchina sia MySQL :material-tag:`8.4` che SQL Server (`2016`, `2017`, `2019` oppure `2022`) ed entrambi i database utilizzano le relative *Connection strings* di default, **Winget imposterà come database provider dello *StoreServer* MySQL :material-tag:`8.4`**.
-    
-    **Winget**, infatti, controlla prima la *Connection string* di default di MySQL e poi quella di SQL Server e **rilevando per prima quella di MySQL** lo imposta come database provider dello *StoreServer*.
-
-    **Si raccomanda vivamente di specificare una *connection string* custom in questa situazione per non rischiare di incappare in comportamenti non desiderati.**
+**Se sulla stessa macchina sono già installati sia MySQL che SQL Server, viene consigliato di specificare la *Connection string* e consultare il paragrafo di [logica di rilevamento automatico](#logica-di-rilevamento-automatico-del-database-provider).**
 
 #### Uso dei parametri di installazione personalizzati
 
@@ -121,7 +109,7 @@ Le impostazioni standard sono le seguenti:
 ##### Usare una connection string specifica
 È necessario specificare una *connection string* se:
 
-- Sulla stessa macchina vi sono installati sia MySQL che SQL Server
+- Sulla stessa macchina vi sono installati sia MySQL che SQL Server e si vuole destinare il database specificatamente all'uno o all'altro
 - Il nome del database che vuoi usare per lo *StoreServer* **non** è `posware`
 - Le credenziali da usare per l'accesso al database sono diverse da quelle prefedefinite
 - Altri casi non direttamenti supportati che tuttavia necessitano di parametri ulteriori nella stringa di connessione al database
@@ -220,6 +208,24 @@ Di seguito una lista esaustiva dei possibili errori che possono verificarsi dura
 |||
 |Collegamento al database non riuscito. Impossibile procedere con l'installazione o l'upgrade.|Connessione al database fallita. Verificare che il database sia installato e accessibile. Se necessario, specificare una *connection string* personalizzata.|
 
+### Logica di rilevamento automatico del database provider 
+1. Viene rilevata la versione installata di MySQL e SQL Server. Si ricorda che le versioni richieste sono MySQL :material-tag:`8.4` per MySQL e SQL Server `2016`, `2017`, `2019` o `2022` per SQL Server.
+2. Se viene rilevata una versione richiesta per uno o entrambi i database provider, **Winget** prova ad accedere al database con le *Connection strings* di default:
+
+    - **Connection string in caso il database provider sia MySQL:** server=localhost;user id=root;password=Vbhg4132!;database=posware;
+    - **Connection string in caso il database provider sia SQL Server:** Data Source=.\sqlexpress;Initial Catalog=posware;User ID=sa;Password=Vbhg4132!;Encrypt=false;Trust Server Certificate=true;
+
+3. Se con le *Connection strings* di default non si riesce ad accedere, viene verificato se è presente una *connection string* custom fornita nel comando da terminale e si prova ad accedere con quella. **Se Winget non riesce ad accedere neanche con la Connection string custom, allora il setup darà un errore e non procederà con l'installazione.**
+4. Una volta eseguito l'accesso con una qualsiasi *connection string*, **Winget verifica che il database a cui si collega NON sia già esistente**, altrimenti il setup darà un errore e non procederà con l'installazione.
+5. **Se Winget riesce ad accedere e il database non esiste già**, allora l'installazione potrà procedere con gli step successivi.
+
+!!! warning "Utilizzo di una connection string custom in presenza contemporanea sia di MySQL che di SQL Server"
+    Se sono installati sulla macchina sia MySQL :material-tag:`8.4` che SQL Server (`2016`, `2017`, `2019` oppure `2022`) ed entrambi i database utilizzano le relative *Connection strings* di default, **Winget imposterà come database provider dello *StoreServer* MySQL :material-tag:`8.4`**.
+    
+    **Winget**, infatti, controlla prima la *Connection string* di default di MySQL e poi quella di SQL Server e **rilevando per prima quella di MySQL** lo imposta come database provider dello *StoreServer*.
+
+    **Si raccomanda vivamente di specificare una *connection string* custom in questa situazione per non rischiare di incappare in comportamenti non desiderati.**
+
 ## Antivirus e firewall
 Dopo l'installazione, è necessario inserire la directory dello *StoreServer* (*C:\Users\\==XXX==\AppData\Local\isid\StoreServer* , dove ==XXX== è il nome dell'account utente in uso) nella lista delle esclusioni sia dell'antivirus che del firewall di sistema prima di provare ad avviarlo e ad associare le casse.
 
@@ -273,7 +279,7 @@ Per individuare eventuali messaggi di errore, si possono provare due approcci di
 * Controllare il log dello *StoreServer* alla ricerca di una riga in cui sia presente la dicitura ERROR
 
 ## Installazione e verifica del comportamento corretto dei servizi legacy
-Arrivati a questo step, è necessario installare da zero e verificare il comportamento corretto dei [servizi legacy](). I dettagli specifici sono consultabili nella rispettiva sezione.
+Arrivati a questo step, è necessario installare da zero e verificare il comportamento corretto dei [servizi legacy](./servizi-legacy.md). I dettagli specifici sono consultabili nella rispettiva sezione.
 
 ## Associazione delle casse allo StoreServer
 !!! note "Solo casse :material-tag:`4.3.x` associabili"

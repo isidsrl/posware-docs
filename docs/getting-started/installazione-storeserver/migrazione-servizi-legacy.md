@@ -4,7 +4,7 @@ tags:
     - StoreServer
 ---
 
-# Migrazione da servizi legacy
+# Migrazione da servizi legacy [DRAFT DA COMPLETARE]
 <!--StoreServer - Installazione - Scenario di migrazione [formula in itinere]-->
 
 **Prima revisione documento: 24 aprile 2024** <br>
@@ -216,7 +216,7 @@ Per individuare eventuali messaggi di errore, si possono provare due approcci di
 * Controllare il log dello *StoreServer* alla ricerca di una riga in cui sia presente la dicitura ERROR
 
 ### Aggiornamento e verifica del comportamento corretto dei servizi legacy
-Arrivati a questo step, è necessario aggiornare e verificare il comportamento corretto dei [servizi legacy](). I dettagli specifici sono consultabili nella rispettiva sezione.
+Arrivati a questo step, è necessario aggiornare e verificare il comportamento corretto dei [servizi legacy](./servizi-legacy.md). I dettagli specifici sono consultabili nella rispettiva sezione.
 
 ### Associazione delle casse con Posware 4.3 allo StoreServer
 Per associare le casse allo *StoreServer*, innanzitutto bisogna andare nella sezione apposita della WebApp e per fare ciò cliccare sulla voce *Dashboard*, sotto alla voce *Casse* della sezione *Dispositivi* della side bar sinistra dell'applicazione.

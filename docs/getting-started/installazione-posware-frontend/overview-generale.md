@@ -23,20 +23,34 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
 - Connessione ad Internet per l'installazione delle dipendenze
 
 ### Software
+!!! warning "Obbligo di tutte le dipendenze in Posware :material-tag:`4.3`"
+    Le dipendenze soprastanti sono da considerarsi **TUTTE** obbligatorie per poter utilizzare Posware :material-tag:`4.3`.
+
 - Windows 7 **SP1** con update **Servicing Stack 2018** o superiore, oppure
 - Windows 10 :material-tag:`1809` **Redstone 5 Build 17763** o superiore, oppure
 - Windows 11
 - .NET Framework :material-tag:`4.8`
-- WebView2 Edge Runtime :material-tag:`109.0.1518.140`
-- .NET :material-tag:`6` Hosting Bundle
-- Monroes OPOS Common Control Objects :material-tag:`1.14.001`
 - MySQL :material-tag:`4.1` o :material-tag:`5.6` in caso di migrazione da *Posware Frontend* :material-tag:`4.2`, oppure
 - MySQL :material-tag:`5.6` in caso di nuova installazione da zero
-
-!!! abstract "Obbligo di tutte le dipendenze in Posware :material-tag:`4.3`"
-    Le dipendenze soprastanti sono da considerarsi **TUTTE** obbligatorie per poter utilizzare Posware :material-tag:`4.3`.
+- Dipendenze autoinstallanti tramite *SetupPosware*:
+    - WebView2 Edge Runtime :material-tag:`109.0.1518.140`
+    - .NET :material-tag:`6` Hosting Bundle
+    - Monroes OPOS Common Control Objects :material-tag:`1.14.001`
 
 Si prega di consultare attentamente le note varie sulle dipendenze di terze parti e gli aggiornamenti necessari nella relativa [sezione](./dipendenze-aggiornamenti-necessari.md) prima di procedere con l'installazione o l'aggiornamento di *Posware Frontend*. 
+
+## Informazioni, credenziali e prassi comuni
+#### Impostazioni comunemente usate per il database
+- **Utente:** root
+- **Password:** vbhg4132
+- **Nome del database:** `cassa`
+
+#### Impostazioni comunemente usate per Posware
+- **Directory di default di Posware su sistemi 64bit:** *%PROGRAMFILES(x86)%\Posware*
+- **Directory di default di Posware su sistemi 32bit:** *%PROGRAMFILES%\Posware*
+- **Directory di default per gli aggiornamenti automatici di *PosUpdate*:** *C:\PosAgg*
+
+[TO DO] Vedere se inserire qualcosa relativo al Pos_SBV
 
 ## Breaking changes
 Vengono elencati di seguito i diversi **breaking changes** introdotti in *Posware Frontend* a partire dalla versione :material-tag:`4.3` dell'applicativo:
@@ -45,11 +59,8 @@ Vengono elencati di seguito i diversi **breaking changes** introdotti in *Poswar
 - Per il motivo appena elencato, l'impostazione **Barcode No Food** nella tabella `config_cassa` viene meno (come se fosse sempre impostata ad **1**).
 - A partire dalla versione :material-tag:`4.3`, i file di configurazione di Posware, delle *Connection strings* e delle impostazioni utente sono stati riportati allo standard .NET rimuovendo l'approccio custom. Per maggiori informazioni consultare la relativa [sezione](./setup-posware.md#aggiornamento-dei-file-di-configurazione) del *SetupPosware*.
 
-!!! warning "Credenziali di default variate nelle nuove installazioni"
+!!! warning "Nuova versione di MySQL richiesta nelle nuove installazioni"
     A partire dalla versione :material-tag:`4.3`, le nuove installazioni che **non migrano** dalla :material-tag:`4.2`, dovranno usare **MySQL** :material-tag:**`5.6`**. 
-    <br>Le credenziali di default vengono cambiate per essere compatibili con i nuovi criteri di complessità.<br>La nuova password di default è **Vbhg4132!**.
-    
-    **Nei sistemi esistenti e quelli che vengono migrati dalla :material-tag:`4.2`, non sono previsti cambiamenti ne alle credenziali ne alla versione di MySQL già installata.**
 
 
 ## Feature rimosse in Posware :material-tag:`4.3`
