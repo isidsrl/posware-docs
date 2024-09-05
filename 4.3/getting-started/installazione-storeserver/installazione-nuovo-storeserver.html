@@ -633,15 +633,6 @@ Non stai visualizzando l'ultima versione della documentazione.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#logica-di-rilevamento-automatico-del-database-provider" class="md-nav__link">
-    <span class="md-ellipsis">
-      Logica di rilevamento automatico del database provider
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#uso-dei-parametri-di-installazione-personalizzati" class="md-nav__link">
     <span class="md-ellipsis">
       Uso dei parametri di installazione personalizzati
@@ -668,6 +659,15 @@ Non stai visualizzando l'ultima versione della documentazione.
   <a href="#troubleshooting-per-i-tecnici" class="md-nav__link">
     <span class="md-ellipsis">
       Troubleshooting per i tecnici
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-di-rilevamento-automatico-del-database-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logica di rilevamento automatico del database provider
     </span>
   </a>
   
@@ -1360,15 +1360,6 @@ Non stai visualizzando l'ultima versione della documentazione.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#logica-di-rilevamento-automatico-del-database-provider" class="md-nav__link">
-    <span class="md-ellipsis">
-      Logica di rilevamento automatico del database provider
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#uso-dei-parametri-di-installazione-personalizzati" class="md-nav__link">
     <span class="md-ellipsis">
       Uso dei parametri di installazione personalizzati
@@ -1395,6 +1386,15 @@ Non stai visualizzando l'ultima versione della documentazione.
   <a href="#troubleshooting-per-i-tecnici" class="md-nav__link">
     <span class="md-ellipsis">
       Troubleshooting per i tecnici
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-di-rilevamento-automatico-del-database-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logica di rilevamento automatico del database provider
     </span>
   </a>
   
@@ -1541,7 +1541,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 
 <h1 id="installazione-di-un-nuovo-storeserver">Installazione di un nuovo StoreServer</h1>
 <p><strong>Prima revisione documento: 18 luglio 2024</strong> <br>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">3 settembre 2024</span></strong></p>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">5 settembre 2024</span></strong></p>
 <hr />
 <h2 id="glossario">Glossario</h2>
 <ul>
@@ -1622,28 +1622,9 @@ Non stai visualizzando l'ultima versione della documentazione.
 <p>Ai fini di compatibilità con le nuove restrizioni dei criteri password complesse delle recenti versioni di MySQL e SQL Server, la nuova password di default è stata variata in <strong>Vbhg4132!</strong></p>
 <p><strong>Si consiglia di cambiare la password in tutti i sistemi di produzione.</strong>  </p>
 </div>
-<h4 id="logica-di-rilevamento-automatico-del-database-provider">Logica di rilevamento automatico del database provider</h4>
-<ol>
-<li>Viene rilevata la versione installata di MySQL e SQL Server. Si ricorda che le versioni richieste sono MySQL <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>8.4</code> per MySQL e SQL Server <code>2016</code>, <code>2017</code>, <code>2019</code> o <code>2022</code> per SQL Server.</li>
-<li>
-<p>Se viene rilevata una versione richiesta per uno o entrambi i database provider, <strong>Winget</strong> prova ad accedere al database con le <em>Connection strings</em> di default:</p>
-<ul>
-<li><strong>Connection string in caso il database provider sia MySQL:</strong> server=localhost;user id=root;password=Vbhg4132!;database=posware;</li>
-<li><strong>Connection string in caso il database provider sia SQL Server:</strong> Data Source=.\sqlexpress;Initial Catalog=posware;User ID=sa;Password=Vbhg4132!;Encrypt=false;Trust Server Certificate=true;</li>
-</ul>
-</li>
-<li>
-<p>Se con le <em>Connection strings</em> di default non si riesce ad accedere, viene verificato se è presente una <em>connection string</em> custom fornita nel comando da terminale e si prova ad accedere con quella. <strong>Se Winget non riesce ad accedere neanche con la Connection string custom, allora il setup darà un errore e non procederà con l'installazione.</strong></p>
-</li>
-<li>Una volta eseguito l'accesso con una qualsiasi <em>connection string</em>, <strong>Winget verifica che il database a cui si collega NON sia già esistente</strong>, altrimenti il setup darà un errore e non procederà con l'installazione.</li>
-<li><strong>Se Winget riesce ad accedere e il database non esiste già</strong>, allora l'installazione potrà procedere con gli step successivi.</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Utilizzo di una connection string custom in presenza sia di MySQL che di SQL Server</p>
-<p>Se sono installati sulla macchina sia MySQL <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>8.4</code> che SQL Server (<code>2016</code>, <code>2017</code>, <code>2019</code> oppure <code>2022</code>) ed entrambi i database utilizzano le relative <em>Connection strings</em> di default, <strong>Winget imposterà come database provider dello <em>StoreServer</em> MySQL <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>8.4</code></strong>.</p>
-<p><strong>Winget</strong>, infatti, controlla prima la <em>Connection string</em> di default di MySQL e poi quella di SQL Server e <strong>rilevando per prima quella di MySQL</strong> lo imposta come database provider dello <em>StoreServer</em>.</p>
-<p><strong>Si raccomanda vivamente di specificare una <em>connection string</em> custom in questa situazione per non rischiare di incappare in comportamenti non desiderati.</strong></p>
-</div>
+<p>L'installazione rileverà automaticamente il database da utilizzare tra MySQL e SQL Server, utilizzando le impostazioni standard cui sopra.</p>
+<p>Per approfondimenti sulla logica di rilevamento automatico consulta il <a href="#logica-di-rilevamento-automatico-del-database-provider">paragrafo dedicato</a>.</p>
+<p><strong>Se sulla stessa macchina sono già installati sia MySQL che SQL Server, viene consigliato di specificare la <em>Connection string</em> e consultare il paragrafo di <a href="#logica-di-rilevamento-automatico-del-database-provider">logica di rilevamento automatico</a>.</strong></p>
 <h4 id="uso-dei-parametri-di-installazione-personalizzati">Uso dei parametri di installazione personalizzati</h4>
 <div class="admonition info">
 <p class="admonition-title">Winget --custom</p>
@@ -1653,7 +1634,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 <h5 id="usare-una-connection-string-specifica">Usare una connection string specifica</h5>
 <p>È necessario specificare una <em>connection string</em> se:</p>
 <ul>
-<li>Sulla stessa macchina vi sono installati sia MySQL che SQL Server</li>
+<li>Sulla stessa macchina vi sono installati sia MySQL che SQL Server e si vuole destinare il database specificatamente all'uno o all'altro</li>
 <li>Il nome del database che vuoi usare per lo <em>StoreServer</em> <strong>non</strong> è <code>posware</code></li>
 <li>Le credenziali da usare per l'accesso al database sono diverse da quelle prefedefinite</li>
 <li>Altri casi non direttamenti supportati che tuttavia necessitano di parametri ulteriori nella stringa di connessione al database</li>
@@ -1801,6 +1782,28 @@ Non stai visualizzando l'ultima versione della documentazione.
 </tr>
 </tbody>
 </table>
+<h3 id="logica-di-rilevamento-automatico-del-database-provider">Logica di rilevamento automatico del database provider</h3>
+<ol>
+<li>Viene rilevata la versione installata di MySQL e SQL Server. Si ricorda che le versioni richieste sono MySQL <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>8.4</code> per MySQL e SQL Server <code>2016</code>, <code>2017</code>, <code>2019</code> o <code>2022</code> per SQL Server.</li>
+<li>
+<p>Se viene rilevata una versione richiesta per uno o entrambi i database provider, <strong>Winget</strong> prova ad accedere al database con le <em>Connection strings</em> di default:</p>
+<ul>
+<li><strong>Connection string in caso il database provider sia MySQL:</strong> server=localhost;user id=root;password=Vbhg4132!;database=posware;</li>
+<li><strong>Connection string in caso il database provider sia SQL Server:</strong> Data Source=.\sqlexpress;Initial Catalog=posware;User ID=sa;Password=Vbhg4132!;Encrypt=false;Trust Server Certificate=true;</li>
+</ul>
+</li>
+<li>
+<p>Se con le <em>Connection strings</em> di default non si riesce ad accedere, viene verificato se è presente una <em>connection string</em> custom fornita nel comando da terminale e si prova ad accedere con quella. <strong>Se Winget non riesce ad accedere neanche con la Connection string custom, allora il setup darà un errore e non procederà con l'installazione.</strong></p>
+</li>
+<li>Una volta eseguito l'accesso con una qualsiasi <em>connection string</em>, <strong>Winget verifica che il database a cui si collega NON sia già esistente</strong>, altrimenti il setup darà un errore e non procederà con l'installazione.</li>
+<li><strong>Se Winget riesce ad accedere e il database non esiste già</strong>, allora l'installazione potrà procedere con gli step successivi.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Utilizzo di una connection string custom in presenza contemporanea sia di MySQL che di SQL Server</p>
+<p>Se sono installati sulla macchina sia MySQL <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>8.4</code> che SQL Server (<code>2016</code>, <code>2017</code>, <code>2019</code> oppure <code>2022</code>) ed entrambi i database utilizzano le relative <em>Connection strings</em> di default, <strong>Winget imposterà come database provider dello <em>StoreServer</em> MySQL <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>8.4</code></strong>.</p>
+<p><strong>Winget</strong>, infatti, controlla prima la <em>Connection string</em> di default di MySQL e poi quella di SQL Server e <strong>rilevando per prima quella di MySQL</strong> lo imposta come database provider dello <em>StoreServer</em>.</p>
+<p><strong>Si raccomanda vivamente di specificare una <em>connection string</em> custom in questa situazione per non rischiare di incappare in comportamenti non desiderati.</strong></p>
+</div>
 <h2 id="antivirus-e-firewall">Antivirus e firewall</h2>
 <p>Dopo l'installazione, è necessario inserire la directory dello <em>StoreServer</em> (<em>C:\Users\<mark>XXX</mark>\AppData\Local\isid\StoreServer</em> , dove <mark>XXX</mark> è il nome dell'account utente in uso) nella lista delle esclusioni sia dell'antivirus che del firewall di sistema prima di provare ad avviarlo e ad associare le casse.</p>
 <h2 id="accesso-allo-storeserver">Accesso allo StoreServer</h2>
@@ -1846,7 +1849,7 @@ In caso negativo, assicurarsi che sia il provider sia la <em>Connection string</
 </li>
 </ul>
 <h2 id="installazione-e-verifica-del-comportamento-corretto-dei-servizi-legacy">Installazione e verifica del comportamento corretto dei servizi legacy</h2>
-<p>Arrivati a questo step, è necessario installare da zero e verificare il comportamento corretto dei <a href="">servizi legacy</a>. I dettagli specifici sono consultabili nella rispettiva sezione.</p>
+<p>Arrivati a questo step, è necessario installare da zero e verificare il comportamento corretto dei <a href="servizi-legacy.html">servizi legacy</a>. I dettagli specifici sono consultabili nella rispettiva sezione.</p>
 <h2 id="associazione-delle-casse-allo-storeserver">Associazione delle casse allo StoreServer</h2>
 <div class="admonition note">
 <p class="admonition-title">Solo casse <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3.x</code> associabili</p>
@@ -1945,7 +1948,7 @@ Per associare una cassa, usare il pulsante al centro della schermata "Associa ca
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">3 settembre 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">5 settembre 2024</span>
   </span>
 
     
