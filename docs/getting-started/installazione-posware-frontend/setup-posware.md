@@ -28,7 +28,6 @@ Il pacchetto di installazione *SetupPosware* supporta unicamente questi due scen
 
     Gli aggiornamenti tra **Build** version, quindi da una versione precedente della :material-tag:`4.3.x` all'ultima :material-tag:`4.3.x` aggiornata rilasciata, rimangono sempre in carico al [*PosUpdate*](./pos-update.md).
     
-
 In entrambi gli scenari l'utente può lanciare il setup facendo ordinario doppio click sull'applicativo. Così facendo nessun parametro particolare viene passato al *SetupPosware* e verrà mostrato il wizard da cui l'utente potrà procedere con l'installazione.
 
 ![SetupPosware's Main interface][image_ref_4k0yvep7]
@@ -70,7 +69,6 @@ In questo scenario, verrà installato un **nuovo database standard** pronto all'
 !!! info "Il database installato non ha dati anagrafici"
     Il database di nuova installazione contiene esclusivamente le configurazioni minime per garantire un funzionamento base e non è pensato per la produzione.
     <br>Non sono presenti dati quali prodotti, listini, barcode, promozioni, ecc...
-
 
 !!! danger "Database incompatibili tra :material-tag:`4.2` e :material-tag:`4.3`"
     **Una volta conclusa l'installazione, NON SOSTITUIRE il database con uno esistente di una versione :material-tag:`4.2.x` di Posware, in quanto INCOMPATIBILI TRA LORO.
@@ -131,7 +129,6 @@ Nello scenario di migrazione, *SetupPosware* **non bloccherà l'installazione se
     
     Se non è possibile riavviare il sistema per motivi esterni all'installazione, **non avviare Posware prima del riavvio.**
 
-
 ### Troubleshooting per i tecnici
 Il primo step da eseguire al sorgere di un problema con *SetupPosware* è consultare i log.
 
@@ -142,13 +139,12 @@ Per esaminarli più agevolmente è possibile avviare l'applicativo tramite termi
 
     Passandogli il parametro `/LOG="filename"`, dove `filename` è il nome che si vuole assegnare al file, risulta molto più immediato consultare il file di log.<br>Il nome del file è relativo al percorso dove è presente il file *.exe* del *SetupPosware*. È anche possibile specificare il percorso assoluto del file.
 
-
 Di seguito una lista esaustiva dei possibili errori che possono verificarsi durante l'installazione o la migrazione di *Posware Frontend* tramite *SetupPosware*:
 
 |Messaggio|Probabile causa/Strategia di risoluzione|
 |---------|----------------------------------------|
 |Non è stato possibile avviare le migrazioni del database. Verificare il log per maggiori dettagli. L'installazione viene annullata.|Il database ha avuto un problema durante l'avvio degli aggiornamenti dei dati e/o strutture. Dopo aver controllato il log, verificare l'accesso ai database, verificare il corretto funzionamento del database, verificare che non ci sia corruzione su disco.|
-|Si è verificato un errore durante l'applicazione delle migrazione del database: *nome del database* Verificare il log per maggiori dettagli. L'installazione viene annullata.|Il database ha avuto un problema durante gli aggiornamenti dei dati e/o strutture. Dopo aver controllato il log, verificare l'accesso ai database, verificare il corretto funzionamento del database, verificare che non ci sia corruzione su disco.|
+|Si è verificato un errore durante l'applicazione delle migrazione del database: *codice errore* Verificare il log per maggiori dettagli. L'installazione viene annullata.|Il database ha avuto un problema durante gli aggiornamenti dei dati e/o strutture. Controllare il log del *PosUpdateCompanion* per scoprire l'errore dettagliato verificatosi (Path: *C:\Program Files (x86)\Posware\PosUpdateCompanion*).|
 |Non è stato possibile migrare le Connessioni database e le impostazioni utente dal file 'Posware.exe.config'. Non è stata trovata la sezione Posware.MySettings sotto il nodo applicationSettings. Il file potrebbe essere corrotto. Verificare il log per maggiori dettagli. L'installazione viene annullata.|Il messaggio è autoesplicativo.|
 |Non è possibile installare la versione aggiornata. Nella tabella logcassa vi sono dei record ancora da inviare al server. Prima di aggiornare la cassa, è necessario inviare tutto il log del venduto di cassa. L'installazione viene annullata.|Il messaggio è autoesplicativo.|
 |Installazione fallita. Per diagnosticare il problema, consulta i log di installazione: *file di log* Se l'errore è avvenuto durante la migrazione del database o delle impostazioni, consulta l'ultimo log contenuto nella cartella *nome della cartella*|Il messaggio è autoesplicativo.|
@@ -160,7 +156,7 @@ Di seguito una lista esaustiva dei possibili errori che possono verificarsi dura
 |Non è stato possibile avviare le verifiche preliminari del database. Verificare il log per maggiori dettagli. L'installazione viene annullata.|Il messaggio è autoesplicativo.|
 |Non è stato possibile installare il file Posware.exe.config o il file ConnectionStrings.config nella directory di installazione. Verificare i permessi. L'installazione viene annullata.|*SetupPosware* ha fallito l'installazione di uno o più file di configurazione per una questione di permessi. Una volta verificati i permessi della cartella di Posware, riprovare a lanciare il setup.|
 |Non è stato possibile installare il database di partenza nella directory di installazione. Verificare i permessi. L'installazione viene annullata.|*SetupPosware* ha fallito l'installazione del database iniziale standard per una questione di permessi. Una volta verificati i permessi della cartella di MySQL, riprovare a lanciare il setup.|
-|Non è stato possibile copiare i file di log nella directory di installazione. Verificare i permessi. Per consultare i log, PRIMA DI CHIUDERE QUESTO MESSAGGIO, apri il file *nome del del file da consultare* Alla chiusura del Setup tutti i file temporanei vengono eliminati.|Il messaggio è autoesplicativo.|
+|Non è stato possibile copiare i file di log nella directory di installazione. Verificare i permessi. Per consultare i log, PRIMA DI CHIUDERE QUESTO MESSAGGIO, apri il file *nome del file da consultare* Alla chiusura del Setup tutti i file temporanei vengono eliminati.|Il messaggio è autoesplicativo.|
 |Il server MySql installato non è supportato. È necessario usare la versione 5.6.x di MySql per effettuare una installazione ex-novo.|Controllare che versione di MySQL è installata. Se è presente una versione diversa dalla :material-tag:`5.6.x` procedere quindi a installarla e configurarla, prima di riprovare a lanciare il setup.|
 |Versione di Windows 10 non supportata ( *versione di Windows 10 installata non supportata* ). È richiesta almeno la versione 1809 (Redstone 5, October 2018 Update, Windows v10.0.17763). Prima di installare Posware, aggiorna Windows via Windows Update.|Il messaggio è autoesplicativo.|
 

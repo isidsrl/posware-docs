@@ -36,6 +36,7 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
     - WebView2 Edge Runtime :material-tag:`109.0.1518.140`
     - .NET :material-tag:`6` Hosting Bundle
     - Monroes OPOS Common Control Objects :material-tag:`1.14.001`
+    - Pos_SBV Client :material-tag:`1.1.0` (per la ricezione variazioni)
 
 Si prega di consultare attentamente le note varie sulle dipendenze di terze parti e gli aggiornamenti necessari nella relativa [sezione](./dipendenze-aggiornamenti-necessari.md) prima di procedere con l'installazione o l'aggiornamento di *Posware Frontend*. 
 
@@ -50,7 +51,20 @@ Si prega di consultare attentamente le note varie sulle dipendenze di terze part
 - **Directory di default di Posware su sistemi 32bit:** *%PROGRAMFILES%\Posware*
 - **Directory di default per gli aggiornamenti automatici di *PosUpdate*:** *C:\PosAgg*
 
-[TO DO] Vedere se inserire qualcosa relativo al Pos_SBV
+#### Porte comunemente usate dall'ecosistema Posware
+- **Pos_Fidelity:** 6850
+- **Pos_Log:** 6951 (in precedenza era 6851)
+- **StoreServer:** 6851
+- **Pos_SBV:** 
+    - **Porta comandi:** 6880 (in entrambe le versioni, sia cassa che server)
+    - **Variazioni cassa:** 6852
+    - **Variazioni server:** 6853
+- **Posware Frontend:**
+    - **Porte di comunicazione messenger:** 6855 e 6856
+
+### Prassi comuni
+!!! warning "Firewall di Windows sui terminali casse"
+    **È assolutamente necessario disattivare il firewall di Windows sui terminali casse.**
 
 ## Breaking changes
 Vengono elencati di seguito i diversi **breaking changes** introdotti in *Posware Frontend* a partire dalla versione :material-tag:`4.3` dell'applicativo:
@@ -61,7 +75,6 @@ Vengono elencati di seguito i diversi **breaking changes** introdotti in *Poswar
 
 !!! warning "Nuova versione di MySQL richiesta nelle nuove installazioni"
     A partire dalla versione :material-tag:`4.3`, le nuove installazioni che **non migrano** dalla :material-tag:`4.2`, dovranno usare **MySQL** :material-tag:**`5.6`**. 
-
 
 ## Feature rimosse in Posware :material-tag:`4.3`
 Nell'elenco sottostante vengono illustrate tutte le **feature di *Posware Frontend* che sono state rimosse** a partire dalla versione :material-tag:`4.3` dell'applicativo:

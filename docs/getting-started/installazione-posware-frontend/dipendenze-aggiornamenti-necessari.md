@@ -51,7 +51,6 @@ Trattandosi di sistemi molto obsoleti e, dato il peso del pacchetto di aggiornam
     È facile verificare se gli aggiornamenti **Servicing Stack 2018** sono stati installati correttamente. <br>
     Infatti Windows Update dopo la loro installazione riprenderà a funzionare e procederà con l'installazione di tutti gli altri aggiornamenti.
 
-
 ## Dipendenze con installazione automatica da parte del SetupPosware prelevate via CDN
 È possibile gestire l'installazione delle dipendenze di terze parti in due modalità:
 
@@ -78,8 +77,6 @@ Trattandosi di sistemi molto obsoleti e, dato il peso del pacchetto di aggiornam
     Non è possibile procedere all'installazione del setup senza che le dipendenze siano rilevate ed installate.
     
     In caso contrario o in caso di interruzione da parte dell'utente, *SetupPosware* si interromperà automaticamente senza installare il software.
-    
-    
 
 ## Meccanismi di rilevazione delle dipendenze già installate
 Tutte le dipendenze non incluse nel setup, se vengono rilevate già presenti nel sistema attraverso gli opportuni meccanismi di rilevazione, **non vengono né scaricate né installate nuovamente**. 
@@ -94,6 +91,23 @@ Vengono ancora una volta elencate in via definitiva tutte le dipendenze con inst
 - .NET :material-tag:`6` Hosting Bundle
 - VC++ Redistributable 2015-2019
 - Monroes OPOS Common Control Objects :material-tag:`1.14.001`
+- Pos_SBV Client :material-tag:`1.1.0` (per la ricezione variazioni)
+
+## Pos_SBV Client
+Da Posware :material-tag:`4.3`, il Pos_SBV Client :material-tag:`1.1.0` nei terminali casse per la ricezione delle variazioni **viene installato automaticamente da *SetupPosware* e *PosUpdate***.
+
+L'unica dipendenza esterna del servizio è .NET Framework :material-tag:`4.8`, necessaria già come prerequisito software per il *SetupPosware*.
+
+!!! warning "Resettare le registrazioni del servizio di Windows del Pos_SBV Client :material-tag:`1.1.0`"
+    In caso si avesse necessità di resettare le registrazioni del servizio di Windows del Pos_SBV Client :material-tag:`1.1.0` al di fuori della procedura automatica con *SetupPosware* e *PosUpdate*, eliminare il servizio manualmente con i diritti di amministratore e reinstallarlo tramite *PosUpdate*.
+
+    Per eliminare il servizio manualmente, avviare un nuovo terminale **con i diritti di amministratore** (*cmd.exe*) ed eseguire il seguente comando:
+
+    ``` bat title="Comando per eliminare il servizio Pos_SBV Client manualmente"
+    sc.exe delete pos_sbv
+    ``` 
+
+    Procedere successivamente a **reinstallare il servizio** avviando manualmente la versione già installata oppure una aggiornata di *PosUpdate*.
 
 ## Riavvio del sistema operativo necessario
 !!! danger "Non ignorare la richiesta di riavvio"
@@ -104,7 +118,7 @@ Vengono ancora una volta elencate in via definitiva tutte le dipendenze con inst
     **Riavvia il sistema operativo e non ignorare per alcun motivo la richiesta.**
     
     Se non è possibile riavviare il sistema per motivi esterni all'installazione, non avviare Posware prima del riavvio.
-    
+
 ![SetupPosware final screen (restart case)][image_ref_nugc16k5]
 
 La necessità di riavvio o meno imposta automaticamente anche la GUI del setup nella schermata finale come è possibile vedere nell'immagine soprastante.

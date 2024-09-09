@@ -49,9 +49,10 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
 - Servizi legacy:
     
     - Pos_Eod :material-tag:`1.9.0`
-    - Pos_Log :material-tag:`1.3.23`
+    - Pos_Log :material-tag:`2.0.0`
     - Pos_Insta :material-tag:`4.7.0`
     - Pos_Fidelity :material-tag:`1.3.19`
+    - Pos_SBV :material-tag:`1.1.0`
     - Pos_Chiave :material-tag:`1.1.4`
     - Pos_Cfisc :material-tag:`2.2.0`
     - Pos_RxVen :material-tag:`2.2.1`
@@ -110,6 +111,5 @@ Scenari di installazione previsti:
 
 - [Installazione di un nuovo sistema](./installazione-nuovo-storeserver.md)
 - [Migrazione da servizi legacy](./migrazione-servizi-legacy.md)
-
 
 I dettagli specifici di ogni scenario e delle procedure comuni sono consultabili nelle rispettive sezioni.

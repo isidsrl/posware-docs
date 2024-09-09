@@ -11,10 +11,10 @@ tags:
 ---
 
 ## Glossario
-- **StoreId:** anche detto **InstanceConfigurationId**, rappresenta il codice del punto vendita su cui si sta installando lo *StoreServer*;
-- **WebApp:** applicazione web che offre la possibilità di gestire in modo centralizzato le funzionalità disponibili nello *StoreServer*;
-- **Package manager**: software di gestione pacchetti di installazione integrato nel sistema operativo.
 - **Winget**: vedi Package manager.
+- **Package manager**: software di gestione pacchetti di installazione integrato nel sistema operativo.
+- **StoreId:** anche detto **InstanceConfigurationId**, rappresenta il codice del punto vendita su cui si sta installando lo *StoreServer*.
+- **WebApp:** applicazione web che offre la possibilità di gestire in modo centralizzato le funzionalità disponibili nello *StoreServer*.
 
 ## Cenni preliminari
 <!--Ricollegarsi nell'introduzione all'overview generale da cui parte il link a questa sezione-->
@@ -22,7 +22,7 @@ Il presente documento descrive nel dettaglio le procedure necessarie all'install
 
 Per eventuali problematiche occorse durante le procedure, è possibile consultare i Troubleshooting per i tecnici.
 
-È anche possibile effettuare una Rollback.
+È anche possibile effettuare una rollback.
 
 ## Prerequisiti
 <!--Qui rifare un reminder delle operazioni comuni come ad esempio l'installazione del database, SQL Server o MySQL. Oltre alle operazioni comuni inserire anche che va fatto il backup-->
@@ -42,7 +42,7 @@ Inoltre, è fondamentale aver eseguito quelle [procedure comuni ai due scenari d
 ## Operazioni necessarie
 Al fine di installare lo *StoreServer* di Posware :material-tag:`4.3` sarà necessario eseguire tutti questi step:
 
-1. Installare lo *StoreServer* usando il tool di gestione pacchetti *Winget*
+1. Installare lo *StoreServer* usando il tool di gestione pacchetti **Winget**
 2. Inserire la directory dello *StoreServer* nella lista delle esclusioni di Sofware Antivirus e Firewall presenti nel sistema
 3. Accedere allo *StoreServer*
 4. Installare e verificare il comportamento corretto dei servizi legacy
@@ -70,7 +70,6 @@ winget source add posware https://winget.isid.it/posware/api -t "Microsoft.Rest"
 ```
 
 ### Avvio dell'installazione
-
 Dallo stesso terminale aperto in precedenza, eseguire il comando:
 ``` bat title="Comando"
 winget install --id isid.storeserver --source posware --verbose
@@ -100,7 +99,6 @@ Per approfondimenti sulla logica di rilevamento automatico consulta il [paragraf
 **Se sulla stessa macchina sono già installati sia MySQL che SQL Server, viene consigliato di specificare la *Connection string* e consultare il paragrafo di [logica di rilevamento automatico](#logica-di-rilevamento-automatico-del-database-provider).**
 
 #### Uso dei parametri di installazione personalizzati
-
 !!! info "Winget --custom"
     Tutti i parametri personalizzati devono essere inseriti all'interno del parametro **--custom** come da standard **Winget**.
 
@@ -137,7 +135,6 @@ winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRIN
     Per evitare problemi si raccomanda vivamente di seguire gli esempi e **NON** usare **Windows PowerShell**.
 
 ##### Usare un codice punto vendita specifico
-
 Per specificare un codice punto vendita diverso da 1 (default), è possibile usare il parametro `/STOREID`. Esempio:
 
 ``` bat title="Installazione con codice punto vendita custom"
@@ -151,7 +148,6 @@ winget install --id isid.storeserver --source posware --custom "/STOREID=valore 
     
     **Eventuali numeri riportati con zeri davanti saranno considerati senza zeri.**
 
-
 A fini esplicativi, si riporta un esempio completo del comando di installazione dello *StoreServer* usando tutti i parametri custom:
 
 ``` bat title="Installazione con codice punto vendita 5 e connection string custom"
@@ -159,7 +155,6 @@ winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRIN
 ``` 
 
 #### Parametri proprietari di Winget
-    
 **Winget** mette a disposizione ulteriori parametri la cui trattazione esula da questa documentazione. 
 
 Il parametro più utile allo scopo è `--open-logs`: apre automaticamente la cartella dei log a fine installazione. 
@@ -169,7 +164,6 @@ Per farlo, aggiungere il parametro ai comandi già riportati negli esempi preced
 ``` bat title="Installazione con codice punto vendita 5 e connection string custom"
 winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307"" /STOREID=5 " --verbose --open-logs
 ``` 
-
 
 Se dovessero servire ulteriori comandi di **Winget**, consultare la guida ufficiale di **Microsoft**.
 
@@ -306,7 +300,7 @@ Se la cassa:
 - *Posware Frontend* è avviato e,
 - *Posware Frontend* è in stand-by sulla schermata di login
 
-allorà la finestra pop-up si chiuderà; uscirà un messaggio in alto a destra di conferma sull'avvenuta associazione e la cassa comparirà nell'elenco.
+allora la finestra pop-up si chiuderà, uscirà un messaggio in alto a destra di conferma sull'avvenuta associazione e la cassa comparirà nell'elenco.
 
 ![Assign the counters - Counters Dashboard - Counter Successfully Assigned][image_ref_cm9e574d]
 
@@ -357,10 +351,8 @@ Se invece la licenza inserita fosse errata, allora nella lista dei moduli instal
     
     Prima di iniziare, assicurarsi di poter effettuare questa operazione con il punto vendita senza causare effetti collaterali indesiderati alla normale operatività dello stesso.
 
-
 !!! info "Obsolescenza del database CASSAMASTER"
     Lo *StoreServer* usa esclusivamente il database **POSWARE**.
-
 
     Tutte le strutture presenti nel vecchio database **`cassamaster`** sono state integrate nel database **`posware`**. Il vecchio database **`cassamaster`** non viene più usato da nessuna procedura interna ISiD.
 
@@ -376,13 +368,14 @@ Nell'eseguire le operazioni necessarie con il software di backoffice, assicurars
     
     **Operazioni di questo tipo NON sono assolutamente supportate e comportano l'immediata CORRUZIONE IRRIMEDIABILE del database del server centrale!**
 
-## Rollback - DRAFT DA COMPLETARE
+## Rollback - [DRAFT DA COMPLETARE]
 Al fine di eseguire la procedura di rollback dello *StoreServer*, se sono stati fatti i backup preliminari necessari, sarà necessario completare tutti i seguenti step:
 
 1. Disinstallare lo *StoreServer*, tramite **Winget** o Windows, e ripristinare eventuali backup a database e directory non direttamente collegate a **Posware**, che però sono state influenzate dall'installazione dello *StoreServer* o di una o più dipendenze/procedure usate dalla nuova versione.
 2. Reinstallare la versione precedente tramite **Winget** specificando con il parametro *--version* la versione voluta e tutti i parametri custom necessari, visti già in precedenza nella [sezione relativa all'installazione](#installazione-storeserver-tramite-winget) con **Winget** di questa guida. Questo step va effettuato solo se non si è nel caso di rollback della prima installazione dello *StoreServer*, ma si era passati da una versione precedente a una nuova dell'applicativo con un upgrade.
 3. Eliminare totalmente i vari servizi legacy installati da zero e i relativi servizi Windows.
 4. Sovrascrivere il database creato da **Winget** con il backup del database precedente all'installazione dello *StoreServer*. Inoltre, se il provider del database, MySQL o SQL Server, era stato installato momentaneamente su una porta differente per non entrare in conflitto con quello precedente, procedere a disabilitarlo mettendolo offline. Infine, concludere la procedura di rollback riattivando il precedente provider se era stato disabilitato.
+
 
 
 [image_ref_ttjt0jh8]: data:image/jpeg;base64,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

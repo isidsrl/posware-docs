@@ -5,7 +5,6 @@ tags:
 ---
 
 # Procedure comuni di installazione
-<!--StoreServer - Installazione - Procedure comuni [formula in itinere]-->
 
 **Prima revisione documento: 13 maggio 2024** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**
@@ -27,7 +26,7 @@ Il presente documento descrive la procedure comuni ad entrambi gli scenari di in
     Valutare se è possibile effettuare un **backup generale di sistema**.<br>**Quest'ultimo backup non è obbligatorio**, ma rimane una precauzione ulteriore da adoperare per ripristinare eventuali sistemi compromessi a causa di eventuali errori umani.
 
 ## Installazione e configurazione del database provider
-!!! warning "Le credenziali standard dei database sono cambiate"
+!!! warning "Le credenziali standard del database centralizzato sono cambiate"
     Ai fini di compatibilità con le nuove restrizioni dei criteri password complesse delle recenti versioni di MySQL e SQL Server, la nuova password di default è stata variata in **Vbhg4132!**
 
     **Si consiglia di cambiare la password in tutti i sistemi di produzione.**  
@@ -122,7 +121,7 @@ Le seguenti configurazioni sono obbligatorie:
 !!! warning "Abilitare le connessioni esterne"
     Per una corretta trasmissione dei dati tra lo *StoreServer* e le casse, **è assolutamente necessario configurare SQL Server per accettare connessioni esterne.**<br>Per abilitare le connessioni esterne, consultare la **documentazione di Microsoft** riguardante SQL Server.
 
-#### Importare un database migrato da Posware :material-tag:`4.2` in MySQL :material-tag:`8.4`
+#### Importare un database migrato da Posware :material-tag:`4.2` in SQL Server
 !!! warning "Scenario di migrazione"
     Le informazioni contenute in questo paragrafo sono da considerarsi valide **UNICAMENTE** per lo scenario di **migrazione da Posware :material-tag:`4.2` a :material-tag:`4.3`**.
 
