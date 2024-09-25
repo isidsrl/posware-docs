@@ -45,10 +45,10 @@ Al fine di installare lo *StoreServer* di Posware :material-tag:`4.3` sarà nece
 1. Installare lo *StoreServer* usando il tool di gestione pacchetti **Winget**
 2. Inserire la directory dello *StoreServer* nella lista delle esclusioni di Sofware Antivirus e Firewall presenti nel sistema
 3. Accedere allo *StoreServer*
-4. Installare e verificare il comportamento corretto dei servizi legacy
+4. Richiedere le licenze per gli eventuali moduli aggiuntivi
 5. Associare le casse allo *StoreServer*
-6. Verificare la ricezione dei log e dei dati delle statistiche dettagliate
-7. Richiedere le licenze per gli eventuali moduli aggiuntivi
+6. Installare e verificare il comportamento corretto dei servizi legacy
+7. Verificare la ricezione dei log e dei dati delle statistiche dettagliate
 8. Inviare l'intera anagrafica per popolare le tabelle del nuovo database dello *StoreServer*
 
 ## Installazione StoreServer tramite Winget
@@ -272,8 +272,27 @@ Per individuare eventuali messaggi di errore, si possono provare due approcci di
 
 * Controllare il log dello *StoreServer* alla ricerca di una riga in cui sia presente la dicitura ERROR
 
-## Installazione e verifica del comportamento corretto dei servizi legacy
-Arrivati a questo step, è necessario installare da zero e verificare il comportamento corretto dei [servizi legacy](./servizi-legacy.md). I dettagli specifici sono consultabili nella rispettiva sezione.
+## Licenze per gli eventuali moduli aggiuntivi
+In presenza di moduli aggiuntivi acquistati, sarà necessario attivarli attraverso i codici di licenza d'uso. Per ottenerli è necessario comunicare il codice di attivazione a livello di singolo modulo.
+
+Per consultare tutti i codici di attivazione, inserire le licenze ed altro, usare il widget **Moduli installati** raggiungibile cliccando sull'icona in basso  *Stato servizi* nella side bar della WebApp.
+
+!!! info "Acquisto nuove licenze"
+    Contattare il vostro account di riferimento o l'amministrazione ISiD per ottenere le licenze necessarie.
+
+![Services Status Icon][image_ref_ptg0oyjb]
+
+I codici di attivazione possono essere copiati facilmente cliccando l'icona relativa posizionata al loro fianco, mentre per inserire le licenze selezionare la voce *"Imposta licenza"* dal menù delle azioni. Attualmente i moduli aggiuntivi acquistabili sono due: la **"Fatturazione elettronica"** e il **"Price checker - Rilevatore prezzi"**.
+ 
+![Setting up licenses - Installed modules list][image_ref_m9hfxn3f]
+ 
+Se la licenza inserita è valida, allora il relativo modulo verrà attivato e le relative funzionalità saranno raggiungibili tramite la side bar sinistra della WebApp. Inoltre, compariranno nella lista dei moduli installati la data di scadenza della licenza del modulo e il codice licenza inserito, nei rispettivi campi.
+
+![Setting up licenses - Additional modules activated][image_ref_bke2bk4a]
+
+Se invece la licenza inserita fosse errata, allora nella lista dei moduli installati nel campo *"Licenza valida"* verrà notificato che la licenza è errata e sarà necessario procedere ad eliminare la licenza tramite il menù delle azioni ed impostarla nuovamente inserendone una valida. 
+
+![Setting up licenses - Wrong licence][image_ref_s621k54h]
 
 ## Associazione delle casse allo StoreServer
 !!! note "Solo casse :material-tag:`4.3.x` associabili"
@@ -311,6 +330,9 @@ Se durante l'associazione della cassa allo *StoreServer* dovesse uscire l'errore
 
 In ogni caso, il primo step da eseguire al sorgere di un qualsiasi errore durante l'utilizzo dello *StoreServer* rimane sempre quello di consultare i suoi log.
 
+## Installazione e verifica del comportamento corretto dei servizi legacy
+Arrivati a questo step, è necessario installare da zero e verificare il comportamento corretto dei [servizi legacy](./servizi-legacy.md). I dettagli specifici sono consultabili nella rispettiva sezione.
+
 ## Ricezione dei log e dei dati delle statistiche dettagliate
 Dopo aver associato le casse, bisogna verificare la trasmissione dei venduti allo *StoreServer*. 
 
@@ -320,28 +342,6 @@ In presenza di dati ricevuti, è possibile consultare le varie tabelle delle sta
 
 !!! info "Note sul progresso di trasmissione verso lo StoreServer"
     Se i record da trasmettere nella tabella `log` sono numerosi, potrebbe volerci un po' di tempo prima che tutti i dati vengano trasmessi dalle casse allo *StoreServer*. <br> Se si hanno dei dubbi sul fatto che i dati stiano venendo effettivamente trasmessi, controllare nella cassa in cui è stato installato il nuovo Posware :material-tag:`4.3` l'avanzamento del campo `LastRecord` della tabella `config_log`, che mostrerà l'ultimo record inviato da tale cassa allo *StoreServer*.
-
-## Licenze per gli eventuali moduli aggiuntivi
-In presenza di moduli aggiuntivi acquistati, sarà necessario attivarli attraverso i codici di licenza d'uso. Per ottenerli è necessario comunicare il codice di attivazione a livello di singolo modulo.
-
-Per consultare tutti i codici di attivazione, inserire le licenze ed altro, usare il widget **Moduli installati** raggiungibile cliccando sull'icona in basso  *Stato servizi* nella side bar della WebApp.
-
-!!! info "Acquisto nuove licenze"
-    Contattare il vostro account di riferimento o l'amministrazione ISiD per ottenere le licenze necessarie.
-
-![Services Status Icon][image_ref_ptg0oyjb]
-
-I codici di attivazione possono essere copiati facilmente cliccando l'icona relativa posizionata al loro fianco, mentre per inserire le licenze selezionare la voce *"Imposta licenza"* dal menù delle azioni. Attualmente i moduli aggiuntivi acquistabili sono due: la **"Fatturazione elettronica"** e il **"Price checker - Rilevatore prezzi"**.
- 
-![Setting up licenses - Installed modules list][image_ref_m9hfxn3f]
- 
-Se la licenza inserita è valida, allora il relativo modulo verrà attivato e le relative funzionalità saranno raggiungibili tramite la side bar sinistra della WebApp. Inoltre, compariranno nella lista dei moduli installati la data di scadenza della licenza del modulo e il codice licenza inserito, nei rispettivi campi.
-
-![Setting up licenses - Additional modules activated][image_ref_bke2bk4a]
-
-Se invece la licenza inserita fosse errata, allora nella lista dei moduli installati nel campo *"Licenza valida"* verrà notificato che la licenza è errata e sarà necessario procedere ad eliminare la licenza tramite il menù delle azioni ed impostarla nuovamente inserendone una valida. 
-
-![Setting up licenses - Wrong licence][image_ref_s621k54h]
 
 ## Invio massivo di tutta l'anagrafica del punto vendita
 !!! danger "Invio dell'intera anagrafica dati necessario"

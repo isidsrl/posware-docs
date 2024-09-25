@@ -19,7 +19,7 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
 - Un processore a **64bit** compatibile con il sistema operativo installato sulla cassa
 - 8 Gb di RAM
     - 4 Gb di RAM sono utilizzabili solo se il Sistema Operativo è Windows 7
-- Disco rigido SSD (tipo SATA o NVE) da almeno 128 Gb
+- Disco rigido SSD (tipo SATA o NVME) da almeno 128 Gb
 - Connessione ad Internet per l'installazione delle dipendenze
 
 ### Software

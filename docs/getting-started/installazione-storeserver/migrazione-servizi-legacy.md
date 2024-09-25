@@ -46,10 +46,10 @@ Al fine di installare lo *StoreServer* in caso di migrazione da servizi legacy s
 2. Installare lo *StoreServer* usando il tool di gestione pacchetti **Winget**
 3. Inserire la directory dello *StoreServer* nella lista delle esclusioni di Software Antivirus e Firewall presenti nel sistema
 4. Accedere allo *StoreServer*
-5. Aggiornare e verificare il comportamento corretto dei servizi legacy
+5. Richiedere le licenze per gli eventuali moduli aggiuntivi
 6. Associare le casse allo *StoreServer*
-7. Verificare la ricezione dei log e dei dati delle statistiche dettagliate
-8. Richiedere le licenze per gli eventuali moduli aggiuntivi
+7. Aggiornare e verificare il comportamento corretto dei servizi legacy
+8. Verificare la ricezione dei log e dei dati delle statistiche dettagliate
 9. Inviare l'intera anagrafica per popolare le tabelle del nuovo database dello *StoreServer*
 
 ## Migrazione del database tramite il Database Upgrader

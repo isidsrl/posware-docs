@@ -26,8 +26,8 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
 - 12 Gb di RAM per installazioni da 5 a 10 casse
 - 16 Gb di RAM per installazioni da 11 a 16 casse
 - 32 Gb di RAM per installazioni con più di 16 casse
-- Disco rigido SSD (tipo SATA o NVE) da almeno 256 Gb fino a 10 casse
-- Disco rigido SSD (tipo SATA o NVE) da almeno 512 Gb per più di 10 casse
+- Disco rigido SSD (tipo SATA o NVME) da almeno 256 Gb fino a 10 casse
+- Disco rigido SSD (tipo SATA o NVME) da almeno 512 Gb per più di 10 casse
 
 !!! info "Linee guida"
     Le informazioni relative alla capacità dei dischi rigidi sono da considerarsi linee guida e possono variare in base al fatturato prodotto dal punto vendita. <br> Qualora ci fossero dei dubbi sullo spazio necessario, considerare una contingenza dal **25% fino al 50%** .
@@ -97,6 +97,11 @@ Lo *StoreServer* è un nuovo applicativo introdotto per la prima volta con Poswa
     Lo *StoreServer* usa esclusivamente il database **POSWARE**.
 
     Tutte le strutture presenti nel vecchio database **`cassamaster`** sono state integrate nel database **`posware`**. Il vecchio database **`cassamaster`** non viene più usato da nessuna procedura interna ISiD.  
+
+!!! warning "Campi custom nelle tabelle del database `posware`"
+    **Con l'introduzione dello *StoreServer*, non è più possibile inserire nuovi campi custom alle tabelle esistenti del database `posware`.**
+
+    Qualora fosse necessario estendere le informazioni esistenti con altre di terze parti, consultare il documento ["Aggiungere dati custom al database dello StoreServer"](). [LINK ANCORA ASSENTE]
 
 !!! danger "Non copiare dati e/o strutture tra database diversi!"
     Al fine di popolare il database dello *StoreServer*, **NON copiare dati e/o strutture delle tabelle del database `cassamaster`** o dai database delle **casse**, in quanto differenti e non compatibili tra loro!

@@ -96,6 +96,8 @@ Vengono ancora una volta elencate in via definitiva tutte le dipendenze con inst
 ## Pos_SBV Client
 Da Posware :material-tag:`4.3`, il Pos_SBV Client :material-tag:`1.1.0` nei terminali casse per la ricezione delle variazioni **viene installato automaticamente da *SetupPosware* e *PosUpdate***.
 
+Non è necessario nessun ulteriore intervento da parte di un tecnico per attivare la ricezione delle variazioni.
+
 L'unica dipendenza esterna del servizio è .NET Framework :material-tag:`4.8`, necessaria già come prerequisito software per il *SetupPosware*.
 
 !!! warning "Resettare le registrazioni del servizio di Windows del Pos_SBV Client :material-tag:`1.1.0`"
