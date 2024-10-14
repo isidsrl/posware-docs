@@ -1,6 +1,6 @@
-site_name: Documentazione Ufficiale Posware
+site_name: Posware official docs
 site_url: https://posware.io/             # quando non useremo le Github Pages useremo questo link per il sito della documentazione
-copyright: Copyright 2024&copy; ISiD
+copyright: Copyright 2024&copy; I.Si.D S.r.l.
 
 theme:
   name: material
@@ -31,6 +31,12 @@ theme:
     - content.code.select
     - content.tooltips
 
+extra_css:
+  - stylesheets/extra.css
+  
+extra_javascript:
+  - javascripts/extra.js
+  
 extra:
   generator: false
   social:
