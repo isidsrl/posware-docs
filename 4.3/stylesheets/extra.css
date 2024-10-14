@@ -1,0 +1,14 @@
+img {
+    display: block;
+    margin: auto !important;
+}
+
+.md-main__inner {
+    max-width: 100% !important;
+}
+
+.admonition {
+    max-width: 75%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
