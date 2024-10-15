@@ -37,7 +37,7 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
     Non sono supportate versioni a 32bit di Windows 10.
 
 !!! warning "Obbligo di tutte le dipendenze in Posware :material-tag:`4.3`"
-    Le dipendenze soprastanti sono da considerarsi **TUTTE** obbligatorie per poter utilizzare Posware :material-tag:`4.3`.
+    Le dipendenze sottostanti sono da considerarsi **TUTTE** obbligatorie per poter utilizzare Posware :material-tag:`4.3`.
     
 - Posware Frontend :material-tag:`4.3.96` o superiore
 - Windows 10 **x64** (**64bit**) :material-tag:**`1809`** (**Redstone 5**) o superiore, oppure
@@ -46,32 +46,7 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
 - SQL Server `2016`, `2017`, `2019` o `2022`
 - MySQL :material-tag:`8.4`
 - .NET Hosting Bundle :material-tag:`8.x`
-- Servizi legacy:
-    
-    - Pos_Eod :material-tag:`1.9.0`
-    - Pos_Log :material-tag:`2.0.0`
-    - Pos_Insta :material-tag:`4.7.0`
-    - Pos_Fidelity :material-tag:`1.3.19`
-    - Pos_SBV :material-tag:`1.1.0`
-    - Pos_Chiave :material-tag:`1.1.4`
-    - Pos_Cfisc :material-tag:`2.2.0`
-    - Pos_RxVen :material-tag:`2.2.1`
-    - Pos_RxLog :material-tag:`2.5.0`
-    - Pos_Open :material-tag:`1.4.1`
-    - Pos_Rxscon :material-tag:`2.4.1`
-    - Pos_Anafatt :material-tag:`1.7.0`
-    - Pos_AnaRep :material-tag:`1.3.2`
-    - Pos_Anacli :material-tag:`1.9.0`
-    - Pos_FatturaPA :material-tag:`1.0.27`
-    - Pos_Utility :material-tag:`1.0.2`
-    - Pos_Spegni :material-tag:`1.7`
-    - Pos_RecEod :material-tag:`1.5`
-    - Pos_RielabScontr :material-tag:`2.4.1`
-    - Pos_AnaArt :material-tag:`2.1.3`
-    - Pos_TxScontr :material-tag:`2.1.0`
-    - Pos_Casse :material-tag:`1.2.0`
-    - Pos_CtrCas :material-tag:`1.1.0`
-    - Pos_Library
+- Servizi legacy (per la lista completa, consultare la relativa [sezione](./servizi-legacy.md#file-installati))
 
 ## Breaking changes - DRAFT DA COMPLETARE
 Vengono elencati in questa sezione i diversi **breaking changes** introdotti a partire dalla versione :material-tag:`4.3` di Posware.
@@ -107,6 +82,16 @@ Lo *StoreServer* è un nuovo applicativo introdotto per la prima volta con Poswa
     Al fine di popolare il database dello *StoreServer*, **NON copiare dati e/o strutture delle tabelle del database `cassamaster`** o dai database delle **casse**, in quanto differenti e non compatibili tra loro!
     
     **Operazioni di questo tipo NON sono assolutamente più supportate e comportano l'immediata CORRUZIONE IRRIMEDIABILE del database del server centrale!**
+
+!!! warning "Computazione automatica del codice assortimento 0"
+    A partire dalla versione `4.3.0` del Pos_Sbv, **il codice assortimento 0 equivale ad un codice di default, riservato e non variabile da nessuno, che rappresenta l'invio a tutte le casse (o a tutti i punti vendita in caso di installazione in sede).**
+    
+    Quindi, a differenza della situazione precedente, dove il codice assortimento 0 doveva essere manutenuto manualmente, ora viene gestito automaticamente e **non deve quindi essere inserito nella tabella `assortimenti` del database dello *StoreServer***.<br>In tal modo, da standard, **il codice assortimento 0 invia a tutte le casse e punti vendita che hanno il flag di trasmissione pari ad 1 nella tabella `casse`** dello *StoreServer*.
+
+    **Qualora si volesse escludere dall'invio delle variazione alcuni punti vendita o casse, si crea un assortimento dedicato personalizzato diverso da 0.**
+
+!!! warning "Cambiamento del tipo di dato dei campi `Id` e `Pdv` della tabella `isi_txscontr`"
+    **A partire dalla versione `4.3.0.0` del *Pos_TxScontr*, i campi `Id` e `Pdv` della tabella `isi_txscontr` del database dello *StoreServer* hanno subito un cambiamento del tipo di dato, passando da stringhe ad interi.**
 
 ## Installazione e configurazione
 !!! abstract "Prima di iniziare"

@@ -21,8 +21,8 @@ Il presente documento illustra nel dettaglio le note sulle dipendenze di terze p
 ## Prerequisiti software necessari
 Le seguenti dipendenze e aggiornamenti devono essere installati manualmente prima di lanciare *SetupPosware*:
 
-- Aggiornamenti di Windows 7 in caso di una versione inferiore a quella dei [requisiti minimi](overview-generale.html#software). 
-- Aggiornamenti di Windows 10 in caso di una versione inferiore a quella dei [requisiti minimi](overview-generale.html#software). 
+- Aggiornamenti di Windows 7 in caso di una versione inferiore a quella dei [requisiti minimi](overview-generale.md#software). 
+- Aggiornamenti di Windows 10 in caso di una versione inferiore a quella dei [requisiti minimi](overview-generale.md#software). 
 - .NET Framework :material-tag:`4.8` - [link](https://dotnet.microsoft.com/it-it/download/dotnet-framework/net48){:target="_blank"}
 - MySQL :material-tag:`5.6` in caso di nuova installazione - [link](https://github.com/isidsrl/posware-docs/raw/main/vendors/mysql-installer-community-5.6.20.0.msi?download=){:target="_blank"}
 
