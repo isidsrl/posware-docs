@@ -18,14 +18,14 @@ Vengono illustrati gli scenari d'uso supportati ed una serie di dettagli sulle d
 Prima di procedere con l'utilizzo di *PosUpdate* assicurarsi di avere una versione :material-tag:`4.3.x` perfettamente funzionante di *Posware Frontend*.
 
 ## Scenari d'uso
-Il pacchetto *PosUpdate* deve essere **usato solo ed esclusivamente per aggiornare** *Posware Frontend* (ed eventuali altre sue dipendenze come servizio manutenzioni, adattatori SCO, ecc...) alla loro **ultima versione disponibile**, in linea con la **Major** e **Minor** version installata.<br>A seguire alcuni esempi:
+Il pacchetto *PosUpdate* deve essere **usato solo ed esclusivamente per aggiornare** *Posware Frontend* (ed eventuali altre sue dipendenze come servizio manutenzioni, adattatori SCO, ecc...) alla loro **ultima versione disponibile**, in linea con la **Major** e **Minor** version installata.
 
 !!! example "Esempi di scenari d'aggiornamento supportati e non supportati"
     A scanso di equivoci vengono riportati di seguito tre esempi di aggiornamenti supportati e non supportati da *PosUpdate*:
         
     - **Aggiornamento da *Posware Frontend* :material-tag:`4.2` a :material-tag:`4.3`: NON SUPPORTATO.** Per il cambio di **Minor** version usare *SetupPosware*.
     - **Aggiornamento da *Posware Frontend* :material-tag:`4.3` a :material-tag:`4.4` oppure alla versione :material-tag:`5.0`: NON SUPPORTATO.** Per il cambio di **Major** version usare *SetupPosware*.
-    - **Aggiornamento da *Posware Frontend* :material-tag:`4.3.171` a :material-tag:`4.3.304`: SUPPORTATO.** È lo scenario di riferimento che viene coperto da *PosUpdate*.
+    - **Aggiornamento da *Posware Frontend* :material-tag:`4.3.171` a :material-tag:`4.3.304`: SUPPORTATO.** È lo scenario di riferimento che viene coperto da *PosUpdate*. A parità di **Major** e **Minor** version installata, basta lanciare l'ultima versione di *PosUpdate*.
 
 !!! tip "Nuova installazione e migrazione"
     *PosUpdate* **non è pensato per supportare** scenari di **nuova installazione né migrazione** da versioni precedenti di *Posware Frontend*.<br>Questi scenari sono supportati da [***SetupPosware***](./setup-posware.md).

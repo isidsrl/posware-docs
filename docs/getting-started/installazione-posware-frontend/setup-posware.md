@@ -173,6 +173,9 @@ Nei prerequisiti di migrazione, si verifica l'accesso al database `cassa` già e
 
 Inoltre, il setup verifica anche che ci sia una versione di Posware non inferiore alla :material-tag:`4.2.306`, la versione minima supportata per la migrazione alla :material-tag:`4.3` dell'applicativo.<br>Se questa condizione non dovesse essere soddisfatta, *SetupPosware* mostrerà un errore specifico e per risolvere il problema sarà **necessario installare una versione di Posware :material-tag:`4.2`** pari o superiore alla :material-tag:`4.2.306` prima di poter riprovare ad eseguire la migrazione.
 
+!!! warning "Come agire in caso di installazioni non conformi"
+    Se dopo aver migrato la cassa dalla versione :material-tag:`4.2` alla :material-tag:`4.3` ci sono problemi di migrazione del database a causa di **situazioni non conformi**, partire da una **situazione ex novo**.
+
 ## Aggiornamento dei file di configurazione
 A partire dalla versione :material-tag:`4.3`, i file di configurazione di Posware, delle *Connection strings* e delle impostazioni utente sono stati riportati allo standard .NET rimuovendo l'approccio custom.
 
@@ -193,6 +196,11 @@ I punti cruciali di questo processo sono:
         <br>Per **ConnessioneServer** è anche possibile cambiare il provider da MySQL a SQL Server (vedere nel file la connessione di esempio commentata)
 
         ***PosUpdate* non sovrascriverà né modificherà mai quel file durante gli aggiornamenti futuri.**
+
+    !!! warning "ConnessioneServer nello scenario di migrazione"
+        Durante la migrazione dalla **versione :material-tag:`4.2` alla :material-tag:`4.3`**, se nel file *Posware.exe.config* la password del **server di barriera** corrisponde alla vecchia password di default (**vbhg4132**), *SetupPosware* la aggiornerà automaticamente alla nuova password di default (**Vbhg4132!**).
+        
+        Se invece era stata impostata una **password personalizzata**, sarà necessario aggiornare manualmente il valore della chiave **ConnessioneServer** nel file *ConnectionStrings.config*
 
 2. *Posware.exe.config*, se necessario, viene sovrascritto da *PosUpdate* durante un aggiornamento.
 

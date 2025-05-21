@@ -151,7 +151,7 @@ winget install --id isid.storeserver --source posware --custom "/STOREID=valore 
 A fini esplicativi, si riporta un esempio completo del comando di installazione dello *StoreServer* usando tutti i parametri custom:
 
 ``` bat title="Installazione con codice punto vendita 5 e connection string custom"
-winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307"" /STOREID=5 " --verbose
+winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=isid;password=1r{1]@ZJ^7/f;database=posware;port=3307"" /STOREID=5 " --verbose
 ``` 
 
 #### Parametri proprietari di Winget
@@ -162,7 +162,7 @@ Il parametro più utile allo scopo è `--open-logs`: apre automaticamente la car
 Per farlo, aggiungere il parametro ai comandi già riportati negli esempi precedenti. 
 
 ``` bat title="Installazione con codice punto vendita 5 e connection string custom"
-winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307"" /STOREID=5 " --verbose --open-logs
+winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=isid;password=1r{1]@ZJ^7/f;database=posware;port=3307"" /STOREID=5 " --verbose --open-logs
 ``` 
 
 Se dovessero servire ulteriori comandi di **Winget**, consultare la guida ufficiale di **Microsoft**.
@@ -293,6 +293,11 @@ Se la licenza inserita è valida, allora il relativo modulo verrà attivato e le
 Se invece la licenza inserita fosse errata, allora nella lista dei moduli installati nel campo *"Licenza valida"* verrà notificato che la licenza è errata e sarà necessario procedere ad eliminare la licenza tramite il menù delle azioni ed impostarla nuovamente inserendone una valida. 
 
 ![Setting up licenses - Wrong licence][image_ref_s621k54h]
+
+!!! info "Nuovo metodo di attivazione delle licenze"
+    **Questo nuovo metodo di attivazione delle licenze vale solo ed esclusivamente per lo StoreServer ed i suoi moduli.**
+
+    Per le licenze relative ai servizi legacy, consultare la relativa [sezione](./servizi-legacy.md#configurazione) della documentazione.
 
 ## Associazione delle casse allo StoreServer
 !!! note "Solo casse :material-tag:`4.3.x` associabili"

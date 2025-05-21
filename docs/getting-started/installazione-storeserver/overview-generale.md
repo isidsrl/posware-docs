@@ -13,6 +13,9 @@ tags:
 ## Cenni preliminari
 Il presente documento descrive i nuovi requisiti minimi e le procedure necessarie all'installazione e alla configurazione dello *StoreServer*, il nuovo sistema centralizzato per la gestione e l'analisi del punto vendita introdotto da Posware :material-tag:`4.3` e superiori.
 
+!!! warning "Ordine di installazione obbligatorio"
+    Negli scenari standard di installazione ex novo e migrazione (si esclude quindi lo scenario ibrido), è necessario installare Posware :material-tag:`4.3` prima lato **cassa** e poi sullo **StoreServer**.
+
 ## Requisiti minimi
 ### Hardware
 !!! warning "Considerazioni importanti"

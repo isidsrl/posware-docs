@@ -13,6 +13,9 @@ tags:
 ## Cenni preliminari
 Il presente documento descrive i nuovi requisiti minimi e le procedure necessarie all'installazione o all'aggiornamento di *Posware Frontend* alla versione :material-tag:`4.3` dell'applicativo, così da poter associare le casse con lo *StoreServer*, il nuovo sistema centralizzato per la gestione e l'analisi del punto vendita.
 
+!!! warning "Ordine di installazione obbligatorio"
+    Negli scenari standard di installazione ex novo e migrazione (si esclude quindi lo scenario ibrido), è necessario installare Posware :material-tag:`4.3` prima lato **cassa** e poi sullo **StoreServer**.
+
 ## Requisiti minimi
 
 ### Hardware
@@ -75,6 +78,9 @@ Vengono elencati di seguito i diversi **breaking changes** introdotti in *Poswar
 
 !!! warning "Nuova versione di MySQL richiesta nelle nuove installazioni"
     A partire dalla versione :material-tag:`4.3`, le nuove installazioni che **non migrano** dalla :material-tag:`4.2`, dovranno usare **MySQL** :material-tag:**`5.6`**. 
+
+!!! warning "Nuova configurazione per le stampanti simulate"
+    A partire dalla versione :material-tag:`4.3`, in caso sia necessario configurare una stampante simulata per eseguire delle prove, il campo `tipo_fiscalprinter` della tabella `config_cassa` deve essere impostato pari a "**DUMMY**" invece di "**WINCOR**", il valore che era utilizzato in precedenza per tale scopo.
 
 ## Feature rimosse in Posware :material-tag:`4.3`
 Nell'elenco sottostante vengono illustrate tutte le **feature di *Posware Frontend* che sono state rimosse** a partire dalla versione :material-tag:`4.3` dell'applicativo:

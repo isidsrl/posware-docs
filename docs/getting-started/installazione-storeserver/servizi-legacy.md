@@ -22,7 +22,7 @@ Il presente documento descrive il funzionamento del nuovo setup automatico dei s
     A tal proposito, se i servizi appena installati non partono o hanno dei malfunzionamenti, la prima operazione da eseguire, **ancor prima di avviare il setup**, è **verificare che i servizi funzionino nella vecchia versione** e che **i parametri delle relative tabelle**, quali `isi_config`, `pdv`, ecc... **siano corretti**.
 
 !!! warning "Backup necessario nello scenario di migrazione"
-    Nello scenario di **migrazione** dei servizi dalla versione :material-tag:`4.2` alla :material-tag:`4.3`, **sarà necessario rinominare la cartella *C:\Posware*** (o l'eventuale cartella in cui si sono salvati i servizi legacy), così che la si possa tenere da parte come **backup in caso di rollback**.
+    Nello scenario di **migrazione** dei servizi dalla versione :material-tag:`4.2` alla :material-tag:`4.3`, **sarà necessario rinominare la cartella *C:\Posware*** (o l'eventuale cartella in cui si sono salvati i servizi legacy), così che la si possa tenere da parte come **backup in caso di rollback**.<br>Prima di fare ciò e di lanciare il setup, **è assolutamente mandatorio fermare i servizi legacy se sono in esecuzione**.
     
     Il setup, infatti, controlla che **non esista la cartella *C:\Posware*** prima di installare i nuovi servizi legacy.
 
@@ -153,6 +153,17 @@ Per gli scenari di migrazione e di aggiornamento, invece, è assolutamente manda
 - `/MIGRATED`: in caso di migrazione dei servizi dalla versione :material-tag:`4.2` alla :material-tag:`4.3`
 - `/UPGRADE`: in caso di aggiornamento dei servizi alla loro ultima versione disponibile, in linea con la **Major** e **Minor** version installata
 
+!!! warning "Arresto dei servizi secondari nello scenario di aggiornamento"
+    Per lo scenario di aggiornamento dei **servizi legacy**, è necessario **interrompere tutti i servizi secondari** eventualmente installati **oltre ai cinque servizi principali:** 
+    
+    - *Pos_Fidelity*
+    - *Pos_Log* 
+    - *Pos_Sbv*  
+    - *Pos_TxLog* 
+    - *Pos_TxScontr*
+
+    L'arresto dei servizi secondari è **obbligatorio prima dell'esecuzione del setup**, al fine di garantire il corretto completamento dell'aggiornamento.
+
 Se l'installazione ha successo, viene creata la cartella ***C:\Posware*** con all'interno tutti i file elencati precedentemente e le relative `.dll` necessarie al loro funzionamento.<br>Inoltre, vengono creati i seguenti servizi Windows:
 
 - Pos_Fidelity
@@ -177,12 +188,47 @@ Una volta installati o migrati i servizi legacy del *Front Office*, sarà necess
 !!! warning "Antivirus e firewall"
     Prima di procedere con la configurazione dei servizi e il loro utilizzo, è necessario inserire la directory *C:\Posware* nella **lista delle esclusioni sia dell'antivirus che del firewall di sistema**.
 
+!!! info "Licenze dei servizi legacy"
+    I vari servizi legacy con il passaggio alla versione :material-tag:`4.3` continuano comunque ad utilizzare **i file *licenza.lic* per l'attivazione delle licenze** dei relativi software.
+
+    Contattare il vostro account di riferimento o l'amministrazione ISiD per ottenere le licenze necessarie.
+
+!!! warning "Aggiornare il path del file *licenza.lic* nello scenario di migrazione"
+    In caso di migrazione dalla versione :material-tag:`4.2` alla :material-tag:`4.3` le licenze dei servizi legacy sono ancora valide, ma è necessario fare copia incolla del file *licenza.lic* nelle cartelle del *Pos_Log* e del *Pos_Fidelity*, perché il path dei servizi è cambiato.
+
 ### Pos_Fidelity
 Il *Pos_Fidelity* è il servizio del *Front Office* adibito alla **gestione delle fidelity card** dei clienti fidelity del punto vendita. 
 
 Vista la sua natura è un **servizio facoltativo** e quindi viene installato da Windows con **avvio manuale**. Quindi sarà necessario avviarlo manualmente di volta in volta in caso lo si desideri utilizzare.
 
 L'unica configurazione di cui necessita per il suo utilizzo è la **presenza di record con i dati delle fidelity card** all'interno della tabella `fidelity` del database dello *StoreServer*.
+
+#### Configurazione del servizio Pos_Fidelity per invio contatori da Client a Server
+Per abilitare l'invio dei contatori dal **server di barriera** al **server centralizzato**, è necessario configurare correttamente i parametri nella tabella `isi_config` del database `posware`.
+
+##### Parametri da impostare (tabella `isi_config`)
+
+|Sezione|Chiave|Valore|
+|-------|------|------|
+|Fidelity|Tx Server|**1** (abilita l'invio dei contatori al server)|
+|Fidelity|Ip Server|IP del **server centralizzato** di destinazione|
+|Fidelity|Aggiornamento Locale|**0** (disabilita l’aggiornamento locale dei contatori)|
+
+##### Configurazione delle porte di comunicazione
+Assicurarsi che le porte utilizzate per la comunicazione siano **congruenti** tra client e server:
+
+- **Server di barriera (in invio)**
+
+    - `Sezione` = Fidelity, `Chiave` = Porta → **Porta di uscita** (default: 6850)
+    
+- **Server centralizzato (in ascolto)**
+
+    - `Sezione` = Fidelity, `Chiave` = Porta Server → **Porta di ingresso** (default: 6110)
+
+Entrambe le porte devono essere **aperte** e correttamente configurate sui rispettivi ambienti di rete.
+
+!!! warning "Attenzione a firewall e regole di rete"
+    Verificare che eventuali firewall o regole di rete non blocchino il traffico tra i due server.
 
 ### Pos_Log
 Il *Pos_Log* è il servizio del *Front Office* che a partire dal log dello *StoreServer* genera le tabelle `scontrini` e `riepilogo`, utili per alcune funzionalità dello *StoreServer* e in generale di Posware.
@@ -192,9 +238,9 @@ Visto il suo utilizzo è un **servizio fondamentale** e quindi viene installato 
 Per il suo funzionamento è necessario impostare alcuni parametri all'interno della tabella `isi_config` e devono essere presenti i dati del punto vendita nella tabella `pdv` del database dello *StoreServer*.
 
 !!! warning "Punto vendita placeholder nella tabella `pdv`"
-    Nello scenario di **nuova installazione** dei servizi legacy, **il setup creerà automaticamente una voce placeholder nella tabella `pdv`**, così che il *Pos_Log* possa funzionare senza aver bisogno necessariamente di una configurazione manuale. 
+    Negli scenari di **nuova installazione e migrazione** dei servizi legacy, **il setup creerà automaticamente una voce placeholder nella tabella `pdv`**, così che il *Pos_Log* possa funzionare senza aver bisogno necessariamente di una configurazione manuale. 
 
-    **Si consiglia di personalizzare successivamente questa istanza placeholder con i dati corretti del punto vendita.**
+    **Si consiglia di personalizzare successivamente questa istanza placeholder con i dati corretti del punto vendita.**<br>Nella configurazione manuale, tenere presente che **il formato del campo `Pdv` corrisponde a una stringa di 4 caratteri**, quindi se ad esempio il codice del punto vendita è 1 sarà necessario inserire "0001".
 
 Per quanto riguarda la tabella `isi_config`, i parametri necessari al funzionamento del *Pos_Log* sono i seguenti:
 
@@ -222,7 +268,15 @@ Di seguito, le configurazioni necessarie per ognuno dei parametri soprastanti:
 
     **Entrambi gli switch devono essere attivi affinché il *Pos_Log* generi la tabella `scontrini`.**
 
-    **Di default, il setup imposta il campo `Scontrini` pari a 1 nell'istanza placeholder che crea nella tabella `pdv`.**
+    **Di default, in caso di nuova installazione, il setup imposta il campo `Scontrini` pari a 1 nell'istanza placeholder che crea nella tabella `pdv`.**
+
+!!! info "File di esempio *Config.Ini* nella cartella del *Pos_Log*"
+    All'interno della cartella del *Pos_Log* sono presenti due file di esempio:
+    
+    - *Config.mysql.Ini* 
+    - *Config.sqlserver.Ini*
+    
+    **Questi file non vengono utilizzati da alcun programma.**<br>Sono forniti esclusivamente a scopo esemplificativo, per aiutare l’utente a comprendere **quali informazioni inserire nel file *Config.Ini*** dei servizi legacy, soprattutto in assenza di conoscenze pregresse.
 
 ### Pos_Sbv
 Il *Pos_Sbv* è il servizio del *Front Office* adibito all'invio delle variazioni dallo *StoreServer* alle varie casse del punto vendita.
@@ -242,9 +296,32 @@ Le configurazioni necessarie per il suo utilizzo sono:
 
     **Qualora si volesse escludere dall'invio delle variazione alcuni punti vendita o casse, si crea un assortimento dedicato personalizzato diverso da 0.**
 
+    Nello scenario di migrazione dalla versione :material-tag:`4.2` alla :material-tag:`4.3` dei servizi legacy, **l'assortimento 0 può essere eliminato, se presente.** Prima di procedere, **assicurarsi** che fosse assegnato **a tutte le casse e punti vendita con il flag di trasmissione attivo**.<br>In caso contrario, è necessario **sostituirlo con un assortimento dedicato personalizzato diverso da 0**, anziché eliminarlo.
+
+!!! warning "Computazione automatica del codice assortimento 99"
+    A partire dalla versione `4.3.0.0` del *Pos_Sbv*, **il codice assortimento 99 equivale a un codice di default, riservato e non variabile da nessuno, che rappresenta l’invio esclusivamente al server di barriera.**
+
+    Quindi, a differenza della situazione precedente, dove il codice assortimento 99 doveva essere configurato manualmente, ora viene gestito automaticamente e **non deve quindi essere inserito nella tabella `assortimenti` del database dello *StoreServer***. 
+
+    Con la nuova versione dei servizi legacy, **le variazioni Fidelity** possono essere inviate tramite il **servizio *Pos_Sbv***, come tutte le altre, **senza necessità di configurazioni aggiuntive**. Quindi, **non è più necessario creare l'istanza fittizia della cassa 99 nella tabella `casse` del database dello *StoreServer***.<br>Tuttavia, per l'invio corretto delle variazioni Fidelity, è ancora necessario impostare **il campo `CodAssortimento` a 99 nella tabella `mantemp`** del database dello *StoreServer*.
+
+    Nello scenario di migrazione dalla versione :material-tag:`4.2` alla :material-tag:`4.3` dei servizi legacy, **l'assortimento 99 e la cassa fittizia 99 possono essere eliminati, se presenti.**
+
 Per inviare le variazioni è necessario dopo le dovute configurazioni, eseguire l'applicativo *POS_SBVGest.exe* e una volta essersi assicurati che le varie casse o i punti vendita siano collegati correttamente premere il pulsante *Invia*.
 
 ![POS_SBVGest][image_ref_gjhhygh5]
+
+!!! warning "Configurazione dei file *appsettings.json* e *appsettings.Production.json* in *Pos_Sbv*"
+    All'interno della directory del *Pos_Sbv*, il file *appsettings.json* contiene esclusivamente **i valori di configurazione predefiniti** e può essere **sovrascritto durante gli aggiornamenti** eseguiti tramite il nuovo setup dei servizi legacy.
+
+    🔴 **Attenzione: non modificare il file *appsettings.json*** per configurazioni personalizzate, in quanto le modifiche potrebbero andar perse durante gli aggiornamenti.
+
+    Per eventuali personalizzazioni (es. **modifica della connection string**, impostazioni relative all'invio delle variazioni, ecc...), è necessario utilizzare il file: *appsettings.Production.json*. Questo file viene **preservato durante gli aggiornamenti** ed è il punto corretto in cui inserire tutte le configurazioni specifiche dell’ambiente di produzione.
+
+    In sintesi:
+
+    - *appsettings.json*: **valori di default → non modificare**
+    - *appsettings.Production.json*: **configurazioni personalizzate → modificare qui**
 
 !!! warning "Setting delle impostazioni relative all'invio delle variazioni"
     A partire dalla versione `4.3.0.0` del *Pos_Sbv*, vengono introdotte nel file *appsettings.json* dei parametri per parametrizzare l'invio delle variazioni.<br>Tali parametri sono i seguenti:
@@ -254,7 +331,7 @@ Per inviare le variazioni è necessario dopo le dovute configurazioni, eseguire 
     - **SendTimeoutinSec:** tempo massimo di invio del dato al Client prima di andare in timeout. **Di default è pari a 10 secondi.**
     - **ReceiveTimeoutInSec:** tempo massimo di ricezione dell'esito di applicazione del dato dal Client prima di andare in timeout. **Di default è pari a 10 secondi.**
 
-    Se una parte delle variazioni non dovesse venire inviata a causa del timeout, riprovare nuovamente l'invio dopo aver configurato i parametri soprastanti adeguatamente (aumento dei tempi massimi di timeout e/o diminuzione della quantità di record inviati) e aver riavviato il servizio Windows del *Pos_Sbv*.
+    Se una parte delle variazioni non dovesse venire inviata a causa del timeout, riprovare nuovamente l'invio dopo aver configurato i parametri soprastanti adeguatamente (aumento dei tempi massimi di timeout e/o diminuzione della quantità di record inviati) nel file *appsettings.Production.json* e aver riavviato il servizio Windows del *Pos_Sbv*.
 
 ### Pos_TxLog
 Il *Pos_TxLog* è il servizio del *Front Office* adibito all'invio del log dello *StoreServer* verso altre macchine in collegamento con quella del server centrale del punto vendita, come ad esempio il server della sede centrale della catena di punti vendita, se presente.
@@ -308,9 +385,46 @@ Al sorgere di problemi con i servizi legacy, sono diversi gli approcci utilizzab
 
 - In caso di problemi con la configurazione dei dati all'interno del database, avvenuti durante l'installazione da zero con il setup, **consultare il file *ConfigurationLog.DATAODIERNA* all'interno della directory *C:\Posware\TerminateConfiguration***.
 - In caso di errori generici con i servizi legacy, **consultare il file *LogErrori.DATAODIERNA* all'interno della directory *C:\Posware\Log***, se presente.
-- In caso di problemi con i singoli servizi legacy, con il passaggio alla versione :material-tag:`4.3` dei servizi legacy, viene creato **il database `log` nella stessa connessione del database dello *StoreServer***. Questo database conterrà una tabella per ognuno dei principali servizi legacy. All'interno di queste tabelle verranno poi immagazzinati i messaggi relativi all'avvio del relativo servizio ed eventuali messaggi di errori in caso si verifichino.
+- In caso di problemi con i singoli servizi legacy, nello scenario di nuova installazione, viene creato **il database `log` nella stessa connessione del database dello *StoreServer***. Questo database conterrà una tabella per ognuno dei principali servizi legacy. All'interno di queste tabelle verranno poi immagazzinati i messaggi relativi all'avvio del relativo servizio ed eventuali messaggi di errore in caso si verifichino. 
+
+    !!! warning "Database `log` nello scenario di migrazione"
+        Nel contesto di migrazione, lato server di barriera, **viene migrato esclusivamente il database `posware`**.<br>Il database `log`, invece, **viene eliminato e rigenerato automaticamente** al primo avvio del nuovo setup dei servizi legacy, con tutte le modifiche strutturali previste.
+
+        🔴 **Attenzione:** nel passaggio dalla versione :material-tag:`4.2` alla :material-tag:`4.3` dei servizi legacy, **il database `log` viene sempre eliminato**.<br>Se è necessario conservare i log precedenti, eseguire un **backup manuale** del database `log` prima di avviare la migrazione.
+
 - **Assicurarsi che il server di barriera e le casse comunichino tra loro sulle porte adibite ai servizi legacy** e non siano presenti collissioni dovute all'intervento dell'antivirus o del firewall di sistema, se non adeguatamente configurati con le opportune eccezioni. Inoltre, in caso siano state applicate configurazioni personalizzate di alcuni parametri all'interno del database dello *StoreServer*, **verificare che tali personalizzazioni non abbiano portato i servizi a collidere tra loro**, con più servizi che utilizzano la stessa porta.
 - In caso nessuna delle precedenti soluzioni abbia evidenziato la causa degli errori verificatisi, consultare i ***Windows Logs*** all'interno **dell'Event Viewer di Windows**.
+
+### Strategia di troubleshooting in caso di errori negli invii dei batch del Pos_Sbv
+Nel caso in cui il ***Pos_Sbv*** si blocchi durante la costruzione del batch (prima ancora di generare query verso il database), il problema è quasi certamente legato alla **costruzione dei dati di base**. Questo comportamento è **intenzionale**: il processo si arresta alla prima anomalia per garantire coerenza.
+
+Per individuare e risolvere l’errore in modo efficiente, seguire i passaggi seguenti:
+
+1. **Ridurre la dimensione del batch**
+
+    - Impostare il parametro **SendBatchSize** nel file di configurazione *appsettings.Production.json* a **1** o a un valore basso (es. 10).
+    - Questo consente di isolare il record che causa l’errore, facendo fallire il batch **esattamente su quel dato** (in caso di batch size pari a 1).
+
+2. **Saltare temporaneamente i record problematici**
+
+    - Se si sospetta che l’errore riguardi **un numero limitato di record**, è possibile:
+
+        - Impostare manualmente il campo `Applicato` = 1 nella tabella `mantemp` (DB `posware`) per marcarli come già inviati, oppure
+        - Eliminarli temporaneamente dalla tabella per testare l’invio degli altri.
+    
+    - Se il resto dei record viene elaborato correttamente, si potrà poi intervenire in modo mirato sui record esclusi.
+
+3. **Evitare batch troppo grandi in fase di test**
+
+    - In ambienti non ancora stabilizzati o in prima installazione, **evitare l’uso di batch molto ampi** (es. > 1000 record).
+    - Batch più piccoli rendono più semplice l’identificazione di errori strutturali nei dati.
+
+4. **Inviare i batch in locale per test veloci**
+
+    - In alternativa, per test più rapidi:
+
+        - Modificare temporaneamente il campo `CodAssortimento` a 99 nella tabella `mantemp` sui record problematici con invio singolo (**SendBatchSize** = 1).
+        - In questo modo l’invio sarà **limitato localmente** al server di barriera, riducendo drasticamente i tempi.
 
 
 

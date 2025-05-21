@@ -180,7 +180,7 @@ Per utilizzare **il flag custom `/MIGRATED`** è sempre obbligatorio specificare
 A fini esplicativi, si riporta un esempio completo del comando di installazione dello *StoreServer* con **il flag custom `/MIGRATED`** e i parametri di cui ha bisogno:
 
 ``` bat title="Installazione con codice punto vendita 5, connection string custom e il flag custom /MIGRATED"
-winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307"" /STOREID=5 /MIGRATED " --verbose
+winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=isid;password=1r{1]@ZJ^7/f;database=posware;port=3307"" /STOREID=5 /MIGRATED " --verbose
 ```
 
 #### Parametri proprietari di Winget
@@ -191,7 +191,7 @@ Il parametro più utile allo scopo è `--open-logs`: apre automaticamente la car
 Per farlo, aggiungere il parametro ai comandi già riportati negli esempi precedenti. 
 
 ``` bat title="Installazione con codice punto vendita 5, connection string custom e il flag custom /MIGRATED"
-winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307"" /STOREID=5 /MIGRATED " --verbose --open-logs
+winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=isid;password=1r{1]@ZJ^7/f;database=posware;port=3307"" /STOREID=5 /MIGRATED " --verbose --open-logs
 ```
 
 Se dovessero servire ulteriori comandi di **Winget**, consultare la guida ufficiale di **Microsoft**.
