@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -752,6 +752,8 @@ Non stai visualizzando l'ultima versione della documentazione.
       
         
       
+        
+      
     
     
     
@@ -776,7 +778,7 @@ Non stai visualizzando l'ultima versione della documentazione.
   
   
   <span class="md-ellipsis">
-    Installazione StoreServer
+    Installazione e aggiornamenti StoreServer
     
   </span>
   
@@ -787,7 +789,7 @@ Non stai visualizzando l'ultima versione della documentazione.
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
-            Installazione StoreServer
+            Installazione e aggiornamenti StoreServer
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -873,6 +875,29 @@ Non stai visualizzando l'ultima versione della documentazione.
   
   <span class="md-ellipsis">
     Migrazione
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installazione-storeserver/aggiornamento-storeserver.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aggiornamento
     
   </span>
   
@@ -1401,7 +1426,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 
 <h1 id="setupposware">SetupPosware</h1>
 <p><strong>Prima revisione documento: 27 agosto 2024</strong> <br>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 maggio 2025 09:19:14">9 maggio 2025</span></strong></p>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 maggio 2025 07:30:59">21 maggio 2025</span></strong></p>
 <hr />
 <h2 id="cenni-preliminari">Cenni preliminari</h2>
 <p>Il presente documento descrive il funzionamento di <em>SetupPosware</em>, installativo di <em>Posware Frontend</em>.
@@ -1608,6 +1633,10 @@ Vengono illustrati gli scenari d'uso supportati ed una serie di novità sui file
 <br>Per verificare MySQL ed accedere al database <code>cassa</code>, i dati di accesso vengono ottenuti dalla <em>Connection string</em> all'interno di <em>Posware.exe.config</em> (parametro <strong>Connessione</strong> negli <em>applicationSettings</em>).</p>
 <p><strong>Se la <em>Connection string</em> non è corretta, <em>SetupPosware</em> non procederà con l'installazione.</strong></p>
 <p>Inoltre, il setup verifica anche che ci sia una versione di Posware non inferiore alla <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.2.306</code>, la versione minima supportata per la migrazione alla <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3</code> dell'applicativo.<br>Se questa condizione non dovesse essere soddisfatta, <em>SetupPosware</em> mostrerà un errore specifico e per risolvere il problema sarà <strong>necessario installare una versione di Posware <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.2</code></strong> pari o superiore alla <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.2.306</code> prima di poter riprovare ad eseguire la migrazione.</p>
+<div class="admonition warning">
+<p class="admonition-title">Come agire in caso di installazioni non conformi</p>
+<p>Se dopo aver migrato la cassa dalla versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.2</code> alla <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3</code> ci sono problemi di migrazione del database a causa di <strong>situazioni non conformi</strong>, partire da una <strong>situazione ex novo</strong>.</p>
+</div>
 <h2 id="aggiornamento-dei-file-di-configurazione">Aggiornamento dei file di configurazione</h2>
 <p>A partire dalla versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3</code>, i file di configurazione di Posware, delle <em>Connection strings</em> e delle impostazioni utente sono stati riportati allo standard .NET rimuovendo l'approccio custom.</p>
 <p><em>SetupPosware</em> provvederà ad installare (o migrare in caso di migrazione dalla <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.2</code>) automaticamente i seguenti file di configurazione:</p>
@@ -1626,6 +1655,11 @@ Vengono illustrati gli scenari d'uso supportati ed una serie di novità sui file
 <p><strong>Rimane inteso che NON è possibile cambiare il nome della connessione ma solo il suo valore</strong>.
 <br>Per <strong>ConnessioneServer</strong> è anche possibile cambiare il provider da MySQL a SQL Server (vedere nel file la connessione di esempio commentata)</p>
 <p><strong><em>PosUpdate</em> non sovrascriverà né modificherà mai quel file durante gli aggiornamenti futuri.</strong></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">ConnessioneServer nello scenario di migrazione</p>
+<p>Durante la migrazione dalla <strong>versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.2</code> alla <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3</code></strong>, se nel file <em>Posware.exe.config</em> la password del <strong>server di barriera</strong> corrisponde alla vecchia password di default (<strong>vbhg4132</strong>), <em>SetupPosware</em> la aggiornerà automaticamente alla nuova password di default (<strong>Vbhg4132!</strong>).</p>
+<p>Se invece era stata impostata una <strong>password personalizzata</strong>, sarà necessario aggiornare manualmente il valore della chiave <strong>ConnessioneServer</strong> nel file <em>ConnectionStrings.config</em></p>
 </div>
 </li>
 <li>
@@ -1675,7 +1709,7 @@ Vengono illustrati gli scenari d'uso supportati ed una serie di novità sui file
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 maggio 2025 09:19:14">9 maggio 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 maggio 2025 07:30:59">21 maggio 2025</span>
   </span>
 
     
@@ -1787,10 +1821,10 @@ c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../javascripts/extra.js"></script>
       
