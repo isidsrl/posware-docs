@@ -1,0 +1,5748 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://posware.io/4.3/posware-modules/posware-frontend/tracciato-record-log.html">
+      
+      
+        <link rel="prev" href="../main-module/fatturazione-elettronica.html">
+      
+      
+        <link rel="next" href="argentea-satispay.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Log Transazione Posware - Posware official docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%209.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-3.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-11A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2014c-2.63%200-5-1.57-6-4a6.505%206.505%200%200%201%208.5-3.5A6.52%206.52%200%200%201%2018%2012c-1%202.43-3.37%204-6%204m0-6.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#posware-frontend-log-transazione-posware-specifiche-tecniche-e-formato-dati" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+Non stai visualizzando l'ultima versione della documentazione.
+<a href="../../..">
+    <strong>Clicca qui per andare all'ultima versione.</strong>
+</a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../../index.html" title="Posware official docs" class="md-header__button md-logo" aria-label="Posware official docs" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Posware official docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Log Transazione Posware
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/installazione-posware-frontend/overview-generale.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../main-module/statistiche-dettagliate.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Posware official docs" class="md-nav__button md-logo" aria-label="Posware official docs" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    Posware official docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installazione e aggiornamenti Posware Frontend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Installazione e aggiornamenti Posware Frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-posware-frontend/overview-generale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview generale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dipendenze e aggiornamenti
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-posware-frontend/setup-posware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SetupPosware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-posware-frontend/pos-update.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PosUpdate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installazione e aggiornamenti StoreServer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Installazione e aggiornamenti StoreServer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/overview-generale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview generale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/installazione-procedure-comuni.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Procedure comuni
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/installazione-nuovo-storeserver.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nuova installazione
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/migrazione-servizi-legacy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrazione
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/aggiornamento-storeserver.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aggiornamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/servizi-legacy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Servizi legacy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Moduli
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Moduli
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Modulo di base
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Modulo di base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main-module/statistiche-dettagliate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Statistiche dettagliate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main-module/posware-price-checker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Posware Price Checker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main-module/fatturazione-elettronica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fatturazione elettronica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Funzionalità di cassa
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Funzionalità di cassa
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Log Transazione Posware
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tracciato-record-log.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Log Transazione Posware
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduzione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduzione
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accesso-ai-dati-da-database-posware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accesso ai Dati da Database Posware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accesso ai Dati da Database Posware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#struttura-della-tabella-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struttura della Tabella Log
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordinamento-corretto-per-la-lettura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordinamento Corretto per la Lettura
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordinamento Corretto per la Lettura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opzione-1-ordinamento-per-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opzione 1: Ordinamento per ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opzione-2-ordinamento-per-chiavi-logiche" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opzione 2: Ordinamento per Chiavi Logiche
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      Indice Record
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Indice Record">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raggruppamento-per-categorie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raggruppamento per Categorie
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legenda-tipi-di-dato" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legenda Tipi di Dato
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-sulla-formattazione-dei-dati" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note sulla Formattazione dei Dati
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linee-guida-di-parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linee Guida di Parsing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequenza-tipica-dei-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequenza Tipica dei Record
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-00-inizio-transazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 00 - Inizio Transazione
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-01-dettaglio-articoloreparto" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 01 - Dettaglio Articolo/Reparto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-02-sconto-fine-scontrino-non-riferibile-a-prodotto" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 02 - Sconto (fine scontrino, non riferibile a prodotto)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-03-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 03 - Pagamento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-04-fine-transazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 04 - Fine Transazione
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-05-informazioni-transazione-precedente-annullatareso" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 05 - Informazioni Transazione Precedente (Annullata/Reso)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-06-informazioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 06 - Informazioni
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-09-montanti" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 09 - Montanti
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-10-informazioni-aggiuntive-testata" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 10 - Informazioni Aggiuntive Testata
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-13-informazioni-aggiuntive-pagamenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 13 - Informazioni Aggiuntive Pagamenti
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-14-informazioni-aggiuntive" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 14 - Informazioni Aggiuntive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-15-testata-promozione" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 15 - Testata Promozione
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-16-informazioni-buono-chiaro-segue-rec-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 16 - Informazioni Buono Chiaro (segue Rec. 03)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-17-informazioni-ricariche-epay-euronet" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 17 - Informazioni Ricariche EPAY EURONET
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-18-informazioni-pagamento-utenze-epay-euronet" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 18 - Informazioni Pagamento Utenze EPAY EURONET
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-20-rettifica" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 20 - Rettifica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RECORD 20 - Rettifica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-tipo-operazione-00" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per tipo operazione = 00:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-tipo-operazione-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per tipo operazione = 03:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-tipo-operazione-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per tipo operazione = 04:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-25-dettaglio-promozione" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 25 - Dettaglio Promozione
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-26-dettaglio-coupon-emesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 26 - Dettaglio Coupon Emesso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-27-dettaglio-coupon-redento" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 27 - Dettaglio Coupon Redento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-35-dettaglio-premio" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 35 - Dettaglio Premio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esempi-pratici" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempi Pratici
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Esempi Pratici">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esempio-record-00-inizio-transazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio Record 00 - Inizio Transazione
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-record-01-dettaglio-articolo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio Record 01 - Dettaglio Articolo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-record-06-subtotale-pre-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio Record 06 - Subtotale pre-pagamento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-record-03-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio Record 03 - Pagamento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-record-04-fine-transazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio Record 04 - Fine Transazione
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="argentea-satispay.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Argentea Satispay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fatturazione-immediata.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fatturazione immediata
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nota-di-credito.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nota di credito
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Celiachia
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Celiachia
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../celiac/informazioni-generali.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Informazioni generali
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../celiac/integrazione-bonus-celiachia-posware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integrazione bonus celiachia Posware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../celiac/rendicontazione-celiachia.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rendicontazione celiachia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduzione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduzione
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accesso-ai-dati-da-database-posware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accesso ai Dati da Database Posware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accesso ai Dati da Database Posware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#struttura-della-tabella-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struttura della Tabella Log
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordinamento-corretto-per-la-lettura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordinamento Corretto per la Lettura
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordinamento Corretto per la Lettura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opzione-1-ordinamento-per-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opzione 1: Ordinamento per ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opzione-2-ordinamento-per-chiavi-logiche" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opzione 2: Ordinamento per Chiavi Logiche
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      Indice Record
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Indice Record">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raggruppamento-per-categorie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raggruppamento per Categorie
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legenda-tipi-di-dato" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legenda Tipi di Dato
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-sulla-formattazione-dei-dati" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note sulla Formattazione dei Dati
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linee-guida-di-parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linee Guida di Parsing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequenza-tipica-dei-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequenza Tipica dei Record
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-00-inizio-transazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 00 - Inizio Transazione
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-01-dettaglio-articoloreparto" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 01 - Dettaglio Articolo/Reparto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-02-sconto-fine-scontrino-non-riferibile-a-prodotto" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 02 - Sconto (fine scontrino, non riferibile a prodotto)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-03-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 03 - Pagamento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-04-fine-transazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 04 - Fine Transazione
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-05-informazioni-transazione-precedente-annullatareso" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 05 - Informazioni Transazione Precedente (Annullata/Reso)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-06-informazioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 06 - Informazioni
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-09-montanti" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 09 - Montanti
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-10-informazioni-aggiuntive-testata" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 10 - Informazioni Aggiuntive Testata
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-13-informazioni-aggiuntive-pagamenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 13 - Informazioni Aggiuntive Pagamenti
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-14-informazioni-aggiuntive" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 14 - Informazioni Aggiuntive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-15-testata-promozione" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 15 - Testata Promozione
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-16-informazioni-buono-chiaro-segue-rec-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 16 - Informazioni Buono Chiaro (segue Rec. 03)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-17-informazioni-ricariche-epay-euronet" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 17 - Informazioni Ricariche EPAY EURONET
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-18-informazioni-pagamento-utenze-epay-euronet" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 18 - Informazioni Pagamento Utenze EPAY EURONET
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-20-rettifica" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 20 - Rettifica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RECORD 20 - Rettifica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-tipo-operazione-00" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per tipo operazione = 00:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-tipo-operazione-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per tipo operazione = 03:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-tipo-operazione-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per tipo operazione = 04:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-25-dettaglio-promozione" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 25 - Dettaglio Promozione
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-26-dettaglio-coupon-emesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 26 - Dettaglio Coupon Emesso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-27-dettaglio-coupon-redento" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 27 - Dettaglio Coupon Redento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-35-dettaglio-premio" class="md-nav__link">
+    <span class="md-ellipsis">
+      RECORD 35 - Dettaglio Premio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esempi-pratici" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempi Pratici
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Esempi Pratici">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esempio-record-00-inizio-transazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio Record 00 - Inizio Transazione
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-record-01-dettaglio-articolo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio Record 01 - Dettaglio Articolo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-record-06-subtotale-pre-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio Record 06 - Subtotale pre-pagamento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-record-03-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio Record 03 - Pagamento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-record-04-fine-transazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esempio Record 04 - Fine Transazione
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <span class="md-tag">Frontend</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">Log</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="posware-frontend-log-transazione-posware-specifiche-tecniche-e-formato-dati">Posware Frontend - Log Transazione Posware: Specifiche Tecniche e formato dati</h1>
+<p><strong>Prima revisione documento: 13 ottobre 2025</strong> <br>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="14 ottobre 2025 10:43:38 UTC">14 ottobre 2025</span></strong></p>
+<hr />
+<h2 id="introduzione">Introduzione</h2>
+<p>Specifiche tecniche del tracciato log delle transazioni POS Posware con campi a larghezza fissa, strutturati in record tipologici concatenati che descrivono l'intero ciclo di vita di uno scontrino, inclusi articoli, sconti, pagamenti, promozioni e chiusura.</p>
+<p>Ogni record indica posizione iniziale, lunghezza, tipo e descrizione del campo, con convenzioni uniformi per numerici, stringhe e numerici con virgola virtuale per importi e quantità.</p>
+<h2 id="accesso-ai-dati-da-database-posware">Accesso ai Dati da Database Posware</h2>
+<p>I dati del tracciato log sono memorizzati nel database <strong>Posware</strong> all'interno della tabella <code>log</code>. Questa tabella MySQL utilizza una struttura normalizzata che mantiene ogni record di log come singola riga, dove il campo <code>Buffer</code> contiene l'intero record formattato secondo le specifiche descritte in questo documento.</p>
+<h3 id="struttura-della-tabella-log">Struttura della Tabella Log</h3>
+<p>La tabella è definita con i seguenti campi principali:</p>
+<ul>
+<li><strong>Id</strong>: Chiave primaria auto-incrementale per identificazione univoca</li>
+<li><strong>Pdv</strong>: Codice punto vendita (6 caratteri)</li>
+<li><strong>Data</strong>: Data dell'operazione (8 caratteri, formato YYYYMMDD)</li>
+<li><strong>Cassa</strong>: Numero terminale cassa (3 caratteri)</li>
+<li><strong>Progressivo</strong>: Numero progressivo del record (6 caratteri)</li>
+<li><strong>Tipo</strong>: Tipo di record (2 caratteri, es: "00", "01", "02", ecc.)</li>
+<li><strong>Buffer</strong>: Contenuto completo del record formattato (255 caratteri max)</li>
+<li><strong>TransactionId</strong>: Numero della transazione Posware</li>
+</ul>
+<h3 id="ordinamento-corretto-per-la-lettura">Ordinamento Corretto per la Lettura</h3>
+<p><strong>IMPORTANTE</strong>: Per leggere correttamente il log e mantenere la sequenza logica di dati ed operazioni, è necessario interrogare la tabella rispettando un ordinamento preciso. Sono disponibili due sequenze di ordinamento equivalenti:</p>
+<h4 id="opzione-1-ordinamento-per-id">Opzione 1: Ordinamento per ID</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="p">[</span><span class="k">Where</span><span class="w"> </span><span class="n">CONDITION</span><span class="p">]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="opzione-2-ordinamento-per-chiavi-logiche">Opzione 2: Ordinamento per Chiavi Logiche</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="p">[</span><span class="k">Where</span><span class="w"> </span><span class="n">CONDITION</span><span class="p">]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Pdv</span><span class="w"> </span><span class="k">ASC</span><span class="p">,</span><span class="w"> </span><span class="k">Data</span><span class="w"> </span><span class="k">ASC</span><span class="p">,</span><span class="w"> </span><span class="n">Cassa</span><span class="w"> </span><span class="k">ASC</span><span class="p">,</span><span class="w"> </span><span class="n">Progressivo</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
+</code></pre></div>
+<p>Entrambi gli ordinamenti garantiscono che i record vengano letti nella sequenza corretta in cui sono stati generati dal sistema POS, preservando l'integrità del flusso transazionale e permettendo una corretta interpretazione dei dati secondo le specifiche del presente documento.</p>
+<p>La mancata applicazione del corretto ordinamento può portare a interpretazioni errate del flusso delle transazioni e a errori nell'elaborazione dei dati di log.</p>
+<h2 id="indice-record">Indice Record</h2>
+<h3 id="raggruppamento-per-categorie">Raggruppamento per Categorie</h3>
+<ul>
+<li><strong>Transazione</strong>: 00 Inizio, 01 Dettaglio, 02 Sconto, 03 Pagamento, 04 Fine</li>
+<li><strong>Metadati e controllo</strong>: 05 Info transazione precedente, 06 Informazioni operative, 09 Montanti, 10 Info testata, 13 Info pagamenti, 14 Info aggiuntive</li>
+<li><strong>Promozioni e coupon</strong>: 15 Testata promo, 25 Dettaglio promo, 26 Coupon emesso, 27 Coupon redento, 35 Dettaglio premio</li>
+<li><strong>Servizi e rettifiche</strong>: 17 Ricariche EPAY, 18 Pagamento utenze EPAY, 20 Rettifica</li>
+</ul>
+<h2 id="legenda-tipi-di-dato">Legenda Tipi di Dato</h2>
+<ul>
+<li><strong>numeric</strong> = Tipo numerico intero con riempimento a sinistra con zeri (pad-left 0-filled)</li>
+<li><strong>string</strong> = Tipo stringa con riempimento a destra con spazi vuoti (pad-right blank-filled)</li>
+<li><strong>numeric(x,y)</strong> = Numerico con virgola virtuale, <em>X</em> cifre totali di cui <em>Y</em> decimali; es. 123456 → 1234,56 per numeric(6,2)</li>
+<li><strong>boolean</strong> = Campo binario 0/1 o flag (0 = falso, 1 = vero)</li>
+<li><strong>numeric(date)</strong> = Data nel formato yyyymmdd</li>
+<li><strong>numeric(time)</strong> = Orario nel formato hhmmss</li>
+</ul>
+<h2 id="note-sulla-formattazione-dei-dati">Note sulla Formattazione dei Dati</h2>
+<ul>
+<li>I tipi <strong>numeric</strong>, inclusi quelli con virgola virtuale sono riempiti con zeri ed allineati a sinistra (pad-left 0-filled)</li>
+<li>I tipi <strong>string</strong> sono riempiti con spazi vuoti a destra (pad-right blank-filled)</li>
+<li>Il formato <strong>numeric(x,y)</strong> indica <em>X</em> cifre totali di cui <em>Y</em> decimali, con virgola virtuale:</li>
+<li><strong>numeric(6,2)</strong> = 6 cifre totali di cui 2 decimali (es: 123456 = 1234,56)</li>
+<li><strong>numeric(7,2)</strong> = 7 cifre totali di cui 2 decimali (es: 1234567 = 12345,67)</li>
+<li><strong>numeric(3,3)</strong> = 3 cifre totali di cui 3 decimali (es: 123 = 0,123)</li>
+</ul>
+<h2 id="linee-guida-di-parsing">Linee Guida di Parsing</h2>
+<ul>
+<li>Estrarre i campi per posizione e lunghezza; per numeric(x,y) convertire dividendo per 10^y in fase di interpretazione applicativa</li>
+<li>Mappare i campi boolean 0/1 su false/true o No/Sì, rigettando valori non ammessi</li>
+<li>Per numeric(date) validare il formato yyyymmdd e i range calendario; per numeric(time) validare hhmmss con zeri significativi</li>
+</ul>
+<h2 id="sequenza-tipica-dei-record">Sequenza Tipica dei Record</h2>
+<p>Il flusso tipico di una transazione inizia con 00, segue 01 per le righe, eventuali 02/15/25/26/27 per promozioni, sconti e coupon, uno o più 03 per i pagamenti, e si chiude con 04.
+Eventuali 10/14/13/16/17/18 possono essere presenti in transazioni che coinvolgono la tessera loyalty,  provider di pagamento esterni o funzionalità opzionali (lotteria scontrini, metadati fornite dall'utente come info aggiuntive), mentre 05 e 20 compaiono rispettivamente per annulli/resi e rettifiche fuori flusso.</p>
+<p><strong>Delimitazione delle Transazioni</strong>: Uno scontrino è sempre delimitato da un record di <strong>inizio "00"</strong> e un record di <strong>chiusura "04"</strong>. La presenza di un record "00" senza il corrispondente record "04" indicherebbe uno scontrino ancora in corso, tuttavia questo scenario non si verifica nella pratica operativa poiché <strong>la cassa invia al server di barriera solo scontrini completi </strong>.</p>
+<p><strong>Sequenze di Record</strong>: All'interno della sequenza 00-04, tutti i tipi di record intermedi (01, 02, 03, 05, 09, 10, 13, 14, 15, 16, 17, 18, 20, 25, 26, 27, 35) appartengono necessariamente allo scontrino corrente. Leggendo il log in sequenza progressiva, una volta incontrato un record tipo "00", tutti i record successivi fino al record "04" corrispondente fanno parte della stessa transazione.</p>
+<p><strong>Eccezione: Record Tipo "06"</strong>: L'unico tipo di record che può esistere anche al di fuori delle sequenze 00-04 è il <strong>record tipo "06" (Informazioni)</strong>. Questi record contengono metadati operativi e informazioni di sistema, identificabili tramite il campo "Tipo Operazione" presente nel buffer del record. I record "06" possono comparire:</p>
+<ul>
+<li>Immediatamente dopo l'apertura del programma e prima dell'inizio di uno scontrino</li>
+<li>Tra diverse transazioni (eventi operativi come apertura/chiusura operatore, pause, operazioni di cassa) </li>
+</ul>
+<p><strong>Flusso di Lettura</strong>: Dopo la chiusura di uno scontrino con record "04", nel flusso si possono incontrare solamente:</p>
+<ul>
+<li>Un nuovo record "00" (inizio immediato di un nuovo scontrino)</li>
+<li>Un record "06" (eventi operativi come cambio operatore, pause, aperture cassetto, ecc.) </li>
+</ul>
+<p>Questa struttura garantisce la corretta interpretazione del flusso transazionale e permette di raggruppare logicamente i record appartenenti a ciascuno scontrino durante l'elaborazione dei dati di log.</p>
+<hr />
+<h2 id="record-00-inizio-transazione">RECORD 00 - Inizio Transazione</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "00")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>2</td>
+<td>numeric</td>
+<td><strong>Tipo Transazione:</strong></td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>00 = Transazione di vendita fiscale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>03 = Fondo cassa</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>04 = Prelievo</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>05/06/07 = Commissione vendita</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>08 = Annullo transazione precedente</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>11 = Nota credito</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>12 = Movimento non fiscale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>20 = Rettifica</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>21 = Registro Mancato funzionamento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>22 = Annullo Ricarica</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>23 = Pagamento Utenze (Prot. Euronet)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>24 = Attivazione Gift Card</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>17</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero Transazione (ID univoco Posware, progressivo)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>22</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero Scontrino Fiscale; se TipoTransazione=12 contiene il Numero documento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>27</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice numerico operatore</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>31</td>
+<td>8</td>
+<td>numeric(date)</td>
+<td>Data Operazione (yyyymmdd)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>39</td>
+<td>6</td>
+<td>numeric(time)</td>
+<td>Ora operazione (hhmmss)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>45</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag1: Transazione completata</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>46</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag2: Transazione annullata (annullata/storno)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>47</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag3: Con sconto al totale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>48</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag4: Transazione in Training</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>49</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag5: Sconto su Articoli</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>50</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag6: Posizione chiave attiva</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>51</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag7: Transazione sospesa</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>52</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag8: Ristampa</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>53</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag9: IVA esente</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>54</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag10: Scontrino fatturato</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>55</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag11: Resi merci presenti</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>56</td>
+<td>13</td>
+<td>string</td>
+<td>Codice Cliente Fidelity (13 caratteri)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>69</td>
+<td>10</td>
+<td>string</td>
+<td>Matricola fiscale cassa (10 caratteri)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>79</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Totale transazione (totale scontrino)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>87</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Sconti articoli incondizionati (promo incondizionate)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>95</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Sconti condizionati (promo a fine scontrino)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>103</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Sconti manuali da tastiera</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>111</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Punti assegnati</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>119</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Punti utilizzati</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>127</td>
+<td>1</td>
+<td>boolean</td>
+<td>Transazione con carta fidelity</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>128</td>
+<td>1</td>
+<td>boolean</td>
+<td>Transazione con scontrini sospesi</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>129</td>
+<td>13</td>
+<td>string</td>
+<td>Codice Commissione di Vendita</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>142</td>
+<td>1</td>
+<td>boolean</td>
+<td>Nuova Commissione (1=Nuovo, 0=Modifica)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>143</td>
+<td>2</td>
+<td>numeric</td>
+<td>Causale Movimento Finanziario</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>145</td>
+<td>1</td>
+<td>boolean</td>
+<td>Scontrino Automatico</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>146</td>
+<td>13</td>
+<td>string</td>
+<td>Barcode dello scontrino</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>159</td>
+<td>9</td>
+<td>numeric(7,2)</td>
+<td>Corrispettivo Fiscale a inizio transazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>168</td>
+<td>2</td>
+<td>string</td>
+<td>Causale Movimento non fiscale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>170</td>
+<td>4</td>
+<td>numeric</td>
+<td>Numero ZReport attuale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>174</td>
+<td>11</td>
+<td>string</td>
+<td>Matricola RT</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-01-dettaglio-articoloreparto">RECORD 01 - Dettaglio Articolo/Reparto</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "01")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>20</td>
+<td>numeric</td>
+<td>Codice Articolo/Reparto (Barcode/PLU/Reparto)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>35</td>
+<td>1</td>
+<td>string</td>
+<td>Tipo Articolo o Reparto (A/R/P premio)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>36</td>
+<td>2</td>
+<td>numeric</td>
+<td>Codice IVA</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>38</td>
+<td>3</td>
+<td>numeric</td>
+<td>Codice Reparto di appartenenza</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>41</td>
+<td>6</td>
+<td>numeric(4,2)</td>
+<td>Quantità prodotto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>47</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Importo unitario</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>55</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Importo Totale riga (lordo sconti)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>63</td>
+<td>1</td>
+<td>boolean</td>
+<td>Prodotto in promozione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>64</td>
+<td>10</td>
+<td>string</td>
+<td>Codice Riferimento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>74</td>
+<td>10</td>
+<td>string</td>
+<td>Codice Paniere</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>84</td>
+<td>2</td>
+<td>string</td>
+<td>Tipo promozione (se riferibile a prodotto)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>86</td>
+<td>6</td>
+<td>numeric(4,2)</td>
+<td>Valore sconto su prodotto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>92</td>
+<td>6</td>
+<td>numeric(4,2)</td>
+<td>Totale punti su articolo/reparto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>98</td>
+<td>1</td>
+<td>boolean</td>
+<td>Punti segno (0=+;1=−)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>99</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag1: Stornato</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>100</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag2: Reso</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>101</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag3: Vuoto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>102</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag4: Battuta manuale a reparto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>103</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag5: Battuta manuale da tastiera</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>104</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag6: Articolo non trovato (forzato)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>105</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag7: Da bilancia</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>106</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag8: Prezzo richiesto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>107</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag9: Articolo coupon con barcode</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>108</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag10: Sacchettone da bilancia</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>109</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag11: Articolo del sacchettone</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>110</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag12: Coupon di Catalina</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>111</td>
+<td>1</td>
+<td>boolean</td>
+<td>Prodotto premio</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>112</td>
+<td>6</td>
+<td>string</td>
+<td>Indicazione del Riferimento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>118</td>
+<td>1</td>
+<td>boolean</td>
+<td>Ricarica online (1) / offline (0)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>119</td>
+<td>6</td>
+<td>numeric(3,3)</td>
+<td>Quantità decimale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>125</td>
+<td>1</td>
+<td>boolean</td>
+<td>Coupon validato online</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>126</td>
+<td>1</td>
+<td>boolean</td>
+<td>Date del coupon valide</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>127</td>
+<td>1</td>
+<td>boolean</td>
+<td>Articolo appartenente a Kit</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>128</td>
+<td>20</td>
+<td>string</td>
+<td>Barcode Kit/Sacchettone (se flag=1)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>148</td>
+<td>20</td>
+<td>string</td>
+<td>Gruppo Promo (se presente NP con gruppo promo)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>168</td>
+<td>40</td>
+<td>string</td>
+<td>Descrizione articolo in cassa</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>208</td>
+<td>6</td>
+<td>string</td>
+<td>Codice Listino utilizzato (se gestione listini manuale)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-02-sconto-fine-scontrino-non-riferibile-a-prodotto">RECORD 02 - Sconto (fine scontrino, non riferibile a prodotto)</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "02")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>10</td>
+<td>string</td>
+<td>Codice riferimento origine sconto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>25</td>
+<td>10</td>
+<td>string</td>
+<td>Paniere del riferimento (se presente)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>35</td>
+<td>2</td>
+<td>string</td>
+<td>Messaggio del riferimento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>37</td>
+<td>13</td>
+<td>numeric</td>
+<td>Codice articolo coupon rilasciato</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>50</td>
+<td>13</td>
+<td>numeric</td>
+<td>Codice coupon rientrato (utilizzato)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>63</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipologia sconto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>65</td>
+<td>6</td>
+<td>numeric(4,2)</td>
+<td>Valore dello sconto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>71</td>
+<td>6</td>
+<td>numeric(4,2)</td>
+<td>Punti accumulati</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>77</td>
+<td>10</td>
+<td>string</td>
+<td>Codice Iniziativa</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>87</td>
+<td>1</td>
+<td>boolean</td>
+<td>Promo Automatica/Manuale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>88</td>
+<td>13</td>
+<td>string</td>
+<td>Codice autorizzante</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-03-pagamento">RECORD 03 - Pagamento</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "03")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo di Pagamento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>17</td>
+<td>9</td>
+<td>numeric(7,2)</td>
+<td>Importo pagamento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>26</td>
+<td>9</td>
+<td>numeric(7,2)</td>
+<td>Importo in valuta estera</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>35</td>
+<td>5</td>
+<td>numeric</td>
+<td>Quantità (solo fondo cassa e prelievi)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>40</td>
+<td>1</td>
+<td>boolean</td>
+<td>Annullo pagamento (solo fondo cassa/prelievi)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>41</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag Valuta</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>42</td>
+<td>1</td>
+<td>boolean</td>
+<td>Pagamento coupon</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>43</td>
+<td>1</td>
+<td>boolean</td>
+<td>Sub pagamento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>44</td>
+<td>1</td>
+<td>boolean</td>
+<td>Corrispettivo non pagato</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>45</td>
+<td>1</td>
+<td>boolean</td>
+<td>Sconto fidelity</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>46</td>
+<td>1</td>
+<td>boolean</td>
+<td>EFT manuale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>47</td>
+<td>1</td>
+<td>boolean</td>
+<td>Chiave MGR attiva</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>48</td>
+<td>8</td>
+<td>string</td>
+<td>Indicatore personalizzazioni</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>56</td>
+<td>9</td>
+<td>numeric(7,2)</td>
+<td>Resto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>65</td>
+<td>8</td>
+<td>numeric(date)</td>
+<td>Data Operazione Pagamento (yyyymmdd)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>73</td>
+<td>6</td>
+<td>numeric(time)</td>
+<td>Ora Operazione Pagamento (hhmmss)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>79</td>
+<td>15</td>
+<td>string</td>
+<td>Numero assegno/codice coupon</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>94</td>
+<td>8</td>
+<td>string</td>
+<td>Codice CAB banca</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>102</td>
+<td>8</td>
+<td>string</td>
+<td>Codice ABI banca</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>110</td>
+<td>3</td>
+<td>string</td>
+<td>Codice internazionale valuta</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>113</td>
+<td>18</td>
+<td>numeric(12,6)</td>
+<td>Valore del cambio valuta</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>131</td>
+<td>50</td>
+<td>string</td>
+<td>Codice GIFT CARD o Id Terminale (Argentea)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-04-fine-transazione">RECORD 04 - Fine Transazione</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "04")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1</td>
+<td>boolean</td>
+<td>Transazione annullata</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>16</td>
+<td>1</td>
+<td>boolean</td>
+<td>Sconto sul totale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>17</td>
+<td>1</td>
+<td>boolean</td>
+<td>Transazione sospesa</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>18</td>
+<td>1</td>
+<td>boolean</td>
+<td>Bollini rifiutati</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>19</td>
+<td>1</td>
+<td>boolean</td>
+<td>Tasto esclusione sconti</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>20</td>
+<td>1</td>
+<td>boolean</td>
+<td>Resto con pagamento 20</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>21</td>
+<td>1</td>
+<td>boolean</td>
+<td>Clienti in circolarità</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>22</td>
+<td>1</td>
+<td>boolean</td>
+<td>Chiave MGR attiva</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>23</td>
+<td>9</td>
+<td>numeric(7,2)</td>
+<td>Totale transazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>32</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero articoli venduti</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>37</td>
+<td>6</td>
+<td>numeric(time)</td>
+<td>Ora fine transazione (hhmmss)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>43</td>
+<td>8</td>
+<td>numeric(date)</td>
+<td>Data fine transazione (yyyymmdd)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>51</td>
+<td>8</td>
+<td>string</td>
+<td>Indicatore personalizzazioni</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>59</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero bollini sul totale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>64</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero bollini sui reparti</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>69</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero bollini in somma</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>74</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero bollini su singolo articolo</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>79</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero bollini su offerta</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>84</td>
+<td>4</td>
+<td>string</td>
+<td>4 byte vuoti non usati</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>88</td>
+<td>4</td>
+<td>string</td>
+<td>(vuoto)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>92</td>
+<td>4</td>
+<td>string</td>
+<td>(vuoto)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>96</td>
+<td>4</td>
+<td>string</td>
+<td>(vuoto)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>100</td>
+<td>9</td>
+<td>numeric(7,2)</td>
+<td>Importo sconti accumulati (articolo/totale)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>109</td>
+<td>9</td>
+<td>numeric(7,2)</td>
+<td>Importo del resto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>118</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero punti maturati</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>123</td>
+<td>5</td>
+<td>numeric</td>
+<td>Cumulo punti</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>128</td>
+<td>9</td>
+<td>numeric(7,2)</td>
+<td>Corrispettivo Fiscale a fine transazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-05-informazioni-transazione-precedente-annullatareso">RECORD 05 - Informazioni Transazione Precedente (Annullata/Reso)</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "05")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero Transazione di riferimento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>20</td>
+<td>8</td>
+<td>numeric(date)</td>
+<td>Data Transazione (yyyymmdd)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>28</td>
+<td>4</td>
+<td>numeric</td>
+<td>Z Report Number della transazione di riferimento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>32</td>
+<td>4</td>
+<td>numeric</td>
+<td>Numero Scontrino della transazione di riferimento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>36</td>
+<td>11</td>
+<td>string</td>
+<td>Matricola fiscale stampante del documento di riferimento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-06-informazioni">RECORD 06 - Informazioni</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "06")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>2</td>
+<td>numeric</td>
+<td><strong>Tipo Operazione (0..15):</strong></td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>00 = Apertura Operatore</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>01 = Chiusura Operatore</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>02 = Apertura Cassetto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>03 = TOTALE</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>04 = Pausa Operatore</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>05 = Fine Pausa Operatore</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>06 = Chiusura Fiscale Manuale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>07 = Stampa Totali</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>08 = Chiusura Fiscale da PC</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>09 = Codice Generico</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>10 = Versione Posware</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>11 = Chip Card KO</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>12 = Messaggio</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>13 = Cambio Chiave Amministratore</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>14 = Start Programma</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>15 = Passaggio Tessera Fidelity</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>17</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice Operatore</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>21</td>
+<td>8</td>
+<td>numeric(date)</td>
+<td>Data Operazione (yyyymmdd)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>29</td>
+<td>6</td>
+<td>numeric(time)</td>
+<td>Ora Operazione (hhmmss)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>35</td>
+<td>13</td>
+<td>numeric</td>
+<td>Codice inserito / risposta operatore (se tipo=12)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>48</td>
+<td>4</td>
+<td>numeric</td>
+<td>Versione del programma (codice)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>52</td>
+<td>1</td>
+<td>numeric</td>
+<td>Flag 1-7 non usato</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>59</td>
+<td>1</td>
+<td>boolean</td>
+<td>Flag8: Chip Card diversa da inizio transazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>60</td>
+<td>9</td>
+<td>numeric(7,2)</td>
+<td>Importo della Chiusura Fiscale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>69</td>
+<td>6</td>
+<td>numeric</td>
+<td>Codice Messaggio (solo se tipo=12)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>75</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero stampe/visualizzazioni (solo se tipo=12)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>78</td>
+<td>1</td>
+<td>string</td>
+<td>Sistema Operativo (W/D/L)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>79</td>
+<td>11</td>
+<td>numeric(9,2)</td>
+<td>Gran Totale Fiscale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>90</td>
+<td>11</td>
+<td>numeric(9,2)</td>
+<td>Totale Note Credito Giornaliero</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>101</td>
+<td>11</td>
+<td>numeric(9,2)</td>
+<td>Gran Totale Note Credito</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>112</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero della chiusura fiscale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>117</td>
+<td>10</td>
+<td>string</td>
+<td>Matricola fiscale cassa</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>127</td>
+<td>15</td>
+<td>string</td>
+<td>Versione programma X.X.X.X</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>142</td>
+<td>13</td>
+<td>string</td>
+<td>Codice Tessera Fidelity (se tipo=15)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>155</td>
+<td>11</td>
+<td>string</td>
+<td>Matricola RT</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>166</td>
+<td>2</td>
+<td>numeric</td>
+<td>Numero file pendenti da inviare ad AdE</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-09-montanti">RECORD 09 - Montanti</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "09")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero Transazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>20</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero Scontrino Fiscale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>25</td>
+<td>10</td>
+<td>string</td>
+<td>Codice Montante</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>35</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Accumulato</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>43</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Goduto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>51</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>VariazionePos</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>59</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>VariazioneNeg</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>67</td>
+<td>100</td>
+<td>string</td>
+<td>Codice carta o seriale gift card</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-10-informazioni-aggiuntive-testata">RECORD 10 - Informazioni Aggiuntive Testata</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "10")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>3</td>
+<td>string</td>
+<td>Tipo info aggiuntiva (FID/SOS/POS/ORD/KIT; con Tipo Transazione=12: CCF/RSC/IND/LOC/CAP/PRV/PIV/CFI/TEL)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>18</td>
+<td>100</td>
+<td>string</td>
+<td>Informazione; per POS/ORD contiene numero file; per KIT contiene barcode KIT e quantità (numeric(6,2))</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-13-informazioni-aggiuntive-pagamenti">RECORD 13 - Informazioni Aggiuntive Pagamenti</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "13")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>2</td>
+<td>string</td>
+<td>Tipo di pagamento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>17</td>
+<td>100</td>
+<td>string</td>
+<td>Informazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-14-informazioni-aggiuntive">RECORD 14 - Informazioni Aggiuntive</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "14")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1</td>
+<td>string</td>
+<td>Tipo Informazione (A=Articolo, S=Scontrino)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>16</td>
+<td>5</td>
+<td>string</td>
+<td>Codice Informazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>21</td>
+<td>20</td>
+<td>string</td>
+<td>Codice a barre (se Tipo=A)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>41</td>
+<td>100</td>
+<td>string</td>
+<td>Informazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-15-testata-promozione">RECORD 15 - Testata Promozione</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "15")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero Transazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>20</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero Scontrino Fiscale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>25</td>
+<td>10</td>
+<td>string</td>
+<td>Codice Promo</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>35</td>
+<td>6</td>
+<td>string</td>
+<td>Riferimento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>41</td>
+<td>6</td>
+<td>string</td>
+<td>Paniere</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>47</td>
+<td>2</td>
+<td>string</td>
+<td>Tipo Effetto (S,B,P,C,M)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>49</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Sconto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>57</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Variazione Montante</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>65</td>
+<td>10</td>
+<td>string</td>
+<td>Montante</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>75</td>
+<td>6</td>
+<td>string</td>
+<td>Codice Messaggio</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>81</td>
+<td>13</td>
+<td>string</td>
+<td>Codice Coupon</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>94</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero applicazioni</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>97</td>
+<td>3</td>
+<td>numeric</td>
+<td>Pezzi in promozione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>100</td>
+<td>1</td>
+<td>boolean</td>
+<td>Promo Automatica/Manuale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>101</td>
+<td>13</td>
+<td>string</td>
+<td>Codice Autorizzazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>114</td>
+<td>1</td>
+<td>string</td>
+<td>Tipo Promozione (A/R/S/P)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>115</td>
+<td>1</td>
+<td>boolean</td>
+<td>Richiede Coupon</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>116</td>
+<td>20</td>
+<td>string</td>
+<td>Raggruppamento Promo</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>136</td>
+<td>5</td>
+<td>numeric(3,2)</td>
+<td>Sconto Percentuale digitato</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>141</td>
+<td>20</td>
+<td>string</td>
+<td>Codice promozione (20 bytes)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-16-informazioni-buono-chiaro-segue-rec-03">RECORD 16 - Informazioni Buono Chiaro (segue Rec. 03)</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "16")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>30</td>
+<td>string</td>
+<td>Codeline del buono pasto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>45</td>
+<td>3</td>
+<td>numeric</td>
+<td>Codice emettitore buono pasto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>48</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Valore buono pasto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>56</td>
+<td>5</td>
+<td>numeric(3,2)</td>
+<td>Percentuale sconto emettitore</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>61</td>
+<td>5</td>
+<td>numeric(3,2)</td>
+<td>Aliquota IVA su buono</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>66</td>
+<td>5</td>
+<td>numeric(3,2)</td>
+<td>Percentuale di scorporo</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>71</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Valore rimborsato al retailer</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>79</td>
+<td>8</td>
+<td>numeric(date)</td>
+<td>Data scadenza buono (yyyymmdd)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>87</td>
+<td>8</td>
+<td>numeric(date)</td>
+<td>Data scadenza rimborso (yyyymmdd)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>95</td>
+<td>1</td>
+<td>boolean</td>
+<td>Buono da rispedire in cartaceo</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>96</td>
+<td>10</td>
+<td>numeric</td>
+<td>Codice Corporate Wincor Nixdorf</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>106</td>
+<td>10</td>
+<td>numeric</td>
+<td>Codice dispositivo</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>116</td>
+<td>10</td>
+<td>numeric</td>
+<td>Id transazione su Server</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>126</td>
+<td>40</td>
+<td>string</td>
+<td>Codeline del buono pasto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-17-informazioni-ricariche-epay-euronet">RECORD 17 - Informazioni Ricariche EPAY EURONET</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "17")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>30</td>
+<td>string</td>
+<td>Codice EAN dell'articolo</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>45</td>
+<td>30</td>
+<td>string</td>
+<td>Codice PAN eventuale della Carta</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>75</td>
+<td>30</td>
+<td>string</td>
+<td>Codice Seriale del PIN Ricevuto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>105</td>
+<td>30</td>
+<td>string</td>
+<td>Id Transazione HOST (Codice Transazione Epay)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>135</td>
+<td>30</td>
+<td>string</td>
+<td>Id Transazione Client (Codice Transazione Posware)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>165</td>
+<td>10</td>
+<td>numeric(8,2)</td>
+<td>Importo</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>175</td>
+<td>1</td>
+<td>numeric</td>
+<td>Tipo Operazione (0=Prenotazione, 1=Conferma, 2=Annullo)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-18-informazioni-pagamento-utenze-epay-euronet">RECORD 18 - Informazioni Pagamento Utenze EPAY EURONET</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "18")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>30</td>
+<td>string</td>
+<td>Codice EAN dell'articolo (fittizio)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>45</td>
+<td>30</td>
+<td>string</td>
+<td>Codeline letta a scanner</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>75</td>
+<td>30</td>
+<td>string</td>
+<td>Id Transazione HOST (Codice Transazione Epay)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>105</td>
+<td>30</td>
+<td>string</td>
+<td>Id Transazione Client (Codice Transazione Posware)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>135</td>
+<td>10</td>
+<td>numeric(8,2)</td>
+<td>Importo Bolletta</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>145</td>
+<td>10</td>
+<td>numeric(8,2)</td>
+<td>Importo Commissione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>175</td>
+<td>1</td>
+<td>numeric</td>
+<td>Tipo Operazione (0=Prenotazione, 1=Conferma, 2=Annullo)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-20-rettifica">RECORD 20 - Rettifica</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo operazione (00=Annullo, 03=Rettifica pagamento, 04=Conciliazione sospesi)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>7</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>10</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero Transazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>20</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero Scontrino Fiscale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>25</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice numerico operatore</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>39</td>
+<td>8</td>
+<td>numeric(date)</td>
+<td>Data Operazione (yyyymmdd)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>47</td>
+<td>6</td>
+<td>numeric(time)</td>
+<td>Ora operazione (hhmmss)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<h3 id="per-tipo-operazione-00">Per tipo operazione = 00:</h3>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>48</td>
+<td>1</td>
+<td>boolean</td>
+<td>Fisso a 1</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<h3 id="per-tipo-operazione-03">Per tipo operazione = 03:</h3>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>48</td>
+<td>2</td>
+<td>numeric</td>
+<td>Codice pagamento da rettificare/rettificante</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>50</td>
+<td>9</td>
+<td>numeric(7,2)</td>
+<td>Importo da rettificare/rettificato</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>59</td>
+<td>1</td>
+<td>boolean</td>
+<td>Record da rettificare/rettificante (0/1)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<h3 id="per-tipo-operazione-04">Per tipo operazione = 04:</h3>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>48</td>
+<td>2</td>
+<td>numeric</td>
+<td>Codice pagamento di conciliazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>50</td>
+<td>9</td>
+<td>numeric(7,2)</td>
+<td>Importo conciliato</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>59</td>
+<td>100</td>
+<td>string</td>
+<td>Note</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-25-dettaglio-promozione">RECORD 25 - Dettaglio Promozione</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "25")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero Transazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>20</td>
+<td>5</td>
+<td>numeric</td>
+<td>Numero Scontrino Fiscale</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>25</td>
+<td>10</td>
+<td>string</td>
+<td>Codice Promo</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>35</td>
+<td>6</td>
+<td>string</td>
+<td>Riferimento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>41</td>
+<td>6</td>
+<td>string</td>
+<td>Paniere</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>47</td>
+<td>13</td>
+<td>string</td>
+<td>Codice Articolo</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>60</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Sconto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>68</td>
+<td>6</td>
+<td>numeric(4,2)</td>
+<td>Quantità su cui è applicato lo sconto</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>74</td>
+<td>20</td>
+<td>string</td>
+<td>Codice Articolo (20 bytes per non-EAN 13)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>94</td>
+<td>1</td>
+<td>string</td>
+<td>Tipo Articolo o Reparto (A/R)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-26-dettaglio-coupon-emesso">RECORD 26 - Dettaglio Coupon Emesso</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "26")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>13</td>
+<td>string</td>
+<td>Barcode del Coupon Generato</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>28</td>
+<td>1</td>
+<td>string</td>
+<td>Tipo Coupon (S=Sconto, P=Pagamento, R=Reso)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>29</td>
+<td>8</td>
+<td>numeric(date)</td>
+<td>Data Inizio Validità (yyyymmdd)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>37</td>
+<td>8</td>
+<td>numeric(date)</td>
+<td>Data Fine Validità (yyyymmdd)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>45</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Valore del Coupon (può essere 0 per Attivatore)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>53</td>
+<td>20</td>
+<td>string</td>
+<td>Codice della Promo di Redenzione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-27-dettaglio-coupon-redento">RECORD 27 - Dettaglio Coupon Redento</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "27")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>13</td>
+<td>string</td>
+<td>Barcode del Coupon Redento</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>28</td>
+<td>1</td>
+<td>string</td>
+<td>Tipo Coupon (S=Sconto, P=Pagamento, R=Reso)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>29</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Valore Redento del Coupon</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>37</td>
+<td>1</td>
+<td>boolean</td>
+<td>Stato prima della transazione (0=Utilizzabile, 1=Redento)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>38</td>
+<td>1</td>
+<td>boolean</td>
+<td>Usato effettivamente (0=No, 1=Sì)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>39</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Valore Iniziale del Coupon</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="record-35-dettaglio-premio">RECORD 35 - Dettaglio Premio</h2>
+<table>
+<thead>
+<tr>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+<th>Note</th>
+<th>Versione Posware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>numeric</td>
+<td>Codice del punto vendita (fisso per PdV)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>numeric</td>
+<td>Numero terminale cassa (001-999)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>numeric</td>
+<td>Progressivo record</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>numeric</td>
+<td>Tipo Record (fisso "35")</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>15</td>
+<td>20</td>
+<td>string</td>
+<td>Codice a barre</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>35</td>
+<td>10</td>
+<td>string</td>
+<td>Iniziativa</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>45</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Punti scaricati</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>53</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Contributo</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>61</td>
+<td>1</td>
+<td>numeric</td>
+<td>Flag tipo operazione (1=Ritiro immediato, 2=Prenotazione, 3=Ritiro da prenotazione, 4=Cancellazione)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>62</td>
+<td>13</td>
+<td>string</td>
+<td>Codice Prenotazione</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+<tr>
+<td>75</td>
+<td>8</td>
+<td>numeric(6,2)</td>
+<td>Quantità (Prenotata o Ritirata)</td>
+<td></td>
+<td>&lt;= 4.2.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="esempi-pratici">Esempi Pratici</h2>
+<h3 id="esempio-record-00-inizio-transazione">Esempio Record 00 - Inizio Transazione</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>0002003000040000000010010400012025091717351910001000001             99017361  00002692000000000000006900000000000027000000000010000000000000000000225091730012000220270VF011199IEB0173610
+</code></pre></div>
+<h3 id="esempio-record-01-dettaglio-articolo">Esempio Record 01 - Dettaglio Articolo</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>000200300016018005529020159       A2200100010000000490000004901                      00000000000000000000000000      0001000000                                        AIELLO BAR MACI                               00PZ 000000
+</code></pre></div>
+<h3 id="esempio-record-06-subtotale-pre-pagamento">Esempio Record 06 - Subtotale pre-pagamento</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>00020030001206030001202509171735450000000000000043000000000000000000000000000W0000000000000000000000000000000000000099017361  4.3.0.0                     99IEB01736100
+</code></pre></div>
+<h3 id="esempio-record-03-pagamento">Esempio Record 03 - Pagamento</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>00020030001903010000001550000000000000100000000        00000004520250808162435                               EUR000000000000000000                                                  1001000100000000
+</code></pre></div>
+<h3 id="esempio-record-04-fine-transazione">Esempio Record 04 - Fine Transazione</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>00020030002504000000000000001570000116244920250808        0000000000000000000000000                000000333000000045000000000000000000000004
+</code></pre></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ultimo aggiornamento">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="14 ottobre 2025 10:43:38 UTC">14 ottobre 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2024&copy; I.Si.D S.r.l.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://isid.it/" target="_blank" rel="noopener" title="isid.it" class="md-social__link">
+      <?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1510.000000pt" height="518.000000pt" viewBox="0 0 1510.000000 518.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)"
+fill="#FFFFFF" stroke="none">
+<path d="M69 5157 c-19 -12 -42 -38 -51 -57 -17 -33 -18 -174 -18 -2510 0
+-2336 1 -2477 18 -2510 9 -19 32 -45 51 -57 l34 -23 466 0 c521 0 514 -1 553
+71 17 32 18 131 18 2519 0 2391 -1 2487 -18 2520 -37 71 -32 70 -553 70 l-466
+0 -34 -23z"/>
+<path d="M2580 5169 c-305 -35 -562 -148 -726 -320 -149 -157 -241 -337 -291
+-572 -16 -72 -18 -141 -18 -582 0 -550 4 -597 66 -787 127 -392 402 -626 846
+-720 l108 -23 1570 -5 1570 -5 60 -23 c32 -12 75 -35 95 -50 44 -36 95 -119
+110 -181 17 -67 25 -451 11 -539 -26 -169 -92 -261 -217 -304 l-69 -23 -2030
+-5 c-1919 -5 -2032 -6 -2058 -23 -63 -41 -62 -30 -62 -487 0 -453 0 -451 58
+-494 l28 -21 2177 -3 c1891 -2 2192 0 2293 13 385 50 650 197 824 460 94 141
+143 264 182 460 16 80 18 147 18 580 0 416 -3 504 -17 585 -51 285 -151 492
+-315 651 -169 164 -367 257 -655 305 -94 16 -242 18 -1658 23 l-1555 6 -56 28
+c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
+103 161 207 197 48 16 190 17 2091 22 1928 5 2041 6 2066 23 53 36 54 41 57
+469 2 250 -1 412 -7 436 -6 21 -25 51 -41 67 l-31 30 -2197 1 c-1208 1 -2231
+-2 -2272 -7z"/>
+<path d="M7631 5162 c-71 -38 -71 -38 -71 -501 0 -403 1 -415 21 -448 40 -64
+34 -63 501 -63 l424 0 302 -282 302 -282 0 -386 c0 -380 0 -386 23 -430 42
+-82 28 -80 550 -80 502 0 489 -1 541 60 l26 32 0 422 0 423 -23 34 c-46 69
+-44 69 -512 69 l-420 1 -297 277 -297 277 0 390 c-1 435 -1 436 -70 482 l-34
+23 -466 0 c-433 0 -469 -1 -500 -18z"/>
+<path d="M9255 5167 c-47 -18 -71 -39 -97 -82 l-23 -40 -3 -452 -3 -453 1993
+-3 c1802 -3 2001 -5 2071 -20 422 -88 609 -249 697 -601 50 -201 55 -279 55
+-926 0 -647 -5 -725 -55 -926 -80 -318 -256 -491 -582 -574 -216 -54 -240 -55
+-1653 -55 -715 0 -1313 4 -1328 8 -57 16 -57 20 -57 657 l0 580 -570 0 -570 0
+2 -1072 3 -1073 27 -46 c17 -29 41 -53 65 -65 37 -18 101 -19 1918 -22 1332
+-2 1927 0 2040 8 503 36 891 149 1191 346 113 74 311 270 383 379 189 287 292
+647 321 1120 13 220 13 1250 0 1470 -29 473 -133 837 -322 1120 -68 103 -219
+259 -328 341 -109 82 -343 200 -491 248 -213 68 -463 114 -738 136 -200 15
+-3906 12 -3946 -3z"/>
+<path d="M7560 1918 c0 -1706 1 -1815 18 -1847 9 -19 33 -43 52 -53 33 -17 64
+-18 512 -16 l476 3 27 25 c58 53 55 -64 55 1895 l0 1805 -570 0 -570 0 0
+-1812z"/>
+</g>
+</svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
