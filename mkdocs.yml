@@ -76,9 +76,14 @@ nav:
       - Posware Price Checker: posware-modules/main-module/posware-price-checker.md
       - Fatturazione elettronica: posware-modules/main-module/fatturazione-elettronica.md
     - Funzionalità di cassa:
+      - Log Transazione Posware: posware-modules/posware-frontend/tracciato-record-log.md
       - Argentea Satispay: posware-modules/posware-frontend/argentea-satispay.md
       - Fatturazione immediata: posware-modules/posware-frontend/fatturazione-immediata.md
       - Nota di credito: posware-modules/posware-frontend/nota-di-credito.md
+    - Celiachia:
+      - Informazioni generali: posware-modules/celiac/informazioni-generali.md
+      - Integrazione bonus celiachia Posware: posware-modules/celiac/integrazione-bonus-celiachia-posware.md
+      - Rendicontazione celiachia: posware-modules/celiac/rendicontazione-celiachia.md
 
 markdown_extensions:
   - pymdownx.tabbed:
