@@ -5,12 +5,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://posware.io/4.3/posware-modules/posware-frontend/fatturazione-immediata.html" rel="canonical"/>
-<link href="argentea-satispay.html" rel="prev"/>
-<link href="nota-di-credito.html" rel="next"/>
+<link href="https://posware.io/4.3/getting-started/scenari-avanzati/dati-custom-database-storeserver.html" rel="canonical"/>
+<link href="../installazione-storeserver/servizi-legacy.html" rel="prev"/>
+<link href="../../posware-modules/main-module/statistiche-dettagliate.html" rel="next"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.23" name="generator"/>
-<title>Fatturazione immediata - Posware official docs</title>
+<title>Aggiunta dati custom database - Posware official docs</title>
 <link href="../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%209.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-3.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-11A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2014c-2.63%200-5-1.57-6-4a6.505%206.505%200%200%201%208.5-3.5A6.52%206.52%200%200%201%2018%2012c-1%202.43-3.37%204-6%204m0-6.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201%22/%3E%3C/svg%3E');}</style>
@@ -26,7 +26,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#posware-frontend-fatturazione-immediata">
+<a class="md-skip" href="#aggiunta-dati-custom-al-database-dello-storeserver">
           Vai al contenuto
         </a>
 </div>
@@ -62,7 +62,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Fatturazione immediata
+              Aggiunta dati custom database
             
           </span>
 </div>
@@ -125,8 +125,8 @@ Non stai visualizzando l'ultima versione della documentazione.
 
       </a>
 </li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../getting-started/installazione-posware-frontend/overview-generale.html">
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../installazione-posware-frontend/overview-generale.html">
           
   
   
@@ -134,8 +134,8 @@ Non stai visualizzando l'ultima versione della documentazione.
 
         </a>
 </li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../main-module/statistiche-dettagliate.html">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../posware-modules/main-module/statistiche-dettagliate.html">
           
   
   
@@ -169,16 +169,16 @@ Non stai visualizzando l'ultima versione della documentazione.
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
 <span class="md-ellipsis">
     Getting started
     
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
             Getting started
@@ -200,7 +200,7 @@ Non stai visualizzando l'ultima versione della documentazione.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/overview-generale.html">
+<a class="md-nav__link" href="../installazione-posware-frontend/overview-generale.html">
 <span class="md-ellipsis">
     Overview generale
     
@@ -208,7 +208,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html">
+<a class="md-nav__link" href="../installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html">
 <span class="md-ellipsis">
     Dipendenze e aggiornamenti
     
@@ -216,7 +216,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/setup-posware.html">
+<a class="md-nav__link" href="../installazione-posware-frontend/setup-posware.html">
 <span class="md-ellipsis">
     SetupPosware
     
@@ -224,7 +224,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/pos-update.html">
+<a class="md-nav__link" href="../installazione-posware-frontend/pos-update.html">
 <span class="md-ellipsis">
     PosUpdate
     
@@ -250,7 +250,7 @@ Non stai visualizzando l'ultima versione della documentazione.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/overview-generale.html">
+<a class="md-nav__link" href="../installazione-storeserver/overview-generale.html">
 <span class="md-ellipsis">
     Overview generale
     
@@ -258,7 +258,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/installazione-procedure-comuni.html">
+<a class="md-nav__link" href="../installazione-storeserver/installazione-procedure-comuni.html">
 <span class="md-ellipsis">
     Procedure comuni
     
@@ -266,7 +266,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/installazione-nuovo-storeserver.html">
+<a class="md-nav__link" href="../installazione-storeserver/installazione-nuovo-storeserver.html">
 <span class="md-ellipsis">
     Nuova installazione
     
@@ -274,7 +274,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/migrazione-servizi-legacy.html">
+<a class="md-nav__link" href="../installazione-storeserver/migrazione-servizi-legacy.html">
 <span class="md-ellipsis">
     Migrazione
     
@@ -282,7 +282,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/aggiornamento-storeserver.html">
+<a class="md-nav__link" href="../installazione-storeserver/aggiornamento-storeserver.html">
 <span class="md-ellipsis">
     Aggiornamento
     
@@ -290,7 +290,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/servizi-legacy.html">
+<a class="md-nav__link" href="../installazione-storeserver/servizi-legacy.html">
 <span class="md-ellipsis">
     Servizi legacy
     
@@ -300,8 +300,8 @@ Non stai visualizzando l'ultima versione della documentazione.
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
 <span class="md-ellipsis">
     Scenari avanzati
@@ -309,18 +309,70 @@ Non stai visualizzando l'ultima versione della documentazione.
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_3">
 <span class="md-nav__icon md-icon"></span>
             Scenari avanzati
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/scenari-avanzati/dati-custom-database-storeserver.html">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
     Aggiunta dati custom database
     
   </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="dati-custom-database-storeserver.html">
+<span class="md-ellipsis">
+    Aggiunta dati custom database
+    
+  </span>
+</a>
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cenni-preliminari">
+<span class="md-ellipsis">
+      Cenni preliminari
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creazione-di-tabelle-custom">
+<span class="md-ellipsis">
+      Creazione di tabelle custom
+    </span>
+</a>
+<nav aria-label="Creazione di tabelle custom" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#considerazioni-operative">
+<span class="md-ellipsis">
+      Considerazioni operative
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#esempio-pratico">
+<span class="md-ellipsis">
+      Esempio pratico
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusione">
+<span class="md-ellipsis">
+      Conclusione
+    </span>
 </a>
 </li>
 </ul>
@@ -329,16 +381,19 @@ Non stai visualizzando l'ultima versione della documentazione.
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
 <span class="md-ellipsis">
     Moduli
     
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
             Moduli
@@ -360,7 +415,7 @@ Non stai visualizzando l'ultima versione della documentazione.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../main-module/statistiche-dettagliate.html">
+<a class="md-nav__link" href="../../posware-modules/main-module/statistiche-dettagliate.html">
 <span class="md-ellipsis">
     Statistiche dettagliate
     
@@ -368,7 +423,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../main-module/posware-price-checker.html">
+<a class="md-nav__link" href="../../posware-modules/main-module/posware-price-checker.html">
 <span class="md-ellipsis">
     Posware Price Checker
     
@@ -376,7 +431,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../main-module/fatturazione-elettronica.html">
+<a class="md-nav__link" href="../../posware-modules/main-module/fatturazione-elettronica.html">
 <span class="md-ellipsis">
     Fatturazione elettronica
     
@@ -386,8 +441,8 @@ Non stai visualizzando l'ultima versione della documentazione.
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
 <span class="md-ellipsis">
     Funzionalità di cassa
@@ -395,14 +450,14 @@ Non stai visualizzando l'ultima versione della documentazione.
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_2">
 <span class="md-nav__icon md-icon"></span>
             Funzionalità di cassa
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="tracciato-record-log.html">
+<a class="md-nav__link" href="../../posware-modules/posware-frontend/tracciato-record-log.html">
 <span class="md-ellipsis">
     Log Transazione Posware
     
@@ -410,46 +465,23 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="argentea-satispay.html">
+<a class="md-nav__link" href="../../posware-modules/posware-frontend/argentea-satispay.html">
 <span class="md-ellipsis">
     Argentea Satispay
     
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Fatturazione immediata
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="fatturazione-immediata.html">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware-modules/posware-frontend/fatturazione-immediata.html">
 <span class="md-ellipsis">
     Fatturazione immediata
     
   </span>
 </a>
-<nav aria-label="Indice" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Indice
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#glossario">
-<span class="md-ellipsis">
-      Glossario
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="nota-di-credito.html">
+<a class="md-nav__link" href="../../posware-modules/posware-frontend/nota-di-credito.html">
 <span class="md-ellipsis">
     Nota di credito
     
@@ -475,7 +507,7 @@ Non stai visualizzando l'ultima versione della documentazione.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../celiac/informazioni-generali.html">
+<a class="md-nav__link" href="../../posware-modules/celiac/informazioni-generali.html">
 <span class="md-ellipsis">
     Informazioni generali
     
@@ -483,7 +515,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../celiac/integrazione-bonus-celiachia-posware.html">
+<a class="md-nav__link" href="../../posware-modules/celiac/integrazione-bonus-celiachia-posware.html">
 <span class="md-ellipsis">
     Integrazione bonus celiachia Posware
     
@@ -491,7 +523,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../celiac/rendicontazione-celiachia.html">
+<a class="md-nav__link" href="../../posware-modules/celiac/rendicontazione-celiachia.html">
 <span class="md-ellipsis">
     Rendicontazione celiachia
     
@@ -512,22 +544,67 @@ Non stai visualizzando l'ultima versione della documentazione.
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <nav class="md-tags">
-<span class="md-tag">Frontend</span>
+<span class="md-tag">Posware</span>
+<span class="md-tag">StoreServer</span>
 </nav>
-<h1 id="posware-frontend-fatturazione-immediata"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Posware Frontend - Fatturazione immediata<a class="headerlink" href="#posware-frontend-fatturazione-immediata" title="Permanent link">¶</a></h1>
-<p><strong>Prima revisione documento: 26 aprile 2024</strong> <br/>
+<h1 id="aggiunta-dati-custom-al-database-dello-storeserver"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Aggiunta dati custom al database dello StoreServer<a class="headerlink" href="#aggiunta-dati-custom-al-database-dello-storeserver" title="Permanent link">¶</a></h1>
+<p><strong>Prima revisione documento: 6 novembre 2025</strong> <br/>
 <strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="10 novembre 2025 12:00:00 UTC">10 novembre 2025</span></strong></p>
 <hr/>
-<h2 id="glossario"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Glossario<a class="headerlink" href="#glossario" title="Permanent link">¶</a></h2>
+<h2 id="cenni-preliminari"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Cenni preliminari<a class="headerlink" href="#cenni-preliminari" title="Permanent link">¶</a></h2>
+<p>Con l'introduzione dello <em>StoreServer</em>, non è più consentito modificare o estendere direttamente le tabelle del database <code>posware</code> aggiungendo campi custom.<br/>
+Qualsiasi intervento strutturale sulle tabelle standard del database può compromettere la stabilità dell’applicativo e la compatibilità con le future versioni del sistema.</p>
+<p>Per questo motivo, eventuali necessità di estendere le informazioni contenute nelle tabelle esistenti devono essere gestite <strong>tramite la creazione di nuove tabelle dedicate</strong>, mantenendo una relazione logica con le tabelle originali del database dello <em>StoreServer</em>.</p>
+<h2 id="creazione-di-tabelle-custom"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Creazione di tabelle custom<a class="headerlink" href="#creazione-di-tabelle-custom" title="Permanent link">¶</a></h2>
+<p>Nel caso in cui sia necessario aggiungere dati custom, <strong>non devono essere mai modificati o estesi i campi delle tabelle originali del database <code>posware</code></strong>.
+Invece, è necessario procedere con la creazione di una nuova tabella che contenga i campi aggiuntivi desiderati.</p>
+<p>Questa tabella dovrà rispettare i seguenti criteri:</p>
+<ol>
+<li><strong>Struttura relazionale</strong><br/>
+La tabella custom deve contenere le <strong>stesse chiavi primarie</strong> (o gli stessi campi identificativi) della tabella originale, in modo da poter essere collegata tramite <code>JOIN</code> nel database dello <em>StoreServer</em>.</li>
+<li><strong>Nomenclatura standardizzata</strong><br/>
+Il nome della nuova tabella deve seguire il formato:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">NomeRivenditore_NomeTabellaOriginale</span>
+</code></pre></div>
+Ad esempio, se il rivenditore <em>Seles</em> necessita di creare una tabella custom a partire dalla tabella <code>mantemp</code> del database <code>posware</code>, il nome corretto della nuova tabella sarà:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">seles_mantemp</span>
+</code></pre></div></li>
+<li><strong>Gestione dei dati</strong><br/>
+Tutti i campi aggiuntivi dovranno essere gestiti e mantenuti esclusivamente all’interno della tabella custom, lasciando inalterata la tabella originale.<br/>
+Le operazioni di lettura e scrittura che richiedono dati combinati dovranno essere eseguite mediante <code>JOIN</code> tra la tabella originale e quella custom.</li>
+</ol>
+<h3 id="considerazioni-operative"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> Considerazioni operative<a class="headerlink" href="#considerazioni-operative" title="Permanent link">¶</a></h3>
+<p>Nella gestione delle tabelle custom è importante tenere in considerazione alcuni aspetti operativi che riguardano la manutenzione e la compatibilità del sistema:</p>
 <ul>
-<li><strong>WebApp:</strong> applicazione web che offre la possibilità di gestire in modo centralizzato le funzionalità disponibili nel StoreServer;</li>
-<li><strong>PoswareModule:</strong> plug-in del StoreServer dedicato alla gestione del PPC;</li>
-<li><strong>SdI:</strong> si tratta del Sistema di Interscambio. Gestito dall'Agenzia delle Entrate, è un sistema informatico in grado di ricevere e inoltrare le fatture ed effettuare controlli sui file ricevuti;</li>
-<li><strong>Cedente:</strong> l'azienda che genera ed emette la fattura, anche chiamato a volte <strong>Fornitore</strong>;</li>
-<li><strong>Fornitore:</strong> si intende sempre il <strong>Cedente</strong>, i termini sono intercambiabili ed usati entrambi nel documento per riferirsi alla stessa cosa;</li>
-<li><strong>Cessionario:</strong> l'entità che riceve la fattura e che quindi di fatto effettua l'acquisto;</li>
-<li><strong>PA:</strong> Pubblica Amministrazione;</li>
-<li><strong>AdE:</strong> Agenzia delle Entrate; </li>
+<li>Le tabelle custom non vengono gestite direttamente dallo <em>StoreServer</em>, pertanto la loro manutenzione e il loro aggiornamento restano a carico dell’integratore o del rivenditore.</li>
+<li>È consigliabile documentare internamente la struttura delle tabelle custom e le eventuali relazioni con le tabelle originali, per garantire la tracciabilità e la compatibilità futura con le versioni successive dello <em>StoreServer</em>.</li>
+</ul>
+<h3 id="esempio-pratico"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.2</span> Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tabella originale</th>
+<th>Tabella custom</th>
+<th>Descrizione</th>
+<th>Chiavi di collegamento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mantemp</code></td>
+<td><code>seles_mantemp</code></td>
+<td>Estensione della tabella <code>mantemp</code> con campi aggiuntivi personalizzati per il rivenditore <em>Seles</em></td>
+<td>Stesse chiavi primarie della tabella <code>mantemp</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Conclusione<a class="headerlink" href="#conclusione" title="Permanent link">¶</a></h2>
+<p>In conclusione, per aggiungere dati custom al database dello <em>StoreServer</em>:</p>
+<ul>
+<li><strong>Non modificare</strong> mai le tabelle del database <code>posware</code>.</li>
+<li><strong>Creare</strong> una nuova tabella custom con le stesse chiavi della tabella di origine.</li>
+<li><strong>Rispettare</strong> la convenzione di nomenclatura <code>NomeRivenditore_NomeTabellaOriginale</code>.</li>
+<li><strong>Gestire</strong> i dati aggiuntivi tramite <code>JOIN</code> con le tabelle standard.</li>
 </ul>
 <aside class="md-source-file">
 <span class="md-source-file__fact">

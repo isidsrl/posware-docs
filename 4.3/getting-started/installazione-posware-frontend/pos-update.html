@@ -1,236 +1,121 @@
 
-<!doctype html>
-<html lang="it" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-        <link rel="canonical" href="https://posware.io/4.3/getting-started/installazione-posware-frontend/pos-update.html">
-      
-      
-        <link rel="prev" href="setup-posware.html">
-      
-      
-        <link rel="next" href="../installazione-storeserver/overview-generale.html">
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
-    
-    
-      
-        <title>PosUpdate - Posware official docs</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
-      
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
-      
-      
+<!DOCTYPE html>
 
-  
-  
-  
-  
-  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%209.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-3.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-11A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2014c-2.63%200-5-1.57-6-4a6.505%206.505%200%200%201%208.5-3.5A6.52%206.52%200%200%201%2018%2012c-1%202.43-3.37%204-6%204m0-6.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201%22/%3E%3C/svg%3E');}</style>
-
-
-    
-    
-      
-        <script src="https://unpkg.com/iframe-worker/shim"></script>
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
-    
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#posupdate" class="md-skip">
+<html class="no-js" lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://posware.io/4.3/getting-started/installazione-posware-frontend/pos-update.html" rel="canonical"/>
+<link href="setup-posware.html" rel="prev"/>
+<link href="../installazione-storeserver/overview-generale.html" rel="next"/>
+<link href="../../assets/images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.23" name="generator"/>
+<title>PosUpdate - Posware official docs</title>
+<link href="../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%209.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-3.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-11A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2014c-2.63%200-5-1.57-6-4a6.505%206.505%200%200%201%208.5-3.5A6.52%206.52%200%200%201%2018%2012c-1%202.43-3.37%204-6%204m0-6.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201%22/%3E%3C/svg%3E');}</style>
+<script src="https://unpkg.com/iframe-worker/shim"></script>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#posupdate">
           Vai al contenuto
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
-        
-          <aside class="md-banner md-banner--warning">
-            <div class="md-banner__inner md-grid md-typeset">
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+<aside class="md-banner md-banner--warning">
+<div class="md-banner__inner md-grid md-typeset">
               
 Non stai visualizzando l'ultima versione della documentazione.
 <a href="../../..">
-    <strong>Clicca qui per andare all'ultima versione.</strong>
+<strong>Clicca qui per andare all'ultima versione.</strong>
 </a>
-
-            </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
-          </aside>
-        
-      </div>
-    
-    
-      
-
-  
-
+</div>
+<script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+</aside>
+</div>
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Intestazione">
-    <a href="../../index.html" title="Posware official docs" class="md-header__button md-logo" aria-label="Posware official docs" data-md-component="logo">
-      
-  <img src="../../assets/images/favicon.ico" alt="logo">
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="Intestazione" class="md-header__inner md-grid">
+<a aria-label="Posware official docs" class="md-header__button md-logo" data-md-component="logo" href="../../index.html" title="Posware official docs">
+<img alt="logo" src="../../assets/images/favicon.ico"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Posware official docs
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               PosUpdate
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
 </form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Cerca">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Cerca" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Cerca" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Cerca" class="md-search__options">
+<button aria-label="Cancella" class="md-search__icon md-icon" tabindex="-1" title="Cancella" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Inizializza la ricerca
           </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
-      
-    
-    
-  </nav>
-  
-    
-      
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../index.html" class="md-tabs__link">
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../index.html">
         
   
   
@@ -239,1363 +124,508 @@ Non stai visualizzando l'ultima versione della documentazione.
   Home
 
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    
-    
-      
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="overview-generale.html" class="md-tabs__link">
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="overview-generale.html">
           
   
-  
-    
   
   Getting started
 
         </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../posware-modules/main-module/statistiche-dettagliate.html" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../posware-modules/main-module/statistiche-dettagliate.html">
           
   
-  
-    
   
   Moduli
 
         </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-    </ul>
-  </div>
+</li>
+</ul>
+</div>
 </nav>
-    
-  
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Posware official docs" class="md-nav__button md-logo" aria-label="Posware official docs" data-md-component="logo">
-      
-  <img src="../../assets/images/favicon.ico" alt="logo">
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigazione" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Posware official docs" class="md-nav__button md-logo" data-md-component="logo" href="../../index.html" title="Posware official docs">
+<img alt="logo" src="../../assets/images/favicon.ico"/>
+</a>
     Posware official docs
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../index.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../index.html">
+<span class="md-ellipsis">
     Home
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
     Getting started
     
   </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
             Getting started
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
     Installazione e aggiornamenti Posware Frontend
     
   </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_1">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
             Installazione e aggiornamenti Posware Frontend
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="overview-generale.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="overview-generale.html">
+<span class="md-ellipsis">
     Overview generale
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="dipendenze-aggiornamenti-necessari.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dipendenze-aggiornamenti-necessari.html">
+<span class="md-ellipsis">
     Dipendenze e aggiornamenti
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="setup-posware.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="setup-posware.html">
+<span class="md-ellipsis">
     SetupPosware
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
     PosUpdate
     
   </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="pos-update.html" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="pos-update.html">
+<span class="md-ellipsis">
     PosUpdate
     
   </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Indice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</a>
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Indice
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cenni-preliminari" class="md-nav__link">
-    <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cenni-preliminari">
+<span class="md-ellipsis">
       Cenni preliminari
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisiti" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prerequisiti">
+<span class="md-ellipsis">
       Prerequisiti
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#scenari-duso" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenari-duso">
+<span class="md-ellipsis">
       Scenari d'uso
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#modalita-di-installazione" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modalita-di-installazione">
+<span class="md-ellipsis">
       Modalità di installazione
     </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Modalità di installazione">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#modalita-di-installazione-manuale" class="md-nav__link">
-    <span class="md-ellipsis">
+</a>
+<nav aria-label="Modalità di installazione" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modalita-di-installazione-manuale">
+<span class="md-ellipsis">
       Modalità di installazione manuale
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#modalita-di-installazione-automatica" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modalita-di-installazione-automatica">
+<span class="md-ellipsis">
       Modalità di installazione automatica
     </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Modalità di installazione automatica">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installazione-automatica-e-versioni-con-plug-in" class="md-nav__link">
-    <span class="md-ellipsis">
+</a>
+<nav aria-label="Modalità di installazione automatica" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installazione-automatica-e-versioni-con-plug-in">
+<span class="md-ellipsis">
       Installazione automatica e versioni con plug-in
     </span>
-  </a>
-  
+</a>
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#note-aggiuntive" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#note-aggiuntive">
+<span class="md-ellipsis">
       Note aggiuntive
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting-per-i-tecnici" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#troubleshooting-per-i-tecnici">
+<span class="md-ellipsis">
       Troubleshooting per i tecnici
     </span>
-  </a>
-  
+</a>
 </li>
-      
-    </ul>
-  
+</ul>
 </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
     Installazione e aggiornamenti StoreServer
     
   </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
             Installazione e aggiornamenti StoreServer
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installazione-storeserver/overview-generale.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installazione-storeserver/overview-generale.html">
+<span class="md-ellipsis">
     Overview generale
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installazione-storeserver/installazione-procedure-comuni.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installazione-storeserver/installazione-procedure-comuni.html">
+<span class="md-ellipsis">
     Procedure comuni
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installazione-storeserver/installazione-nuovo-storeserver.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installazione-storeserver/installazione-nuovo-storeserver.html">
+<span class="md-ellipsis">
     Nuova installazione
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installazione-storeserver/migrazione-servizi-legacy.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installazione-storeserver/migrazione-servizi-legacy.html">
+<span class="md-ellipsis">
     Migrazione
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installazione-storeserver/aggiornamento-storeserver.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installazione-storeserver/aggiornamento-storeserver.html">
+<span class="md-ellipsis">
     Aggiornamento
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installazione-storeserver/servizi-legacy.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installazione-storeserver/servizi-legacy.html">
+<span class="md-ellipsis">
     Servizi legacy
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Scenari avanzati
     
-      
-      
-  
-  
-  
-  
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            Scenari avanzati
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../scenari-avanzati/dati-custom-database-storeserver.html">
+<span class="md-ellipsis">
+    Aggiunta dati custom database
     
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
     Moduli
     
   </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
             Moduli
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+<span class="md-ellipsis">
     Modulo di base
     
   </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_1">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
             Modulo di base
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware-modules/main-module/statistiche-dettagliate.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware-modules/main-module/statistiche-dettagliate.html">
+<span class="md-ellipsis">
     Statistiche dettagliate
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware-modules/main-module/posware-price-checker.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware-modules/main-module/posware-price-checker.html">
+<span class="md-ellipsis">
     Posware Price Checker
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware-modules/main-module/fatturazione-elettronica.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware-modules/main-module/fatturazione-elettronica.html">
+<span class="md-ellipsis">
     Fatturazione elettronica
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<span class="md-ellipsis">
     Funzionalità di cassa
     
   </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
             Funzionalità di cassa
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware-modules/posware-frontend/tracciato-record-log.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware-modules/posware-frontend/tracciato-record-log.html">
+<span class="md-ellipsis">
     Log Transazione Posware
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware-modules/posware-frontend/argentea-satispay.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware-modules/posware-frontend/argentea-satispay.html">
+<span class="md-ellipsis">
     Argentea Satispay
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware-modules/posware-frontend/fatturazione-immediata.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware-modules/posware-frontend/fatturazione-immediata.html">
+<span class="md-ellipsis">
     Fatturazione immediata
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware-modules/posware-frontend/nota-di-credito.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware-modules/posware-frontend/nota-di-credito.html">
+<span class="md-ellipsis">
     Nota di credito
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-ellipsis">
     Celiachia
     
   </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
             Celiachia
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware-modules/celiac/informazioni-generali.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware-modules/celiac/informazioni-generali.html">
+<span class="md-ellipsis">
     Informazioni generali
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware-modules/celiac/integrazione-bonus-celiachia-posware.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware-modules/celiac/integrazione-bonus-celiachia-posware.html">
+<span class="md-ellipsis">
     Integrazione bonus celiachia Posware
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware-modules/celiac/rendicontazione-celiachia.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware-modules/celiac/rendicontazione-celiachia.html">
+<span class="md-ellipsis">
     Rendicontazione celiachia
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-  </ul>
+</a>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Indice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Indice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cenni-preliminari" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cenni preliminari
-    </span>
-  </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisiti" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisiti
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scenari-duso" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scenari d'uso
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modalita-di-installazione" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modalità di installazione
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Modalità di installazione">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#modalita-di-installazione-manuale" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modalità di installazione manuale
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modalita-di-installazione-automatica" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modalità di installazione automatica
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Modalità di installazione automatica">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installazione-automatica-e-versioni-con-plug-in" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installazione automatica e versioni con plug-in
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#note-aggiuntive" class="md-nav__link">
-    <span class="md-ellipsis">
-      Note aggiuntive
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting-per-i-tecnici" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting per i tecnici
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-  <nav class="md-tags" >
-    
-      
-      
-      
-        <span class="md-tag">Posware</span>
-      
-    
-      
-      
-      
-        <span class="md-tag">Posware Frontend</span>
-      
-    
-  </nav>
-
-
-
-<h1 id="posupdate">PosUpdate</h1>
-<p><strong>Prima revisione documento: 27 agosto 2024</strong> <br>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="14 ottobre 2025 10:43:38 UTC">14 ottobre 2025</span></strong></p>
-<hr />
-<h2 id="cenni-preliminari">Cenni preliminari</h2>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<nav class="md-tags">
+<span class="md-tag">Posware</span>
+<span class="md-tag">Posware Frontend</span>
+</nav>
+<h1 id="posupdate"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> PosUpdate<a class="headerlink" href="#posupdate" title="Permanent link">¶</a></h1>
+<p><strong>Prima revisione documento: 27 agosto 2024</strong> <br/>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="10 novembre 2025 12:00:00 UTC">10 novembre 2025</span></strong></p>
+<hr/>
+<h2 id="cenni-preliminari"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Cenni preliminari<a class="headerlink" href="#cenni-preliminari" title="Permanent link">¶</a></h2>
 <p>Il presente documento descrive il funzionamento di <em>PosUpdate</em>, applicativo usato per aggiornare <em>Posware Frontend</em> sui terminali casse.
 Vengono illustrati gli scenari d'uso supportati ed una serie di dettagli sulle diverse modalità di installazione.</p>
-<h2 id="prerequisiti">Prerequisiti</h2>
-<p>Prima di procedere con l'utilizzo di <em>PosUpdate</em> assicurarsi di avere una versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3.x</code> perfettamente funzionante di <em>Posware Frontend</em>.</p>
-<h2 id="scenari-duso">Scenari d'uso</h2>
+<h2 id="prerequisiti"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Prerequisiti<a class="headerlink" href="#prerequisiti" title="Permanent link">¶</a></h2>
+<p>Prima di procedere con l'utilizzo di <em>PosUpdate</em> assicurarsi di avere una versione <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3.x</code> perfettamente funzionante di <em>Posware Frontend</em>.</p>
+<h2 id="scenari-duso"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Scenari d'uso<a class="headerlink" href="#scenari-duso" title="Permanent link">¶</a></h2>
 <p>Il pacchetto <em>PosUpdate</em> deve essere <strong>usato solo ed esclusivamente per aggiornare</strong> <em>Posware Frontend</em> (ed eventuali altre sue dipendenze come servizio manutenzioni, adattatori SCO, ecc...) alla loro <strong>ultima versione disponibile</strong>, in linea con la <strong>Major</strong> e <strong>Minor</strong> version installata.</p>
 <div class="admonition example">
 <p class="admonition-title">Esempi di scenari d'aggiornamento supportati e non supportati</p>
 <p>A scanso di equivoci vengono riportati di seguito tre esempi di aggiornamenti supportati e non supportati da <em>PosUpdate</em>:</p>
 <ul>
-<li><strong>Aggiornamento da <em>Posware Frontend</em> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.2</code> a <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3</code>: NON SUPPORTATO.</strong> Per il cambio di <strong>Minor</strong> version usare <em>SetupPosware</em>.</li>
-<li><strong>Aggiornamento da <em>Posware Frontend</em> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3</code> a <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.4</code> oppure alla versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>5.0</code>: NON SUPPORTATO.</strong> Per il cambio di <strong>Major</strong> version usare <em>SetupPosware</em>.</li>
-<li><strong>Aggiornamento da <em>Posware Frontend</em> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3.171</code> a <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3.304</code>: SUPPORTATO.</strong> È lo scenario di riferimento che viene coperto da <em>PosUpdate</em>. A parità di <strong>Major</strong> e <strong>Minor</strong> version installata, basta lanciare l'ultima versione di <em>PosUpdate</em>.</li>
+<li><strong>Aggiornamento da <em>Posware Frontend</em> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.2</code> a <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3</code>: NON SUPPORTATO.</strong> Per il cambio di <strong>Minor</strong> version usare <em>SetupPosware</em>.</li>
+<li><strong>Aggiornamento da <em>Posware Frontend</em> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3</code> a <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.4</code> oppure alla versione <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>5.0</code>: NON SUPPORTATO.</strong> Per il cambio di <strong>Major</strong> version usare <em>SetupPosware</em>.</li>
+<li><strong>Aggiornamento da <em>Posware Frontend</em> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3.171</code> a <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3.304</code>: SUPPORTATO.</strong> È lo scenario di riferimento che viene coperto da <em>PosUpdate</em>. A parità di <strong>Major</strong> e <strong>Minor</strong> version installata, basta lanciare l'ultima versione di <em>PosUpdate</em>.</li>
 </ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Nuova installazione e migrazione</p>
-<p><em>PosUpdate</em> <strong>non è pensato per supportare</strong> scenari di <strong>nuova installazione né migrazione</strong> da versioni precedenti di <em>Posware Frontend</em>.<br>Questi scenari sono supportati da <a href="setup-posware.html"><strong><em>SetupPosware</em></strong></a>.</p>
+<p><em>PosUpdate</em> <strong>non è pensato per supportare</strong> scenari di <strong>nuova installazione né migrazione</strong> da versioni precedenti di <em>Posware Frontend</em>.<br/>Questi scenari sono supportati da <a href="setup-posware.html"><strong><em>SetupPosware</em></strong></a>.</p>
 </div>
 <p>Le stesse regole <strong>valgono per altri software della suite Posware che possono rappresentare una dipendenza per <em>Posware Frontend</em></strong> (servizio manutenzioni, adattatori SCO, ecc...).</p>
-<h2 id="modalita-di-installazione">Modalità di installazione</h2>
+<h2 id="modalita-di-installazione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Modalità di installazione<a class="headerlink" href="#modalita-di-installazione" title="Permanent link">¶</a></h2>
 <p><em>PosUpdate</em> supporta unicamente le seguenti modalità di installazione:</p>
 <ul>
-<li><strong>Manuale:</strong> può essere lanciato dall'utente con doppio click o da shell di Windows</li>
+<li><strong>Manuale:</strong> può essere lanciato dall'utente con doppio click o da shell di Windows (prompt dei comandi o PowerShell è indifferente)</li>
 <li><strong>AutoUpdate:</strong> viene lanciato automaticamente da <em>Posware.exe</em></li>
 </ul>
-<h3 id="modalita-di-installazione-manuale">Modalità di installazione manuale</h3>
-<p>Nell'aggiornamento manuale, l'utente può lanciare l'aggiornamento facendo ordinario doppio click sull'applicativo.<br>Così facendo nessun parametro particolare viene passato al <em>PosUpdate</em> e verrà mostrato il wizard da cui l'utente potrà procedere con l'installazione degli aggiornamenti.</p>
+<h3 id="modalita-di-installazione-manuale"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Modalità di installazione manuale<a class="headerlink" href="#modalita-di-installazione-manuale" title="Permanent link">¶</a></h3>
+<p>Nell'aggiornamento manuale, l'utente può lanciare l'aggiornamento facendo ordinario doppio click sull'applicativo.<br/>Così facendo nessun parametro particolare viene passato al <em>PosUpdate</em> e verrà mostrato il wizard da cui l'utente potrà procedere con l'installazione degli aggiornamenti.</p>
 <div class="admonition danger">
 <p class="admonition-title">Verifica attentamente l'aggiornamento che avvii</p>
 <p>Nella modalità di installazione manuale, qualunque versione di <em>PosUpdate</em> venga lanciata, <strong>anche una versione precedente a quella installata, verrà eseguita ed i file sovrascritti.</strong></p>
 <p>Le migrazioni del database non verranno invece <strong>né ripetute né rollbackate</strong>.</p>
 </div>
-<p><img alt="SetupPosware's Main interface" src="data:image/jpeg;base64,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P+8Soe58L1T0253/APeJUPc+F6p6bc7/APvGqb7ZPheqem3O9vPwVT7/AIXqnptzvbz0FU+/4Xqnptzvj5+Cqff8L1T0653t58aA5G6uhpWGWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWytU9Oud8fPjVf7vheqem3O+Pnxqv8Ad/amnjESagK1OMZPgsrBZWCysFlYLKwWVgso3JAORfoTrcoxxwzWGawzWGawzWGawzWGajkgeMHWqem3O+Pnxqv939rb8rYQifpwWRHMQVs8xk1G9DriuZbhO30xvPOyKyWhdslmYdjIr096hvoR9rI1kUzxhCUpVtSsRYjJr1+RpAaGqEJVciqXDhrdIK9nMAJVkW+9kX01T0253x8+NV/u/tTweYCwaJZRizPnddIMjlU4VyOzzJCuV5ORmA38Cwh/AWd0VyGHIcVY3Yg5LrZSeEmeMpMKbxeWwup5LBU6ozUgU5MzSi8Is0Y9bIO8jRdlqnptzt2dfgyj+N+Cr/d8L1T0652u6dQ89BRnKP8AGYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWUiykWUiykWUiykWUiykWUiykWUiykWUiykWUiykWUiykWUiykWUiykWUiykWUiykWqem3O81YR3hKfAAuABcCuuABcAC4AFwQLggXBAuCBcEC4IFwgLhBXCCuEFcIK4QVwwrhhXDCuGJcMS4glxBLiCXEEuIJcQS4o1xRrijXFGuKNcUa4w1xhrjDXGguNBcaC40FxoLjwXHguPBceC48Vx4rBFYIrBFYIrBFYYrDFYWWFlhZYWWFliZYmWJliZYmWJYliWNY1jWNY1jTiaTOz/APyr/8QASRAAAQMBAQoLBgUCBAUFAAAAAgABAxESBBMhIjFhkZLR0iAyQVFTVGCTobGyEBQjQnGBUFJyosEzQAVDYsIV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" /></p>
-<p>È inoltre possibile avviare l'applicativo tramite shell fornendo alcuni dei parametri standard previsti da <strong>Inno Setup</strong>:</p>
+<p><img alt="SetupPosware's Main interface" src="data:image/jpeg;base64,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P+8Soe58L1T0253/APeJUPc+F6p6bc7/APvGqb7ZPheqem3O9vPwVT7/AIXqnptzvbz0FU+/4Xqnptzvj5+Cqff8L1T0653t58aA5G6uhpWGWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWystlZbKy2VlsrLZWWytU9Oud8fPjVf7vheqem3O+Pnxqv8Ad/amnjESagK1OMZPgsrBZWCysFlYLKwWVgso3JAORfoTrcoxxwzWGawzWGawzWGawzWGajkgeMHWqem3O+Pnxqv939rb8rYQifpwWRHMQVs8xk1G9DriuZbhO30xvPOyKyWhdslmYdjIr096hvoR9rI1kUzxhCUpVtSsRYjJr1+RpAaGqEJVciqXDhrdIK9nMAJVkW+9kX01T0253x8+NV/u/tTweYCwaJZRizPnddIMjlU4VyOzzJCuV5ORmA38Cwh/AWd0VyGHIcVY3Yg5LrZSeEmeMpMKbxeWwup5LBU6ozUgU5MzSi8Is0Y9bIO8jRdlqnptzt2dfgyj+N+Cr/d8L1T0652u6dQ89BRnKP8AGYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWYizEWUiykWUiykWUiykWUiykWUiykWUiykWUiykWUiykWUiykWUiykWUiykWUiykWUiykWqem3O81YR3hKfAAuABcCuuABcAC4AFwQLggXBAuCBcEC4IFwgLhBXCCuEFcIK4QVwwrhhXDCuGJcMS4glxBLiCXEEuIJcQS4o1xRrijXFGuKNcUa4w1xhrjDXGguNBcaC40FxoLjwXHguPBceC48Vx4rBFYIrBFYIrBFYYrDFYWWFlhZYWWFliZYmWJliZYmWJYliWNY1jWNY1jTiaTOz/APyr/8QASRAAAQMBAQoLBgUCBAUFAAAAAgABAxESBBMhIjFhkZLR0iAyQVFTVGCTobGyEBQjQnGBUFJyosEzQAVDYsIV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"/></p>
+<p>È inoltre possibile avviare l'applicativo tramite shell (prompt dei comandi o PowerShell è indifferente) fornendo alcuni dei parametri standard previsti da <strong>Inno Setup</strong>:</p>
 <ul>
 <li><code>/SILENT</code>, <code>/VERYSILENT</code></li>
 <li><code>/LOG="filename"</code></li>
 <li><code>/NOCANCEL</code></li>
 </ul>
 <p>Per la lista completa dei parametri standard previsti da <strong>Inno Setup</strong>, così come per sapere cosa fanno quelli soprastanti, consultare la guida ufficiale di <strong>Inno Setup</strong>.</p>
-<h3 id="modalita-di-installazione-automatica">Modalità di installazione automatica</h3>
+<h3 id="modalita-di-installazione-automatica"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2</span> Modalità di installazione automatica<a class="headerlink" href="#modalita-di-installazione-automatica" title="Permanent link">¶</a></h3>
 <p>Se l'eseguibile di <em>PosUpdate</em> viene inserito nella cartella aggiornamenti definita nella tabella <code>config_cassa</code> (campo <strong>PercorsoAgg</strong>) del database <code>cassa</code> <strong>e la sua versione viene rilevata superiore a quella in uso</strong>, <em>Posware Frontend</em> lo lancerà automaticamente al suo avvio.</p>
 <div class="admonition info">
 <p class="admonition-title">Rilevamento automatico degli aggiornamenti</p>
@@ -1605,15 +635,15 @@ Se <em>Posware Frontend</em> <strong>è già in uso o è nella schermata di logi
 </div>
 <div class="admonition note">
 <p class="admonition-title">Percorso di default degli aggiornamenti</p>
-<p>Per impostazione di default, la cartella degli aggiornamenti è impostata al valore "<em>C:\PosAgg</em>".<br>È possibile cambiare questo valore nella tabella <code>config_cassa</code> (campo <strong>PercorsoAgg</strong>) del database <code>cassa</code>.</p>
+<p>Per impostazione di default, la cartella degli aggiornamenti è impostata al valore "<em>C:\PosAgg</em>".<br/>È possibile cambiare questo valore nella tabella <code>config_cassa</code> (campo <strong>PercorsoAgg</strong>) del database <code>cassa</code>.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Riconoscimento della versione dell'aggiornamento</p>
 <p><strong>La versione dell'aggiornamento viene riconosciuta in base al nome del file.</strong></p>
 <p>Lo standard da rispettare per far riconoscere correttamente la versione è <strong><em>PosUpdate_VERSIONE.exe</em></strong> dove <strong>VERSIONE</strong> indica il versioning dell'applicativo.</p>
-<p><strong>Esempio:</strong> <em>PosUpdate_4.3.354.exe</em> rappresenta correttamente l'aggiornamento alla versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3.354</code> di Posware.</p>
+<p><strong>Esempio:</strong> <em>PosUpdate_4.3.354.exe</em> rappresenta correttamente l'aggiornamento alla versione <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3.354</code> di Posware.</p>
 </div>
-<h4 id="installazione-automatica-e-versioni-con-plug-in">Installazione automatica e versioni con plug-in</h4>
+<h4 id="installazione-automatica-e-versioni-con-plug-in"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2.1</span> Installazione automatica e versioni con plug-in<a class="headerlink" href="#installazione-automatica-e-versioni-con-plug-in" title="Permanent link">¶</a></h4>
 <p>È possibile anche <strong>usare un tag per personalizzare il nome del pacchetto di aggiornamento</strong> per poter permettere così a Posware di riconoscere e lanciare automaticamente anche eventuali <em>PosUpdate</em> con plug-in integrati.</p>
 <p>Per attivare questa feature specificare all'interno della tabella <code>tabparametriextra</code> (modulo <code>posware.instance</code> - valore <strong>applicationUpdatesTag</strong>) <strong>una stringa</strong> che verrà poi usata come <strong>suffisso</strong> al nome standard. </p>
 <p>Così facendo Posware riconoscerà e lancerà <strong>sia i nuovi aggiornamenti che seguono il nome standard, sia quelli con il tag specifico</strong>.</p>
@@ -1621,20 +651,20 @@ Se <em>Posware Frontend</em> <strong>è già in uso o è nella schermata di logi
 <p class="admonition-title">Esempio di pacchetto di aggiornamento personalizzato</p>
 <p>Inserendo la stringa <strong>CLIENTE</strong> nella tabella <code>tabparametriextra</code>, il nome dell'eseguibile di <em>PosUpdate</em> dovrà seguire il formato <strong><em>PosUpdateCLIENTE_VERSIONE.exe</em></strong> oppure il formato standard <strong><em>PosUpdate_VERSIONE.exe</em></strong>.</p>
 </div>
-<h5 id="limitare-lesecuzione-degli-aggiornamenti-automatici-ai-plug-in">Limitare l'esecuzione degli aggiornamenti automatici ai plug-in</h5>
-<p>È anche possibile <strong>circoscrivere</strong> l'esecuzione degli aggiornamenti automatici <strong>solo ed esclusivamente</strong> a quelli con il tag riportato.<br>Per farlo è necessario impostare a <strong><em>True</em></strong> il valore di <strong>isApplicationUpdateTagRestricted</strong> del modulo <code>posware.instance</code> nella tabella <code>tabparametriextra</code> del database.</p>
+<h5 id="limitare-lesecuzione-degli-aggiornamenti-automatici-ai-plug-in"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2.1.1</span> Limitare l'esecuzione degli aggiornamenti automatici ai plug-in<a class="headerlink" href="#limitare-lesecuzione-degli-aggiornamenti-automatici-ai-plug-in" title="Permanent link">¶</a></h5>
+<p>È anche possibile <strong>circoscrivere</strong> l'esecuzione degli aggiornamenti automatici <strong>solo ed esclusivamente</strong> a quelli con il tag riportato.<br/>Per farlo è necessario impostare a <strong><em>True</em></strong> il valore di <strong>isApplicationUpdateTagRestricted</strong> del modulo <code>posware.instance</code> nella tabella <code>tabparametriextra</code> del database.</p>
 <p>In questa modalità non verranno più ricercati gli aggiornamenti nel formato standard, ma solo quelli personalizzati con il tag specificato in <code>tabparametriextra</code>. </p>
 <p>Sfruttando questo meccanismo, Posware lancerà <em>PosUpdate</em> solo per una ipotetica versione con un plug-in integrato (o altre verticalizzazioni realizzate ad hoc) ed eviterà di sovrascrivere l'installazione corrente con i file di un aggiornamento generico.</p>
 <div class="admonition tip">
 <p class="admonition-title">Disponibilità di pacchetti <em>PosUpdate</em> verticalizzati</p>
-<p>Pacchetti <em>PosUpdate</em> verticalizzati vengono resi disponibili con progetti su misura a richiesta.<br>Per un'analisi e quotazione del progetto, contattare il Vs commerciale di riferimento.</p>
+<p>Pacchetti <em>PosUpdate</em> verticalizzati vengono resi disponibili con progetti su misura a richiesta.<br/>Per un'analisi e quotazione del progetto, contattare il Vs commerciale di riferimento.</p>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Installazione manuale e versioni con plug-in</p>
 <p><strong>L'uso del tag NON impedisce ad una installazione eseguita manualmente da Windows o da shell di sovrascrivere i file dell'installazione in uso.</strong> </p>
 <p>Quanto riportato in questo paragrafo è circoscritto <strong>UNICAMENTE</strong> al lancio automatico da parte di Posware degli aggiornamenti di <em>PosUpdate</em>.</p>
 </div>
-<h2 id="note-aggiuntive">Note aggiuntive</h2>
+<h2 id="note-aggiuntive"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Note aggiuntive<a class="headerlink" href="#note-aggiuntive" title="Permanent link">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Riavvio del sistema operativo non necessario</p>
 <p><em>PosUpdate</em>, a differenza di <em>SetupPosware</em>, non installa dipendenze di terze parti e aggiornamenti del sistema operativo.</p>
@@ -1645,15 +675,15 @@ Se <em>Posware Frontend</em> <strong>è già in uso o è nella schermata di logi
 <p>In caso si renda necessario reinstallare una specifica versione di <em>Posware Frontend</em>, <strong>procedere a rieseguire manualmente la relativa versione di <em>PosUpdate</em></strong>.</p>
 <p><strong>Le migrazioni del database non vengono effettuate e il servizio Pos_SBV non viene registrato nuovamente</strong>, a meno che non sia stato eliminato manualmente in precedenza.</p>
 </div>
-<h2 id="troubleshooting-per-i-tecnici">Troubleshooting per i tecnici</h2>
+<h2 id="troubleshooting-per-i-tecnici"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Troubleshooting per i tecnici<a class="headerlink" href="#troubleshooting-per-i-tecnici" title="Permanent link">¶</a></h2>
 <p>Il primo step da eseguire al sorgere di un problema con <em>PosUpdate</em> è consultare i log.</p>
-<p>Per esaminarli più agevolmente è possibile avviare l'applicativo tramite terminale passandogli il parametro standard di <strong>Inno Setup</strong> <code>/LOG="filename"</code>.</p>
+<p>Per esaminarli più agevolmente è possibile avviare l'applicativo tramite terminale (prompt dei comandi o PowerShell è indifferente) passandogli il parametro standard di <strong>Inno Setup</strong> <code>/LOG="filename"</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">Percorso dei file di log di InnoSetup</p>
-<p>Se <em>PosUpdate</em> non viene avviato con <code>/LOG="filename"</code>, come da <a href="https://jrsoftware.org/ishelp/index.php?topic=isxfunc_makependingfilerenameoperationschecksum" target="_blank">documentazione <strong>Inno Setup</strong></a>, il file di log viene generato con nome dinamico nella cartella "<em>%TEMP%</em>". <strong>Per questo motivo individuarlo potrebbe risultare complicato.</strong></p>
-<p>Passandogli il parametro <code>/LOG="filename"</code>, dove <code>filename</code> è il nome che si vuole assegnare al file, risulta molto più immediato consultare il file di log.<br>Il nome del file è relativo al percorso dove è presente il file <em>.exe</em> del <em>PosUpdate</em>. È anche possibile specificare il percorso assoluto del file.</p>
+<p>Se <em>PosUpdate</em> non viene avviato con <code>/LOG="filename"</code>, come da <a href="https://jrsoftware.org/ishelp/index.php?topic=setupcmdline&amp;anchor=LOG" target="_blank">documentazione <strong>Inno Setup</strong></a>, il file di log viene generato con nome dinamico nella cartella "<em>%TEMP%</em>". <strong>Per questo motivo individuarlo potrebbe risultare complicato.</strong></p>
+<p>Passandogli il parametro <code>/LOG="filename"</code>, dove <code>filename</code> è il nome che si vuole assegnare al file, risulta molto più immediato consultare il file di log.<br/>Il nome del file è relativo al percorso dove è presente il file <em>.exe</em> del <em>PosUpdate</em>. È anche possibile specificare il percorso assoluto del file.</p>
 </div>
-<p>La lista esaustiva dei possibili errori che possono verificarsi durante l'applicazione degli aggiornamenti di <em>Posware Frontend</em> tramite <em>PosUpdate</em> è la medesima di <a href="setup-posware.html#troubleshooting-per-i-tecnici"><em>SetupPosware</em></a>.<br>In aggiunta è possibile riscontrare anche l'errore riportato di seguito:</p>
+<p>La lista esaustiva dei possibili errori che possono verificarsi durante l'applicazione degli aggiornamenti di <em>Posware Frontend</em> tramite <em>PosUpdate</em> è la medesima di <a href="setup-posware.html#troubleshooting-per-i-tecnici"><em>SetupPosware</em></a>.<br/>In aggiunta è possibile riscontrare anche l'errore riportato di seguito:</p>
 <table>
 <thead>
 <tr>
@@ -1668,92 +698,43 @@ Se <em>Posware Frontend</em> <strong>è già in uso o è nella schermata di logi
 </tr>
 </tbody>
 </table>
-
-
-
-
-
-
-
-  
-    
-  
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Ultimo aggiornamento">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="14 ottobre 2025 10:43:38 UTC">14 ottobre 2025</span>
-  </span>
-
-    
-    
-    
-    
-  </aside>
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Ultimo aggiornamento">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="10 novembre 2025 12:00:00 UTC">10 novembre 2025</span>
+</span>
+</aside>
+</article>
+</div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Torna su
 </button>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
-      Copyright 2024&copy; I.Si.D S.r.l.
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright 2024© I.Si.D S.r.l.
     </div>
-  
-  
 </div>
-      
-        
 <div class="md-social">
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://isid.it/" target="_blank" rel="noopener" title="isid.it" class="md-social__link">
-      <?xml version="1.0" standalone="no"?>
+<a class="md-social__link" href="https://isid.it/" rel="noopener" target="_blank" title="isid.it">
+<?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="1510.000000pt" height="518.000000pt" viewBox="0 0 1510.000000 518.000000"
- preserveAspectRatio="xMidYMid meet">
 
-<g transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)"
-fill="#FFFFFF" stroke="none">
+<svg height="518.000000pt" preserveaspectratio="xMidYMid meet" version="1.0" viewbox="0 0 1510.000000 518.000000" width="1510.000000pt" xmlns="http://www.w3.org/2000/svg">
+<g fill="#FFFFFF" stroke="none" transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)">
 <path d="M69 5157 c-19 -12 -42 -38 -51 -57 -17 -33 -18 -174 -18 -2510 0
 -2336 1 -2477 18 -2510 9 -19 32 -45 51 -57 l34 -23 466 0 c521 0 514 -1 553
 71 17 32 18 131 18 2519 0 2391 -1 2487 -18 2520 -37 71 -32 70 -553 70 l-466
-0 -34 -23z"/>
+0 -34 -23z"></path>
 <path d="M2580 5169 c-305 -35 -562 -148 -726 -320 -149 -157 -241 -337 -291
 -572 -16 -72 -18 -141 -18 -582 0 -550 4 -597 66 -787 127 -392 402 -626 846
 -720 l108 -23 1570 -5 1570 -5 60 -23 c32 -12 75 -35 95 -50 44 -36 95 -119
@@ -1765,12 +746,12 @@ fill="#FFFFFF" stroke="none">
 c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
 103 161 207 197 48 16 190 17 2091 22 1928 5 2041 6 2066 23 53 36 54 41 57
 469 2 250 -1 412 -7 436 -6 21 -25 51 -41 67 l-31 30 -2197 1 c-1208 1 -2231
--2 -2272 -7z"/>
+-2 -2272 -7z"></path>
 <path d="M7631 5162 c-71 -38 -71 -38 -71 -501 0 -403 1 -415 21 -448 40 -64
 34 -63 501 -63 l424 0 302 -282 302 -282 0 -386 c0 -380 0 -386 23 -430 42
 -82 28 -80 550 -80 502 0 489 -1 541 60 l26 32 0 422 0 423 -23 34 c-46 69
 -44 69 -512 69 l-420 1 -297 277 -297 277 0 390 c-1 435 -1 436 -70 482 l-34
-23 -466 0 c-433 0 -469 -1 -500 -18z"/>
+23 -466 0 c-433 0 -469 -1 -500 -18z"></path>
 <path d="M9255 5167 c-47 -18 -71 -39 -97 -82 l-23 -40 -3 -452 -3 -453 1993
 -3 c1802 -3 2001 -5 2071 -20 422 -88 609 -249 697 -601 50 -201 55 -279 55
 -926 0 -647 -5 -725 -55 -926 -80 -318 -256 -491 -582 -574 -216 -54 -240 -55
@@ -1779,35 +760,23 @@ c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
 -2 1927 0 2040 8 503 36 891 149 1191 346 113 74 311 270 383 379 189 287 292
 647 321 1120 13 220 13 1250 0 1470 -29 473 -133 837 -322 1120 -68 103 -219
 259 -328 341 -109 82 -343 200 -491 248 -213 68 -463 114 -738 136 -200 15
--3906 12 -3946 -3z"/>
+-3906 12 -3946 -3z"></path>
 <path d="M7560 1918 c0 -1706 1 -1815 18 -1847 9 -19 33 -43 52 -53 33 -17 64
 -18 512 -16 l476 3 27 25 c58 53 55 -64 55 1895 l0 1805 -570 0 -570 0 0
--1812z"/>
+-1812z"></path>
 </g>
 </svg>
-    </a>
-  
+</a>
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
-    
-    
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
-      
-        <script src="../../javascripts/extra.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips", "toc.integrate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script src="../../javascripts/extra.js"></script>
+</body>
 </html>
