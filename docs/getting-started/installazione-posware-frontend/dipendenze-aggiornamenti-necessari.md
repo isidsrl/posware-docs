@@ -81,7 +81,7 @@ Trattandosi di sistemi molto obsoleti e, dato il peso del pacchetto di aggiornam
 ## Meccanismi di rilevazione delle dipendenze già installate
 Tutte le dipendenze non incluse nel setup, se vengono rilevate già presenti nel sistema attraverso gli opportuni meccanismi di rilevazione, **non vengono né scaricate né installate nuovamente**. 
 
-Vengono ancora una volta elencate in via definitiva tutte le dipendenze con installazione automatica che vengono rilavate tramite degli opportuni meccanismi di rilevazione:
+Vengono ancora una volta elencate in via definitiva tutte le dipendenze con installazione automatica che vengono rilevate tramite degli opportuni meccanismi di rilevazione:
 
 - WebView2 Edge Runtime :material-tag:`109.0.1518.140`
 - Aggiornamenti di Windows 7 **SP1** necessari per installare .NET :material-tag:6 Hosting Bundle:

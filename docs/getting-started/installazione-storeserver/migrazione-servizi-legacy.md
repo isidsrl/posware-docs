@@ -224,13 +224,13 @@ La lista esaustiva dei possibili errori che possono verificarsi durante l'instal
 
     **Unica eccezione è lo step sui servizi legacy**, che nello scenario di migrazione vanno solamente **aggiornati**, invece di **installarli da zero**. Questa differenza però è descritta direttamente nella relativa [sezione della documentazione](./servizi-legacy.md).
 
-## Rollback - [DRAFT DA COMPLETARE]
+<!-- ## Rollback - [DRAFT DA COMPLETARE]
 Al fine di eseguire la procedura di rollback dello *StoreServer*, se sono stati fatti i backup preliminari necessari, sarà necessario completare tutti i seguenti step:
 
 1. Disinstallare lo *StoreServer*, tramite **Winget** o Windows, e ripristinare eventuali backup a database e directory non direttamente collegate a **Posware**, che però sono state influenzate dall'installazione dello *StoreServer* o di una o più dipendenze/procedure usate dalla nuova versione.
 2. Reinstallare la versione precedente tramite **Winget** specificando con il parametro *--version* la versione voluta e tutti i parametri custom necessari, visti già in precedenza nella [sezione relativa all'installazione](#installazione-storeserver-tramite-winget) con **Winget** di questa guida. Questo step va effettuato solo se non si è nel caso di rollback della prima installazione dello *StoreServer*, ma si era passati da una versione precedente a una nuova dell'applicativo con un upgrade.
 3. Ripristinare i vari servizi legacy alla versione precedente all'aggiornamento eseguito per renderli compatibili con lo *StoreServer*.
-4. Ripristinare il backup del database precedente all'installazione dello *StoreServer*, sovrascrivendo così il database creato da **Winget** . Inoltre, se il provider del database, MySQL o SQL Server, era stato installato momentaneamente su una porta differente per non entrare in conflitto con quello precedente, procedere a disabilitarlo mettendolo offline. Infine, concludere la procedura di rollback riattivando il precedente provider se era stato disabilitato.
+4. Ripristinare il backup del database precedente all'installazione dello *StoreServer*, sovrascrivendo così il database creato da **Winget** . Inoltre, se il provider del database, MySQL o SQL Server, era stato installato momentaneamente su una porta differente per non entrare in conflitto con quello precedente, procedere a disabilitarlo mettendolo offline. Infine, concludere la procedura di rollback riattivando il precedente provider se era stato disabilitato. -->
 
 <!--In cassa l'unica cosa da fare è rollbackare gli script che si trovano dentro la cartella "C:\progetti\posware\devops\DbMigrations.sql", ossia bisogna prendere quegli script e lanciarli all'indietro. Le modifiche più impattanti sono le ALTER TABLE con ADD COLUMN.-->
 

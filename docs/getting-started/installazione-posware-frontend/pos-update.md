@@ -35,7 +35,7 @@ Le stesse regole **valgono per altri software della suite Posware che possono ra
 ## Modalità di installazione
 *PosUpdate* supporta unicamente le seguenti modalità di installazione:
 
-- **Manuale:** può essere lanciato dall'utente con doppio click o da shell di Windows
+- **Manuale:** può essere lanciato dall'utente con doppio click o da shell di Windows (prompt dei comandi o PowerShell è indifferente)
 - **AutoUpdate:** viene lanciato automaticamente da *Posware.exe*
 
 ### Modalità di installazione manuale
@@ -48,7 +48,7 @@ Nell'aggiornamento manuale, l'utente può lanciare l'aggiornamento facendo ordin
 
 ![SetupPosware's Main interface][image_ref_pif4yegg]
 
-È inoltre possibile avviare l'applicativo tramite shell fornendo alcuni dei parametri standard previsti da **Inno Setup**:
+È inoltre possibile avviare l'applicativo tramite shell (prompt dei comandi o PowerShell è indifferente) fornendo alcuni dei parametri standard previsti da **Inno Setup**:
 
 - `/SILENT`, `/VERYSILENT`
 - `/LOG="filename"`
@@ -114,10 +114,10 @@ Sfruttando questo meccanismo, Posware lancerà *PosUpdate* solo per una ipotetic
 ## Troubleshooting per i tecnici
 Il primo step da eseguire al sorgere di un problema con *PosUpdate* è consultare i log.
 
-Per esaminarli più agevolmente è possibile avviare l'applicativo tramite terminale passandogli il parametro standard di **Inno Setup** `/LOG="filename"`.
+Per esaminarli più agevolmente è possibile avviare l'applicativo tramite terminale (prompt dei comandi o PowerShell è indifferente) passandogli il parametro standard di **Inno Setup** `/LOG="filename"`.
 
 !!! info "Percorso dei file di log di InnoSetup"
-    Se *PosUpdate* non viene avviato con `/LOG="filename"`, come da [documentazione **Inno Setup**](https://jrsoftware.org/ishelp/index.php?topic=isxfunc_makependingfilerenameoperationschecksum){:target="_blank"}, il file di log viene generato con nome dinamico nella cartella "*%TEMP%*". **Per questo motivo individuarlo potrebbe risultare complicato.**
+    Se *PosUpdate* non viene avviato con `/LOG="filename"`, come da [documentazione **Inno Setup**](https://jrsoftware.org/ishelp/index.php?topic=setupcmdline&anchor=LOG){:target="_blank"}, il file di log viene generato con nome dinamico nella cartella "*%TEMP%*". **Per questo motivo individuarlo potrebbe risultare complicato.**
 
     Passandogli il parametro `/LOG="filename"`, dove `filename` è il nome che si vuole assegnare al file, risulta molto più immediato consultare il file di log.<br>Il nome del file è relativo al percorso dove è presente il file *.exe* del *PosUpdate*. È anche possibile specificare il percorso assoluto del file.
 

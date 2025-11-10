@@ -51,7 +51,7 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
 - .NET Hosting Bundle :material-tag:`8.x`
 - Servizi legacy (per la lista completa, consultare la relativa [sezione](./servizi-legacy.md#file-installati))
 
-## Breaking changes - DRAFT DA COMPLETARE
+## Breaking changes
 Vengono elencati in questa sezione i diversi **breaking changes** introdotti a partire dalla versione :material-tag:`4.3` di Posware.
 
 Lo *StoreServer* è un nuovo applicativo introdotto per la prima volta con Posware :material-tag:`4.3`, quindi non ha esso stesso dei **breaking changes**. Questi saranno, quindi, tutti relativi alle **operazioni che ora non sono più possibili** con il passaggio alla versione :material-tag:`4.3` di Posware e l'introduzione dello *StoreServer*.
@@ -79,7 +79,7 @@ Lo *StoreServer* è un nuovo applicativo introdotto per la prima volta con Poswa
 !!! warning "Campi custom nelle tabelle del database `posware`"
     **Con l'introduzione dello *StoreServer*, non è più possibile inserire nuovi campi custom alle tabelle esistenti del database `posware`.**
 
-    Qualora fosse necessario estendere le informazioni esistenti con altre di terze parti, consultare il documento ["Aggiungere dati custom al database dello StoreServer"](). [LINK ANCORA ASSENTE]
+    Qualora fosse necessario estendere le informazioni esistenti con altre di terze parti, consultare il documento ["Aggiunta dati custom al database dello StoreServer"](../scenari-avanzati/dati-custom-database-storeserver.md). 
 
 !!! danger "Non copiare dati e/o strutture tra database diversi!"
     Al fine di popolare il database dello *StoreServer*, **NON copiare dati e/o strutture delle tabelle del database `cassamaster`** o dai database delle **casse**, in quanto differenti e non compatibili tra loro!

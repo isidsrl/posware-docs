@@ -32,7 +32,7 @@ In entrambi gli scenari l'utente può lanciare il setup facendo ordinario doppio
 
 ![SetupPosware's Main interface][image_ref_4k0yvep7]
 
-È inoltre possibile avviare l'applicativo tramite shell fornendo alcuni dei parametri standard previsti da **Inno Setup**:
+È inoltre possibile avviare l'applicativo tramite shell (prompt dei comandi o PowerShell è indifferente) fornendo alcuni dei parametri standard previsti da **Inno Setup**:
 
 - `/SILENT`, `/VERYSILENT`
 - `/LOG="filename"`
@@ -132,7 +132,7 @@ Nello scenario di migrazione, *SetupPosware* **non bloccherà l'installazione se
 ### Troubleshooting per i tecnici
 Il primo step da eseguire al sorgere di un problema con *SetupPosware* è consultare i log.
 
-Per esaminarli più agevolmente è possibile avviare l'applicativo tramite terminale passandogli il parametro standard di **Inno Setup** `/LOG="filename"`.
+Per esaminarli più agevolmente è possibile avviare l'applicativo tramite terminale (prompt dei comandi o PowerShell è indifferente) passandogli il parametro standard di **Inno Setup** `/LOG="filename"`.
 
 !!! info "Percorso dei file di log di InnoSetup"
     Se *SetupPosware* non viene avviato con `/LOG="filename"`, come da [documentazione **Inno Setup**](https://jrsoftware.org/ishelp/index.php?topic=isxfunc_makependingfilerenameoperationschecksum){:target="_blank"}, il file di log viene generato con nome dinamico nella cartella "*%TEMP%*". **Per questo motivo individuarlo potrebbe risultare complicato.**

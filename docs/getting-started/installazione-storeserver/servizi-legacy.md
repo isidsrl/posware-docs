@@ -4,7 +4,7 @@ tags:
     - StoreServer
 ---
 
-# Front Office - Aggiornamento
+# Front Office - Servizi legacy
 
 **Prima revisione documento: 3 settembre 2024** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**
@@ -277,6 +277,8 @@ Di seguito, le configurazioni necessarie per ognuno dei parametri soprastanti:
     - *Config.sqlserver.Ini*
     
     **Questi file non vengono utilizzati da alcun programma.**<br>Sono forniti esclusivamente a scopo esemplificativo, per aiutare l’utente a comprendere **quali informazioni inserire nel file *Config.Ini*** dei servizi legacy, soprattutto in assenza di conoscenze pregresse.
+
+    **Di default, in caso di nuova installazione, il file *Config.Ini* effettivamente utilizzato dai servizi legacy si trova in *C:\Posware* e non nella cartella del *Pos_Log*.**
 
 ### Pos_Sbv
 Il *Pos_Sbv* è il servizio del *Front Office* adibito all'invio delle variazioni dallo *StoreServer* alle varie casse del punto vendita.

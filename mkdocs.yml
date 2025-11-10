@@ -22,14 +22,14 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.indexes
     - navigation.top
+    - navigation.expand
     - search.highlight
     - search.suggest
     - content.code.copy
     - content.code.select
     - content.tooltips
+    - toc.integrate
 
 extra_css:
   - stylesheets/extra.css
@@ -54,6 +54,10 @@ plugins:
       enabled: true
       type: date
       locale: it
+  - enumerate-headings:
+      increment_across_pages: false
+      exclude:
+        - index.md
 
 nav:
   - Home: index.md
@@ -70,6 +74,8 @@ nav:
       - Migrazione: getting-started/installazione-storeserver/migrazione-servizi-legacy.md
       - Aggiornamento: getting-started/installazione-storeserver/aggiornamento-storeserver.md
       - Servizi legacy: getting-started/installazione-storeserver/servizi-legacy.md
+    - Scenari avanzati:
+      - Aggiunta dati custom database: getting-started/scenari-avanzati/dati-custom-database-storeserver.md
   - Moduli:
     - Modulo di base:
       - Statistiche dettagliate: posware-modules/main-module/statistiche-dettagliate.md
@@ -103,6 +109,7 @@ markdown_extensions:
   - attr_list
   - toc:
       toc_depth: 4
+      permalink: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
