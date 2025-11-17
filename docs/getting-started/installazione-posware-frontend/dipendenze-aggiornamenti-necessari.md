@@ -4,7 +4,7 @@ tags:
     - Posware Frontend
 ---
 
-# Dipendenze di terze parti e aggiornamenti necessari
+# Posware - Dipendenze di terze parti e aggiornamenti necessari
 
 **Prima revisione documento: 27 agosto 2024** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**

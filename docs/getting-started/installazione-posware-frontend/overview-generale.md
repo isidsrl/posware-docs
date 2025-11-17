@@ -4,7 +4,7 @@ tags:
     - Posware Frontend
 ---
 
-# Overview generale
+# Posware - Overview generale
 
 **Prima revisione documento: 27 agosto 2024** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**
@@ -112,6 +112,6 @@ Esso può essere usato esclusivamente per le casistiche di:
 - Nuova installazione di *Posware Frontend* sui terminali casse
 - Migrazione da Posware :material-tag:`4.2.x`
 
-*PosUpdate* è invece l'applicativo da usare esclusivamente per aggiornare *Posware Frontend* sui terminali casse alla loro ultima **Build** version, in linea con la **Major** e **Minor** version installata (Es.: da :material-tag:`4.3.96` a :material-tag:`4.3.154`).
+*PosUpdate* è invece l'applicativo da usare esclusivamente per aggiornare *Posware Frontend* sui terminali casse alla loro ultima **Build** version, in linea con la **Major** e **Minor** version installata (Es.: da :material-tag:`4.3.680` a :material-tag:`4.3.700`).
 
 I dettagli specifici sul funzionamento dei due applicativi sono consultabili nelle rispettive sezioni.

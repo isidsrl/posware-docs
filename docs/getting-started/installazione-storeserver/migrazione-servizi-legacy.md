@@ -4,7 +4,7 @@ tags:
     - StoreServer
 ---
 
-# Migrazione da servizi legacy
+# StoreServer - Migrazione da servizi legacy
 
 **Prima revisione documento: 24 aprile 2024** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**

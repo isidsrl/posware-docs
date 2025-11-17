@@ -4,7 +4,7 @@ tags:
     - StoreServer
 ---
 
-# Procedure comuni di installazione
+# StoreServer - Procedure comuni di installazione
 
 **Prima revisione documento: 13 maggio 2024** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**
@@ -31,101 +31,106 @@ Il presente documento descrive la procedure comuni ad entrambi gli scenari di in
 
     **Si consiglia di cambiare la password in tutti i sistemi di produzione.**  
 
-### MySQL
-In caso il database provider scelto sia **MySQL**, è necessario installare MySQL :material-tag:`8.4`, l'unica versione attualmente compatibile con lo *StoreServer*. 
+=== "MySQL"
 
-!!! info "Tool di gestione del database provider MySQL"
-    A partire da Posware :material-tag:`4.3` si consiglia di utilizzare come tool di gestione del database provider **MySQL**:
+    ### MySQL
+    In caso il database provider scelto sia **MySQL**, è necessario installare MySQL :material-tag:`8.4`, l'unica versione attualmente compatibile con lo *StoreServer*. 
 
-    - MySQL Workbench all'ultima versione disponibile (**lo strumento messo a disposizione da Oracle**), oppure
-    - Navicat :material-tag:`12.0.28` o superiore, oppure
-    - HeidiSQL all'ultima versione disponibile
+    !!! info "Tool di gestione del database provider MySQL"
+        A partire da Posware :material-tag:`4.3` si consiglia di utilizzare come tool di gestione del database provider **MySQL**:
 
-!!! danger "Obsolescenza di versioni di Navicat precedenti alla :material-tag:`12.0.28`"
-    **A partire da MySQL :material-tag:`8.4`, in uso dallo *StoreServer*, NON sono assolutamente più supportate versioni di Navicat precedenti alla :material-tag:`12.0.28`.**
+        - MySQL Workbench all'ultima versione disponibile (**lo strumento messo a disposizione da Oracle**), oppure
+        - Navicat :material-tag:`12.0.28` o superiore, oppure
+        - HeidiSQL all'ultima versione disponibile
 
-    **Usare versioni obsolete di Navicat comporta la CORRUZIONE IRRIMEDIABILE del database del server centrale!**
+    !!! danger "Obsolescenza di versioni di Navicat precedenti alla :material-tag:`12.0.28`"
+        **A partire da MySQL :material-tag:`8.4`, in uso dallo *StoreServer*, NON sono assolutamente più supportate versioni di Navicat precedenti alla :material-tag:`12.0.28`.**
 
-#### Installazione e configurazione
-Per l'installazione e la configurazione fare riferimento alla **documentazione di Oracle** riguardante MySQL :material-tag:`8.4`.
+        **Usare versioni obsolete di Navicat comporta la CORRUZIONE IRRIMEDIABILE del database del server centrale!**
 
-Le seguenti configurazioni sono obbligatorie:
+    #### Installazione e configurazione
+    Per l'installazione e la configurazione fare riferimento alla **documentazione di Oracle** riguardante MySQL :material-tag:`8.4`.
 
-- Nello step in cui bisogna scegliere la configurazione del server impostare la voce *Config Type* pari a **Dedicated Computer**
-- Nello step in cui è necessario configurare le credenziali di accesso al database provider, impostare la password dell'utente **root** di sistema pari a **Vbhg4132!**
+    Le seguenti configurazioni sono obbligatorie:
 
-Si consiglia infine di abilitare lo "*Slow Query Log*".
+    - Nello step in cui bisogna scegliere la configurazione del server impostare la voce *Config Type* pari a **Dedicated Computer**
+    - Nello step in cui è necessario configurare le credenziali di accesso al database provider, impostare la password dell'utente **root** di sistema pari a **Vbhg4132!**
 
-!!! danger "Installazione di MySQL :material-tag:`8.4` in presenza di un'altra istanza già installata"
-    **In caso sul computer sia installata un'altra istanza di MySQL**, oltre alla versione :material-tag:`8.4`, si consiglia di eseguire una installazione side-by-side della nuova istanza.<br>**In caso contrario, l'istanza precedentemente installata potrebbe venir sovrascritta rendendo così impossibile eseguire la procedura di rollback, nell'eventualità in cui dovesse rendersi necessaria.**
+    Si consiglia infine di abilitare lo "*Slow Query Log*".
 
-!!! warning "Abilitare le connessioni esterne"
-    Per una corretta trasmissione dei dati tra lo *StoreServer* e le casse, **è assolutamente necessario configurare MySQL per accettare connessioni esterne.**<br>Per abilitare le connessioni esterne, consultare la **documentazione di Oracle** riguardante MySQL.
+    !!! danger "Installazione di MySQL :material-tag:`8.4` in presenza di un'altra istanza già installata"
+        **In caso sul computer sia installata un'altra istanza di MySQL**, oltre alla versione :material-tag:`8.4`, si consiglia di eseguire una installazione side-by-side della nuova istanza.<br>**In caso contrario, l'istanza precedentemente installata potrebbe venir sovrascritta rendendo così impossibile eseguire la procedura di rollback, nell'eventualità in cui dovesse rendersi necessaria.**
 
-##### Configurazione dei parametri del file my.ini e del metodo di autenticazione 
-Terminata la configurazione iniziale del provider, sarà necessario impostare alcuni parametri all'interno del file *my.ini* di MySQL, situato nella directory di MySQL :material-tag:`8.4` (se non cambiata, la default è *C:\ProgramData\MySQL\MySQL Server 8.4*).<br>**Prima di procedere con la modifica del file assicurarsi di stoppare il servizio *MySQL84* di Windows.**
+    !!! warning "Abilitare le connessioni esterne"
+        Per una corretta trasmissione dei dati tra lo *StoreServer* e le casse, **è assolutamente necessario configurare MySQL per accettare connessioni esterne.**<br>Per abilitare le connessioni esterne, consultare la **documentazione di Oracle** riguardante MySQL.
 
-I parametri da impostare sono i seguenti:
+    ##### Configurazione dei parametri del file my.ini e del metodo di autenticazione 
+    Terminata la configurazione iniziale del provider, sarà necessario impostare alcuni parametri all'interno del file *my.ini* di MySQL, situato nella directory di MySQL :material-tag:`8.4` (se non cambiata, la default è *C:\ProgramData\MySQL\MySQL Server 8.4*).<br>**Prima di procedere con la modifica del file assicurarsi di stoppare il servizio *MySQL84* di Windows.**
 
-- `max_connections` = 500
-- `lower_case_table_names` = 1
-- `log_error_suppression_list` = MY-013360 
-- `key_buffer_size` = 64M
-- `innodb_dedicated_server` = ON
+    I parametri da impostare sono i seguenti:
 
-!!! info "Inserimento dei parametri nel file *my.ini*"
-    Se il parametro è già presente nel file *my.ini* è necessario cambiare il suo valore.<br>Se non presenti devono essere aggiunti al di sotto della sezione **[mysqld]** del file sia il parametro che il rispettivo valore (possono essere copiati e incollati così come sono riportati nell'elenco puntato).
+    - `max_connections` = 500
+    - `lower_case_table_names` = 1
+    - `log_error_suppression_list` = MY-013360 
+    - `key_buffer_size` = 64M
+    - `innodb_dedicated_server` = ON
 
-###### Server non dedicati
-**Lo *StoreServer* è progettato per funzionare su server dedicati.**<br>In caso contrario, bisognerà agire manualmente sulla memoria riservata a MySQL per evitare che utilizzi tutta la memoria esistente.
+    !!! info "Inserimento dei parametri nel file *my.ini*"
+        Se il parametro è già presente nel file *my.ini* è necessario cambiare il suo valore.<br>Se non presenti devono essere aggiunti al di sotto della sezione **[mysqld]** del file sia il parametro che il rispettivo valore (possono essere copiati e incollati così come sono riportati nell'elenco puntato).
 
-Per farlo, impostare ad `OFF` la variabile `innodb_dedicated_server` nel file *my.ini* e fare riferimento alla guida di MySQL per impostare la quantità di RAM da dedicare con questi valori minimi:
+    ###### Server non dedicati
+    **Lo *StoreServer* è progettato per funzionare su server dedicati.**<br>In caso contrario, bisognerà agire manualmente sulla memoria riservata a MySQL per evitare che utilizzi tutta la memoria esistente.
 
-- **1 Gigabyte**: fino a 2 casse oppure fino a un massimo di 1,5 milioni di incasso. 
-- **Almeno il 50% di RAM**: in tutti gli altri casi.
+    Per farlo, impostare ad `OFF` la variabile `innodb_dedicated_server` nel file *my.ini* e fare riferimento alla guida di MySQL per impostare la quantità di RAM da dedicare con questi valori minimi:
 
-#### Importare un database migrato da Posware :material-tag:`4.2` in MySQL :material-tag:`8.4`
-!!! warning "Scenario di migrazione"
-    Le informazioni contenute in questo paragrafo sono da considerarsi valide **UNICAMENTE** per lo scenario di **migrazione da Posware :material-tag:`4.2` a :material-tag:`4.3`**.
+    - **1 Gigabyte**: fino a 2 casse oppure fino a un massimo di 1,5 milioni di incasso. 
+    - **Almeno il 50% di RAM**: in tutti gli altri casi.
 
-Dopo aver completato l'installazione e la configurazione di MySQL :material-tag:`8.4`, è necessario esportare il database **`posware`** dalla vecchia versione di MySQL ed importarlo nella :material-tag:`8.4`.<br>**Questo è un prerequisito fondamentale per prepararsi alla migrazione con il Database Upgrader durante la procedura di installazione dello *StoreServer*.**
+    #### Importare un database migrato da Posware :material-tag:`4.2` in MySQL :material-tag:`8.4`
+    !!! warning "Scenario di migrazione"
+        Le informazioni contenute in questo paragrafo sono da considerarsi valide **UNICAMENTE** per lo scenario di **migrazione da Posware :material-tag:`4.2` a :material-tag:`4.3`**.
 
-Durante l'importazione del database in MySQL :material-tag:`8.4` si raccomanda vivamente di rinominare il database con un nome diverso da **`posware`** (ad esempio **`posware42`**), così da non dover svolgere questa operazione successivamente.
+    Dopo aver completato l'installazione e la configurazione di MySQL :material-tag:`8.4`, è necessario esportare il database **`posware`** dalla vecchia versione di MySQL ed importarlo nella :material-tag:`8.4`.<br>**Questo è un prerequisito fondamentale per prepararsi alla migrazione con il Database Upgrader durante la procedura di installazione dello *StoreServer*.**
 
-!!! warning "Obbligo di utilizzo di mysqldump per importare/esportare i dump dei database in MySQL"
-    Da Posware :material-tag:`4.3` in avanti **è obbligatorio** usare il tool **mysqldump** di MySQL per eseguire l'esportazione e l'importazione dei dump dei database in MySQL. 
+    Durante l'importazione del database in MySQL :material-tag:`8.4` si raccomanda vivamente di rinominare il database con un nome diverso da **`posware`** (ad esempio **`posware42`**), così da non dover svolgere questa operazione successivamente.
 
-    Non è più possibile usare **Navicat o altri strumenti simili** per fare queste operazioni, altrimenti non verrà garantita **la completa integrità del database** durante gli spostamenti tra versioni diverse di MySQL.
+    !!! warning "Obbligo di utilizzo di mysqldump per importare/esportare i dump dei database in MySQL"
+        Da Posware :material-tag:`4.3` in avanti **è obbligatorio** usare il tool **mysqldump** di MySQL per eseguire l'esportazione e l'importazione dei dump dei database in MySQL. 
 
-!!! warning "Effettuare il dump binario nell'esportazione dei database con mysqldump"
-    Nell'esportazione del database con **mysqldump** è assolutamente mandatorio usare nel comando apposito "`-r`" invece del maggiore (`>`), così da effettuare il dump binario, che evita possibili errori che possono avvenire nel ripristino successivo del dump a causa di conflitti con la codifica. 
+        Non è più possibile usare **Navicat o altri strumenti simili** per fare queste operazioni, altrimenti non verrà garantita **la completa integrità del database** durante gli spostamenti tra versioni diverse di MySQL.
 
-    Si ricorda che il comando generico di esportazione di un database con **mysqldump** senza alcun parametro aggiuntivo è `mysqldump <dbname> > <filename>`, dove "*dbname*" è il nome del database da esportare e "*filename*" è il nome del file in cui verrà salvato il dump del database.
+    !!! warning "Effettuare il dump binario nell'esportazione dei database con mysqldump"
+        Nell'esportazione del database con **mysqldump** è assolutamente mandatorio usare nel comando apposito "`-r`" invece del maggiore (`>`), così da effettuare il dump binario, che evita possibili errori che possono avvenire nel ripristino successivo del dump a causa di conflitti con la codifica. 
 
-    ``` bat title="Esempio di comando generico di esportazione di un database posware con mysqldump"
-    mysqldump posware -r posware42.dump
-    ``` 
+        Si ricorda che il comando generico di esportazione di un database con **mysqldump** senza alcun parametro aggiuntivo è `mysqldump <dbname> > <filename>`, dove "*dbname*" è il nome del database da esportare e "*filename*" è il nome del file in cui verrà salvato il dump del database.
 
-### SQL Server
-In caso il database provider scelto sia **SQL Server**, è possibile scegliere una tra le seguenti versioni, tutte compatibili con lo *StoreServer*: SQL Server `2016`, `2017`, `2019` o `2022`. 
+        ``` bat title="Esempio di comando generico di esportazione di un database posware con mysqldump"
+        mysqldump posware -r posware42.dump
+        ``` 
 
-#### Installazione e configurazione
-Per la scelta della versione di riferimento, l'installazione e la configurazione fare riferimento alla **documentazione di Microsoft** riguardante SQL Server. 
+=== "SQL Server"
 
-Le seguenti configurazioni sono obbligatorie:
+    ### SQL Server
+    In caso il database provider scelto sia **SQL Server**, è possibile scegliere una tra le seguenti versioni, tutte compatibili con lo *StoreServer*: SQL Server `2016`, `2017`, `2019` o `2022`.
 
-- Scegliere come modalità di installazione *Download Media* col package *Express Core*, perché così si potrà effettuare un'installazione in cui sarà poi possibile configurare il provider step per step, rispetto alle installazioni di default. **Questo serve per configurare le impostazioni successive**
-- Nello step in cui bisogna scegliere la configurazione dell'istanza di SQL Server scegliere *Default instance*
-- Nello step della configurazione dell'engine del database impostare l'*Authentication Mode* pari a *Mixed Mode (SQL Server authentication and Windows authentication)* e settare la password dell'utente **sa** di sistema pari a **Vbhg4132!**
+    #### Installazione e configurazione
+    Per la scelta della versione di riferimento, l'installazione e la configurazione fare riferimento alla **documentazione di Microsoft** riguardante SQL Server. 
 
-!!! warning "Abilitare le connessioni esterne"
-    Per una corretta trasmissione dei dati tra lo *StoreServer* e le casse, **è assolutamente necessario configurare SQL Server per accettare connessioni esterne.**<br>Per abilitare le connessioni esterne, consultare la **documentazione di Microsoft** riguardante SQL Server.
+    Le seguenti configurazioni sono obbligatorie:
 
-#### Importare un database migrato da Posware :material-tag:`4.2` in SQL Server
-!!! warning "Scenario di migrazione"
-    Le informazioni contenute in questo paragrafo sono da considerarsi valide **UNICAMENTE** per lo scenario di **migrazione da Posware :material-tag:`4.2` a :material-tag:`4.3`**.
+    - Scegliere come modalità di installazione *Download Media* col package *Express Core*, perché così si potrà effettuare un'installazione in cui sarà poi possibile configurare il provider step per step, rispetto alle installazioni di default. **Questo serve per configurare le impostazioni successive**
+    - Nello step in cui bisogna scegliere la configurazione dell'istanza di SQL Server scegliere *Default instance*
+    - Nello step della configurazione dell'engine del database impostare l'*Authentication Mode* pari a *Mixed Mode (SQL Server authentication and Windows authentication)* e settare la password dell'utente **sa** di sistema pari a **Vbhg4132!**
 
-Dopo aver completato l'installazione e la configurazione della versione scelta di SQL Server, è necessario esportare il database **`posware`** dalla vecchia versione di SQL Server ed importarlo nella nuova.<br>**Questo è un prerequisito fondamentale per prepararsi alla migrazione con il Database Upgrader durante la procedura di installazione dello *StoreServer*.**
+    !!! warning "Abilitare le connessioni esterne"
+        Per una corretta trasmissione dei dati tra lo *StoreServer* e le casse, **è assolutamente necessario configurare SQL Server per accettare connessioni esterne.**<br>Per abilitare le connessioni esterne, consultare la **documentazione di Microsoft** riguardante SQL Server.
+
+    #### Importare un database migrato da Posware :material-tag:`4.2` in SQL Server
+    !!! warning "Scenario di migrazione"
+        Le informazioni contenute in questo paragrafo sono da considerarsi valide **UNICAMENTE** per lo scenario di **migrazione da Posware :material-tag:`4.2` a :material-tag:`4.3`**.
+
+    Dopo aver completato l'installazione e la configurazione della versione scelta di SQL Server, è necessario esportare il database **`posware`** dalla vecchia versione di SQL Server ed importarlo nella nuova.<br>**Questo è un prerequisito fondamentale per prepararsi alla migrazione con il Database Upgrader durante la procedura di installazione dello *StoreServer*.**
+
 
 ### Troubleshooting per i tecnici
 #### Errore "Access denied for user [...]" usando MySQL :material-tag:`8.4` sul server di barriera

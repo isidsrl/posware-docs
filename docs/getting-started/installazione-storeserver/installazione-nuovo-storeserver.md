@@ -4,15 +4,14 @@ tags:
     - StoreServer
 ---
 
-# Installazione di un nuovo StoreServer
+# StoreServer - Installazione
 
 **Prima revisione documento: 18 luglio 2024** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**
 ---
 
 ## Glossario
-- **Winget**: vedi Package manager.
-- **Package manager**: software di gestione pacchetti di installazione integrato nel sistema operativo.
+- **Winget o Package manager**: software di gestione pacchetti di installazione integrato nel sistema operativo.
 - **StoreId:** anche detto **InstanceConfigurationId**, rappresenta il codice del punto vendita su cui si sta installando lo *StoreServer*.
 - **WebApp:** applicazione web che offre la possibilità di gestire in modo centralizzato le funzionalità disponibili nello *StoreServer*.
 
@@ -58,11 +57,12 @@ Per installare lo *StoreServer* è necessario usare il package manager **Winget*
 !!! warning "Versione minima necessaria"
     Assicurarsi di avere installata la versione minima supportata per l'installazione dello *StoreServer*, consultabile nell'[overview generale](./overview-generale.md). 
     
-    In caso di dubbi, procedere in ogni caso all'aggiornamento di **Winget** usando il Microsoft Store.
+    In caso di dubbi, procedere in ogni caso all'aggiornamento o installazione di **Winget** usando il Microsoft Store.
+    Il nome del pacchetto è anche chiamato **App Installer**. Ulteriori informazioni in merito sono consultabili nella [documentazione Microsoft](https://learn.microsoft.com/en-us/windows/package-manager/winget/#install-winget)
 
 ### Aggiunta del repository Posware
 !!! tip "Prima esecuzione"
-    Le istruzioni di questo paragrafo vanno eseguite una sola volta, solo su sistemi che non hanno mai aggiunto la source di ISiD sul computer.
+    Le istruzioni di questo paragrafo vanno eseguite **una sola volta**, solo su sistemi che non hanno mai aggiunto la source di ISiD sul computer.
     
 1. Avviare un nuovo terminale **con i diritti di amministratore** (*cmd.exe*).
 2. Inserire la source di ISiD in **Winget** da terminale, usando il comando:
@@ -97,7 +97,7 @@ L'installazione rileverà automaticamente il database da utilizzare tra MySQL e 
 
 Per approfondimenti sulla logica di rilevamento automatico consulta il [paragrafo dedicato](#logica-di-rilevamento-automatico-del-database-provider).
 
-**Se sulla stessa macchina sono già installati sia MySQL che SQL Server, viene consigliato di specificare la *Connection string* e consultare il paragrafo di [logica di rilevamento automatico](#logica-di-rilevamento-automatico-del-database-provider).**
+**Se sulla stessa macchina sono già installati sia MySQL che SQL Server, viene consigliato di specificare la *Connection string*. Consultare il paragrafo di [logica di rilevamento automatico](#logica-di-rilevamento-automatico-del-database-provider) per non incorrere in errori.**
 
 #### Uso dei parametri di installazione personalizzati
 !!! info "Winget --custom"
@@ -105,68 +105,93 @@ Per approfondimenti sulla logica di rilevamento automatico consulta il [paragraf
 
     **Possono essere usati sia singolarmente che combinati.**
 
-##### Usare una connection string specifica
-È necessario specificare una *connection string* se:
+=== "Usare una connection string specifica"
 
-- Sulla stessa macchina vi sono installati sia MySQL che SQL Server e si vuole destinare il database specificatamente all'uno o all'altro
-- Il nome del database che vuoi usare per lo *StoreServer* **non** è `posware`
-- Le credenziali da usare per l'accesso al database sono diverse da quelle prefedefinite
-- Altri casi non direttamente supportati che tuttavia necessitano di parametri ulteriori nella stringa di connessione al database
+    ##### Usare una connection string specifica
+    È necessario specificare una *connection string* se:
 
-``` bat title="Installazione con connection string custom"
-winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=connection string diversa da quelle di default" --verbose
-```    
- 
-!!! warning "Escape dei parametri con spazi"
-    Se la *Connection string* contiene keyword con spazi, deve essere racchiusa fra doppi apici che, a loro volta, essendo dentro il parametro --custom, andranno **escapizzati**.
+    - Sulla stessa macchina vi sono installati sia MySQL che SQL Server e si vuole destinare il database specificatamente all'uno o all'altro
+    - Il nome del database che vuoi usare per lo *StoreServer* **non** è `posware`
+    - Le credenziali da usare per l'accesso al database sono diverse da quelle prefedefinite
+    - Altri casi non comuni che per l'accesso al database richiedono parametri ulteriori nella stringa di connessione
+
+    ``` bat title="Installazione con connection string custom"
+    winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=connection string diversa da quelle di default" --verbose
+    ```    
     
-    **Esempio:** /CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307""
- 
-Di seguito un esempio completo di *connection string* custom, con parametri con spazi, che usa credenziali di accesso non di default ed un porta di comunicazione al database MySQL non standard:
+    !!! warning "Escape dei parametri con spazi"
+        Se la *Connection string* contiene keyword con spazi, deve essere racchiusa fra doppi apici che, a loro volta, essendo dentro il parametro --custom, andranno **escapizzati**.
 
-``` bat title="Installazione con connection string con spazi e credeziali custom"
-winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=isid;password=1r{1]@ZJ^7/f;database=posware;port=3307"" " --verbose
-```    
-
-!!! danger "Attenzione al carattere di escape"
-    **Il carattere/modo di escape delle stringhe** dipende dalla shell terminale che si usa.
-
-    In tutti gli esempi riportati viene usata la shell *cmd.exe* di Windows (**Command Prompt**). 
-
-    Per evitare problemi si raccomanda vivamente di seguire gli esempi e **NON** usare **Windows PowerShell**.
-
-##### Usare un codice punto vendita specifico
-Per specificare un codice punto vendita diverso da 1 (default), è possibile usare il parametro `/STOREID`. Esempio:
-
-``` bat title="Installazione con codice punto vendita custom"
-winget install --id isid.storeserver --source posware --custom "/STOREID=valore del codice del punto vendita diverso da quello di default " --verbose
-``` 
-
-!!! warning "Codice punto vendita come numero"
-    Il codice del punto vendita è **sempre** un numero intero positivo tra 1 e 9999 (inclusi).
-
-    Lo *StoreServer* non supporta codici alfa numerici. 
+        **Esempio:** /CONNECTIONSTRING=""server=localhost;user id=root;password=Vbhg4132!;database=posware;port=3307""
     
-    **Eventuali numeri riportati con zeri davanti saranno considerati senza zeri.**
+    Di seguito un esempio completo di *connection string* custom, con parametri con spazi, che usa credenziali di accesso non di default ed un porta di comunicazione al database MySQL non standard:
 
-A fini esplicativi, si riporta un esempio completo del comando di installazione dello *StoreServer* usando tutti i parametri custom:
+    ``` bat title="Installazione con connection string con spazi e credeziali custom"
+    winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=isid;password=1r{1]@ZJ^7/f;database=posware;port=3307"" " --verbose
+    ```    
 
-``` bat title="Installazione con codice punto vendita 5 e connection string custom"
-winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=isid;password=1r{1]@ZJ^7/f;database=posware;port=3307"" /STOREID=5 " --verbose
-``` 
+    !!! danger "Attenzione al carattere di escape"
+        **Il carattere/modo di escape delle stringhe** dipende dalla shell terminale che si usa.
 
-#### Parametri proprietari di Winget
-**Winget** mette a disposizione ulteriori parametri la cui trattazione esula da questa documentazione. 
+        In tutti gli esempi riportati viene usata la shell *cmd.exe* di Windows (**Command Prompt**). 
 
-Il parametro più utile allo scopo è `--open-logs`: apre automaticamente la cartella dei log a fine installazione. 
+        Per evitare problemi si raccomanda vivamente di seguire gli esempi e **NON** usare **Windows PowerShell**.
 
-Per farlo, aggiungere il parametro ai comandi già riportati negli esempi precedenti. 
+=== "Usare un codice punto vendita specifico"
+    ##### Usare un codice punto vendita specifico
+    Per specificare un codice punto vendita diverso da 1 (default), è possibile usare il parametro `/STOREID`. Esempio:
+    
+    ``` bat title="Installazione con codice punto vendita custom"
+    winget install --id isid.storeserver --source posware --custom "/STOREID=valore del codice del punto vendita diverso da quello di default " --verbose
+    ``` 
+    
+    !!! warning "Il codice punto vendita è sempre un numero intero"
+        Il codice del punto vendita è **sempre** un numero intero positivo tra 1 e 9999 (inclusi).
+    
+        **Lo *StoreServer* non supporta codici alfa numerici. **
+        
+        **Eventuali numeri riportati con zeri davanti saranno considerati senza zeri.**
+    
+    A fini esplicativi, si riporta un esempio completo del comando di installazione dello *StoreServer* usando tutti i parametri custom:
+    
+    ``` bat title="Installazione con codice punto vendita 5 e connection string custom"
+    winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=isid;password=1r{1]@ZJ^7/f;database=posware;port=3307"" /STOREID=5 " --verbose
+    ``` 
+
+=== "Forzare l'installazione"
+    A volte WinGet ha difficoltà a rilevare i pacchetti, in particolare su sistemi indietro con gli aggiornamenti.
+    Qualora dovesse segnalare che il pacchetto è già installato, ma in realtà non lo è, è possibile aggiungere `--force` al comando install
+
+    ``` bat title="Comando"
+    winget install --id isid.storeserver --source posware --verbose --force
+    ```
+---
+
+#### Ulteriori parametri proprietari di Winget
+**Winget** mette a disposizione ulteriori parametri la cui trattazione esula da questa documentazione.
+
+Il parametro più utile al nostro contesto è `--open-logs`: apre automaticamente la cartella dei log a fine installazione.
+
+Si può aggiungere il parametro ai comandi già riportati negli esempi precedenti.
 
 ``` bat title="Installazione con codice punto vendita 5 e connection string custom"
 winget install --id isid.storeserver --source posware --custom "/CONNECTIONSTRING=""server=localhost;user id=isid;password=1r{1]@ZJ^7/f;database=posware;port=3307"" /STOREID=5 " --verbose --open-logs
 ``` 
 
-Se dovessero servire ulteriori comandi di **Winget**, consultare la guida ufficiale di **Microsoft**.
+Di seguito riportiamo i parametri non supportati:
+
+- --uninstall-previous
+- -l, --location
+- --scope
+
+Tali parametri invece non hanno alcun effetto e specificarli è superfluo:
+
+- -a
+- -v
+- -locale
+
+Ulteriori comandi di **Winget** sono disponibili nella [guida ufficiale di **Microsoft**](https://learn.microsoft.com/en-us/windows/package-manager/winget/).
+
 
 ### Troubleshooting per i tecnici
 Il primo step da eseguire al sorgere di un problema con l'installazione dello *StoreServer*, è consultare i log.

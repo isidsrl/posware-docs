@@ -4,7 +4,7 @@ tags:
     - Posware Frontend
 ---
 
-# SetupPosware
+# SetupPosware - Pacchetto di installazione Posware
 
 **Prima revisione documento: 27 agosto 2024** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**
@@ -15,7 +15,7 @@ Il presente documento descrive il funzionamento di *SetupPosware*, installativo 
 Vengono illustrati gli scenari d'uso supportati ed una serie di novità sui file di configurazione di Posware :material-tag:`4.3`.
 
 ## Prerequisiti
-Prima di procedere con l'utilizzo di *SetupPosware* assicurarsi di avere le [risorse hardware minime indispensabili indicate nell'overview generale](./overview-generale.md#hardware) e di aver installato le [dipendenze necessarie con installazione manuale](./dipendenze-aggiornamenti-necessari.md#dipendenze-con-installazione-manuale).
+Prima di procedere con l'utilizzo di *SetupPosware* assicurarsi di avere le [risorse hardware minime indispensabili indicate nell'overview generale](./overview-generale.md#hardware) e di aver installato le [dipendenze necessarie con installazione manuale](./dipendenze-aggiornamenti-necessari.md#dipendenze-di-terze-parti-e-aggiornamenti-necessari).
 
 ## Scenari d'uso
 Il pacchetto di installazione *SetupPosware* supporta unicamente questi due scenari:

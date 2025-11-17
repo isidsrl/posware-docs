@@ -58,10 +58,12 @@ plugins:
       increment_across_pages: false
       exclude:
         - index.md
+        - download/index.md
 
 nav:
   - Home: index.md
-  - Getting started:
+  - Getting started: 
+    - Scenari di installazione: getting-started/index.md
     - Installazione e aggiornamenti Posware Frontend:
       - Overview generale: getting-started/installazione-posware-frontend/overview-generale.md
       - Dipendenze e aggiornamenti: getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.md
@@ -77,6 +79,7 @@ nav:
     - Scenari avanzati:
       - Aggiunta dati custom database: getting-started/scenari-avanzati/dati-custom-database-storeserver.md
   - Moduli:
+    - Panoramica: posware-modules/index.md
     - Modulo di base:
       - Statistiche dettagliate: posware-modules/main-module/statistiche-dettagliate.md
       - Posware Price Checker: posware-modules/main-module/posware-price-checker.md
@@ -90,6 +93,7 @@ nav:
       - Informazioni generali: posware-modules/celiac/informazioni-generali.md
       - Integrazione bonus celiachia Posware: posware-modules/celiac/integrazione-bonus-celiachia-posware.md
       - Rendicontazione celiachia: posware-modules/celiac/rendicontazione-celiachia.md
+  - Download: download/index.md
 
 markdown_extensions:
   - pymdownx.tabbed:
@@ -99,6 +103,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.details
   - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
   - abbr
@@ -107,6 +113,7 @@ markdown_extensions:
   - footnotes
   - tables
   - attr_list
+  - md_in_html
   - toc:
       toc_depth: 4
       permalink: true

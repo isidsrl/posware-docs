@@ -4,7 +4,7 @@ tags:
     - StoreServer
 ---
 
-# Aggiornamento StoreServer
+# StoreServer - Aggiornamento ad una nuova versione
 
 **Prima revisione documento: 20 maggio 2025** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**
