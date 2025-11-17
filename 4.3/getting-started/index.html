@@ -1,0 +1,1308 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Panoramica completa dei scenari di installazione di Posware. Scopri quale opzione è adatta al tuo punto vendita." name="description"/>
+<link href="https://posware.io/4.3/getting-started/index.html" rel="canonical"/>
+<link href="../index.html" rel="prev"/>
+<link href="installazione-posware-frontend/overview-generale.html" rel="next"/>
+<link href="../assets/images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
+<title>Getting started - Scenari di installazione - Posware official docs</title>
+<link href="../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%209.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-3.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-11A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2014c-2.63%200-5-1.57-6-4a6.505%206.505%200%200%201%208.5-3.5A6.52%206.52%200%200%201%2018%2012c-1%202.43-3.37%204-6%204m0-6.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201%22/%3E%3C/svg%3E');}</style>
+<script src="https://unpkg.com/iframe-worker/shim"></script>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#getting-started-scenari-di-installazione">
+          Vai al contenuto
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+<aside class="md-banner md-banner--warning">
+<div class="md-banner__inner md-grid md-typeset">
+              
+Non stai visualizzando l'ultima versione della documentazione.
+<a href="../..">
+<strong>Clicca qui per andare all'ultima versione.</strong>
+</a>
+</div>
+<script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL(".."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Intestazione" class="md-header__inner md-grid">
+<a aria-label="Posware official docs" class="md-header__button md-logo" data-md-component="logo" href="../index.html" title="Posware official docs">
+<img alt="logo" src="../assets/images/favicon.ico"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Posware official docs
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Getting started - Scenari di installazione
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Cerca" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Cerca" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Cerca" class="md-search__options">
+<button aria-label="Cancella" class="md-search__icon md-icon" tabindex="-1" title="Cancella" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="index.html">
+          
+  
+  
+  Getting started
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../posware-modules/index.html">
+          
+  
+  
+  Moduli
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../download/index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"></path></svg>
+    
+  
+  Download
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigazione" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Posware official docs" class="md-nav__button md-logo" data-md-component="logo" href="../index.html" title="Posware official docs">
+<img alt="logo" src="../assets/images/favicon.ico"/>
+</a>
+    Posware official docs
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.011 3.269H16.19a4.29 4.29 0 0 0-4.185 3.345A4.29 4.29 0 0 0 7.819 3.27H2a2 2 0 0 0-2.001 2v10.244a2 2 0 0 0 2 2h3.738c4.257 0 5.53 1.025 6.138 3.134a.11.11 0 0 0 .112.084h.024a.11.11 0 0 0 .112-.084c.612-2.109 1.885-3.133 6.138-3.133h3.737a2 2 0 0 0 2.001-2V5.27a2 2 0 0 0-1.989-2ZM10.083 14.325a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm10.804 5.07a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144v.952z"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    Scenari di installazione
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.011 3.269H16.19a4.29 4.29 0 0 0-4.185 3.345A4.29 4.29 0 0 0 7.819 3.27H2a2 2 0 0 0-2.001 2v10.244a2 2 0 0 0 2 2h3.738c4.257 0 5.53 1.025 6.138 3.134a.11.11 0 0 0 .112.084h.024a.11.11 0 0 0 .112-.084c.612-2.109 1.885-3.133 6.138-3.133h3.737a2 2 0 0 0 2.001-2V5.27a2 2 0 0 0-1.989-2ZM10.083 14.325a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm10.804 5.07a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144v.952z"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    Scenari di installazione
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prima-di-iniziare">
+<span class="md-ellipsis">
+      
+        Prima di iniziare
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#i-tre-scenari-principali-di-installazione">
+<span class="md-ellipsis">
+      
+        I tre scenari principali di installazione
+      
+    </span>
+</a>
+<nav aria-label="I tre scenari principali di installazione" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario-1-installazione-ex-novo">
+<span class="md-ellipsis">
+      
+        Scenario 1: Installazione ex-novo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario-2-migrazione-standard-da-posware-42-a-posware-43">
+<span class="md-ellipsis">
+      
+        Scenario 2: Migrazione standard da Posware 4.2 a Posware 4.3
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario-3-migrazione-ibrida-posware-42-a-posware-43">
+<span class="md-ellipsis">
+      
+        Scenario 3: Migrazione ibrida Posware 4.2 a Posware 4.3
+      
+    </span>
+</a>
+<nav aria-label="Scenario 3: Migrazione ibrida Posware 4.2 a Posware 4.3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestione-della-continuita-operativa">
+<span class="md-ellipsis">
+      
+        Gestione della Continuità Operativa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#limitazioni-e-considerazioni-sulla-migrazione-ibrida">
+<span class="md-ellipsis">
+      
+        Limitazioni e considerazioni sulla migrazione ibrida
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabella-comparativa-dei-tre-scenari">
+<span class="md-ellipsis">
+      
+        Tabella Comparativa dei Tre Scenari
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decisione-quale-scenario-scegliere">
+<span class="md-ellipsis">
+      
+        Decisione: Quale Scenario Scegliere?
+      
+    </span>
+</a>
+<nav aria-label="Decisione: Quale Scenario Scegliere?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scegliete-installazione-ex-novo-se">
+<span class="md-ellipsis">
+      
+        Scegliete Installazione ex-novo se:
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scegliete-migrazione-standard-se">
+<span class="md-ellipsis">
+      
+        Scegliete Migrazione Standard se:
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scegliete-migrazione-ibrida-se">
+<span class="md-ellipsis">
+      
+        Scegliete Migrazione Ibrida se:
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prossimi-passi">
+<span class="md-ellipsis">
+      
+        Prossimi Passi
+      
+    </span>
+</a>
+<nav aria-label="Prossimi Passi" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#link-rapidi">
+<span class="md-ellipsis">
+      
+        Link Rapidi
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#supporto-tecnico">
+<span class="md-ellipsis">
+      
+        Supporto Tecnico
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#glossario-rapido">
+<span class="md-ellipsis">
+      
+        Glossario Rapido
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Installazione e aggiornamenti Posware Frontend
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Installazione e aggiornamenti Posware Frontend
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="installazione-posware-frontend/overview-generale.html">
+<span class="md-ellipsis">
+    
+  
+    Overview generale
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html">
+<span class="md-ellipsis">
+    
+  
+    Dipendenze e aggiornamenti
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="installazione-posware-frontend/setup-posware.html">
+<span class="md-ellipsis">
+    
+  
+    SetupPosware
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="installazione-posware-frontend/pos-update.html">
+<span class="md-ellipsis">
+    
+  
+    PosUpdate
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Installazione e aggiornamenti StoreServer
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Installazione e aggiornamenti StoreServer
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="installazione-storeserver/overview-generale.html">
+<span class="md-ellipsis">
+    
+  
+    Overview generale
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="installazione-storeserver/installazione-procedure-comuni.html">
+<span class="md-ellipsis">
+    
+  
+    Procedure comuni
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="installazione-storeserver/installazione-nuovo-storeserver.html">
+<span class="md-ellipsis">
+    
+  
+    Nuova installazione
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="installazione-storeserver/migrazione-servizi-legacy.html">
+<span class="md-ellipsis">
+    
+  
+    Migrazione
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="installazione-storeserver/aggiornamento-storeserver.html">
+<span class="md-ellipsis">
+    
+  
+    Aggiornamento
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="installazione-storeserver/servizi-legacy.html">
+<span class="md-ellipsis">
+    
+  
+    Servizi legacy
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Scenari avanzati
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Scenari avanzati
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="scenari-avanzati/dati-custom-database-storeserver.html">
+<span class="md-ellipsis">
+    
+  
+    Aggiunta dati custom database
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-modules/index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 22V3h18v19l-3-2-3 2-3-2-3 2-3-2zM17 9V7h-2v2zm-4 0V7H7v2zm0 2H7v2h6zm2 2h2v-2h-2z"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    Panoramica
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Modulo di base
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Modulo di base
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-modules/main-module/statistiche-dettagliate.html">
+<span class="md-ellipsis">
+    
+  
+    Statistiche dettagliate
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-modules/main-module/posware-price-checker.html">
+<span class="md-ellipsis">
+    
+  
+    Posware Price Checker
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-modules/main-module/fatturazione-elettronica.html">
+<span class="md-ellipsis">
+    
+  
+    Fatturazione elettronica
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Funzionalità di cassa
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Funzionalità di cassa
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-modules/posware-frontend/tracciato-record-log.html">
+<span class="md-ellipsis">
+    
+  
+    Log Transazione Posware
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-modules/posware-frontend/argentea-satispay.html">
+<span class="md-ellipsis">
+    
+  
+    Argentea Satispay
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-modules/posware-frontend/fatturazione-immediata.html">
+<span class="md-ellipsis">
+    
+  
+    Fatturazione immediata
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-modules/posware-frontend/nota-di-credito.html">
+<span class="md-ellipsis">
+    
+  
+    Nota di credito
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Celiachia
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Celiachia
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-modules/celiac/informazioni-generali.html">
+<span class="md-ellipsis">
+    
+  
+    Informazioni generali
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-modules/celiac/integrazione-bonus-celiachia-posware.html">
+<span class="md-ellipsis">
+    
+  
+    Integrazione bonus celiachia Posware
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-modules/celiac/rendicontazione-celiachia.html">
+<span class="md-ellipsis">
+    
+  
+    Rendicontazione celiachia
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../download/index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="getting-started-scenari-di-installazione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Getting started - Scenari di installazione<a class="headerlink" href="#getting-started-scenari-di-installazione" title="Permanent link">¶</a></h1>
+<p><strong>Prima revisione documento: 27 agosto 2024</strong> <br/>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 novembre 2025 23:13:57 UTC">17 novembre 2025</span></strong></p>
+<hr/>
+<p>Questa guida introduttiva vi orienterà nella scelta del percorso di installazione più appropriato al vostro contesto operativo.</p>
+<p>Gli scenari elencati fanno riferimento sia i software da installare sul server di barriera che Posware Frontend cassa.
+Per praticità, in questo documento si farà riferimento a Posware come unico ecosistema software backend e frontend cassa.</p>
+<h2 id="prima-di-iniziare"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> <strong>Prima di iniziare</strong><a class="headerlink" href="#prima-di-iniziare" title="Permanent link">¶</a></h2>
+<p>Prima di procedere con l'installazione di Posware, assicuratevi di:</p>
+<ul>
+<li>Aver verificato i <strong>requisiti hardware e software</strong> minimi richiesti</li>
+<li>Aver installato tutte le <strong>dipendenze esterne</strong> necessarie</li>
+<li>Aver effettuato i <strong>backup necessari</strong> dei sistemi esistenti</li>
+</ul>
+<p>Per informazioni dettagliate su questi prerequisiti, consultate le pagine:</p>
+<ul>
+<li><a href="installazione-posware-frontend/overview-generale.html#requisiti-minimi">Requisiti di Sistema Posware</a></li>
+<li><a href="installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html">Dipendenze esterne Posware</a></li>
+<li><a href="installazione-storeserver/overview-generale.html#requisiti-minimi">Requisiti di Sistema StoreServer</a></li>
+</ul>
+<h2 id="i-tre-scenari-principali-di-installazione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> <strong>I tre scenari principali di installazione</strong><a class="headerlink" href="#i-tre-scenari-principali-di-installazione" title="Permanent link">¶</a></h2>
+<p>Posware supporta tre scenari di installazione distinti, ciascuno con specifiche modalità operative e vincoli tecnici. La scelta dello scenario dipende dalla vostra situazione attuale.</p>
+<h3 id="scenario-1-installazione-ex-novo"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> Scenario 1: Installazione ex-novo<a class="headerlink" href="#scenario-1-installazione-ex-novo" title="Permanent link">¶</a></h3>
+<p><strong>Situazione</strong>: Dovete installare Posware per la prima volta su terminali casse completamente nuovi o su un ambiente privo di versioni precedenti.</p>
+<p><strong>Caratteristiche</strong>:</p>
+<ul>
+<li>Creazione di database completamente nuovo e vuoto</li>
+<li>Configurazione iniziale del sistema da zero</li>
+<li>Nessun dato preesistente da migrare</li>
+<li>Setup più veloce e lineare</li>
+</ul>
+<p><strong>Versioni di riferimento</strong>:</p>
+<ul>
+<li>Posware Frontend 4.3.x</li>
+<li>MySQL 5.6 (obbligatorio per nuove installazioni)</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Database di partenza pre-configurato</p>
+<p>In caso di nuova installazione, è possibile utilizzare un database di una versione Posware 4.2.306 o superiore come base, a condizione che il database sia dumpato e ripristinato su MySQL 5.6 <strong>prima</strong> di lanciare il setup.
+<a href="installazione-posware-frontend/setup-posware.html">Consulta la procedura dettagliata per maggiori dettagli</a>..</p>
+</div>
+<p><strong>Procedura consigliata</strong>:</p>
+<ol>
+<li>Verificate i requisiti di sistema</li>
+<li>Installate tutte le dipendenze (.NET Framework 4.8, MySQL 5.6)</li>
+<li>Eseguite SetupPosware</li>
+<li>Installate lo StoreServer, associate la cassa ed inviate l'anagrafica iniziale</li>
+</ol>
+<p>Per la procedura dettagliata, consultate:</p>
+<ul>
+<li><a href="installazione-posware-frontend/overview-generale.html">Posware - Overview</a></li>
+<li><a href="installazione-posware-frontend/setup-posware.html">SetupPosware - Installazione ex-novo</a></li>
+<li><a href="installazione-storeserver/overview-generale.html">Storeserver - Overview</a></li>
+<li><a href="installazione-storeserver/installazione-nuovo-storeserver.html">Storeserver - Installazione ex-novo</a></li>
+</ul>
+<hr/>
+<h3 id="scenario-2-migrazione-standard-da-posware-42-a-posware-43"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.2</span> Scenario 2: Migrazione standard da Posware 4.2 a Posware 4.3<a class="headerlink" href="#scenario-2-migrazione-standard-da-posware-42-a-posware-43" title="Permanent link">¶</a></h3>
+<p><strong>Situazione</strong>: Possedete già un'installazione funzionante di Posware 4.2 e desiderate eseguire l'upgrade a Posware 4.3 su <strong>tutti i terminali cassa del punto vendita</strong>.</p>
+<p><strong>Caratteristiche</strong>:</p>
+<ul>
+<li>Migrazione dei dati e della configurazione esistente</li>
+<li>Database migrato e aggiornato allo schema 4.3</li>
+<li><strong>Il database una volta aggiornato non sarà più compatibile con Posware 4.2. Il backup è cruciale in caso di rollback.</strong></li>
+</ul>
+<p><strong>Versioni supportate</strong>:</p>
+<ul>
+<li>Versione minima richiesta: Posware 4.2.306</li>
+<li>MySQL 4.1 o 5.6 (dipende dalla versione in uso)</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Punto Critico</p>
+<p>Questa migrazione è <strong>non reversibile</strong>. Una volta aggiornato allo schema 4.3, il database non potrà tornare a Posware 4.2. Eseguite backup completi prima di procedere.</p>
+</div>
+<p><strong>Prerequisiti obbligatori</strong>:</p>
+<ul>
+<li>Backup integrale del database <code>cassa</code> e di tutta la cartella di Posware</li>
+<li>Versione di Posware installata non inferiore a 4.2.306</li>
+<li><strong>Tutti i record della tabella <code>logcassa</code> devono essere stati inviati al server</strong> (nessun dato pendente)</li>
+<li>MySQL avviato e accessibile con il database <code>cassa</code> presente</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Dati Pendenti</p>
+<p>Se nella tabella <code>logcassa</code> sono presenti record non ancora inviati al server, il setup non eseguirà proprio l'installazione. In tal caso, riavviate Posware e attendete il completamento della trasmissione prima di ritentare.</p>
+</div>
+<p><strong>Procedura consigliata</strong>:</p>
+<ol>
+<li>Effettuate backup completi (database + cartella di installazione)</li>
+<li>Verificate la versione di Posware installata</li>
+<li>Controllate che non vi siano dati pendenti in <code>logcassa</code></li>
+<li>Installate le dipendenze aggiornate</li>
+<li>Eseguite SetupPosware con modalità migrazione</li>
+<li>Verificate il corretto funzionamento post-upgrade</li>
+<li>Installate Posware StoreServer ed associate la cassa</li>
+</ol>
+<p>Per le procedure dettagliate, consultate:</p>
+<ul>
+<li><a href="installazione-posware-frontend/overview-generale.html">Posware - Overview</a></li>
+<li><a href="installazione-posware-frontend/setup-posware.html#migrazione-dalla-versione-42-alla-43">SetupPosware - Migrazione Standard</a>.</li>
+<li><a href="installazione-storeserver/overview-generale.html">Storeserver - Overview</a></li>
+<li><a href="installazione-storeserver/installazione-nuovo-storeserver.html">Storeserver - Installazione ex-novo</a></li>
+</ul>
+<hr/>
+<h3 id="scenario-3-migrazione-ibrida-posware-42-a-posware-43"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.3</span> Scenario 3: Migrazione ibrida Posware 4.2 a Posware 4.3<a class="headerlink" href="#scenario-3-migrazione-ibrida-posware-42-a-posware-43" title="Permanent link">¶</a></h3>
+<p><strong>Situazione</strong>: Dovete migrare progressivamente da Posware <code>4.2</code> a <code>4.3</code>, mantenendo <strong>contemporaneamente operative casse con versione 4.2 e casse con versione 4.3</strong>.</p>
+<p>Questo scenario è tipico di punti vendita ove si riscontrano una o più esigenze quali:</p>
+<ul>
+<li>Si vuole rispettare un periodo di collaudo su un numero limitato di casse prima di procedere all'aggiornamento completo</li>
+<li>Si hanno un numero elevato di casse da migrare tale per cui non si concluderebbe la migrazione in un singolo giorno.</li>
+<li>Si deve ridurre al minimo l'impatto sull'operatività durante la migrazione</li>
+</ul>
+<p><strong>Caratteristiche</strong>:</p>
+<ul>
+<li>Coesistenza controllata di Posware <code>4.2</code> e <code>4.3</code> nello stesso ambiente</li>
+<li>Migrazione graduale e pianificata terminale per terminale</li>
+<li>Mantenimento della continuità operativa</li>
+<li>StoreServer e Pos_Log per la coesistenza dei dati</li>
+</ul>
+<p><strong>Architettura Supportata</strong>:</p>
+<ul>
+<li><strong>Casse locali 4.2</strong>: Continuano a operare con database locale esistente e versione invariata di MySql.</li>
+<li><strong>Casse locali 4.3</strong>: Operano con database locale migrato su MySQL 5.6. Qualora non si voglia aggiornare l'istanza database, <strong>è possibile rimanere sul MySQL esistente, compreso il 4.1.</strong></li>
+<li><strong>StoreServer</strong>: Gestisce tutte le casse versione <code>4.3+</code></li>
+<li><strong>Pos_Log</strong>: Continua a ricevere dati da tutte le casse versione <code>4.2</code></li>
+</ul>
+<p><strong>Prerequisiti obbligatori</strong>:</p>
+<ul>
+<li>Backup completi di tutti i sistemi interessati</li>
+<li>Connettività di rete tra casse e server centrale</li>
+<li>Versione di Posware 4.2 installata non inferiore a <strong><code>4.2.1483</code> se il database del server di barriera è MySql</strong>.</li>
+</ul>
+<p><strong>Procedura di migrazione</strong>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1"><strong>Fase 1</strong>: Casse</label><label for="__tabbed_1_2"><strong>Fase 2</strong>: Server di barriera</label><label for="__tabbed_1_3"><strong>Fase 3</strong>: Associate la cassa</label><label for="__tabbed_1_4"><strong>Fase 4</strong>: Servizi legacy</label><label for="__tabbed_1_5"><strong>Fase 5</strong>: Adeguamento casse 4.2</label><label for="__tabbed_1_6">Fase 6: Migrazioni rimanenti</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Individuate le casse da migrare alla v4.3</li>
+<li>Effettuate backup completi (database + cartella di installazione) di queste casse</li>
+<li>Escludete le casse dalla vendita (fate usare agli operatori altre casse) in modo da non generare altri dati log</li>
+<li>Assicuratevi di aver trasmesso tutto il log di cassa (tabella logcassa) per tutte le casse da migrare</li>
+<li>Verificate la versione installata di Posware 4.2 sulle casse da migrare. Deve essere almeno la minima supportata per la migrazione.</li>
+<li>Aggiornate a Posware 4.3 utilizzando SetupPosware, verrà effettuata la migrazione. </li>
+<li>Verificate il corretto funzionamento post-upgrade</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Aggiornate una cassa per volta</p>
+<p><strong>Eseguite i punti 6 e 7 una cassa per volta.</strong>
+Prima di aggiornare la cassa successiva, associatela allo StoreServer (vedi fase 2 e 3) e verificate il corretto funzionamento.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Eseguite i backup del database del server di barriera.</li>
+<li>Stoppate tutti i servizi sul server di barriera (pos_log, pos_fidelity ecc..)</li>
+<li>Aggiornate il MySql o SqlServer alla versione supportata</li>
+<li>Migrate il database usando DatabaseUpgrader</li>
+<li>Installate lo StoreServer con Winget usando la <a href="installazione-storeserver/migrazione-servizi-legacy.html"><strong>modalità di installazione migrazione</strong></a>.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Non avviate ancora i servizi legacy</p>
+<p>Prima di far ripartire i servizi legacy, <strong>è necessario aggiornarli per renderli compatibili con la nuova versione di MySql o SqlServer</strong>. </p>
+<p>Continuate con la fase 3.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Associate la cassa allo StoreServer dalla Dashboard casse. <strong>La cassa deve essere aperta e Posware avviato sulla schermata di login</strong>.</li>
+<li>Una volta associata, riavviate la cassa</li>
+<li>Verificate la trasmissione dei dati nella tabella log, troverete i record di apertura programma. È possibile effettuare una transazione fiscale da annullare e monitorare i record ricevuti in tabella log.</li>
+<li>Se la cassa inizia subito la vendita, è possibile anche verificare l'andamento tramite le statistiche dello StoreServer</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>Aggiornate i servizi legacy (pos_log, pos_fidelity ecc..) all'ultima versione così da poter ripristinare l'operatività completa delle casse <code>v4.2</code></p>
+<ol>
+<li>Effettuate un backup della cartella C:\Posware</li>
+<li>Avviate il setup dei servizi legacy</li>
+<li>Al termine dell'installazione, non tutti i servizi stoppati vengono avviati. Avviare manualmente quelli utili.</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>Dopo l'installazione dello StoreServer e dei servizi legacy aggiornati, Pos_Log risponderà sulla porta <strong>6951</strong></p>
+<ul>
+<li><strong>Se il database del server è MySQL, sarà necessario aggiornare le casse v4.2 alla versione <code>4.2.1483</code> o superiore che consente la lettura ed invio dei dati con MySql 8.4.</strong>. Non è necessario aggiornare le casse v.4.2 se il database del server è SqlServer</li>
+<li>Riconfigurate la trasmissione del log delle casse <code>v4.2</code>. Nella tabella <code>config_log</code> cambiate la porta a <strong><code>6951</code></strong></li>
+<li>Riavviate le casse v4.2 per applicare le modifiche alla trasmissione log</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Selezionate le casse in sequenza pianificata</li>
+<li>Effettuate backup prima di ogni migrazione</li>
+<li>Testate dopo ogni aggiornamento</li>
+<li>Monitorate l'impatto operativo</li>
+</ul>
+</div>
+</div>
+</input></input></input></input></input></input></div>
+<hr/>
+<p>Per le procedure dettagliate, consultate:</p>
+<ul>
+<li><a href="installazione-posware-frontend/overview-generale.html">Posware - Overview</a></li>
+<li><a href="installazione-posware-frontend/setup-posware.html#migrazione-dalla-versione-42-alla-43">SetupPosware - Migrazione Standard</a>.</li>
+<li><a href="installazione-storeserver/overview-generale.html">Storeserver - Overview</a></li>
+<li><a href="installazione-storeserver/installazione-nuovo-storeserver.html">Storeserver - Installazione ex-novo</a></li>
+</ul>
+<hr/>
+<h4 id="gestione-della-continuita-operativa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.3.1</span> Gestione della Continuità Operativa<a class="headerlink" href="#gestione-della-continuita-operativa" title="Permanent link">¶</a></h4>
+<p>Durante la migrazione ibrida:</p>
+<ul>
+<li>Le casse 4.2 continueranno a operare normalmente e indipendentemente</li>
+<li>Le casse 4.3 trasmetteranno dati allo StoreServer</li>
+<li>Non sarà necessario alcun intervento di sincronizzazione dei dati tra versioni diverse</li>
+<li>Sarà possibile operare in modalità completamente autonoma per giorni finché la migrazione non è completa</li>
+<li>Le casse SCO continueranno ad operare sulla versione 4.2 fino al rilascio di una nuova release del produttore NCR o Diebold</li>
+</ul>
+<hr/>
+<h4 id="limitazioni-e-considerazioni-sulla-migrazione-ibrida"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.3.2</span> Limitazioni e considerazioni sulla migrazione ibrida<a class="headerlink" href="#limitazioni-e-considerazioni-sulla-migrazione-ibrida" title="Permanent link">¶</a></h4>
+<ul>
+<li>Le casse 4.2 <strong>non possono associarsi allo StoreServer</strong> e continueranno a trasmettere ai servizi legacy</li>
+<li>È necessario mantenere attivo il sistema di <strong>barriera legacy</strong> per le casse 4.2</li>
+<li>Le statistiche dello StoreServer non mostreranno i dati delle casse 4.2.</li>
+<li><strong>Per continua a consultare i dati di vendita delle casse 4.2, utilizzare Pos_Insta</strong></li>
+</ul>
+<hr/>
+<h2 id="tabella-comparativa-dei-tre-scenari"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Tabella Comparativa dei Tre Scenari<a class="headerlink" href="#tabella-comparativa-dei-tre-scenari" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspetto</th>
+<th>Installazione Ex-novo</th>
+<th>Migrazione Standard</th>
+<th>Migrazione Ibrida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Downtime</strong></td>
+<td>N/A</td>
+<td>Medio (migrazione DB server di barriera e cassa)</td>
+<td>Medio (migrazione DB server di barriera e casse selezionate)</td>
+</tr>
+<tr>
+<td><strong>Complessità</strong></td>
+<td>Bassa</td>
+<td>Media</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>Tempo realizzazione</strong></td>
+<td>In giornata</td>
+<td>In giornata</td>
+<td>Giorni o settimane</td>
+</tr>
+<tr>
+<td><strong>Posware 4.2 attive</strong></td>
+<td>N/A</td>
+<td>No</td>
+<td>Sì (temporaneamente)</td>
+</tr>
+<tr>
+<td><strong>Posware 4.3 attive</strong></td>
+<td>Sì</td>
+<td>Sì</td>
+<td>Sì</td>
+</tr>
+<tr>
+<td><strong>StoreServer</strong></td>
+<td>Sì (obbligatorio)</td>
+<td>Sì (obbligatorio)</td>
+<td>Sì (obbligatorio)</td>
+</tr>
+<tr>
+<td><strong>Reversibilità</strong></td>
+<td>N/A</td>
+<td>No (backup necessario)</td>
+<td>Limitata (in base alle casse aggiornate alla 4.3)</td>
+</tr>
+<tr>
+<td><strong>Produttività operativa</strong></td>
+<td>N/A</td>
+<td>Compromessa durante migrazione del database server</td>
+<td>Compromessa durante migrazione del database server</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="decisione-quale-scenario-scegliere"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Decisione: Quale Scenario Scegliere?<a class="headerlink" href="#decisione-quale-scenario-scegliere" title="Permanent link">¶</a></h2>
+<h3 id="scegliete-installazione-ex-novo-se"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Scegliete <strong>Installazione ex-novo</strong> se:<a class="headerlink" href="#scegliete-installazione-ex-novo-se" title="Permanent link">¶</a></h3>
+<p>✅ State installando Posware per la prima volta<br>
+✅ Non avete dati preesistenti da migrare<br/>
+✅ State installando un nuovo punto vendita
+✅ Desiderate partire con una configurazione pulita</br></p>
+<h3 id="scegliete-migrazione-standard-se"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2</span> Scegliete <strong>Migrazione Standard</strong> se:<a class="headerlink" href="#scegliete-migrazione-standard-se" title="Permanent link">¶</a></h3>
+<p>✅ Avete già una versione Posware 4.2 funzionante<br/>
+✅ Volete eseguire l'aggiornamento a 4.3 su tutto il punto vendita<br/>
+✅ Potete programmare un downtime medio (alcune ore)<br/>
+✅ Desiderate preservare tutta la configurazione e i dati esistenti</p>
+<h3 id="scegliete-migrazione-ibrida-se"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.3</span> Scegliete <strong>Migrazione Ibrida</strong> se:<a class="headerlink" href="#scegliete-migrazione-ibrida-se" title="Permanent link">¶</a></h3>
+<p>✅ State gestendo un punto vendita con molte casse
+✅ Non potete permettervi downtime prolungati
+✅ Volete testare Posware 4.3 su pochi terminali prima di un rollout completo o desiderate una transizione graduale e controllata
+✅ Nel punto vendita sono presenti casse automatiche Self-Checkout</p>
+<hr/>
+<h2 id="prossimi-passi"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Prossimi Passi<a class="headerlink" href="#prossimi-passi" title="Permanent link">¶</a></h2>
+<p>Una volta identificato lo scenario appropriato:</p>
+<ol>
+<li><strong>Consultate la pagina Requisiti</strong>: Verificate hardware e software minimi per il vostro scenario</li>
+<li><strong>Leggete la guida specifica</strong>: Approfondite i dettagli della procedura scelta</li>
+<li><strong>Preparate l'ambiente</strong>: Installate le dipendenze e i prerequisiti</li>
+<li><strong>Eseguite l'installazione</strong>: Seguite passo-passo le istruzioni fornite</li>
+</ol>
+<h3 id="link-rapidi"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.1</span> Link Rapidi<a class="headerlink" href="#link-rapidi" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisiti di Sistema Posware</td>
+<td>Vedi <a href="installazione-posware-frontend/overview-generale.html#requisiti-minimi">requisiti</a> e <a href="installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html">Dipendenze e aggiornamenti</a></td>
+</tr>
+<tr>
+<td>Installazione ex-novo</td>
+<td><a href="installazione-posware-frontend/setup-posware.html">SetupPosware - Nuova Installazione</a></td>
+</tr>
+<tr>
+<td>Migrazione Standard</td>
+<td><a href="installazione-posware-frontend/setup-posware.html#migrazione-dalla-versione-42-alla-43">SetupPosware - Migrazione</a></td>
+</tr>
+<tr>
+<td>StoreServer</td>
+<td><a href="installazione-storeserver/overview-generale.html">Installazione StoreServer</a></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="supporto-tecnico"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Supporto Tecnico<a class="headerlink" href="#supporto-tecnico" title="Permanent link">¶</a></h2>
+<p>Se durante il processo di installazione riscontrate difficoltà:</p>
+<ol>
+<li>Consultate i troubleshooting nelle procedure dettagliate per i problemi più frequenti</li>
+<li>Esaminate la sezione FAQ nelle procedure dettagliate per domande comuni</li>
+<li>Contattate il supporto tecnico con i file di log disponibili in <code>C:\Programmi (x86)\Posware\</code> (per SetupPosware) o nella cartella di installazione dello StoreServer</li>
+</ol>
+<hr/>
+<h2 id="glossario-rapido"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> Glossario Rapido<a class="headerlink" href="#glossario-rapido" title="Permanent link">¶</a></h2>
+<p><strong>Posware Frontend</strong>: L'applicazione principale che opera sui terminali cassa<br/>
+<strong>StoreServer</strong>: Sistema centralizzato per gestione e analisi dei dati (v. 4.3+)<br/>
+<strong>SetupPosware</strong>: Installer per nuove installazioni e migrazioni da 4.2 a 4.3<br/>
+<strong>Database Provider</strong>: Sistema di database (MySQL, SQL Server) che archivia i dati<br/>
+<strong>Scenario Ibrido</strong>: Coesistenza di Posware 4.2 e 4.3 nello stesso ambiente  </p>
+<hr/>
+<p><em>Ultima modifica: {git-revision-date-localized}</em></p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Ultimo aggiornamento">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 novembre 2025 23:13:57 UTC">17 novembre 2025</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Torna su
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright 2024© I.Si.D S.r.l.
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://isid.it/" rel="noopener" target="_blank" title="isid.it">
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg height="518.000000pt" preserveaspectratio="xMidYMid meet" version="1.0" viewbox="0 0 1510.000000 518.000000" width="1510.000000pt" xmlns="http://www.w3.org/2000/svg">
+<g fill="#FFFFFF" stroke="none" transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)">
+<path d="M69 5157 c-19 -12 -42 -38 -51 -57 -17 -33 -18 -174 -18 -2510 0
+-2336 1 -2477 18 -2510 9 -19 32 -45 51 -57 l34 -23 466 0 c521 0 514 -1 553
+71 17 32 18 131 18 2519 0 2391 -1 2487 -18 2520 -37 71 -32 70 -553 70 l-466
+0 -34 -23z"></path>
+<path d="M2580 5169 c-305 -35 -562 -148 -726 -320 -149 -157 -241 -337 -291
+-572 -16 -72 -18 -141 -18 -582 0 -550 4 -597 66 -787 127 -392 402 -626 846
+-720 l108 -23 1570 -5 1570 -5 60 -23 c32 -12 75 -35 95 -50 44 -36 95 -119
+110 -181 17 -67 25 -451 11 -539 -26 -169 -92 -261 -217 -304 l-69 -23 -2030
+-5 c-1919 -5 -2032 -6 -2058 -23 -63 -41 -62 -30 -62 -487 0 -453 0 -451 58
+-494 l28 -21 2177 -3 c1891 -2 2192 0 2293 13 385 50 650 197 824 460 94 141
+143 264 182 460 16 80 18 147 18 580 0 416 -3 504 -17 585 -51 285 -151 492
+-315 651 -169 164 -367 257 -655 305 -94 16 -242 18 -1658 23 l-1555 6 -56 28
+c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
+103 161 207 197 48 16 190 17 2091 22 1928 5 2041 6 2066 23 53 36 54 41 57
+469 2 250 -1 412 -7 436 -6 21 -25 51 -41 67 l-31 30 -2197 1 c-1208 1 -2231
+-2 -2272 -7z"></path>
+<path d="M7631 5162 c-71 -38 -71 -38 -71 -501 0 -403 1 -415 21 -448 40 -64
+34 -63 501 -63 l424 0 302 -282 302 -282 0 -386 c0 -380 0 -386 23 -430 42
+-82 28 -80 550 -80 502 0 489 -1 541 60 l26 32 0 422 0 423 -23 34 c-46 69
+-44 69 -512 69 l-420 1 -297 277 -297 277 0 390 c-1 435 -1 436 -70 482 l-34
+23 -466 0 c-433 0 -469 -1 -500 -18z"></path>
+<path d="M9255 5167 c-47 -18 -71 -39 -97 -82 l-23 -40 -3 -452 -3 -453 1993
+-3 c1802 -3 2001 -5 2071 -20 422 -88 609 -249 697 -601 50 -201 55 -279 55
+-926 0 -647 -5 -725 -55 -926 -80 -318 -256 -491 -582 -574 -216 -54 -240 -55
+-1653 -55 -715 0 -1313 4 -1328 8 -57 16 -57 20 -57 657 l0 580 -570 0 -570 0
+2 -1072 3 -1073 27 -46 c17 -29 41 -53 65 -65 37 -18 101 -19 1918 -22 1332
+-2 1927 0 2040 8 503 36 891 149 1191 346 113 74 311 270 383 379 189 287 292
+647 321 1120 13 220 13 1250 0 1470 -29 473 -133 837 -322 1120 -68 103 -219
+259 -328 341 -109 82 -343 200 -491 248 -213 68 -463 114 -738 136 -200 15
+-3906 12 -3946 -3z"></path>
+<path d="M7560 1918 c0 -1706 1 -1815 18 -1847 9 -19 33 -43 52 -53 33 -17 64
+-18 512 -16 l476 3 27 25 c58 53 55 -64 55 1895 l0 1805 -570 0 -570 0 0
+-1812z"></path>
+</g>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips", "toc.integrate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+<script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+<script src="../javascripts/extra.js"></script>
+</body>
+</html>

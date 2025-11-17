@@ -5,28 +5,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://posware.io/4.3/posware-modules/posware-frontend/nota-di-credito.html" rel="canonical"/>
-<link href="fatturazione-immediata.html" rel="prev"/>
-<link href="../celiac/informazioni-generali.html" rel="next"/>
-<link href="../../assets/images/favicon.ico" rel="icon"/>
+<link href="https://posware.io/4.3/posware-modules/index.html" rel="canonical"/>
+<link href="../getting-started/scenari-avanzati/dati-custom-database-storeserver.html" rel="prev"/>
+<link href="main-module/statistiche-dettagliate.html" rel="next"/>
+<link href="../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Nota di credito - Posware official docs</title>
-<link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<title>Panoramica - Posware official docs</title>
+<link href="../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%209.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-3.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-11A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2014c-2.63%200-5-1.57-6-4a6.505%206.505%200%200%201%208.5-3.5A6.52%206.52%200%200%201%2018%2012c-1%202.43-3.37%204-6%204m0-6.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201%22/%3E%3C/svg%3E');}</style>
 <script src="https://unpkg.com/iframe-worker/shim"></script>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#posware-frontend-nota-di-credito">
+<a class="md-skip" href="#moduli">
           Vai al contenuto
         </a>
 </div>
@@ -37,17 +37,17 @@
 <div class="md-banner__inner md-grid md-typeset">
               
 Non stai visualizzando l'ultima versione della documentazione.
-<a href="../../..">
+<a href="../..">
 <strong>Clicca qui per andare all'ultima versione.</strong>
 </a>
 </div>
-<script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+<script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL(".."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
 </aside>
 </div>
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
 <nav aria-label="Intestazione" class="md-header__inner md-grid">
-<a aria-label="Posware official docs" class="md-header__button md-logo" data-md-component="logo" href="../../index.html" title="Posware official docs">
-<img alt="logo" src="../../assets/images/favicon.ico"/>
+<a aria-label="Posware official docs" class="md-header__button md-logo" data-md-component="logo" href="../index.html" title="Posware official docs">
+<img alt="logo" src="../assets/images/favicon.ico"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -62,7 +62,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Nota di credito
+              Panoramica
             
           </span>
 </div>
@@ -115,7 +115,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../index.html">
+<a class="md-tabs__link" href="../index.html">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
     
   
@@ -124,7 +124,7 @@ Non stai visualizzando l'ultima versione della documentazione.
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../getting-started/index.html">
+<a class="md-tabs__link" href="../getting-started/index.html">
           
   
   
@@ -133,7 +133,7 @@ Non stai visualizzando l'ultima versione della documentazione.
         </a>
 </li>
 <li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../index.html">
+<a class="md-tabs__link" href="index.html">
           
   
   
@@ -142,7 +142,7 @@ Non stai visualizzando l'ultima versione della documentazione.
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../download/index.html">
+<a class="md-tabs__link" href="../download/index.html">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"></path></svg>
     
   
@@ -162,14 +162,14 @@ Non stai visualizzando l'ultima versione della documentazione.
 <div class="md-sidebar__inner">
 <nav aria-label="Navigazione" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Posware official docs" class="md-nav__button md-logo" data-md-component="logo" href="../../index.html" title="Posware official docs">
-<img alt="logo" src="../../assets/images/favicon.ico"/>
+<a aria-label="Posware official docs" class="md-nav__button md-logo" data-md-component="logo" href="../index.html" title="Posware official docs">
+<img alt="logo" src="../assets/images/favicon.ico"/>
 </a>
     Posware official docs
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../index.html">
+<a class="md-nav__link" href="../index.html">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
 <span class="md-ellipsis">
     
@@ -205,7 +205,7 @@ Non stai visualizzando l'ultima versione della documentazione.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/index.html">
+<a class="md-nav__link" href="../getting-started/index.html">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.011 3.269H16.19a4.29 4.29 0 0 0-4.185 3.345A4.29 4.29 0 0 0 7.819 3.27H2a2 2 0 0 0-2.001 2v10.244a2 2 0 0 0 2 2h3.738c4.257 0 5.53 1.025 6.138 3.134a.11.11 0 0 0 .112.084h.024a.11.11 0 0 0 .112-.084c.612-2.109 1.885-3.133 6.138-3.133h3.737a2 2 0 0 0 2.001-2V5.27a2 2 0 0 0-1.989-2ZM10.083 14.325a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm10.804 5.07a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144v.952z"></path></svg>
 <span class="md-ellipsis">
     
@@ -241,7 +241,7 @@ Non stai visualizzando l'ultima versione della documentazione.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/overview-generale.html">
+<a class="md-nav__link" href="../getting-started/installazione-posware-frontend/overview-generale.html">
 <span class="md-ellipsis">
     
   
@@ -253,7 +253,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html">
+<a class="md-nav__link" href="../getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html">
 <span class="md-ellipsis">
     
   
@@ -265,7 +265,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/setup-posware.html">
+<a class="md-nav__link" href="../getting-started/installazione-posware-frontend/setup-posware.html">
 <span class="md-ellipsis">
     
   
@@ -277,7 +277,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/pos-update.html">
+<a class="md-nav__link" href="../getting-started/installazione-posware-frontend/pos-update.html">
 <span class="md-ellipsis">
     
   
@@ -315,7 +315,7 @@ Non stai visualizzando l'ultima versione della documentazione.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/overview-generale.html">
+<a class="md-nav__link" href="../getting-started/installazione-storeserver/overview-generale.html">
 <span class="md-ellipsis">
     
   
@@ -327,7 +327,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/installazione-procedure-comuni.html">
+<a class="md-nav__link" href="../getting-started/installazione-storeserver/installazione-procedure-comuni.html">
 <span class="md-ellipsis">
     
   
@@ -339,7 +339,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/installazione-nuovo-storeserver.html">
+<a class="md-nav__link" href="../getting-started/installazione-storeserver/installazione-nuovo-storeserver.html">
 <span class="md-ellipsis">
     
   
@@ -351,7 +351,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/migrazione-servizi-legacy.html">
+<a class="md-nav__link" href="../getting-started/installazione-storeserver/migrazione-servizi-legacy.html">
 <span class="md-ellipsis">
     
   
@@ -363,7 +363,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/aggiornamento-storeserver.html">
+<a class="md-nav__link" href="../getting-started/installazione-storeserver/aggiornamento-storeserver.html">
 <span class="md-ellipsis">
     
   
@@ -375,7 +375,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/servizi-legacy.html">
+<a class="md-nav__link" href="../getting-started/installazione-storeserver/servizi-legacy.html">
 <span class="md-ellipsis">
     
   
@@ -413,7 +413,7 @@ Non stai visualizzando l'ultima versione della documentazione.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/scenari-avanzati/dati-custom-database-storeserver.html">
+<a class="md-nav__link" href="../getting-started/scenari-avanzati/dati-custom-database-storeserver.html">
 <span class="md-ellipsis">
     
   
@@ -453,8 +453,21 @@ Non stai visualizzando l'ultima versione della documentazione.
 
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../index.html">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 22V3h18v19l-3-2-3 2-3-2-3 2-3-2zM17 9V7h-2v2zm-4 0V7H7v2zm0 2H7v2h6zm2 2h2v-2h-2z"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    Panoramica
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="index.html">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 22V3h18v19l-3-2-3 2-3-2-3 2-3-2zM17 9V7h-2v2zm-4 0V7H7v2zm0 2H7v2h6zm2 2h2v-2h-2z"></path></svg>
 <span class="md-ellipsis">
     
@@ -465,6 +478,41 @@ Non stai visualizzando l'ultima versione della documentazione.
     
   </span>
 </a>
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#struttura-e-vantaggi-dei-moduli">
+<span class="md-ellipsis">
+      
+        Struttura e vantaggi dei Moduli
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#principali-categorie-di-posware-modules">
+<span class="md-ellipsis">
+      
+        Principali categorie di Posware Modules
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#come-navigare-le-sezioni-dei-moduli">
+<span class="md-ellipsis">
+      
+        Come navigare le sezioni dei moduli
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_2" type="checkbox"/>
@@ -490,7 +538,7 @@ Non stai visualizzando l'ultima versione della documentazione.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../main-module/statistiche-dettagliate.html">
+<a class="md-nav__link" href="main-module/statistiche-dettagliate.html">
 <span class="md-ellipsis">
     
   
@@ -502,7 +550,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../main-module/posware-price-checker.html">
+<a class="md-nav__link" href="main-module/posware-price-checker.html">
 <span class="md-ellipsis">
     
   
@@ -514,7 +562,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../main-module/fatturazione-elettronica.html">
+<a class="md-nav__link" href="main-module/fatturazione-elettronica.html">
 <span class="md-ellipsis">
     
   
@@ -528,8 +576,8 @@ Non stai visualizzando l'ultima versione della documentazione.
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -541,7 +589,7 @@ Non stai visualizzando l'ultima versione della documentazione.
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_3">
 <span class="md-nav__icon md-icon"></span>
             
@@ -552,7 +600,7 @@ Non stai visualizzando l'ultima versione della documentazione.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="tracciato-record-log.html">
+<a class="md-nav__link" href="posware-frontend/tracciato-record-log.html">
 <span class="md-ellipsis">
     
   
@@ -564,7 +612,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="argentea-satispay.html">
+<a class="md-nav__link" href="posware-frontend/argentea-satispay.html">
 <span class="md-ellipsis">
     
   
@@ -576,7 +624,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="fatturazione-immediata.html">
+<a class="md-nav__link" href="posware-frontend/fatturazione-immediata.html">
 <span class="md-ellipsis">
     
   
@@ -587,46 +635,17 @@ Non stai visualizzando l'ultima versione della documentazione.
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    
-  
-    Nota di credito
-  
-
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="nota-di-credito.html">
-<span class="md-ellipsis">
-    
-  
-    Nota di credito
-  
-
-    
-  </span>
-</a>
-<nav aria-label="Indice" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Indice
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#glossario">
+<a class="md-nav__link" href="posware-frontend/nota-di-credito.html">
 <span class="md-ellipsis">
-      
-        Glossario
-      
-    </span>
+    
+  
+    Nota di credito
+  
+
+    
+  </span>
 </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -655,7 +674,7 @@ Non stai visualizzando l'ultima versione della documentazione.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../celiac/informazioni-generali.html">
+<a class="md-nav__link" href="celiac/informazioni-generali.html">
 <span class="md-ellipsis">
     
   
@@ -667,7 +686,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../celiac/integrazione-bonus-celiachia-posware.html">
+<a class="md-nav__link" href="celiac/integrazione-bonus-celiachia-posware.html">
 <span class="md-ellipsis">
     
   
@@ -679,7 +698,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../celiac/rendicontazione-celiachia.html">
+<a class="md-nav__link" href="celiac/rendicontazione-celiachia.html">
 <span class="md-ellipsis">
     
   
@@ -697,7 +716,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../download/index.html">
+<a class="md-nav__link" href="../download/index.html">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"></path></svg>
 <span class="md-ellipsis">
     
@@ -716,24 +735,59 @@ Non stai visualizzando l'ultima versione della documentazione.
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<nav class="md-tags">
-<span class="md-tag">Frontend</span>
-</nav>
-<h1 id="posware-frontend-nota-di-credito"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Posware Frontend - Nota di credito<a class="headerlink" href="#posware-frontend-nota-di-credito" title="Permanent link">¶</a></h1>
-<p><strong>Prima revisione documento: 26 aprile 2024</strong> <br/>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 novembre 2025 23:13:57 UTC">17 novembre 2025</span></strong></p>
-<hr/>
-<h2 id="glossario"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Glossario<a class="headerlink" href="#glossario" title="Permanent link">¶</a></h2>
+<h1 id="moduli"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Moduli<a class="headerlink" href="#moduli" title="Permanent link">¶</a></h1>
+<p>Posware è una piattaforma modulare che integra una vasta gamma di <strong>moduli, plugin e applicativi</strong> progettati per rispondere alle esigenze più avanzate di gestione, automazione e analisi nei punti vendita moderni. I moduli rappresentano le estensioni funzionali alla base del sistema, permettendo di personalizzare e scalare la soluzione in base alle specifiche necessità operative di ogni esercizio commerciale.</p>
+<h2 id="struttura-e-vantaggi-dei-moduli"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Struttura e vantaggi dei Moduli<a class="headerlink" href="#struttura-e-vantaggi-dei-moduli" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>WebApp:</strong> applicazione web che offre la possibilità di gestire in modo centralizzato le funzionalità disponibili nel StoreServer;</li>
-<li><strong>PoswareModule:</strong> plug-in del StoreServer dedicato alla gestione del PPC;</li>
-<li><strong>SdI:</strong> si tratta del Sistema di Interscambio. Gestito dall'Agenzia delle Entrate, è un sistema informatico in grado di ricevere e inoltrare le fatture ed effettuare controlli sui file ricevuti;</li>
-<li><strong>Cedente:</strong> l'azienda che genera ed emette la fattura, anche chiamato a volte <strong>Fornitore</strong>;</li>
-<li><strong>Fornitore:</strong> si intende sempre il <strong>Cedente</strong>, i termini sono intercambiabili ed usati entrambi nel documento per riferirsi alla stessa cosa;</li>
-<li><strong>Cessionario:</strong> l'entità che riceve la fattura e che quindi di fatto effettua l'acquisto;</li>
-<li><strong>PA:</strong> Pubblica Amministrazione;</li>
-<li><strong>AdE:</strong> Agenzia delle Entrate; </li>
+<li><strong>Modularità e flessibilità</strong>: ogni modulo può essere installato e attivato su richiesta, abilitando funzionalità aggiuntive e ottimizzando la gestione dei processi.</li>
+<li><strong>Aggiornamento progressivo</strong>: i moduli vengono aggiornati indipendentemente dal core Posware, garantendo rapidità nel rilascio di nuove feature e correzione dei problemi minimizzando gli impatti sull'operatività principale.</li>
+<li><strong>Compatibilità e integrazione</strong>: tutti i moduli sono progettati per garantire la perfetta integrazione con Posware Frontend e StoreServer, facilitando la comunicazione tra le diverse componenti della piattaforma.</li>
 </ul>
+<h2 id="principali-categorie-di-posware-modules"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Principali categorie di Posware Modules<a class="headerlink" href="#principali-categorie-di-posware-modules" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tipologia</th>
+<th>Descrizione sintetica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Moduli Core</td>
+<td>Processi di vendita, resi</td>
+</tr>
+<tr>
+<td>Plugin di pagamento</td>
+<td>Integrazioni con sistemi di pagamento esterni e loyalty (es. Giftcard, Argentea, Cash Management ed altri)</td>
+</tr>
+<tr>
+<td>Adapter Self-Checkout</td>
+<td>Collegamento con casse automatiche Diebold, NCR, ecc.</td>
+</tr>
+<tr>
+<td>Moduli fiscali</td>
+<td>Gestione lotteria scontrini, fatturazione elettronica</td>
+</tr>
+<tr>
+<td>Moduli analitici</td>
+<td>Statistiche avanzate, reportistica personalizzata</td>
+</tr>
+<tr>
+<td>Price Checker e strumenti utility</td>
+<td>Supporto al consumatore per consultazione prezzi e promozioni</td>
+</tr>
+</tbody>
+</table>
+<h2 id="come-navigare-le-sezioni-dei-moduli"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Come navigare le sezioni dei moduli<a class="headerlink" href="#come-navigare-le-sezioni-dei-moduli" title="Permanent link">¶</a></h2>
+<p>Ogni modulo ha una propria sezione dettagliata che include:</p>
+<ul>
+<li>Panoramica e vantaggi operativi</li>
+<li>Prerequisiti e compatibilità</li>
+<li>Guida all’installazione e configurazione</li>
+<li>Esempi d’uso pratici</li>
+<li>Risoluzione dei problemi e FAQ</li>
+</ul>
+<p>Consulta l'indice dei moduli per trovare quello più adatto alle esigenze del tuo punto vendita.</p>
 <aside class="md-source-file">
 <span class="md-source-file__fact">
 <span class="md-icon" title="Ultimo aggiornamento">
@@ -811,8 +865,8 @@ c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips", "toc.integrate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
-<script src="../../javascripts/extra.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips", "toc.integrate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+<script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+<script src="../javascripts/extra.js"></script>
 </body>
 </html>
