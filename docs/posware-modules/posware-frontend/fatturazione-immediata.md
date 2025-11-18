@@ -17,3 +17,5 @@ tags:
 - **Cessionario:** l'entità che riceve la fattura e che quindi di fatto effettua l'acquisto;
 - **PA:** Pubblica Amministrazione;
 - **AdE:** Agenzia delle Entrate; 
+
+## TO DO: Da redigere quanto prima!!!

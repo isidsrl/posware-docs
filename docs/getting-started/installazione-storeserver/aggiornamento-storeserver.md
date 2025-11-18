@@ -45,10 +45,10 @@ L’aggiornamento sovrascrive i file esistenti del programma, **ma mantiene inta
 
 I parametri più utili allo scopo sono:
 
-- `--vebose`: abilita un output dettagliato del processo di aggiornamento.
+- `--verbose`: abilita un output dettagliato del processo di aggiornamento.
 - `--open-logs`: apre automaticamente la cartella dei log a fine aggiornamento. 
 
-Per abilitari tali comportamenti, aggiungere i parametri al comando riportato in precedenza.
+Per abilitare tali comportamenti, aggiungere i parametri al comando riportato in precedenza.
 
 ``` bat title="Comando con parametri proprietari di Winget"
 winget update StoreServer --verbose --open-logs

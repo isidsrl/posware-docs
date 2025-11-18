@@ -76,6 +76,7 @@ nav:
       - Migrazione: getting-started/installazione-storeserver/migrazione-servizi-legacy.md
       - Aggiornamento: getting-started/installazione-storeserver/aggiornamento-storeserver.md
       - Servizi legacy: getting-started/installazione-storeserver/servizi-legacy.md
+      - Disinstallazione: getting-started/installazione-storeserver/disinstallazione-storeserver.md
     - Scenari avanzati:
       - Aggiunta dati custom database: getting-started/scenari-avanzati/dati-custom-database-storeserver.md
   - Moduli:
@@ -87,8 +88,8 @@ nav:
     - Funzionalità di cassa:
       - Log Transazione Posware: posware-modules/posware-frontend/tracciato-record-log.md
       - Argentea Satispay: posware-modules/posware-frontend/argentea-satispay.md
-      - Fatturazione immediata: posware-modules/posware-frontend/fatturazione-immediata.md
-      - Nota di credito: posware-modules/posware-frontend/nota-di-credito.md
+      # - Fatturazione immediata: posware-modules/posware-frontend/fatturazione-immediata.md
+      # - Nota di credito: posware-modules/posware-frontend/nota-di-credito.md
     - Celiachia:
       - Informazioni generali: posware-modules/celiac/informazioni-generali.md
       - Integrazione bonus celiachia Posware: posware-modules/celiac/integrazione-bonus-celiachia-posware.md

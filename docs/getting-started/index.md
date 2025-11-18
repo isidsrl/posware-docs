@@ -254,7 +254,7 @@ Durante la migrazione ibrida:
 ### Scegliete **Installazione ex-novo** se:
 ✅ State installando Posware per la prima volta  
 ✅ Non avete dati preesistenti da migrare  
-✅ State installando un nuovo punto vendita
+✅ State installando un nuovo punto vendita  
 ✅ Desiderate partire con una configurazione pulita
 
 ### Scegliete **Migrazione Standard** se:
@@ -264,9 +264,9 @@ Durante la migrazione ibrida:
 ✅ Desiderate preservare tutta la configurazione e i dati esistenti
 
 ### Scegliete **Migrazione Ibrida** se:
-✅ State gestendo un punto vendita con molte casse
-✅ Non potete permettervi downtime prolungati
-✅ Volete testare Posware 4.3 su pochi terminali prima di un rollout completo o desiderate una transizione graduale e controllata
+✅ State gestendo un punto vendita con molte casse  
+✅ Non potete permettervi downtime prolungati  
+✅ Volete testare Posware 4.3 su pochi terminali prima di un rollout completo o desiderate una transizione graduale e controllata  
 ✅ Nel punto vendita sono presenti casse automatiche Self-Checkout
 
 ---
