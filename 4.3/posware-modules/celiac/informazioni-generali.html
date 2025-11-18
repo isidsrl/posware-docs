@@ -26,7 +26,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#documentazione-introduttiva-integrazione-celiachia">
+<a class="md-skip" href="#posware-modulo-e-voucher-celiachia">
           Vai al contenuto
         </a>
 </div>
@@ -782,19 +782,10 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#struttura-della-documentazione-tecnica">
+<a class="md-nav__link" href="#prossimi-passi">
 <span class="md-ellipsis">
       
-        Struttura della documentazione tecnica
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#conclusione">
-<span class="md-ellipsis">
-      
-        Conclusione
+        Prossimi passi
       
     </span>
 </a>
@@ -856,33 +847,28 @@ Non stai visualizzando l'ultima versione della documentazione.
 <span class="md-tag">Celiachia</span>
 <span class="md-tag">Posware</span>
 </nav>
+<h1 id="posware-modulo-e-voucher-celiachia"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Posware - Modulo E-Voucher celiachia<a class="headerlink" href="#posware-modulo-e-voucher-celiachia" title="Permanent link">¶</a></h1>
+<p><strong>Prima revisione documento: 30 settembre 2025</strong> <br/>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 novembre 2025 15:57:07 UTC">18 novembre 2025</span></strong></p>
 <div class="admonition warning">
 <p class="admonition-title">DOCUMENTO PRELIMINARE</p>
 <p>Le informazioni e i dettagli contenuti in questo documento possono essere soggetti a modifiche e non costituiscono un protocollo definitivo.</p>
 </div>
-<h1 id="documentazione-introduttiva-integrazione-celiachia"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Documentazione introduttiva integrazione celiachia<a class="headerlink" href="#documentazione-introduttiva-integrazione-celiachia" title="Permanent link">¶</a></h1>
-<p><strong>Prima revisione documento: 30 settembre 2025</strong> <br/>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 novembre 2025 15:06:52 UTC">18 novembre 2025</span></strong></p>
 <h2 id="introduzione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">¶</a></h2>
-<p>Questo progetto nasce dall'esigenza di integrare nei sistemi di cassa <strong>Posware</strong> la gestione dei pagamenti e della rendicontazione legati al bonus statale per i soggetti celiaci, erogato tramite il <strong>provider Celiachia/ASL di riferimento</strong>.<br/>
-L’integrazione permette di gestire in maniera automatica e tracciata tutte le fasi del processo: dal riconoscimento del cliente tramite tessera sanitaria, all’autorizzazione del pagamento, fino al salvataggio dei dati sul <strong>server di barriera</strong> ai fini della rendicontazione centralizzata. </p>
-<p>L'obiettivo del progetto è garantire:</p>
+<p>Questo modulo permette ai consumatori di pagare prodotti coinvolti dall'iniziativa, usando la tessera sanitaria.</p>
+<p>Il modulo è concepito per supportare i provider di servizi presenti sul mercato e garantire  la tracciabilità delle transazioni ai fini della <strong>rendicontazione</strong>.</p>
+<p>Il modulo garantisce:</p>
 <ul>
 <li>una <strong>gestione fluida e standardizzata</strong> del bonus celiachia,</li>
 <li>la <strong>conformità normativa</strong> con le regole stabilite dalle ASL,</li>
 <li>la possibilità di <strong>rendicontare in maniera unificata</strong> i dati per analisi e controlli futuri.</li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">Generalizzazione dell'integrazione bonus celiachia in Posware</p>
-<p>Sebbene questo progetto sia stato sviluppato per l'integrazione specifica con il provider <strong>Argentea</strong>, con <strong>ARIA</strong> come gestore del bonus celiachia, il sistema è scalabile per poter gestire facilmente in futuro anche altri provider Celiachia, vista la sua generalizzazione.</p>
-</div>
 <h2 id="ambito-del-progetto"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Ambito del progetto<a class="headerlink" href="#ambito-del-progetto" title="Permanent link">¶</a></h2>
-<p>Lo sviluppo riguarda:</p>
+<p>Il modulo include:</p>
 <ol>
 <li><strong>Integrazione lato frontend sulla cassa Posware</strong> per la gestione operativa del bonus celiachia durante le transazioni.</li>
-<li><strong>Definizione di un modello dati dedicato</strong> per la rendicontazione delle operazioni in cui sono stati effettuati pagamenti con bonus celiachia.</li>
-<li><strong>Implementazione di API REST</strong> per l’invio dei dati necessari alla rendicontazione celiachia da Posware al server di barriera, con relativi <strong>meccanismi di controllo e di validazione</strong> per garantire coerenza e qualità dei dati trasmessi.</li>
-<li><strong>Supporto alla configurazione e gestione operativa</strong> per i punti vendita che attivano il servizio.</li>
+<li><strong>Un modello dati dedicato</strong> per la rendicontazione delle operazioni in cui sono stati effettuati pagamenti con bonus celiachia.</li>
+<li><strong>API REST di consultazione dati</strong> per l’invio dei dati necessari alla rendicontazione celiachia dallo StoreServer alla propria ASL di competenza.</li>
 </ol>
 <h2 id="attivazione-del-servizio-e-requisiti-burocratici"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Attivazione del servizio e requisiti burocratici<a class="headerlink" href="#attivazione-del-servizio-e-requisiti-burocratici" title="Permanent link">¶</a></h2>
 <p>Per poter utilizzare il bonus celiachia in un punto vendita è necessario:</p>
@@ -892,24 +878,17 @@ L’integrazione permette di gestire in maniera automatica e tracciata tutte le 
 <li>Configurare all’interno di Posware e del server di barriera le anagrafiche prodotti e i parametri operativi coerenti con quanto stabilito dall’ente sanitario.</li>
 </ol>
 <p>Solo al termine di questo iter burocratico il punto vendita può essere abilitato all’erogazione del bonus tramite le casse Posware.</p>
-<h2 id="struttura-della-documentazione-tecnica"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Struttura della documentazione tecnica<a class="headerlink" href="#struttura-della-documentazione-tecnica" title="Permanent link">¶</a></h2>
-<p>Il presente documento ha lo scopo di fornire un quadro introduttivo.<br/>
-La documentazione tecnica completa del progetto si articola in due capitoli principali:</p>
-<ol>
-<li><strong>Comportamenti e configurazioni lato frontend cassa Posware</strong><br/>
-Documento che raccoglie tutte le informazioni operative e di configurazione necessarie al corretto utilizzo del bonus celiachia in cassa, incluse le regole di funzionamento e i casi particolari gestiti dal sistema.</li>
-<li><strong>Struttura della tabella <code>celiac_evoucher_settlement</code> e del payload JSON <code>CeliacSettlementRecord</code></strong><br/>
-Documento che descrive in dettaglio il modello dati utilizzato per la rendicontazione, utile a chi deve leggere e interpretare i dati presenti nel database MySQL/SQL Server del server di barriera.</li>
-</ol>
-<h2 id="conclusione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Conclusione<a class="headerlink" href="#conclusione" title="Permanent link">¶</a></h2>
-<p>Questo progetto rappresenta un passo importante nella digitalizzazione e nella tracciabilità dei pagamenti tramite bonus sanitari.<br/>
-Grazie a questa integrazione, i punti vendita possono gestire il processo in modo automatizzato, sicuro e conforme alle normative, riducendo gli oneri manuali e garantendo un servizio migliore al cliente finale.</p>
+<h2 id="prossimi-passi"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Prossimi passi<a class="headerlink" href="#prossimi-passi" title="Permanent link">¶</a></h2>
+<ul>
+<li>Per l'installazione e la configurazione del modulo su Posware frontend, consultare <a href="integrazione-bonus-celiachia-posware.html">questo documento</a></li>
+<li>Per informazioni su come effettuare la fase di rendicontazione, consultare <a href="rendicontazione-celiachia.html">questo documento</a></li>
+</ul>
 <aside class="md-source-file">
 <span class="md-source-file__fact">
 <span class="md-icon" title="Ultimo aggiornamento">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 novembre 2025 15:06:52 UTC">18 novembre 2025</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 novembre 2025 15:57:07 UTC">18 novembre 2025</span>
 </span>
 </aside>
 </article>
