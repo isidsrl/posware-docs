@@ -84,16 +84,19 @@ nav:
     - Approfondimenti Posware: 
       - Tabella riferimento .NET: posware/dot-net-table-reference.md
       - Known issues v4.2: posware/known-issues-42.md
-      - Funzionalità RT 2.0 (XML7): posware/funzionalita-rt-20.md
-  - Moduli:
+  - Feature e moduli:
     - Panoramica: posware-modules/index.md
-    - Modulo di base:
-      - Statistiche dettagliate: posware-modules/main-module/statistiche-dettagliate.md
+    - StoreServer:
+      - Funzionalità di base:
+        - Statistiche dettagliate: posware-modules/main-module/statistiche-dettagliate.md
       - Posware Price Checker: posware-modules/main-module/posware-price-checker.md
       - Fatturazione elettronica: posware-modules/main-module/fatturazione-elettronica.md
-    - Funzionalità di cassa:
+    - Posware Frontend:
       - Log Transazione Posware: posware-modules/posware-frontend/tracciato-record-log.md
       - Argentea Satispay: posware-modules/posware-frontend/argentea-satispay.md
+      - Funzionalità RT 2.0 (XML7): posware/funzionalita-rt-20.md
+      - Pin dispatching: posware/funzionalita-pin-dispatching.md
+      - Lotteria degli scontrini: posware/lotteria-degli-scontrini.md
       # - Fatturazione immediata: posware-modules/posware-frontend/fatturazione-immediata.md
       # - Nota di credito: posware-modules/posware-frontend/nota-di-credito.md
     - Celiachia:
