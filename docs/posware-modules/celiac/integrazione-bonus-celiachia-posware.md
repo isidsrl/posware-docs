@@ -3,17 +3,17 @@ tags:
     - Posware
     - Celiachia
 ---
-
-!!! warning "DOCUMENTO PRELIMINARE"
-    Le informazioni e i dettagli contenuti in questo documento possono essere soggetti a modifiche e non costituiscono un protocollo definitivo.
-
 # Specifiche integrazione bonus celiachia in Posware
 
 **Prima revisione documento: 18 settembre 2025** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**
 
+!!! warning "DOCUMENTO PRELIMINARE"
+    Le informazioni e i dettagli contenuti in questo documento possono essere soggetti a modifiche e non costituiscono un protocollo definitivo.
+
 ## Introduzione
-L’integrazione del bonus celiachia in **Posware** consente ai punti vendita di accettare come metodo di pagamento i buoni digitali messi a disposizione dal Sistema Sanitario Nazionale tramite la tessera sanitaria del cliente.
+
+L’integrazione del bonus celiachia in **Posware** consente ai punti vendita di accettare come metodo di pagamento gli e-voucher messi a disposizione dal Sistema Sanitario Nazionale tramite la tessera sanitaria del cliente.
 
 Grazie a questa funzionalità, i clienti celiaci possono acquistare i prodotti riconosciuti come idonei dalla propria ASL di riferimento, utilizzando il budget mensile previsto dalla normativa.
 
@@ -32,6 +32,7 @@ Questa integrazione è stata sviluppata inizialmente per il provider **Argentea*
 2. **Assicurarsi che gli articoli siano correttamente configurati nel gestionale Posware**, in modo da essere riconosciuti al momento del pagamento.
 
 ## Configurazione del database
+
 Per abilitare il **bonus celiachia** come metodo di pagamento e per fare funzionare tutti i vari processi legati a questa integrazione, è necessario aggiornare le seguenti tabelle:
 
 #### Tabella `tipi_pagamenti` (sia database`cassa` che `posware`)
@@ -43,9 +44,11 @@ Per abilitare il **bonus celiachia** come metodo di pagamento e per fare funzion
     - `tipoPagRT`: 1
 
 #### Interfaccia Utente della cassa
+
 Aggiungere un pulsante alla grafica di Posware ed agganciarci il pagamento **Bonus celiachia**.
 
 #### Tabella `tabparametriextra` (database`cassa`)
+
 Solo per l'integrazione specifica con il provider **Argentea**, con **ARIA** come gestore del bonus celiachia, sarà necessario verificare la presenza di questo record:
 
 |Modulo|Parametro|Valore|
@@ -63,6 +66,7 @@ Inoltre, bisogna configurare alcuni parametri necessari a regolare l'invio dei d
 Tali parametri però hanno impostazioni differenti tra Posware :material-tag:`4.2` e Posware :material-tag:`4.3`.
 
 ##### Posware :material-tag:`4.2`
+
 Di seguito le configurazioni necessarie per ognuno dei parametri in Posware :material-tag:`4.2`:
 
 - Il parametro *sendBatchSize* indica il numero massimo di transazioni che potranno essere scritte con un'unica query.<br>
@@ -72,6 +76,7 @@ Di seguito le configurazioni necessarie per ognuno dei parametri in Posware :mat
 - Il parametro *lastSequenceIdSent* indica a quale progressivo della tabella locale si è arrivati a copiare i dati nella tabella sul server di barriera.
 
 ##### Posware :material-tag:`4.3`
+
 Di seguito le configurazioni necessarie per ognuno dei parametri in Posware :material-tag:`4.3`:
 
 - Il parametro *sendBatchSize* indica il numero massimo di transazioni che si potranno inviare allo StoreServer sul server di barriera in un unico invio.<br>
@@ -81,6 +86,7 @@ Di seguito le configurazioni necessarie per ognuno dei parametri in Posware :mat
 - Il parametro *lastSequenceIdSent* indica a quale progressivo di invio al server di barriera si è arrivati con successo.
 
 #### Tabella `operazioni_auto` (database`cassa`)
+
 Se non è già presente o è configurato in modo diverso, è necessario inserire un record con le seguenti caratteristiche:
 
 - `Operazione`: **"OB"**
@@ -88,6 +94,7 @@ Se non è già presente o è configurato in modo diverso, è necessario inserire
 - `Intervallo`: 30
 
 #### Tabella `passioperazioni_auto` (database`cassa`)
+
 Se non è già presente o è configurato in modo diverso, è necessario inserire un record con le seguenti caratteristiche:
 
 - `CodOperazione`: "OB"
@@ -99,7 +106,9 @@ Se non è già presente o è configurato in modo diverso, è necessario inserire
 
 
 ## Invio articoli bonus celiachia
+
 ### Riconoscimento degli articoli idonei al bonus celiachia
+
 Gli articoli acquistabili tramite bonus celiachia vengono individuati attraverso due criteri mutuamente esclusivi:
 
 1. **Flag dedicato nella tabella `art_agg`:** il campo `Celiachia` valorizzato a **1** identifica in modo diretto e univoco i prodotti idonei.
@@ -113,9 +122,10 @@ Il comportamento del sistema è quindi il seguente: se il flag `Celiachia` è im
     - se non vi sono esigenze particolari, utilizzare il flag `Celiachia = 1` e non configurare la formula nei pagamenti;
     - se non è possibile gestire l’invio del flag o si richiedono criteri di selezione più complessi, configurare direttamente la formula nei pagamenti, senza valorizzare il flag per evitare confusione.
 
-
 ## Guida all'utilizzo
+
 ### Limiti e vincoli
+
 !!! info "Utilizzo del bonus celiachia"
     Il pagamento tramite tessera sanitaria per clienti affetti da celiachia sarà richiedibile solo e soltanto se nello scontrino sono presenti dei prodotti per celiachi, riconosciuti dalla ASL di riferimento.
 
@@ -157,31 +167,39 @@ Il comportamento del sistema è quindi il seguente: se il flag `Celiachia` è im
     
 
 ### Gestione degli errori e delle anomalie operative
+
 Durante l’utilizzo del bonus celiachia in cassa, Posware gestisce in maniera guidata una serie di errori e condizioni particolari che possono verificarsi durante il pagamento o lo storno delle transazioni.<br>
 Di seguito vengono descritti i principali casi d’errore, i messaggi visualizzati all’operatore e le azioni da intraprendere.
 
 #### 1. Budget mensile insufficiente
+
 ##### Messaggio visualizzato:
+
 - *“Budget mensile insufficiente. Residuo XXX euro, proseguire con il pagamento?”* (con opzioni **Sì/No**)
 - *“Budget mensile insufficiente”* (avviso senza possibilità di continuare)
 
 ##### Quando si verifica:
+
 L’errore appare quando, al momento del pagamento con bonus celiachia, il saldo residuo della tessera sanitaria non è sufficiente a coprire l’importo richiesto.
 
 - Se il sistema riesce a recuperare il saldo residuo, viene proposto all’operatore di utilizzarlo.
 - Se invece il saldo residuo non è disponibile, viene mostrato solo l’avviso.
 
 ##### Cosa deve fare l’operatore:
+
 Nel primo caso, dove c'è la possibilità di scegliere:
 
 - Premendo **Sì**, Posware ripete la richiesta di pagamento utilizzando l’importo pari al saldo residuo disponibile.
 - Premendo **No**, l’operatore può chiudere il popup e proseguire con altri metodi di pagamento.
 
 #### 2. Errore durante lo storno dei pagamenti
+
 ##### Messaggio visualizzato:
+
 - *“Non è stato possibile stornare il pagamento con codice di autorizzazione 'XXXXXXXXX' a causa di un errore. Riprovare?”* (con opzioni **Sì/No**)
 
 ##### Quando si verifica:
+
 Durante l’annullo dei pagamenti o dell’intero scontrino, Posware deve inviare una richiesta al provider per annullare i pagamenti già effettuati con bonus celiachia.<br>
 L’errore compare quando:
 
@@ -189,6 +207,7 @@ L’errore compare quando:
 - non si riceve alcuna risposta dal provider (assenza di connessione o problemi tecnici).
 
 ##### Cosa deve fare l’operatore:
+
 - Premendo **Sì**, il sistema ritenta lo storno del pagamento.
 - Premendo **No**, Posware interrompe il ciclo di richieste e segnala che non è stato possibile annullare correttamente tutti i pagamenti.<br>
 In questo caso:
@@ -196,24 +215,30 @@ In questo caso:
     - oppure può annullare lo scontrino: in questo caso Posware tenterà nuovamente lo storno di tutti i pagamenti, ma se anche questo dovesse fallire verrà stampato un documento non fiscale con i riferimenti dei pagamenti non stornati.
 
 #### 3. Mancanza di connessione, crash o interruzione di corrente
+
 ##### Quando si verifica:
+
 Il problema può presentarsi se:
 
 - durante l’annullo di uno scontrino non è disponibile la connessione internet e non è possibile contattare il provider;
 - Posware viene interrotto improvvisamente (crash dell’applicazione o mancanza di corrente) durante un’operazione di pagamento o storno.
 
 ##### Comportamento del sistema:
+
 In questi casi, i pagamenti restano “in sospeso”.<br>
 Al successivo riavvio e login (*SignOn*), Posware avvia in automatico un **meccanismo di rollback**, tentando nuovamente lo storno dei pagamenti non annullati correttamente.
 
 ##### Cosa deve fare l’operatore:
+
 - Nessuna azione immediata è richiesta: il sistema gestisce in automatico il tentativo di storno.
 - Se dopo vari tentativi alcuni pagamenti non possono essere stornati, Posware:
     1. stampa un documento gestionale con il dettaglio dei pagamenti non stornati,
     2. mostra un avviso informativo all’operatore in cassa.
 
 #### 4. Pagamento avviato ma non confermato
+
 ##### Quando si verifica:
+
 Durante una transazione con bonus celiachia:
 
 1. viene inviata la richiesta di pagamento al provider,
@@ -222,6 +247,7 @@ Durante una transazione con bonus celiachia:
 In questo caso non è stato possibile registrare correttamente l’esito del pagamento.
 
 ##### Cosa deve fare l’operatore:
+
 - Lo storno non può essere eseguito in automatico.
 - Sarà necessario recuperare manualmente i dati della richiesta dal **log trace di Posware**, dove vengono salvati tutti i dettagli delle comunicazioni inviate al provider.
 - Con tali riferimenti, il pagamento potrà essere gestito manualmente.
