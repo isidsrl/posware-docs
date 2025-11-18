@@ -26,21 +26,30 @@ Il presente documento descrive i nuovi requisiti minimi e le procedure necessari
 
 ### Software
 !!! warning "Obbligo di tutte le dipendenze in Posware :material-tag:`4.3`"
-    Le dipendenze soprastanti sono da considerarsi **TUTTE** obbligatorie per poter utilizzare Posware :material-tag:`4.3`.
+    Le dipendenze elencate di seguito sono da considerarsi **tutte obbligatorie** per poter utilizzare Posware :material-tag:`4.3`.
 
-- Windows 7 **SP1** con update **Servicing Stack 2018** o superiore, oppure
-- Windows 10 :material-tag:`1809` **Redstone 5 Build 17763** o superiore, oppure
-- Windows 11
-- .NET Framework :material-tag:`4.8`
-- MySQL :material-tag:`4.1` o :material-tag:`5.6` in caso di migrazione da *Posware Frontend* :material-tag:`4.2`, oppure
-- MySQL :material-tag:`5.6` in caso di nuova installazione da zero
-- Dipendenze autoinstallanti tramite *SetupPosware*:
+=== "Windows"
+    - Windows 7 **SP1** con update **Servicing Stack 2018** o superiore, oppure
+    - Windows 10 :material-tag:`1809` **Redstone 5 Build 17763** o superiore, oppure
+    - Windows 11
+
+=== ".NET"
+    - .NET Framework :material-tag:`4.8` . [Vedi tabella di riferimento](../../posware/dot-net-table-reference.md).
+
+=== "MySql"
+    - MySQL :material-tag:`4.1` o :material-tag:`5.6` in caso di migrazione da *Posware Frontend* :material-tag:`4.2`, oppure
+    - MySQL :material-tag:`5.6` in caso di nuova installazione da zero
+
+=== "Dipendenze autoinstallanti tramite *SetupPosware*"
+    **Le seguenti dipendenze vengono installate automaticamente dal pacchetto di installazione.** <br>
+    Vengono qui riportate per completezza e conoscenza del prodotto.
+
     - WebView2 Edge Runtime :material-tag:`109.0.1518.140`
     - .NET :material-tag:`6` Hosting Bundle
     - Monroes OPOS Common Control Objects :material-tag:`1.14.001`
-    - Pos_SBV Client :material-tag:`1.1.0` (per la ricezione variazioni)
+    - Pos_Sbv Client :material-tag:`1.1.0` (per la ricezione variazioni)
 
-Si prega di consultare attentamente le note varie sulle dipendenze di terze parti e gli aggiornamenti necessari nella relativa [sezione](./dipendenze-aggiornamenti-necessari.md) prima di procedere con l'installazione o l'aggiornamento di *Posware Frontend*. 
+Si prega di consultare attentamente le note varie sulle dipendenze di terze parti e gli aggiornamenti necessari nella relativa [sezione](./dipendenze-aggiornamenti-necessari.md) prima di procedere con l'installazione o l'aggiornamento di *Posware Frontend*.
 
 ## Informazioni, credenziali e prassi comuni
 #### Impostazioni comunemente usate per il database

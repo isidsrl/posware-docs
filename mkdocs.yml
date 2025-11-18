@@ -58,7 +58,9 @@ plugins:
       increment_across_pages: false
       exclude:
         - index.md
-        - download/index.md
+        - download/*
+        - posware/*
+        - getting-started/scenari-avanzati/*
 
 nav:
   - Home: index.md
@@ -79,6 +81,10 @@ nav:
       - Disinstallazione: getting-started/installazione-storeserver/disinstallazione-storeserver.md
     - Scenari avanzati:
       - Aggiunta dati custom database: getting-started/scenari-avanzati/dati-custom-database-storeserver.md
+    - Approfondimenti Posware: 
+      - Tabella riferimento .NET: posware/dot-net-table-reference.md
+      - Known issues v4.2: posware/known-issues-42.md
+      - Funzionalità RT 2.0 (XML7): posware/funzionalita-rt-20.md
   - Moduli:
     - Panoramica: posware-modules/index.md
     - Modulo di base:
