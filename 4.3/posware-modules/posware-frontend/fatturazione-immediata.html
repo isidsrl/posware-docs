@@ -1,177 +1,363 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://posware.io/4.3/posware-modules/posware-frontend/fatturazione-immediata.html">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Posware Frontend - Fatturazione immediata - Posware official docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
 
-<html class="no-js" lang="it">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://posware.io/4.3/posware-modules/posware-frontend/fatturazione-immediata.html" rel="canonical"/>
-<link href="argentea-satispay.html" rel="prev"/>
-<link href="nota-di-credito.html" rel="next"/>
-<link href="../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Fatturazione immediata - Posware official docs</title>
-<link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
-<style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%209.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-3.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-11A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2014c-2.63%200-5-1.57-6-4a6.505%206.505%200%200%201%208.5-3.5A6.52%206.52%200%200%201%2018%2012c-1%202.43-3.37%204-6%204m0-6.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201%22/%3E%3C/svg%3E');}</style>
-<script src="https://unpkg.com/iframe-worker/shim"></script>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
-<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#posware-frontend-fatturazione-immediata">
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%209.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-3.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-11A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2014c-2.63%200-5-1.57-6-4a6.505%206.505%200%200%201%208.5-3.5A6.52%206.52%200%200%201%2018%2012c-1%202.43-3.37%204-6%204m0-6.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#posware-frontend-fatturazione-immediata" class="md-skip">
           Vai al contenuto
         </a>
-</div>
-<div data-md-component="announce">
-</div>
-<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
-<aside class="md-banner md-banner--warning">
-<div class="md-banner__inner md-grid md-typeset">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
               
 Non stai visualizzando l'ultima versione della documentazione.
 <a href="../../..">
-<strong>Clicca qui per andare all'ultima versione.</strong>
+    <strong>Clicca qui per andare all'ultima versione.</strong>
 </a>
-</div>
-<script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
-</aside>
-</div>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      
+
+  
+
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-<nav aria-label="Intestazione" class="md-header__inner md-grid">
-<a aria-label="Posware official docs" class="md-header__button md-logo" data-md-component="logo" href="../../index.html" title="Posware official docs">
-<img alt="logo" src="../../assets/images/favicon.ico"/>
-</a>
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
-</label>
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../../index.html" title="Posware official docs" class="md-header__button md-logo" aria-label="Posware official docs" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Posware official docs
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
-              Fatturazione immediata
+              Posware Frontend - Fatturazione immediata
             
           </span>
-</div>
-</div>
-</div>
-<form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
-</label>
-<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
-</label>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
 </form>
-<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Cerca" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Cerca" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
-</label>
-<nav aria-label="Cerca" class="md-search__options">
-<button aria-label="Cancella" class="md-search__icon md-icon" tabindex="-1" title="Cancella" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
-</button>
-</nav>
-<div class="md-search__suggest" data-md-component="search-suggest"></div>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Inizializza la ricerca
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</nav>
-<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
-<div class="md-grid">
-<ul class="md-tabs__list">
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../index.html">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
     
   
   Home
 
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../getting-started/index.html">
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/index.html" class="md-tabs__link">
           
   
   
   Getting started
 
         </a>
-</li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../index.html">
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../index.html" class="md-tabs__link">
           
   
   
   Moduli
 
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../download/index.html">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"></path></svg>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/index.html" class="md-tabs__link">
+        
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
     
   
   Download
 
       </a>
-</li>
-</ul>
-</div>
+    </li>
+  
+
+      
+    </ul>
+  </div>
 </nav>
+    
+  
 </header>
-<div class="md-container" data-md-component="container">
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigazione" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="Posware official docs" class="md-nav__button md-logo" data-md-component="logo" href="../../index.html" title="Posware official docs">
-<img alt="logo" src="../../assets/images/favicon.ico"/>
-</a>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Posware official docs" class="md-nav__button md-logo" aria-label="Posware official docs" data-md-component="logo">
+      
+  <img src="../../assets/images/favicon.ico" alt="logo">
+
+    </a>
     Posware official docs
   </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../index.html">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
-<span class="md-ellipsis">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+  
+  <span class="md-ellipsis">
     
   
     Home
@@ -179,12 +365,42 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     
   
     Getting started
@@ -192,22 +408,37 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
             
   
     Getting started
   
 
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/index.html">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.011 3.269H16.19a4.29 4.29 0 0 0-4.185 3.345A4.29 4.29 0 0 0 7.819 3.27H2a2 2 0 0 0-2.001 2v10.244a2 2 0 0 0 2 2h3.738c4.257 0 5.53 1.025 6.138 3.134a.11.11 0 0 0 .112.084h.024a.11.11 0 0 0 .112-.084c.612-2.109 1.885-3.133 6.138-3.133h3.737a2 2 0 0 0 2.001-2V5.27a2 2 0 0 0-1.989-2ZM10.083 14.325a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm10.804 5.07a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144v.952z"></path></svg>
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/index.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.011 3.269H16.19a4.29 4.29 0 0 0-4.185 3.345A4.29 4.29 0 0 0 7.819 3.27H2a2 2 0 0 0-2.001 2v10.244a2 2 0 0 0 2 2h3.738c4.257 0 5.53 1.025 6.138 3.134a.11.11 0 0 0 .112.084h.024a.11.11 0 0 0 .112-.084c.612-2.109 1.885-3.133 6.138-3.133h3.737a2 2 0 0 0 2.001-2V5.27a2 2 0 0 0-1.989-2ZM10.083 14.325a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm10.804 5.07a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144v.952z"/></svg>
+  
+  <span class="md-ellipsis">
     
   
     Scenari di installazione
@@ -215,12 +446,43 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     
   
     Installazione e aggiornamenti Posware Frontend
@@ -228,21 +490,35 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_2">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
             
   
     Installazione e aggiornamenti Posware Frontend
   
 
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/overview-generale.html">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-posware-frontend/overview-generale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Overview generale
@@ -250,11 +526,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Dipendenze e aggiornamenti
@@ -262,11 +554,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/setup-posware.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-posware-frontend/setup-posware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     SetupPosware
@@ -274,11 +582,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/pos-update.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-posware-frontend/pos-update.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     PosUpdate
@@ -286,15 +610,51 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     
   
     Installazione e aggiornamenti StoreServer
@@ -302,21 +662,35 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_3">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
             
   
     Installazione e aggiornamenti StoreServer
   
 
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/overview-generale.html">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/overview-generale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Overview generale
@@ -324,11 +698,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/installazione-procedure-comuni.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/installazione-procedure-comuni.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Procedure comuni
@@ -336,11 +726,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/installazione-nuovo-storeserver.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/installazione-nuovo-storeserver.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Nuova installazione
@@ -348,11 +754,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/migrazione-servizi-legacy.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/migrazione-servizi-legacy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Migrazione
@@ -360,11 +782,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/aggiornamento-storeserver.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/aggiornamento-storeserver.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Aggiornamento
@@ -372,11 +810,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/installazione-storeserver/servizi-legacy.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/servizi-legacy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Servizi legacy
@@ -384,15 +838,79 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installazione-storeserver/disinstallazione-storeserver.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disinstallazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     
   
     Scenari avanzati
@@ -400,21 +918,35 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_4">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
             
   
     Scenari avanzati
   
 
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../getting-started/scenari-avanzati/dati-custom-database-storeserver.html">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/scenari-avanzati/dati-custom-database-storeserver.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Aggiunta dati custom database
@@ -422,18 +954,58 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     
   
     Moduli
@@ -441,22 +1013,37 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
             
   
     Moduli
   
 
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../index.html">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 22V3h18v19l-3-2-3 2-3-2-3 2-3-2zM17 9V7h-2v2zm-4 0V7H7v2zm0 2H7v2h6zm2 2h2v-2h-2z"></path></svg>
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 22V3h18v19l-3-2-3 2-3-2-3 2-3-2zM17 9V7h-2v2zm-4 0V7H7v2zm0 2H7v2h6zm2 2h2v-2h-2z"/></svg>
+  
+  <span class="md-ellipsis">
     
   
     Panoramica
@@ -464,12 +1051,43 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     
   
     Modulo di base
@@ -477,21 +1095,35 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_2">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
             
   
     Modulo di base
   
 
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../main-module/statistiche-dettagliate.html">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main-module/statistiche-dettagliate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Statistiche dettagliate
@@ -499,11 +1131,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../main-module/posware-price-checker.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main-module/posware-price-checker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Posware Price Checker
@@ -511,11 +1159,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../main-module/fatturazione-elettronica.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main-module/fatturazione-elettronica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Fatturazione elettronica
@@ -523,15 +1187,51 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     
   
     Funzionalità di cassa
@@ -539,21 +1239,35 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_3">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
             
   
     Funzionalità di cassa
   
 
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="tracciato-record-log.html">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tracciato-record-log.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Log Transazione Posware
@@ -561,11 +1275,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="argentea-satispay.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="argentea-satispay.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Argentea Satispay
@@ -573,68 +1303,51 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    
   
-    Fatturazione immediata
   
 
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="fatturazione-immediata.html">
-<span class="md-ellipsis">
-    
-  
-    Fatturazione immediata
+      </a>
+    </li>
   
 
-    
-  </span>
-</a>
-<nav aria-label="Indice" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Indice
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#glossario">
-<span class="md-ellipsis">
+              
+            
+          </ul>
+        </nav>
       
-        Glossario
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="nota-di-credito.html">
-<span class="md-ellipsis">
-    
-  
-    Nota di credito
+    </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
     
-  </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
-<span class="md-ellipsis">
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     
   
     Celiachia
@@ -642,21 +1355,35 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_4">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
             
   
     Celiachia
   
 
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../celiac/informazioni-generali.html">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../celiac/informazioni-generali.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Informazioni generali
@@ -664,11 +1391,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../celiac/integrazione-bonus-celiachia-posware.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../celiac/integrazione-bonus-celiachia-posware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Integrazione bonus celiachia Posware
@@ -676,11 +1419,27 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../celiac/rendicontazione-celiachia.html">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../celiac/rendicontazione-celiachia.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Rendicontazione celiachia
@@ -688,18 +1447,44 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../download/index.html">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"></path></svg>
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/index.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
+  
+  <span class="md-ellipsis">
     
   
     Download
@@ -707,23 +1492,47 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-</a>
-</li>
-</ul>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
-<nav class="md-tags">
-<span class="md-tag">Frontend</span>
-</nav>
-<h1 id="posware-frontend-fatturazione-immediata"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Posware Frontend - Fatturazione immediata<a class="headerlink" href="#posware-frontend-fatturazione-immediata" title="Permanent link">¶</a></h1>
-<p><strong>Prima revisione documento: 26 aprile 2024</strong> <br/>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 novembre 2025 23:13:57 UTC">17 novembre 2025</span></strong></p>
-<hr/>
-<h2 id="glossario"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Glossario<a class="headerlink" href="#glossario" title="Permanent link">¶</a></h2>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">Frontend</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="posware-frontend-fatturazione-immediata">Posware Frontend - Fatturazione immediata<a class="headerlink" href="#posware-frontend-fatturazione-immediata" title="Permanent link">&para;</a></h1>
+<p><strong>Prima revisione documento: 26 aprile 2024</strong> <br>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 novembre 2025 09:14:59 UTC">18 novembre 2025</span></strong></p>
+<hr />
+<h2 id="glossario">Glossario<a class="headerlink" href="#glossario" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>WebApp:</strong> applicazione web che offre la possibilità di gestire in modo centralizzato le funzionalità disponibili nel StoreServer;</li>
 <li><strong>PoswareModule:</strong> plug-in del StoreServer dedicato alla gestione del PPC;</li>
@@ -734,43 +1543,93 @@ Non stai visualizzando l'ultima versione della documentazione.
 <li><strong>PA:</strong> Pubblica Amministrazione;</li>
 <li><strong>AdE:</strong> Agenzia delle Entrate; </li>
 </ul>
-<aside class="md-source-file">
-<span class="md-source-file__fact">
-<span class="md-icon" title="Ultimo aggiornamento">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
-</span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 novembre 2025 23:13:57 UTC">17 novembre 2025</span>
-</span>
-</aside>
-</article>
-</div>
+<h2 id="to-do-da-redigere-quanto-prima">TO DO: Da redigere quanto prima!!!<a class="headerlink" href="#to-do-da-redigere-quanto-prima" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ultimo aggiornamento">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 novembre 2025 09:14:59 UTC">18 novembre 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-</div>
-<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
   Torna su
 </button>
-</main>
-<footer class="md-footer">
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-copyright">
-<div class="md-copyright__highlight">
-      Copyright 2024© I.Si.D S.r.l.
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2024&copy; I.Si.D S.r.l.
     </div>
+  
+  
 </div>
+      
+        
 <div class="md-social">
-<a class="md-social__link" href="https://isid.it/" rel="noopener" target="_blank" title="isid.it">
-<?xml version="1.0" standalone="no"?>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://isid.it/" target="_blank" rel="noopener" title="isid.it" class="md-social__link">
+      <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1510.000000pt" height="518.000000pt" viewBox="0 0 1510.000000 518.000000"
+ preserveAspectRatio="xMidYMid meet">
 
-<svg height="518.000000pt" preserveaspectratio="xMidYMid meet" version="1.0" viewbox="0 0 1510.000000 518.000000" width="1510.000000pt" xmlns="http://www.w3.org/2000/svg">
-<g fill="#FFFFFF" stroke="none" transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)">
+<g transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)"
+fill="#FFFFFF" stroke="none">
 <path d="M69 5157 c-19 -12 -42 -38 -51 -57 -17 -33 -18 -174 -18 -2510 0
 -2336 1 -2477 18 -2510 9 -19 32 -45 51 -57 l34 -23 466 0 c521 0 514 -1 553
 71 17 32 18 131 18 2519 0 2391 -1 2487 -18 2520 -37 71 -32 70 -553 70 l-466
-0 -34 -23z"></path>
+0 -34 -23z"/>
 <path d="M2580 5169 c-305 -35 -562 -148 -726 -320 -149 -157 -241 -337 -291
 -572 -16 -72 -18 -141 -18 -582 0 -550 4 -597 66 -787 127 -392 402 -626 846
 -720 l108 -23 1570 -5 1570 -5 60 -23 c32 -12 75 -35 95 -50 44 -36 95 -119
@@ -782,12 +1641,12 @@ Non stai visualizzando l'ultima versione della documentazione.
 c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
 103 161 207 197 48 16 190 17 2091 22 1928 5 2041 6 2066 23 53 36 54 41 57
 469 2 250 -1 412 -7 436 -6 21 -25 51 -41 67 l-31 30 -2197 1 c-1208 1 -2231
--2 -2272 -7z"></path>
+-2 -2272 -7z"/>
 <path d="M7631 5162 c-71 -38 -71 -38 -71 -501 0 -403 1 -415 21 -448 40 -64
 34 -63 501 -63 l424 0 302 -282 302 -282 0 -386 c0 -380 0 -386 23 -430 42
 -82 28 -80 550 -80 502 0 489 -1 541 60 l26 32 0 422 0 423 -23 34 c-46 69
 -44 69 -512 69 l-420 1 -297 277 -297 277 0 390 c-1 435 -1 436 -70 482 l-34
-23 -466 0 c-433 0 -469 -1 -500 -18z"></path>
+23 -466 0 c-433 0 -469 -1 -500 -18z"/>
 <path d="M9255 5167 c-47 -18 -71 -39 -97 -82 l-23 -40 -3 -452 -3 -453 1993
 -3 c1802 -3 2001 -5 2071 -20 422 -88 609 -249 697 -601 50 -201 55 -279 55
 -926 0 -647 -5 -725 -55 -926 -80 -318 -256 -491 -582 -574 -216 -54 -240 -55
@@ -796,23 +1655,36 @@ c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
 -2 1927 0 2040 8 503 36 891 149 1191 346 113 74 311 270 383 379 189 287 292
 647 321 1120 13 220 13 1250 0 1470 -29 473 -133 837 -322 1120 -68 103 -219
 259 -328 341 -109 82 -343 200 -491 248 -213 68 -463 114 -738 136 -200 15
--3906 12 -3946 -3z"></path>
+-3906 12 -3946 -3z"/>
 <path d="M7560 1918 c0 -1706 1 -1815 18 -1847 9 -19 33 -43 52 -53 33 -17 64
 -18 512 -16 l476 3 27 25 c58 53 55 -64 55 1895 l0 1805 -570 0 -570 0 0
--1812z"></path>
+-1812z"/>
 </g>
 </svg>
-</a>
+    </a>
+  
 </div>
-</div>
-</div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips", "toc.integrate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
-<script src="../../javascripts/extra.js"></script>
-</body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips", "toc.integrate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
 </html>
