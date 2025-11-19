@@ -359,28 +359,10 @@ Non stai visualizzando l'ultima versione della documentazione.
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#breaking-changes">
+<a class="md-nav__link" href="#breaking-changes-feature-rimosse-e-deprecate">
 <span class="md-ellipsis">
       
-        Breaking changes
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#feature-rimosse-in-posware-43">
-<span class="md-ellipsis">
-      
-        Feature rimosse in Posware 4.3
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#feature-deprecate-che-verranno-rimosse-in-posware-44">
-<span class="md-ellipsis">
-      
-        Feature deprecate che verranno rimosse in Posware 4.4
+        Breaking changes, feature rimosse e deprecate
       
     </span>
 </a>
@@ -625,6 +607,18 @@ Non stai visualizzando l'ultima versione della documentazione.
     
   
     Known issues v4.2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/breaking-changes.html">
+<span class="md-ellipsis">
+    
+  
+    Breaking changes
   
 
     
@@ -938,7 +932,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </nav>
 <h1 id="posware-overview-generale"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Posware - Overview generale<a class="headerlink" href="#posware-overview-generale" title="Permanent link">¶</a></h1>
 <p><strong>Prima revisione documento: 27 agosto 2024</strong> <br/>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 novembre 2025 15:57:07 UTC">18 novembre 2025</span></strong></p>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 novembre 2025 16:39:22 UTC">19 novembre 2025</span></strong></p>
 <hr/>
 <h2 id="cenni-preliminari"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Cenni preliminari<a class="headerlink" href="#cenni-preliminari" title="Permanent link">¶</a></h2>
 <p>Il presente documento descrive i nuovi requisiti minimi e le procedure necessarie all'installazione o all'aggiornamento di <em>Posware Frontend</em> alla versione <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3</code> dell'applicativo, così da poter associare le casse con lo <em>StoreServer</em>, il nuovo sistema centralizzato per la gestione e l'analisi del punto vendita.</p>
@@ -1028,40 +1022,9 @@ Vengono qui riportate per completezza e conoscenza del prodotto.</p>
 <p class="admonition-title">Firewall di Windows sui terminali casse</p>
 <p><strong>È assolutamente necessario disattivare il firewall di Windows sui terminali casse.</strong></p>
 </div>
-<h2 id="breaking-changes"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Breaking changes<a class="headerlink" href="#breaking-changes" title="Permanent link">¶</a></h2>
-<p>Vengono elencati di seguito i diversi <strong>breaking changes</strong> introdotti in <em>Posware Frontend</em> a partire dalla versione <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3</code> dell'applicativo:</p>
-<ul>
-<li>Nel record <strong>01</strong> , il barcode di un prodotto viene ora riportato unicamente con gli spazi vuoti (formato denominato <strong>Barcode No Food</strong> nella <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.2</code>). Non è più possibile usare il formato numerico. <strong>Barcode No Food</strong> è da considerarsi nuovo standard.</li>
-<li>Per il motivo appena elencato, l'impostazione <strong>Barcode No Food</strong> nella tabella <code>config_cassa</code> viene meno (come se fosse sempre impostata ad <strong>1</strong>).</li>
-<li>A partire dalla versione <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3</code>, i file di configurazione di Posware, delle <em>Connection strings</em> e delle impostazioni utente sono stati riportati allo standard .NET rimuovendo l'approccio custom. Per maggiori informazioni consultare la relativa <a href="setup-posware.html#aggiornamento-dei-file-di-configurazione">sezione</a> del <em>SetupPosware</em>.</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Nuova versione di MySQL richiesta nelle nuove installazioni</p>
-<p>A partire dalla versione <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3</code>, le nuove installazioni che <strong>non migrano</strong> dalla <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.2</code>, dovranno usare <strong>MySQL</strong> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><strong><code>5.6</code></strong>. </p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Nuova configurazione per le stampanti simulate</p>
-<p>A partire dalla versione <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3</code>, in caso sia necessario configurare una stampante simulata per eseguire delle prove, il campo <code>tipo_fiscalprinter</code> della tabella <code>config_cassa</code> deve essere impostato pari a "<strong>DUMMY</strong>" invece di "<strong>WINCOR</strong>", il valore che era utilizzato in precedenza per tale scopo.</p>
-</div>
-<h2 id="feature-rimosse-in-posware-43"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Feature rimosse in Posware <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3</code><a class="headerlink" href="#feature-rimosse-in-posware-43" title="Permanent link">¶</a></h2>
-<p>Nell'elenco sottostante vengono illustrate tutte le <strong>feature di <em>Posware Frontend</em> che sono state rimosse</strong> a partire dalla versione <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3</code> dell'applicativo:</p>
-<ul>
-<li>Supporto alle stampanti IBM (RFImbopos e le sue dipendenze)</li>
-<li>Supporto alle stampanti NCR vecchie MF FASY, RealPrint e RealPOS</li>
-<li>Supporto alle stampanti Wincor TH230 e vecchie Wincor MF</li>
-<li>Supporto ai Controlli OCX e sue dipendenze che venivano usate per mostrare la telecamera. Tali tecnologie risalenti a Windows XP non sono più supportate a partire da Windows Vista.</li>
-<li>Il vecchio interfacciamento WinEPTS <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>2.x</code> è stato rimosso e sostituito con un nuovo interfacciamento.</li>
-</ul>
-<h2 id="feature-deprecate-che-verranno-rimosse-in-posware-44"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Feature deprecate che verranno rimosse in Posware <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.4</code><a class="headerlink" href="#feature-deprecate-che-verranno-rimosse-in-posware-44" title="Permanent link">¶</a></h2>
-<p>Le seguenti <strong>feature di <em>Posware Frontend</em> sono deprecate</strong> a partire dalla versione <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3</code> dell'applicativo e verranno quindi poi rimosse in Posware <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.4</code>:</p>
-<ul>
-<li>Gestione commissione di vendita</li>
-<li>Supporto alla reportistica legacy (Crystal Report, Microsoft Report)</li>
-<li>Nota di credito di Posware <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.2</code> e relative customizzazioni</li>
-<li>Integrazione Satispay Wally (<span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.2</code>), sostituita dalla nuova integrazione nativa REST</li>
-<li>Integrazione di GetYourBill</li>
-</ul>
-<h2 id="installazione-e-aggiornamenti"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> Installazione e aggiornamenti<a class="headerlink" href="#installazione-e-aggiornamenti" title="Permanent link">¶</a></h2>
+<h2 id="breaking-changes-feature-rimosse-e-deprecate"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Breaking changes, feature rimosse e deprecate<a class="headerlink" href="#breaking-changes-feature-rimosse-e-deprecate" title="Permanent link">¶</a></h2>
+<p>L'elenco può essere consultato a <a href="../../posware/breaking-changes.html">questo documento</a>.</p>
+<h2 id="installazione-e-aggiornamenti"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Installazione e aggiornamenti<a class="headerlink" href="#installazione-e-aggiornamenti" title="Permanent link">¶</a></h2>
 <p>Sono previsti questi due applicativi per le procedure di installazione e di aggiornamento di <em>Posware Frontend</em>:</p>
 <ul>
 <li><a href="setup-posware.html">SetupPosware</a></li>
@@ -1080,7 +1043,7 @@ Vengono qui riportate per completezza e conoscenza del prodotto.</p>
 <span class="md-icon" title="Ultimo aggiornamento">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 novembre 2025 15:57:07 UTC">18 novembre 2025</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 novembre 2025 16:39:22 UTC">19 novembre 2025</span>
 </span>
 </aside>
 </article>

@@ -26,7 +26,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#posware-frontend-argentea-satispay">
+<a class="md-skip" href="#posware-frontend-satispay-via-argentea-amoneysmart">
           Vai al contenuto
         </a>
 </div>
@@ -486,6 +486,18 @@ Non stai visualizzando l'ultima versione della documentazione.
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/breaking-changes.html">
+<span class="md-ellipsis">
+    
+  
+    Breaking changes
+  
+
+    
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -690,20 +702,190 @@ Non stai visualizzando l'ultima versione della documentazione.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#configurazione-del-database">
+<a class="md-nav__link" href="#requisiti">
 <span class="md-ellipsis">
       
-        Configurazione del Database
+        Requisiti
       
     </span>
 </a>
-<nav aria-label="Configurazione del Database" class="md-nav">
+<nav aria-label="Requisiti" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tabella-tipi_pagamenti-sia-databasecassa-che-posware">
+<a class="md-nav__link" href="#versioni-software-e-dipendenze-di-terze-parti">
 <span class="md-ellipsis">
       
-        Tabella tipi_pagamenti (sia databasecassa che posware)
+        Versioni software e dipendenze di terze parti
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagamento-su-satispay-wallet">
+<span class="md-ellipsis">
+      
+        Pagamento su Satispay Wallet
+      
+    </span>
+</a>
+<nav aria-label="Pagamento su Satispay Wallet" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagamento-su-satispay-wallet-workflow-di-cassa">
+<span class="md-ellipsis">
+      
+        Pagamento su Satispay Wallet - Workflow di cassa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagamento-su-satispay-wallet-registrazioni-nel-log-di-vendita">
+<span class="md-ellipsis">
+      
+        Pagamento su Satispay Wallet - Registrazioni nel log di vendita
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagamento-su-satispay-wallet-corrispettivi-verso-registratore-telematico">
+<span class="md-ellipsis">
+      
+        Pagamento su Satispay Wallet - Corrispettivi verso Registratore Telematico
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagamento-su-satispay-wallet-configurazione-del-pagamento-in-cassa">
+<span class="md-ellipsis">
+      
+        Pagamento su Satispay Wallet - Configurazione del pagamento in cassa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagamento-su-satispay-wallet-ulteriori-vincoli-e-casistiche">
+<span class="md-ellipsis">
+      
+        Pagamento su Satispay Wallet - Ulteriori vincoli e casistiche
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagamento-misto-buoni-pasto-elettronici-e-saldo-wallet">
+<span class="md-ellipsis">
+      
+        Pagamento misto Buoni pasto elettronici e Saldo Wallet
+      
+    </span>
+</a>
+<nav aria-label="Pagamento misto Buoni pasto elettronici e Saldo Wallet" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagamento-misto-workflow-di-cassa">
+<span class="md-ellipsis">
+      
+        Pagamento misto - Workflow di cassa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagamento-misto-registrazioni-nel-log-di-vendita">
+<span class="md-ellipsis">
+      
+        Pagamento misto - Registrazioni nel log di vendita
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagamento-misto-corrispettivi-verso-registratore-telematico">
+<span class="md-ellipsis">
+      
+        Pagamento misto - Corrispettivi verso Registratore Telematico
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagamento-misto-configurazione-del-pagamento-in-cassa">
+<span class="md-ellipsis">
+      
+        Pagamento misto - Configurazione del pagamento in cassa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagamento-misto-ulteriori-vincoli-e-casistiche">
+<span class="md-ellipsis">
+      
+        Pagamento misto - Ulteriori vincoli e casistiche
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#possibili-strategie-di-mitigazione-per-pagare-unicamente-con-i-buoni-pasto-elettronici">
+<span class="md-ellipsis">
+      
+        Possibili strategie di mitigazione per pagare unicamente con i Buoni Pasto elettronici
+      
+    </span>
+</a>
+<nav aria-label="Possibili strategie di mitigazione per pagare unicamente con i Buoni Pasto elettronici" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#come-pagare-unicamente-con-i-buoni-pasto">
+<span class="md-ellipsis">
+      
+        Come pagare unicamente con i buoni pasto
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configurazione-dei-pagamenti-in-posware">
+<span class="md-ellipsis">
+      
+        Configurazione dei pagamenti in Posware
+      
+    </span>
+</a>
+<nav aria-label="Configurazione dei pagamenti in Posware" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configurazione-nelle-tabelle">
+<span class="md-ellipsis">
+      
+        Configurazione nelle tabelle
+      
+    </span>
+</a>
+<nav aria-label="Configurazione nelle tabelle" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabella-tipi_pagamenti-sia-databasecassa-che-posware-sul-server-di-barriera">
+<span class="md-ellipsis">
+      
+        Tabella tipi_pagamenti (sia databasecassa che posware sul server di barriera)
       
     </span>
 </a>
@@ -717,26 +899,20 @@ Non stai visualizzando l'ultima versione della documentazione.
     </span>
 </a>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#interfaccia-utente-della-cassa">
 <span class="md-ellipsis">
       
-        Interfaccia Utente della cassa
+        Interfaccia utente della cassa
       
     </span>
 </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#workflow-di-utilizzo">
-<span class="md-ellipsis">
-      
-        Workflow di Utilizzo
-      
-    </span>
-</a>
 </li>
 </ul>
 </nav>
@@ -866,47 +1042,238 @@ Non stai visualizzando l'ultima versione della documentazione.
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <nav class="md-tags">
+<span class="md-tag">AMONEYSMART</span>
 <span class="md-tag">Argentea</span>
-<span class="md-tag">Frontend</span>
+<span class="md-tag">Posware frontend</span>
 <span class="md-tag">Satispay</span>
 </nav>
-<h1 id="posware-frontend-argentea-satispay"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Posware Frontend - Argentea Satispay<a class="headerlink" href="#posware-frontend-argentea-satispay" title="Permanent link">¶</a></h1>
+<h1 id="posware-frontend-satispay-via-argentea-amoneysmart"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Posware Frontend - Satispay via Argentea AMONEYSMART<a class="headerlink" href="#posware-frontend-satispay-via-argentea-amoneysmart" title="Permanent link">¶</a></h1>
 <p><strong>Prima revisione documento: 9 maggio 2025</strong> <br/>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 novembre 2025 15:57:07 UTC">18 novembre 2025</span></strong></p>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 novembre 2025 16:39:22 UTC">19 novembre 2025</span></strong></p>
 <hr/>
 <h2 id="cenni-preliminari"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Cenni preliminari<a class="headerlink" href="#cenni-preliminari" title="Permanent link">¶</a></h2>
-<p>Il presente documento descrive come configurare <strong>Posware</strong> per accettare pagamenti tramite <strong>Satispay</strong>, utilizzando il modulo <strong>Argentea Satispay</strong>. Il processo include la configurazione del database e l'aggiornamento dell'interfaccia utente della cassa.</p>
-<h2 id="configurazione-del-database"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Configurazione del Database<a class="headerlink" href="#configurazione-del-database" title="Permanent link">¶</a></h2>
-<p>Per abilitare <strong>Argentea Satispay</strong> come metodo di pagamento, è necessario aggiornare le seguenti tabelle:</p>
-<h4 id="tabella-tipi_pagamenti-sia-databasecassa-che-posware"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.0.1</span> Tabella <code>tipi_pagamenti</code> (sia database<code>cassa</code> che <code>posware</code>)<a class="headerlink" href="#tabella-tipi_pagamenti-sia-databasecassa-che-posware" title="Permanent link">¶</a></h4>
+<p>Il presente documento descrive come configurare <strong>Posware</strong> per accettare pagamenti tramite <strong>Satispay</strong>, utilizzando il modulo <strong>Argentea Satispay</strong>. </p>
+<p>Il processo include la configurazione del database e l'aggiornamento dell'interfaccia utente della cassa.</p>
+<h2 id="requisiti"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Requisiti<a class="headerlink" href="#requisiti" title="Permanent link">¶</a></h2>
+<p>La soluzione di pagamento Satispay / Argentea AMONEYSMART prevede esclusivamente le seguenti modalità di pagamento:</p>
 <ul>
+<li>Pagamento su Satispay Wallet – conto prepagato Satispay.  </li>
+<li>Pagamento Satispay via Buoni pasto elettronici, utilizzati <strong>in modalità mista con il Wallet.</strong></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Non è possibile pagare unicamente con i buoni pasto</p>
+<p>Come da specifiche Satispay / Argentea alla data del 07/03/2024, è esplicitamente <strong>esclusa la possibilità di pagare solo ed unicamente con i Buoni pasto elettronici.</strong>
+È possibile tuttavia adottare alcuni approcci per mitigare il problema ed ottenere il pagamento con i soli BPE. Consultare <a href="#possibili-strategie-di-mitigazione-per-pagare-unicamente-con-i-buoni-pasto-elettronici">questo paragrafo</a>.</p>
+</div>
+<p>Posware garantisce inoltre i seguenti requisiti funzionali:</p>
+<ul>
+<li>Presenza di informazioni nel log di vendita per conoscere l’esatto ammontare dei pagamenti effettuati e permettere le corrette operazioni di riconciliazione e quadratura finanziaria di cassa nel punto vendita.  </li>
+<li>Differenziazione dei metodi di pagamento riscosso / buoni pasto numerati verso il Registratore Telematico (Stampante RT) per consentire una precisa comunicazione dei dati sui corrispettivi all’Agenzia delle Entrate.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Workflow Satispay</p>
+<p>Tutte le modalità di pagamento elencate utilizzano il workflow <strong><em>MATCH_CODE</em></strong> di Satispay, che prevede la scansione di un QR Code da parte del cliente per innescare il pagamento.</p>
+</div>
+<p>L’uso di Satispay tramite Argentea AMONEYSMART prevede che il QR Code venga mostrato sul device di pagamento EFT già presente in cassa, utilizzato anche per i pagamenti con carta di credito, bancomat e strumenti analoghi.</p>
+<h3 id="versioni-software-e-dipendenze-di-terze-parti"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> Versioni software e dipendenze di terze parti<a class="headerlink" href="#versioni-software-e-dipendenze-di-terze-parti" title="Permanent link">¶</a></h3>
+<p>L'integrazione fa riferimento alla documentazione Argentea del <strong>07/03/2024</strong> <code>rev. 3.89</code>.<br/>
+L'integrazione fa riferimento ai driver Argentea <code>v4.2.0.1</code>.<br/>
+<strong>Eventuali successivi aggiornamenti non sono supportati da questo modulo.</strong></p>
+<hr/>
+<h2 id="pagamento-su-satispay-wallet"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Pagamento su Satispay Wallet<a class="headerlink" href="#pagamento-su-satispay-wallet" title="Permanent link">¶</a></h2>
+<p>Lo scopo di questa funzione è permettere al cliente finale di pagare tramite l’app Satispay installata sullo smartphone, utilizzando unicamente il credito prepagato presente nel proprio Wallet Satispay.</p>
+<p>In questo scenario non intervengono Buoni pasto elettronici, ma solo il conto prepagato Wallet.</p>
+<h3 id="pagamento-su-satispay-wallet-workflow-di-cassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.1</span> Pagamento su Satispay Wallet - Workflow di cassa<a class="headerlink" href="#pagamento-su-satispay-wallet-workflow-di-cassa" title="Permanent link">¶</a></h3>
+<p>Al termine di una ordinaria transazione di vendita, a seguito della pressione del tasto subtotale, l’operatore preme un <strong>tasto unico dedicato <code>Pagamento Satispay</code></strong> che innesca la richiesta di pagamento tramite terminale Argentea.</p>
+<p>Il terminale POS-EFT mostrerà il QR Code che il cliente potrà scansionare usando l’app Satispay dal proprio smartphone, dal quale potrà confermare o rifiutare la richiesta di pagamento.</p>
+<p>Esempio di workflow standard di cassa:</p>
+<ol>
+<li>Effettuare la normale vendita degli articoli.  </li>
+<li>Premere il tasto sub-totale.  </li>
+<li>Premere il tasto <code>Pagamento Satispay</code> opportunamente configurato.  </li>
+<li>Sul terminale di pagamento EFT viene mostrato il QR Code.  </li>
+<li>Il cliente scansiona il QR Code con l’app Satispay.  </li>
+<li>A seguito dell’avvenuto pagamento viene chiusa la transazione ed emesso lo scontrino.  </li>
+<li>In caso di errori o rifiuto del pagamento viene mostrato un avviso che informa la cassiera, la quale può ritentare l’operazione o cambiare modalità di pagamento per chiudere la transazione.</li>
+</ol>
+<p>Come previsto dalle linee guida di User Experience del servizio Satispay, in questo workflow viene utilizzato esclusivamente il credito Wallet.</p>
+<h3 id="pagamento-su-satispay-wallet-registrazioni-nel-log-di-vendita"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2</span> Pagamento su Satispay Wallet - Registrazioni nel log di vendita<a class="headerlink" href="#pagamento-su-satispay-wallet-registrazioni-nel-log-di-vendita" title="Permanent link">¶</a></h3>
+<p>Le informazioni dettagliate sul pagamento Satispay restituite da Argentea vengono memorizzate nel log di transazione di cassa.</p>
+<p>In particolare, il Record 03 conterrà:</p>
+<ul>
+<li>L’esatto ammontare pagato tramite Wallet Satispay.  </li>
+<li>L’identificativo univoco della transazione Argentea / Satispay.</li>
+</ul>
+<p>Queste informazioni sono utilizzabili per la riconciliazione e la quadratura finanziaria.</p>
+<h3 id="pagamento-su-satispay-wallet-corrispettivi-verso-registratore-telematico"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.3</span> Pagamento su Satispay Wallet - Corrispettivi verso Registratore Telematico<a class="headerlink" href="#pagamento-su-satispay-wallet-corrispettivi-verso-registratore-telematico" title="Permanent link">¶</a></h3>
+<p>La tipologia di pagamento RT usata per notificare l’avvenuto pagamento al Registratore Telematico potrà essere configurata in base alle esigenze del cliente tramite le ordinarie configurazioni dei pagamenti previste in Posware.</p>
+<p>In modalità predefinita, non vincolante, il pagamento Satispay Wallet viene registrato come <code>Pagamento Elettronico</code>.</p>
+<h3 id="pagamento-su-satispay-wallet-configurazione-del-pagamento-in-cassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.4</span> Pagamento su Satispay Wallet - Configurazione del pagamento in cassa<a class="headerlink" href="#pagamento-su-satispay-wallet-configurazione-del-pagamento-in-cassa" title="Permanent link">¶</a></h3>
+<p>Per i dettagli sulla configurazione del pagamento in cassa relativi allo scenario Wallet, fare riferimento al paragrafo <a href="#configurazione-dei-pagamenti-in-posware">Configurazione</a></p>
+<h3 id="pagamento-su-satispay-wallet-ulteriori-vincoli-e-casistiche"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.5</span> Pagamento su Satispay Wallet - Ulteriori vincoli e casistiche<a class="headerlink" href="#pagamento-su-satispay-wallet-ulteriori-vincoli-e-casistiche" title="Permanent link">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Vincoli Pagamento Wallet</p>
+<ol>
+<li>È permesso l’uso delle formule per limitare l’ammontare del pagamento.  </li>
+<li>È permesso all’operatore imputare importi parziali da pagare per effettuare più pagamenti all’interno della stessa transazione.  </li>
+<li>È permesso lo storno della transazione di pagamento all’interno della transazione tramite le operazioni di <code>Annulla Pagamenti</code> e <code>Annulla scontrino</code>; in caso di pagamenti parziali multipli verranno stornati tutti.  </li>
+</ol>
+</div>
+<hr/>
+<h2 id="pagamento-misto-buoni-pasto-elettronici-e-saldo-wallet"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Pagamento misto Buoni pasto elettronici e Saldo Wallet<a class="headerlink" href="#pagamento-misto-buoni-pasto-elettronici-e-saldo-wallet" title="Permanent link">¶</a></h2>
+<p>Lo scopo di questa funzione è permettere al cliente finale di pagare tramite l’app Satispay usando sia i Buoni pasto elettronici sia il credito prepagato del proprio Wallet.</p>
+<p>In questo caso il pagamento avviene in un’unica transazione che combina i due strumenti di pagamento, con priorità ai Buoni pasto elettronici.</p>
+<h3 id="pagamento-misto-workflow-di-cassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Pagamento misto - Workflow di cassa<a class="headerlink" href="#pagamento-misto-workflow-di-cassa" title="Permanent link">¶</a></h3>
+<p>Al termine di una ordinaria transazione di vendita, dopo la pressione del tasto subtotale, viene premuto <strong>un tasto unico dedicato <code>Pagamento Satispay e BPE</code></strong> che innesca la richiesta di pagamento tramite terminale Argentea.</p>
+<p>Il terminale POS-EFT mostrerà il QR Code che il cliente scansionerà con l’app Satispay dal proprio smartphone, dal quale potrà confermare o rifiutare la richiesta di pagamento.</p>
+<p>Esempio di workflow standard di cassa:</p>
+<ol>
+<li>Effettuare la normale vendita degli articoli.  </li>
+<li>Premere il tasto sub-totale.  </li>
+<li>Premere il tasto <code>Pagamento Satispay</code> opportunamente configurato per lo scenario misto.  </li>
+<li>Sul terminale di pagamento EFT viene mostrato il QR Code.  </li>
+<li>Il cliente scansiona il QR Code con l’app Satispay.  </li>
+<li>A seguito dell’avvenuto pagamento viene chiusa la transazione ed emesso lo scontrino.  </li>
+<li>In caso di errori o rifiuto del pagamento viene mostrato un avviso che informa la cassiera, che potrà ritentare l’operazione o cambiare modalità di pagamento.</li>
+</ol>
+<p>In linea con le linee guida di User Experience del servizio Satispay, <strong>è prevista una singola transazione di pagamento unificata, che permette al cliente di pagare usando sia i Buoni pasto elettronici Satispay sia il credito Wallet Satispay.</strong></p>
+<div class="admonition danger">
+<p class="admonition-title">Pagare unicamente con i buoni pasto</p>
+<p><strong>Alla data del 07-03-2024 non è possibile forzare un pagamento usando solo ed esclusivamente i Buoni pasto elettronici, senza coinvolgere il Wallet.</strong>
+È possibile tuttavia adottare alcuni approcci per mitigare il problema ed ottenere il pagamento con i soli BPE. Consultare <a href="#possibili-strategie-di-mitigazione-per-pagare-unicamente-con-i-buoni-pasto-elettronici">questo paragrafo</a>.</p>
+</div>
+<h3 id="pagamento-misto-registrazioni-nel-log-di-vendita"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2</span> Pagamento misto - Registrazioni nel log di vendita<a class="headerlink" href="#pagamento-misto-registrazioni-nel-log-di-vendita" title="Permanent link">¶</a></h3>
+<p>Le informazioni dettagliate sul pagamento Satispay restituite da Argentea vengono memorizzate nel log di transazione di cassa, in modo analogo allo scenario Wallet puro.</p>
+<p>Il Record 03 conterrà:</p>
+<ul>
+<li>L’esatto ammontare pagato tramite Wallet Satispay.  </li>
+<li>L’identificativo univoco della transazione Argentea / Satispay.</li>
+</ul>
+<p>Al fine di garantire le quadrature del finanziario fiscale del punto vendita, viene generato un <strong>secondo Record 03</strong> dedicato esclusivamente ai Buoni pasto elettronici.</p>
+<p>Questo secondo Record 03 conterrà:</p>
+<ul>
+<li>L'esatto ammontare pagato tramite Buoni pasto Satispay.</li>
+<li>Il codice della tipologia di pagamento RT specifico per i Buoni pasto. <strong>Questo dettaglio non è presente in Posware <code>4.2</code>, dove sarà valorizzato sempre a 0</strong></li>
+<li>La quantità dei buoni pasto utilizzati. È possibile con questo valore ottenere il taglio del buono pasto.</li>
+</ul>
+<p>La somma degli ammontari dei due Record 03 coincide con il totale pagato dal cliente finale e può essere utilizzata per eventuali riconciliazioni con sistemi esterni Argentea.</p>
+<h3 id="pagamento-misto-corrispettivi-verso-registratore-telematico"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.3</span> Pagamento misto - Corrispettivi verso Registratore Telematico<a class="headerlink" href="#pagamento-misto-corrispettivi-verso-registratore-telematico" title="Permanent link">¶</a></h3>
+<p>La tipologia di pagamento RT utilizzata per notificare l’avvenuto pagamento al Registratore Telematico è configurabile tramite le normali tabelle di configurazione dei pagamenti di Posware, in base alle necessità del cliente.</p>
+<p>La tipologia di pagamento RT relativa all’ammontare Wallet utilizza il valore configurato nel pagamento ad esso dedicato, indicato tramite il codice di pagamento incrociato nella tabella di configurazione Posware <code>tabparametriextra</code>.</p>
+<p>In modalità predefinita, non vincolante, il pagamento misto Satispay risulta così registrato:</p>
+<ul>
+<li><code>Ticket Numerati</code> per l’ammontare Buoni pasto elettronici.  </li>
+<li><code>Pagamento Elettronico</code> per l’ammontare Wallet.</li>
+</ul>
+<h3 id="pagamento-misto-configurazione-del-pagamento-in-cassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.4</span> Pagamento misto - Configurazione del pagamento in cassa<a class="headerlink" href="#pagamento-misto-configurazione-del-pagamento-in-cassa" title="Permanent link">¶</a></h3>
+<p>Per i dettagli sulla configurazione del pagamento in cassa relativi allo scenario Wallet, fare riferimento al paragrafo <a href="#configurazione-dei-pagamenti-in-posware">Configurazione</a></p>
+<h3 id="pagamento-misto-ulteriori-vincoli-e-casistiche"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.5</span> Pagamento misto - Ulteriori vincoli e casistiche<a class="headerlink" href="#pagamento-misto-ulteriori-vincoli-e-casistiche" title="Permanent link">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Vincoli Pagamento misto BPE + Wallet</p>
+<ol>
+<li>L’uso delle formule per limitare l’ammontare del pagamento viene applicato ai soli Buoni pasto elettronici.  </li>
+<li>In caso di utilizzo di formule, non è permesso all’operatore imputare importi parziali per effettuare più pagamenti all’interno della stessa transazione; il pagamento copre sempre il residuo completo della transazione, mentre la formula limita solo l’ammontare pagabile con Buoni pasto elettronici.  </li>
+<li>In presenza di pagamento misto con formule, viene richiesto di pagare l’intera transazione con Satispay usando sia Buoni pasto elettronici sia credito Wallet; se il credito disponibile non è sufficiente, la transazione viene rifiutata.  </li>
+<li>Per limitare l’importo del pagamento Satispay è possibile pagare prima con un altro metodo di pagamento che accetta importi parziali, come il contante, e poi ritentare il pagamento Satispay sul residuo.  </li>
+<li>In assenza di formule di limitazione è possibile effettuare più transazioni di pagamento; gli importi pagabili con Buoni pasto elettronici e Wallet coincidono e il credito Buoni pasto ha sempre priorità rispetto al credito Wallet.  </li>
+<li>È permesso lo storno della transazione di pagamento all’interno della transazione tramite le operazioni di <code>Annulla Pagamenti</code> e <code>Annulla scontrino</code>; in caso di pagamenti parziali multipli verranno stornate tutte le transazioni.  </li>
+<li>Non è possibile stornare separatamente l’ammontare pagato con Wallet o con soli Buoni pasto; in caso di annullo, le transazioni di pagamento vengono sempre stornate per intero.  </li>
+</ol>
+</div>
+<hr/>
+<h2 id="possibili-strategie-di-mitigazione-per-pagare-unicamente-con-i-buoni-pasto-elettronici"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Possibili strategie di mitigazione per pagare unicamente con i Buoni Pasto elettronici<a class="headerlink" href="#possibili-strategie-di-mitigazione-per-pagare-unicamente-con-i-buoni-pasto-elettronici" title="Permanent link">¶</a></h2>
+<p>I provider BPE tradizionali permettono di consumare un numero di BPE il cui valore può essere inferiore all'ammontare richiesto dal Frontend, restituendo a loro volta quando incassato.</p>
+<p>Ad esempio:</p>
+<ul>
+<li>Si ha uno scontrino di 50€, con un pagabile BPE pari a 42€</li>
+<li>Posware invia la richiesta di pagamento al provider BPE per 42€</li>
+<li>Il provider può consumare al massimo 5 BPE da 8€ per un totale di 40€. Non può consumare 48€ in quanto supererebbe il valore da pagare richiesto che ha inviato Posware.</li>
+<li>Il provider restituisce a Posware 40€ (anzichè 42€) perchè è progettato per consumare il più possibile rispetto alla cifra richiesta</li>
+<li>Posware legge 40€ dal provider ed incassa</li>
+<li>L'operatore deve pagare la rimanenza con altro metodo di pagamento</li>
+</ul>
+<p><br/>
+<strong>Satispay</strong> prevede invece questo workflow:</p>
+<ul>
+<li>Si ha uno scontrino di 50€, con un pagabile BPE pari a 42€</li>
+<li>Posware invia la richiesta di pagamento a Satispay per 50€ e, con i BPE abilitati, pagabile BPE pari a 42€</li>
+<li>Satispay può consumare al massimo 5 BPE da 8€ per un totale di 40€. Non può consumare 48€ in quanto supererebbe il valore da pagare richiesto che ha inviato Posware.</li>
 <li>
-<p><strong>Argentea Satispay:</strong></p>
+<p>A questo punto possono avvenire due condizioni:</p>
+<ol>
+<li>Se il cliente ha i rimanenti 10€ nel Wallet (credito ordinario), Satispay restituisce a Posware 40€ di BPE e 10€ di Wallet. Posware registra i rispettivi pagamenti e l'operatore deve pagare la rimanenza con altro metodo di pagamento<br/></li>
+<li>Se il cliente <strong>NON HA</strong> i rimanenti 10€ nel Wallet (credito ordinario), <strong>Satispay <mark>fallisce</mark> il pagamento</strong></li>
+</ol>
+</li>
+</ul>
+<h3 id="come-pagare-unicamente-con-i-buoni-pasto"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.1</span> Come pagare unicamente con i buoni pasto<a class="headerlink" href="#come-pagare-unicamente-con-i-buoni-pasto" title="Permanent link">¶</a></h3>
+<p>È possibile avere pagamenti multipli di Satispay nella stessa transazione.<br/>
+L'operatore di cassa può sfruttare i pagamenti parziali per ottenere un pagamento con soli buoni pasto.<br/></p>
+<p>Si procede come segue:</p>
+<ol>
+<li>Si digita l'importo da pagare in Buoni Pasto. Questo può essere ottenuto:<ul>
+<li>Dietro richiesta al cliente stesso che può consultare il saldo sull'app</li>
+<li>Vedere il massimo pagabile per il pagamento BPE Satispay che avete configurato, usando la funzione <code>Visualizza pagamenti</code>. La cifra si deve <strong>arrotondare per difetto al taglio dei buoni pasto del cliente</strong>, ad esempio:<ul>
+<li>Se il cliente ha 5 BPE da 8€ (48€ di BPE disponibili) e la cassa può pagarne 42€ (massimo pagabile), l'operatore digiterà 40€</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Dopo aver imputato l'importo massimo, si preme Pagamento Satispay</li>
+<li>L'importo viene passato a Satispay che a questo punto incasserà interamente usando solo i BPE</li>
+<li>Il resto dell'ammontare potrà essere ancora pagato con Satispay Wallet o con un altro metodo di pagamento.</li>
+</ol>
+<hr/>
+<h2 id="configurazione-dei-pagamenti-in-posware"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Configurazione dei pagamenti in Posware<a class="headerlink" href="#configurazione-dei-pagamenti-in-posware" title="Permanent link">¶</a></h2>
+<p>Per l’integrazione dei pagamenti Argentea / Satispay è necessario configurare sempre due pagamenti distinti in Posware:</p>
+<ul>
+<li>Un pagamento dedicato all’utilizzo dello scenario con solo Wallet Satispay.  </li>
+<li>Un pagamento dedicato allo scenario di pagamento misto Buoni pasto elettronici e Wallet.</li>
+</ul>
+<p>Entrambi i pagamenti avranno configurazioni dedicate al fine di:</p>
+<ul>
+<li>Associare la corretta tipologia di pagamento RT.  </li>
+<li>Assegnare ciascun pagamento ad un pulsante dedicato nella grafica di cassa.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Il pulsante che richiama il pagamento è sempre unico</p>
+<p>I pagamenti da configurare sono differenti al fine di distinguere a livello fiscale le forme di pagamento.<br/>
+In grafica è sempre e solo necessario inserire un unico pulsante "Pagamento Satispay".<br/>
+<strong>Non inserire un pulsante dedicato unicamente ai Buoni Pasto Satispay</strong></p>
+</div>
+<p>Questa modalità di configurazione consente di specificare il tipo di pagamento RT da usare in base alle forme di pagamento ricevute da Satispay.</p>
+<h3 id="configurazione-nelle-tabelle"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.1</span> Configurazione nelle tabelle<a class="headerlink" href="#configurazione-nelle-tabelle" title="Permanent link">¶</a></h3>
+<p>Per abilitare <strong>Argentea Satispay</strong> come metodo di pagamento, è necessario aggiornare le seguenti tabelle:</p>
+<h4 id="tabella-tipi_pagamenti-sia-databasecassa-che-posware-sul-server-di-barriera"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.1.1</span> Tabella <code>tipi_pagamenti</code> (sia database<code>cassa</code> che <code>posware</code> sul server di barriera)<a class="headerlink" href="#tabella-tipi_pagamenti-sia-databasecassa-che-posware-sul-server-di-barriera" title="Permanent link">¶</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Pulsante per richiamare il pagamento</label><label for="__tabbed_1_2">Pulsante per la configurazione dei ticket</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <ul>
 <li><code>codice</code>: valore intero univoco non utilizzato da altri metodi di pagamento</li>
 <li><code>descrizione</code>: <em>"Argentea Satispay"</em> o descrizione equivalente</li>
 <li><code>PagTipo</code>: 11</li>
 <li><code>tipoPagRT</code>: 1</li>
 </ul>
-</li>
-<li>
-<p><strong>Ticket numerati:</strong></p>
+</div>
+<div class="tabbed-block">
 <ul>
 <li><code>codice</code>: valore intero univoco non utilizzato da altri metodi di pagamento</li>
-<li><code>descrizione</code>: <em>"TicketCounter"</em> o descrizione equivalente</li>
+<li><code>descrizione</code>: <em>"BPE Satispay"</em> o descrizione equivalente</li>
 <li><code>ticket</code>: "SI"</li>
 <li><code>obbligatorio</code>: <strong>true</strong></li>
 <li><code>tipoPagRT</code>: 4</li>
 </ul>
-</li>
-</ul>
-<h4 id="tabella-tabparametriextra-databasecassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.0.2</span> Tabella <code>tabparametriextra</code> (database<code>cassa</code>)<a class="headerlink" href="#tabella-tabparametriextra-databasecassa" title="Permanent link">¶</a></h4>
+</div>
+</div>
+</input></input></div>
+<h4 id="tabella-tabparametriextra-databasecassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.1.2</span> Tabella <code>tabparametriextra</code> (database<code>cassa</code>)<a class="headerlink" href="#tabella-tabparametriextra-databasecassa" title="Permanent link">¶</a></h4>
 <table>
 <thead>
 <tr>
 <th>Modulo</th>
 <th>Parametro</th>
 <th>Valore</th>
+<th>Note</th>
 </tr>
 </thead>
 <tbody>
@@ -914,45 +1281,42 @@ Non stai visualizzando l'ultima versione della documentazione.
 <td>EPPLIB</td>
 <td>PROTOCOLLO</td>
 <td>AR</td>
+<td></td>
 </tr>
 <tr>
 <td>EPPLIB</td>
 <td>satispayBpeEnabled</td>
-<td>1</td>
+<td>0/1</td>
+<td>Default ad <code>1</code>. Se impostato a zero, i buoni pasto non vengono abilitati</td>
 </tr>
 <tr>
 <td>EPPLIB</td>
 <td>satispayBpeMaxNumber</td>
-<td>8</td>
+<td>da 1 ad 8</td>
+<td></td>
 </tr>
 <tr>
 <td>EPPLIB</td>
 <td>satispayBpePaymentCode</td>
 <td><em>Codice del tipo di pagamento "Ticket numerati"</em></td>
+<td></td>
 </tr>
 <tr>
 <td>EPPLIB</td>
 <td>satispayDummyType</td>
-<td>0</td>
+<td>0/1</td>
+<td>Default a 0. È possibile impostarlo ad 1 per abilitare la modalità simulazione</td>
 </tr>
 </tbody>
 </table>
-<h4 id="interfaccia-utente-della-cassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.0.3</span> Interfaccia Utente della cassa<a class="headerlink" href="#interfaccia-utente-della-cassa" title="Permanent link">¶</a></h4>
-<p>Aggiungere un pulsante alla grafica di Posware ed agganciarci il pagamento <strong>Argentea Satispay</strong>.</p>
-<h2 id="workflow-di-utilizzo"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Workflow di Utilizzo<a class="headerlink" href="#workflow-di-utilizzo" title="Permanent link">¶</a></h2>
-<ol>
-<li>Premere il tasto <strong>SUBTOTALE</strong> sulla cassa</li>
-<li>Inserire l'importo da pagare con <strong>Argentea Satispay</strong></li>
-<li>Selezionare il pulsante dedicato ad <strong>Argentea Satispay</strong></li>
-<li>Sul display del POS apparirà un QR Code</li>
-<li>Il cliente scansionerà il QR Code utilizzando l'app di Satispay per completare il pagamento</li>
-</ol>
+<h3 id="interfaccia-utente-della-cassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.2</span> Interfaccia utente della cassa<a class="headerlink" href="#interfaccia-utente-della-cassa" title="Permanent link">¶</a></h3>
+<p>Aggiungere un unico pulsante alla grafica di Posware ed agganciarci il pagamento <strong>Argentea Satispay</strong>.</p>
 <aside class="md-source-file">
 <span class="md-source-file__fact">
 <span class="md-icon" title="Ultimo aggiornamento">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 novembre 2025 15:57:07 UTC">18 novembre 2025</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 novembre 2025 16:39:22 UTC">19 novembre 2025</span>
 </span>
 </aside>
 </article>
