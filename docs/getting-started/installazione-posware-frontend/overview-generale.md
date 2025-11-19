@@ -74,41 +74,16 @@ Si prega di consultare attentamente le note varie sulle dipendenze di terze part
     - **Porte di comunicazione messenger:** 6855 e 6856
 
 ### Prassi comuni
+
 !!! warning "Firewall di Windows sui terminali casse"
     **È assolutamente necessario disattivare il firewall di Windows sui terminali casse.**
 
-## Breaking changes
-Vengono elencati di seguito i diversi **breaking changes** introdotti in *Posware Frontend* a partire dalla versione :material-tag:`4.3` dell'applicativo:
+## Breaking changes, feature rimosse e deprecate
 
-- Nel record **01** , il barcode di un prodotto viene ora riportato unicamente con gli spazi vuoti (formato denominato **Barcode No Food** nella :material-tag:`4.2`). Non è più possibile usare il formato numerico. **Barcode No Food** è da considerarsi nuovo standard.
-- Per il motivo appena elencato, l'impostazione **Barcode No Food** nella tabella `config_cassa` viene meno (come se fosse sempre impostata ad **1**).
-- A partire dalla versione :material-tag:`4.3`, i file di configurazione di Posware, delle *Connection strings* e delle impostazioni utente sono stati riportati allo standard .NET rimuovendo l'approccio custom. Per maggiori informazioni consultare la relativa [sezione](./setup-posware.md#aggiornamento-dei-file-di-configurazione) del *SetupPosware*.
-
-!!! warning "Nuova versione di MySQL richiesta nelle nuove installazioni"
-    A partire dalla versione :material-tag:`4.3`, le nuove installazioni che **non migrano** dalla :material-tag:`4.2`, dovranno usare **MySQL** :material-tag:**`5.6`**. 
-
-!!! warning "Nuova configurazione per le stampanti simulate"
-    A partire dalla versione :material-tag:`4.3`, in caso sia necessario configurare una stampante simulata per eseguire delle prove, il campo `tipo_fiscalprinter` della tabella `config_cassa` deve essere impostato pari a "**DUMMY**" invece di "**WINCOR**", il valore che era utilizzato in precedenza per tale scopo.
-
-## Feature rimosse in Posware :material-tag:`4.3`
-Nell'elenco sottostante vengono illustrate tutte le **feature di *Posware Frontend* che sono state rimosse** a partire dalla versione :material-tag:`4.3` dell'applicativo:
-
-- Supporto alle stampanti IBM (RFImbopos e le sue dipendenze)
-- Supporto alle stampanti NCR vecchie MF FASY, RealPrint e RealPOS
-- Supporto alle stampanti Wincor TH230 e vecchie Wincor MF
-- Supporto ai Controlli OCX e sue dipendenze che venivano usate per mostrare la telecamera. Tali tecnologie risalenti a Windows XP non sono più supportate a partire da Windows Vista.
-- Il vecchio interfacciamento WinEPTS :material-tag:`2.x` è stato rimosso e sostituito con un nuovo interfacciamento.
-
-## Feature deprecate che verranno rimosse in Posware :material-tag:`4.4`
-Le seguenti **feature di *Posware Frontend* sono deprecate** a partire dalla versione :material-tag:`4.3` dell'applicativo e verranno quindi poi rimosse in Posware :material-tag:`4.4`:
-
-- Gestione commissione di vendita
-- Supporto alla reportistica legacy (Crystal Report, Microsoft Report)
-- Nota di credito di Posware :material-tag:`4.2` e relative customizzazioni
-- Integrazione Satispay Wally (:material-tag:`4.2`), sostituita dalla nuova integrazione nativa REST
-- Integrazione di GetYourBill
+L'elenco può essere consultato a [questo documento](../../posware/breaking-changes.md).
 
 ## Installazione e aggiornamenti
+
 Sono previsti questi due applicativi per le procedure di installazione e di aggiornamento di *Posware Frontend*:
 
 - [SetupPosware](./setup-posware.md)

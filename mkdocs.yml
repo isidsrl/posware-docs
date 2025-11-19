@@ -84,6 +84,7 @@ nav:
     - Approfondimenti Posware: 
       - Tabella riferimento .NET: posware/dot-net-table-reference.md
       - Known issues v4.2: posware/known-issues-42.md
+      - Breaking changes: posware/breaking-changes.md
   - Feature e moduli:
     - Panoramica: posware-modules/index.md
     - StoreServer:
