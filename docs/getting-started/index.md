@@ -230,7 +230,7 @@ Durante la migrazione ibrida:
 - Le casse 4.2 **non possono associarsi allo StoreServer** e continueranno a trasmettere ai servizi legacy
 - È necessario mantenere attivo il sistema di **barriera legacy** per le casse 4.2
 - Le statistiche dello StoreServer non mostreranno i dati delle casse 4.2.
-- **Per continua a consultare i dati di vendita delle casse 4.2, utilizzare Pos_Insta**
+- **Per continuare a consultare i dati di vendita delle casse 4.2, utilizzare Pos_Insta**
 
 ---
 
@@ -311,4 +311,4 @@ Se durante il processo di installazione riscontrate difficoltà:
 
 ---
 
-*Ultima modifica: {git-revision-date-localized}*
+*Ultima modifica: {{ git_revision_date_localized }}*

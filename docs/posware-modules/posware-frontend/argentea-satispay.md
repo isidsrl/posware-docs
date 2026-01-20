@@ -23,9 +23,10 @@ La soluzione di pagamento Satispay / Argentea AMONEYSMART prevede esclusivamente
 
 - Pagamento su Satispay Wallet – conto prepagato Satispay.  
 - Pagamento Satispay via Buoni pasto elettronici, utilizzati **in modalità mista con il Wallet.**
+- Pagamento Satispay via Buoni acquisto (Satispay Welfare), utilizzati **in alternativa ai precedenti.**
 
 !!! warning "Non è possibile pagare unicamente con i buoni pasto"
-    Come da specifiche Satispay / Argentea alla data del 07/03/2024, è esplicitamente **esclusa la possibilità di pagare solo ed unicamente con i Buoni pasto elettronici.**
+    Come da specifiche Satispay / Argentea alla data del 17/07/2024, è esplicitamente **esclusa la possibilità di pagare solo ed unicamente con i Buoni pasto elettronici.**
     È possibile tuttavia adottare alcuni approcci per mitigare il problema ed ottenere il pagamento con i soli BPE. Consultare [questo paragrafo](#possibili-strategie-di-mitigazione-per-pagare-unicamente-con-i-buoni-pasto-elettronici).
 
 Posware garantisce inoltre i seguenti requisiti funzionali:
@@ -40,9 +41,13 @@ L’uso di Satispay tramite Argentea AMONEYSMART prevede che il QR Code venga mo
 
 ### Versioni software e dipendenze di terze parti
 
-L'integrazione fa riferimento alla documentazione Argentea del **07/03/2024** `rev. 3.89`.<br>
-L'integrazione fa riferimento ai driver Argentea `v4.2.0.1`.<br>
+L'integrazione fa riferimento alla documentazione Argentea del **17/07/2024** `rev. 3.91`.<br>
+L'integrazione fa riferimento ai driver Argentea `v4.2.1.0`.<br>
 **Eventuali successivi aggiornamenti non sono supportati da questo modulo.**
+
+!!! danger "Breaking change versione minima driver Argentea"
+    Questa integrazione fa riferimento ai driver Argentea `v4.2.1.0`.<br>
+    **Quest'ultima è la versione minima necessaria al funzionamento dell'integrazione. Eventuali versioni precedenti non sono supportate da questo modulo.**
 
 ---
 
@@ -108,7 +113,7 @@ In questo caso il pagamento avviene in un’unica transazione che combina i due 
 
 ### Pagamento misto - Workflow di cassa
 
-Al termine di una ordinaria transazione di vendita, dopo la pressione del tasto subtotale, viene premuto **un tasto unico dedicato `Pagamento Satispay e BPE`** che innesca la richiesta di pagamento tramite terminale Argentea.
+Al termine di una ordinaria transazione di vendita, dopo la pressione del tasto subtotale, viene premuto **un tasto unico dedicato `Pagamento Satispay`** che innesca la richiesta di pagamento tramite terminale Argentea.
 
 Il terminale POS-EFT mostrerà il QR Code che il cliente scansionerà con l’app Satispay dal proprio smartphone, dal quale potrà confermare o rifiutare la richiesta di pagamento.
 
@@ -125,7 +130,7 @@ Esempio di workflow standard di cassa:
 In linea con le linee guida di User Experience del servizio Satispay, **è prevista una singola transazione di pagamento unificata, che permette al cliente di pagare usando sia i Buoni pasto elettronici Satispay sia il credito Wallet Satispay.**
 
 !!! danger "Pagare unicamente con i buoni pasto"
-    **Alla data del 07-03-2024 non è possibile forzare un pagamento usando solo ed esclusivamente i Buoni pasto elettronici, senza coinvolgere il Wallet.**
+    **Alla data del 17-07-2024 non è possibile forzare un pagamento usando solo ed esclusivamente i Buoni pasto elettronici, senza coinvolgere il Wallet.**
     È possibile tuttavia adottare alcuni approcci per mitigare il problema ed ottenere il pagamento con i soli BPE. Consultare [questo paragrafo](#possibili-strategie-di-mitigazione-per-pagare-unicamente-con-i-buoni-pasto-elettronici).
 
 ### Pagamento misto - Registrazioni nel log di vendita
@@ -216,22 +221,88 @@ Si procede come segue:
 
 ---
 
+## Pagamento con Buoni acquisto (Satispay Welfare)
+
+Lo scopo di questa funzione è permettere al cliente finale di pagare tramite l'app Satispay installata sullo smartphone, utilizzando unicamente i Buoni acquisto del proprio portafoglio digitale.
+
+In questo scenario non vengono utilizzati né i Buoni pasto elettronici né il conto prepagato del Wallet, ma soltanto i Buoni acquisto Satispay.
+
+### Pagamento con Buoni acquisto (Satispay Welfare) - Workflow di cassa
+
+Al termine di una ordinaria transazione di vendita, a seguito della pressione del tasto subtotale, l’operatore preme un **tasto unico dedicato `Pagamento Satispay`** che innesca la richiesta di pagamento tramite terminale Argentea.
+
+Il terminale POS-EFT mostrerà il QR Code che il cliente dovrà scansionare usando l’app Satispay dal proprio smartphone, dal quale potrà confermare o rifiutare la richiesta di pagamento.
+
+Esempio di workflow standard di cassa:
+
+1. Effettuare la normale vendita degli articoli.  
+2. Premere il tasto sub-totale.  
+3. Premere il tasto `Pagamento Satispay` opportunamente configurato.  
+4. Sul terminale di pagamento EFT viene mostrato il QR Code.  
+5. Il cliente scansiona il QR Code con l’app Satispay.  
+6. A seguito dell’avvenuto pagamento viene chiusa la transazione ed emesso lo scontrino.  
+7. In caso di errori o rifiuto del pagamento viene mostrato un avviso che informa la cassiera, la quale può ritentare l’operazione o cambiare modalità di pagamento per chiudere la transazione.
+
+Come previsto dalle linee guida di User Experience del servizio Satispay, in questo scenario vengono utilizzati esclusivamente i Buoni acquisto.
+
+!!! danger "Uso delle formule con i Buoni acquisto Satispay"
+    **Alla data del 17-07-2024 non è possibile applicare ai Buoni acquisto Satispay un limite all'ammontare del pagamento tramite l'uso delle formule a causa dei limiti attuali di Argentea.**
+
+### Pagamento con Buoni acquisto (Satispay Welfare) - Registrazioni nel log di vendita
+
+Le informazioni dettagliate sul pagamento Satispay restituite da Argentea vengono memorizzate nel log di transazione di cassa, in modo analogo allo scenario Wallet puro.
+
+In particolare, il Record 03 conterrà:
+
+- L’esatto ammontare pagato tramite Buoni acquisto Satispay.  
+- L’identificativo univoco della transazione Argentea / Satispay.
+- Il codice della tipologia di pagamento RT specifico per i buoni acquisto. **Questo dettaglio non è presente in Posware `4.2`, dove sarà valorizzato sempre a 0.**
+
+Queste informazioni sono utilizzabili per la riconciliazione e la quadratura finanziaria.
+
+!!! warning "Nota sul numero dei Buoni acquisto utilizzati"
+    A differenza dei Buoni pasto elettronici, i Buoni acquisto Satispay non hanno un taglio predefinito: il valore del buono coincide esattamente con l'importo utilizzato.
+
+    Di conseguenza, nel **Record 03** non viene riportata una quantità variabile. Ogni Record 03 relativo ai Buoni acquisto corrisponde **sempre e univocamente a un singolo buono.**
+
+### Pagamento con Buoni acquisto (Satispay Welfare) - Corrispettivi verso Registratore Telematico
+
+La tipologia di pagamento RT utilizzata per notificare l’avvenuto pagamento al Registratore Telematico è configurabile tramite le normali tabelle di configurazione dei pagamenti di Posware, in base alle necessità del cliente.
+
+La tipologia di pagamento RT relativa ai Buoni acquisto Satispay utilizza il valore configurato nel pagamento ad esso dedicato, indicato tramite il codice di pagamento incrociato nella tabella di configurazione Posware `tabparametriextra`.
+
+In modalità predefinita, non vincolante, il pagamento via Buoni acquisto Satispay viene registrato come `Pagamento Elettronico`.
+
+### Pagamento con Buoni acquisto (Satispay Welfare) - Configurazione del pagamento in cassa
+
+Per i dettagli sulla configurazione del pagamento in cassa relativi a questo scenario, fare riferimento al paragrafo [Configurazione](#configurazione-dei-pagamenti-in-posware)
+
+### Pagamento con Buoni acquisto (Satispay Welfare) - Ulteriori vincoli e casistiche
+
+!!! warning "Vincoli Pagamento Satispay Welfare"
+    1. Non è permesso l’uso delle formule per limitare l’ammontare del pagamento.  
+    2. È permesso all’operatore imputare importi parziali da pagare per effettuare più pagamenti all’interno della stessa transazione.  
+    3. È permesso lo storno della transazione di pagamento all’interno della transazione tramite le operazioni di `Annulla Pagamenti` e `Annulla scontrino`; in caso di pagamenti parziali multipli verranno stornati tutti.
+
+---
+
 ## Configurazione dei pagamenti in Posware
 
-Per l’integrazione dei pagamenti Argentea / Satispay è necessario configurare sempre due pagamenti distinti in Posware:
+Per l’integrazione dei pagamenti Argentea / Satispay è necessario configurare sempre tre pagamenti distinti in Posware:
 
-- Un pagamento dedicato all’utilizzo dello scenario con solo Wallet Satispay.  
+- Un pagamento dedicato all’utilizzo nello scenario con solo Wallet Satispay.  
 - Un pagamento dedicato allo scenario di pagamento misto Buoni pasto elettronici e Wallet.
+- Un pagamento dedicato all'utilizzo nello scenario con soltanto i Buoni acquisto Satispay.
 
-Entrambi i pagamenti avranno configurazioni dedicate al fine di:
+Tutti i pagamenti avranno configurazioni dedicate al fine di:
 
 - Associare la corretta tipologia di pagamento RT.  
-- Assegnare ciascun pagamento ad un pulsante dedicato nella grafica di cassa.
+- Assegnare ciascun pagamento al pulsante dedicato nella grafica di cassa.
 
 !!! warning "Il pulsante che richiama il pagamento è sempre unico"
     I pagamenti da configurare sono differenti al fine di distinguere a livello fiscale le forme di pagamento.<br>
     In grafica è sempre e solo necessario inserire un unico pulsante "Pagamento Satispay".<br>
-    **Non inserire un pulsante dedicato unicamente ai Buoni Pasto Satispay**
+    **Non inserire un pulsante dedicato unicamente ai Buoni Pasto Satispay né uno specifico soltanto per i Buoni acquisto Satispay.**
 
 Questa modalità di configurazione consente di specificare il tipo di pagamento RT da usare in base alle forme di pagamento ricevute da Satispay.
 
@@ -241,20 +312,26 @@ Per abilitare **Argentea Satispay** come metodo di pagamento, è necessario aggi
 
 #### Tabella `tipi_pagamenti` (sia database`cassa` che `posware` sul server di barriera)
 
-=== "Pulsante per richiamare il pagamento"
+=== "Configurazione Satispay Wallet"
 
     - `codice`: valore intero univoco non utilizzato da altri metodi di pagamento
     - `descrizione`: *"Argentea Satispay"* o descrizione equivalente
     - `PagTipo`: 11
     - `tipoPagRT`: 1
 
-=== "Pulsante per la configurazione dei ticket"
+=== "Configurazione Buoni Pasto Satispay"
 
     - `codice`: valore intero univoco non utilizzato da altri metodi di pagamento
     - `descrizione`: *"BPE Satispay"* o descrizione equivalente
     - `ticket`: "SI"
     - `obbligatorio`: **true**
     - `tipoPagRT`: 4
+
+=== "Configurazione Buoni acquisto Satispay"
+
+    - `codice`: valore intero univoco non utilizzato da altri metodi di pagamento
+    - `descrizione`: *"Welfare Satispay"* o descrizione equivalente
+    - `tipoPagRT`: 1
 
 #### Tabella `tabparametriextra` (database`cassa`)
 
@@ -263,8 +340,15 @@ Per abilitare **Argentea Satispay** come metodo di pagamento, è necessario aggi
 |EPPLIB|PROTOCOLLO|AR||
 |EPPLIB|satispayBpeEnabled|0/1|Default ad `1`. Se impostato a zero, i buoni pasto non vengono abilitati|
 |EPPLIB|satispayBpeMaxNumber|da 1 ad 8||
-|EPPLIB|satispayBpePaymentCode|*Codice del tipo di pagamento "Ticket numerati"*||
+|EPPLIB|satispayBpePaymentCode|*Codice del tipo di pagamento "BPE Satispay"*||
+|EPPLIB|satispayFringeBenefitEnabled|0/1|Default ad `1`. Se impostato a zero, i buoni acquisto non vengono abilitati|
+|EPPLIB|satispayFringeBenefitCode|*Codice del tipo di pagamento "Welfare Satispay"*||
 |EPPLIB|satispayDummyType|0/1|Default a 0. È possibile impostarlo ad 1 per abilitare la modalità simulazione|
+
+!!! warning "Configurazione parametro *satispayFringeBenefitEnabled*"
+    Il parametro ***satispayFringeBenefitEnabled*** è attivo di default (valore **1**).
+
+    Se il punto vendita non gestisce i Buoni acquisto Satispay (Satispay Welfare), **è obbligatorio impostare il valore a 0** per il corretto funzionamento dei pagamenti tramite Argentea Satispay.
 
 ### Interfaccia utente della cassa
 
