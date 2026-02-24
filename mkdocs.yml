@@ -94,6 +94,7 @@ nav:
       - Fatturazione elettronica: posware-modules/main-module/fatturazione-elettronica.md
     - Posware Frontend:
       - Log Transazione Posware: posware-modules/posware-frontend/tracciato-record-log.md
+      - Satispay nativo: posware-modules/posware-frontend/satispay-nativo.md
       - Argentea Satispay: posware-modules/posware-frontend/argentea-satispay.md
       - Funzionalità RT 2.0 (XML7): posware/funzionalita-rt-20.md
       - Pin dispatching: posware/funzionalita-pin-dispatching.md
