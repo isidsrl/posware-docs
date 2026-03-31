@@ -88,6 +88,8 @@ nav:
   - Feature e moduli:
     - Panoramica: posware-modules/index.md
     - StoreServer:
+      - Autenticazione: posware-modules/authentication.md
+      - Ruoli e permessi: posware-modules/ruoli-permessi.md
       - Funzionalità di base:
         - Statistiche dettagliate: posware-modules/main-module/statistiche-dettagliate.md
       - Posware Price Checker: posware-modules/main-module/posware-price-checker.md
