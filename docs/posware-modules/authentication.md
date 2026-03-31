@@ -333,4 +333,15 @@ Parametri configurabili in `appsettings.json`:
 | `Jwt:REFRESH_TOKEN_EXPIRATION_DAYS` | `7` | Durata in giorni del refresh token |
 | `AuditLog:Enabled` | `false` | Abilita la registrazione del log di audit |
 
-> **Attenzione:** modificare la password dell'amministratore di default immediatamente dopo la prima configurazione del sistema.
+### Account di default
+
+Al primo avvio, il sistema crea automaticamente tre account predefiniti se non esistono:
+
+| Account | Email | Password di default | Ruolo |
+|---|---|---|---|
+| Amministratore di sistema | `admin@posware.store` | `Vbhg4132!` | SystemAdmin |
+| Supporto tecnico | `support@posware.store` | `Support4132!` | Technician |
+| Direttore punto vendita | `manager@posware.store` | `Manager1!` | StoreManager |
+
+!!! warning "Modificare le credenziali di default"
+    Cambiare email e password dell'account "Direttore punto vendita" immediatamente dopo la prima installazione del sistema. La password di default è nota e rappresenta un rischio di sicurezza se lasciata invariata.
