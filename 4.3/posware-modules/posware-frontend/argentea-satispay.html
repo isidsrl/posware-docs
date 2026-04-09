@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://posware.io/4.3/posware-modules/posware-frontend/argentea-satispay.html" rel="canonical"/>
-<link href="tracciato-record-log.html" rel="prev"/>
+<link href="satispay-nativo.html" rel="prev"/>
 <link href="../../posware/funzionalita-rt-20.html" rel="next"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
@@ -687,6 +687,18 @@ Non stai visualizzando l'ultima versione della documentazione.
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="satispay-nativo.html">
+<span class="md-ellipsis">
+    
+  
+    Satispay nativo
+  
+
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -1131,7 +1143,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </nav>
 <h1 id="posware-frontend-satispay-via-argentea-amoneysmart"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Posware Frontend - Satispay via Argentea AMONEYSMART<a class="headerlink" href="#posware-frontend-satispay-via-argentea-amoneysmart" title="Permanent link">¶</a></h1>
 <p><strong>Prima revisione documento: 9 maggio 2025</strong> <br/>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="31 marzo 2026 14:10:46 UTC">31 marzo 2026</span></strong></p>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 aprile 2026 15:01:41 UTC">9 aprile 2026</span></strong></p>
 <hr/>
 <h2 id="cenni-preliminari"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Cenni preliminari<a class="headerlink" href="#cenni-preliminari" title="Permanent link">¶</a></h2>
 <p>Il presente documento descrive come configurare <strong>Posware</strong> per accettare pagamenti tramite <strong>Satispay</strong>, utilizzando il modulo <strong>Argentea Satispay</strong>. </p>
@@ -1254,7 +1266,7 @@ L'integrazione fa riferimento ai driver Argentea <code>v4.2.1.0</code>.<br/>
 <li><code>Pagamento Elettronico</code> per l’ammontare Wallet.</li>
 </ul>
 <h3 id="pagamento-misto-configurazione-del-pagamento-in-cassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.4</span> Pagamento misto - Configurazione del pagamento in cassa<a class="headerlink" href="#pagamento-misto-configurazione-del-pagamento-in-cassa" title="Permanent link">¶</a></h3>
-<p>Per i dettagli sulla configurazione del pagamento in cassa relativi allo scenario Wallet, fare riferimento al paragrafo <a href="#configurazione-dei-pagamenti-in-posware">Configurazione</a></p>
+<p>Per i dettagli sulla configurazione del pagamento in cassa relativi allo scenario misto, fare riferimento al paragrafo <a href="#configurazione-dei-pagamenti-in-posware">Configurazione</a></p>
 <h3 id="pagamento-misto-ulteriori-vincoli-e-casistiche"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.5</span> Pagamento misto - Ulteriori vincoli e casistiche<a class="headerlink" href="#pagamento-misto-ulteriori-vincoli-e-casistiche" title="Permanent link">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Vincoli Pagamento misto BPE + Wallet</p>
@@ -1434,7 +1446,7 @@ In grafica è sempre e solo necessario inserire un unico pulsante "Pagamento Sat
 <td>EPPLIB</td>
 <td>satispayBpeEnabled</td>
 <td>True/False</td>
-<td>Default a <code>True</code>. Se impostato a False, i buoni pasto non vengono abilitati</td>
+<td>Default a <code>True</code>. Se impostato a <code>False</code>, i buoni pasto non vengono abilitati</td>
 </tr>
 <tr>
 <td>EPPLIB</td>
@@ -1452,7 +1464,7 @@ In grafica è sempre e solo necessario inserire un unico pulsante "Pagamento Sat
 <td>EPPLIB</td>
 <td>satispayFringeBenefitEnabled</td>
 <td>True/False</td>
-<td>Default ad <code>True</code>. Se impostato a False, i buoni acquisto non vengono abilitati</td>
+<td>Default a <code>True</code>. Se impostato a <code>False</code>, i buoni acquisto non vengono abilitati</td>
 </tr>
 <tr>
 <td>EPPLIB</td>
@@ -1470,8 +1482,8 @@ In grafica è sempre e solo necessario inserire un unico pulsante "Pagamento Sat
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Configurazione parametro <em>satispayFringeBenefitEnabled</em></p>
-<p>Il parametro <strong><em>satispayFringeBenefitEnabled</em></strong> è attivo di default (valore <strong>True</strong>).</p>
-<p>Se il punto vendita non gestisce i Buoni acquisto Satispay (Satispay Welfare), <strong>è obbligatorio impostare il valore a False</strong> per il corretto funzionamento dei pagamenti tramite Argentea Satispay.</p>
+<p>Il parametro <strong><em>satispayFringeBenefitEnabled</em></strong> è attivo di default (valore <strong><code>True</code></strong>).</p>
+<p>Se il punto vendita non gestisce i Buoni acquisto Satispay (Satispay Welfare), <strong>è obbligatorio impostare il valore a <code>False</code></strong> per il corretto funzionamento dei pagamenti tramite Argentea Satispay.</p>
 </div>
 <h3 id="interfaccia-utente-della-cassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7.2</span> Interfaccia utente della cassa<a class="headerlink" href="#interfaccia-utente-della-cassa" title="Permanent link">¶</a></h3>
 <p>Aggiungere un unico pulsante alla grafica di Posware ed agganciarci il pagamento <strong>Argentea Satispay</strong>.</p>
@@ -1480,7 +1492,7 @@ In grafica è sempre e solo necessario inserire un unico pulsante "Pagamento Sat
 <span class="md-icon" title="Ultimo aggiornamento">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="31 marzo 2026 14:10:46 UTC">31 marzo 2026</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 aprile 2026 15:01:41 UTC">9 aprile 2026</span>
 </span>
 </aside>
 </article>
