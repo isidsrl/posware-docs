@@ -8,14 +8,10 @@ Questo documento descrive le modalità di autenticazione, gestione della session
 
 StoreServer utilizza un sistema di autenticazione locale basato su **email e password** con credenziali memorizzate nel database interno.
 
-La sessione è gestita tramite **token JWT**:
+Un utente autenticato, ha una sessione valida per tutto il tempo che l'utente opera sull'applicazione.
+In caso di inutilizzo, la sessione viene rinnovata automaticamente entro 7 giorni. In caso di tempo più lungo, l'utente dovrà loggarsi nuovamente
 
-- **Access token** — valido 15 minuti, inviato nell'header `Authorization`
-- **Refresh token** — valido 7 giorni, memorizzato in cookie `httpOnly` con rotazione automatica
-
-È disponibile l'autenticazione a **due fattori (2FA)** tramite app TOTP (Google Authenticator, Microsoft Authenticator, ecc.).
-
-> **Modalità future (non ancora attive):** SSO/OIDC e social login sono previste in roadmap ma non disponibili nella versione corrente.
+È anche disponibile l'autenticazione a **due fattori (2FA)** tramite app TOTP (Google Authenticator, Microsoft Authenticator, ecc.).
 
 ---
 
@@ -23,7 +19,10 @@ La sessione è gestita tramite **token JWT**:
 
 ### URL di accesso
 
-L'applicazione è raggiungibile sulla porta **6851**. Il form di login si trova alla radice dell'applicazione.
+Qualore l'utente non fosse loggato, l'applicazione lo reindirizzerà automaticamente alla form di login.
+
+Per il primo accesso è possibile inserire delle credenziali di default che sono direttamente visibili nella form di login stessa.
+Per altre credenziali di default, consultare il paragrafo "Account di default" alla fine di questo documento.
 
 ### Credenziali
 
@@ -100,6 +99,9 @@ Dopo l'uso, il codice viene invalidato automaticamente.
 1. Accedere alla propria area utente → **Sicurezza**
 2. Selezionare **Disabilita autenticazione a due fattori**
 3. Inserire la password corrente per confermare
+
+!!! note "Permesso richiesto"
+    Qualora l'utente non fosse più in grado di accedere, è possibile disabilitare la 2FA ed anche cambiare forzatamente la password. È necessario loggare come SystemAdmin o Technician. Per i dettagli consultare il paragrafo più in basso.
 
 ---
 
@@ -252,7 +254,7 @@ Per disattivare un utente, modificare il campo **Stato** da "Attivo" a "Disattiv
 
 ### Cambio forzato al primo accesso
 
-Dopo il login, se `forcePasswordChange = true`, il sistema reindirizza automaticamente a `/auth/change-password`.
+Dopo il login, se è stata abilitata l'opzione di cambio password obbligatorio, il sistema reindirizza automaticamente a `/auth/change-password`.
 
 - L'accesso a qualsiasi altra pagina è bloccato finché la password non è cambiata
 - Il form richiede: **Nuova password** + **Conferma nuova password** (nessuna password attuale richiesta)
@@ -311,13 +313,15 @@ Per ogni evento vengono registrati: utente, indirizzo IP, user agent, timestamp 
 
 ### Abilitazione
 
-Il log di audit è **disabilitato per default**. Per abilitarlo, modificare `appsettings.json`:
+Il log di audit è **disabilitato per default**. Per abilitarlo, modificare `appsettings.Production.json`:
 
 ```json
-{
-  "AuditLog": {
-    "Enabled": true
-  }
+"StoreServer": {
+    {
+      "AuditLog": {
+        "Enabled": true
+      }
+    }
 }
 ```
 
@@ -325,7 +329,7 @@ Il log di audit è **disabilitato per default**. Per abilitarlo, modificare `app
 
 ## 10. Configurazione (amministratori di sistema)
 
-Parametri configurabili in `appsettings.json`:
+Parametri configurabili in `appsettings.Production.json`:
 
 | Parametro | Default | Descrizione |
 |---|---|---|
