@@ -165,7 +165,7 @@ In modalità predefinita, non vincolante, il pagamento misto Satispay risulta co
 
 ### Pagamento misto - Configurazione del pagamento in cassa
 
-Per i dettagli sulla configurazione del pagamento in cassa relativi allo scenario Wallet, fare riferimento al paragrafo [Configurazione](#configurazione-dei-pagamenti-in-posware)
+Per i dettagli sulla configurazione del pagamento in cassa relativi allo scenario misto, fare riferimento al paragrafo [Configurazione](#configurazione-dei-pagamenti-in-posware)
 
 ### Pagamento misto - Ulteriori vincoli e casistiche
 
@@ -338,17 +338,17 @@ Per abilitare **Argentea Satispay** come metodo di pagamento, è necessario aggi
 |Modulo|Parametro|Valore|Note|
 |-------|------|--------|----|
 |EPPLIB|PROTOCOLLO|AR||
-|EPPLIB|satispayBpeEnabled|True/False|Default a `True`. Se impostato a False, i buoni pasto non vengono abilitati|
+|EPPLIB|satispayBpeEnabled|True/False|Default a `True`. Se impostato a `False`, i buoni pasto non vengono abilitati|
 |EPPLIB|satispayBpeMaxNumber|da 1 ad 8||
 |EPPLIB|satispayBpePaymentCode|*Codice del tipo di pagamento "BPE Satispay"*||
-|EPPLIB|satispayFringeBenefitEnabled|True/False|Default ad `True`. Se impostato a False, i buoni acquisto non vengono abilitati|
+|EPPLIB|satispayFringeBenefitEnabled|True/False|Default a `True`. Se impostato a `False`, i buoni acquisto non vengono abilitati|
 |EPPLIB|satispayFringeBenefitCode|*Codice del tipo di pagamento "Welfare Satispay"*||
 |EPPLIB|satispayDummyType|0/1|Default a 0. È possibile impostarlo ad 1 per abilitare la modalità simulazione|
 
 !!! warning "Configurazione parametro *satispayFringeBenefitEnabled*"
-    Il parametro ***satispayFringeBenefitEnabled*** è attivo di default (valore **True**).
+    Il parametro ***satispayFringeBenefitEnabled*** è attivo di default (valore **`True`**).
 
-    Se il punto vendita non gestisce i Buoni acquisto Satispay (Satispay Welfare), **è obbligatorio impostare il valore a False** per il corretto funzionamento dei pagamenti tramite Argentea Satispay.
+    Se il punto vendita non gestisce i Buoni acquisto Satispay (Satispay Welfare), **è obbligatorio impostare il valore a `False`** per il corretto funzionamento dei pagamenti tramite Argentea Satispay.
 
 ### Interfaccia utente della cassa
 
