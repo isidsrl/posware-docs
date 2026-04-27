@@ -1243,19 +1243,15 @@ Non stai visualizzando l'ultima versione della documentazione.
 <hr/>
 <h2 id="1-panoramica"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> 1. Panoramica<a class="headerlink" href="#1-panoramica" title="Permanent link">¶</a></h2>
 <p>StoreServer utilizza un sistema di autenticazione locale basato su <strong>email e password</strong> con credenziali memorizzate nel database interno.</p>
-<p>La sessione è gestita tramite <strong>token JWT</strong>:</p>
-<ul>
-<li><strong>Access token</strong> — valido 15 minuti, inviato nell'header <code>Authorization</code></li>
-<li><strong>Refresh token</strong> — valido 7 giorni, memorizzato in cookie <code>httpOnly</code> con rotazione automatica</li>
-</ul>
-<p>È disponibile l'autenticazione a <strong>due fattori (2FA)</strong> tramite app TOTP (Google Authenticator, Microsoft Authenticator, ecc.).</p>
-<blockquote>
-<p><strong>Modalità future (non ancora attive):</strong> SSO/OIDC e social login sono previste in roadmap ma non disponibili nella versione corrente.</p>
-</blockquote>
+<p>Un utente autenticato, ha una sessione valida per tutto il tempo che l'utente opera sull'applicazione.
+In caso di inutilizzo, la sessione viene rinnovata automaticamente entro 7 giorni. In caso di tempo più lungo, l'utente dovrà loggarsi nuovamente</p>
+<p>È anche disponibile l'autenticazione a <strong>due fattori (2FA)</strong> tramite app TOTP (Google Authenticator, Microsoft Authenticator, ecc.).</p>
 <hr/>
 <h2 id="2-accesso-al-sistema"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> 2. Accesso al sistema<a class="headerlink" href="#2-accesso-al-sistema" title="Permanent link">¶</a></h2>
 <h3 id="url-di-accesso"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> URL di accesso<a class="headerlink" href="#url-di-accesso" title="Permanent link">¶</a></h3>
-<p>L'applicazione è raggiungibile sulla porta <strong>6851</strong>. Il form di login si trova alla radice dell'applicazione.</p>
+<p>Qualore l'utente non fosse loggato, l'applicazione lo reindirizzerà automaticamente alla form di login.</p>
+<p>Per il primo accesso è possibile inserire delle credenziali di default che sono direttamente visibili nella form di login stessa.
+Per altre credenziali di default, consultare il paragrafo "Account di default" alla fine di questo documento.</p>
 <h3 id="credenziali"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.2</span> Credenziali<a class="headerlink" href="#credenziali" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -1329,6 +1325,10 @@ Non stai visualizzando l'ultima versione della documentazione.
 <li>Selezionare <strong>Disabilita autenticazione a due fattori</strong></li>
 <li>Inserire la password corrente per confermare</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Permesso richiesto</p>
+<p>Qualora l'utente non fosse più in grado di accedere, è possibile disabilitare la 2FA ed anche cambiare forzatamente la password. È necessario loggare come SystemAdmin o Technician. Per i dettagli consultare il paragrafo più in basso.</p>
+</div>
 <hr/>
 <h2 id="4-gestione-sessione-e-token"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> 4. Gestione sessione e token<a class="headerlink" href="#4-gestione-sessione-e-token" title="Permanent link">¶</a></h2>
 <h3 id="durata-dei-token"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Durata dei token<a class="headerlink" href="#durata-dei-token" title="Permanent link">¶</a></h3>
@@ -1538,7 +1538,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 <li>Confermare la nuova password</li>
 </ol>
 <h3 id="cambio-forzato-al-primo-accesso"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7.2</span> Cambio forzato al primo accesso<a class="headerlink" href="#cambio-forzato-al-primo-accesso" title="Permanent link">¶</a></h3>
-<p>Dopo il login, se <code>forcePasswordChange = true</code>, il sistema reindirizza automaticamente a <code>/auth/change-password</code>.</p>
+<p>Dopo il login, se è stata abilitata l'opzione di cambio password obbligatorio, il sistema reindirizza automaticamente a <code>/auth/change-password</code>.</p>
 <ul>
 <li>L'accesso a qualsiasi altra pagina è bloccato finché la password non è cambiata</li>
 <li>Il form richiede: <strong>Nuova password</strong> + <strong>Conferma nuova password</strong> (nessuna password attuale richiesta)</li>
@@ -1653,16 +1653,18 @@ Non stai visualizzando l'ultima versione della documentazione.
 </table>
 <p>Per ogni evento vengono registrati: utente, indirizzo IP, user agent, timestamp UTC, dettagli dell'azione.</p>
 <h3 id="abilitazione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.9.2</span> Abilitazione<a class="headerlink" href="#abilitazione" title="Permanent link">¶</a></h3>
-<p>Il log di audit è <strong>disabilitato per default</strong>. Per abilitarlo, modificare <code>appsettings.json</code>:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="nt">"AuditLog"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="nt">"Enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="p">}</span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="p">}</span>
+<p>Il log di audit è <strong>disabilitato per default</strong>. Per abilitarlo, modificare <code>appsettings.Production.json</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">"StoreServer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="p">{</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">      </span><span class="nt">"AuditLog"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="nt">"Enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">      </span><span class="p">}</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="p">}</span>
 </code></pre></div>
 <hr/>
 <h2 id="10-configurazione-amministratori-di-sistema"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10</span> 10. Configurazione (amministratori di sistema)<a class="headerlink" href="#10-configurazione-amministratori-di-sistema" title="Permanent link">¶</a></h2>
-<p>Parametri configurabili in <code>appsettings.json</code>:</p>
+<p>Parametri configurabili in <code>appsettings.Production.json</code>:</p>
 <table>
 <thead>
 <tr>
@@ -1730,7 +1732,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 <span class="md-icon" title="Ultimo aggiornamento">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 aprile 2026 15:01:41 UTC">9 aprile 2026</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 aprile 2026 13:20:20 UTC">27 aprile 2026</span>
 </span>
 </aside>
 </article>
