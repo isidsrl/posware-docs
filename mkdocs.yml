@@ -61,6 +61,7 @@ plugins:
         - download/*
         - posware/*
         - getting-started/scenari-avanzati/*
+        - DatabaseUpgrader/*
 
 nav:
   - Home: index.md
@@ -108,6 +109,8 @@ nav:
       - Integrazione bonus celiachia Posware: posware-modules/celiac/integrazione-bonus-celiachia-posware.md
       - Rendicontazione celiachia: posware-modules/celiac/rendicontazione-celiachia.md
   - Download: download/index.md
+  - DatabaseUpgrader:
+    - Guida utente: DatabaseUpgrader/GUIDA_UTENTE.md
 
 markdown_extensions:
   - pymdownx.tabbed:
