@@ -2378,7 +2378,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 
 <h1 id="databaseupgrader-guida-utente">DatabaseUpgrader - Guida utente<a class="headerlink" href="#databaseupgrader-guida-utente" title="Permanent link">&para;</a></h1>
 <p><strong>Prima revisione documento: 6 maggio 2026</strong> <br>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 maggio 2026 13:12:08 UTC">19 maggio 2026</span></strong></p>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 maggio 2026 15:23:41 UTC">19 maggio 2026</span></strong></p>
 <hr />
 <h2 id="introduzione">Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
 <p>Il <strong>Database Upgrader</strong> è un'applicazione Windows che permette di migrare il database <code>posware</code> dalla versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.0</code>/<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.2</code> alla versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3</code>+, rendendolo compatibile con la nuova architettura dello <em>StoreServer</em>.</p>
@@ -2460,9 +2460,10 @@ Non stai visualizzando l'ultima versione della documentazione.
 <div class="highlight"><span class="filename">databaseUpgraderSettings.json</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;MigrationOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;MonthsToImport&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;MonthsToImportForRistampaScontrini&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;MonthsToImportForRistampaScontrini&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;DoNotRenameMigratedDatabaseAfterMigration&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
 </code></pre></div>
 <table>
 <thead>
@@ -2483,6 +2484,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 <td>Mesi di storico da importare per le ristampe degli scontrini. Il mese corrente è incluso nel conteggio.</td>
 <td><code>1</code></td>
 </tr>
+<tr>
+<td><code>DoNotRenameMigratedDatabaseAfterMigration</code></td>
+<td><strong>Solo SQL Server.</strong> Se <code>true</code>, al termine della migrazione i database non vengono rinominati automaticamente. Il database migrato mantiene il nome temporaneo e sarà necessario un intervento manuale.</td>
+<td><code>false</code></td>
+</tr>
 </tbody>
 </table>
 <div class="admonition tip">
@@ -2495,9 +2501,10 @@ Non stai visualizzando l'ultima versione della documentazione.
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;MigrationOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;MonthsToImport&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;MonthsToImportForRistampaScontrini&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;TablesToExcludeFromDataMigration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;articoli&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;log&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;scontrini&quot;</span><span class="p">]</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;TablesToExcludeFromDataMigration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;articoli&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;log&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;scontrini&quot;</span><span class="p">],</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">&quot;DoNotRenameMigratedDatabaseAfterMigration&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
 </code></pre></div>
 <table>
 <thead>
@@ -2624,6 +2631,17 @@ I dati potranno essere migrati manualmente con script SQL ottimizzati dopo il co
 </ol>
 <p><strong>Il database <code>{nome}_v4</code> rimane come backup</strong> e può essere eliminato manualmente dopo aver verificato il corretto funzionamento dello <em>StoreServer</em>.</p>
 <p>In caso di rollback, è sufficiente rinominare manualmente i due database invertendo i nomi.</p>
+<div class="admonition info">
+<p class="admonition-title">Opzione: disabilitare la rinomina automatica</p>
+<p>Impostando <code>DoNotRenameMigratedDatabaseAfterMigration</code> a <code>true</code> in <code>databaseUpgraderSettings.json</code>, il tool <strong>non</strong> esegue la rinomina automatica dei database.</p>
+<p>Al termine della migrazione:</p>
+<ul>
+<li>Il database sorgente rimane invariato con il suo nome originale</li>
+<li>Il database migrato mantiene il nome temporaneo assegnato durante la migrazione</li>
+</ul>
+<p>Sarà necessario intervenire manualmente per rinominare i database secondo le proprie esigenze.</p>
+<p><strong>Quando usare questa opzione:</strong> Utile in scenari dove si desidera mantenere il controllo completo sui nomi dei database, oppure quando si vuole verificare il database migrato prima di sostituire definitivamente il sorgente.</p>
+</div>
 </div>
 <div class="tabbed-block">
 <p>Con MySQL il tool <strong>non rinomina automaticamente il database</strong>. Al termine della migrazione:</p>
@@ -2810,7 +2828,7 @@ I dati potranno essere migrati manualmente con script SQL ottimizzati dopo il co
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 maggio 2026 13:12:08 UTC">19 maggio 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 maggio 2026 15:23:41 UTC">19 maggio 2026</span>
   </span>
 
     
