@@ -100,7 +100,8 @@ Controlla la quantità di dati storici da importare nel nuovo database.
 {
   "MigrationOptions": {
     "MonthsToImport": 6,
-    "MonthsToImportForRistampaScontrini": 1
+    "MonthsToImportForRistampaScontrini": 1,
+    "DoNotRenameMigratedDatabaseAfterMigration": false
   }
 }
 ```
@@ -109,6 +110,7 @@ Controlla la quantità di dati storici da importare nel nuovo database.
 |-------|-------------|----------------|
 | `MonthsToImport` | Mesi di storico da importare per log, scontrini e dati di vendita. Il mese corrente è incluso nel conteggio. | `6` |
 | `MonthsToImportForRistampaScontrini` | Mesi di storico da importare per le ristampe degli scontrini. Il mese corrente è incluso nel conteggio. | `1` |
+| `DoNotRenameMigratedDatabaseAfterMigration` | **Solo SQL Server.** Se `true`, al termine della migrazione i database non vengono rinominati automaticamente. Il database migrato mantiene il nome temporaneo e sarà necessario un intervento manuale. | `false` |
 
 !!! tip "Come scegliere i valori"
     Un valore più alto significa più dati migrati e tempi di migrazione più lunghi. Scegliere in base alle esigenze operative del punto vendita, tenendo in considerazione che i dati al di fuori della finestra temporale impostata non verranno migrati.
@@ -122,7 +124,8 @@ Per escludere determinate tabelle dalla migrazione dei dati (la struttura viene 
   "MigrationOptions": {
     "MonthsToImport": 6,
     "MonthsToImportForRistampaScontrini": 1,
-    "TablesToExcludeFromDataMigration": ["articoli", "log", "scontrini"]
+    "TablesToExcludeFromDataMigration": ["articoli", "log", "scontrini"],
+    "DoNotRenameMigratedDatabaseAfterMigration": false
   }
 }
 ```
@@ -232,6 +235,18 @@ Per interpretare i messaggi nella griglia, consultare la sezione [Interpretare i
     **Il database `{nome}_v4` rimane come backup** e può essere eliminato manualmente dopo aver verificato il corretto funzionamento dello *StoreServer*.
 
     In caso di rollback, è sufficiente rinominare manualmente i due database invertendo i nomi.
+
+    !!! info "Opzione: disabilitare la rinomina automatica"
+        Impostando `DoNotRenameMigratedDatabaseAfterMigration` a `true` in `databaseUpgraderSettings.json`, il tool **non** esegue la rinomina automatica dei database.
+
+        Al termine della migrazione:
+
+        - Il database sorgente rimane invariato con il suo nome originale
+        - Il database migrato mantiene il nome temporaneo assegnato durante la migrazione
+
+        Sarà necessario intervenire manualmente per rinominare i database secondo le proprie esigenze.
+
+        **Quando usare questa opzione:** Utile in scenari dove si desidera mantenere il controllo completo sui nomi dei database, oppure quando si vuole verificare il database migrato prima di sostituire definitivamente il sorgente.
 
 === "MySQL"
 
