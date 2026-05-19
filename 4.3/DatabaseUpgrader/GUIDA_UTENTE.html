@@ -1,0 +1,2936 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida per la migrazione del database Posware dalla versione 4.0/4.2 alla versione 4.3+">
+      
+      
+      
+        <link rel="canonical" href="https://posware.io/4.3/DatabaseUpgrader/GUIDA_UTENTE.html">
+      
+      
+        <link rel="prev" href="../download/index.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>DatabaseUpgrader - Guida utente - Posware official docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%209.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-3.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-11A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2014c-2.63%200-5-1.57-6-4a6.505%206.505%200%200%201%208.5-3.5A6.52%206.52%200%200%201%2018%2012c-1%202.43-3.37%204-6%204m0-6.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#databaseupgrader-guida-utente" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+Non stai visualizzando l'ultima versione della documentazione.
+<a href="../..">
+    <strong>Clicca qui per andare all'ultima versione.</strong>
+</a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL(".."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../index.html" title="Posware official docs" class="md-header__button md-logo" aria-label="Posware official docs" data-md-component="logo">
+      
+  <img src="../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Posware official docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DatabaseUpgrader - Guida utente
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/index.html" class="md-tabs__link">
+          
+  
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../posware-modules/index.html" class="md-tabs__link">
+          
+  
+  
+  Feature e moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../download/index.html" class="md-tabs__link">
+        
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
+    
+  
+  Download
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="GUIDA_UTENTE.html" class="md-tabs__link">
+          
+  
+  
+  DatabaseUpgrader
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Posware official docs" class="md-nav__button md-logo" aria-label="Posware official docs" data-md-component="logo">
+      
+  <img src="../assets/images/favicon.ico" alt="logo">
+
+    </a>
+    Posware official docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/index.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.011 3.269H16.19a4.29 4.29 0 0 0-4.185 3.345A4.29 4.29 0 0 0 7.819 3.27H2a2 2 0 0 0-2.001 2v10.244a2 2 0 0 0 2 2h3.738c4.257 0 5.53 1.025 6.138 3.134a.11.11 0 0 0 .112.084h.024a.11.11 0 0 0 .112-.084c.612-2.109 1.885-3.133 6.138-3.133h3.737a2 2 0 0 0 2.001-2V5.27a2 2 0 0 0-1.989-2ZM10.083 14.325a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm10.804 5.07a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144v.952z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenari di installazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installazione e aggiornamenti Posware Frontend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installazione e aggiornamenti Posware Frontend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installazione-posware-frontend/overview-generale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview generale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dipendenze e aggiornamenti
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installazione-posware-frontend/setup-posware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SetupPosware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installazione-posware-frontend/pos-update.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PosUpdate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installazione e aggiornamenti StoreServer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installazione e aggiornamenti StoreServer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installazione-storeserver/overview-generale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview generale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installazione-storeserver/installazione-procedure-comuni.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procedure comuni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installazione-storeserver/installazione-nuovo-storeserver.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nuova installazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installazione-storeserver/migrazione-servizi-legacy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migrazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installazione-storeserver/aggiornamento-storeserver.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aggiornamento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installazione-storeserver/servizi-legacy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servizi legacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installazione-storeserver/disinstallazione-storeserver.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disinstallazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenari avanzati
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scenari avanzati
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/scenari-avanzati/dati-custom-database-storeserver.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aggiunta dati custom database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Approfondimenti Posware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Approfondimenti Posware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware/dot-net-table-reference.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tabella riferimento .NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware/known-issues-42.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known issues v4.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware/breaking-changes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Breaking changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature e moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Feature e moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-modules/index.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 22V3h18v19l-3-2-3 2-3-2-3 2-3-2zM17 9V7h-2v2zm-4 0V7H7v2zm0 2H7v2h6zm2 2h2v-2h-2z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Panoramica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    StoreServer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    StoreServer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-modules/authentication.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autenticazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-modules/ruoli-permessi.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ruoli e permessi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funzionalità di base
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Funzionalità di base
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-modules/main-module/statistiche-dettagliate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistiche dettagliate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-modules/main-module/posware-price-checker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posware Price Checker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-modules/main-module/fatturazione-elettronica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fatturazione elettronica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posware Frontend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Posware Frontend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-modules/posware-frontend/tracciato-record-log.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Transazione Posware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-modules/posware-frontend/satispay-nativo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Satispay nativo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-modules/posware-frontend/argentea-satispay.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Argentea Satispay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware/funzionalita-rt-20.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funzionalità RT 2.0 (XML7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware/funzionalita-pin-dispatching.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pin dispatching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware/lotteria-degli-scontrini.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lotteria degli scontrini
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Celiachia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Celiachia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-modules/celiac/informazioni-generali.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Informazioni generali
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-modules/celiac/integrazione-bonus-celiachia-posware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrazione bonus celiachia Posware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posware-modules/celiac/rendicontazione-celiachia.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendicontazione celiachia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/index.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DatabaseUpgrader
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DatabaseUpgrader
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guida utente
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="GUIDA_UTENTE.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guida utente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduzione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduzione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisiti-e-preparazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisiti e preparazione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configurazione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connectionstringsproductionjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        connectionStrings.Production.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#databaseupgradersettingsjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        databaseUpgraderSettings.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esclusione-tabelle-dalla-migrazione-dati" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esclusione tabelle dalla migrazione dati
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avvio-e-procedura-passo-per-passo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avvio e procedura passo per passo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Avvio e procedura passo per passo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-1-avvio-dellapplicazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 1 – Avvio dell'applicazione
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-2-rilevamento-versione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 2 – Rilevamento versione
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-3-preparazione-migrazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 3 – Preparazione migrazione
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-4-revisione-dellanalisi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 4 – Revisione dell'analisi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-5-avvio-migrazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 5 – Avvio migrazione
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-6-completamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 6 – Completamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosa-succede-al-database-dopo-la-migrazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cosa succede al database dopo la migrazione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpretare-i-risultati-della-migrazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpretare i risultati della migrazione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interpretare i risultati della migrazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#messaggi-di-successo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Messaggi di successo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-di-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File di log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risoluzione-problemi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risoluzione problemi
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risoluzione problemi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nessuna-stringa-di-connessione-valida-trovata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nessuna stringa di connessione valida trovata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impossibile-rilevare-la-versione-del-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impossibile rilevare la versione del database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errore-nel-processo-durante-lanalisi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errore nel processo durante l'analisi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impossibile-chiudere-lapplicazione-durante-la-migrazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impossibile chiudere l'applicazione durante la migrazione
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mysql-database-migrato-con-nome-casuale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MySQL: database migrato con nome casuale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#riferimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Riferimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">DatabaseUpgrader</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">Migrazione</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">StoreServer</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="databaseupgrader-guida-utente">DatabaseUpgrader - Guida utente<a class="headerlink" href="#databaseupgrader-guida-utente" title="Permanent link">&para;</a></h1>
+<p><strong>Prima revisione documento: 6 maggio 2026</strong> <br>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 maggio 2026 13:12:08 UTC">19 maggio 2026</span></strong></p>
+<hr />
+<h2 id="introduzione">Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
+<p>Il <strong>Database Upgrader</strong> è un'applicazione Windows che permette di migrare il database <code>posware</code> dalla versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.0</code>/<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.2</code> alla versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3</code>+, rendendolo compatibile con la nuova architettura dello <em>StoreServer</em>.</p>
+<p>Il tool supporta entrambi i provider di database:</p>
+<ul>
+<li><strong>MySQL</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>8.4</code></li>
+<li><strong>SQL Server</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>2016</code> / <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>2017</code> / <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>2019</code> / <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>2022</code></li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Backup obbligatorio prima di procedere</p>
+<p>Prima di avviare qualsiasi operazione con il Database Upgrader, è <strong>obbligatorio</strong> effettuare un backup completo e verificato del database di produzione.</p>
+<p><strong>Nessuna operazione deve essere eseguita senza un backup integro disponibile.</strong></p>
+</div>
+<hr />
+<h2 id="prerequisiti-e-preparazione">Prerequisiti e preparazione<a class="headerlink" href="#prerequisiti-e-preparazione" title="Permanent link">&para;</a></h2>
+<p>Prima di usare il Database Upgrader, verificare di disporre di:</p>
+<ul>
+<li><strong>Backup completo e verificato</strong> del database <code>posware</code> corrente</li>
+<li><strong>Accesso al filesystem</strong> della directory in cui è installato il Database Upgrader</li>
+<li><strong>Permessi sul database</strong>: l'utente nella connection string deve avere permessi di lettura, scrittura, creazione e rinomina dei database</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">MySQL</label><label for="__tabbed_1_2">SQL Server</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition warning">
+<p class="admonition-title">Operazione preliminare obbligatoria</p>
+<p>Rinominare il database sorgente con un nome diverso da <code>posware</code> <strong>prima</strong> di avviare il Database Upgrader.</p>
+<p>Poiché MySQL non permette la rinomina diretta dei database, la procedura è:</p>
+<ol>
+<li>Eseguire un dump del database <code>posware</code></li>
+<li>Creare un nuovo database con il nome desiderato (es. <code>posware_v42</code>)</li>
+<li>Importare il dump nel nuovo database</li>
+<li>Eliminare il database originale <code>posware</code></li>
+</ol>
+<p>Se il database sorgente mantiene il nome <code>posware</code> al momento della migrazione, il Database Upgrader assegnerà al database migrato un nome casuale. In tal caso sarà necessario un intervento manuale aggiuntivo al termine — vedere <a href="#cosa-succede-al-database-dopo-la-migrazione">Cosa succede al database dopo la migrazione</a>.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition info">
+<p class="admonition-title">Rinomina automatica</p>
+<p>Con SQL Server la rinomina del database sorgente è gestita automaticamente dal tool al termine della migrazione. Non è richiesta alcuna operazione preliminare di rinomina.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="configurazione">Configurazione<a class="headerlink" href="#configurazione" title="Permanent link">&para;</a></h2>
+<p>Il Database Upgrader legge due file di configurazione nella sua directory di installazione.</p>
+<h3 id="connectionstringsproductionjson">connectionStrings.Production.json<a class="headerlink" href="#connectionstringsproductionjson" title="Permanent link">&para;</a></h3>
+<p>Contiene la stringa di connessione al database sorgente da migrare.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">MySQL</label><label for="__tabbed_2_2">SQL Server</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">connectionStrings.Production.json</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;ConnectionStrings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;posware_mysql&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=localhost;Port=3306;Database=nome_database_sorgente;User Id=utente;Password=password;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;posware_sqlserver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">connectionStrings.Production.json</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;ConnectionStrings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;posware_mysql&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;posware_sqlserver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=localhost;Database=nome_database_sorgente;User Id=utente;Password=password;&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Quale provider viene utilizzato</p>
+<p>Il tool usa la prima stringa di connessione non vuota. Se entrambe sono valorizzate, viene usata MySQL. Lasciare <strong>vuota</strong> la voce del provider non utilizzato.</p>
+</div>
+<h3 id="databaseupgradersettingsjson">databaseUpgraderSettings.json<a class="headerlink" href="#databaseupgradersettingsjson" title="Permanent link">&para;</a></h3>
+<p>Controlla la quantità di dati storici da importare nel nuovo database.</p>
+<div class="highlight"><span class="filename">databaseUpgraderSettings.json</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;MigrationOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;MonthsToImport&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;MonthsToImportForRistampaScontrini&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrizione</th>
+<th>Valore default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MonthsToImport</code></td>
+<td>Mesi di storico da importare per log, scontrini e dati di vendita. Il mese corrente è incluso nel conteggio.</td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td><code>MonthsToImportForRistampaScontrini</code></td>
+<td>Mesi di storico da importare per le ristampe degli scontrini. Il mese corrente è incluso nel conteggio.</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Come scegliere i valori</p>
+<p>Un valore più alto significa più dati migrati e tempi di migrazione più lunghi. Scegliere in base alle esigenze operative del punto vendita, tenendo in considerazione che i dati al di fuori della finestra temporale impostata non verranno migrati.</p>
+</div>
+<h3 id="esclusione-tabelle-dalla-migrazione-dati">Esclusione tabelle dalla migrazione dati<a class="headerlink" href="#esclusione-tabelle-dalla-migrazione-dati" title="Permanent link">&para;</a></h3>
+<p>Per escludere determinate tabelle dalla migrazione dei dati (la struttura viene comunque creata nel nuovo database), aggiungere la lista dei nomi tabella in <code>databaseUpgraderSettings.json</code>:</p>
+<div class="highlight"><span class="filename">databaseUpgraderSettings.json</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;MigrationOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;MonthsToImport&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;MonthsToImportForRistampaScontrini&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;TablesToExcludeFromDataMigration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;articoli&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;log&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;scontrini&quot;</span><span class="p">]</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TablesToExcludeFromDataMigration</code></td>
+<td>Array di nomi tabella da escludere dalla migrazione dati. La struttura delle tabelle viene creata, ma i dati non vengono copiati.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Quando usare questa opzione</p>
+<p>Utile quando alcune tabelle sono troppo grandi per essere migrate automaticamente dal tool.
+I dati potranno essere migrati manualmente con script SQL ottimizzati dopo il completamento della migrazione.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Comportamento</p>
+<ul>
+<li>I nomi tabella sono case-insensitive (<code>articoli</code>, <code>ARTICOLI</code>, <code>Articoli</code> sono equivalenti)</li>
+<li>Tabelle inesistenti nel database sorgente vengono ignorate silenziosamente</li>
+<li>L'esclusione via configurazione si aggiunge alle esclusioni predefinite del tool, non le sostituisce</li>
+</ul>
+</div>
+<hr />
+<h2 id="avvio-e-procedura-passo-per-passo">Avvio e procedura passo per passo<a class="headerlink" href="#avvio-e-procedura-passo-per-passo" title="Permanent link">&para;</a></h2>
+<h3 id="passo-1-avvio-dellapplicazione">Passo 1 – Avvio dell'applicazione<a class="headerlink" href="#passo-1-avvio-dellapplicazione" title="Permanent link">&para;</a></h3>
+<p>Avviare il file <code>DatabaseUpgrader.exe</code> dalla directory di installazione.</p>
+<p>Si aprirà la finestra <strong>"Posware Database Upgrader"</strong>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Non chiudere la finestra durante la migrazione</p>
+<p>Una volta avviata la migrazione, <strong>non è possibile chiudere l'applicazione fino al completamento</strong>. Il tentativo di chiusura viene bloccato dal sistema con il messaggio:</p>
+<blockquote>
+<p><em>"Migrazione in corso, non è possibile chiudere l'applicazione prima del termine."</em></p>
+</blockquote>
+</div>
+<h3 id="passo-2-rilevamento-versione">Passo 2 – Rilevamento versione<a class="headerlink" href="#passo-2-rilevamento-versione" title="Permanent link">&para;</a></h3>
+<p>All'avvio, il tool rileva automaticamente la versione del database configurato nella connection string (attesa di circa 2 secondi).</p>
+<p><strong>Messaggi attesi se il database deve essere aggiornato:</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">MySQL</label><label for="__tabbed_3_2">SQL Server</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p><em>Upgrade database MySql da versione 4.0 a 4.3 necessario.</em><br />
+<em>Effettuare la migrazione.</em></p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p><em>Upgrade database SqlServer da versione 4.0 a 4.3 necessario.</em><br />
+<em>Effettuare la migrazione.</em></p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>Se appare invece un messaggio di errore, consultare la sezione <a href="#risoluzione-problemi">Risoluzione problemi</a>.</p>
+<h3 id="passo-3-preparazione-migrazione">Passo 3 – Preparazione migrazione<a class="headerlink" href="#passo-3-preparazione-migrazione" title="Permanent link">&para;</a></h3>
+<p>Premere il pulsante <strong>"Prepara migrazione"</strong>.</p>
+<p>Il tool esegue automaticamente le seguenti operazioni:</p>
+<ol>
+<li>Creazione di un database temporaneo con la struttura della versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3</code></li>
+<li>Analisi delle tabelle presenti nel database sorgente</li>
+<li>Costruzione della lista di tabelle da migrare e di quelle escluse dalla migrazione</li>
+</ol>
+<p>Al termine dell'analisi, viene mostrata una griglia con l'elenco delle tabelle individuate.</p>
+<h3 id="passo-4-revisione-dellanalisi">Passo 4 – Revisione dell'analisi<a class="headerlink" href="#passo-4-revisione-dellanalisi" title="Permanent link">&para;</a></h3>
+<p>La griglia mostra le tabelle con quattro colonne:</p>
+<table>
+<thead>
+<tr>
+<th>Colonna</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stato</strong></td>
+<td><code>Da importare</code> — tabella in attesa di migrazione</td>
+</tr>
+<tr>
+<td><strong>Tabella</strong></td>
+<td>Nome della tabella nel database sorgente</td>
+</tr>
+<tr>
+<td><strong>Warning</strong></td>
+<td>Eventuali avvertimenti pre-migrazione</td>
+</tr>
+<tr>
+<td><strong>Risultato migrazione</strong></td>
+<td>Vuoto in questa fase; si popola durante la migrazione</td>
+</tr>
+</tbody>
+</table>
+<p>Verificare che le tabelle attese siano presenti nell'elenco, quindi procedere al passo successivo.</p>
+<h3 id="passo-5-avvio-migrazione">Passo 5 – Avvio migrazione<a class="headerlink" href="#passo-5-avvio-migrazione" title="Permanent link">&para;</a></h3>
+<p>Premere il pulsante <strong>"Avvia migrazione"</strong>.</p>
+<p>Il tool migra le tabelle in sequenza aggiornando in tempo reale le colonne <strong>Stato</strong> e <strong>Risultato migrazione</strong> nella griglia.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attendere il completamento</p>
+<p>Non interrompere l'operazione. La durata dipende dalla quantità di dati da trasferire e dalla finestra temporale configurata in <code>databaseUpgraderSettings.json</code>.</p>
+</div>
+<h3 id="passo-6-completamento">Passo 6 – Completamento<a class="headerlink" href="#passo-6-completamento" title="Permanent link">&para;</a></h3>
+<p>Al termine della migrazione compare il pulsante <strong>"Chiudi"</strong>.</p>
+<ul>
+<li><strong>Senza warning:</strong> premere <strong>"Chiudi"</strong> per uscire dall'applicazione.</li>
+<li><strong>Con warning:</strong> premere <strong>"Chiudi"</strong> apre automaticamente il file di log per la revisione.</li>
+</ul>
+<p>Per interpretare i messaggi nella griglia, consultare la sezione <a href="#interpretare-i-risultati-della-migrazione">Interpretare i risultati</a>.</p>
+<hr />
+<h2 id="cosa-succede-al-database-dopo-la-migrazione">Cosa succede al database dopo la migrazione<a class="headerlink" href="#cosa-succede-al-database-dopo-la-migrazione" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">SQL Server</label><label for="__tabbed_4_2">MySQL</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Il tool gestisce automaticamente la sostituzione del database al termine della migrazione:</p>
+<ol>
+<li>Il database sorgente viene messo in modalità <code>SINGLE_USER</code></li>
+<li>Il database sorgente viene rinominato in <strong><code>{nome_originale}_v4</code></strong> (backup automatico)</li>
+<li>Il database migrato viene rinominato con il nome originale</li>
+<li>Il database viene riportato in modalità <code>MULTI_USER</code></li>
+</ol>
+<p><strong>Il database <code>{nome}_v4</code> rimane come backup</strong> e può essere eliminato manualmente dopo aver verificato il corretto funzionamento dello <em>StoreServer</em>.</p>
+<p>In caso di rollback, è sufficiente rinominare manualmente i due database invertendo i nomi.</p>
+</div>
+<div class="tabbed-block">
+<p>Con MySQL il tool <strong>non rinomina automaticamente il database</strong>. Al termine della migrazione:</p>
+<ul>
+<li>Il database sorgente rimane invariato con il suo nome</li>
+<li>Il database migrato viene creato con il nome <code>posware</code> se il database sorgente era stato precedentemente rinominato (vedere <a href="#prerequisiti-e-preparazione">Prerequisiti e preparazione</a>)</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Se il database migrato ha un nome casuale</p>
+<p>Se al termine della migrazione il database migrato ha un nome casuale (es. <code>posware_a3f2b1</code>), significa che il database sorgente non era stato rinominato prima dell'avvio.</p>
+<p>In tal caso è <strong>obbligatorio</strong> rinominare il database migrato con il nome <code>posware</code> prima di procedere con l'installazione dello <em>StoreServer</em>:</p>
+<ol>
+<li>Eseguire un dump del database con il nome casuale</li>
+<li>Creare un nuovo database chiamato <code>posware</code></li>
+<li>Importare il dump nel database <code>posware</code></li>
+<li>Eliminare il database con il nome casuale</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="interpretare-i-risultati-della-migrazione">Interpretare i risultati della migrazione<a class="headerlink" href="#interpretare-i-risultati-della-migrazione" title="Permanent link">&para;</a></h2>
+<p>Al termine della migrazione, ogni riga nella griglia riporta lo stato finale nella colonna <strong>Risultato migrazione</strong>.</p>
+<h3 id="messaggi-di-successo">Messaggi di successo<a class="headerlink" href="#messaggi-di-successo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Messaggio</th>
+<th>Significato</th>
+<th>Azione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Migrazione completata. Record migrati N.</code></td>
+<td>Tabella migrata con successo; N record importati.</td>
+<td>Nessuna</td>
+</tr>
+<tr>
+<td><code>Migrazione completata. Tutti i record migrati.</code></td>
+<td>Tutti i record della tabella sono stati importati.</td>
+<td>Nessuna</td>
+</tr>
+<tr>
+<td><code>Migrazione completata. Migrazione record non necessaria.</code></td>
+<td>La tabella è esclusa dalla migrazione dei dati (struttura migrata, dati no). Comportamento normale per alcune tabelle di sistema.</td>
+<td>Nessuna</td>
+</tr>
+<tr>
+<td><code>Migrazione completata. Tabella vuota, nessun record da importare.</code></td>
+<td>La tabella sorgente era vuota.</td>
+<td>Nessuna</td>
+</tr>
+<tr>
+<td><code>Migrazione completata. Dati non migrati (tabella inserita dal tecnico in lista esclusioni).</code></td>
+<td>Tabella esclusa dalla migrazione dati tramite configurazione <code>TablesToExcludeFromDataMigration</code>. La struttura è stata creata ma i dati non sono stati copiati.</td>
+<td>Migrare i dati manualmente se necessario</td>
+</tr>
+</tbody>
+</table>
+<h3 id="warning">Warning<a class="headerlink" href="#warning" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">I campi fuori standard non sono stati migrati</p>
+<p>Il database sorgente contiene colonne aggiuntive non presenti nello schema standard <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3</code>. Queste colonne non vengono migrate.</p>
+<p><strong>Cause possibili:</strong></p>
+<ul>
+<li>Colonne aggiunte da personalizzazioni di terze parti</li>
+<li>Colonne presenti in versioni precedenti di Posware e successivamente rimosse</li>
+</ul>
+<p><strong>Azione richiesta:</strong> Consultare il log per identificare le colonne interessate e verificare che nessuna colonna fondamentale sia stata esclusa per errore. In caso contrario, aprire una segnalazione.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Alcuni record duplicati o con errori non sono stati migrati</p>
+<p>Durante la migrazione sono stati trovati record duplicati o con errori di integrità referenziale che non è stato possibile importare.</p>
+<p><strong>Causa comune:</strong> La tabella sorgente non aveva chiavi primarie; la versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3</code> le introduce, rendendo alcuni record incompatibili.</p>
+<p><strong>Azione richiesta:</strong> Consultare il log per individuare i record saltati. Valutare se migrarli manualmente oppure se il record eliminato fosse già errato tra i duplicati.</p>
+<div class="admonition example">
+<p class="admonition-title">Tabella frequentemente interessata</p>
+<p>La tabella <code>isi_menu</code> è una delle più soggette a questo problema.</p>
+</div>
+</div>
+<hr />
+<h2 id="file-di-log">File di log<a class="headerlink" href="#file-di-log" title="Permanent link">&para;</a></h2>
+<p>Il Database Upgrader produce un file di log nella propria directory di installazione.</p>
+<p><strong>Nome del file:</strong> <code>dbupgrader-log_YYYY-MM-DD.log</code></p>
+<p><strong>Come accedere al log:</strong></p>
+<ul>
+<li>Al termine della migrazione con warning, il log si apre automaticamente al click su <strong>"Chiudi"</strong></li>
+<li>In alternativa, aprire manualmente il file dalla directory di installazione del tool</li>
+</ul>
+<p><strong>Formato delle righe di log:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>timestamp|logger|LEVEL|messaggio
+</code></pre></div>
+<p><strong>Esempio di riga:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>2026-05-06 10:23:14.5678|DatabaseUpgrader.Domain.Db40To43MigratorBase|INFO|Starting migration of table scontrini
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Archivio automatico dei log</p>
+<p>I log vengono archiviati automaticamente con compressione. Vengono conservati fino a 30 file. Se il log del giorno supera i 10 MB, viene archiviato automaticamente e ne viene creato uno nuovo.</p>
+</div>
+<hr />
+<h2 id="risoluzione-problemi">Risoluzione problemi<a class="headerlink" href="#risoluzione-problemi" title="Permanent link">&para;</a></h2>
+<h3 id="nessuna-stringa-di-connessione-valida-trovata">Nessuna stringa di connessione valida trovata<a class="headerlink" href="#nessuna-stringa-di-connessione-valida-trovata" title="Permanent link">&para;</a></h3>
+<p><strong>Messaggio:</strong> <em>"Nessuna stringa di connessione valida trovata nel file connectionStrings.Production.json."</em></p>
+<div class="admonition failure">
+<p class="admonition-title">Causa e soluzione</p>
+<p>Il file <code>connectionStrings.Production.json</code> è assente, vuoto o contiene entrambe le voci vuote.</p>
+<p><strong>Verificare:</strong></p>
+<ol>
+<li>Che il file <code>connectionStrings.Production.json</code> esista nella directory del Database Upgrader</li>
+<li>Che la connection string del provider in uso (MySQL o SQL Server) sia valorizzata</li>
+<li>Che il nome della chiave sia esattamente <code>posware_mysql</code> oppure <code>posware_sqlserver</code></li>
+</ol>
+</div>
+<h3 id="impossibile-rilevare-la-versione-del-database">Impossibile rilevare la versione del database<a class="headerlink" href="#impossibile-rilevare-la-versione-del-database" title="Permanent link">&para;</a></h3>
+<p><strong>Messaggio:</strong> <em>"Impossibile rilevare la versione del database."</em></p>
+<div class="admonition failure">
+<p class="admonition-title">Causa e soluzione</p>
+<p>Il tool non riesce a connettersi al database o la versione rilevata non è supportata.</p>
+<p><strong>Verificare:</strong></p>
+<ol>
+<li>Che il server database sia avviato e raggiungibile dall'host in cui gira il Database Upgrader</li>
+<li>Che i parametri della connection string (host, porta, nome database, credenziali) siano corretti</li>
+<li>Che l'utente del database abbia i permessi necessari per leggere lo schema (<code>INFORMATION_SCHEMA</code> / tabelle di sistema)</li>
+<li>Che il database non sia già alla versione <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"/></svg></span><code>4.3</code>+ (in tal caso non è necessaria alcuna migrazione)</li>
+</ol>
+</div>
+<h3 id="errore-nel-processo-durante-lanalisi">Errore nel processo durante l'analisi<a class="headerlink" href="#errore-nel-processo-durante-lanalisi" title="Permanent link">&para;</a></h3>
+<p><strong>Messaggio:</strong> <em>"Errore nel processo. Consultare il log per maggiori dettagli."</em></p>
+<div class="admonition failure">
+<p class="admonition-title">Causa e soluzione</p>
+<p>Si è verificato un errore durante la fase di analisi o durante la creazione del database temporaneo.</p>
+<p><strong>Azioni:</strong></p>
+<ol>
+<li>Aprire il file di log (<code>dbupgrader-log_YYYY-MM-DD.log</code>) nella directory del Database Upgrader</li>
+<li>Cercare le righe con livello <code>ERROR</code> per identificare la causa specifica</li>
+<li>Cause comuni: permessi insufficienti per creare nuovi database, spazio disco insufficiente, connessione al database interrotta durante l'operazione</li>
+</ol>
+</div>
+<h3 id="impossibile-chiudere-lapplicazione-durante-la-migrazione">Impossibile chiudere l'applicazione durante la migrazione<a class="headerlink" href="#impossibile-chiudere-lapplicazione-durante-la-migrazione" title="Permanent link">&para;</a></h3>
+<p><strong>Comportamento:</strong> La finestra non si chiude; appare il messaggio <em>"Migrazione in corso, non è possibile chiudere l'applicazione prima del termine."</em></p>
+<div class="admonition info">
+<p class="admonition-title">Comportamento previsto</p>
+<p>Questo è il comportamento corretto del tool. La chiusura viene bloccata per evitare che la migrazione venga interrotta in uno stato inconsistente, che potrebbe corrompere il database temporaneo.</p>
+<p>Attendere il completamento della migrazione e premere <strong>"Chiudi"</strong> quando il pulsante diventa disponibile.</p>
+</div>
+<h3 id="mysql-database-migrato-con-nome-casuale">MySQL: database migrato con nome casuale<a class="headerlink" href="#mysql-database-migrato-con-nome-casuale" title="Permanent link">&para;</a></h3>
+<p><strong>Situazione:</strong> Al termine della migrazione, il database creato dal tool ha un nome casuale anziché <code>posware</code>.</p>
+<div class="admonition failure">
+<p class="admonition-title">Causa e soluzione</p>
+<p>Il database sorgente aveva ancora il nome <code>posware</code> al momento dell'avvio del tool, pertanto il database migrato ha ricevuto un nome temporaneo.</p>
+<p><strong>Soluzione obbligatoria:</strong></p>
+<ol>
+<li>Eseguire un dump del database con nome casuale</li>
+<li>Creare un nuovo database con nome <code>posware</code></li>
+<li>Importare il dump nel database <code>posware</code></li>
+<li>Eliminare il database con il nome casuale</li>
+</ol>
+</div>
+<hr />
+<h2 id="riferimenti">Riferimenti<a class="headerlink" href="#riferimenti" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../getting-started/installazione-storeserver/migrazione-servizi-legacy.html">Migrazione da servizi legacy – procedura completa di installazione StoreServer</a></li>
+<li><a href="../download/index.html">Download Database Upgrader</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ultimo aggiornamento">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 maggio 2026 13:12:08 UTC">19 maggio 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2024&copy; I.Si.D S.r.l.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://isid.it/" target="_blank" rel="noopener" title="isid.it" class="md-social__link">
+      <?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1510.000000pt" height="518.000000pt" viewBox="0 0 1510.000000 518.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)"
+fill="#FFFFFF" stroke="none">
+<path d="M69 5157 c-19 -12 -42 -38 -51 -57 -17 -33 -18 -174 -18 -2510 0
+-2336 1 -2477 18 -2510 9 -19 32 -45 51 -57 l34 -23 466 0 c521 0 514 -1 553
+71 17 32 18 131 18 2519 0 2391 -1 2487 -18 2520 -37 71 -32 70 -553 70 l-466
+0 -34 -23z"/>
+<path d="M2580 5169 c-305 -35 -562 -148 -726 -320 -149 -157 -241 -337 -291
+-572 -16 -72 -18 -141 -18 -582 0 -550 4 -597 66 -787 127 -392 402 -626 846
+-720 l108 -23 1570 -5 1570 -5 60 -23 c32 -12 75 -35 95 -50 44 -36 95 -119
+110 -181 17 -67 25 -451 11 -539 -26 -169 -92 -261 -217 -304 l-69 -23 -2030
+-5 c-1919 -5 -2032 -6 -2058 -23 -63 -41 -62 -30 -62 -487 0 -453 0 -451 58
+-494 l28 -21 2177 -3 c1891 -2 2192 0 2293 13 385 50 650 197 824 460 94 141
+143 264 182 460 16 80 18 147 18 580 0 416 -3 504 -17 585 -51 285 -151 492
+-315 651 -169 164 -367 257 -655 305 -94 16 -242 18 -1658 23 l-1555 6 -56 28
+c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
+103 161 207 197 48 16 190 17 2091 22 1928 5 2041 6 2066 23 53 36 54 41 57
+469 2 250 -1 412 -7 436 -6 21 -25 51 -41 67 l-31 30 -2197 1 c-1208 1 -2231
+-2 -2272 -7z"/>
+<path d="M7631 5162 c-71 -38 -71 -38 -71 -501 0 -403 1 -415 21 -448 40 -64
+34 -63 501 -63 l424 0 302 -282 302 -282 0 -386 c0 -380 0 -386 23 -430 42
+-82 28 -80 550 -80 502 0 489 -1 541 60 l26 32 0 422 0 423 -23 34 c-46 69
+-44 69 -512 69 l-420 1 -297 277 -297 277 0 390 c-1 435 -1 436 -70 482 l-34
+23 -466 0 c-433 0 -469 -1 -500 -18z"/>
+<path d="M9255 5167 c-47 -18 -71 -39 -97 -82 l-23 -40 -3 -452 -3 -453 1993
+-3 c1802 -3 2001 -5 2071 -20 422 -88 609 -249 697 -601 50 -201 55 -279 55
+-926 0 -647 -5 -725 -55 -926 -80 -318 -256 -491 -582 -574 -216 -54 -240 -55
+-1653 -55 -715 0 -1313 4 -1328 8 -57 16 -57 20 -57 657 l0 580 -570 0 -570 0
+2 -1072 3 -1073 27 -46 c17 -29 41 -53 65 -65 37 -18 101 -19 1918 -22 1332
+-2 1927 0 2040 8 503 36 891 149 1191 346 113 74 311 270 383 379 189 287 292
+647 321 1120 13 220 13 1250 0 1470 -29 473 -133 837 -322 1120 -68 103 -219
+259 -328 341 -109 82 -343 200 -491 248 -213 68 -463 114 -738 136 -200 15
+-3906 12 -3946 -3z"/>
+<path d="M7560 1918 c0 -1706 1 -1815 18 -1847 9 -19 33 -43 52 -53 33 -17 64
+-18 512 -16 l476 3 27 25 c58 53 55 -64 55 1895 l0 1805 -570 0 -570 0 0
+-1812z"/>
+</g>
+</svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
