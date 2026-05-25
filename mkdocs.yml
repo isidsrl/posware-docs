@@ -108,6 +108,10 @@ nav:
       - Informazioni generali: posware-modules/celiac/informazioni-generali.md
       - Integrazione bonus celiachia Posware: posware-modules/celiac/integrazione-bonus-celiachia-posware.md
       - Rendicontazione celiachia: posware-modules/celiac/rendicontazione-celiachia.md
+    - Marketing Automation Gruppo Arena:
+      - Informazioni generali: posware-modules/marketing-automation-arena/informazioni-generali.md
+      - Promozioni da provider esterni: posware-modules/marketing-automation-arena/pos-promo.md
+      - PosEpipoliHelper: posware-modules/marketing-automation-arena/pos-epipoli-helper.md
   - Download: download/index.md
   - DatabaseUpgrader:
     - Guida utente: DatabaseUpgrader/GUIDA_UTENTE.md
