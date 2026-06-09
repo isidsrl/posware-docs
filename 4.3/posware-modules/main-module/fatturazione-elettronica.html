@@ -1216,6 +1216,18 @@ Non stai visualizzando l'ultima versione della documentazione.
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-frontend/fatturazione-immediata.html">
+<span class="md-ellipsis">
+    
+  
+    Fatturazione immediata
+  
+
+    
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1347,7 +1359,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </nav>
 <h1 id="fatturazione-elettronica"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Fatturazione elettronica<a class="headerlink" href="#fatturazione-elettronica" title="Permanent link">¶</a></h1>
 <p><strong>Prima revisione documento: 18 luglio 2023</strong> <br/>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 maggio 2026 11:02:46 UTC">28 maggio 2026</span></strong></p>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 giugno 2026 19:21:45 UTC">9 giugno 2026</span></strong></p>
 <hr/>
 <h2 id="glossario"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Glossario<a class="headerlink" href="#glossario" title="Permanent link">¶</a></h2>
 <ul>
@@ -2269,11 +2281,11 @@ All'apertura della <em>Dashboard</em> della fatturazione elettronica verrà veri
 </ul>
 <h5 id="perche-appare-il-messaggio-di-errore-esistono-fatture-con-una-data-successiva-a-quella-dello-scontrino-selezionato"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.6.1.18</span> Perché appare il messaggio di errore "<em>Esistono fatture con una data successiva a quella dello scontrino selezionato.</em>"?<a class="headerlink" href="#perche-appare-il-messaggio-di-errore-esistono-fatture-con-una-data-successiva-a-quella-dello-scontrino-selezionato" title="Permanent link">¶</a></h5>
 <ul>
-<li><strong>Causa</strong>: il messaggio viene mostrato quando si tenta di generare una fattura a partire da uno scontrino che ha una <strong>data anteriore</strong> rispetto a quella di una o più fatture già emesse.<br>
-  Esempio: se è già stata generata la <strong>fattura n°3 del 13/10/2025</strong> e si tenta di creare una nuova fattura da uno <strong>scontrino del 12/10/2025</strong>, la nuova fattura (n°4) avrebbe una data precedente, generando un’incoerenza tra <strong>numerazione e data</strong> delle fatture.  </br></li>
-<li><strong>Soluzione</strong>: verificare la sequenza cronologica delle fatture già emesse.<br>
-  Se si desidera mantenere la coerenza tra numerazione e data, è necessario emettere prima le fatture relative agli scontrini più vecchi.<br>
-  È comunque possibile forzare la generazione, ma ciò comporterà un disallineamento tra date e numerazione (non consigliato).</br></br></li>
+<li><strong>Causa</strong>: il messaggio viene mostrato quando si tenta di generare una fattura a partire da uno scontrino che ha una <strong>data anteriore</strong> rispetto a quella di una o più fatture già emesse.<br/>
+  Esempio: se è già stata generata la <strong>fattura n°3 del 13/10/2025</strong> e si tenta di creare una nuova fattura da uno <strong>scontrino del 12/10/2025</strong>, la nuova fattura (n°4) avrebbe una data precedente, generando un’incoerenza tra <strong>numerazione e data</strong> delle fatture.  </li>
+<li><strong>Soluzione</strong>: verificare la sequenza cronologica delle fatture già emesse.<br/>
+  Se si desidera mantenere la coerenza tra numerazione e data, è necessario emettere prima le fatture relative agli scontrini più vecchi.<br/>
+  È comunque possibile forzare la generazione, ma ciò comporterà un disallineamento tra date e numerazione (non consigliato).</li>
 </ul>
 <h4 id="generazione-nota-credito"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.6.2</span> Generazione nota credito<a class="headerlink" href="#generazione-nota-credito" title="Permanent link">¶</a></h4>
 <h5 id="perche-appare-il-messaggio-di-errore-sono-stati-riscontrati-uno-o-piu-errori-nella-generazione-della-nota-di-credito"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.6.2.1</span> Perché appare il messaggio di errore "<em>Sono stati riscontrati uno o più errori nella generazione della nota di credito.</em>"?<a class="headerlink" href="#perche-appare-il-messaggio-di-errore-sono-stati-riscontrati-uno-o-piu-errori-nella-generazione-della-nota-di-credito" title="Permanent link">¶</a></h5>
@@ -2397,7 +2409,7 @@ All'apertura della <em>Dashboard</em> della fatturazione elettronica verrà veri
 <span class="md-icon" title="Ultimo aggiornamento">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 maggio 2026 11:02:46 UTC">28 maggio 2026</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 giugno 2026 19:21:45 UTC">9 giugno 2026</span>
 </span>
 </aside>
 </article>

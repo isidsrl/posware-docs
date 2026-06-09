@@ -1,383 +1,186 @@
 
-<!doctype html>
-<html lang="it" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-        <link rel="canonical" href="https://posware.io/4.3/posware-modules/posware-frontend/fatturazione-immediata.html">
-      
-      
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
-    
-    
-      
-        <title>Posware Frontend - Fatturazione immediata - Posware official docs</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
-      
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
-      
-      
+<!DOCTYPE html>
 
-  
-  
-  
-  
-  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%209.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-3.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-11A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2014c-2.63%200-5-1.57-6-4a6.505%206.505%200%200%201%208.5-3.5A6.52%206.52%200%200%201%2018%2012c-1%202.43-3.37%204-6%204m0-6.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201%22/%3E%3C/svg%3E');}</style>
-
-
-    
-    
-      
-        <script src="https://unpkg.com/iframe-worker/shim"></script>
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
-    
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#posware-frontend-fatturazione-immediata" class="md-skip">
+<html class="no-js" lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://posware.io/4.3/posware-modules/posware-frontend/fatturazione-immediata.html" rel="canonical"/>
+<link href="../../posware/lotteria-degli-scontrini.html" rel="prev"/>
+<link href="../celiac/informazioni-generali.html" rel="next"/>
+<link href="../../assets/images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Fatturazione immediata - Posware official docs</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%209.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-3.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-11A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2014c-2.63%200-5-1.57-6-4a6.505%206.505%200%200%201%208.5-3.5A6.52%206.52%200%200%201%2018%2012c-1%202.43-3.37%204-6%204m0-6.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201%22/%3E%3C/svg%3E');}</style>
+<script src="https://unpkg.com/iframe-worker/shim"></script>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#posware-frontend-fatturazione-immediata">
           Vai al contenuto
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
-        
-          <aside class="md-banner md-banner--warning">
-            <div class="md-banner__inner md-grid md-typeset">
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+<aside class="md-banner md-banner--warning">
+<div class="md-banner__inner md-grid md-typeset">
               
 Non stai visualizzando l'ultima versione della documentazione.
 <a href="../../..">
-    <strong>Clicca qui per andare all'ultima versione.</strong>
+<strong>Clicca qui per andare all'ultima versione.</strong>
 </a>
-
-            </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
-          </aside>
-        
-      </div>
-    
-    
-      
-
-  
-
+</div>
+<script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+</aside>
+</div>
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Intestazione">
-    <a href="../../index.html" title="Posware official docs" class="md-header__button md-logo" aria-label="Posware official docs" data-md-component="logo">
-      
-  <img src="../../assets/images/favicon.ico" alt="logo">
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="Intestazione" class="md-header__inner md-grid">
+<a aria-label="Posware official docs" class="md-header__button md-logo" data-md-component="logo" href="../../index.html" title="Posware official docs">
+<img alt="logo" src="../../assets/images/favicon.ico"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Posware official docs
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
-              Posware Frontend - Fatturazione immediata
+              Fatturazione immediata
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
 </form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Cerca">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Cerca" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Cerca" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Cerca" class="md-search__options">
+<button aria-label="Cancella" class="md-search__icon md-icon" tabindex="-1" title="Cancella" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Inizializza la ricerca
           </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
-      
-    
-    
-  </nav>
-  
-    
-      
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../index.html" class="md-tabs__link">
-        
-  
-  
-    
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
     
   
   Home
 
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../getting-started/index.html" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../getting-started/index.html">
           
   
   
   Getting started
 
         </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../index.html" class="md-tabs__link">
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../index.html">
           
   
   
   Feature e moduli
 
         </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../download/index.html" class="md-tabs__link">
-        
-  
-  
-    
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../download/index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"></path></svg>
     
   
   Download
 
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../DatabaseUpgrader/GUIDA_UTENTE.html" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../DatabaseUpgrader/GUIDA_UTENTE.html">
           
   
   
   DatabaseUpgrader
 
         </a>
-      </li>
-    
-  
-
-      
-    </ul>
-  </div>
+</li>
+</ul>
+</div>
 </nav>
-    
-  
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigazione" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Posware official docs" class="md-nav__button md-logo" aria-label="Posware official docs" data-md-component="logo">
-      
-  <img src="../../assets/images/favicon.ico" alt="logo">
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigazione" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Posware official docs" class="md-nav__button md-logo" data-md-component="logo" href="../../index.html" title="Posware official docs">
+<img alt="logo" src="../../assets/images/favicon.ico"/>
+</a>
     Posware official docs
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../index.html" class="md-nav__link">
-        
-  
-  
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+<span class="md-ellipsis">
     
   
     Home
@@ -385,42 +188,12 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     Getting started
@@ -428,37 +201,22 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
             
   
     Getting started
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/index.html" class="md-nav__link">
-        
-  
-  
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.011 3.269H16.19a4.29 4.29 0 0 0-4.185 3.345A4.29 4.29 0 0 0 7.819 3.27H2a2 2 0 0 0-2.001 2v10.244a2 2 0 0 0 2 2h3.738c4.257 0 5.53 1.025 6.138 3.134a.11.11 0 0 0 .112.084h.024a.11.11 0 0 0 .112-.084c.612-2.109 1.885-3.133 6.138-3.133h3.737a2 2 0 0 0 2.001-2V5.27a2 2 0 0 0-1.989-2ZM10.083 14.325a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm10.804 5.07a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144v.952z"/></svg>
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.011 3.269H16.19a4.29 4.29 0 0 0-4.185 3.345A4.29 4.29 0 0 0 7.819 3.27H2a2 2 0 0 0-2.001 2v10.244a2 2 0 0 0 2 2h3.738c4.257 0 5.53 1.025 6.138 3.134a.11.11 0 0 0 .112.084h.024a.11.11 0 0 0 .112-.084c.612-2.109 1.885-3.133 6.138-3.133h3.737a2 2 0 0 0 2.001-2V5.27a2 2 0 0 0-1.989-2ZM10.083 14.325a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm10.804 5.07a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144v.952z"></path></svg>
+<span class="md-ellipsis">
     
   
     Scenari di installazione
@@ -466,43 +224,12 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     Installazione e aggiornamenti Posware Frontend
@@ -510,35 +237,21 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
             
   
     Installazione e aggiornamenti Posware Frontend
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/installazione-posware-frontend/overview-generale.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/overview-generale.html">
+<span class="md-ellipsis">
     
   
     Overview generale
@@ -546,27 +259,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html">
+<span class="md-ellipsis">
     
   
     Dipendenze e aggiornamenti
@@ -574,27 +271,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/installazione-posware-frontend/setup-posware.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/setup-posware.html">
+<span class="md-ellipsis">
     
   
     SetupPosware
@@ -602,27 +283,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/installazione-posware-frontend/pos-update.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/pos-update.html">
+<span class="md-ellipsis">
     
   
     PosUpdate
@@ -630,51 +295,15 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     Installazione e aggiornamenti StoreServer
@@ -682,35 +311,21 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
             
   
     Installazione e aggiornamenti StoreServer
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/installazione-storeserver/overview-generale.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/overview-generale.html">
+<span class="md-ellipsis">
     
   
     Overview generale
@@ -718,27 +333,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/installazione-storeserver/installazione-procedure-comuni.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/installazione-procedure-comuni.html">
+<span class="md-ellipsis">
     
   
     Procedure comuni
@@ -746,27 +345,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/installazione-storeserver/installazione-nuovo-storeserver.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/installazione-nuovo-storeserver.html">
+<span class="md-ellipsis">
     
   
     Nuova installazione
@@ -774,27 +357,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/installazione-storeserver/migrazione-servizi-legacy.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/migrazione-servizi-legacy.html">
+<span class="md-ellipsis">
     
   
     Migrazione
@@ -802,27 +369,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/installazione-storeserver/aggiornamento-storeserver.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/aggiornamento-storeserver.html">
+<span class="md-ellipsis">
     
   
     Aggiornamento
@@ -830,27 +381,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/installazione-storeserver/servizi-legacy.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/servizi-legacy.html">
+<span class="md-ellipsis">
     
   
     Servizi legacy
@@ -858,27 +393,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/installazione-storeserver/disinstallazione-storeserver.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/disinstallazione-storeserver.html">
+<span class="md-ellipsis">
     
   
     Disinstallazione
@@ -886,51 +405,15 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     Scenari avanzati
@@ -938,35 +421,21 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
             
   
     Scenari avanzati
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/scenari-avanzati/dati-custom-database-storeserver.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/scenari-avanzati/dati-custom-database-storeserver.html">
+<span class="md-ellipsis">
     
   
     Aggiunta dati custom database
@@ -974,51 +443,15 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     Approfondimenti Posware
@@ -1026,35 +459,21 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_5">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
             
   
     Approfondimenti Posware
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware/dot-net-table-reference.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/dot-net-table-reference.html">
+<span class="md-ellipsis">
     
   
     Tabella riferimento .NET
@@ -1062,27 +481,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware/known-issues-42.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/known-issues-42.html">
+<span class="md-ellipsis">
     
   
     Known issues v4.2
@@ -1090,27 +493,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware/breaking-changes.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/breaking-changes.html">
+<span class="md-ellipsis">
     
   
     Breaking changes
@@ -1118,58 +505,18 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
     
   
     Feature e moduli
@@ -1177,37 +524,22 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
             
   
     Feature e moduli
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
-        
-  
-  
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 22V3h18v19l-3-2-3 2-3-2-3 2-3-2zM17 9V7h-2v2zm-4 0V7H7v2zm0 2H7v2h6zm2 2h2v-2h-2z"/></svg>
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 22V3h18v19l-3-2-3 2-3-2-3 2-3-2zM17 9V7h-2v2zm-4 0V7H7v2zm0 2H7v2h6zm2 2h2v-2h-2z"></path></svg>
+<span class="md-ellipsis">
     
   
     Panoramica
@@ -1215,43 +547,12 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     StoreServer
@@ -1259,35 +560,21 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
             
   
     StoreServer
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../authentication.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../authentication.html">
+<span class="md-ellipsis">
     
   
     Autenticazione
@@ -1295,27 +582,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ruoli-permessi.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ruoli-permessi.html">
+<span class="md-ellipsis">
     
   
     Ruoli e permessi
@@ -1323,43 +594,12 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     Funzionalità di base
@@ -1367,35 +607,21 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2_3">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_2_3">
+<span class="md-nav__icon md-icon"></span>
             
   
     Funzionalità di base
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../main-module/statistiche-dettagliate.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../main-module/statistiche-dettagliate.html">
+<span class="md-ellipsis">
     
   
     Statistiche dettagliate
@@ -1403,35 +629,14 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../main-module/posware-price-checker.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../main-module/posware-price-checker.html">
+<span class="md-ellipsis">
     
   
     Posware Price Checker
@@ -1439,27 +644,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../main-module/fatturazione-elettronica.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../main-module/fatturazione-elettronica.html">
+<span class="md-ellipsis">
     
   
     Fatturazione elettronica
@@ -1467,51 +656,15 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     Posware Frontend
@@ -1519,35 +672,21 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
             
   
     Posware Frontend
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="tracciato-record-log.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="tracciato-record-log.html">
+<span class="md-ellipsis">
     
   
     Log Transazione Posware
@@ -1555,27 +694,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="satispay-nativo.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="satispay-nativo.html">
+<span class="md-ellipsis">
     
   
     Satispay nativo
@@ -1583,27 +706,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="argentea-satispay.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="argentea-satispay.html">
+<span class="md-ellipsis">
     
   
     Argentea Satispay
@@ -1611,27 +718,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware/funzionalita-rt-20.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/funzionalita-rt-20.html">
+<span class="md-ellipsis">
     
   
     Funzionalità RT 2.0 (XML7)
@@ -1639,27 +730,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware/funzionalita-pin-dispatching.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/funzionalita-pin-dispatching.html">
+<span class="md-ellipsis">
     
   
     Pin dispatching
@@ -1667,27 +742,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../posware/lotteria-degli-scontrini.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/lotteria-degli-scontrini.html">
+<span class="md-ellipsis">
     
   
     Lotteria degli scontrini
@@ -1695,51 +754,473 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
   
+    Fatturazione immediata
   
 
-      </a>
-    </li>
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="fatturazione-immediata.html">
+<span class="md-ellipsis">
+    
+  
+    Fatturazione immediata
   
 
-              
-            
-          </ul>
-        </nav>
+    
+  </span>
+</a>
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#glossario">
+<span class="md-ellipsis">
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
+        Glossario
       
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cenni-preliminari">
+<span class="md-ellipsis">
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
+        Cenni preliminari
       
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+    </span>
+</a>
+<nav aria-label="Cenni preliminari" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vincoli-ed-esclusioni">
+<span class="md-ellipsis">
+      
+        Vincoli ed esclusioni
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#versioni-software">
+<span class="md-ellipsis">
+      
+        Versioni software
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requisiti">
+<span class="md-ellipsis">
+      
+        Requisiti
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configurazione">
+<span class="md-ellipsis">
+      
+        Configurazione
+      
+    </span>
+</a>
+<nav aria-label="Configurazione" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configurazione-del-pulsante">
+<span class="md-ellipsis">
+      
+        Configurazione del pulsante
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#parametri-di-configurazione">
+<span class="md-ellipsis">
+      
+        Parametri di configurazione
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#funzionalita">
+<span class="md-ellipsis">
+      
+        Funzionalità
+      
+    </span>
+</a>
+<nav aria-label="Funzionalità" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attivazione-della-fatturazione-immediata">
+<span class="md-ellipsis">
+      
+        Attivazione della fatturazione immediata
+      
+    </span>
+</a>
+<nav aria-label="Attivazione della fatturazione immediata" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#disattivazione">
+<span class="md-ellipsis">
+      
+        Disattivazione
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workflow-di-emissione">
+<span class="md-ellipsis">
+      
+        Workflow di emissione
+      
+    </span>
+</a>
+<nav aria-label="Workflow di emissione" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schermata-di-selezione-cliente">
+<span class="md-ellipsis">
+      
+        Schermata di selezione cliente
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tipologie-di-clienti-disponibili">
+<span class="md-ellipsis">
+      
+        Tipologie di clienti disponibili
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#registrazione-di-un-nuovo-cliente">
+<span class="md-ellipsis">
+      
+        Registrazione di un nuovo cliente
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fatturazione-alla-pubblica-amministrazione">
+<span class="md-ellipsis">
+      
+        Fatturazione alla Pubblica Amministrazione
+      
+    </span>
+</a>
+<nav aria-label="Fatturazione alla Pubblica Amministrazione" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workflow-per-la-pa">
+<span class="md-ellipsis">
+      
+        Workflow per la PA
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fatturazione-pa-con-pagamento-non-riscosso-segue-fattura">
+<span class="md-ellipsis">
+      
+        Fatturazione PA con pagamento "Non riscosso segue fattura"
+      
+    </span>
+</a>
+<nav aria-label='Fatturazione PA con pagamento "Non riscosso segue fattura"' class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requisiti_1">
+<span class="md-ellipsis">
+      
+        Requisiti
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configurazione-pagamenti">
+<span class="md-ellipsis">
+      
+        Configurazione pagamenti
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workflow">
+<span class="md-ellipsis">
+      
+        Workflow
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vincoli">
+<span class="md-ellipsis">
+      
+        Vincoli
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestione-errori-e-fallback">
+<span class="md-ellipsis">
+      
+        Gestione errori e fallback
+      
+    </span>
+</a>
+<nav aria-label="Gestione errori e fallback" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mancata-raggiungibilita-dello-storeserver">
+<span class="md-ellipsis">
+      
+        Mancata raggiungibilità dello StoreServer
+      
+    </span>
+</a>
+<nav aria-label="Mancata raggiungibilità dello StoreServer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mancata-raggiungibilita-permanente">
+<span class="md-ellipsis">
+      
+        Mancata raggiungibilità permanente
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mancata-raggiungibilita-temporanea">
+<span class="md-ellipsis">
+      
+        Mancata raggiungibilità temporanea
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transazione-non-trovata">
+<span class="md-ellipsis">
+      
+        Transazione non trovata
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dati-cedente-non-validi">
+<span class="md-ellipsis">
+      
+        Dati cedente non validi
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delega-a-software-esterni">
+<span class="md-ellipsis">
+      
+        Delega a software esterni
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dettagli-tecnici">
+<span class="md-ellipsis">
+      
+        Dettagli tecnici
+      
+    </span>
+</a>
+<nav aria-label="Dettagli tecnici" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modifiche-al-tracciato-log-record-00">
+<span class="md-ellipsis">
+      
+        Modifiche al tracciato Log Record 00
+      
+    </span>
+</a>
+<nav aria-label="Modifiche al tracciato Log Record 00" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flag11-contrassegno-fatturazione">
+<span class="md-ellipsis">
+      
+        Flag11 - Contrassegno fatturazione
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flag-fatturazione-terze-parti">
+<span class="md-ellipsis">
+      
+        Flag fatturazione terze parti
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#causale-movimento">
+<span class="md-ellipsis">
+      
+        Causale movimento
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stampa-documento">
+<span class="md-ellipsis">
+      
+        Stampa documento
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#riepilogo-parametri">
+<span class="md-ellipsis">
+      
+        Riepilogo parametri
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#faq">
+<span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+</a>
+<nav aria-label="FAQ" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#perche-non-riesco-a-selezionare-un-cliente-pa">
+<span class="md-ellipsis">
+      
+        Perché non riesco a selezionare un cliente PA?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#perche-non-posso-attivare-la-fatturazione-dopo-aver-iniziato-i-pagamenti">
+<span class="md-ellipsis">
+      
+        Perché non posso attivare la fatturazione dopo aver iniziato i pagamenti?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cosa-succede-se-lo-storeserver-non-e-raggiungibile">
+<span class="md-ellipsis">
+      
+        Cosa succede se lo StoreServer non è raggiungibile?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#posso-usare-la-fatturazione-immediata-con-i-ticket">
+<span class="md-ellipsis">
+      
+        Posso usare la fatturazione immediata con i ticket?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#come-faccio-a-registrare-un-nuovo-cliente-dalla-cassa">
+<span class="md-ellipsis">
+      
+        Come faccio a registrare un nuovo cliente dalla cassa?
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     Celiachia
@@ -1747,35 +1228,21 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
             
   
     Celiachia
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../celiac/informazioni-generali.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../celiac/informazioni-generali.html">
+<span class="md-ellipsis">
     
   
     Informazioni generali
@@ -1783,27 +1250,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../celiac/integrazione-bonus-celiachia-posware.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../celiac/integrazione-bonus-celiachia-posware.html">
+<span class="md-ellipsis">
     
   
     Integrazione bonus celiachia Posware
@@ -1811,27 +1262,11 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../celiac/rendicontazione-celiachia.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../celiac/rendicontazione-celiachia.html">
+<span class="md-ellipsis">
     
   
     Rendicontazione celiachia
@@ -1839,44 +1274,18 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../download/index.html" class="md-nav__link">
-        
-  
-  
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../download/index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"></path></svg>
+<span class="md-ellipsis">
     
   
     Download
@@ -1884,42 +1293,12 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     DatabaseUpgrader
@@ -1927,35 +1306,21 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
             
   
     DatabaseUpgrader
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../DatabaseUpgrader/GUIDA_UTENTE.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DatabaseUpgrader/GUIDA_UTENTE.html">
+<span class="md-ellipsis">
     
   
     Guida utente
@@ -1963,55 +1328,26 @@ Non stai visualizzando l'ultima versione della documentazione.
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-  </ul>
+</a>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-  <nav class="md-tags" >
-    
-      
-      
-      
-      
-        <span class="md-tag">Frontend</span>
-      
-    
-  </nav>
-
-
-
-<h1 id="posware-frontend-fatturazione-immediata">Posware Frontend - Fatturazione immediata<a class="headerlink" href="#posware-frontend-fatturazione-immediata" title="Permanent link">&para;</a></h1>
-<p><strong>Prima revisione documento: 26 aprile 2024</strong> <br>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 maggio 2026 11:02:46 UTC">28 maggio 2026</span></strong></p>
-<hr />
-<h2 id="glossario">Glossario<a class="headerlink" href="#glossario" title="Permanent link">&para;</a></h2>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<nav class="md-tags">
+<span class="md-tag">Frontend</span>
+</nav>
+<h1 id="posware-frontend-fatturazione-immediata"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Posware Frontend - Fatturazione immediata<a class="headerlink" href="#posware-frontend-fatturazione-immediata" title="Permanent link">¶</a></h1>
+<p><strong>Prima revisione documento: 26 aprile 2024</strong> <br/>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 giugno 2026 19:21:45 UTC">9 giugno 2026</span></strong></p>
+<hr/>
+<h2 id="glossario"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Glossario<a class="headerlink" href="#glossario" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>WebApp:</strong> applicazione web che offre la possibilità di gestire in modo centralizzato le funzionalità disponibili nel StoreServer;</li>
 <li><strong>PoswareModule:</strong> plug-in del StoreServer dedicato alla gestione del PPC;</li>
@@ -2020,95 +1356,390 @@ Non stai visualizzando l'ultima versione della documentazione.
 <li><strong>Fornitore:</strong> si intende sempre il <strong>Cedente</strong>, i termini sono intercambiabili ed usati entrambi nel documento per riferirsi alla stessa cosa;</li>
 <li><strong>Cessionario:</strong> l'entità che riceve la fattura e che quindi di fatto effettua l'acquisto;</li>
 <li><strong>PA:</strong> Pubblica Amministrazione;</li>
-<li><strong>AdE:</strong> Agenzia delle Entrate; </li>
+<li><strong>AdE:</strong> Agenzia delle Entrate;</li>
 </ul>
-<h2 id="to-do-da-redigere-quanto-prima">TO DO: Da redigere quanto prima!!!<a class="headerlink" href="#to-do-da-redigere-quanto-prima" title="Permanent link">&para;</a></h2>
-
-
-
-
-
-
-
-  
-    
-  
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Ultimo aggiornamento">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 maggio 2026 11:02:46 UTC">28 maggio 2026</span>
-  </span>
-
-    
-    
-    
-    
-  </aside>
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
+<h2 id="cenni-preliminari"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Cenni preliminari<a class="headerlink" href="#cenni-preliminari" title="Permanent link">¶</a></h2>
+<p>La funzione di <strong>fatturazione elettronica immediata</strong> (o <em>Direct Invoice</em>) permette di emettere una fattura elettronica direttamente dal <strong>Posware Frontend</strong> subito dopo la chiusura di una transazione, senza dover accedere alla WebApp dello StoreServer.</p>
+<p>A differenza della fatturazione differita disponibile dalla WebApp, questa modalità consente all'operatore di cassa di:</p>
+<ul>
+<li>Attivare la richiesta di fattura durante la transazione</li>
+<li>Selezionare il cliente destinatario subito dopo l'emissione del documento commerciale</li>
+<li>Ottenere conferma immediata dell'emissione della fattura elettronica</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Differenza con la fatturazione differita</p>
+<p>La fatturazione differita dalla WebApp permette di emettere fatture in un secondo momento, partendo dagli estremi della transazione. La fatturazione immediata da cassa invece avviene contestualmente alla chiusura della vendita.</p>
+</div>
+<h3 id="vincoli-ed-esclusioni"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> Vincoli ed esclusioni<a class="headerlink" href="#vincoli-ed-esclusioni" title="Permanent link">¶</a></h3>
+<ul>
+<li>È possibile fatturare solo a <strong>clienti privati con Partita IVA</strong> (liberi professionisti, aziende) e <strong>clienti privati senza Partita IVA</strong> (privati cittadini, ONLUS senza P.IVA)</li>
+<li><strong>Le Pubbliche Amministrazioni sono escluse</strong> dalla fatturazione immediata diretta (vedere <a href="#fatturazione-alla-pubblica-amministrazione">sezione dedicata</a>)</li>
+<li>Il documento emesso è sempre di tipo <strong>commerciale</strong> (documento fiscale RT)</li>
+<li>È richiesta la connettività con lo StoreServer</li>
+</ul>
+<h3 id="versioni-software"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.2</span> Versioni software<a class="headerlink" href="#versioni-software" title="Permanent link">¶</a></h3>
+<p>È richiesta la versione <strong>v. 4.3.x</strong> o superiore di <strong>Posware Frontend</strong>.</p>
+<h3 id="requisiti"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.3</span> Requisiti<a class="headerlink" href="#requisiti" title="Permanent link">¶</a></h3>
+<ul>
+<li>Licenza del modulo Fattura Elettronica attiva sullo StoreServer</li>
+<li>Dati del cedente (punto vendita) correttamente configurati sullo StoreServer</li>
+<li>Connettività di rete tra la cassa e lo StoreServer</li>
+<li>Stampante RT configurata e funzionante</li>
+</ul>
+<h2 id="configurazione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Configurazione<a class="headerlink" href="#configurazione" title="Permanent link">¶</a></h2>
+<h3 id="configurazione-del-pulsante"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.1</span> Configurazione del pulsante<a class="headerlink" href="#configurazione-del-pulsante" title="Permanent link">¶</a></h3>
+<p>Per abilitare la fatturazione immediata, è necessario configurare un pulsante nella tastiera di Posware con l'operazione <strong><code>DIRECT_EINVOICE</code></strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Migrazione dalla versione 4.2</p>
+<p>Nella versione 4.2 la funzione era attivata dall'operazione <code>FATTURA</code>. Dalla versione 4.3 è necessario usare <code>DIRECT_EINVOICE</code>.</p>
+</div>
+<h3 id="parametri-di-configurazione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2</span> Parametri di configurazione<a class="headerlink" href="#parametri-di-configurazione" title="Permanent link">¶</a></h3>
+<p>I seguenti parametri sono configurabili nella tabella <code>tabparametriextra</code> con modulo <code>posware.einvoice</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>useThirdPartySoftwareForEInvoiceGeneration</code></td>
+<td>boolean</td>
+<td>Se attivo, delega l'emissione della fattura a un software esterno (backoffice). Posware mostrerà solo gli estremi della transazione da fatturare</td>
+</tr>
+<tr>
+<td><code>printReceiptAsReminderForEInvoice</code></td>
+<td>boolean</td>
+<td>Se attivo, stampa uno scontrino di reminder con gli estremi della transazione e il barcode per il recupero veloce</td>
+</tr>
+<tr>
+<td><code>treatUnpaidPaymentAsEInvoiceForPA</code></td>
+<td>boolean</td>
+<td>Se attivo, il pagamento "non riscosso segue fattura" viene trattato automaticamente come fattura per PA, saltando la schermata di selezione cliente</td>
+</tr>
+</tbody>
+</table>
+<h2 id="funzionalita"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Funzionalità<a class="headerlink" href="#funzionalita" title="Permanent link">¶</a></h2>
+<h3 id="attivazione-della-fatturazione-immediata"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Attivazione della fatturazione immediata<a class="headerlink" href="#attivazione-della-fatturazione-immediata" title="Permanent link">¶</a></h3>
+<p>Durante una transazione di vendita, l'operatore può attivare la richiesta di fattura immediata premendo il pulsante configurato con l'operazione <code>DIRECT_EINVOICE</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Momento di attivazione</p>
+<p>L'attivazione (e la disattivazione) della fatturazione immediata è possibile <strong>solo fino alla fase del subtotale</strong> (inclusa). Una volta entrati nella fase dei pagamenti, non è più possibile modificare questa impostazione.</p>
+</div>
+<h4 id="disattivazione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1.1</span> Disattivazione<a class="headerlink" href="#disattivazione" title="Permanent link">¶</a></h4>
+<p>Per disattivare la richiesta di fattura, premere nuovamente lo stesso pulsante. Verrà mostrata una finestra di conferma SI/NO.</p>
+<div class="admonition note">
+<p class="admonition-title">Migrazione dalla versione 4.2</p>
+<p>Nella versione 4.2 la disattivazione era gestita dall'operazione <code>ANNULLA_RICHIESTA_FATTURA</code>. Dalla versione 4.3 si usa lo stesso pulsante <code>DIRECT_EINVOICE</code> per attivare e disattivare.</p>
+</div>
+<h3 id="workflow-di-emissione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2</span> Workflow di emissione<a class="headerlink" href="#workflow-di-emissione" title="Permanent link">¶</a></h3>
+<p>Dopo aver chiuso la transazione con la fatturazione immediata attivata:</p>
+<ol>
+<li><strong>Sincronizzazione dati</strong>: Il log della transazione viene inviato immediatamente allo StoreServer</li>
+<li><strong>Verifica cedente</strong>: Viene verificata la correttezza dei dati di fatturazione del punto vendita</li>
+<li><strong>Schermata di selezione</strong>: Appare una schermata per la scelta del cliente</li>
+<li><strong>Emissione fattura</strong>: Lo StoreServer genera la fattura elettronica</li>
+<li><strong>Conferma</strong>: L'operatore riceve conferma dell'avvenuta emissione</li>
+</ol>
+<h4 id="schermata-di-selezione-cliente"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2.1</span> Schermata di selezione cliente<a class="headerlink" href="#schermata-di-selezione-cliente" title="Permanent link">¶</a></h4>
+<p>La schermata permette di:</p>
+<ul>
+<li>Ricercare un cliente nell'anagrafica</li>
+<li>Visualizzare i risultati della ricerca</li>
+<li>Selezionare il cliente destinatario della fattura</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Ricerca automatica tramite Fidelity Card</p>
+<p>Se nella transazione è stata passata una tessera fidelity, il sistema tenta automaticamente di trovare il cliente associato. Se trovato, viene preselezionato ma l'operatore può comunque modificarlo cercandone un altro.</p>
+</div>
+<h4 id="tipologie-di-clienti-disponibili"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2.2</span> Tipologie di clienti disponibili<a class="headerlink" href="#tipologie-di-clienti-disponibili" title="Permanent link">¶</a></h4>
+<p>La selezione è limitata a:</p>
+<ul>
+<li><strong>Privati con Partita IVA</strong>: liberi professionisti, aziende, ecc.</li>
+<li><strong>Privati senza Partita IVA</strong>: privati cittadini, ONLUS senza P.IVA, ecc.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Pubbliche Amministrazioni escluse</p>
+<p>Le Pubbliche Amministrazioni <strong>non sono selezionabili</strong> dalla fatturazione immediata in cassa. Vedere la <a href="#fatturazione-alla-pubblica-amministrazione">sezione dedicata</a> per il workflow specifico.</p>
+</div>
+<h3 id="registrazione-di-un-nuovo-cliente"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.3</span> Registrazione di un nuovo cliente<a class="headerlink" href="#registrazione-di-un-nuovo-cliente" title="Permanent link">¶</a></h3>
+<p>Dalla cassa <strong>non è possibile registrare un nuovo cliente</strong> direttamente nell'interfaccia di fatturazione immediata (l'interfaccia è progettata per desktop/tablet/mobile con tastiera).</p>
+<p>Sono disponibili le seguenti alternative:</p>
+<ol>
+<li><strong>Pulsante nella Windows Form</strong>: Apre il browser all'indirizzo dello StoreServer dove è possibile codificare il nuovo cliente con tastiera e mouse</li>
+<li><strong>Secondo dispositivo</strong>: Usare un tablet o smartphone per codificare il cliente e poi selezionarlo dalla cassa</li>
+<li><strong>Box informazioni</strong>: Registrare il cliente dal box informazioni e comunicare il riferimento alla cassa</li>
+<li><strong>Fatturazione differita</strong>: Chiudere la transazione senza fattura immediata e procedere successivamente dallo StoreServer</li>
+</ol>
+<h2 id="fatturazione-alla-pubblica-amministrazione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Fatturazione alla Pubblica Amministrazione<a class="headerlink" href="#fatturazione-alla-pubblica-amministrazione" title="Permanent link">¶</a></h2>
+<p>La fatturazione alla Pubblica Amministrazione richiede campi aggiuntivi (CIG, CUP, ordine d'acquisto, contratto) non disponibili nell'interfaccia di cassa. Per questo motivo, le PA sono escluse dalla fatturazione immediata diretta.</p>
+<h3 id="workflow-per-la-pa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.1</span> Workflow per la PA<a class="headerlink" href="#workflow-per-la-pa" title="Permanent link">¶</a></h3>
+<p>Nella schermata di selezione cliente è presente:</p>
+<ul>
+<li>Un <strong>avviso informativo</strong> che indica l'impossibilità di fatturare direttamente alla PA</li>
+<li>Un <strong>pulsante "Fattura alla Pubblica Amministrazione"</strong></li>
+</ul>
+<p>Premendo questo pulsante:</p>
+<ol>
+<li>Viene mostrato un avviso con gli estremi della transazione da fatturare</li>
+<li>Se attivo il parametro <code>printReceiptAsReminderForEInvoice</code>, viene stampato uno scontrino di reminder</li>
+<li>La finestra si chiude confermando l'operazione</li>
+</ol>
+<p>L'operatore dovrà poi completare la fatturazione dallo StoreServer (cassa centrale o box informazioni).</p>
+<h3 id="fatturazione-pa-con-pagamento-non-riscosso-segue-fattura"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.2</span> Fatturazione PA con pagamento "Non riscosso segue fattura"<a class="headerlink" href="#fatturazione-pa-con-pagamento-non-riscosso-segue-fattura" title="Permanent link">¶</a></h3>
+<p>Per le Pubbliche Amministrazioni che richiedono lo <strong>split payment</strong> (raramente <em>non</em> è richiesto) è necessario utilizzare il pagamento "Non riscosso segue fattura" (<code>tipoPagRT = 7</code>).</p>
+<h4 id="requisiti_1"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.2.1</span> Requisiti<a class="headerlink" href="#requisiti_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Il documento deve essere di tipo <strong>commerciale</strong> (fiscale)</li>
+<li>Il pagamento deve essere "Non riscosso segue fattura"</li>
+<li>Non è possibile combinare questo pagamento con ticket</li>
+</ul>
+<h4 id="configurazione-pagamenti"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.2.2</span> Configurazione pagamenti<a class="headerlink" href="#configurazione-pagamenti" title="Permanent link">¶</a></h4>
+<p>È possibile configurare più codici pagamento con <code>tipoPagRT = 7</code>, differenziati dal campo <code>PagXml</code> per indicare la modalità di pagamento nella fattura:</p>
+<table>
+<thead>
+<tr>
+<th>Esempio</th>
+<th>Descrizione</th>
+<th>PagXml</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Codice 1</td>
+<td>Non riscosso fattura contanti</td>
+<td>MP01</td>
+</tr>
+<tr>
+<td>Codice 23</td>
+<td>Non riscosso fattura bonifico</td>
+<td>MP05</td>
+</tr>
+</tbody>
+</table>
+<h4 id="workflow"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.2.3</span> Workflow<a class="headerlink" href="#workflow" title="Permanent link">¶</a></h4>
+<ol>
+<li>Effettuare la transazione fiscale</li>
+<li>Pagare interamente con un pagamento "Non riscosso segue fattura"</li>
+<li>Alla chiusura, si apre la schermata di fatturazione immediata</li>
+<li>Premere il pulsante "Fattura alla Pubblica Amministrazione"</li>
+<li>Completare la fatturazione dallo StoreServer</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Parametro treatUnpaidPaymentAsEInvoiceForPA</p>
+<p>Se attivo, il pagamento "Non riscosso segue fattura" salta automaticamente la schermata di selezione cliente e mostra direttamente l'avviso per la fatturazione differita. Utile se il cliente usa questa procedura <strong>esclusivamente</strong> per la PA.</p>
+</div>
+<h4 id="vincoli"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.2.4</span> Vincoli<a class="headerlink" href="#vincoli" title="Permanent link">¶</a></h4>
+<p>Non è possibile usare il pagamento "Non riscosso segue fattura" quando:</p>
+<ul>
+<li>È stato selezionato un pagamento di tipo Ticket</li>
+<li>È stata attivata la fatturazione immediata usando il comando DIRECT_EINVOICE</li>
+</ul>
+<p>In questi casi verranno mostrati i relativi messaggi di errore.</p>
+<h2 id="gestione-errori-e-fallback"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Gestione errori e fallback<a class="headerlink" href="#gestione-errori-e-fallback" title="Permanent link">¶</a></h2>
+<h3 id="mancata-raggiungibilita-dello-storeserver"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.1</span> Mancata raggiungibilità dello StoreServer<a class="headerlink" href="#mancata-raggiungibilita-dello-storeserver" title="Permanent link">¶</a></h3>
+<h4 id="mancata-raggiungibilita-permanente"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.1.1</span> Mancata raggiungibilità permanente<a class="headerlink" href="#mancata-raggiungibilita-permanente" title="Permanent link">¶</a></h4>
+<p>Se lo StoreServer non è raggiungibile al momento della chiusura della transazione:</p>
+<ol>
+<li>Viene mostrato un messaggio che indica l'impossibilità di procedere con la fatturazione immediata</li>
+<li>È presente un pulsante <strong>"Annulla operazione"</strong></li>
+</ol>
+<p>Premendo "Annulla operazione":</p>
+<ol>
+<li>Appare una conferma: <em>"Sei sicuro di voler annullare la fatturazione? Il documento commerciale di vendita è già stato emesso."</em></li>
+<li>Confermando con SI, viene mostrato un avviso con gli estremi della transazione:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>## Operazione annullata 
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>#### Il documento commerciale di vendita cartaceo e la transazione sono stati comunque emessi. 
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>È ancora possibile emettere la fattura dallo StoreServer (cassa centrale o box informazioni).
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>Usare questi estremi della transazione per l'emissione:
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>Data: [data]
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>Cassa: [numero cassa]
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>Numero Transazione: [numero]
+</code></pre></div>
+<ol>
+<li>Se attivo il parametro <code>printReceiptAsReminderForEInvoice</code>, viene stampato uno scontrino di reminder</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Documento già emesso</p>
+<p>Il documento commerciale di vendita viene emesso <strong>prima</strong> della fatturazione elettronica. In caso di annullamento, il cliente esce con lo scontrino e l'operatore dovrà generare la fattura successivamente dallo StoreServer.</p>
+</div>
+<h4 id="mancata-raggiungibilita-temporanea"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.1.2</span> Mancata raggiungibilità temporanea<a class="headerlink" href="#mancata-raggiungibilita-temporanea" title="Permanent link">¶</a></h4>
+<p>Se la schermata è stata caricata ma lo StoreServer diventa irraggiungibile:</p>
+<ol>
+<li>Viene mostrato lo stesso messaggio di errore</li>
+<li>L'operatore dovrà procedere con la fatturazione differita dallo StoreServer</li>
+</ol>
+<h3 id="transazione-non-trovata"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.2</span> Transazione non trovata<a class="headerlink" href="#transazione-non-trovata" title="Permanent link">¶</a></h3>
+<p>Se il log della transazione non è stato ancora ricevuto dallo StoreServer:</p>
+<ol>
+<li>È possibile <strong>riprovare fino a 3 volte</strong> premendo il pulsante "Riprova"</li>
+<li>Ogni tentativo rinvia anche il log della transazione</li>
+<li>Dopo 3 tentativi falliti, la procedura si chiude automaticamente notificando l'operatore</li>
+</ol>
+<h3 id="dati-cedente-non-validi"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.3</span> Dati cedente non validi<a class="headerlink" href="#dati-cedente-non-validi" title="Permanent link">¶</a></h3>
+<p>Se i dati del cedente (punto vendita) non sono configurati correttamente sullo StoreServer:</p>
+<ol>
+<li>Viene mostrata una schermata di errore</li>
+<li>L'operatore viene informato che è necessario correggere i dati di fatturazione prima di poter emettere fatture immediate</li>
+<li>L'unica opzione disponibile è "Annulla operazione" per ottenere gli estremi della transazione e fatturare successivamente</li>
+</ol>
+<h2 id="delega-a-software-esterni"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> Delega a software esterni<a class="headerlink" href="#delega-a-software-esterni" title="Permanent link">¶</a></h2>
+<p>Se il parametro <code>useThirdPartySoftwareForEInvoiceGeneration</code> è attivo, Posware <strong>non</strong> avvia la procedura di emissione fattura ma mostra direttamente un messaggio con gli estremi della transazione:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>#### Il pro-forma cartaceo e la transazione sono stati emessi.
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>***È necessario emettere la fattura dal proprio Back-Office.***
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>Usare questi estremi della transazione per l'emissione:
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>***Data***: [data]
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>***Cassa***: [numero cassa]
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>***Numero Transazione***: [numero]
+</code></pre></div>
+<p>Il documento viene marcato con un flag specifico nel log per indicare che la fatturazione è delegata a un sistema esterno.</p>
+<h2 id="dettagli-tecnici"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.8</span> Dettagli tecnici<a class="headerlink" href="#dettagli-tecnici" title="Permanent link">¶</a></h2>
+<h3 id="modifiche-al-tracciato-log-record-00"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.8.1</span> Modifiche al tracciato Log Record 00<a class="headerlink" href="#modifiche-al-tracciato-log-record-00" title="Permanent link">¶</a></h3>
+<p>La fatturazione immediata utilizza i seguenti campi nel record 00 del log:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Posizione</th>
+<th>Lunghezza</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flag11</td>
+<td>55</td>
+<td>1</td>
+<td>Boolean</td>
+<td>Indica che la transazione è flaggata per fatturazione elettronica</td>
+</tr>
+<tr>
+<td>Flag fatturazione terze parti</td>
+<td>185</td>
+<td>1</td>
+<td>Boolean</td>
+<td>Indica che la fattura sarà emessa da sistema esterno</td>
+</tr>
+</tbody>
+</table>
+<h4 id="flag11-contrassegno-fatturazione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.8.1.1</span> Flag11 - Contrassegno fatturazione<a class="headerlink" href="#flag11-contrassegno-fatturazione" title="Permanent link">¶</a></h4>
+<p>Questo flag permette di:</p>
+<ul>
+<li>Tracciare lato StoreServer le transazioni che richiedono fatturazione</li>
+<li>Identificare documenti pendenti non ancora fatturati</li>
+<li>Incrociare con le fatture emesse per verificare completezza</li>
+</ul>
+<h4 id="flag-fatturazione-terze-parti"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.8.1.2</span> Flag fatturazione terze parti<a class="headerlink" href="#flag-fatturazione-terze-parti" title="Permanent link">¶</a></h4>
+<p>Se attivo (in base al parametro <code>useThirdPartySoftwareForEInvoiceGeneration</code>):</p>
+<ul>
+<li>Lo StoreServer <strong>non</strong> monitorerà l'emissione effettiva della fattura</li>
+<li>Il controllo è delegato al sistema esterno</li>
+<li>Il flag è sempre in aggiunta al Flag11</li>
+</ul>
+<h3 id="causale-movimento"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.8.2</span> Causale movimento<a class="headerlink" href="#causale-movimento" title="Permanent link">¶</a></h3>
+<p>Quando la fatturazione immediata è attiva:</p>
+<ul>
+<li>La causale nel record 00 (posizione 168, 2 caratteri) viene impostata a <strong><code>DI</code></strong> (Direct EInvoice)</li>
+<li>Se disattivata, torna al default <strong><code>VF</code></strong> (Vendita Fiscale)</li>
+<li>Il tipo movimento rimane <strong>00</strong> (vendita fiscale)</li>
+</ul>
+<h3 id="stampa-documento"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.8.3</span> Stampa documento<a class="headerlink" href="#stampa-documento" title="Permanent link">¶</a></h3>
+<p>Sul documento commerciale di vendita (quando attiva la fatturazione immediata) viene stampata una riga informativa che indica:</p>
+<ul>
+<li>Che il documento è un pro-forma fattura</li>
+<li>Che per esso è stata/sarà emessa fattura elettronica</li>
+</ul>
+<h2 id="riepilogo-parametri"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.9</span> Riepilogo parametri<a class="headerlink" href="#riepilogo-parametri" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametro</th>
+<th>Tipo</th>
+<th>Default</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>posware.einvoice</td>
+<td>useThirdPartySoftwareForEInvoiceGeneration</td>
+<td>boolean</td>
+<td>false</td>
+<td>Delega emissione a software esterno</td>
+</tr>
+<tr>
+<td>posware.einvoice</td>
+<td>printReceiptAsReminderForEInvoice</td>
+<td>boolean</td>
+<td>false</td>
+<td>Stampa scontrino reminder con estremi transazione</td>
+</tr>
+<tr>
+<td>posware.einvoice</td>
+<td>treatUnpaidPaymentAsEInvoiceForPA</td>
+<td>boolean</td>
+<td>false</td>
+<td>Pagamento "non riscosso" trattato automaticamente come PA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="faq"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10</span> FAQ<a class="headerlink" href="#faq" title="Permanent link">¶</a></h2>
+<h3 id="perche-non-riesco-a-selezionare-un-cliente-pa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10.1</span> Perché non riesco a selezionare un cliente PA?<a class="headerlink" href="#perche-non-riesco-a-selezionare-un-cliente-pa" title="Permanent link">¶</a></h3>
+<p>Le Pubbliche Amministrazioni richiedono campi aggiuntivi (CIG, CUP, dati contratto/ordine) non disponibili nell'interfaccia di cassa. Usare il pulsante "Fattura alla Pubblica Amministrazione" e completare l'operazione dallo StoreServer.</p>
+<h3 id="perche-non-posso-attivare-la-fatturazione-dopo-aver-iniziato-i-pagamenti"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10.2</span> Perché non posso attivare la fatturazione dopo aver iniziato i pagamenti?<a class="headerlink" href="#perche-non-posso-attivare-la-fatturazione-dopo-aver-iniziato-i-pagamenti" title="Permanent link">¶</a></h3>
+<p>Per garantire la coerenza del documento fiscale, l'attivazione/disattivazione è consentita solo fino alla fase del subtotale.</p>
+<h3 id="cosa-succede-se-lo-storeserver-non-e-raggiungibile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10.3</span> Cosa succede se lo StoreServer non è raggiungibile?<a class="headerlink" href="#cosa-succede-se-lo-storeserver-non-e-raggiungibile" title="Permanent link">¶</a></h3>
+<p>Il documento commerciale viene comunque emesso. Annotare gli estremi della transazione (o stampare il reminder se configurato) e procedere con la fatturazione differita dallo StoreServer.</p>
+<h3 id="posso-usare-la-fatturazione-immediata-con-i-ticket"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10.4</span> Posso usare la fatturazione immediata con i ticket?<a class="headerlink" href="#posso-usare-la-fatturazione-immediata-con-i-ticket" title="Permanent link">¶</a></h3>
+<p>No, non è possibile combinare ticket con il pagamento "Non riscosso segue fattura" richiesto per la fatturazione PA con split payment.</p>
+<h3 id="come-faccio-a-registrare-un-nuovo-cliente-dalla-cassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10.5</span> Come faccio a registrare un nuovo cliente dalla cassa?<a class="headerlink" href="#come-faccio-a-registrare-un-nuovo-cliente-dalla-cassa" title="Permanent link">¶</a></h3>
+<p>Non è possibile direttamente dall'interfaccia di cassa. Usare il pulsante per aprire il browser verso lo StoreServer, oppure registrare il cliente da un altro dispositivo (tablet, box informazioni) e poi selezionarlo dalla cassa.</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Ultimo aggiornamento">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 giugno 2026 19:21:45 UTC">9 giugno 2026</span>
+</span>
+</aside>
+</article>
+</div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Torna su
 </button>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
-      Copyright 2024&copy; I.Si.D S.r.l.
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright 2024© I.Si.D S.r.l.
     </div>
-  
-  
 </div>
-      
-        
 <div class="md-social">
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://isid.it/" target="_blank" rel="noopener" title="isid.it" class="md-social__link">
-      <?xml version="1.0" standalone="no"?>
+<a class="md-social__link" href="https://isid.it/" rel="noopener" target="_blank" title="isid.it">
+<?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="1510.000000pt" height="518.000000pt" viewBox="0 0 1510.000000 518.000000"
- preserveAspectRatio="xMidYMid meet">
 
-<g transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)"
-fill="#FFFFFF" stroke="none">
+<svg height="518.000000pt" preserveaspectratio="xMidYMid meet" version="1.0" viewbox="0 0 1510.000000 518.000000" width="1510.000000pt" xmlns="http://www.w3.org/2000/svg">
+<g fill="#FFFFFF" stroke="none" transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)">
 <path d="M69 5157 c-19 -12 -42 -38 -51 -57 -17 -33 -18 -174 -18 -2510 0
 -2336 1 -2477 18 -2510 9 -19 32 -45 51 -57 l34 -23 466 0 c521 0 514 -1 553
 71 17 32 18 131 18 2519 0 2391 -1 2487 -18 2520 -37 71 -32 70 -553 70 l-466
-0 -34 -23z"/>
+0 -34 -23z"></path>
 <path d="M2580 5169 c-305 -35 -562 -148 -726 -320 -149 -157 -241 -337 -291
 -572 -16 -72 -18 -141 -18 -582 0 -550 4 -597 66 -787 127 -392 402 -626 846
 -720 l108 -23 1570 -5 1570 -5 60 -23 c32 -12 75 -35 95 -50 44 -36 95 -119
@@ -2120,12 +1751,12 @@ fill="#FFFFFF" stroke="none">
 c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
 103 161 207 197 48 16 190 17 2091 22 1928 5 2041 6 2066 23 53 36 54 41 57
 469 2 250 -1 412 -7 436 -6 21 -25 51 -41 67 l-31 30 -2197 1 c-1208 1 -2231
--2 -2272 -7z"/>
+-2 -2272 -7z"></path>
 <path d="M7631 5162 c-71 -38 -71 -38 -71 -501 0 -403 1 -415 21 -448 40 -64
 34 -63 501 -63 l424 0 302 -282 302 -282 0 -386 c0 -380 0 -386 23 -430 42
 -82 28 -80 550 -80 502 0 489 -1 541 60 l26 32 0 422 0 423 -23 34 c-46 69
 -44 69 -512 69 l-420 1 -297 277 -297 277 0 390 c-1 435 -1 436 -70 482 l-34
-23 -466 0 c-433 0 -469 -1 -500 -18z"/>
+23 -466 0 c-433 0 -469 -1 -500 -18z"></path>
 <path d="M9255 5167 c-47 -18 -71 -39 -97 -82 l-23 -40 -3 -452 -3 -453 1993
 -3 c1802 -3 2001 -5 2071 -20 422 -88 609 -249 697 -601 50 -201 55 -279 55
 -926 0 -647 -5 -725 -55 -926 -80 -318 -256 -491 -582 -574 -216 -54 -240 -55
@@ -2134,36 +1765,23 @@ c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
 -2 1927 0 2040 8 503 36 891 149 1191 346 113 74 311 270 383 379 189 287 292
 647 321 1120 13 220 13 1250 0 1470 -29 473 -133 837 -322 1120 -68 103 -219
 259 -328 341 -109 82 -343 200 -491 248 -213 68 -463 114 -738 136 -200 15
--3906 12 -3946 -3z"/>
+-3906 12 -3946 -3z"></path>
 <path d="M7560 1918 c0 -1706 1 -1815 18 -1847 9 -19 33 -43 52 -53 33 -17 64
 -18 512 -16 l476 3 27 25 c58 53 55 -64 55 1895 l0 1805 -570 0 -570 0 0
--1812z"/>
+-1812z"></path>
 </g>
 </svg>
-    </a>
-  
+</a>
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
-    
-    
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-        <script src="../../javascripts/extra.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/extra.js"></script>
+</body>
 </html>

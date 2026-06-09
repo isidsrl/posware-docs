@@ -834,6 +834,18 @@ Non stai visualizzando l'ultima versione della documentazione.
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware-modules/posware-frontend/fatturazione-immediata.html">
+<span class="md-ellipsis">
+    
+  
+    Fatturazione immediata
+  
+
+    
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -966,7 +978,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </nav>
 <h1 id="storeserver-overview-generale"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> StoreServer - Overview generale<a class="headerlink" href="#storeserver-overview-generale" title="Permanent link">¶</a></h1>
 <p><strong>Prima revisione documento: 24 aprile 2024</strong> <br/>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 maggio 2026 11:02:46 UTC">28 maggio 2026</span></strong></p>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 giugno 2026 19:21:45 UTC">9 giugno 2026</span></strong></p>
 <hr/>
 <h2 id="cenni-preliminari"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Cenni preliminari<a class="headerlink" href="#cenni-preliminari" title="Permanent link">¶</a></h2>
 <p>Il presente documento descrive i nuovi requisiti minimi e le procedure necessarie all'installazione e alla configurazione dello <em>StoreServer</em>, il nuovo sistema centralizzato per la gestione e l'analisi del punto vendita introdotto da Posware <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><code>4.3</code> e superiori.</p>
@@ -981,7 +993,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 <p>Tali requisiti sono richiesti da un sistema usato <strong>esclusivamente per lo <em>StoreServer</em> </strong>. <br/> Qualora il software dovesse condividere le risorse hardware con altri software di terze parti, rimane a carico del tecnico installatore adeguare tali risorse in base alle richieste hardware di quest'ultimi aumentando le risorse di quanto necessario. </p>
 <p>Si raccomanda di acquistare un disco rigido SSD (tipo SATA o NVE) ad uso esclusivo per lo <em>StoreServer</em>.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Processore</label><label for="__tabbed_1_2">RAM</label><label for="__tabbed_1_3">Disco rigido</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><input id="__tabbed_1_3" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">Processore</label><label for="__tabbed_1_2">RAM</label><label for="__tabbed_1_3">Disco rigido</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Un processore compatibile con la versione Windows 10 <strong>x64</strong> (<strong>64bit</strong>) <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42"></path></svg></span><strong><code>1809</code></strong> (<strong>Redstone 5</strong>) o superiore oppure compatibile con Windows 11</p>
@@ -1005,7 +1017,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </ul>
 </div>
 </div>
-</input></input></input></div>
+</div>
 <h3 id="software"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.2</span> Software<a class="headerlink" href="#software" title="Permanent link">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Dipendenze vincolanti</p>
@@ -1030,7 +1042,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </ul>
 <h2 id="breaking-changes"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Breaking changes<a class="headerlink" href="#breaking-changes" title="Permanent link">¶</a></h2>
 <p>I breaking changes elencati impattano vari software di back-end installati sui server di barriera nell'ecosistema Posware v4.2, precedenti all'introduzione dello StoreServer con Posware 4.3.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Credenziali database</label><label for="__tabbed_2_2">Strumenti di gestione database MySql</label><label for="__tabbed_2_3">Database e strutture</label><label for="__tabbed_2_4">Pos Sbv - Servizio aggiornamento dati casse</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"/><input id="__tabbed_2_2" name="__tabbed_2" type="radio"/><input id="__tabbed_2_3" name="__tabbed_2" type="radio"/><input id="__tabbed_2_4" name="__tabbed_2" type="radio"/><div class="tabbed-labels"><label for="__tabbed_2_1">Credenziali database</label><label for="__tabbed_2_2">Strumenti di gestione database MySql</label><label for="__tabbed_2_3">Database e strutture</label><label for="__tabbed_2_4">Pos Sbv - Servizio aggiornamento dati casse</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="admonition warning">
@@ -1081,7 +1093,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </div>
 </div>
 </div>
-</input></input></input></input></div>
+</div>
 <h2 id="installazione-e-configurazione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Installazione e configurazione<a class="headerlink" href="#installazione-e-configurazione" title="Permanent link">¶</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Prima di iniziare</p>
@@ -1098,7 +1110,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 <span class="md-icon" title="Ultimo aggiornamento">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 maggio 2026 11:02:46 UTC">28 maggio 2026</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 giugno 2026 19:21:45 UTC">9 giugno 2026</span>
 </span>
 </aside>
 </article>
