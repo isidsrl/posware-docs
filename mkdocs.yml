@@ -102,7 +102,7 @@ nav:
       - Funzionalità RT 2.0 (XML7): posware/funzionalita-rt-20.md
       - Pin dispatching: posware/funzionalita-pin-dispatching.md
       - Lotteria degli scontrini: posware/lotteria-degli-scontrini.md
-      # - Fatturazione immediata: posware-modules/posware-frontend/fatturazione-immediata.md
+      - Fatturazione immediata: posware-modules/posware-frontend/fatturazione-immediata.md
       # - Nota di credito: posware-modules/posware-frontend/nota-di-credito.md
     - Celiachia:
       - Informazioni generali: posware-modules/celiac/informazioni-generali.md

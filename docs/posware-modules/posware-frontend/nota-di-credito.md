@@ -16,4 +16,4 @@ tags:
 - **Fornitore:** si intende sempre il **Cedente**, i termini sono intercambiabili ed usati entrambi nel documento per riferirsi alla stessa cosa;
 - **Cessionario:** l'entità che riceve la fattura e che quindi di fatto effettua l'acquisto;
 - **PA:** Pubblica Amministrazione;
-- **AdE:** Agenzia delle Entrate; 
+- **AdE:** Agenzia delle Entrate;
