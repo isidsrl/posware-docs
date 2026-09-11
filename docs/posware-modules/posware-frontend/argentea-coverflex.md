@@ -85,7 +85,7 @@ La risposta del terminale determina come Posware ripartisce l'incasso su più co
 
 | Componente restituita da Argentea | Codice di pagamento Posware utilizzato |
 |-----------------------------------|----------------------------------------|
-| Quota pagata con Buoni pasto elettronici | Pagamento *BPE Coverflex* |
+| Quota pagata con Buoni pasto elettronici | Pagamento *BPE Coverflex*, con una registrazione distinta per ciascun taglio di buono |
 | Quota pagata con credito Welfare (buoni acquisto) | Pagamento *Welfare Coverflex* |
 | Quota residua a carico della carta bancaria collegata al conto Coverflex | Pagamento *Coverflex* (quello associato al tasto in grafica) |
 | Intero importo, in caso di carta non Coverflex | Pagamento carta ordinario, individuato dal codice acquirer |
@@ -93,7 +93,7 @@ La risposta del terminale determina come Posware ripartisce l'incasso su più co
 !!! info "Buoni pasto e credito Welfare sono alternativi"
     Come da specifiche Argentea, nella stessa transazione il terminale utilizza **o** i Buoni pasto elettronici **o** il credito Welfare, mai entrambi. Il dettaglio dei buoni restituito dal terminale riguarda **esclusivamente i buoni pasto**: i Buoni Acquisto Welfare non vengono mai conteggiati.
 
-    - Se la risposta contiene il dettaglio dei buoni pasto (quantità e tagli), la quota buoni viene registrata come **BPE**, per l'ammontare effettivamente risultante dal dettaglio.
+    - Se la risposta contiene il dettaglio dei buoni pasto (quantità e tagli), la quota buoni viene registrata come **BPE**, per l'ammontare effettivamente risultante dal dettaglio e separatamente per ciascun taglio.
     - Se la risposta non contiene alcun dettaglio buoni pasto, la quota buoni viene registrata come **Welfare**, per un ammontare pari all'importo massimo pagabile con i buoni inviato nella richiesta.
 
     La quota residua, non coperta dai buoni, viene sempre attribuita alla carta bancaria collegata al conto Coverflex e registrata sul pagamento *Coverflex*.
@@ -162,21 +162,23 @@ Il Record 03 relativo alla quota a carico della carta collegata al conto Coverfl
 - L'esatto ammontare addebitato sulla carta collegata.
 - L'identificativo univoco della transazione Argentea / Coverflex.
 
-Al fine di garantire le quadrature del finanziario fiscale del punto vendita, viene generato un **ulteriore Record 03** dedicato alla componente buoni, che conterrà:
+Al fine di garantire le quadrature del finanziario fiscale del punto vendita, vengono generati **ulteriori Record 03** dedicati alla componente buoni: uno per il credito Welfare oppure **uno per ciascun taglio** di Buoni pasto elettronici utilizzato. Ciascuno conterrà:
 
-- L'esatto ammontare pagato tramite Buoni pasto elettronici oppure tramite credito Welfare.
+- L'esatto ammontare pagato tramite i Buoni pasto elettronici di quel taglio oppure tramite credito Welfare.
 - Il codice della tipologia di pagamento RT specifico configurato sul relativo pagamento. **Questo dettaglio non è presente in Posware `4.2`, dove sarà valorizzato sempre a 0**
-- La quantità dei buoni pasto utilizzati, valorizzata solo nel caso dei Buoni pasto elettronici.
+- La quantità dei buoni pasto di quel taglio, valorizzata solo nel caso dei Buoni pasto elettronici.
 - Il medesimo identificativo univoco della transazione Argentea / Coverflex.
 
 L'identificativo di transazione, comune a tutti i Record 03 generati dalla stessa operazione, permette di ricondurre le singole componenti a un unico pagamento.
 
 Queste informazioni sono utilizzabili per la riconciliazione e la quadratura finanziaria.
 
-!!! warning "Nota sul taglio dei Buoni pasto elettronici"
-    Coverflex può consumare nella stessa transazione buoni pasto di **tagli differenti**, ma il tracciato del log prevede un unico valore di taglio per Record 03.
+!!! info "Buoni pasto elettronici di tagli differenti"
+    Coverflex può consumare nella stessa transazione buoni pasto di **tagli differenti**: il dettaglio restituito dal terminale riporta, per ciascun taglio, il valore del buono e la quantità utilizzata.
 
-    Posware registra pertanto il **taglio medio**, ottenuto dividendo l'ammontare complessivo dei buoni pasto per il numero di buoni utilizzati. Il dato attendibile per la quadratura resta quindi l'**ammontare complessivo** unitamente alla **quantità di buoni**, non il taglio.
+    Il Record 03 non contiene il valore del singolo buono, ma soltanto l'ammontare e la quantità. Posware registra pertanto la quota buoni pasto **separatamente per ciascun taglio**: il valore del buono è sempre ricavabile in modo esatto dal rapporto fra ammontare e quantità di ciascun Record 03, senza alcun taglio medio.
+
+    Ad esempio, una quota buoni di 22,00 EUR composta da 1 buono da 6,00 EUR e 2 buoni da 8,00 EUR genera due Record 03 sul pagamento *BPE Coverflex*: 6,00 EUR con quantità 1 e 16,00 EUR con quantità 2.
 
 !!! warning "Nota sul credito Welfare"
     A differenza dei Buoni pasto elettronici, il credito Welfare non ha un taglio predefinito: il valore utilizzato coincide esattamente con l'importo speso.
@@ -191,9 +193,11 @@ Ogni componente utilizza il valore `tipoPagRT` configurato sul proprio codice di
 
 In modalità predefinita, non vincolante, il pagamento Coverflex risulta così registrato:
 
-- `Ticket Numerati` per l'ammontare Buoni pasto elettronici.
+- `Ticket Numerati` per l'ammontare Buoni pasto elettronici, con una riga di pagamento per ciascun taglio.
 - `Pagamento Elettronico` per l'ammontare Welfare.
 - `Pagamento Elettronico` per l'ammontare a carico della carta collegata al conto Coverflex.
+
+Per i Buoni pasto elettronici Posware comunica al Registratore Telematico, per ciascun taglio utilizzato, il valore del singolo buono e la quantità. In presenza di tagli differenti vengono quindi trasmesse più righe di pagamento `Ticket Numerati`, i cui dati coincidono esattamente con i buoni effettivamente consumati.
 
 !!! danger "Buono monouso non supportato"
     **Non configurare `tipoPagRT` = 9 (buono monouso) su nessuno dei pagamenti coinvolti nell'integrazione Coverflex.**
@@ -281,7 +285,7 @@ Le operazioni di `Annulla Pagamenti` e `Annulla scontrino` gestiscono i pagament
 
     **Lo storno non è possibile.**
 
-    All'operatore viene mostrato un avviso che informa dell'impossibilità di annullare il pagamento e vengono ristampati gli scontrini delle transazioni interessate.
+    All'operatore viene mostrato un avviso che informa dell'impossibilità di annullare il pagamento e vengono ristampati gli scontrini delle transazioni interessate, preceduti dalla dicitura `STORNO FALLITO` e dall'indicazione `Rivolgersi al box informazioni per il rimborso`.
 
     L'operazione di rimborso deve essere gestita fuori linea, contattando Coverflex.
 
@@ -296,6 +300,11 @@ Le operazioni di `Annulla Pagamenti` e `Annulla scontrino` gestiscono i pagament
 
     Lo storno viene tentato soltanto se il pagamento con carta non Coverflex risulta ancora presente fra i pagamenti dello scontrino.
 
+    Se lo storno non va a buon fine, ad esempio perché la carta non viene presentata o l'operazione viene annullata sul terminale, Posware mostra il messaggio `Errore durante annullo Trans. EFT` e chiede all'operatore se riprovare:
+
+    - Con `Invio` la richiesta di storno viene ripetuta.
+    - Con `ANN.OP` l'operatore rinuncia allo storno: vengono stampati gli scontrini della transazione, preceduti dalla dicitura `STORNO FALLITO` e dall'indicazione `Rivolgersi al box informazioni per il rimborso`, e l'annullo prosegue sugli altri pagamenti. L'importo resta addebitato sulla carta del cliente e il rimborso deve essere gestito manualmente.
+
     !!! danger "Non eseguire altri pagamenti EFT dopo il pagamento con carta non Coverflex"
         Lo storno inviato al terminale annulla **l'ultima operazione effettuata sul POS**, non una transazione individuata per identificativo.
 
@@ -308,7 +317,7 @@ Le operazioni di `Annulla Pagamenti` e `Annulla scontrino` gestiscono i pagament
     !!! danger "Il cliente deve essere ancora presente in cassa"
         Durante l'esecuzione dello storno **il terminale POS richiede l'inserimento o la lettura della medesima carta bancaria utilizzata per il pagamento originale.**
 
-        Se il cliente si è già allontanato, o non dispone più della carta, l'operazione di storno non può essere portata a termine.
+        Se il cliente si è già allontanato, o non dispone più della carta, l'operazione di storno non può essere portata a termine: rinunciando allo storno, l'importo resta addebitato sulla carta e il rimborso dovrà essere gestito manualmente al box informazioni.
 
 !!! info "I due casi sono sempre alternativi"
     Poiché in uno scontrino può esistere un solo pagamento Coverflex andato a buon fine, all'atto dell'annullo si presenta sempre e soltanto **uno** dei due casi descritti sopra. Consultare [questo paragrafo](#un-solo-pagamento-coverflex-per-scontrino).
@@ -425,12 +434,18 @@ Con il parametro `Dummy` impostato a `True`, alla pressione del tasto `Pagamento
 
 |Codice test|Scenario simulato|
 |-----------|-----------------|
-|`0` *(o qualsiasi altro valore)*|Pagamento Coverflex eseguito, buoni pasto di taglio unico|
-|`01`|Pagamento Coverflex eseguito, buoni pasto di tagli differenti|
+|`0` *(o qualsiasi altro valore)*|Pagamento Coverflex eseguito, buoni pasto di taglio unico da 8,00 EUR|
+|`01`|Pagamento Coverflex eseguito, buoni pasto di tagli differenti: un buono da 6,00 EUR più buoni da 8,00 EUR sulla parte restante del massimo pagabile in buoni|
 |`02`|Pagamento eseguito con carta **non** Coverflex|
+|`03`|Pagamento Coverflex eseguito con credito Welfare: la risposta non contiene alcun dettaglio buoni pasto. Da non confondere con il codice `3`|
 |`3`|Nessuna risposta ricevuta dal terminale|
+|`4`|Transazione rifiutata dal terminale|
+|`5`|Transazione scaduta: card non presentata entro il tempo limite|
+|`6`|Operazione annullata sul terminale|
 |`7`|Transazione non eseguita per errore socket|
 |`99`|Eccezione durante la chiamata al terminale|
+
+Per gli esiti KO (codici `4`, `5`, `6` e `7`) all'operatore viene mostrato il messaggio generico `PAGAMENTO ELETTR. NON AUTORIZZATO`: la dicitura specifica restituita dal terminale è riportata soltanto nel log applicativo.
 
 !!! danger "Solo per collaudo"
     La modalità simulazione non dialoga con alcun terminale reale e non produce alcun incasso.
