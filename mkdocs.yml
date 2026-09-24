@@ -93,6 +93,7 @@ nav:
       - Ruoli e permessi: posware-modules/ruoli-permessi.md
       - Funzionalità di base:
         - Statistiche dettagliate: posware-modules/main-module/statistiche-dettagliate.md
+        - Gestione sacchetti bilance: posware-modules/main-module/sacchetti-bilance.md
       - Posware Price Checker: posware-modules/main-module/posware-price-checker.md
       - Fatturazione elettronica: posware-modules/main-module/fatturazione-elettronica.md
     - Posware Frontend:
