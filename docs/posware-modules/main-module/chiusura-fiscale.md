@@ -43,7 +43,7 @@ Nessuna installazione aggiuntiva.
 
 ### Configurazione
 
-I parametri si trovano in `appsettings.json`, sezione `Posware:ZReport`:
+I parametri di comunicazione con le casse si trovano in `appsettings.json`, sezione `Posware:LegacyTcpMessenger` (condivisa con il [Cambio posizione chiave remoto](cambio-chiave-remoto.md)):
 
 | Parametro | Default | Descrizione |
 |---|---|---|
@@ -51,6 +51,11 @@ I parametri si trovano in `appsettings.json`, sezione `Posware:ZReport`:
 | `ConnectTimeout` | `00:00:10` | timeout di connessione alla cassa |
 | `FirstByteTimeout` | `00:00:10` | attesa massima del primo byte di risposta |
 | `CompletionTimeout` | `00:00:10` | attesa massima del completamento della risposta |
+
+I parametri della chiusura fiscale si trovano nella sezione `Posware:ZReport`:
+
+| Parametro | Default | Descrizione |
+|---|---|---|
 | `PollInterval` | `00:00:03` | intervallo tra due interrogazioni di avanzamento (`PC`) |
 | `SessionTimeout` | `00:30:00` | durata massima di una sessione: allo scadere le casse ancora in corso vengono marcate *Timeout* |
 | `RecentZReportThreshold` | `00:10:00` | una chiusura completata entro questo intervallo è considerata "recente" |

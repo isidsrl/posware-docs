@@ -28,7 +28,7 @@ I ruoli protetti sono creati dal sistema e **non possono essere modificati né e
 | **StoreManager** | Gestione punto vendita — tutto tranne moduli sistema, manutenzione e gestione ruoli | Elevato |
 | **RoleManager** | Gestione ruoli e permessi, visualizzazione utenti | Elevato |
 | **UserAccessManager** | Assegnazione ruoli agli utenti (solo ruoli non elevati) | Standard |
-| **ShiftManager** | Dashboard, statistiche, dispositivi POS | Standard |
+| **ShiftManager** | Dashboard, statistiche, dispositivi POS, chiusura fiscale, cambio posizione chiave casse | Standard |
 | **BillingOperator** | Fatturazione, fatture elettroniche, note credito, clienti | Standard |
 | **ReportViewer** | Dashboard e statistiche (sola lettura) | Standard |
 | **PriceCheckerAdmin** | Modulo PPC — visualizzazione e gestione | Standard |
@@ -83,6 +83,10 @@ I seguenti permessi sono disponibili per i ruoli custom:
 | `store.billing.settings.manage` | Gestione impostazioni fatturazione |
 | `store.statistics.view` | Visualizzazione statistiche |
 | `store.devices.pos.view` | Visualizzazione dispositivi POS |
+| `store.devices.pos.remotekeychange.view` | Visualizzazione cambio posizione chiave casse |
+| `store.devices.pos.remotekeychange.execute` | Esecuzione cambio posizione chiave casse |
+| `store.zreport.view` | Visualizzazione chiusure Z |
+| `store.zreport.execute` | Esecuzione chiusure Z |
 | `store.users.view` | Visualizzazione utenti |
 | `store.ppc.view` | Visualizzazione modulo PPC |
 | `store.ppc.manage` | Gestione modulo PPC |
