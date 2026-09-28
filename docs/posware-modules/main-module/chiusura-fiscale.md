@@ -6,7 +6,7 @@ tags:
 
 # Posware Module - Chiusura fiscale
 
-**Prima revisione documento: 18 settembre 2026** <br>
+**Prima revisione documento: 18 giugno 2026** <br>
 **Ultima revisione documento: {{ git_revision_date_localized }}**
 ---
 
@@ -26,12 +26,12 @@ La funzione **Chiusura fiscale** permette all'utente di:
 - **avviare la chiusura fiscale** su tutte le casse, escludendo quelle non raggiungibili o con chiusura già effettuata di recente;
 - **seguire l'avanzamento** di ogni cassa in tempo reale, anche riaprendo la pagina o dopo aver chiuso il browser;
 - **consultare il rapporto finale** e **ripetere la chiusura sulla singola cassa** che ha dato errore;
-- **avviare la chiusura da programmi esterni** tramite API REST sincrona.
+- **avviare la chiusura da programmi esterni** tramite API REST sincrona. I destinari principali di questa feature sono i software gestionali di punto vendita - back-office -
 
 La funzione si trova nella sezione ***Casse*** della **WebApp** dello *StoreServer* (voce *Chiusura fiscale*) ed è raggiungibile anche dal menu della lista casse.
 
 !!! info "Sostituzione di un programma di back-office"
-    Questa funzione sostituisce l'utility desktop `Pos_CFisc.exe`. Il protocollo di comunicazione con le casse è lo stesso (TCP porta 6855, comandi `ST`/`CF`/`PC`): **non è richiesto alcun aggiornamento del software di cassa**. Le differenze sono elencate nel capitolo [Differenze rispetto a Pos_CFisc](#differenze-rispetto-a-pos_cfisc).
+    Questa funzione sostituisce l'utility desktop `Pos_CFisc.exe`. **Non è richiesto alcun aggiornamento del software di cassa**. Le differenze sono elencate nel capitolo [Differenze rispetto a Pos_CFisc](#differenze-rispetto-a-pos_cfisc).
 
 ### Versioni software
 
@@ -39,7 +39,7 @@ La funzione è inclusa nel **PoswareModule** dello *StoreServer*. È necessario 
 
 ## Installazione
 
-Nessuna installazione aggiuntiva. All'avvio lo *StoreServer* crea la tabella `zreport_session` (e rimuove la vecchia `zreport_history`) tramite le migrazioni del modulo.
+Nessuna installazione aggiuntiva.
 
 ### Configurazione
 
@@ -92,7 +92,7 @@ Premendo **Esegui chiusura fiscale** la WebApp esegue in sequenza:
 
 ### Avanzamento
 
-Durante l'esecuzione ogni cassa mostra uno spinner, la barra di avanzamento restituita dalla cassa, l'operazione in corso (es. *Passo 2 di 5 · Chiusura fiscale sulla stampante RT*, vedi [Rapporto](#rapporto)) e lo stato corrente:
+Durante l'esecuzione ogni cassa mostra uno spinner di caricamento, la barra di avanzamento restituita dalla cassa, l'operazione in corso (es. *Passo 2 di 5 · Chiusura fiscale sulla stampante RT*, vedi [Rapporto](#rapporto)) e lo stato corrente:
 
 | Stato | Significato |
 |---|---|
@@ -164,4 +164,4 @@ Stati della sessione: `OperatorCheck`, `SendingCf`, `Polling` (in corso), `Compl
 - gli stati *abortita* ed *errore* sono terminali: non esiste più il polling infinito, ed è disponibile la riprova per singola cassa;
 - la sessione ha una durata massima (`SessionTimeout`);
 - ogni sessione è tracciata nella tabella `zreport_session` e nel log di audit (`zreport.start`, `zreport.retry`, `zreport.cancel`);
-- non vengono più scritti il file semaforo `Pos_Cfisc.Ok` e la tabella `Log.Pos_Eod`.
+- non vengono più scritti il file semaforo `Pos_Cfisc.Ok` e la tabella `Log.Pos_Eod`. I file semaforo non è applicabile al cambio architetturale (WebApp centralizzata) ed è superato dalla API sincrona. La tabella `Log.Pos_Eod` è superata dalla tabella di audit eventi dello StoreServer.
