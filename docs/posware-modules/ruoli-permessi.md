@@ -85,8 +85,8 @@ I seguenti permessi sono disponibili per i ruoli custom:
 | `store.devices.pos.view` | Visualizzazione dispositivi POS |
 | `store.devices.pos.remotekeychange.view` | Visualizzazione cambio posizione chiave casse |
 | `store.devices.pos.remotekeychange.execute` | Esecuzione cambio posizione chiave casse |
-| `store.zreport.view` | Visualizzazione chiusure Z |
-| `store.zreport.execute` | Esecuzione chiusure Z |
+| `store.zreport.view` | Visualizzazione chiusure fiscali |
+| `store.zreport.execute` | Esecuzione chiusure fiscali |
 | `store.users.view` | Visualizzazione utenti |
 | `store.ppc.view` | Visualizzazione modulo PPC |
 | `store.ppc.manage` | Gestione modulo PPC |

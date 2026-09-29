@@ -163,8 +163,6 @@ Altri codici: `400` dati non validi, `404` cassa inesistente, `409` cambio chiav
 - **una cassa per volta**: l'invio contemporaneo su più casse non è più disponibile;
 - accesso tramite utente *StoreServer* e permessi dedicati, invece dell'accesso libero al PC server di barriera;
 - ogni tentativo è tracciato nel log di audit;
-- posizioni chiave da 1 a 4 (il livello 5 non esiste più);
-- esiti tipizzati: una risposta non riconosciuta non lascia più la riga in *Invio in corso...*;
-- la verifica delle credenziali sul database (tasto *Invio* della vecchia utility, di fatto non funzionante) è ora opzionale e disattivata di default;
+- posizioni chiave da 1 a 4 (il livello 5, deprecato, è stato definitivamente rimosso);
+- la verifica delle credenziali sul database del server di barriera è ora opzionale e disattivata di default; È consigliabile attivarla solo se si è sempre assolutamente certi che le credenziali degli operatori sono sempre allineate tra server di barriera e cassa
 - conferma obbligatoria per i livelli *Amministratore* e limite di richieste per utente;
-- non viene più scritto il file `Versioni.INI`.
