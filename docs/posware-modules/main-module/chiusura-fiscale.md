@@ -137,6 +137,25 @@ Per le casse che non hanno mai avviato la chiusura (chiusura rifiutata, terminal
 !!! tip "Ripresa di una sessione"
     Se l'ultima sessione della giornata è terminata con avvisi o è stata interrotta, all'apertura della pagina viene proposto di riaprire direttamente il rapporto.
 
+### Spegnimento delle casse dopo la chiusura
+
+Nel rapporto, sopra l'elenco delle casse, il pannello **Spegnimento casse chiuse** permette di spegnere le casse che hanno completato la chiusura. Il pannello compare solo:
+
+- se almeno una cassa ha lo stato *Chiusura fiscale terminata*: le casse con chiusura fallita, saltata o non eseguita non possono essere spente da qui;
+- se l'utente dispone dei permessi `store.zreport.execute` e `store.devices.pos.remoteshutdown.execute`.
+
+Per ogni cassa chiusa sono disponibili:
+
+- **Spegni cassa**: avvia subito lo spegnimento, **senza conferma**;
+- durante lo spegnimento: *Spegnimento…* con l'indicazione del tentativo (es. *Tentativo 2 di 3*);
+- al termine: *Spenta* (il pulsante scompare) oppure il motivo del mancato spegnimento con il pulsante **Riprova**.
+
+Il pulsante **Spegni casse chiuse** avvia un unico spegnimento su tutte le casse chiuse non ancora spente.
+
+Subito dopo la chiusura la cassa potrebbe non essere ancora tornata alla schermata di login: per questo, se la cassa risponde *non spenta* o non risponde, lo *StoreServer* **ripete automaticamente** lo spegnimento fino a **3 tentativi, a 30 secondi di distanza** (valori configurabili). Una cassa che ha già risposto *Spenta* non viene più contattata.
+
+Lo spegnimento prosegue anche premendo **Termina operazione** o chiudendo la pagina. Esiti, messaggi e configurazione sono descritti in [Spegnimento remoto casse](spegnimento-remoto.md).
+
 ## API REST per programmi esterni
 
 Base: `/api/poswareModule/zreport` (autenticazione JWT, permessi come sopra).
