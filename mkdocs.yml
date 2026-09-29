@@ -95,6 +95,7 @@ nav:
         - Statistiche dettagliate: posware-modules/main-module/statistiche-dettagliate.md
         - Gestione sacchetti bilance: posware-modules/main-module/sacchetti-bilance.md
         - Chiusura fiscale: posware-modules/main-module/chiusura-fiscale.md
+        - Cambio livello chiave da remoto: posware-modules/main-module/cambio-chiave-remoto.md
       - Posware Price Checker: posware-modules/main-module/posware-price-checker.md
       - Fatturazione elettronica: posware-modules/main-module/fatturazione-elettronica.md
     - Posware Frontend:
