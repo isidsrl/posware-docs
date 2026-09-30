@@ -97,6 +97,7 @@ nav:
         - Chiusura fiscale: posware-modules/main-module/chiusura-fiscale.md
         - Cambio livello chiave da remoto: posware-modules/main-module/cambio-chiave-remoto.md
         - Spegnimento remoto casse: posware-modules/main-module/spegnimento-remoto.md
+        - Scheda cassa e scontrino in tempo reale: posware-modules/main-module/scheda-cassa.md
       - Posware Price Checker: posware-modules/main-module/posware-price-checker.md
       - Fatturazione elettronica: posware-modules/main-module/fatturazione-elettronica.md
     - Posware Frontend:
