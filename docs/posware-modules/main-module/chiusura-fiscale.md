@@ -158,19 +158,13 @@ Lo spegnimento prosegue anche premendo **Termina operazione** o chiudendo la pag
 
 ## API REST per programmi esterni
 
-Base: `/api/poswareModule/zreport` (autenticazione JWT, permessi come sopra).
+Base: `/api/poswareModule/pos/zreport` (autenticazione JWT, permessi come sopra).
 
 | Metodo | Route | Descrizione |
 |---|---|---|
-| `GET` | `terminals` | casse abilitate con data ultima chiusura |
-| `POST` | `terminals/check` | stato operatore di ogni cassa (`Closed`, `Active`, `Unreachable`) |
-| `POST` | `sessions` | avvia la sessione in background: `202` con `sessionId`, `409` se già in corso |
 | `POST` | `sessions/sync` | avvia la sessione e **attende il completamento** restituendo lo stato finale |
 | `GET` | `sessions/current` | sessione in corso o ultima eseguita (`204` se nessuna) |
-| `GET` | `sessions/{id}` | stato di una sessione |
-| `GET` | `sessions?from=&to=` | storico sessioni per intervallo di date |
 | `POST` | `sessions/{id}/terminals/{pos}/retry` | ripete la chiusura sulla singola cassa |
-| `POST` | `sessions/{id}/cancel` | annulla la sessione in corso |
 
 Body di `POST sessions` e `sessions/sync`:
 

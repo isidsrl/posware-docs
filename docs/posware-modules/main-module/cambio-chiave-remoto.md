@@ -133,31 +133,6 @@ La finestra può mostrare anche questi messaggi:
 
 Ogni tentativo viene registrato nel log di audit dello *StoreServer* con azione `pos.remotekeychange`: utente, data e ora, cassa, codice operatore Posware, posizione chiave, esito, durata e risposta della cassa. **La password non viene mai registrata.**
 
-## API REST
-
-Base: `/api/poswareModule/remotePosKeyChange` (autenticazione JWT, permessi come sopra).
-
-| Metodo | Route | Permesso | Descrizione |
-|---|---|---|---|
-| `GET` | `terminals` | `...remotekeychange.view` | elenco casse con indicazione di selezionabilità (`isLinkEnabled`) |
-| `POST` | `terminals/{posNumber}` | `...remotekeychange.execute` | invia il cambio chiave alla cassa e restituisce l'esito |
-
-Body di `POST terminals/{posNumber}`:
-
-```json
-{ "operatorId": "12", "password": "123456", "keyLevel": 2 }
-```
-
-Risposta `200`:
-
-```json
-{ "posNumber": 3, "keyLevel": 2, "outcome": "Ok", "message": "Chiave impostata", "elapsedMs": 180 }
-```
-
-Valori di `outcome`: `Ok`, `Rejected`, `Timeout`, `CommunicationError`, `UnexpectedResponse`, `TerminalDisabled`.
-
-Altri codici: `400` dati non validi, `404` cassa inesistente, `409` cambio chiave già in corso sulla cassa, `422` credenziali rifiutate dalla verifica preliminare, `429` limite di richieste superato.
-
 ## Differenze rispetto a Pos_Chiave
 
 - **una cassa per volta**: l'invio contemporaneo su più casse non è più disponibile;

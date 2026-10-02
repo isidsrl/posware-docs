@@ -157,7 +157,7 @@ Ogni richiesta viene registrata nel log di audit dello *StoreServer*:
 
 ## API REST
 
-Base: `/api/poswareModule/remotePosShutdown` (autenticazione JWT, permesso `store.devices.pos.remoteshutdown.execute`).
+Base: `/api/poswareModule/pos/remote-shutdown` (autenticazione JWT, permesso `store.devices.pos.remoteshutdown.execute`).
 
 | Metodo | Route | Descrizione |
 |---|---|---|
