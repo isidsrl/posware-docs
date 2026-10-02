@@ -98,6 +98,7 @@ nav:
         - Cambio livello chiave da remoto: posware-modules/main-module/cambio-chiave-remoto.md
         - Spegnimento remoto casse: posware-modules/main-module/spegnimento-remoto.md
         - Scheda cassa e scontrino in tempo reale: posware-modules/main-module/scheda-cassa.md
+        - Sincronizzazione data/ora casse: posware-modules/main-module/sincronizzazione-data-ora.md
       - Posware Price Checker: posware-modules/main-module/posware-price-checker.md
       - Fatturazione elettronica: posware-modules/main-module/fatturazione-elettronica.md
     - Posware Frontend:
@@ -123,7 +124,11 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.details
   - pymdownx.caret
   - pymdownx.critic
