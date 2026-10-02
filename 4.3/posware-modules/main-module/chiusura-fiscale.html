@@ -780,6 +780,15 @@ Non stai visualizzando l'ultima versione della documentazione.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spegnimento-delle-casse-dopo-la-chiusura">
+<span class="md-ellipsis">
+      
+        Spegnimento delle casse dopo la chiusura
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -810,6 +819,18 @@ Non stai visualizzando l'ultima versione della documentazione.
     
   
     Cambio livello chiave da remoto
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="spegnimento-remoto.html">
+<span class="md-ellipsis">
+    
+  
+    Spegnimento remoto casse
   
 
     
@@ -1097,7 +1118,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 </nav>
 <h1 id="posware-module-chiusura-fiscale"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Posware Module - Chiusura fiscale<a class="headerlink" href="#posware-module-chiusura-fiscale" title="Permanent link">¶</a></h1>
 <p><strong>Prima revisione documento: 18 giugno 2026</strong> <br/>
-<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="29 settembre 2026 13:15:59 UTC">29 settembre 2026</span></strong></p>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2 ottobre 2026 08:10:10 UTC">2 ottobre 2026</span></strong></p>
 <hr/>
 <h2 id="glossario"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Glossario<a class="headerlink" href="#glossario" title="Permanent link">¶</a></h2>
 <ul>
@@ -1324,6 +1345,21 @@ Non stai visualizzando l'ultima versione della documentazione.
 <p class="admonition-title">Ripresa di una sessione</p>
 <p>Se l'ultima sessione della giornata è terminata con avvisi o è stata interrotta, all'apertura della pagina viene proposto di riaprire direttamente il rapporto.</p>
 </div>
+<h3 id="spegnimento-delle-casse-dopo-la-chiusura"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.5</span> Spegnimento delle casse dopo la chiusura<a class="headerlink" href="#spegnimento-delle-casse-dopo-la-chiusura" title="Permanent link">¶</a></h3>
+<p>Nel rapporto, sopra l'elenco delle casse, il pannello <strong>Spegnimento casse chiuse</strong> permette di spegnere le casse che hanno completato la chiusura. Il pannello compare solo:</p>
+<ul>
+<li>se almeno una cassa ha lo stato <em>Chiusura fiscale terminata</em>: le casse con chiusura fallita, saltata o non eseguita non possono essere spente da qui;</li>
+<li>se l'utente dispone dei permessi <code>store.zreport.execute</code> e <code>store.devices.pos.remoteshutdown.execute</code>.</li>
+</ul>
+<p>Per ogni cassa chiusa sono disponibili:</p>
+<ul>
+<li><strong>Spegni cassa</strong>: avvia subito lo spegnimento, <strong>senza conferma</strong>;</li>
+<li>durante lo spegnimento: <em>Spegnimento…</em> con l'indicazione del tentativo (es. <em>Tentativo 2 di 3</em>);</li>
+<li>al termine: <em>Spenta</em> (il pulsante scompare) oppure il motivo del mancato spegnimento con il pulsante <strong>Riprova</strong>.</li>
+</ul>
+<p>Il pulsante <strong>Spegni casse chiuse</strong> avvia un unico spegnimento su tutte le casse chiuse non ancora spente.</p>
+<p>Subito dopo la chiusura la cassa potrebbe non essere ancora tornata alla schermata di login: per questo, se la cassa risponde <em>non spenta</em> o non risponde, lo <em>StoreServer</em> <strong>ripete automaticamente</strong> lo spegnimento fino a <strong>3 tentativi, a 30 secondi di distanza</strong> (valori configurabili). Una cassa che ha già risposto <em>Spenta</em> non viene più contattata.</p>
+<p>Lo spegnimento prosegue anche premendo <strong>Termina operazione</strong> o chiudendo la pagina. Esiti, messaggi e configurazione sono descritti in <a href="spegnimento-remoto.html">Spegnimento remoto casse</a>.</p>
 <h2 id="api-rest-per-programmi-esterni"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> API REST per programmi esterni<a class="headerlink" href="#api-rest-per-programmi-esterni" title="Permanent link">¶</a></h2>
 <p>Base: <code>/api/poswareModule/zreport</code> (autenticazione JWT, permessi come sopra).</p>
 <table>
@@ -1400,7 +1436,7 @@ Non stai visualizzando l'ultima versione della documentazione.
 <span class="md-icon" title="Ultimo aggiornamento">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="29 settembre 2026 13:15:59 UTC">29 settembre 2026</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2 ottobre 2026 08:10:10 UTC">2 ottobre 2026</span>
 </span>
 </aside>
 </article>
