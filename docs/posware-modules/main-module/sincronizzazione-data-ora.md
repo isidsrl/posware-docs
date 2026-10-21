@@ -133,7 +133,7 @@ Le impostazioni della **sincronizzazione automatica** (attivazione, orario, nuov
 | Permesso | Descrizione |
 |---|---|
 | `store.devices.pos.datetimesync.execute` | mostra la voce *Sincronizza data/ora* nel menu della cassa, il pulsante e il riquadro *Orologio cassa* nella scheda cassa; nella finestra *Sincronizzazione data/ora casse* mostra la sezione *Sincronizza ora* |
-| `store.devices.pos.datetimesync.manage` | nella finestra *Sincronizzazione data/ora casse* mostra e permette di modificare la sezione *Sincronizzazione automatica*; nel riquadro *Orologio cassa* permette di cambiare la modalità della stampante fiscale, il server NTP e il passaggio automatico ora legale/solare |
+| `store.devices.pos.datetimesync.manage` | nella finestra *Sincronizzazione data/ora casse* mostra e permette di modificare la sezione *Sincronizzazione automatica*; nel riquadro *Orologio cassa* permette di cambiare la modalità della stampante fiscale, il server NTP, il passaggio automatico ora legale/solare e la disattivazione della sincronizzazione automatica della stampante; nella stessa finestra mostra il riquadro *Orologio stampante fiscale — imposta su più casse* |
 
 La voce *Sincronizzazione data/ora casse* del menu **Operazioni** è visibile con almeno uno dei due permessi. I permessi sono assegnati ai ruoli `SystemAdmin`, `Technician` e `StoreManager`; possono essere aggiunti ai ruoli personalizzati (vedi [Ruoli e permessi](../ruoli-permessi.md)).
 
@@ -225,6 +225,8 @@ Visibile con il permesso `store.devices.pos.datetimesync.manage`, in un riquadro
 1. scegliere la **modalità**; con *Data e ora automatica sulla stampante* compaiono anche:
     - **Server NTP**: se lasciato **vuoto** ogni cassa **mantiene** il server NTP già impostato; se indicato viene impostato su tutte le casse selezionate;
     - **Passaggio automatico ora legale/solare**: viene impostato su tutte le casse selezionate;
+
+    con *Usa la data di Posware* compare l'interruttore **Se configurata, disattiva la sincronizzazione automatica della stampante** (vedi [Usa la data di Posware](#usa-la-data-di-posware)), impostato su tutte le casse selezionate; con le altre modalità viene disattivato;
 2. scegliere le casse: sono elencate le casse con trasmissione attiva e quelle con **Posware 4.3.1012.0 o successiva** sono **tutte selezionate**; le casse con Posware precedente (o con versione non rilevata) non sono selezionabili e mostrano il motivo. Le casse con operatore collegato possono essere impostate;
 3. premere **Applica a N casse**: le impostazioni vengono inviate a ogni cassa e sostituiscono quelle presenti;
 4. accanto a ogni cassa compare l'esito: *Impostazioni salvate*, un avviso se la stampante della cassa non supporta la data e ora automatica o il passaggio automatico ora legale/solare, oppure il motivo del rifiuto (per esempio *La stampante fiscale della cassa si sincronizza tramite un server NTP: indicare il server NTP*, *Cassa non raggiungibile*). Al termine compare il riepilogo *N salvate / M non salvate*;
@@ -296,7 +298,16 @@ Dopo la chiusura fiscale *Ultimo allineamento stampante* riporta:
 
 ##### Usa la data di Posware
 
-Con *Usa la data di Posware* l'orario della stampante **non** viene modificato, e il motivo compare in *Ultimo allineamento stampante*, quando:
+Selezionando la modalità *Usa la data di Posware* il riquadro mostra l'interruttore **Se configurata, disattiva la sincronizzazione automatica della stampante** (predefinito: disattivo):
+
+- **attivo**: alla chiusura fiscale, se i controlli sull'orario sono superati e sulla stampante la data e ora automatica è attiva (o non leggibile), Posware la **disattiva** e poi allinea l'orario. Così la stampante non sovrascrive più l'orario impostato da Posware. Se l'allineamento viene rifiutato (vedi sotto) la data e ora automatica resta attiva;
+- **disattivo**: la data e ora automatica della stampante resta com'è; se è attiva la stampante può sincronizzarsi da sola in altri momenti, e nel log della cassa viene scritto un avviso.
+
+Se la stampante della cassa non ha la data e ora automatica il riquadro indica che l'impostazione non ha effetto. Con le altre modalità l'interruttore viene salvato **disattivo**.
+
+Se la disattivazione non riesce, l'orario viene comunque allineato e *Ultimo allineamento stampante* riporta, in arancione, *Orario della stampante allineato: disattivazione della data e ora automatica della stampante non riuscita*; Posware riprova alla chiusura fiscale successiva.
+
+L'orario della stampante **non** viene modificato, e il motivo compare in *Ultimo allineamento stampante*, quando:
 
 | Motivo | Significato |
 |---|---|
@@ -347,7 +358,7 @@ Ogni operazione viene registrata nel log di audit dello *StoreServer*:
 - azione `pos.datetimesync.requested`: utente (oppure `system` per la sincronizzazione automatica), origine, elenco delle casse, ora ufficiale di riferimento e scostamento dell'orologio dello *StoreServer*;
 - azione `pos.datetimesync`, una per cassa al termine: utente richiedente, origine (`Gui` o `Scheduled`), esito, istante UTC inviato, correzione applicata, durata, identificativo di correlazione (riportato anche nel log della cassa) e dettaglio della risposta;
 - azione `pos.datetimesync.autosync.updated`: utente e nuove impostazioni della sincronizzazione automatica;
-- azione `pos.datetimesync.clocksettings.updated`: utente, cassa, nuova modalità della stampante fiscale e, se inviati, server NTP e passaggio automatico ora legale/solare.
+- azione `pos.datetimesync.clocksettings.updated`: utente, cassa, nuova modalità della stampante fiscale, disattivazione della sincronizzazione automatica della stampante e, se inviati, server NTP e passaggio automatico ora legale/solare.
 
 ??? question "Domande frequenti"
     **La voce *Sincronizza data/ora* è disabilitata con il messaggio *richiesta versione Posware 4.3.1012.0*.**
