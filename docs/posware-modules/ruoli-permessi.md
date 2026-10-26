@@ -87,6 +87,8 @@ I seguenti permessi sono disponibili per i ruoli custom:
 | `store.devices.pos.remotekeychange.execute` | Esecuzione cambio posizione chiave casse |
 | `store.devices.pos.remoteshutdown.execute` | Spegnimento remoto casse |
 | `store.devices.pos.livereceipt.view` | Visualizzazione scontrino in tempo reale casse |
+| `store.devices.pos.datetimesync.execute` | Sincronizzazione data/ora casse |
+| `store.devices.pos.datetimesync.manage` | Configurazione sincronizzazione automatica data/ora casse e modalità orario stampante fiscale (server NTP, ora legale/solare) |
 | `store.zreport.view` | Visualizzazione chiusure fiscali |
 | `store.zreport.execute` | Esecuzione chiusure fiscali |
 | `store.users.view` | Visualizzazione utenti |

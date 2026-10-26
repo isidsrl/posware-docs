@@ -123,7 +123,7 @@ Per ogni cassa il rapporto elenca le **operazioni eseguite in cassa** con il lor
 | # | Operazione | Descrizione |
 |---|---|---|
 | 1 | Avvio procedura di chiusura | la cassa ha registrato l'avvio della chiusura fiscale |
-| 2 | Chiusura fiscale sulla stampante RT | rapporto Z, scrittura del log `06`, registrazione della chiusura, chiusura giornata buoni pasto e chiusura del POS di pagamento elettronico |
+| 2 | Chiusura fiscale sulla stampante RT | stampa rapporto chiusura, registrazione della chiusura, chiusura giornata buoni pasto e chiusura del POS di pagamento elettronico |
 | 3 | Invio dati fidelity sospesi | trasmissione al server dei messaggi fidelity rimasti in sospeso |
 | 4 | Invio log sospesi | trasmissione al server dei log di vendita non ancora inviati |
 | 5 | Conferma completamento chiusura | la cassa ha registrato il completamento di tutte le operazioni |

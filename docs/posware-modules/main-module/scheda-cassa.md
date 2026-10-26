@@ -62,6 +62,8 @@ Le credenziali di accesso al database della cassa sono quelle standard di Poswar
 | `store.devices.pos.livereceipt.view` | mostra il pulsante *Apri vista live* e permette di leggere lo scontrino in corso |
 | `store.devices.pos.remotekeychange.view` | mostra il pulsante *Cambio posizione chiave* |
 | `store.devices.pos.remoteshutdown.execute` | mostra il pulsante *Spegni cassa* |
+| `store.devices.pos.datetimesync.execute` | mostra il pulsante *Sincronizza data/ora* e il riquadro *Orologio cassa* |
+| `store.devices.pos.datetimesync.manage` | permette di cambiare, nel riquadro *Orologio cassa*, la modalità della stampante fiscale, il server NTP e il passaggio automatico ora legale/solare |
 
 Il permesso `store.devices.pos.livereceipt.view` è incluso nel ruolo **ShiftManager** (responsabile di turno) e nei ruoli con tutti i permessi.
 
@@ -78,11 +80,16 @@ Da **Dispositivi › Casse** cliccare sul **numero** della cassa (primo cerchio 
 | **Aggiorna status** | rilegge dalla cassa stato e informazioni di sistema |
 | **Cambio posizione chiave** | vedi [Cambio livello chiave da remoto](cambio-chiave-remoto.md) |
 | **Spegni cassa** | spegne la cassa, solo se è nella schermata di login |
+| **Sincronizza data/ora** | imposta sulla cassa l'ora ufficiale italiana, solo se è nella schermata di login e con Posware 4.3.1012.0 o successiva: vedi [Sincronizzazione data/ora casse](sincronizzazione-data-ora.md) |
 | **Riassocia** | ritrasmette alla cassa i parametri di collegamento allo *StoreServer* |
 | **Disattiva / Riattiva invio variazioni** | sospende o riprende l'invio di articoli e prezzi alla cassa |
 | **Elimina cassa** | rimuove la cassa dall'anagrafica e torna alla lista casse |
 
 Quando un'operazione non è disponibile il pulsante è disattivato e sotto il titolo ne è indicato il motivo (per esempio *Operatore collegato: la cassa non è nella schermata di login*).
+
+### Orologio cassa
+
+Il riquadro **Orologio cassa**, in fondo alla scheda, confronta l'orologio della cassa con l'ora ufficiale, mostra il fuso orario di Windows e le ultime sincronizzazioni e permette di scegliere come allineare l'orario della stampante fiscale dopo la chiusura. Richiede Posware 4.3.1012.0 o successiva: vedi [Orologio cassa](sincronizzazione-data-ora.md#orologio-cassa).
 
 ### Scontrino in tempo reale
 
