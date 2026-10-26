@@ -1,0 +1,1952 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://posware.io/4.3/posware-modules/main-module/sincronizzazione-data-ora.html" rel="canonical"/>
+<link href="scheda-cassa.html" rel="prev"/>
+<link href="posware-price-checker.html" rel="next"/>
+<link href="../../assets/images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.8.0" name="generator"/>
+<title>Sincronizzazione data/ora casse - Posware official docs</title>
+<link href="../../assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
+<style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%209.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-3.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201m0-11A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2014c-2.63%200-5-1.57-6-4a6.505%206.505%200%200%201%208.5-3.5A6.52%206.52%200%200%201%2018%2012c-1%202.43-3.37%204-6%204m0-6.5A2.5%202.5%200%200%200%209.5%2012a2.5%202.5%200%200%200%202.5%202.5%202.5%202.5%200%200%200%202.5-2.5A2.5%202.5%200%200%200%2012%209.5m0%203.5a1%201%200%200%201-1-1%201%201%200%200%201%201-1%201%201%200%200%201%201%201%201%201%200%200%201-1%201%22/%3E%3C/svg%3E');}</style>
+<script src="https://unpkg.com/iframe-worker/shim"></script>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#posware-module-sincronizzazione-dataora-casse">
+          Vai al contenuto
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+<aside class="md-banner md-banner--warning">
+<div class="md-banner__inner md-grid md-typeset">
+              
+Non stai visualizzando l'ultima versione della documentazione.
+<a href="../../..">
+<strong>Clicca qui per andare all'ultima versione.</strong>
+</a>
+</div>
+<script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Intestazione" class="md-header__inner md-grid">
+<a aria-label="Posware official docs" class="md-header__button md-logo" data-md-component="logo" href="../../index.html" title="Posware official docs">
+<img alt="logo" src="../../assets/images/favicon.ico"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Posware official docs
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Sincronizzazione data/ora casse
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Cerca" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Cerca" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Cerca" class="md-search__options">
+<button aria-label="Cancella" class="md-search__icon md-icon" tabindex="-1" title="Cancella" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../getting-started/index.html">
+          
+  
+  
+  Getting started
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../index.html">
+          
+  
+  
+  Feature e moduli
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../download/index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"></path></svg>
+    
+  
+  Download
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../DatabaseUpgrader/GUIDA_UTENTE.html">
+          
+  
+  
+  DatabaseUpgrader
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigazione" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Posware official docs" class="md-nav__button md-logo" data-md-component="logo" href="../../index.html" title="Posware official docs">
+<img alt="logo" src="../../assets/images/favicon.ico"/>
+</a>
+    Posware official docs
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.011 3.269H16.19a4.29 4.29 0 0 0-4.185 3.345A4.29 4.29 0 0 0 7.819 3.27H2a2 2 0 0 0-2.001 2v10.244a2 2 0 0 0 2 2h3.738c4.257 0 5.53 1.025 6.138 3.134a.11.11 0 0 0 .112.084h.024a.11.11 0 0 0 .112-.084c.612-2.109 1.885-3.133 6.138-3.133h3.737a2 2 0 0 0 2.001-2V5.27a2 2 0 0 0-1.989-2ZM10.083 14.325a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144H3.257a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144H9.94a.144.144 0 0 1 .144.144zm10.804 5.07a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.953a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144v-.952a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144zm0-2.537a.144.144 0 0 1-.144.144h-6.682a.144.144 0 0 1-.144-.144V8.3a.144.144 0 0 1 .144-.144h6.682a.144.144 0 0 1 .144.144v.952z"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    Scenari di installazione
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Installazione e aggiornamenti Posware Frontend
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Installazione e aggiornamenti Posware Frontend
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/overview-generale.html">
+<span class="md-ellipsis">
+    
+  
+    Overview generale
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/dipendenze-aggiornamenti-necessari.html">
+<span class="md-ellipsis">
+    
+  
+    Dipendenze e aggiornamenti
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/setup-posware.html">
+<span class="md-ellipsis">
+    
+  
+    SetupPosware
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-posware-frontend/pos-update.html">
+<span class="md-ellipsis">
+    
+  
+    PosUpdate
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Installazione e aggiornamenti StoreServer
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Installazione e aggiornamenti StoreServer
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/overview-generale.html">
+<span class="md-ellipsis">
+    
+  
+    Overview generale
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/installazione-procedure-comuni.html">
+<span class="md-ellipsis">
+    
+  
+    Procedure comuni
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/installazione-nuovo-storeserver.html">
+<span class="md-ellipsis">
+    
+  
+    Nuova installazione
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/migrazione-servizi-legacy.html">
+<span class="md-ellipsis">
+    
+  
+    Migrazione
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/aggiornamento-storeserver.html">
+<span class="md-ellipsis">
+    
+  
+    Aggiornamento
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/servizi-legacy.html">
+<span class="md-ellipsis">
+    
+  
+    Servizi legacy
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/installazione-storeserver/disinstallazione-storeserver.html">
+<span class="md-ellipsis">
+    
+  
+    Disinstallazione
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Scenari avanzati
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Scenari avanzati
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/scenari-avanzati/dati-custom-database-storeserver.html">
+<span class="md-ellipsis">
+    
+  
+    Aggiunta dati custom database
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Approfondimenti Posware
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Approfondimenti Posware
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/dot-net-table-reference.html">
+<span class="md-ellipsis">
+    
+  
+    Tabella riferimento .NET
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/known-issues-42.html">
+<span class="md-ellipsis">
+    
+  
+    Known issues v4.2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/breaking-changes.html">
+<span class="md-ellipsis">
+    
+  
+    Breaking changes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Feature e moduli
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Feature e moduli
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 22V3h18v19l-3-2-3 2-3-2-3 2-3-2zM17 9V7h-2v2zm-4 0V7H7v2zm0 2H7v2h6zm2 2h2v-2h-2z"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    Panoramica
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    StoreServer
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    StoreServer
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../authentication.html">
+<span class="md-ellipsis">
+    
+  
+    Autenticazione
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ruoli-permessi.html">
+<span class="md-ellipsis">
+    
+  
+    Ruoli e permessi
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Funzionalità di base
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Funzionalità di base
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="statistiche-dettagliate.html">
+<span class="md-ellipsis">
+    
+  
+    Statistiche dettagliate
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="sacchetti-bilance.html">
+<span class="md-ellipsis">
+    
+  
+    Gestione sacchetti bilance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="chiusura-fiscale.html">
+<span class="md-ellipsis">
+    
+  
+    Chiusura fiscale
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="cambio-chiave-remoto.html">
+<span class="md-ellipsis">
+    
+  
+    Cambio livello chiave da remoto
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="spegnimento-remoto.html">
+<span class="md-ellipsis">
+    
+  
+    Spegnimento remoto casse
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="scheda-cassa.html">
+<span class="md-ellipsis">
+    
+  
+    Scheda cassa e scontrino in tempo reale
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Sincronizzazione data/ora casse
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="sincronizzazione-data-ora.html">
+<span class="md-ellipsis">
+    
+  
+    Sincronizzazione data/ora casse
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Indice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#glossario">
+<span class="md-ellipsis">
+      
+        Glossario
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cenni-preliminari">
+<span class="md-ellipsis">
+      
+        Cenni preliminari
+      
+    </span>
+</a>
+<nav aria-label="Cenni preliminari" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#versioni-software">
+<span class="md-ellipsis">
+      
+        Versioni software
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installazione">
+<span class="md-ellipsis">
+      
+        Installazione
+      
+    </span>
+</a>
+<nav aria-label="Installazione" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#servizio-apigateway-sulle-casse">
+<span class="md-ellipsis">
+      
+        Servizio ApiGateway sulle casse
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configurazione">
+<span class="md-ellipsis">
+      
+        Configurazione
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permessi">
+<span class="md-ellipsis">
+      
+        Permessi
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#utilizzo">
+<span class="md-ellipsis">
+      
+        Utilizzo
+      
+    </span>
+</a>
+<nav aria-label="Utilizzo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sincronizzare-una-cassa">
+<span class="md-ellipsis">
+      
+        Sincronizzare una cassa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#finestra-sincronizzazione-dataora-casse">
+<span class="md-ellipsis">
+      
+        Finestra Sincronizzazione data/ora casse
+      
+    </span>
+</a>
+<nav aria-label="Finestra Sincronizzazione data/ora casse" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sincronizza-ora">
+<span class="md-ellipsis">
+      
+        Sincronizza ora
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sincronizzazione-automatica">
+<span class="md-ellipsis">
+      
+        Sincronizzazione automatica
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#orologio-stampante-fiscale-su-piu-casse">
+<span class="md-ellipsis">
+      
+        Orologio stampante fiscale su più casse
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#orologio-cassa">
+<span class="md-ellipsis">
+      
+        Orologio cassa
+      
+    </span>
+</a>
+<nav aria-label="Orologio cassa" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modalita-della-stampante-fiscale">
+<span class="md-ellipsis">
+      
+        Modalità della stampante fiscale
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#esiti">
+<span class="md-ellipsis">
+      
+        Esiti
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#audit">
+<span class="md-ellipsis">
+      
+        Audit
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#differenze-rispetto-a-pos_utility">
+<span class="md-ellipsis">
+      
+        Differenze rispetto a Pos_Utility
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="posware-price-checker.html">
+<span class="md-ellipsis">
+    
+  
+    Posware Price Checker
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="fatturazione-elettronica.html">
+<span class="md-ellipsis">
+    
+  
+    Fatturazione elettronica
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Posware Frontend
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Posware Frontend
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-frontend/tracciato-record-log.html">
+<span class="md-ellipsis">
+    
+  
+    Log Transazione Posware
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-frontend/satispay-nativo.html">
+<span class="md-ellipsis">
+    
+  
+    Satispay nativo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-frontend/argentea-satispay.html">
+<span class="md-ellipsis">
+    
+  
+    Argentea Satispay
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-frontend/argentea-coverflex.html">
+<span class="md-ellipsis">
+    
+  
+    Argentea Coverflex
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/funzionalita-rt-20.html">
+<span class="md-ellipsis">
+    
+  
+    Funzionalità RT 2.0 (XML7)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/funzionalita-pin-dispatching.html">
+<span class="md-ellipsis">
+    
+  
+    Pin dispatching
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../posware/lotteria-degli-scontrini.html">
+<span class="md-ellipsis">
+    
+  
+    Lotteria degli scontrini
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../posware-frontend/fatturazione-immediata.html">
+<span class="md-ellipsis">
+    
+  
+    Fatturazione immediata
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Celiachia
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Celiachia
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../celiac/informazioni-generali.html">
+<span class="md-ellipsis">
+    
+  
+    Informazioni generali
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../celiac/integrazione-bonus-celiachia-posware.html">
+<span class="md-ellipsis">
+    
+  
+    Integrazione bonus celiachia Posware
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../celiac/rendicontazione-celiachia.html">
+<span class="md-ellipsis">
+    
+  
+    Rendicontazione celiachia
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../download/index.html">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    DatabaseUpgrader
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    DatabaseUpgrader
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DatabaseUpgrader/GUIDA_UTENTE.html">
+<span class="md-ellipsis">
+    
+  
+    Guida utente
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<nav class="md-tags">
+<span class="md-tag">Posware</span>
+<span class="md-tag">StoreServer</span>
+</nav>
+<h1 id="posware-module-sincronizzazione-dataora-casse"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Posware Module - Sincronizzazione data/ora casse<a class="headerlink" href="#posware-module-sincronizzazione-dataora-casse" title="Permanent link">¶</a></h1>
+<p><strong>Prima revisione documento: 2 ottobre 2024</strong> <br/>
+<strong>Ultima revisione documento: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="26 ottobre 2026 10:18:34 UTC">26 ottobre 2026</span></strong></p>
+<hr/>
+<h2 id="glossario"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Glossario<a class="headerlink" href="#glossario" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>WebApp:</strong> applicazione web che permette di gestire in modo centralizzato le funzionalità disponibili nello <em>StoreServer</em>;</li>
+<li><strong>Cassa</strong> (o <em>terminale</em>): postazione Posware del punto vendita, raggiungibile in rete dallo <em>StoreServer</em>;</li>
+<li><strong>ApiGateway:</strong> servizio di Posware installato su ogni cassa (<code>PoswareApiGatewayWatchdog</code>) che riceve le richieste dello <em>StoreServer</em> e imposta l'orologio di Windows;</li>
+<li><strong>Schermata di login:</strong> schermata iniziale del programma di cassa, senza operatore collegato, senza scontrino e senza altre operazioni in corso;</li>
+<li><strong>Ora ufficiale:</strong> data e ora correnti del fuso orario italiano (<em>Europe/Rome</em>, ora legale compresa) lette dal servizio esterno <a href="https://timeapi.io">timeapi.io</a>;</li>
+<li><strong>Sincronizzazione automatica:</strong> sincronizzazione eseguita ogni giorno dallo <em>StoreServer</em> all'orario stabilito, senza intervento dell'utente;</li>
+<li><strong>Cassa scollegata:</strong> cassa non abilitata alla trasmissione (<code>casse.Trasmissione ≠ 1</code>) o senza indirizzo IP.</li>
+</ul>
+<h2 id="cenni-preliminari"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Cenni preliminari<a class="headerlink" href="#cenni-preliminari" title="Permanent link">¶</a></h2>
+<p>La funzione <strong>Sincronizzazione data/ora casse</strong> imposta sulle casse la <strong>data e l'ora ufficiali, al secondo</strong>. Un orologio corretto è importante perché data e ora finiscono sugli scontrini, sui documenti fiscali e sui log.</p>
+<p>La funzione:</p>
+<ul>
+<li>legge l'ora ufficiale dal servizio <strong>timeapi.io</strong> con il fuso <em>Europe/Rome</em>: <strong>l'orologio del server non viene mai usato</strong>, perché anch'esso potrebbe essere sbagliato;</li>
+<li>imposta l'orologio tramite l'<strong>ApiGateway</strong> della cassa, con precisione al secondo e indipendentemente dal fuso orario di Windows;</li>
+<li>agisce su <strong>una cassa</strong>, su <strong>più casse insieme</strong> oppure <strong>in automatico ogni giorno</strong> all'orario stabilito;</li>
+<li>mostra l'<strong>esito per ogni cassa</strong> con la data e l'ora impostate e la correzione applicata all'orologio;</li>
+<li>nella scheda della cassa mostra l'<strong>orologio della cassa</strong> confrontato con l'ora ufficiale e permette di scegliere come allineare l'orario della <strong>stampante fiscale</strong>;</li>
+<li>prosegue anche se la pagina o la finestra vengono chiuse: la sincronizzazione è eseguita dallo <em>StoreServer</em>;</li>
+<li>registra ogni richiesta e ogni esito nel <strong>log di audit</strong> dello <em>StoreServer</em>.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Versione minima di Posware: 4.3.1012.0</p>
+<p>La funzione è disponibile solo sulle casse con <strong>Posware 4.3.1012.0 o successiva</strong>. Sulle casse con una versione precedente, o di cui lo <em>StoreServer</em> non conosce la versione, la voce e il pulsante <em>Sincronizza data/ora</em> sono <strong>disabilitati</strong>: passando sopra con il mouse compare il motivo, ad esempio <em>Funzione non disponibile: richiesta versione Posware 4.3.1012.0 o successiva (installata 4.3.1000.0)</em>. La versione è quella comunicata dalla cassa (riquadro <em>Informazioni di sistema</em> della <a href="scheda-cassa.html">scheda cassa</a>). Quando lo <em>StoreServer</em> non ha la versione registrata, o ne ha una precedente alla 4.3.1012.0, prima di procedere la chiede direttamente alla cassa: una cassa appena aggiornata viene quindi sincronizzata anche se la versione registrata non è ancora quella nuova.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Regola della cassa</p>
+<p>La cassa accetta data e ora <strong>solo se il programma di cassa è nella schermata di login</strong>: nessun operatore collegato, nessuno scontrino o transazione in corso, nessuna chiusura fiscale o altra operazione in corso. In ogni altro caso la sincronizzazione non viene eseguita e l'esito ne indica il motivo. La WebApp anticipa la regola in base allo stato noto della cassa, ma <strong>la decisione finale è sempre della cassa</strong>.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Sostituzione di un programma di back-office</p>
+<p>Questa funzione sostituisce la scheda <em>Impostazione ORA</em> dell'utility desktop <code>Pos_Utility.exe</code>. Le differenze sono elencate nel capitolo <a href="#differenze-rispetto-a-pos_utility">Differenze rispetto a Pos_Utility</a>.</p>
+</div>
+<h3 id="versioni-software"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> Versioni software<a class="headerlink" href="#versioni-software" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>StoreServer:</strong> la funzione è inclusa nel <strong>PoswareModule</strong>. È necessario che il modulo sia licenziato e attivo;</li>
+<li><strong>Casse:</strong> <strong>Posware 4.3.1012.0</strong> o successiva, con il servizio <strong>ApiGateway</strong> installato e avviato.</li>
+</ul>
+<h2 id="installazione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Installazione<a class="headerlink" href="#installazione" title="Permanent link">¶</a></h2>
+<p>Nessuna installazione aggiuntiva sullo <em>StoreServer</em>. Prerequisiti:</p>
+<ul>
+<li>accesso di rete dallo <em>StoreServer</em> verso le casse sulla <strong>porta TCP 6857</strong> (ApiGateway). La porta è la stessa su tutte le casse e non è configurabile;</li>
+<li>accesso di rete dallo <em>StoreServer</em> verso <strong>internet</strong>, in HTTPS (porta 443) all'indirizzo <code>timeapi.io</code>. Se il negozio usa un proxy, lo <em>StoreServer</em> utilizza il proxy di sistema;</li>
+<li>su <strong>ogni cassa</strong>, il servizio <code>PoswareApiGatewayWatchdog</code> avviato con l'account <strong>LocalSystem</strong> (vedi <a href="#servizio-apigateway-sulle-casse">Servizio ApiGateway sulle casse</a>).</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Senza accesso a timeapi.io la sincronizzazione non parte</p>
+<p>Se l'ora ufficiale non è disponibile nessuna cassa viene contattata e compare il messaggio <em>Ora ufficiale non disponibile</em>. È una scelta voluta: non si usa mai un orario di ripiego.</p>
+</div>
+<h3 id="servizio-apigateway-sulle-casse"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.1</span> Servizio ApiGateway sulle casse<a class="headerlink" href="#servizio-apigateway-sulle-casse" title="Permanent link">¶</a></h3>
+<p>L'orologio di Windows viene cambiato dall'<strong>ApiGateway</strong>, non dal programma di cassa. Windows consente di cambiare l'ora solo a chi ha il diritto <strong>Modifica dell'ora di sistema</strong> (<code>SeSystemtimePrivilege</code>): l'ApiGateway lo possiede perché il servizio <code>PoswareApiGatewayWatchdog</code> è eseguito con l'account <strong>LocalSystem</strong>. Il programma di cassa, invece, <strong>non</strong> deve essere avviato come amministratore e non ha bisogno di diritti particolari.</p>
+<p>Se il servizio viene eseguito con un altro account, o se l'ApiGateway viene avviato a mano senza elevazione, l'esito della sincronizzazione è <em>Non sincronizzata: il servizio ApiGateway della cassa non ha il permesso di modificare l'ora</em>.</p>
+<p><strong>Verifica</strong>, su ogni cassa, da un <em>Prompt dei comandi</em>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sc qc PoswareApiGatewayWatchdog
+</code></pre></div>
+<p>Il risultato deve contenere <code>SERVICE_START_NAME : LocalSystem</code>.</p>
+<p><strong>Correzione</strong>, con un utente amministratore:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">Servizi di Windows</label><label for="__tabbed_1_2">Prompt dei comandi</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>premere <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-r">R</kbd></span>, digitare <code>services.msc</code> e premere <strong>OK</strong>;</li>
+<li>fare doppio clic sul servizio <strong>PoswareApiGatewayWatchdog</strong>;</li>
+<li>nella scheda <strong>Connessione</strong> scegliere <strong>Account di sistema locale</strong> e premere <strong>OK</strong>;</li>
+<li>fare clic con il tasto destro sul servizio → <strong>Riavvia</strong>.</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>Aprire il <em>Prompt dei comandi</em> <strong>come amministratore</strong> ed eseguire:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>sc config PoswareApiGatewayWatchdog obj= LocalSystem
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>sc stop PoswareApiGatewayWatchdog
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>sc start PoswareApiGatewayWatchdog
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Fuso orario di Windows</p>
+<p>L'ApiGateway imposta l'orologio in UTC, quindi l'ora è corretta qualunque sia il fuso orario di Windows. Posware però mostra e stampa l'<strong>ora locale</strong>: il fuso orario della cassa deve essere <em>(UTC+01:00) Amsterdam, Berlino, Berna, Roma, Stoccolma, Vienna</em>. Un fuso diverso viene segnalato nell'esito della sincronizzazione e nella scheda della cassa.</p>
+</div>
+<h3 id="configurazione"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2</span> Configurazione<a class="headerlink" href="#configurazione" title="Permanent link">¶</a></h3>
+<p>I parametri tecnici si trovano in <code>appsettings.json</code>. I valori vengono verificati all'avvio: con valori non validi lo <em>StoreServer</em> non parte e lo segnala nel log.</p>
+<p>Sezione <code>Posware:PosDateTimeSync</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Default</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MaxDegreeOfParallelism</code></td>
+<td><code>8</code></td>
+<td>numero di casse contattate contemporaneamente (da 1 a 32)</td>
+</tr>
+<tr>
+<td><code>CompletedOperationRetention</code></td>
+<td><code>00:30:00</code></td>
+<td>per quanto tempo l'esito di una sincronizzazione conclusa resta consultabile</td>
+</tr>
+<tr>
+<td><code>SchedulerTickInterval</code></td>
+<td><code>00:00:30</code></td>
+<td>ogni quanto la sincronizzazione automatica controlla se è il momento di partire</td>
+</tr>
+<tr>
+<td><code>ToleranceMs</code></td>
+<td><code>1000</code></td>
+<td>differenza in millisecondi (da 0 a 60000) sotto la quale la cassa non cambia l'orologio: l'esito è <em>Orologio già allineato</em></td>
+</tr>
+</tbody>
+</table>
+<p>Sezione <code>Posware:PosApiGateway</code> (comunicazione con le casse):</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Default</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RequestTimeout</code></td>
+<td><code>00:00:10</code></td>
+<td>attesa massima della risposta di una cassa (massimo 1 minuto)</td>
+</tr>
+</tbody>
+</table>
+<p>Sezione <code>Posware:TimeReference</code> (lettura dell'ora ufficiale):</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Default</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AttemptTimeout</code></td>
+<td><code>00:00:05</code></td>
+<td>attesa massima di una singola lettura</td>
+</tr>
+<tr>
+<td><code>Retries</code></td>
+<td><code>2</code></td>
+<td>nuovi tentativi in caso di errore temporaneo (da 0 a 5)</td>
+</tr>
+<tr>
+<td><code>RetryDelay</code></td>
+<td><code>00:00:00.500</code></td>
+<td>attesa tra un tentativo e il successivo</td>
+</tr>
+<tr>
+<td><code>TotalTimeout</code></td>
+<td><code>00:00:12</code></td>
+<td>durata massima complessiva della lettura</td>
+</tr>
+<tr>
+<td><code>ServerSkewWarningThreshold</code></td>
+<td><code>00:01:00</code></td>
+<td>oltre questo scostamento dell'orologio dello <em>StoreServer</em> viene scritto un avviso nel log</td>
+</tr>
+</tbody>
+</table>
+<p>L'indirizzo di timeapi.io, il fuso orario <em>Europe/Rome</em> e la porta <strong>6857</strong> delle casse <strong>non sono configurabili</strong>.</p>
+<p>Le impostazioni della <strong>sincronizzazione automatica</strong> (attivazione, orario, nuovi tentativi) <strong>non</strong> si trovano in <code>appsettings.json</code>: si modificano dalla WebApp e sono salvate nel database (vedi <a href="#sincronizzazione-automatica">Sincronizzazione automatica</a>). La <strong>modalità della stampante fiscale</strong> è un parametro di ciascuna cassa e si modifica dalla scheda della cassa (vedi <a href="#orologio-cassa">Orologio cassa</a>).</p>
+<h3 id="permessi"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.3</span> Permessi<a class="headerlink" href="#permessi" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Permesso</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>store.devices.pos.datetimesync.execute</code></td>
+<td>mostra la voce <em>Sincronizza data/ora</em> nel menu della cassa, il pulsante e il riquadro <em>Orologio cassa</em> nella scheda cassa; nella finestra <em>Sincronizzazione data/ora casse</em> mostra la sezione <em>Sincronizza ora</em></td>
+</tr>
+<tr>
+<td><code>store.devices.pos.datetimesync.manage</code></td>
+<td>nella finestra <em>Sincronizzazione data/ora casse</em> mostra e permette di modificare la sezione <em>Sincronizzazione automatica</em>; nel riquadro <em>Orologio cassa</em> permette di cambiare la modalità della stampante fiscale, il server NTP, il passaggio automatico ora legale/solare e la disattivazione della sincronizzazione automatica della stampante; nella stessa finestra mostra il riquadro <em>Orologio stampante fiscale — imposta su più casse</em></td>
+</tr>
+</tbody>
+</table>
+<p>La voce <em>Sincronizzazione data/ora casse</em> del menu <strong>Operazioni</strong> è visibile con almeno uno dei due permessi. I permessi sono assegnati ai ruoli <code>SystemAdmin</code>, <code>Technician</code> e <code>StoreManager</code>; possono essere aggiunti ai ruoli personalizzati (vedi <a href="../ruoli-permessi.html">Ruoli e permessi</a>).</p>
+<h2 id="utilizzo"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Utilizzo<a class="headerlink" href="#utilizzo" title="Permanent link">¶</a></h2>
+<p>La funzione si trova nella sezione <strong><em>Casse</em></strong> della <strong>WebApp</strong>: nella lista <em>Barriera casse</em> e nella <a href="scheda-cassa.html">scheda della cassa</a>.</p>
+<!-- TODO: aggiungere screenshot della finestra Sincronizzazione data/ora casse e del riquadro Orologio cassa -->
+<h3 id="sincronizzare-una-cassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Sincronizzare una cassa<a class="headerlink" href="#sincronizzare-una-cassa" title="Permanent link">¶</a></h3>
+<ol>
+<li>aprire il menu della <strong>singola cassa</strong> (pulsante a destra della riga) → <strong>Sincronizza data/ora</strong>, oppure premere <strong>Sincronizza data/ora</strong> nella scheda della cassa;</li>
+<li>confermare la domanda <em>Sincronizzare data e ora della cassa N con l'ora ufficiale?</em>;</li>
+<li>durante la sincronizzazione la riga della cassa mostra <em>Sincronizzazione…</em>;</li>
+<li>al termine compare una notifica: <em>Cassa N: data e ora impostate (02/10/2024 15:31:20, correzione +1 min 12 s)</em>, <em>Cassa N: orologio già allineato</em> oppure il motivo per cui la cassa non è stata sincronizzata.</li>
+</ol>
+<p>La voce è visibile solo per le casse con trasmissione attiva ed è <strong>disabilitata</strong> (con il motivo mostrato passando sopra con il mouse) quando:</p>
+<table>
+<thead>
+<tr>
+<th>Situazione</th>
+<th>Motivo mostrato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sincronizzazione già in corso sulla cassa</td>
+<td><em>Sincronizzazione in corso</em></td>
+</tr>
+<tr>
+<td>Posware precedente alla 4.3.1012.0</td>
+<td><em>Funzione non disponibile: richiesta versione Posware 4.3.1012.0 o successiva (installata …)</em></td>
+</tr>
+<tr>
+<td>versione di Posware non conosciuta</td>
+<td><em>Funzione non disponibile: richiesta versione Posware 4.3.1012.0 o successiva (versione Posware non rilevata)</em></td>
+</tr>
+<tr>
+<td>operatore collegato in cassa</td>
+<td><em>Operatore collegato: la cassa non è nella schermata di login</em></td>
+</tr>
+</tbody>
+</table>
+<p>Le casse <em>Offline</em>, <em>Online - StandBy</em> o con stato sconosciuto possono essere sincronizzate: se la cassa non risponde l'esito sarà <em>Cassa non raggiungibile</em>.</p>
+<h3 id="finestra-sincronizzazione-dataora-casse"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2</span> Finestra Sincronizzazione data/ora casse<a class="headerlink" href="#finestra-sincronizzazione-dataora-casse" title="Permanent link">¶</a></h3>
+<p>Si apre dal menu <strong>Operazioni</strong> della barriera → <strong>Sincronizzazione data/ora casse</strong>. In alto c'è la sezione <strong>Sincronizza ora</strong>; sotto, due riquadri <strong>chiusi</strong> che si aprono facendo clic sull'intestazione: <strong>Sincronizzazione automatica</strong> (l'intestazione ne riporta lo stato, per esempio <em>Attiva, ogni giorno alle 07:30</em>) e <strong>Orologio stampante fiscale — imposta su più casse</strong>.</p>
+<h4 id="sincronizza-ora"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2.1</span> Sincronizza ora<a class="headerlink" href="#sincronizza-ora" title="Permanent link">¶</a></h4>
+<p>Visibile con il permesso <code>store.devices.pos.datetimesync.execute</code>.</p>
+<ol>
+<li>in alto è mostrata l'<strong>ora ufficiale</strong> (<em>Europe/Rome</em>, con l'indicazione di ora legale o solare) che avanza ogni secondo. Se timeapi.io non risponde compare l'avviso <em>Ora ufficiale non disponibile</em>, il pulsante di sincronizzazione è disabilitato ed è possibile premere <strong>Riprova</strong>;</li>
+<li>sono elencate le casse con trasmissione attiva; quelle utilizzabili sono <strong>tutte selezionate</strong>:<ul>
+<li>le casse con <strong>operatore collegato</strong> sono evidenziate con l'avviso <em>verrà rifiutata se non torna alla schermata di login</em>, ma restano selezionabili;</li>
+<li>le casse già <strong>in sincronizzazione</strong> non sono selezionabili;</li>
+<li>le casse con <strong>Posware precedente alla 4.3.1012.0</strong> (o con versione non rilevata) non sono selezionabili e mostrano il motivo;</li>
+<li><strong>Seleziona tutte</strong> seleziona o deseleziona l'intero elenco;</li>
+</ul>
+</li>
+<li>premere <strong>Sincronizza N casse</strong>;</li>
+<li>la finestra mostra l'avanzamento e poi l'esito di ogni cassa con la data e l'ora impostate e la correzione applicata; al termine il riepilogo <em>N sincronizzate / M non sincronizzate</em>;</li>
+<li>se qualche cassa non è stata sincronizzata è disponibile <strong>Riprova casse non sincronizzate</strong>, che ripete l'operazione <strong>solo</strong> su quelle casse con una nuova lettura dell'ora ufficiale.</li>
+</ol>
+<p>La finestra si può chiudere in qualsiasi momento: la sincronizzazione prosegue e le righe della lista continuano a mostrare <em>Sincronizzazione…</em> fino al termine.</p>
+<h4 id="sincronizzazione-automatica"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2.2</span> Sincronizzazione automatica<a class="headerlink" href="#sincronizzazione-automatica" title="Permanent link">¶</a></h4>
+<p>Visibile con il permesso <code>store.devices.pos.datetimesync.manage</code>, in un riquadro chiuso.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Attiva / Disattiva</strong></td>
+<td>accende o spegne la sincronizzazione automatica. <strong>Alla prima installazione è disattiva</strong></td>
+</tr>
+<tr>
+<td><strong>Orario</strong></td>
+<td>orario italiano della sincronizzazione giornaliera (default <strong>07:30</strong>)</td>
+</tr>
+<tr>
+<td><strong>Riprova per</strong></td>
+<td>per quanto tempo, dopo l'orario, vengono ritentate le casse non sincronizzate: da <em>Nessun nuovo tentativo</em> a <strong>2 ore</strong>, a passi di 15 minuti (default 2 ore)</td>
+</tr>
+<tr>
+<td><strong>Ogni</strong></td>
+<td>intervallo tra un tentativo e il successivo: da <strong>5</strong> a 60 minuti, a passi di 5, mai più lungo del periodo <em>Riprova per</em> (default 15 minuti)</td>
+</tr>
+</tbody>
+</table>
+<p>Premere <strong>Salva impostazioni</strong> per applicarle: lo <em>StoreServer</em> le usa dal controllo successivo, entro pochi secondi.</p>
+<p>Funzionamento:</p>
+<ol>
+<li>ogni giorno all'<strong>orario stabilito</strong> lo <em>StoreServer</em> sincronizza <strong>tutte le casse con trasmissione attiva</strong>;</li>
+<li>le casse non sincronizzate (ad esempio con un operatore collegato o spente) vengono <strong>ritentate ogni intervallo</strong> fino alla fine del periodo <em>Riprova per</em>; le casse già sincronizzate non vengono più contattate;</li>
+<li>le casse con <strong>Posware precedente alla 4.3.1012.0</strong> non vengono contattate né ritentate: compaiono nel riepilogo con l'esito <em>Versione Posware non supportata</em>;</li>
+<li>a ogni tentativo l'ora ufficiale viene letta di nuovo; se timeapi.io non è disponibile il tentativo viene ripetuto all'intervallo successivo;</li>
+<li>la sincronizzazione automatica viene eseguita <strong>una sola volta al giorno</strong>. Se lo <em>StoreServer</em> si riavvia durante il periodo dei tentativi, riprende dalle casse non ancora sincronizzate.</li>
+</ol>
+<p>Solo la sincronizzazione automatica può portare, dopo la chiusura fiscale, all'allineamento dell'orario della <strong>stampante fiscale</strong> (vedi <a href="#orologio-cassa">Orologio cassa</a>); la sincronizzazione su richiesta cambia solo l'orologio di Windows.</p>
+<p>Nella sezione sono indicate anche:</p>
+<ul>
+<li>la <strong>prossima esecuzione</strong> prevista;</li>
+<li>l'<strong>ultima esecuzione</strong>: data e ora dell'ultimo tentativo, stato (<em>In corso</em>, <em>Completata</em>, <em>Completata con errori</em>), numero di casse sincronizzate e non sincronizzate, numero di tentativi ed elenco delle casse non sincronizzate con il motivo.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Scegliere l'orario</p>
+<p>Scegliere un orario in cui le casse sono <strong>accese</strong> ma <strong>nessun operatore è collegato</strong>, ad esempio prima dell'apertura del negozio. Una cassa spenta all'orario stabilito risulterà <em>Cassa non raggiungibile</em> fino a quando non viene accesa, entro il periodo dei tentativi.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Prima di attivarla</p>
+<p>Verificare su <strong>tutte le casse</strong> la versione di Posware e il <a href="#servizio-apigateway-sulle-casse">servizio ApiGateway</a>, ad esempio con una sincronizzazione manuale. Una cassa con il servizio non configurato risulterà <em>Non sincronizzata</em> a ogni tentativo, tutti i giorni.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Cambio ora legale / solare</p>
+<p>L'orario è sempre l'orario italiano: la sincronizzazione segue automaticamente il passaggio tra ora legale e ora solare. Se l'orario stabilito non esiste (ad esempio le 02:30 del giorno in cui si passa all'ora legale) la sincronizzazione parte un'ora dopo.</p>
+</div>
+<h4 id="orologio-stampante-fiscale-su-piu-casse"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2.3</span> Orologio stampante fiscale su più casse<a class="headerlink" href="#orologio-stampante-fiscale-su-piu-casse" title="Permanent link">¶</a></h4>
+<p>Visibile con il permesso <code>store.devices.pos.datetimesync.manage</code>, in un riquadro chiuso. Permette di applicare la stessa <a href="#modalita-della-stampante-fiscale">modalità della stampante fiscale</a> a più casse insieme, invece di impostarla cassa per cassa nel riquadro <a href="#orologio-cassa">Orologio cassa</a>.</p>
+<ol>
+<li>
+<p>scegliere la <strong>modalità</strong>; con <em>Data e ora automatica sulla stampante</em> compaiono anche:</p>
+<ul>
+<li><strong>Server NTP</strong>: se lasciato <strong>vuoto</strong> ogni cassa <strong>mantiene</strong> il server NTP già impostato; se indicato viene impostato su tutte le casse selezionate;</li>
+<li><strong>Passaggio automatico ora legale/solare</strong>: viene impostato su tutte le casse selezionate;</li>
+</ul>
+<p>con <em>Usa la data di Posware</em> compare l'interruttore <strong>Se configurata, disattiva la sincronizzazione automatica della stampante</strong> (vedi <a href="#usa-la-data-di-posware">Usa la data di Posware</a>), impostato su tutte le casse selezionate; con le altre modalità viene disattivato;
+2. scegliere le casse: sono elencate le casse con trasmissione attiva e quelle con <strong>Posware 4.3.1012.0 o successiva</strong> sono <strong>tutte selezionate</strong>; le casse con Posware precedente (o con versione non rilevata) non sono selezionabili e mostrano il motivo. Le casse con operatore collegato possono essere impostate;
+3. premere <strong>Applica a N casse</strong>: le impostazioni vengono inviate a ogni cassa e sostituiscono quelle presenti;
+4. accanto a ogni cassa compare l'esito: <em>Impostazioni salvate</em>, un avviso se la stampante della cassa non supporta la data e ora automatica o il passaggio automatico ora legale/solare, oppure il motivo del rifiuto (per esempio <em>La stampante fiscale della cassa si sincronizza tramite un server NTP: indicare il server NTP</em>, <em>Cassa non raggiungibile</em>). Al termine compare il riepilogo <em>N salvate / M non salvate</em>;
+5. se qualche cassa non è stata impostata è disponibile <strong>Riprova casse non salvate</strong>, che invia le stesse impostazioni <strong>solo</strong> a quelle casse.</p>
+</li>
+</ol>
+<p>Ogni cassa impostata viene registrata nell'<a href="#audit">audit</a> come una modifica dal riquadro <em>Orologio cassa</em>. Le stampanti ricevono la nuova configurazione alla <strong>chiusura fiscale</strong> successiva.</p>
+<div class="admonition tip">
+<p class="admonition-title">Stampanti con server NTP</p>
+<p>Se alcune casse hanno stampanti che si sincronizzano tramite NTP, indicare il server NTP: lasciandolo vuoto quelle casse vengono rifiutate se non hanno già un server impostato.</p>
+</div>
+<h3 id="orologio-cassa"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.3</span> Orologio cassa<a class="headerlink" href="#orologio-cassa" title="Permanent link">¶</a></h3>
+<p>Nella <a href="scheda-cassa.html">scheda della cassa</a>, con il permesso <code>store.devices.pos.datetimesync.execute</code>, il riquadro <strong>Orologio cassa</strong> legge le informazioni direttamente dalla cassa (pulsante <strong>Aggiorna</strong> per rileggerle):</p>
+<table>
+<thead>
+<tr>
+<th>Informazione</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ora della cassa</strong></td>
+<td>orologio della cassa al momento della lettura</td>
+</tr>
+<tr>
+<td><strong>Ora ufficiale</strong></td>
+<td>ora ufficiale nello stesso momento (<em>Non disponibile</em> se timeapi.io non risponde)</td>
+</tr>
+<tr>
+<td><strong>Fuso orario di Windows</strong></td>
+<td>fuso della cassa, con ora legale o solare; un fuso diverso da quello italiano è evidenziato con un avviso</td>
+</tr>
+<tr>
+<td>scostamento</td>
+<td><em>La cassa è avanti di …</em>, <em>La cassa è indietro di …</em> oppure <em>Orologio allineato all'ora ufficiale</em> (meno di un secondo)</td>
+</tr>
+<tr>
+<td><strong>Orario della stampante fiscale dopo la chiusura</strong></td>
+<td>modalità di allineamento della stampante fiscale (vedi sotto)</td>
+</tr>
+<tr>
+<td><strong>Ultima sincronizzazione automatica</strong> / <strong>manuale</strong></td>
+<td>data e ora registrate dalla cassa all'ultima sincronizzazione</td>
+</tr>
+<tr>
+<td><strong>Ultimo allineamento stampante</strong></td>
+<td>data, esito e motivo dell'ultimo allineamento dopo la chiusura fiscale</td>
+</tr>
+</tbody>
+</table>
+<p>Se la cassa non ha la trasmissione attiva o ha un Posware precedente alla 4.3.1012.0 il riquadro ne indica il motivo e la cassa non viene contattata.</p>
+<h4 id="modalita-della-stampante-fiscale"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.3.1</span> Modalità della stampante fiscale<a class="headerlink" href="#modalita-della-stampante-fiscale" title="Permanent link">¶</a></h4>
+<p>La modalità stabilisce come viene mantenuto corretto l'orario della stampante fiscale dopo la chiusura fiscale. Si sceglie per ogni cassa, con il permesso <code>store.devices.pos.datetimesync.manage</code>, e si applica con <strong>Salva impostazioni</strong>; per impostarla su più casse insieme usare la <a href="#orologio-stampante-fiscale-su-piu-casse">finestra di sincronizzazione</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Modalità</th>
+<th>Comportamento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data e ora automatica sulla stampante</strong></td>
+<td>la stampante allinea da sola il proprio orologio, dall'Agenzia delle Entrate o da un server NTP a seconda del modello. A ogni chiusura fiscale Posware legge la configurazione della stampante e la reinvia solo se è cambiata (per esempio se la data e ora automatica è stata disattivata a mano)</td>
+</tr>
+<tr>
+<td><strong>Usa la data di Posware</strong></td>
+<td>dopo una <strong>sincronizzazione automatica</strong>, alla chiusura fiscale Posware verifica che l'orologio di Windows sia coerente con quella sincronizzazione e, solo se la data della stampante coincide, ne allinea l'<strong>orario</strong> (ore e minuti). La <strong>data</strong> della stampante non viene mai cambiata</td>
+</tr>
+<tr>
+<td><strong>Nessun allineamento</strong></td>
+<td>impostazione predefinita: l'orario della stampante fiscale non viene mai modificato</td>
+</tr>
+</tbody>
+</table>
+<p>Le due prime modalità non possono essere attive insieme. Se la cassa le riporta entrambe attive compare un avviso e nessun allineamento viene eseguito finché non si salvano le impostazioni.</p>
+<h5 id="data-e-ora-automatica-sulla-stampante"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.3.1.1</span> Data e ora automatica sulla stampante<a class="headerlink" href="#data-e-ora-automatica-sulla-stampante" title="Permanent link">¶</a></h5>
+<p>Selezionando la modalità <em>Data e ora automatica sulla stampante</em> il riquadro mostra:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data e ora automatica della stampante</strong></td>
+<td>come si sincronizza il modello di stampante della cassa: <em>dall'Agenzia delle Entrate</em>, <em>da server NTP</em>, <em>non supportata dalla stampante</em> oppure <em>non rilevata</em> se la stampante non è disponibile. Con una stampante che non la supporta compare un avviso: l'orario della stampante non viene allineato</td>
+</tr>
+<tr>
+<td><strong>Server NTP</strong></td>
+<td>nome host o indirizzo IP (senza porta) del server NTP. È <strong>obbligatorio</strong> per le stampanti che si sincronizzano tramite NTP; per le altre viene ignorato. Lasciarlo vuoto per cancellarlo</td>
+</tr>
+<tr>
+<td><strong>Passaggio automatico ora legale/solare</strong></td>
+<td>se attivo, viene inviato alla stampante insieme alla data e ora automatica: la stampante passa da sola tra ora legale e ora solare. Se la stampante non lo supporta l'impostazione viene salvata ma non inviata, e il riquadro lo segnala. Predefinito: disattivo</td>
+</tr>
+</tbody>
+</table>
+<p>Server NTP e passaggio automatico ora legale/solare vengono inviati alla cassa solo con questa modalità; scegliendo un'altra modalità restano memorizzati sulla cassa senza modifiche. La stampante riceve la nuova configurazione alla <strong>chiusura fiscale</strong> successiva.</p>
+<p>Il salvataggio viene rifiutato con un messaggio quando:</p>
+<table>
+<thead>
+<tr>
+<th>Messaggio</th>
+<th>Significato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Server NTP non valido: indicare un nome host o un indirizzo IP, senza porta</em></td>
+<td>il server indicato non è un nome host o un indirizzo IP valido</td>
+</tr>
+<tr>
+<td><em>La stampante fiscale della cassa si sincronizza tramite un server NTP: indicare il server NTP</em></td>
+<td>la stampante richiede un server NTP e il campo è vuoto</td>
+</tr>
+</tbody>
+</table>
+<p>Dopo la chiusura fiscale <em>Ultimo allineamento stampante</em> riporta:</p>
+<table>
+<thead>
+<tr>
+<th>Esito</th>
+<th>Significato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Data e ora automatica configurata sulla stampante</em></td>
+<td>la configurazione è stata inviata alla stampante</td>
+</tr>
+<tr>
+<td><em>Nessuna modifica necessaria: data e ora automatica già configurata sulla stampante</em></td>
+<td>la stampante era già configurata correttamente: non è stato inviato nulla</td>
+</tr>
+<tr>
+<td><em>Orario della stampante non modificato: la stampante non supporta la data e ora automatica</em></td>
+<td>il modello di stampante non la supporta: scegliere un'altra modalità</td>
+</tr>
+<tr>
+<td><em>Orario della stampante non modificato: server NTP non configurato, obbligatorio per la stampante della cassa</em></td>
+<td>indicare il server NTP</td>
+</tr>
+<tr>
+<td><em>Orario della stampante non modificato: configurazione della data e ora automatica non riuscita</em></td>
+<td>la stampante ha rifiutato la configurazione: verificare la stampante</td>
+</tr>
+<tr>
+<td><em>Orario della stampante non modificato: stampante fiscale non abilitata</em></td>
+<td>la stampante fiscale non è abilitata in Posware</td>
+</tr>
+<tr>
+<td><em>Orario della stampante non modificato: giornata fiscale ancora aperta</em></td>
+<td>la stampante non ha confermato la chiusura</td>
+</tr>
+</tbody>
+</table>
+<h5 id="usa-la-data-di-posware"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.3.1.2</span> Usa la data di Posware<a class="headerlink" href="#usa-la-data-di-posware" title="Permanent link">¶</a></h5>
+<p>Selezionando la modalità <em>Usa la data di Posware</em> il riquadro mostra l'interruttore <strong>Se configurata, disattiva la sincronizzazione automatica della stampante</strong> (predefinito: disattivo):</p>
+<ul>
+<li><strong>attivo</strong>: alla chiusura fiscale, se i controlli sull'orario sono superati e sulla stampante la data e ora automatica è attiva (o non leggibile), Posware la <strong>disattiva</strong> e poi allinea l'orario. Così la stampante non sovrascrive più l'orario impostato da Posware. Se l'allineamento viene rifiutato (vedi sotto) la data e ora automatica resta attiva;</li>
+<li><strong>disattivo</strong>: la data e ora automatica della stampante resta com'è; se è attiva la stampante può sincronizzarsi da sola in altri momenti, e nel log della cassa viene scritto un avviso.</li>
+</ul>
+<p>Se la stampante della cassa non ha la data e ora automatica il riquadro indica che l'impostazione non ha effetto. Con le altre modalità l'interruttore viene salvato <strong>disattivo</strong>.</p>
+<p>Se la disattivazione non riesce, l'orario viene comunque allineato e <em>Ultimo allineamento stampante</em> riporta, in arancione, <em>Orario della stampante allineato: disattivazione della data e ora automatica della stampante non riuscita</em>; Posware riprova alla chiusura fiscale successiva.</p>
+<p>L'orario della stampante <strong>non</strong> viene modificato, e il motivo compare in <em>Ultimo allineamento stampante</em>, quando:</p>
+<table>
+<thead>
+<tr>
+<th>Motivo</th>
+<th>Significato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>nessuna sincronizzazione automatica memorizzata</em></td>
+<td>la cassa non ha ancora ricevuto una sincronizzazione automatica</td>
+</tr>
+<tr>
+<td><em>fuso orario di Windows cambiato dopo la sincronizzazione</em></td>
+<td>il fuso di Windows è diverso da quello registrato alla sincronizzazione</td>
+</tr>
+<tr>
+<td><em>l'orologio di Windows è precedente all'ultima sincronizzazione</em></td>
+<td>l'orologio è stato spostato indietro a mano</td>
+</tr>
+<tr>
+<td><em>chiusura fiscale eseguita il giorno successivo alla sincronizzazione</em></td>
+<td>la chiusura è avvenuta dopo la mezzanotte: l'allineamento avverrà dopo la sincronizzazione del giorno</td>
+</tr>
+<tr>
+<td><em>giornata fiscale ancora aperta</em></td>
+<td>la stampante non ha confermato la chiusura</td>
+</tr>
+<tr>
+<td><em>ora della stampante non leggibile</em></td>
+<td>la stampante non ha restituito data e ora</td>
+</tr>
+<tr>
+<td><em>data della stampante diversa da quella di Windows: cambio di data non ammesso</em></td>
+<td>per sicurezza la data della stampante non viene mai cambiata: verificare la stampante</td>
+</tr>
+<tr>
+<td><em>impostazione dell'orario della stampante non riuscita</em></td>
+<td>la stampante ha rifiutato il comando</td>
+</tr>
+</tbody>
+</table>
+<h3 id="esiti"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.4</span> Esiti<a class="headerlink" href="#esiti" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Esito</th>
+<th>Colore</th>
+<th>Significato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Data e ora impostate — 02/10/2024 15:31:20 (+1 min 12 s)</em></td>
+<td>verde</td>
+<td>l'orologio della cassa è stato impostato all'ora ufficiale; tra parentesi la correzione applicata (positiva se la cassa era indietro)</td>
+</tr>
+<tr>
+<td><em>Orologio già allineato</em></td>
+<td>verde</td>
+<td>la differenza era inferiore alla tolleranza (<code>ToleranceMs</code>): l'orologio non è stato modificato</td>
+</tr>
+<tr>
+<td><em>Non sincronizzata: operatore collegato in cassa</em></td>
+<td>arancione</td>
+<td>effettuare il logout in cassa e riprovare</td>
+</tr>
+<tr>
+<td><em>Non sincronizzata: scontrino o transazione in corso</em></td>
+<td>arancione</td>
+<td>chiudere lo scontrino e riprovare</td>
+</tr>
+<tr>
+<td><em>Non sincronizzata: chiusura fiscale o altra operazione in corso sulla cassa</em></td>
+<td>arancione</td>
+<td>attendere la fine dell'operazione e riprovare</td>
+</tr>
+<tr>
+<td><em>Non sincronizzata: un altro cambio orario è in corso sulla cassa</em></td>
+<td>arancione</td>
+<td>riprovare tra qualche secondo</td>
+</tr>
+<tr>
+<td><em>Non sincronizzata: il programma di cassa non è avviato o non risponde</em></td>
+<td>rosso</td>
+<td>avviare Posware sulla cassa</td>
+</tr>
+<tr>
+<td><em>Non sincronizzata: il servizio ApiGateway della cassa non ha il permesso di modificare l'ora</em></td>
+<td>rosso</td>
+<td>configurare il <a href="#servizio-apigateway-sulle-casse">servizio ApiGateway</a> come LocalSystem</td>
+</tr>
+<tr>
+<td><em>Non sincronizzata: impostazione dell'ora non riuscita sulla cassa</em></td>
+<td>rosso</td>
+<td>Windows ha rifiutato il cambio o l'orologio riletto non corrisponde: verificare il log della cassa</td>
+</tr>
+<tr>
+<td><em>Cassa non raggiungibile (timeout)</em></td>
+<td>rosso</td>
+<td>nessuna risposta entro il tempo previsto</td>
+</tr>
+<tr>
+<td><em>Cassa non raggiungibile: servizio ApiGateway non attivo o rete non disponibile</em></td>
+<td>rosso</td>
+<td>cassa spenta, servizio ApiGateway fermo o porta 6857 bloccata</td>
+</tr>
+<tr>
+<td><em>Risposta non riconosciuta</em></td>
+<td>rosso</td>
+<td>la cassa ha risposto con un errore non previsto</td>
+</tr>
+<tr>
+<td><em>Versione Posware non supportata</em></td>
+<td>grigio</td>
+<td>Posware precedente alla 4.3.1012.0 o versione non rilevata: la cassa non è stata contattata</td>
+</tr>
+<tr>
+<td><em>Cassa scollegata</em></td>
+<td>grigio</td>
+<td>la cassa non è abilitata alla trasmissione o non ha indirizzo IP: la cassa non è stata contattata</td>
+</tr>
+<tr>
+<td><em>Operazione interrotta (riavvio server)</em></td>
+<td>grigio</td>
+<td>lo <em>StoreServer</em> è stato riavviato durante la sincronizzazione: ripetere l'operazione</td>
+</tr>
+</tbody>
+</table>
+<p>Un esito verde può riportare in coda un avviso, ad esempio <em>attenzione: fuso orario della cassa diverso dall'ora italiana</em>.</p>
+<p>Possono inoltre comparire questi messaggi:</p>
+<table>
+<thead>
+<tr>
+<th>Messaggio</th>
+<th>Causa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Ora ufficiale non disponibile (timeapi.io): impossibile sincronizzare le casse. Riprovare tra qualche minuto.</em></td>
+<td>lo <em>StoreServer</em> non riesce a leggere l'ora ufficiale: verificare l'accesso a internet e al sito timeapi.io</td>
+</tr>
+<tr>
+<td><em>Alcune casse sono già in sincronizzazione: N, M</em></td>
+<td>un altro utente, un'altra finestra o la sincronizzazione automatica stanno già sincronizzando quelle casse: attendere l'esito</td>
+</tr>
+<tr>
+<td><em>Cassa non trovata</em></td>
+<td>la cassa non esiste più nell'anagrafica casse</td>
+</tr>
+<tr>
+<td><em>Permessi insufficienti per sincronizzare le casse</em></td>
+<td>l'utente non dispone del permesso</td>
+</tr>
+</tbody>
+</table>
+<h3 id="audit"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.5</span> Audit<a class="headerlink" href="#audit" title="Permanent link">¶</a></h3>
+<p>Ogni operazione viene registrata nel log di audit dello <em>StoreServer</em>:</p>
+<ul>
+<li>azione <code>pos.datetimesync.requested</code>: utente (oppure <code>system</code> per la sincronizzazione automatica), origine, elenco delle casse, ora ufficiale di riferimento e scostamento dell'orologio dello <em>StoreServer</em>;</li>
+<li>azione <code>pos.datetimesync</code>, una per cassa al termine: utente richiedente, origine (<code>Gui</code> o <code>Scheduled</code>), esito, istante UTC inviato, correzione applicata, durata, identificativo di correlazione (riportato anche nel log della cassa) e dettaglio della risposta;</li>
+<li>azione <code>pos.datetimesync.autosync.updated</code>: utente e nuove impostazioni della sincronizzazione automatica;</li>
+<li>azione <code>pos.datetimesync.clocksettings.updated</code>: utente, cassa, nuova modalità della stampante fiscale, disattivazione della sincronizzazione automatica della stampante e, se inviati, server NTP e passaggio automatico ora legale/solare.</li>
+</ul>
+<details class="question">
+<summary>Domande frequenti</summary>
+<p><strong>La voce <em>Sincronizza data/ora</em> è disabilitata con il messaggio <em>richiesta versione Posware 4.3.1012.0</em>.</strong>
+La cassa ha una versione di Posware precedente: aggiornarla. Se la versione mostrata è già corretta, premere <strong>Aggiorna status</strong> nella scheda cassa per rileggerla dalla cassa. In ogni caso, all'avvio della sincronizzazione lo <em>StoreServer</em> chiede la versione alla cassa quando quella registrata manca o non è supportata.</p>
+<p><strong>La cassa risulta <em>Non sincronizzata: operatore collegato in cassa</em> anche se non c'è nessuno alla cassa.</strong>
+Un operatore è rimasto collegato: effettuare il logout in cassa e ripetere la sincronizzazione.</p>
+<p><strong>L'esito è <em>il servizio ApiGateway della cassa non ha il permesso di modificare l'ora</em>.</strong>
+Il servizio <code>PoswareApiGatewayWatchdog</code> non gira come <em>LocalSystem</em>: correggerlo come descritto in <a href="#servizio-apigateway-sulle-casse">Servizio ApiGateway sulle casse</a>.</p>
+<p><strong>L'orologio del PC dello <em>StoreServer</em> è sbagliato: è un problema?</strong>
+No. L'orario inviato alle casse è sempre quello ufficiale letto da timeapi.io. L'orologio dello <em>StoreServer</em> serve solo a decidere quando far partire la sincronizzazione automatica; lo scostamento viene segnalato nel log.</p>
+<p><strong>Perché la sincronizzazione manuale non allinea la stampante fiscale?</strong>
+Per sicurezza solo la sincronizzazione automatica, eseguita dallo <em>StoreServer</em> all'orario stabilito, può portare a un cambio dell'orario della stampante fiscale dopo la chiusura.</p>
+<p><strong>Con <em>Data e ora automatica sulla stampante</em> devo indicare il server NTP?</strong>
+Solo se il riquadro indica che la stampante si sincronizza <em>da server NTP</em>: in quel caso il server è obbligatorio. Le stampanti che si sincronizzano dall'Agenzia delle Entrate non ne hanno bisogno.</p>
+<p><strong>Ho attivato il passaggio automatico ora legale/solare ma la stampante non cambia ora.</strong>
+Verificare nel riquadro che la stampante lo supporti. La configurazione viene inviata alla stampante alla chiusura fiscale successiva al salvataggio.</p>
+<p><strong>La sincronizzazione automatica non è partita.</strong>
+Verificare che sia <em>Attiva</em> e che lo <em>StoreServer</em> fosse in funzione all'orario stabilito. Se lo <em>StoreServer</em> viene avviato dopo l'orario, la sincronizzazione parte comunque se si è ancora nel periodo <em>Riprova per</em> (o nei 10 minuti successivi all'orario, se il periodo è più breve); altrimenti viene eseguita il giorno successivo.</p>
+<p><strong>Ho cambiato l'orario dopo che la sincronizzazione del giorno è già stata eseguita.</strong>
+Il nuovo orario vale dal giorno successivo: la sincronizzazione automatica viene eseguita una sola volta al giorno.</p>
+</details>
+<h2 id="differenze-rispetto-a-pos_utility"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Differenze rispetto a Pos_Utility<a class="headerlink" href="#differenze-rispetto-a-pos_utility" title="Permanent link">¶</a></h2>
+<ul>
+<li>data e ora <strong>non si digitano più</strong>: si usa sempre l'ora ufficiale italiana, mai l'orologio di un PC;</li>
+<li>l'orologio viene impostato <strong>al secondo</strong> e indipendentemente dal fuso orario della cassa;</li>
+<li><strong>sincronizzazione automatica giornaliera</strong> con nuovi tentativi sulle casse non sincronizzate;</li>
+<li>sincronizzazione della <strong>singola cassa</strong> dal menu della cassa e dalla scheda cassa, oltre che di più casse insieme;</li>
+<li>casse selezionabili (il programma legacy inviava sempre a tutte);</li>
+<li>esito <strong>per ogni cassa</strong> con il motivo preciso di un eventuale rifiuto;</li>
+<li>lettura dell'orologio della cassa e scelta della modalità di allineamento della stampante fiscale, con server NTP e passaggio automatico ora legale/solare;</li>
+<li>casse contattate in parallelo e operazione eseguita dallo <em>StoreServer</em>: la WebApp non si blocca;</li>
+<li>accesso tramite utente <em>StoreServer</em> e permessi dedicati; ogni richiesta e ogni esito sono tracciati nel log di audit;</li>
+<li>richiede <strong>Posware 4.3.1012.0</strong> o successiva sulle casse.</li>
+</ul>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Ultimo aggiornamento">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="26 ottobre 2026 10:18:34 UTC">26 ottobre 2026</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Torna su
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright 2024© I.Si.D S.r.l.
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://isid.it/" rel="noopener" target="_blank" title="isid.it">
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg height="518.000000pt" preserveaspectratio="xMidYMid meet" version="1.0" viewbox="0 0 1510.000000 518.000000" width="1510.000000pt" xmlns="http://www.w3.org/2000/svg">
+<g fill="#FFFFFF" stroke="none" transform="translate(0.000000,518.000000) scale(0.100000,-0.100000)">
+<path d="M69 5157 c-19 -12 -42 -38 -51 -57 -17 -33 -18 -174 -18 -2510 0
+-2336 1 -2477 18 -2510 9 -19 32 -45 51 -57 l34 -23 466 0 c521 0 514 -1 553
+71 17 32 18 131 18 2519 0 2391 -1 2487 -18 2520 -37 71 -32 70 -553 70 l-466
+0 -34 -23z"></path>
+<path d="M2580 5169 c-305 -35 -562 -148 -726 -320 -149 -157 -241 -337 -291
+-572 -16 -72 -18 -141 -18 -582 0 -550 4 -597 66 -787 127 -392 402 -626 846
+-720 l108 -23 1570 -5 1570 -5 60 -23 c32 -12 75 -35 95 -50 44 -36 95 -119
+110 -181 17 -67 25 -451 11 -539 -26 -169 -92 -261 -217 -304 l-69 -23 -2030
+-5 c-1919 -5 -2032 -6 -2058 -23 -63 -41 -62 -30 -62 -487 0 -453 0 -451 58
+-494 l28 -21 2177 -3 c1891 -2 2192 0 2293 13 385 50 650 197 824 460 94 141
+143 264 182 460 16 80 18 147 18 580 0 416 -3 504 -17 585 -51 285 -151 492
+-315 651 -169 164 -367 257 -655 305 -94 16 -242 18 -1658 23 l-1555 6 -56 28
+c-72 35 -130 97 -160 173 -23 57 -24 68 -24 324 0 252 1 268 22 321 43 103
+103 161 207 197 48 16 190 17 2091 22 1928 5 2041 6 2066 23 53 36 54 41 57
+469 2 250 -1 412 -7 436 -6 21 -25 51 -41 67 l-31 30 -2197 1 c-1208 1 -2231
+-2 -2272 -7z"></path>
+<path d="M7631 5162 c-71 -38 -71 -38 -71 -501 0 -403 1 -415 21 -448 40 -64
+34 -63 501 -63 l424 0 302 -282 302 -282 0 -386 c0 -380 0 -386 23 -430 42
+-82 28 -80 550 -80 502 0 489 -1 541 60 l26 32 0 422 0 423 -23 34 c-46 69
+-44 69 -512 69 l-420 1 -297 277 -297 277 0 390 c-1 435 -1 436 -70 482 l-34
+23 -466 0 c-433 0 -469 -1 -500 -18z"></path>
+<path d="M9255 5167 c-47 -18 -71 -39 -97 -82 l-23 -40 -3 -452 -3 -453 1993
+-3 c1802 -3 2001 -5 2071 -20 422 -88 609 -249 697 -601 50 -201 55 -279 55
+-926 0 -647 -5 -725 -55 -926 -80 -318 -256 -491 -582 -574 -216 -54 -240 -55
+-1653 -55 -715 0 -1313 4 -1328 8 -57 16 -57 20 -57 657 l0 580 -570 0 -570 0
+2 -1072 3 -1073 27 -46 c17 -29 41 -53 65 -65 37 -18 101 -19 1918 -22 1332
+-2 1927 0 2040 8 503 36 891 149 1191 346 113 74 311 270 383 379 189 287 292
+647 321 1120 13 220 13 1250 0 1470 -29 473 -133 837 -322 1120 -68 103 -219
+259 -328 341 -109 82 -343 200 -491 248 -213 68 -463 114 -738 136 -200 15
+-3906 12 -3946 -3z"></path>
+<path d="M7560 1918 c0 -1706 1 -1815 18 -1847 9 -19 33 -43 52 -53 33 -17 64
+-18 512 -16 l476 3 27 25 c58 53 55 -64 55 1895 l0 1805 -570 0 -570 0 0
+-1812z"></path>
+</g>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tooltips", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": {"default": "latest", "provider": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+<script src="../../javascripts/extra.js"></script>
+</body>
+</html>
